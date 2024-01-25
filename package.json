@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "spread",
+  "version": "0.0.1",
+  "scripts": {
+    "storybook": "npm run storybook -w packages",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
