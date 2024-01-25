@@ -5,6 +5,7 @@ function App() {
   return (
     <>
       <h1>Example</h1>
+      <Button>test</Button>
     </>
   );
 }
