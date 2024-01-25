@@ -3,9 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "dist/index.cjs",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsup --dts",
+    "build-fast": "tsup --no-dts",
+    "dev": "pnpm build-fast --watch",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "prepare": "panda codegen",
     "preview": "vite preview",
@@ -36,6 +38,7 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-storybook": "^0.6.15",
     "storybook": "^7.6.10",
+    "tsup": "^8.0.1",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
   }
