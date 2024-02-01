@@ -3,10 +3,13 @@
   "name": "spread",
   "version": "0.0.1",
   "scripts": {
-    "storybook": "npm run storybook -w packages",
+    "storybook": "npm run storybook -w spread",
+    "build:spread": "npm run build -w spread",
+    "build:storybook": "npm run build-storybook -w spread",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ]
 }

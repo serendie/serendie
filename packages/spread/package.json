@@ -3,9 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "dist/index.cjs",
   "scripts": {
-    "build": "tsup --dts",
+    "build": "tsup --dts --external spread",
     "build-fast": "tsup --no-dts",
     "dev": "pnpm build-fast --watch",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -41,5 +40,33 @@
     "tsup": "^8.0.1",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
+  },
+  "exports": {
+    "./css": {
+      "types": "./css/index.d.ts",
+      "require": "./css/index.js",
+      "import": "./css/index.js"
+    },
+    "./tokens": {
+      "types": "./tokens/index.d.ts",
+      "require": "./tokens/index.js",
+      "import": "./tokens/index.js"
+    },
+    "./types": {
+      "types": "./types/index.d.ts",
+      "require": "./types/index.js",
+      "import": "./types/index.js"
+    },
+    "./patterns": {
+      "types": "./patterns/index.d.ts",
+      "require": "./patterns/index.js",
+      "import": "./patterns/index.js"
+    },
+    "./jsx": {
+      "types": "./jsx/index.d.ts",
+      "require": "./jsx/index.js",
+      "import": "./jsx/index.js"
+    },
+    "./styles.css": "./styles.css"
   }
 }

@@ -20,6 +20,7 @@ export default defineConfig({
   },
 
   // The output directory for your css system
+  importMap: "spread",
   outdir: "styled-system",
   outExtension: "js",
   jsxFramework: "react",

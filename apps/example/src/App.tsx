@@ -5,7 +5,9 @@ function App() {
   return (
     <>
       <h1>Example</h1>
-      <Button>Click me</Button>
+      <Button variant="primary" size="lg">
+        Click me
+      </Button>
     </>
   );
 }

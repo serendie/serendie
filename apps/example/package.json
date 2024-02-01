@@ -10,11 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "spread": "file:../spread",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "spread": "file:../spread"
   },
   "devDependencies": {
+    "@pandacss/dev": "^0.29.0",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^6.14.0",

@@ -1,22 +1,49 @@
-import { ReactNode } from "react";
-import { css } from "../styled-system/css";
+import { cva } from "../styled-system/css";
+import { styled } from "../styled-system/jsx";
 
-export interface IButtonProps {
-  children: ReactNode;
-}
-
-export const Button = ({ children }: IButtonProps) => {
-  return (
-    <button
-      className={css({
-        bg: "red.300",
-        fontFamily: "Inter",
+const buttonStyle = cva({
+  base: {
+    color: "red",
+    textAlign: "center",
+    borderRadius: "md",
+  },
+  variants: {
+    variant: {
+      primary: {
+        color: "white",
+        bg: "blue",
+      },
+      secondary: {
+        color: "white",
+        bg: "green",
+      },
+      tertiary: {
+        color: "white",
+        bg: "red",
+      },
+    },
+    size: {
+      sm: {
+        fontSize: "sm",
+        px: "2",
+        py: "1",
+      },
+      md: {
+        fontSize: "md",
+        px: "3",
+        py: "2",
+      },
+      lg: {
+        fontSize: "lg",
         px: "4",
         py: "3",
-        borderRadius: "md",
-        _hover: { bg: "red.400" },
-      })}>
-      {children}
-    </button>
-  );
-};
+      },
+    },
+  },
+  defaultVariants: {
+    variant: "primary",
+    size: "md",
+  },
+});
+
+export const Button = styled("button", buttonStyle);
