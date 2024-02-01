@@ -1,15 +1,13 @@
 import { defineConfig } from "@pandacss/dev";
+import SpreadPreset from "@spread/preset";
 
 export default defineConfig({
   // Whether to use css reset
-  preflight: true,
+  // preflight: true,
 
   // Where to look for your css declarations
-  include: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "./pages/**/*.{js,jsx,ts,tsx}",
-    "./stories/**/*.{js,jsx,ts,tsx}",
-  ],
+  presets: [SpreadPreset],
+  include: ["./src/**/*.{js,jsx,ts,tsx}", "./pages/**/*.{js,jsx,ts,tsx}"],
 
   // Files to exclude
   exclude: [],
@@ -20,7 +18,7 @@ export default defineConfig({
   },
 
   // The output directory for your css system
-  importMap: "spread",
+  importMap: "@spread/ui-lib",
   outdir: "styled-system",
   outExtension: "js",
   jsxFramework: "react",

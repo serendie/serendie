@@ -1,5 +1,1 @@
-import { buttons } from "./buttons";
-
-export const Recipes = {
-  ...buttons,
-};
+export const Recipes = {};

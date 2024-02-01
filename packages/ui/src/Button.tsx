@@ -1,5 +1,5 @@
-import { cva } from "../styled-system/css";
-import { styled } from "../styled-system/jsx";
+import { cva } from "@spread/ui-lib/css";
+import { panda } from "@spread/ui-lib/jsx";
 
 const buttonStyle = cva({
   base: {
@@ -46,4 +46,4 @@ const buttonStyle = cva({
   },
 });
 
-export const Button = styled("button", buttonStyle);
+export const Button = panda("button", buttonStyle);
