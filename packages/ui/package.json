@@ -1,0 +1,14 @@
+{
+	"private": true,
+	"name": "@spread/ui",
+	"main": "dist/index.js",
+	"module": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"devDependencies": {
+		"@pandacss/dev": "^0.29.1",
+		"@spread/preset": "*"
+	},
+	"dependencies": {
+		"@spread/ui-lib": "*"
+	}
+}
