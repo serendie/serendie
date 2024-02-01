@@ -6,9 +6,9 @@
 	"types": "dist/index.d.ts",
 	"devDependencies": {
 		"@pandacss/dev": "^0.29.1",
-		"@spread/preset": "*"
+		"@spread/preset": "file:../preset"
 	},
 	"dependencies": {
-		"@spread/ui-lib": "*"
+		"@spread/ui-lib": "file:../ui-lib"
 	}
 }

@@ -3,7 +3,7 @@
 	"name": "@spread/ui-lib",
 	"devDependencies": {
 		"@pandacss/dev": "^0.29.1",
-		"@spread/preset": "*"
+		"@spread/preset": "file:../preset"
 	},
 	"scripts": {
 		"build": "panda codegen",
