@@ -1,11 +1,13 @@
 import { Button } from "@spread/ui";
-import "./App.css";
+import { Center } from "@spread/ui-lib/jsx";
 
 function App() {
   return (
     <>
       <h1>Example</h1>
-      <Button variant="primary">Click me</Button>
+      <Center>
+        <Button variant="primary">Click me</Button>
+      </Center>
     </>
   );
 }
