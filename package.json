@@ -5,10 +5,12 @@
   "scripts": {
     "prepare": "npm run panda codegen -w @spread/ui",
     "storybook": "npm run storybook -w @spread/ui",
+    "build": "npm run build:ui",
     "build:ui": "npm run build --workspace @spread/ui",
     "dev:example": "npm run dev --workspace @spread/example",
     "dev:ui": "npm run dev --workspace @spread/ui",
     "dev": "npm run dev:example && npm run dev:ui",
+    "postinstall": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "workspaces": [
