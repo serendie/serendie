@@ -11,15 +11,15 @@ const buttonStyle = cva({
     variant: {
       primary: {
         color: "white",
-        bg: "blue",
+        bg: "primary",
       },
       secondary: {
-        color: "white",
-        bg: "green",
+        color: "red",
+        bg: "secondary",
       },
       tertiary: {
-        color: "white",
-        bg: "red",
+        color: "black",
+        bg: "spreadPrimaryColor",
       },
     },
     size: {

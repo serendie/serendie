@@ -1,4 +1,5 @@
 import { SpreadPreset } from "@spread/ui";
+import pandaPreset from "@pandacss/preset-panda";
 import { defineConfig } from "@pandacss/dev";
 
 export default defineConfig({
@@ -6,7 +7,7 @@ export default defineConfig({
   // preflight: true,
 
   // Where to look for your css declarations
-  presets: [SpreadPreset],
+  presets: [pandaPreset, SpreadPreset],
   include: ["./src/**/*.{js,jsx,ts,tsx}", "./pages/**/*.{js,jsx,ts,tsx}"],
 
   // Files to exclude

@@ -7,8 +7,10 @@ function App() {
     <>
       <h1 className={css()}>Example</h1>
       <Center>
-        <HStack mt={100}>
-          <Button variant="primary">Button</Button>
+        <HStack mt={20}>
+          <Button mt={10} variant={"secondary"}>
+            Secondary
+          </Button>
         </HStack>
       </Center>
     </>

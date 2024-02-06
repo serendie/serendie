@@ -1,12 +1,12 @@
 import { definePreset } from "@pandacss/dev";
-import { Recipes } from "./recipes";
-import { Tokens } from "./tokens";
+import { SpreadRecipes } from "./recipes";
+import { SpreadTokens } from "./tokens";
 
 export const SpreadPreset = definePreset({
   theme: {
     extend: {
-      recipes: Recipes,
-      tokens: Tokens,
+      recipes: SpreadRecipes,
+      tokens: SpreadTokens,
     },
   },
 });

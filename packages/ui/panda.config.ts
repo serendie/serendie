@@ -1,3 +1,6 @@
+import { SpreadPreset } from "./dist/index";
+import pandaPreset from "@pandacss/preset-panda";
+
 import { defineConfig } from "@pandacss/dev";
 
 export default defineConfig({
@@ -10,13 +13,9 @@ export default defineConfig({
   // Files to exclude
   exclude: [],
 
-  // Useful for theme customization
-  theme: {
-    extend: {},
-  },
-
   // The output directory for your css system
   outdir: "styled-system",
   outExtension: "js",
   jsxFramework: "react",
+  presets: [pandaPreset, SpreadPreset],
 });
