@@ -3,6 +3,7 @@
   "name": "spread",
   "version": "0.0.1",
   "scripts": {
+    "prepare": "npm run panda codegen -w @spread/ui",
     "storybook": "npm run storybook -w @spread/ui",
     "build:ui": "npm run build --workspace @spread/ui",
     "dev:example": "npm run dev --workspace @spread/example",

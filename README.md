@@ -9,6 +9,20 @@ UI Components
 
 ## Development
 
+### Preparing
+
+```
+npm install
+```
+
 ### Storybook
 
-`npm run storybook`
+```
+npm run storybook
+```
+
+### Sample Project
+
+```
+npm run dev
+```
