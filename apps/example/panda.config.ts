@@ -15,7 +15,14 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
-    extend: {},
+    extend: {
+      // Override tokens
+      tokens: {
+        colors: {
+          secondary: { value: "#ee00dd" },
+        },
+      },
+    },
   },
 
   // The output directory for your css system
