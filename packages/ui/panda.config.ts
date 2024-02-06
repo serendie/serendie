@@ -1,4 +1,4 @@
-import { SpreadPreset } from "./dist/index";
+import { SpreadPreset } from "./src/index";
 import pandaPreset from "@pandacss/preset-panda";
 
 import { defineConfig } from "@pandacss/dev";

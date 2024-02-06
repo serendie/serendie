@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "tsup src/index.ts --dts --watch",
-    "build:panda": "panda && panda codegen",
-    "build:components": "tsup src/index.ts --dts --minify --format cjs,esm --out-dir dist",
+    "dev": "tsup --watch",
+    "build:panda": "panda codegen",
+    "build:components": "tsup",
     "build": "npm run build:panda && npm run build:components",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "storybook": "storybook dev -p 6006",
@@ -71,6 +71,6 @@
       "require": "./styled-system/jsx/index.js",
       "import": "./styled-system/jsx/index.js"
     },
-    "./styles.css": "./styled-system/styles.css"
+    "./styles.css": "./dist/styles.css"
   }
 }
