@@ -15,7 +15,7 @@ const buttonStyle = cva({
       },
       secondary: {
         color: "secondary",
-        bg: "gray.200",
+        bg: "gray",
       },
       tertiary: {
         color: "black",

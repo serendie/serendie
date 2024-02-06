@@ -3,9 +3,11 @@
   "name": "spread",
   "version": "0.0.1",
   "scripts": {
-    "storybook": "npm run storybook -w spread",
-    "build:spread": "npm run build -w spread",
-    "build:storybook": "npm run build-storybook -w spread",
+    "storybook": "npm run storybook -w @spread/ui",
+    "build:ui": "npm run build --workspace @spread/ui",
+    "dev:example": "npm run dev --workspace @spread/example",
+    "dev:ui": "npm run dev --workspace @spread/ui",
+    "dev": "npm run dev:example && npm run dev:ui",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "workspaces": [
