@@ -1,12 +1,15 @@
 import { Button } from "@spread/ui";
-import { Center } from "@spread/ui-lib/jsx";
+import { Center, HStack } from "@spread/ui/jsx";
+import { css } from "@spread/ui/css";
 
 function App() {
   return (
     <>
-      <h1>Example</h1>
+      <h1 className={css()}>Example</h1>
       <Center>
-        <Button variant="primary">Click me</Button>
+        <HStack mt={100}>
+          <Button variant="primary">Button</Button>
+        </HStack>
       </Center>
     </>
   );

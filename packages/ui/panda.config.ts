@@ -1,13 +1,22 @@
 import { defineConfig } from "@pandacss/dev";
-import pandaPreset from "@pandacss/preset-panda";
 
 export default defineConfig({
-  presets: [pandaPreset, "@spread/preset"],
-  include: ["./src/**/*.{js,jsx,ts,tsx}"],
+  // Whether to use css reset
+  preflight: true,
+
+  // Where to look for your css declarations
+  include: ["./src/**/*.{js,jsx,ts,tsx}", "./pages/**/*.{js,jsx,ts,tsx}"],
+
+  // Files to exclude
   exclude: [],
+
+  // Useful for theme customization
+  theme: {
+    extend: {},
+  },
+
+  // The output directory for your css system
   outdir: "styled-system",
-  importMap: "@spread/ui-lib",
-  jsxFramework: "react",
   outExtension: "js",
-  jsxFactory: "panda",
+  jsxFramework: "react",
 });

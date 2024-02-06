@@ -1,5 +1,5 @@
 {
-  "name": "example",
+  "name": "@spread/example",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,14 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@spread/ui": "^0.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "@spread/ui": "file:../../packages/ui",
-    "@spread/ui-lib": "file:../../packages/ui-lib"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@pandacss/dev": "^0.29.0",
-    "@spread/preset": "file:../../packages/preset",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^6.14.0",

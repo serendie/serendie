@@ -1,5 +1,5 @@
+import { SpreadPreset } from "@spread/ui";
 import { defineConfig } from "@pandacss/dev";
-import SpreadPreset from "@spread/preset";
 
 export default defineConfig({
   // Whether to use css reset
@@ -18,7 +18,7 @@ export default defineConfig({
   },
 
   // The output directory for your css system
-  importMap: "@spread/ui-lib",
+  importMap: "@spread/ui",
   outdir: "styled-system",
   outExtension: "js",
   jsxFramework: "react",

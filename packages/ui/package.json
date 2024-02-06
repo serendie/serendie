@@ -1,47 +1,75 @@
 {
-	"name": "ui",
-	"private": true,
-	"version": "0.0.0",
-	"type": "module",
-	"main": "dist/index.js",
-	"module": "dist/index.js",
-	"types": "dist/index.d.ts",
-	"scripts": {
-		"dev": "tsup src/index.ts --dts --watch",
-		"build": "tsup src/index.ts --dts --minify --format cjs,esm --out-dir dist",
-		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-		"prepare": "panda codegen",
-		"storybook": "storybook dev -p 6006",
-		"build-storybook": "storybook build"
-	},
-	"dependencies": {
-		"@spread/ui-lib": "file:../ui-lib",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
-	},
-	"devDependencies": {
-		"@pandacss/dev": "^0.29.1",
-		"@spread/preset": "file:../preset",
-		"@storybook/addon-essentials": "^7.6.12",
-		"@storybook/addon-interactions": "^7.6.12",
-		"@storybook/addon-links": "^7.6.12",
-		"@storybook/addon-onboarding": "^1.0.11",
-		"@storybook/blocks": "^7.6.12",
-		"@storybook/react": "^7.6.12",
-		"@storybook/react-vite": "^7.6.12",
-		"@storybook/test": "^7.6.12",
-		"@types/react": "^18.2.43",
-		"@types/react-dom": "^18.2.17",
-		"@typescript-eslint/eslint-plugin": "^6.14.0",
-		"@typescript-eslint/parser": "^6.14.0",
-		"@vitejs/plugin-react": "^4.2.1",
-		"eslint": "^8.55.0",
-		"eslint-plugin-react-hooks": "^4.6.0",
-		"eslint-plugin-react-refresh": "^0.4.5",
-		"eslint-plugin-storybook": "^0.6.15",
-		"storybook": "^7.6.12",
-		"tsup": "^8.0.1",
-		"typescript": "^5.2.2",
-		"vite": "^5.0.8"
-	}
+  "name": "@spread/ui",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsup src/index.ts --dts --watch",
+    "build:panda": "panda && panda codegen",
+    "build": "npm run build:panda && tsup src/index.ts --dts --minify --format cjs,esm --out-dir dist",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "^0.30.1",
+    "@storybook/addon-essentials": "^7.6.12",
+    "@storybook/addon-interactions": "^7.6.12",
+    "@storybook/addon-links": "^7.6.12",
+    "@storybook/addon-onboarding": "^1.0.11",
+    "@storybook/blocks": "^7.6.12",
+    "@storybook/react": "^7.6.12",
+    "@storybook/react-vite": "^7.6.12",
+    "@storybook/test": "^7.6.12",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "eslint-plugin-storybook": "^0.6.15",
+    "storybook": "^7.6.12",
+    "tsup": "^8.0.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.js"
+    },
+    "./css": {
+      "types": "./styled-system/css/index.d.ts",
+      "require": "./styled-system/css/index.js",
+      "import": "./styled-system/css/index.js"
+    },
+    "./tokens": {
+      "types": "./styled-system/tokens/index.d.ts",
+      "require": "./styled-system/tokens/index.js",
+      "import": "./styled-system/tokens/index.js"
+    },
+    "./types": {
+      "types": "./styled-system/types/index.d.ts",
+      "require": "./styled-system/types/index.js",
+      "import": "./styled-system/types/index.js"
+    },
+    "./patterns": {
+      "types": "./styled-system/patterns/index.d.ts",
+      "require": "./styled-system/patterns/index.js",
+      "import": "./styled-system/patterns/index.js"
+    },
+    "./jsx": {
+      "types": "./styled-system/jsx/index.d.ts",
+      "require": "./styled-system/jsx/index.js",
+      "import": "./styled-system/jsx/index.js"
+    },
+    "./styles.css": "./styled-system/styles.css"
+  }
 }
