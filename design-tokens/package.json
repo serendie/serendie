@@ -5,5 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "tsc && vite build"
+  },
+  "devDependencies": {
+    "style-dictionary": "^3.9.2"
   }
 }
