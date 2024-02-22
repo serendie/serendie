@@ -1,0 +1,13 @@
+{
+  "name": "@spread/design-token",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "style-dictionary": "^3.9.2",
+    "style-dictionary-utils": "^2.0.7"
+  }
+}
