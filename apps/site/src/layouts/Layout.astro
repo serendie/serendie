@@ -20,17 +20,17 @@ const docs = await getCollection("docs");
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
 	</head>
-	<body>
-		<div class={css()}>
-			<main>
-				<slot />
-			</main>
+	<body class={css({p:5})}>
+		<div class={css({display:"flex", gap:"10"})}>
 			<aside>
-				<h2>Components</h2>
+				<h2 class={css({fontWeight:"bold", mb:5})}>Components</h2>
 				<ul>
 					{docs.map(item =>(<li>{item.data.title}</li>))}
 				</ul>
 			</aside>
+			<main>
+				<slot />
+			</main>
 		</div>
 	</body>
 </html>
