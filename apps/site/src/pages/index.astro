@@ -1,17 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Button } from "@spread/ui";
-import {Center} from "@spread/ui/jsx";
+import {css} from "@spread/ui/css";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<Center m={{sm:"20",md:"10"}}>
-			<Button mt={20} variant={"secondary"}>This is a button component from UI</Button>
-		</Center>
-	</main>
+<Layout title="Welcome to Spread.">
+		<h1 class={css({fontSize:"xl", fontWeight:"bold"})}>Welcome to Spread.</h1>
 </Layout>
-
-
-
-
