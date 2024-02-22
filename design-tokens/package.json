@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build": "style-dictionary build"
+    "build": "node build.js"
   },
   "devDependencies": {
     "style-dictionary": "^3.9.2",

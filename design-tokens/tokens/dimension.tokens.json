@@ -1,0 +1,26 @@
+{
+  "dimension": {
+    "scale": {
+      "0": {
+        "$value": "0px",
+        "$type": "dimension"
+      },
+      "1": {
+        "$value": "1px",
+        "$type": "dimension"
+      },
+      "2": {
+        "$value": "2px",
+        "$type": "dimension"
+      },
+      "3": {
+        "$value": "3px",
+        "$type": "dimension"
+      },
+      "4": {
+        "$value": "4px",
+        "$type": "dimension"
+      }
+    }
+  }
+}
