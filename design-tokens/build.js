@@ -17,7 +17,6 @@ const myStyleDictionary = StyleDictionary.extend({
       ],
       files: [
         {
-          filter: "isSource",
           destination: "dist/tokens.ts",
           format: "javascript/esm",
         },
