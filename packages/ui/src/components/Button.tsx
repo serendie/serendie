@@ -1,5 +1,6 @@
 import { cva } from "../../styled-system/css";
 import { styled } from "../../styled-system/jsx";
+import { Button as AriaButton } from "react-aria-components";
 
 const buttonStyle = cva({
   base: {
@@ -12,10 +13,24 @@ const buttonStyle = cva({
       primary: {
         color: "white",
         bg: "primary",
+        "&[data-hovered]": {
+          bg: "purple",
+        },
+        "&[data-pressed]": {
+          color: "primary",
+          bg: "black",
+        },
       },
       secondary: {
         color: "secondary",
         bg: "gray",
+        "&[data-hovered]": {
+          bg: "purple.200",
+        },
+        "&[data-pressed]": {
+          color: "primary",
+          bg: "black.200",
+        },
       },
       tertiary: {
         color: "black",
@@ -46,4 +61,10 @@ const buttonStyle = cva({
   },
 });
 
-export const Button = styled("button", buttonStyle);
+export const Button = styled(AriaButton, buttonStyle);
+
+//export const Button: React.FC = (props) => {
+//return <AriaButton {...props} />;
+//};
+
+//export const Button = styled(Button, buttonStyle);
