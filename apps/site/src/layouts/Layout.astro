@@ -1,5 +1,6 @@
 ---
 import { css } from "@spread/ui/css";
+import {Flex} from "@spread/ui/jsx";
 import "../index.css"
 import { getCollection } from "astro:content";
 interface Props {
@@ -21,7 +22,7 @@ const docs = await getCollection("docs");
 		<title>{title}</title>
 	</head>
 	<body class={css({p:5})}>
-		<div class={css({display:"flex", gap:"10"})}>
+		<Flex gap={10}>
 			<aside>
 				<h2 class={css({fontWeight:"bold", mb:5})}>Components</h2>
 				<ul>
@@ -31,7 +32,7 @@ const docs = await getCollection("docs");
 			<main>
 				<slot />
 			</main>
-		</div>
+		</Flex>
 	</body>
 </html>
 
