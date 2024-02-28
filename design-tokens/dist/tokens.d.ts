@@ -1,8 +1,9 @@
 /**
  * Do not edit directly
- * Generated on Thu, 22 Feb 2024 14:27:07 GMT
+ * Generated on Wed, 28 Feb 2024 15:54:58 GMT
  */
 
+export const colorTextPrimary : string;
 export const colorPurple0 : string;
 export const colorPurple1 : string;
 export const colorPurple2 : string;

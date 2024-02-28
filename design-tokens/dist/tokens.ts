@@ -1,10 +1,13 @@
 /**
  * Do not edit directly
- * Generated on Thu, 22 Feb 2024 14:27:07 GMT
+ * Generated on Wed, 28 Feb 2024 15:54:58 GMT
  */
 
 export default {
   color: {
+    text: {
+      primary: "#b79ed9",
+    },
     purple: {
       "0": "#e8e1f3",
       "1": "#b79ed9",
