@@ -1,7 +1,15 @@
 console.clear();
 
-function createCollection(name) {
-  const collection = figma.variables.createVariableCollection(name);
+async function createCollection(name) {
+  const collections = await figma.variables.getLocalVariableCollectionsAsync();
+  const existingCollection = collections.find((e) => e.name === name);
+  const collection =
+    existingCollection || figma.variables.createVariableCollection(name);
+
+  // if (!currentCollection) {
+  //   // TODO: Mode追加
+  // }
+
   const modeId = collection.modes[0].modeId;
   return { collection, modeId };
 }
@@ -20,9 +28,9 @@ function createVariable(collection, modeId, key, valueKey, tokens) {
   });
 }
 
-function importJSONFile({ fileName, body }) {
+async function importJSONFile({ fileName, body }) {
   const json = JSON.parse(body);
-  const { collection, modeId } = createCollection(fileName);
+  const { collection, modeId } = await createCollection(fileName);
   const aliases = {};
   const tokens = {};
   Object.entries(json).forEach(([key, object]) => {
@@ -167,7 +175,7 @@ figma.ui.onmessage = async (e) => {
   console.log("code received message", e);
   if (e.type === "IMPORT") {
     const { fileName, body } = e;
-    importJSONFile({ fileName, body });
+    await importJSONFile({ fileName, body });
   } else if (e.type === "EXPORT") {
     await exportToJSON();
   }
