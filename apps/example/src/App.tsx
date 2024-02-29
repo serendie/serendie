@@ -1,4 +1,4 @@
-import { Button } from "@spread/ui";
+import { Button, Button2, Switch } from "@spread/ui";
 import { Center, HStack } from "@spread/ui/jsx";
 import { css } from "@spread/ui/css";
 
@@ -11,6 +11,10 @@ function App() {
           <Button mt={10} variant={"secondary"}>
             Secondary
           </Button>
+          <Button2 />
+          <div>
+            <Switch />
+          </div>
         </HStack>
       </Center>
     </>

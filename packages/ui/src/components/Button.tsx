@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { cva } from "../../styled-system/css";
 import { styled } from "../../styled-system/jsx";
-import { Button as AriaButton } from "react-aria-components";
+//import { Button as AriaButton } from "react-aria-components";
 
 const buttonStyle = cva({
   base: {
@@ -61,10 +62,21 @@ const buttonStyle = cva({
   },
 });
 
-export const Button = styled(AriaButton, buttonStyle);
+//export const Button = styled(AriaButton, buttonStyle);
 
 //export const Button: React.FC = (props) => {
 //return <AriaButton {...props} />;
 //};
 
-//export const Button = styled(Button, buttonStyle);
+export const Button = styled("button", buttonStyle);
+
+export const Button2 = () => {
+  const [onOff, setOnOff] = useState("off");
+  return (
+    <Button onClick={() => setOnOff(onOff === "on" ? "off" : "on")}>
+      {onOff}
+    </Button>
+  );
+};
+
+//export const Button3 = AriaButton;
