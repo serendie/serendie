@@ -6,10 +6,6 @@ async function createCollection(name) {
   const collection =
     existingCollection || figma.variables.createVariableCollection(name);
 
-  // if (!currentCollection) {
-  //   // TODO: Mode追加
-  // }
-
   const modeId = collection.modes[0].modeId;
   return { collection, modeId };
 }
