@@ -1,5 +1,15 @@
 {
   "color": {
+    "text": {
+      "primary": {
+        "$value": "{color.purple.1}",
+        "$modes": {
+          "dark": {
+            "$value": "{color.purple.3}"
+          }
+        }
+      }
+    },
     "purple": {
       "0": {
         "$value": "#e8e1f3",
