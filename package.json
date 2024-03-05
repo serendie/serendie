@@ -5,7 +5,7 @@
   "scripts": {
     "prepare": "npm run panda codegen -w @spread/ui",
     "storybook": "npm run storybook -w @spread/ui",
-    "build": "npm run build:ui",
+    "build": "npm run build:site",
     "build:ui": "npm run build --workspace @spread/ui",
     "build:site": "npm run build --workspace @spread/site",
     "dev:example": "npm run dev --workspace @spread/example",
