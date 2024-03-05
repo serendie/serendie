@@ -1,25 +1,85 @@
 {
-  "dimension": {
-    "scale": {
-      "0": {
-        "$value": "0px",
-        "$type": "dimension"
-      },
-      "1": {
-        "$value": "1px",
-        "$type": "dimension"
-      },
-      "2": {
-        "$value": "2px",
-        "$type": "dimension"
-      },
-      "3": {
-        "$value": "3px",
-        "$type": "dimension"
-      },
-      "4": {
-        "$value": "4px",
-        "$type": "dimension"
+  "dic": {
+    "reference": {
+      "dimension": {
+        "scale": {
+          "0": {
+            "$value": "0px",
+            "$type": "dimension"
+          },
+          "1": {
+            "$value": "1px",
+            "$type": "dimension"
+          },
+          "2": {
+            "$value": "2px",
+            "$type": "dimension"
+          },
+          "3": {
+            "$value": "4px",
+            "$type": "dimension"
+          },
+          "4": {
+            "$value": "8px",
+            "$type": "dimension"
+          },
+          "5": {
+            "$value": "12px",
+            "$type": "dimension"
+          },
+          "6": {
+            "$value": "16px",
+            "$type": "dimension"
+          },
+          "7": {
+            "$value": "20px",
+            "$type": "dimension"
+          },
+          "8": {
+            "$value": "24px",
+            "$type": "dimension"
+          },
+          "9": {
+            "$value": "28px",
+            "$type": "dimension"
+          },
+          "10": {
+            "$value": "32px",
+            "$type": "dimension"
+          },
+          "11": {
+            "$value": "36px",
+            "$type": "dimension"
+          },
+          "12": {
+            "$value": "40px",
+            "$type": "dimension"
+          },
+          "13": {
+            "$value": "48px",
+            "$type": "dimension"
+          },
+          "14": {
+            "$value": "56px",
+            "$type": "dimension"
+          },
+          "15": {
+            "$value": "64px",
+            "$type": "dimension"
+          },
+          "16": {
+            "$value": "72px",
+            "$type": "dimension"
+          },
+          "17": {
+            "$value": "80px",
+            "$type": "dimension"
+          },
+          "18": {
+            "$value": "96px",
+            "$type": "dimension"
+          }
+        }
       }
     }
   }
