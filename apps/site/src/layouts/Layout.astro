@@ -26,7 +26,7 @@ const docs = await getCollection("docs");
 			<aside>
 				<h2 class={css({fontWeight:"bold", mb:5})}>Components</h2>
 				<ul>
-					{docs.map(item =>(<li>{item.data.title}</li>))}
+					{docs.map(item =>(<li><a href={`/docs/${item.slug}`}>{item.data.title}</a></li>))}
 				</ul>
 			</aside>
 			<main>
