@@ -6,7 +6,6 @@ StyleDictionary.registerFormat({
   name: "panda-css-module",
   formatter: function ({ dictionary, file }) {
     const res = format(dictionary.tokens);
-    console.dir(res, { depth: null });
     return (
       fileHeader({ file }) + "export default " + JSON.stringify(res, false, 2)
     );
