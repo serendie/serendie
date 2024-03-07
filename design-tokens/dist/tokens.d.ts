@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 28 Feb 2024 15:54:58 GMT
+ * Generated on Thu, 07 Mar 2024 01:31:34 GMT
  */
 
 export const colorTextPrimary : string;
