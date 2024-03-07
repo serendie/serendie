@@ -6,8 +6,7 @@
   "exports": "./dist/tokens.ts",
   "types": "./dist/tokens.d.ts",
   "scripts": {
-    "build": "node build.js",
-    "postinstall": "npm run build"
+    "build": "node build.js"
   },
   "devDependencies": {
     "style-dictionary": "^3.9.2",
