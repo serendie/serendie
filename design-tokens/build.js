@@ -21,7 +21,7 @@ const myStyleDictionary = StyleDictionary.extend({
           format: "javascript/esm",
         },
         {
-          format: "typescript/es6-declarations",
+          format: "typescript/module-declarations",
           destination: "dist/tokens.d.ts",
         },
       ],
