@@ -9,6 +9,7 @@
     "sync-figma-to-tokens": "ts-node-esm -P tsconfig.json src/sync_tokens_to_figma.ts"
   },
   "devDependencies": {
+    "@figma/rest-api-spec": "^0.10.0",
     "@types/node": "^20.11.25",
     "style-dictionary": "^3.9.2",
     "style-dictionary-utils": "^2.0.7",
