@@ -118,6 +118,34 @@
           "sixExtraLarge": {
             "$value": "{dic.reference.dimension.scale.17}"
           }
+        },
+        "border": {
+          "medium": {
+            "$value": "{dic.reference.dimension.scale.1}"
+          },
+          "thick": {
+            "$value": "{dic.reference.dimension.scale.2}"
+          },
+          "extraThick": {
+            "$value": "{dic.reference.dimension.scale.3}"
+          }
+        },
+        "radius": {
+          "extraSmall": {
+            "$value": "{dic.reference.dimension.scale.2}"
+          },
+          "small": {
+            "$value": "{dic.reference.dimension.scale.3}"
+          },
+          "medium": {
+            "$value": "{dic.reference.dimension.scale.4}"
+          },
+          "large": {
+            "$value": "{dic.reference.dimension.scale.5}"
+          },
+          "extraLarge": {
+            "$value": "{dic.reference.dimension.scale.6}"
+          }
         }
       }
     }
