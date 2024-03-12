@@ -1,0 +1,20 @@
+{
+  "dic": {
+    "system": {
+      "typography": {
+        "body": {
+          "medium": {
+            "$type": "typography",
+            "$value": {
+              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
+              "fontSize": "{dic.reference.typography.scale.large.medium}",
+              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
+              "letterSpacing": "0px",
+              "lineHeight": 1.5
+            }
+          }
+        }
+      }
+    }
+  }
+}
