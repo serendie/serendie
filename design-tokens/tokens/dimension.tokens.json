@@ -81,6 +81,45 @@
           }
         }
       }
+    },
+    "system": {
+      "dimension": {
+        "spacing": {
+          "twoExtraSmall": {
+            "$value": "{dic.reference.dimension.scale.3}"
+          },
+          "extraSmall": {
+            "$value": "{dic.reference.dimension.scale.4}"
+          },
+          "small": {
+            "$value": "{dic.reference.dimension.scale.5}"
+          },
+          "medium": {
+            "$value": "{dic.reference.dimension.scale.6}"
+          },
+          "large": {
+            "$value": "{dic.reference.dimension.scale.7}"
+          },
+          "extraLarge": {
+            "$value": "{dic.reference.dimension.scale.8}"
+          },
+          "twoExtraLarge": {
+            "$value": "{dic.reference.dimension.scale.10}"
+          },
+          "threeExtraLarge": {
+            "$value": "{dic.reference.dimension.scale.12}"
+          },
+          "fourExtraLarge": {
+            "$value": "{dic.reference.dimension.scale.13}"
+          },
+          "fiveExtraLarge": {
+            "$value": "{dic.reference.dimension.scale.15}"
+          },
+          "sixExtraLarge": {
+            "$value": "{dic.reference.dimension.scale.17}"
+          }
+        }
+      }
     }
   }
 }
