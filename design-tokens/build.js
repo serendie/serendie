@@ -24,6 +24,9 @@ const myStyleDictionary = StyleDictionary.extend({
         {
           destination: "dist/tokens.js",
           format: "panda-css-module",
+          options: {
+            outputReferences: true,
+          },
         },
         {
           format: "typescript/module-declarations",

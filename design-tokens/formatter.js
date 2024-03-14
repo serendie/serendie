@@ -27,8 +27,10 @@ const format = (obj) => {
           res[mode] = format(obj[key][mode]);
         });
       }
-    } else {
+    } else if (obj[key] && typeof obj[key] === "object") {
       res[key] = format(obj[key]);
+    } else {
+      //  res[key] = obj[key];
     }
   });
   return res;
