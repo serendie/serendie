@@ -16,7 +16,7 @@ StyleDictionary.registerFormat({
 const format = (obj) => {
   let res = {};
   Object.keys(obj).forEach((key) => {
-    if (obj.value) {
+    if (typeof obj.value !== "undefined") {
       if (key === "value") {
         if (obj["$modes"]) {
           res.DEFAULT = {

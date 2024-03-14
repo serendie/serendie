@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 14 Mar 2024 05:16:41 GMT
+ * Generated on Thu, 14 Mar 2024 05:24:37 GMT
  */
 
 export default tokens;

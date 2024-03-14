@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 14 Mar 2024 05:16:41 GMT
+ * Generated on Thu, 14 Mar 2024 05:24:37 GMT
  */
 
 module.exports = {
@@ -1641,7 +1641,7 @@ module.exports = {
       "dimension": {
         "scale": {
           "0": {
-            "value": "0",
+            "value": "0px",
             "$type": "dimension",
             "filePath": "tokens/dimension.json",
             "isSource": true,
@@ -1666,7 +1666,7 @@ module.exports = {
             ]
           },
           "1": {
-            "value": "0.0625rem",
+            "value": "1px",
             "$type": "dimension",
             "filePath": "tokens/dimension.json",
             "isSource": true,
@@ -1691,7 +1691,7 @@ module.exports = {
             ]
           },
           "2": {
-            "value": "0.125rem",
+            "value": "2px",
             "$type": "dimension",
             "filePath": "tokens/dimension.json",
             "isSource": true,
@@ -1716,7 +1716,7 @@ module.exports = {
             ]
           },
           "3": {
-            "value": "0.25rem",
+            "value": "4px",
             "$type": "dimension",
             "filePath": "tokens/dimension.json",
             "isSource": true,
@@ -1741,7 +1741,7 @@ module.exports = {
             ]
           },
           "4": {
-            "value": "0.5rem",
+            "value": "8px",
             "$type": "dimension",
             "filePath": "tokens/dimension.json",
             "isSource": true,
@@ -1766,7 +1766,7 @@ module.exports = {
             ]
           },
           "5": {
-            "value": "0.75rem",
+            "value": "12px",
             "$type": "dimension",
             "filePath": "tokens/dimension.json",
             "isSource": true,
@@ -1791,7 +1791,7 @@ module.exports = {
             ]
           },
           "6": {
-            "value": "1rem",
+            "value": "16px",
             "$type": "dimension",
             "filePath": "tokens/dimension.json",
             "isSource": true,
@@ -1816,7 +1816,7 @@ module.exports = {
             ]
           },
           "7": {
-            "value": "1.25rem",
+            "value": "20px",
             "$type": "dimension",
             "filePath": "tokens/dimension.json",
             "isSource": true,
@@ -1841,7 +1841,7 @@ module.exports = {
             ]
           },
           "8": {
-            "value": "1.5rem",
+            "value": "24px",
             "$type": "dimension",
             "filePath": "tokens/dimension.json",
             "isSource": true,
@@ -1866,7 +1866,7 @@ module.exports = {
             ]
           },
           "9": {
-            "value": "1.75rem",
+            "value": "28px",
             "$type": "dimension",
             "filePath": "tokens/dimension.json",
             "isSource": true,
@@ -1891,7 +1891,7 @@ module.exports = {
             ]
           },
           "10": {
-            "value": "2rem",
+            "value": "32px",
             "$type": "dimension",
             "filePath": "tokens/dimension.json",
             "isSource": true,
@@ -1916,7 +1916,7 @@ module.exports = {
             ]
           },
           "11": {
-            "value": "2.25rem",
+            "value": "36px",
             "$type": "dimension",
             "filePath": "tokens/dimension.json",
             "isSource": true,
@@ -1941,7 +1941,7 @@ module.exports = {
             ]
           },
           "12": {
-            "value": "2.5rem",
+            "value": "40px",
             "$type": "dimension",
             "filePath": "tokens/dimension.json",
             "isSource": true,
@@ -1966,7 +1966,7 @@ module.exports = {
             ]
           },
           "13": {
-            "value": "3rem",
+            "value": "48px",
             "$type": "dimension",
             "filePath": "tokens/dimension.json",
             "isSource": true,
@@ -1991,7 +1991,7 @@ module.exports = {
             ]
           },
           "14": {
-            "value": "3.5rem",
+            "value": "56px",
             "$type": "dimension",
             "filePath": "tokens/dimension.json",
             "isSource": true,
@@ -2016,7 +2016,7 @@ module.exports = {
             ]
           },
           "15": {
-            "value": "4rem",
+            "value": "64px",
             "$type": "dimension",
             "filePath": "tokens/dimension.json",
             "isSource": true,
@@ -2041,7 +2041,7 @@ module.exports = {
             ]
           },
           "16": {
-            "value": "4.5rem",
+            "value": "72px",
             "$type": "dimension",
             "filePath": "tokens/dimension.json",
             "isSource": true,
@@ -2066,7 +2066,7 @@ module.exports = {
             ]
           },
           "17": {
-            "value": "5rem",
+            "value": "80px",
             "$type": "dimension",
             "filePath": "tokens/dimension.json",
             "isSource": true,
@@ -2091,7 +2091,7 @@ module.exports = {
             ]
           },
           "18": {
-            "value": "6rem",
+            "value": "96px",
             "$type": "dimension",
             "filePath": "tokens/dimension.json",
             "isSource": true,
@@ -2749,7 +2749,7 @@ module.exports = {
         "scale": {
           "large": {
             "fourExtraSmall": {
-              "value": "0.625rem",
+              "value": "10px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -2775,7 +2775,7 @@ module.exports = {
               ]
             },
             "threeExtraSmall": {
-              "value": "0.6875rem",
+              "value": "11px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -2801,7 +2801,7 @@ module.exports = {
               ]
             },
             "twoExtraSmall": {
-              "value": "0.75rem",
+              "value": "12px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -2827,7 +2827,7 @@ module.exports = {
               ]
             },
             "extraSmall": {
-              "value": "0.8125rem",
+              "value": "13px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -2853,7 +2853,7 @@ module.exports = {
               ]
             },
             "small": {
-              "value": "0.875rem",
+              "value": "14px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -2879,7 +2879,7 @@ module.exports = {
               ]
             },
             "medium": {
-              "value": "1rem",
+              "value": "16px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -2905,7 +2905,7 @@ module.exports = {
               ]
             },
             "large": {
-              "value": "1.125rem",
+              "value": "18px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -2931,7 +2931,7 @@ module.exports = {
               ]
             },
             "extraLarge": {
-              "value": "1.3125rem",
+              "value": "21px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -2957,7 +2957,7 @@ module.exports = {
               ]
             },
             "twoExtraLarge": {
-              "value": "1.625rem",
+              "value": "26px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -2983,7 +2983,7 @@ module.exports = {
               ]
             },
             "threeExtraLarge": {
-              "value": "2rem",
+              "value": "32px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -3009,7 +3009,7 @@ module.exports = {
               ]
             },
             "fourExtraLarge": {
-              "value": "2.6875rem",
+              "value": "43px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -3035,7 +3035,7 @@ module.exports = {
               ]
             },
             "fiveExtraLarge": {
-              "value": "4rem",
+              "value": "64px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -3063,7 +3063,7 @@ module.exports = {
           },
           "small": {
             "twoExtraSmall": {
-              "value": "0.625rem",
+              "value": "10px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -3089,7 +3089,7 @@ module.exports = {
               ]
             },
             "extraSmall": {
-              "value": "0.6875rem",
+              "value": "11px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -3115,7 +3115,7 @@ module.exports = {
               ]
             },
             "small": {
-              "value": "0.75rem",
+              "value": "12px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -3141,7 +3141,7 @@ module.exports = {
               ]
             },
             "medium": {
-              "value": "0.875rem",
+              "value": "14px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -3167,7 +3167,7 @@ module.exports = {
               ]
             },
             "large": {
-              "value": "1rem",
+              "value": "16px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -3193,7 +3193,7 @@ module.exports = {
               ]
             },
             "extraLarge": {
-              "value": "1.1875rem",
+              "value": "19px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -3219,7 +3219,7 @@ module.exports = {
               ]
             },
             "twoExtraLarge": {
-              "value": "1.375rem",
+              "value": "22px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -3245,7 +3245,7 @@ module.exports = {
               ]
             },
             "threeExtraLarge": {
-              "value": "1.75rem",
+              "value": "28px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -3271,7 +3271,7 @@ module.exports = {
               ]
             },
             "fourExtraLarge": {
-              "value": "2.3125rem",
+              "value": "37px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -3297,7 +3297,7 @@ module.exports = {
               ]
             },
             "fiveExtraLarge": {
-              "value": "3.5rem",
+              "value": "56px",
               "$type": "dimension",
               "filePath": "tokens/typography.json",
               "isSource": true,
@@ -3330,7 +3330,7 @@ module.exports = {
       "dimension": {
         "spacing": {
           "twoExtraSmall": {
-            "value": "0.25rem",
+            "value": "4px",
             "filePath": "tokens/dimension.json",
             "isSource": true,
             "original": {
@@ -3353,7 +3353,7 @@ module.exports = {
             ]
           },
           "extraSmall": {
-            "value": "0.5rem",
+            "value": "8px",
             "filePath": "tokens/dimension.json",
             "isSource": true,
             "original": {
@@ -3376,7 +3376,7 @@ module.exports = {
             ]
           },
           "small": {
-            "value": "0.75rem",
+            "value": "12px",
             "filePath": "tokens/dimension.json",
             "isSource": true,
             "original": {
@@ -3399,7 +3399,7 @@ module.exports = {
             ]
           },
           "medium": {
-            "value": "1rem",
+            "value": "16px",
             "filePath": "tokens/dimension.json",
             "isSource": true,
             "original": {
@@ -3422,7 +3422,7 @@ module.exports = {
             ]
           },
           "large": {
-            "value": "1.25rem",
+            "value": "20px",
             "filePath": "tokens/dimension.json",
             "isSource": true,
             "original": {
@@ -3445,7 +3445,7 @@ module.exports = {
             ]
           },
           "extraLarge": {
-            "value": "1.5rem",
+            "value": "24px",
             "filePath": "tokens/dimension.json",
             "isSource": true,
             "original": {
@@ -3468,7 +3468,7 @@ module.exports = {
             ]
           },
           "twoExtraLarge": {
-            "value": "2rem",
+            "value": "32px",
             "filePath": "tokens/dimension.json",
             "isSource": true,
             "original": {
@@ -3491,7 +3491,7 @@ module.exports = {
             ]
           },
           "threeExtraLarge": {
-            "value": "2.5rem",
+            "value": "40px",
             "filePath": "tokens/dimension.json",
             "isSource": true,
             "original": {
@@ -3514,7 +3514,7 @@ module.exports = {
             ]
           },
           "fourExtraLarge": {
-            "value": "3rem",
+            "value": "48px",
             "filePath": "tokens/dimension.json",
             "isSource": true,
             "original": {
@@ -3537,7 +3537,7 @@ module.exports = {
             ]
           },
           "fiveExtraLarge": {
-            "value": "4rem",
+            "value": "64px",
             "filePath": "tokens/dimension.json",
             "isSource": true,
             "original": {
@@ -3560,7 +3560,7 @@ module.exports = {
             ]
           },
           "sixExtraLarge": {
-            "value": "5rem",
+            "value": "80px",
             "filePath": "tokens/dimension.json",
             "isSource": true,
             "original": {
@@ -3585,7 +3585,7 @@ module.exports = {
         },
         "border": {
           "medium": {
-            "value": "0.0625rem",
+            "value": "1px",
             "filePath": "tokens/dimension.json",
             "isSource": true,
             "original": {
@@ -3608,7 +3608,7 @@ module.exports = {
             ]
           },
           "thick": {
-            "value": "0.125rem",
+            "value": "2px",
             "filePath": "tokens/dimension.json",
             "isSource": true,
             "original": {
@@ -3631,7 +3631,7 @@ module.exports = {
             ]
           },
           "extraThick": {
-            "value": "0.25rem",
+            "value": "4px",
             "filePath": "tokens/dimension.json",
             "isSource": true,
             "original": {
@@ -3656,7 +3656,7 @@ module.exports = {
         },
         "radius": {
           "extraSmall": {
-            "value": "0.125rem",
+            "value": "2px",
             "filePath": "tokens/dimension.json",
             "isSource": true,
             "original": {
@@ -3679,7 +3679,7 @@ module.exports = {
             ]
           },
           "small": {
-            "value": "0.25rem",
+            "value": "4px",
             "filePath": "tokens/dimension.json",
             "isSource": true,
             "original": {
@@ -3702,7 +3702,7 @@ module.exports = {
             ]
           },
           "medium": {
-            "value": "0.5rem",
+            "value": "8px",
             "filePath": "tokens/dimension.json",
             "isSource": true,
             "original": {
@@ -3725,7 +3725,7 @@ module.exports = {
             ]
           },
           "large": {
-            "value": "0.75rem",
+            "value": "12px",
             "filePath": "tokens/dimension.json",
             "isSource": true,
             "original": {
@@ -3748,7 +3748,7 @@ module.exports = {
             ]
           },
           "extraLarge": {
-            "value": "1rem",
+            "value": "16px",
             "filePath": "tokens/dimension.json",
             "isSource": true,
             "original": {
@@ -3778,7 +3778,7 @@ module.exports = {
             "$type": "typography",
             "value": {
               "fontFamily": "Noto Sans JP",
-              "fontSize": "0.875rem",
+              "fontSize": "14px",
               "fontWeight": 400,
               "letterSpacing": "0px",
               "lineHeight": 1.5
