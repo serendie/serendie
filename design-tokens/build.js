@@ -13,7 +13,6 @@ const myStyleDictionary = StyleDictionary.extend({
         "name/cti/camel",
         "time/seconds",
         "content/icon",
-        "dimension/pixelToRem",
         "color/css",
       ],
       files: [
