@@ -4,6 +4,8 @@ import * as path from "path";
 import { Token, TokenOrTokenGroup, TokensFile } from "./token_types";
 import {
   GetLocalVariablesResponse,
+  LocalVariable,
+  LocalVariableCollection,
   PostVariablesRequestBody,
 } from "@figma/rest-api-spec";
 
@@ -96,6 +98,51 @@ export const generatePostVariablesPayload = (
   tokensByFile: FlattenedTokensByFile,
   localVariables: GetLocalVariablesResponse
 ) => {
+  console.log(tokensByFile);
+
+  const localVariableCollectionsByName: {
+    [name: string]: LocalVariableCollection;
+  } = {};
+  const localVariablesByCollectionAndName: {
+    [variableCollectionId: string]: { [variableName: string]: LocalVariable };
+  } = {};
+
+  for (const collection of Object.values(
+    localVariables.meta.variableCollections
+  )) {
+    if (collection.remote) {
+      throw new Error("Remote collection is included in local variables.");
+    }
+
+    if (localVariableCollectionsByName[collection.name]) {
+      throw new Error(
+        `Duplicate variable collection in file: ${collection.name}`
+      );
+    }
+
+    localVariableCollectionsByName[collection.name] = collection;
+  }
+
+  for (const variable of Object.values(localVariables.meta.variables)) {
+    if (variable.remote) {
+      throw new Error("Remote collection is included in local variables.");
+    }
+
+    if (!localVariablesByCollectionAndName[variable.variableCollectionId]) {
+      localVariablesByCollectionAndName[variable.variableCollectionId] = {};
+    }
+
+    localVariablesByCollectionAndName[variable.variableCollectionId][
+      variable.name
+    ] = variable;
+  }
+
+  console.log(
+    "Local variable collections in Figma file:",
+    localVariableCollectionsByName,
+    localVariablesByCollectionAndName
+  );
+
   const postVariablesPayload: PostVariablesRequestBody = {
     variableCollections: [],
     variableModes: [],
