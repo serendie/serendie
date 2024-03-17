@@ -1,5 +1,10 @@
 import { describe, expect, test, vi } from "vitest";
-import { readJsonFiles } from "./token_import";
+import {
+  FlattenedTokensByFile,
+  generatePostVariablesPayload,
+  readJsonFiles,
+} from "./token_import";
+import { GetLocalVariablesResponse } from "@figma/rest-api-spec";
 
 describe("readJsonFiles", () => {
   vi.mock("fs", () => {
@@ -425,5 +430,285 @@ describe("readJsonFiles", () => {
     }).toThrowError(
       "Invalid tokens file: empty_file.mode1.json. File is empty."
     );
+  });
+});
+
+describe("generatePostVariablesPayload", () => {
+  test("does an initial sync", async () => {
+    const localVariablesResponse: GetLocalVariablesResponse = {
+      status: 200,
+      error: false,
+      meta: {
+        variableCollections: {},
+        variables: {},
+      },
+    };
+
+    const tokensByFile: FlattenedTokensByFile = {
+      "color.default.json": {
+        "dic/reference/color/scale/blue/100": {
+          $value: "#DBF3FF",
+          $type: "color",
+          $description: "Blue 100 color",
+        },
+        "dic/system/color/primary": {
+          $value: "{dic.reference.color.scale.blue.100}",
+          $type: "color",
+          $description: "Primary color",
+        },
+      },
+      "dimension.default.json": {
+        "dic/reference/dimension/scale/1": {
+          $value: "1px",
+          $type: "dimension",
+          $description: "1px",
+        },
+        "dic/reference/dimension/fontSize/small": {
+          $value: "14px",
+          $type: "dimension",
+          $description: "Small font size",
+        },
+        "dic/reference/dimension/fontSize/medium": {
+          $value: "16px",
+          $type: "dimension",
+          $description: "Medium font size",
+        },
+        "dic/reference/dimension/letterSpacing/normal": {
+          $value: "0px",
+          $type: "dimension",
+          $description: "Normal letter spacing",
+        },
+        "dic/system/dimension/border/medium": {
+          $value: "{dic.reference.dimension.scale.1}",
+          $type: "dimension",
+          $description: "Medium border",
+        },
+      },
+      "shadow.default.json": {
+        "dic/reference/shadow/scale/1": {
+          $value: {
+            color: "#0000004D",
+            offsetX: "0px",
+            offsetY: "1px",
+            blur: "2px",
+            spread: "0px",
+          },
+          $type: "shadow",
+          $description: "Shadow 1",
+        },
+        "dic/system/elevation/1": {
+          $value: "{dic.reference.shadow.scale.1}",
+          $type: "shadow",
+          $description: "Elevation 1",
+        },
+      },
+      "number.default.json": {
+        "dic/reference/number/opacity/scale/4": {
+          $value: "0.4",
+          $type: "number",
+          $description: "10%",
+        },
+        "dic/reference/number/lineHeight/normal": {
+          $value: "Normal line height",
+          $type: "number",
+          $description: "Normal line height",
+        },
+        "dic/system/number/opacity/disabled": {
+          $value: "{dic.reference.number.opacity.scale.4}",
+          $type: "number",
+          $description: "Disabled opacity",
+        },
+      },
+      "fontFamily.default.json": {
+        "dic/reference/fontFamily/primary": {
+          $value: "Noto Sans JP",
+          $type: "fontFamily",
+          $description: "Primary font",
+        },
+        "dic/reference/fontFamily/monospace": {
+          $value: "Noto Sans Mono",
+          $type: "fontFamily",
+          $description: "Monospace font",
+        },
+      },
+      "fontWeight.default.json": {
+        "dic/reference/fontWeight/regular": {
+          $value: 400,
+          $type: "fontWeight",
+          $description: "Regular weight",
+        },
+        "dic/reference/fontWeight/bold": {
+          $value: 700,
+          $type: "fontWeight",
+          $description: "Bold weight",
+        },
+      },
+      "typography.sp.json": {
+        "dic/system/typography/title/medium": {
+          $value: {
+            fontFamily: "{dic.reference.fontFamily.primary}",
+            fontSize: "{dic.reference.dimension.fontSize.small}",
+            fontWeight: "{dic.reference.fontWeight.bold}",
+            letterSpacing: "{dic.reference.dimension.letterSpacing.normal}",
+            lineHeight: "{dic.reference.number.lineHeight.normal}",
+          },
+          $type: "typography",
+          $description: "Title medium on sp",
+        },
+      },
+      "typography.pc.json": {
+        "dic/system/typography/title/medium": {
+          $value: {
+            fontFamily: "{dic.reference.fontFamily.primary}",
+            fontSize: "{dic.reference.dimension.fontSize.medium}",
+            fontWeight: "{dic.reference.fontWeight.bold}",
+            letterSpacing: "{dic.reference.dimension.letterSpacing.normal}",
+            lineHeight: "{dic.reference.number.lineHeight.normal}",
+          },
+          $type: "typography",
+          $description: "Title medium on pc",
+        },
+      },
+    };
+
+    const result = generatePostVariablesPayload(
+      tokensByFile,
+      localVariablesResponse
+    );
+
+    expect(result.variableCollections).toEqual([
+      {
+        action: "CREATE",
+        id: "color",
+        name: "color",
+        initialModeId: "default",
+      },
+      {
+        action: "CREATE",
+        id: "dimension",
+        name: "dimension",
+        initialModeId: "default",
+      },
+      {
+        action: "CREATE",
+        id: "number",
+        name: "number",
+        initialModeId: "default",
+      },
+    ]);
+
+    expect(result.variableModes).toEqual([
+      {
+        action: "UPDATE",
+        id: "default",
+        name: "default",
+        variableCollectionId: "color",
+      },
+      {
+        action: "UPDATE",
+        id: "default",
+        name: "default",
+        variableCollectionId: "dimension",
+      },
+      {
+        action: "UPDATE",
+        id: "default",
+        name: "default",
+        variableCollectionId: "number",
+      },
+    ]);
+
+    expect(result.variables).toEqual([
+      {
+        action: "CREATE",
+        id: "dic/reference/color/scale/blue/100",
+        name: "dic/reference/color/scale/blue/100",
+        variableCollectionId: "color",
+        resolvedType: "COLOR",
+        description: "Blue 100 color",
+      },
+      {
+        action: "CREATE",
+        id: "dic/system/color/primary",
+        name: "dic/system/color/primary",
+        variableCollectionId: "color",
+        resolvedType: "COLOR",
+        description: "Primary color",
+      },
+      {
+        action: "CREATE",
+        id: "dic/reference/dimension/scale/1",
+        name: "dic/reference/dimension/scale/1",
+        variableCollectionId: "dimension",
+        resolvedType: "FLOAT",
+        description: "1px",
+      },
+      {
+        action: "CREATE",
+        id: "dic/system/dimension/border/medium",
+        name: "dic/system/dimension/border/medium",
+        variableCollectionId: "dimension",
+        resolvedType: "FLOAT",
+        description: "Medium border",
+      },
+      {
+        action: "CREATE",
+        id: "dic/reference/number/opacity/scale/4",
+        name: "dic/reference/number/opacity/scale/4",
+        variableCollectionId: "number",
+        resolvedType: "FLOAT",
+        description: "10%",
+      },
+      {
+        action: "CREATE",
+        id: "dic/system/number/opacity/disabled",
+        name: "dic/system/number/opacity/disabled",
+        variableCollectionId: "number",
+        resolvedType: "FLOAT",
+        description: "Disabled opacity",
+      },
+    ]);
+
+    expect(result.variableModeValues).toEqual([
+      {
+        variableId: "dic/reference/color/scale/blue/100",
+        modeId: "default",
+        value: { r: 1, g: 1, b: 1 },
+      },
+      {
+        variableId: "dic/system/color/primary",
+        modeId: "default",
+        value: {
+          type: "VARIABLE_ALIAS",
+          id: "dic/reference/color/scale/blue/100",
+        },
+      },
+      {
+        variableId: "dic/reference/dimension/scale/1",
+        modeId: "default",
+        value: 1,
+      },
+      {
+        variableId: "dic/system/dimension/border/medium",
+        modeId: "default",
+        value: {
+          type: "VARIABLE_ALIAS",
+          id: "dic/reference/dimension/scale/1",
+        },
+      },
+      {
+        variableId: "dic/reference/number/opacity/scale/4",
+        modeId: "default",
+        value: 0.4,
+      },
+      {
+        variableId: "dic/system/number/opacity/disabled",
+        modeId: "default",
+        value: {
+          type: "VARIABLE_ALIAS",
+          id: "dic/reference/number/opacity/scale/4",
+        },
+      },
+    ]);
   });
 });

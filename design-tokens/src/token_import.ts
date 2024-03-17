@@ -2,6 +2,10 @@ import * as fs from "fs";
 import * as path from "path";
 
 import { Token, TokenOrTokenGroup, TokensFile } from "./token_types";
+import {
+  GetLocalVariablesResponse,
+  PostVariablesRequestBody,
+} from "@figma/rest-api-spec";
 
 export type FlattenedTokensByFile = {
   [fileName: string]: {
@@ -86,4 +90,18 @@ const collectionAndModeFromFileName = (fileName: string) => {
   }
   const [collectionName, modeName] = fileNameParts;
   return { collectionName, modeName };
+};
+
+export const generatePostVariablesPayload = (
+  tokensByFile: FlattenedTokensByFile,
+  localVariables: GetLocalVariablesResponse
+) => {
+  const postVariablesPayload: PostVariablesRequestBody = {
+    variableCollections: [],
+    variableModes: [],
+    variables: [],
+    variableModeValues: [],
+  };
+
+  return postVariablesPayload;
 };
