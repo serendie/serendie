@@ -1,16 +1,46 @@
 /**
  * Do not edit directly
- * Generated on Wed, 28 Feb 2024 15:54:58 GMT
+ * Generated on Thu, 07 Mar 2024 06:56:07 GMT
  */
 
-export const colorTextPrimary : string;
-export const colorPurple0 : string;
-export const colorPurple1 : string;
-export const colorPurple2 : string;
-export const colorPurple3 : string;
-export const colorPurple4 : string;
-export const dimensionScale0 : string;
-export const dimensionScale1 : string;
-export const dimensionScale2 : string;
-export const dimensionScale3 : string;
-export const dimensionScale4 : string;
+export default tokens;
+
+declare interface DesignToken {
+  value: any;
+  name?: string;
+  comment?: string;
+  themeable?: boolean;
+  attributes?: {
+    category?: string;
+    type?: string;
+    item?: string;
+    subitem?: string;
+    state?: string;
+    [key: string]: any;
+  };
+  [key: string]: any;
+}
+
+declare const tokens: {
+  "color": {
+    "text": {
+      "primary": DesignToken
+    },
+    "purple": {
+      "0": DesignToken,
+      "1": DesignToken,
+      "2": DesignToken,
+      "3": DesignToken,
+      "4": DesignToken
+    }
+  },
+  "dimension": {
+    "scale": {
+      "0": DesignToken,
+      "1": DesignToken,
+      "2": DesignToken,
+      "3": DesignToken,
+      "4": DesignToken
+    }
+  }
+}

@@ -17,6 +17,6 @@
   "workspaces": [
     "packages/*",
     "apps/*",
-    "design-tokens/*"
+    "design-tokens"
   ]
 }

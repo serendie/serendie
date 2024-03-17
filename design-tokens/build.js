@@ -1,5 +1,6 @@
 import StyleDictionary from "style-dictionary-utils";
 import { w3cTokenJsonParser } from "style-dictionary-utils/dist/parser/w3c-token-json-parser.js";
+import "./formatter.js";
 
 StyleDictionary.registerParser(w3cTokenJsonParser);
 
@@ -17,11 +18,15 @@ const myStyleDictionary = StyleDictionary.extend({
       ],
       files: [
         {
-          destination: "dist/tokens.ts",
-          format: "javascript/esm",
+          destination: "dist/tokens.cjs",
+          format: "javascript/module",
         },
         {
-          format: "typescript/es6-declarations",
+          destination: "dist/tokens.js",
+          format: "panda-css-module",
+        },
+        {
+          format: "typescript/module-declarations",
           destination: "dist/tokens.d.ts",
         },
       ],
