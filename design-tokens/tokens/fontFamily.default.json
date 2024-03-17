@@ -1,0 +1,16 @@
+{
+  "dic": {
+    "reference": {
+      "fontFamily": {
+        "primary": {
+          "$value": "Noto Sans JP",
+          "$type": "fontFamily"
+        },
+        "monospace": {
+          "$value": "Noto Sans Mono",
+          "$type": "fontFamily"
+        }
+      }
+    }
+  }
+}

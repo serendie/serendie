@@ -6,11 +6,11 @@
           "medium": {
             "$type": "typography",
             "$value": {
-              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-              "fontSize": "{dic.reference.typography.scale.large.medium}",
-              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
-              "letterSpacing": "0px",
-              "lineHeight": 1.5
+              "fontFamily": "{dic.reference.fontFamily.primary}",
+              "fontSize": "{dic.reference.dimension.fontSize.medium}",
+              "fontWeight": "{dic.reference.fontWeight.regular}",
+              "letterSpacing": "{dic.reference.dimension.letterSpacing.normal}",
+              "lineHeight": "{dic.reference.number.lineHeight.normal}"
             }
           }
         }

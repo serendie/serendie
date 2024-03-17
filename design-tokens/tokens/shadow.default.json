@@ -1,0 +1,100 @@
+{
+  "dic": {
+    "reference": {
+      "shadow": {
+        "scale": {
+          "5": {
+            "$value": {
+              "color": "#00000033",
+              "offsetX": "0px",
+              "offsetY": "8px",
+              "blur": "24px",
+              "spread": "0px"
+            },
+            "$type": "shadow"
+          },
+          "4": {
+            "$value": {
+              "color": "#00000033",
+              "offsetX": "0px",
+              "offsetY": "4px",
+              "blur": "12px",
+              "spread": "0px"
+            },
+            "$type": "shadow"
+          },
+          "3": {
+            "$value": {
+              "color": "#00000033",
+              "offsetX": "0px",
+              "offsetY": "2px",
+              "blur": "8px",
+              "spread": "0px"
+            },
+            "$type": "shadow"
+          },
+          "2": {
+            "$value": {
+              "color": "#00000033",
+              "offsetX": "0px",
+              "offsetY": "1px",
+              "blur": "4px",
+              "spread": "0px"
+            },
+            "$type": "shadow"
+          },
+          "1": {
+            "$value": {
+              "color": "#0000004D",
+              "offsetX": "0px",
+              "offsetY": "1px",
+              "blur": "2px",
+              "spread": "0px"
+            },
+            "$type": "shadow"
+          },
+          "0": {
+            "$value": {
+              "color": "#00000000",
+              "offsetX": "0px",
+              "offsetY": "0px",
+              "blur": "0px",
+              "spread": "0px"
+            },
+            "$type": "shadow"
+          }
+        }
+      }
+    },
+    "system": {
+      "shadow": {
+        "elevation": {
+          "5": {
+            "$value": "{dic.reference.shadow.scale.5}",
+            "$type": "shadow"
+          },
+          "4": {
+            "$value": "{dic.reference.shadow.scale.4}",
+            "$type": "shadow"
+          },
+          "3": {
+            "$value": "{dic.reference.shadow.scale.3}",
+            "$type": "shadow"
+          },
+          "2": {
+            "$value": "{dic.reference.shadow.scale.2}",
+            "$type": "shadow"
+          },
+          "1": {
+            "$value": "{dic.reference.shadow.scale.1}",
+            "$type": "shadow"
+          },
+          "0": {
+            "$value": "{dic.reference.shadow.scale.0}",
+            "$type": "shadow"
+          }
+        }
+      }
+    }
+  }
+}

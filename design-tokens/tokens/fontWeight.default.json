@@ -1,0 +1,16 @@
+{
+  "dic": {
+    "reference": {
+      "fontWeight": {
+        "regular": {
+          "$value": 400,
+          "$type": "fontWeight"
+        },
+        "bold": {
+          "$value": 700,
+          "$type": "fontWeight"
+        }
+      }
+    }
+  }
+}
