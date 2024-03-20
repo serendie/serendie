@@ -16,6 +16,7 @@ const buttonStyle = cva({
     variant: {
       primary: {
         color: "white",
+        // TODO: この書き方では値が展開されない。
         bg: tokens.dic.reference.color.scale.red[500],
         "&[data-hovered]": {
           bg: tokens.dic.reference.color.scale.blue[200],
