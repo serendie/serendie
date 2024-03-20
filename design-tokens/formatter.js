@@ -3,7 +3,7 @@ import StyleDictionary from "style-dictionary";
 const { fileHeader } = StyleDictionary.formatHelpers;
 
 StyleDictionary.registerFormat({
-  name: "panda-css-module",
+  name: "spread-module",
   formatter: function ({ dictionary, file }) {
     //console.dir(dictionary.tokens, { depth: 6 });
     const res = format(dictionary.tokens);

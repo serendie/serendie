@@ -17,19 +17,11 @@ const myStyleDictionary = StyleDictionary.extend({
       ],
       files: [
         {
-          destination: "dist/tokens.cjs",
-          format: "javascript/module",
-        },
-        {
           destination: "dist/tokens.js",
-          format: "panda-css-module",
+          format: "spread-module",
           options: {
             outputReferences: true,
           },
-        },
-        {
-          format: "typescript/module-declarations",
-          destination: "dist/tokens.d.ts",
         },
       ],
     },
