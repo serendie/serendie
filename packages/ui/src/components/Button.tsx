@@ -4,6 +4,8 @@ import { styled } from "../../styled-system/jsx";
 import tokens from "@spread/design-token";
 //import { Button as AriaButton } from "react-aria-components";
 
+console.log(tokens);
+
 const buttonStyle = cva({
   base: {
     color: "red",
@@ -14,12 +16,12 @@ const buttonStyle = cva({
     variant: {
       primary: {
         color: "white",
-        bg: "primary",
+        bg: tokens.dic.reference.color.scale.red[500],
         "&[data-hovered]": {
-          bg: "purple",
+          bg: tokens.dic.reference.color.scale.blue[200],
         },
         "&[data-pressed]": {
-          color: "primary",
+          color: tokens.dic.reference.color.scale.blue[500],
           bg: "black",
         },
       },

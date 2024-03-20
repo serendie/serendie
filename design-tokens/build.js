@@ -19,9 +19,10 @@ const myStyleDictionary = StyleDictionary.extend({
         {
           destination: "dist/tokens.js",
           format: "spread-module",
-          options: {
-            outputReferences: true,
-          },
+        },
+        {
+          destination: "dist/tokens.d.ts",
+          format: "spread-module-declarations",
         },
       ],
     },
