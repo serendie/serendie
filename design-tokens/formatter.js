@@ -2,10 +2,13 @@ import StyleDictionary from "style-dictionary";
 
 const { fileHeader } = StyleDictionary.formatHelpers;
 
+/*
+ * 単純なオブジェクトに変換するフォーマッター
+ * 値と小要素を持つ場合にはDEFAULTというキーに値が入る
+ */
 StyleDictionary.registerFormat({
   name: "spread-module",
   formatter: function ({ dictionary, file }) {
-    //console.dir(dictionary.tokens, { depth: 6 });
     const res = format(dictionary.tokens);
     return (
       fileHeader({ file }) + "export default " + JSON.stringify(res, false, 2)
@@ -38,7 +41,6 @@ const format = (obj) => {
 StyleDictionary.registerFormat({
   name: "spread-module-declarations",
   formatter: function ({ dictionary, file }) {
-    //console.dir(dictionary.tokens, { depth: 6 });
     const res = format(dictionary.tokens);
     const moduleName = "tokens";
 
@@ -54,8 +56,6 @@ StyleDictionary.registerFormat({
       return res;
     };
 
-    console.dir(walker(res), { depth: null });
-
     const output =
       fileHeader({ file }) +
       `export default ${moduleName};
@@ -65,5 +65,43 @@ declare const ${moduleName}: ` +
     return output
       .replace(/"__string__"/g, "string")
       .replace(/"__number__"/g, "number");
+  },
+});
+
+/*
+ * $typeを使って、PandaCSSのToken Typeに合わせたデータを生成するフォーマッター
+ */
+
+StyleDictionary.registerFormat({
+  name: "panda-css-module",
+  formatter: function ({ dictionary, file }) {
+    //console.dir(dictionary.tokens, { depth: null });
+
+    const res = {};
+    const walker = function (obj) {
+      Object.keys(obj).forEach((key) => {
+        if (typeof obj[key] === "object") {
+          if (obj[key].path) {
+            const path = obj[key].path;
+            let r = res;
+            for (const key of path) {
+              if (typeof r[key] === "undefined") {
+                r[key] = {};
+              }
+              r = r[key];
+            }
+            console.log(obj[key].path.join("."), obj[key].$type);
+          }
+          walker(obj[key]);
+        }
+      });
+    };
+
+    walker(dictionary.tokens);
+
+    //console.dir(res, { depth: null });
+
+    const output = fileHeader({ file });
+    return output;
   },
 });

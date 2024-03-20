@@ -24,6 +24,10 @@ const myStyleDictionary = StyleDictionary.extend({
           destination: "dist/tokens.d.ts",
           format: "spread-module-declarations",
         },
+        {
+          destination: "dist/panda-tokens.js",
+          format: "panda-css-module",
+        },
       ],
     },
   },
