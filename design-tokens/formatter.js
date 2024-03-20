@@ -5,7 +5,7 @@ const { fileHeader } = StyleDictionary.formatHelpers;
 StyleDictionary.registerFormat({
   name: "panda-css-module",
   formatter: function ({ dictionary, file }) {
-    console.dir(dictionary.tokens, { depth: 6 });
+    //console.dir(dictionary.tokens, { depth: 6 });
     const res = format(dictionary.tokens);
     return (
       fileHeader({ file }) + "export default " + JSON.stringify(res, false, 2)
@@ -19,11 +19,9 @@ const format = (obj) => {
     if (typeof obj.value !== "undefined") {
       if (key === "value") {
         if (obj["$modes"]) {
-          res.DEFAULT = {
-            value: obj["original"] ? obj["original"][key] : obj[key],
-          };
+          res.DEFAULT = obj[key];
         } else {
-          res.value = obj["original"] ? obj["original"][key] : obj[key];
+          res = obj[key];
         }
       } else if (key === "$modes") {
         Object.keys(obj[key]).forEach((mode) => {

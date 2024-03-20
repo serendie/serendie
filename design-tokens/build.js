@@ -1,8 +1,8 @@
 import StyleDictionary from "style-dictionary-utils";
-import { w3cTokenJsonParser } from "style-dictionary-utils/dist/parser/w3c-token-json-parser.js";
+import { SpreadParser } from "./parser.js";
 import "./formatter.js";
 
-StyleDictionary.registerParser(w3cTokenJsonParser);
+StyleDictionary.registerParser(SpreadParser);
 
 const myStyleDictionary = StyleDictionary.extend({
   source: ["tokens/**/*.json"],

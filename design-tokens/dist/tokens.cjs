@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 14 Mar 2024 05:24:37 GMT
+ * Generated on Wed, 20 Mar 2024 05:56:45 GMT
  */
 
 module.exports = {
@@ -3778,18 +3778,18 @@ module.exports = {
             "$type": "typography",
             "value": {
               "fontFamily": "Noto Sans JP",
-              "fontSize": "14px",
+              "fontSize": "16px",
               "fontWeight": 400,
               "letterSpacing": "0px",
               "lineHeight": 1.5
             },
-            "filePath": "tokens/typography.sp.json",
+            "filePath": "tokens/typography.pc.json",
             "isSource": true,
             "original": {
               "$type": "typography",
               "value": {
                 "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-                "fontSize": "{dic.reference.typography.scale.small.medium}",
+                "fontSize": "{dic.reference.typography.scale.large.medium}",
                 "fontWeight": "{dic.reference.typography.fontWeight.regular}",
                 "letterSpacing": "0px",
                 "lineHeight": 1.5
@@ -3809,6 +3809,43 @@ module.exports = {
               "typography",
               "body",
               "medium"
+            ]
+          },
+          "medium_sp": {
+            "$type": "typography",
+            "value": {
+              "fontFamily": "Noto Sans JP",
+              "fontSize": "14px",
+              "fontWeight": 400,
+              "letterSpacing": "0px",
+              "lineHeight": 1.5
+            },
+            "filePath": "tokens/typography.sp.json",
+            "isSource": true,
+            "original": {
+              "$type": "typography",
+              "value": {
+                "fontFamily": "{dic.reference.typography.fontFamily.primary}",
+                "fontSize": "{dic.reference.typography.scale.small.medium}",
+                "fontWeight": "{dic.reference.typography.fontWeight.regular}",
+                "letterSpacing": "0px",
+                "lineHeight": 1.5
+              }
+            },
+            "name": "dicSystemTypographyBodyMediumSp",
+            "attributes": {
+              "category": "dic",
+              "type": "system",
+              "item": "typography",
+              "subitem": "body",
+              "state": "medium_sp"
+            },
+            "path": [
+              "dic",
+              "system",
+              "typography",
+              "body",
+              "medium_sp"
             ]
           }
         }

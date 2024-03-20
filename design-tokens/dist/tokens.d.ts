@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 14 Mar 2024 05:24:37 GMT
+ * Generated on Wed, 20 Mar 2024 05:56:45 GMT
  */
 
 export default tokens;
@@ -225,7 +225,8 @@ declare const tokens: {
       },
       "typography": {
         "body": {
-          "medium": DesignToken
+          "medium": DesignToken,
+          "medium_sp": DesignToken
         }
       }
     }
