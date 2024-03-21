@@ -17,28 +17,32 @@ const buttonStyle = cva({
       primary: {
         color: "white",
         bg: "dic.reference.color.scale.red.300",
-        "&[data-hovered]": {
+        _hover: {
           bg: "dic.reference.color.scale.red.400",
         },
-        "&[data-pressed]": {
-          color: "dic.reference.color.scale.red.500",
-          bg: "black",
+        _active: {
+          bg: "dic.reference.color.scale.red.500",
         },
       },
       secondary: {
         color: "secondary",
-        bg: "gray",
-        "&[data-hovered]": {
-          bg: "purple.200",
+        bg: "dic.reference.color.scale.green.300",
+        _hover: {
+          bg: "dic.reference.color.scale.green.400",
         },
-        "&[data-pressed]": {
-          color: "primary",
-          bg: "black.200",
+        _active: {
+          bg: "dic.reference.color.scale.green.500",
         },
       },
       tertiary: {
         color: "black",
-        bg: "spreadPrimaryColor",
+        bg: "dic.reference.color.scale.orange.300",
+        _hover: {
+          bg: "dic.reference.color.scale.orange.400",
+        },
+        _active: {
+          bg: "dic.reference.color.scale.orange.500",
+        },
       },
     },
     size: {
