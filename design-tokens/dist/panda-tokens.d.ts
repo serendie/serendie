@@ -3,7 +3,8 @@
  * Generated on Thu, 21 Mar 2024 05:33:23 GMT
  */
 
-export default {
+export default tokens;
+declare const tokens: {
   "colors": {
     "dic": {
       "reference": {
@@ -11,204 +12,204 @@ export default {
           "scale": {
             "white": {
               "1000": {
-                "value": "#FFFFFF"
+                "value": string
               }
             },
             "black": {
               "1000": {
-                "value": "#000000"
+                "value": string
               }
             },
             "gray": {
               "100": {
-                "value": "#F7F8F9"
+                "value": string
               },
               "200": {
-                "value": "#EBEEEF"
+                "value": string
               },
               "300": {
-                "value": "#CED5D9"
+                "value": string
               },
               "400": {
-                "value": "#AEB8C0"
+                "value": string
               },
               "500": {
-                "value": "#8C959C"
+                "value": string
               },
               "600": {
-                "value": "#6F787E"
+                "value": string
               },
               "700": {
-                "value": "#576066"
+                "value": string
               },
               "800": {
-                "value": "#424A50"
+                "value": string
               },
               "900": {
-                "value": "#31383D"
+                "value": string
               },
               "1000": {
-                "value": "#23292D"
+                "value": string
               }
             },
             "red": {
               "100": {
-                "value": "#FFEBE9"
+                "value": string
               },
               "200": {
-                "value": "#FFD2D1"
+                "value": string
               },
               "300": {
-                "value": "#FFB3B1"
+                "value": string
               },
               "400": {
-                "value": "#FE8482"
+                "value": string
               },
               "500": {
-                "value": "#FB514D"
+                "value": string
               },
               "600": {
-                "value": "#D61930"
+                "value": string
               },
               "700": {
-                "value": "#A01026"
+                "value": string
               },
               "800": {
-                "value": "#84061C"
+                "value": string
               },
               "900": {
-                "value": "#5F0219"
+                "value": string
               },
               "1000": {
-                "value": "#400013"
+                "value": string
               }
             },
             "orange": {
               "100": {
-                "value": "#FFEDDE"
+                "value": string
               },
               "200": {
-                "value": "#FFD8B7"
+                "value": string
               },
               "300": {
-                "value": "#FFB781"
+                "value": string
               },
               "400": {
-                "value": "#FB8F4E"
+                "value": string
               },
               "500": {
-                "value": "#E46C24"
+                "value": string
               },
               "600": {
-                "value": "#C84D00"
+                "value": string
               },
               "700": {
-                "value": "#A33900"
+                "value": string
               },
               "800": {
-                "value": "#7D2C00"
+                "value": string
               },
               "900": {
-                "value": "#602100"
+                "value": string
               },
               "1000": {
-                "value": "#4D1700"
+                "value": string
               }
             },
             "yellow": {
               "100": {
-                "value": "#FFF5A7"
+                "value": string
               },
               "200": {
-                "value": "#FFE265"
+                "value": string
               },
               "300": {
-                "value": "#FED232"
+                "value": string
               },
               "400": {
-                "value": "#FAC525"
+                "value": string
               },
               "500": {
-                "value": "#F4B72B"
+                "value": string
               },
               "600": {
-                "value": "#EDA608"
+                "value": string
               },
               "700": {
-                "value": "#DD9307"
+                "value": string
               },
               "800": {
-                "value": "#B37206"
+                "value": string
               },
               "900": {
-                "value": "#814E00"
+                "value": string
               },
               "1000": {
-                "value": "#5D3400"
+                "value": string
               }
             },
             "green": {
               "100": {
-                "value": "#CCF7CE"
+                "value": string
               },
               "200": {
-                "value": "#BBF4BF"
+                "value": string
               },
               "300": {
-                "value": "#69DF73"
+                "value": string
               },
               "400": {
-                "value": "#4ECA53"
+                "value": string
               },
               "500": {
-                "value": "#39B637"
+                "value": string
               },
               "600": {
-                "value": "#279B20"
+                "value": string
               },
               "700": {
-                "value": "#1F8711"
+                "value": string
               },
               "800": {
-                "value": "#136508"
+                "value": string
               },
               "900": {
-                "value": "#054704"
+                "value": string
               },
               "1000": {
-                "value": "#022D02"
+                "value": string
               }
             },
             "blue": {
               "100": {
-                "value": "#DBF3FF"
+                "value": string
               },
               "200": {
-                "value": "#BDE5FF"
+                "value": string
               },
               "300": {
-                "value": "#94CEFF"
+                "value": string
               },
               "400": {
-                "value": "#6CB5FF"
+                "value": string
               },
               "500": {
-                "value": "#248EFF"
+                "value": string
               },
               "600": {
-                "value": "#0066DF"
+                "value": string
               },
               "700": {
-                "value": "#0050AF"
+                "value": string
               },
               "800": {
-                "value": "#003D8C"
+                "value": string
               },
               "900": {
-                "value": "#00306D"
+                "value": string
               },
               "1000": {
-                "value": "#002155"
+                "value": string
               }
             }
           }
@@ -222,10 +223,10 @@ export default {
         "typography": {
           "fontFamily": {
             "primary": {
-              "value": "Noto Sans JP"
+              "value": string
             },
             "monospace": {
-              "value": "Noto Sans Mono"
+              "value": string
             }
           }
         }
@@ -238,10 +239,10 @@ export default {
         "typography": {
           "fontWeight": {
             "regular": {
-              "value": 400
+              "value": number
             },
             "bold": {
-              "value": 700
+              "value": number
             }
           }
         }

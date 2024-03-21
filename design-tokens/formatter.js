@@ -75,52 +75,85 @@ declare const ${moduleName}: ` +
 StyleDictionary.registerFormat({
   name: "panda-css-module",
   formatter: function ({ dictionary, file }) {
-    const res = {};
-    const walker = function (obj) {
-      Object.keys(obj).forEach((key) => {
-        if (typeof obj[key] === "object") {
-          if (obj[key].path) {
-            const path = obj[key].path;
-            const value = obj[key].value;
-            const type = obj[key].$type;
-
-            // ここでToken Typesを判定する
-            if (type === "color") {
-              path.unshift("colors");
-            } else if (type === "fontFamily") {
-              path.unshift("fonts");
-            } else if (type === "fontWeight") {
-              path.unshift("fontWeights");
-            } else {
-              path.unshift("unclassified");
-            }
-
-            let r = res;
-            while (path.length > 0) {
-              const p = path.shift();
-              if (path.length === 0) {
-                r[p] = { value };
-              }
-              if (r[p] === undefined) {
-                r[p] = {};
-              }
-              r = r[p];
-            }
-          }
-          walker(obj[key]);
-        }
-      });
-    };
-
-    walker(dictionary.tokens);
-
-    if (res.unclassified) {
-      console.dir(res.unclassified, { depth: null });
-      delete res.unclassified;
-    }
-
+    const res = pandaCssObjectFormat(dictionary.tokens);
     const output =
       fileHeader({ file }) + "export default " + JSON.stringify(res, false, 2);
     return output;
   },
 });
+
+StyleDictionary.registerFormat({
+  name: "panda-css-module-declarations",
+  formatter: function ({ dictionary, file }) {
+    const res = pandaCssObjectFormat(dictionary.tokens);
+    const moduleName = "tokens";
+
+    const walker = function (obj) {
+      const res = {};
+      Object.keys(obj).forEach((key) => {
+        if (typeof obj[key] === "object") {
+          res[key] = walker(obj[key]);
+        } else {
+          res[key] = "__" + typeof obj[key] + "__";
+        }
+      });
+      return res;
+    };
+
+    const output =
+      fileHeader({ file }) +
+      `export default ${moduleName};
+declare const ${moduleName}: ` +
+      JSON.stringify(walker(res), false, 2);
+
+    return output
+      .replace(/"__string__"/g, "string")
+      .replace(/"__number__"/g, "number");
+  },
+});
+
+const pandaCssObjectFormat = (o) => {
+  const res = {};
+  const walker = (obj) => {
+    Object.keys(obj).forEach((key) => {
+      if (typeof obj[key] === "object") {
+        if (obj[key].path) {
+          const path = obj[key].path;
+          const value = obj[key].value;
+          const type = obj[key].$type;
+
+          // ここでToken Typesを判定する
+          if (type === "color") {
+            path.unshift("colors");
+          } else if (type === "fontFamily") {
+            path.unshift("fonts");
+          } else if (type === "fontWeight") {
+            path.unshift("fontWeights");
+          } else {
+            path.unshift("unclassified");
+          }
+
+          let r = res;
+          while (path.length > 0) {
+            const p = path.shift();
+            if (path.length === 0) {
+              r[p] = { value };
+            }
+            if (r[p] === undefined) {
+              r[p] = {};
+            }
+            r = r[p];
+          }
+        }
+        walker(obj[key]);
+      }
+    });
+  };
+  walker(structuredClone(o));
+
+  if (res.unclassified) {
+    delete res.unclassified;
+  }
+
+  return res;
+};

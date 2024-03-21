@@ -16,13 +16,12 @@ const buttonStyle = cva({
     variant: {
       primary: {
         color: "white",
-        // TODO: この書き方では値が展開されない。
-        bg: tokens.dic.reference.color.scale.red[500],
+        bg: "dic.reference.color.scale.red.300",
         "&[data-hovered]": {
-          bg: tokens.dic.reference.color.scale.blue[200],
+          bg: "dic.reference.color.scale.red.400",
         },
         "&[data-pressed]": {
-          color: tokens.dic.reference.color.scale.blue[500],
+          color: "dic.reference.color.scale.red.500",
           bg: "black",
         },
       },
