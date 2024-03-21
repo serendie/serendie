@@ -124,7 +124,7 @@ const pandaCssObjectFormat = (o) => {
       if (typeof obj[key] === "object") {
         if (obj[key].path) {
           const path = obj[key].path;
-          const value = obj[key].value;
+          const value = valueTypeConverter(obj[key].value);
           const type = obj[key].$type;
           const pathAsStr = path.join(".");
 
@@ -167,4 +167,18 @@ const pandaCssObjectFormat = (o) => {
   }
 
   return res;
+};
+
+const valueTypeConverter = (obj) => {
+  if (typeof obj !== "object") return obj;
+  const ret = {};
+  const convert2number = ["offsetX", "offsetY", "blur", "spread"];
+  for (const key in obj) {
+    let value = obj[key];
+    if (convert2number.includes(key)) {
+      value = parseInt(value);
+    }
+    ret[key] = value;
+  }
+  return ret;
 };

@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 21 Mar 2024 06:44:10 GMT
+ * Generated on Thu, 21 Mar 2024 07:15:30 GMT
  */
 
 export default tokens;
@@ -226,55 +226,55 @@ declare const tokens: {
               "0": {
                 "value": {
                   "color": string,
-                  "offsetX": string,
-                  "offsetY": string,
-                  "blur": string,
-                  "spread": string
+                  "offsetX": number,
+                  "offsetY": number,
+                  "blur": number,
+                  "spread": number
                 }
               },
               "1": {
                 "value": {
                   "color": string,
-                  "offsetX": string,
-                  "offsetY": string,
-                  "blur": string,
-                  "spread": string
+                  "offsetX": number,
+                  "offsetY": number,
+                  "blur": number,
+                  "spread": number
                 }
               },
               "2": {
                 "value": {
                   "color": string,
-                  "offsetX": string,
-                  "offsetY": string,
-                  "blur": string,
-                  "spread": string
+                  "offsetX": number,
+                  "offsetY": number,
+                  "blur": number,
+                  "spread": number
                 }
               },
               "3": {
                 "value": {
                   "color": string,
-                  "offsetX": string,
-                  "offsetY": string,
-                  "blur": string,
-                  "spread": string
+                  "offsetX": number,
+                  "offsetY": number,
+                  "blur": number,
+                  "spread": number
                 }
               },
               "4": {
                 "value": {
                   "color": string,
-                  "offsetX": string,
-                  "offsetY": string,
-                  "blur": string,
-                  "spread": string
+                  "offsetX": number,
+                  "offsetY": number,
+                  "blur": number,
+                  "spread": number
                 }
               },
               "5": {
                 "value": {
                   "color": string,
-                  "offsetX": string,
-                  "offsetY": string,
-                  "blur": string,
-                  "spread": string
+                  "offsetX": number,
+                  "offsetY": number,
+                  "blur": number,
+                  "spread": number
                 }
               }
             }
