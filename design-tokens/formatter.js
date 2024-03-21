@@ -75,22 +75,37 @@ declare const ${moduleName}: ` +
 StyleDictionary.registerFormat({
   name: "panda-css-module",
   formatter: function ({ dictionary, file }) {
-    //console.dir(dictionary.tokens, { depth: null });
-
     const res = {};
     const walker = function (obj) {
       Object.keys(obj).forEach((key) => {
         if (typeof obj[key] === "object") {
           if (obj[key].path) {
             const path = obj[key].path;
-            let r = res;
-            for (const key of path) {
-              if (typeof r[key] === "undefined") {
-                r[key] = {};
-              }
-              r = r[key];
+            const value = obj[key].value;
+            const type = obj[key].$type;
+
+            // ここでToken Typesを判定する
+            if (type === "color") {
+              path.unshift("colors");
+            } else if (type === "fontFamily") {
+              path.unshift("fonts");
+            } else if (type === "fontWeight") {
+              path.unshift("fontWeights");
+            } else {
+              path.unshift("unclassified");
             }
-            console.log(obj[key].path.join("."), obj[key].$type);
+
+            let r = res;
+            while (path.length > 0) {
+              const p = path.shift();
+              if (path.length === 0) {
+                r[p] = { value };
+              }
+              if (r[p] === undefined) {
+                r[p] = {};
+              }
+              r = r[p];
+            }
           }
           walker(obj[key]);
         }
@@ -99,9 +114,13 @@ StyleDictionary.registerFormat({
 
     walker(dictionary.tokens);
 
-    //console.dir(res, { depth: null });
+    if (res.unclassified) {
+      console.dir(res.unclassified, { depth: null });
+      delete res.unclassified;
+    }
 
-    const output = fileHeader({ file });
+    const output =
+      fileHeader({ file }) + "export default " + JSON.stringify(res, false, 2);
     return output;
   },
 });
