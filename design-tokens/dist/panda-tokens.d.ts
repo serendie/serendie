@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 21 Mar 2024 05:33:23 GMT
+ * Generated on Thu, 21 Mar 2024 06:44:10 GMT
  */
 
 export default tokens;
@@ -217,6 +217,72 @@ declare const tokens: {
       }
     }
   },
+  "shadows": {
+    "dic": {
+      "reference": {
+        "elevation": {
+          "shadow": {
+            "scale": {
+              "0": {
+                "value": {
+                  "color": string,
+                  "offsetX": string,
+                  "offsetY": string,
+                  "blur": string,
+                  "spread": string
+                }
+              },
+              "1": {
+                "value": {
+                  "color": string,
+                  "offsetX": string,
+                  "offsetY": string,
+                  "blur": string,
+                  "spread": string
+                }
+              },
+              "2": {
+                "value": {
+                  "color": string,
+                  "offsetX": string,
+                  "offsetY": string,
+                  "blur": string,
+                  "spread": string
+                }
+              },
+              "3": {
+                "value": {
+                  "color": string,
+                  "offsetX": string,
+                  "offsetY": string,
+                  "blur": string,
+                  "spread": string
+                }
+              },
+              "4": {
+                "value": {
+                  "color": string,
+                  "offsetX": string,
+                  "offsetY": string,
+                  "blur": string,
+                  "spread": string
+                }
+              },
+              "5": {
+                "value": {
+                  "color": string,
+                  "offsetX": string,
+                  "offsetY": string,
+                  "blur": string,
+                  "spread": string
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
   "fonts": {
     "dic": {
       "reference": {
@@ -243,6 +309,31 @@ declare const tokens: {
             },
             "bold": {
               "value": number
+            }
+          }
+        }
+      }
+    }
+  },
+  "radii": {
+    "dic": {
+      "system": {
+        "dimension": {
+          "radius": {
+            "extraSmall": {
+              "value": string
+            },
+            "small": {
+              "value": string
+            },
+            "medium": {
+              "value": string
+            },
+            "large": {
+              "value": string
+            },
+            "extraLarge": {
+              "value": string
             }
           }
         }

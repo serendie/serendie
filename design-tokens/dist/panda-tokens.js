@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 21 Mar 2024 05:33:23 GMT
+ * Generated on Thu, 21 Mar 2024 06:44:10 GMT
  */
 
 export default {
@@ -216,6 +216,72 @@ export default {
       }
     }
   },
+  "shadows": {
+    "dic": {
+      "reference": {
+        "elevation": {
+          "shadow": {
+            "scale": {
+              "0": {
+                "value": {
+                  "color": "#00000000",
+                  "offsetX": "0px",
+                  "offsetY": "0px",
+                  "blur": "0px",
+                  "spread": "0px"
+                }
+              },
+              "1": {
+                "value": {
+                  "color": "#0000004D",
+                  "offsetX": "0px",
+                  "offsetY": "1px",
+                  "blur": "2px",
+                  "spread": "0px"
+                }
+              },
+              "2": {
+                "value": {
+                  "color": "#00000033",
+                  "offsetX": "0px",
+                  "offsetY": "1px",
+                  "blur": "4px",
+                  "spread": "0px"
+                }
+              },
+              "3": {
+                "value": {
+                  "color": "#00000033",
+                  "offsetX": "0px",
+                  "offsetY": "2px",
+                  "blur": "8px",
+                  "spread": "0px"
+                }
+              },
+              "4": {
+                "value": {
+                  "color": "#00000033",
+                  "offsetX": "0px",
+                  "offsetY": "4px",
+                  "blur": "12px",
+                  "spread": "0px"
+                }
+              },
+              "5": {
+                "value": {
+                  "color": "#00000033",
+                  "offsetX": "0px",
+                  "offsetY": "8px",
+                  "blur": "24px",
+                  "spread": "0px"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
   "fonts": {
     "dic": {
       "reference": {
@@ -242,6 +308,31 @@ export default {
             },
             "bold": {
               "value": 700
+            }
+          }
+        }
+      }
+    }
+  },
+  "radii": {
+    "dic": {
+      "system": {
+        "dimension": {
+          "radius": {
+            "extraSmall": {
+              "value": "2px"
+            },
+            "small": {
+              "value": "4px"
+            },
+            "medium": {
+              "value": "8px"
+            },
+            "large": {
+              "value": "12px"
+            },
+            "extraLarge": {
+              "value": "16px"
             }
           }
         }

@@ -112,6 +112,11 @@ declare const ${moduleName}: ` +
   },
 });
 
+/*
+ * フォーマッターのコア
+ * ここでデータを整形する
+ */
+
 const pandaCssObjectFormat = (o) => {
   const res = {};
   const walker = (obj) => {
@@ -121,14 +126,20 @@ const pandaCssObjectFormat = (o) => {
           const path = obj[key].path;
           const value = obj[key].value;
           const type = obj[key].$type;
+          const pathAsStr = path.join(".");
 
           // ここでToken Typesを判定する
+          // https://panda-css.com/docs/theming/tokens
           if (type === "color") {
             path.unshift("colors");
           } else if (type === "fontFamily") {
             path.unshift("fonts");
           } else if (type === "fontWeight") {
             path.unshift("fontWeights");
+          } else if (type === "shadow") {
+            path.unshift("shadows");
+          } else if (pathAsStr.match(/\.radius\./)) {
+            path.unshift("radii");
           } else {
             path.unshift("unclassified");
           }
