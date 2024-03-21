@@ -8,7 +8,7 @@ const { fileHeader } = StyleDictionary.formatHelpers;
  */
 StyleDictionary.registerFormat({
   name: "spread-module",
-  formatter: function ({ dictionary, file }) {
+  formatter: ({ dictionary, file }) => {
     const res = format(dictionary.tokens);
     return (
       fileHeader({ file }) + "export default " + JSON.stringify(res, false, 2)
@@ -40,11 +40,11 @@ const format = (obj) => {
 
 StyleDictionary.registerFormat({
   name: "spread-module-declarations",
-  formatter: function ({ dictionary, file }) {
+  formatter: ({ dictionary, file }) => {
     const res = format(dictionary.tokens);
     const moduleName = "tokens";
 
-    const walker = function (obj) {
+    const walker = (obj) => {
       const res = {};
       Object.keys(obj).forEach((key) => {
         if (typeof obj[key] === "object") {
@@ -74,7 +74,7 @@ declare const ${moduleName}: ` +
 
 StyleDictionary.registerFormat({
   name: "panda-css-module",
-  formatter: function ({ dictionary, file }) {
+  formatter: ({ dictionary, file }) => {
     const res = pandaCssObjectFormat(dictionary.tokens);
     const output =
       fileHeader({ file }) + "export default " + JSON.stringify(res, false, 2);
@@ -84,11 +84,11 @@ StyleDictionary.registerFormat({
 
 StyleDictionary.registerFormat({
   name: "panda-css-module-declarations",
-  formatter: function ({ dictionary, file }) {
+  formatter: ({ dictionary, file }) => {
     const res = pandaCssObjectFormat(dictionary.tokens);
     const moduleName = "tokens";
 
-    const walker = function (obj) {
+    const walker = (obj) => {
       const res = {};
       Object.keys(obj).forEach((key) => {
         if (typeof obj[key] === "object") {
@@ -120,7 +120,7 @@ declare const ${moduleName}: ` +
 const pandaCssObjectFormat = (o) => {
   const res = {};
   const walker = (obj) => {
-    Object.keys(obj).forEach((key) => {
+    for (const key in obj) {
       if (typeof obj[key] === "object") {
         if (obj[key].path) {
           const path = obj[key].path;
@@ -141,7 +141,8 @@ const pandaCssObjectFormat = (o) => {
           } else if (pathAsStr.match(/\.radius\./)) {
             path.unshift("radii");
           } else {
-            path.unshift("unclassified");
+            // Token Typesに該当しないものは省く
+            continue;
           }
 
           let r = res;
@@ -158,13 +159,9 @@ const pandaCssObjectFormat = (o) => {
         }
         walker(obj[key]);
       }
-    });
+    }
   };
   walker(structuredClone(o));
-
-  if (res.unclassified) {
-    delete res.unclassified;
-  }
 
   return res;
 };
