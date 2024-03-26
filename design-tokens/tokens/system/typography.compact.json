@@ -1,0 +1,158 @@
+{
+  "dic": {
+    "system": {
+      "typography": {
+        "display": {
+          "small": {
+            "$type": "typography",
+            "$value": {
+              "fontSize": "{dic.reference.typography.scale.compact.fourExtraLarge}",
+              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
+              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
+              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "letterSpacing": "0px"
+            }
+          },
+          "medium": {
+            "$type": "typography",
+            "$value": {
+              "fontSize": "{dic.reference.typography.scale.compact.fiveExtraLarge}",
+              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
+              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
+              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "letterSpacing": "0px"
+            }
+          }
+        },
+        "headline": {
+          "small": {
+            "$type": "typography",
+            "$value": {
+              "fontSize": "{dic.reference.typography.scale.compact.threeExtraLarge}",
+              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
+              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
+              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "letterSpacing": "0px"
+            }
+          },
+          "medium": {
+            "$type": "typography",
+            "$value": {
+              "fontSize": "{dic.reference.typography.scale.compact.fourExtraLarge}",
+              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
+              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
+              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "letterSpacing": "0px"
+            }
+          },
+          "large": {
+            "$type": "typography",
+            "$value": {
+              "fontSize": "{dic.reference.typography.scale.compact.fiveExtraLarge}",
+              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
+              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
+              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "letterSpacing": "0px"
+            }
+          }
+        },
+        "title": {
+          "small": {
+            "$type": "typography",
+            "$value": {
+              "fontSize": "{dic.reference.typography.scale.compact.large}",
+              "fontWeight": "{dic.reference.typography.fontWeight.bold}",
+              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
+              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "letterSpacing": "0px"
+            }
+          },
+          "medium": {
+            "$type": "typography",
+            "$value": {
+              "fontSize": "{dic.reference.typography.scale.compact.extraLarge}",
+              "fontWeight": "{dic.reference.typography.fontWeight.bold}",
+              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
+              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "letterSpacing": "0px"
+            }
+          },
+          "large": {
+            "$type": "typography",
+            "$value": {
+              "fontSize": "{dic.reference.typography.scale.compact.twoExtraLarge}",
+              "fontWeight": "{dic.reference.typography.fontWeight.bold}",
+              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
+              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "letterSpacing": "0px"
+            }
+          }
+        },
+        "body": {
+          "small": {
+            "$type": "typography",
+            "$value": {
+              "fontSize": "{dic.reference.typography.scale.compact.medium}",
+              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
+              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
+              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "letterSpacing": "0px"
+            }
+          },
+          "medium": {
+            "$type": "typography",
+            "$value": {
+              "fontSize": "{dic.reference.typography.scale.compact.large}",
+              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
+              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
+              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "letterSpacing": "0px"
+            }
+          },
+          "large": {
+            "$type": "typography",
+            "$value": {
+              "fontSize": "{dic.reference.typography.scale.compact.extraLarge}",
+              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
+              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
+              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "letterSpacing": "0px"
+            }
+          }
+        },
+        "label": {
+          "small": {
+            "$type": "typography",
+            "$value": {
+              "fontSize": "{dic.reference.typography.scale.compact.twoExtraSmall}",
+              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
+              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
+              "lineHeight": "{dic.reference.typography.lineHeight.tight}",
+              "letterSpacing": "0px"
+            }
+          },
+          "medium": {
+            "$type": "typography",
+            "$value": {
+              "fontSize": "{dic.reference.typography.scale.compact.extraSmall}",
+              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
+              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
+              "lineHeight": "{dic.reference.typography.lineHeight.tight}",
+              "letterSpacing": "0px"
+            }
+          },
+          "large": {
+            "$type": "typography",
+            "$value": {
+              "fontSize": "{dic.reference.typography.scale.compact.small}",
+              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
+              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
+              "lineHeight": "{dic.reference.typography.lineHeight.tight}",
+              "letterSpacing": "0px"
+            }
+          }
+        }
+      }
+    }
+  }
+}
