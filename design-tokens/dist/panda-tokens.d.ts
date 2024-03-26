@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 21 Mar 2024 07:46:11 GMT
+ * Generated on Tue, 26 Mar 2024 01:09:36 GMT
  */
 
 export default tokens;
@@ -217,6 +217,112 @@ declare const tokens: {
       }
     }
   },
+  "spacing": {
+    "dic": {
+      "reference": {
+        "dimension": {
+          "scale": {
+            "0": {
+              "value": string
+            },
+            "1": {
+              "value": string
+            },
+            "2": {
+              "value": string
+            },
+            "3": {
+              "value": string
+            },
+            "4": {
+              "value": string
+            },
+            "5": {
+              "value": string
+            },
+            "6": {
+              "value": string
+            },
+            "7": {
+              "value": string
+            },
+            "8": {
+              "value": string
+            },
+            "9": {
+              "value": string
+            },
+            "10": {
+              "value": string
+            },
+            "11": {
+              "value": string
+            },
+            "12": {
+              "value": string
+            },
+            "13": {
+              "value": string
+            },
+            "14": {
+              "value": string
+            },
+            "15": {
+              "value": string
+            },
+            "16": {
+              "value": string
+            },
+            "17": {
+              "value": string
+            },
+            "18": {
+              "value": string
+            }
+          }
+        }
+      },
+      "system": {
+        "dimension": {
+          "spacing": {
+            "twoExtraSmall": {
+              "value": string
+            },
+            "extraSmall": {
+              "value": string
+            },
+            "small": {
+              "value": string
+            },
+            "medium": {
+              "value": string
+            },
+            "large": {
+              "value": string
+            },
+            "extraLarge": {
+              "value": string
+            },
+            "twoExtraLarge": {
+              "value": string
+            },
+            "threeExtraLarge": {
+              "value": string
+            },
+            "fourExtraLarge": {
+              "value": string
+            },
+            "fiveExtraLarge": {
+              "value": string
+            },
+            "sixExtraLarge": {
+              "value": string
+            }
+          }
+        }
+      }
+    }
+  },
   "shadows": {
     "dic": {
       "reference": {
@@ -283,6 +389,51 @@ declare const tokens: {
       }
     }
   },
+  "opacity": {
+    "dic": {
+      "reference": {
+        "elevation": {
+          "opacity": {
+            "scale": {
+              "0": {
+                "value": number
+              },
+              "1": {
+                "value": number
+              },
+              "2": {
+                "value": number
+              },
+              "3": {
+                "value": number
+              },
+              "4": {
+                "value": number
+              },
+              "5": {
+                "value": number
+              },
+              "6": {
+                "value": number
+              },
+              "7": {
+                "value": number
+              },
+              "8": {
+                "value": number
+              },
+              "9": {
+                "value": number
+              },
+              "10": {
+                "value": number
+              }
+            }
+          }
+        }
+      }
+    }
+  },
   "fonts": {
     "dic": {
       "reference": {
@@ -315,6 +466,105 @@ declare const tokens: {
       }
     }
   },
+  "fontSizes": {
+    "dic": {
+      "reference": {
+        "typography": {
+          "scale": {
+            "large": {
+              "fourExtraSmall": {
+                "value": string
+              },
+              "threeExtraSmall": {
+                "value": string
+              },
+              "twoExtraSmall": {
+                "value": string
+              },
+              "extraSmall": {
+                "value": string
+              },
+              "small": {
+                "value": string
+              },
+              "medium": {
+                "value": string
+              },
+              "large": {
+                "value": string
+              },
+              "extraLarge": {
+                "value": string
+              },
+              "twoExtraLarge": {
+                "value": string
+              },
+              "threeExtraLarge": {
+                "value": string
+              },
+              "fourExtraLarge": {
+                "value": string
+              },
+              "fiveExtraLarge": {
+                "value": string
+              }
+            },
+            "small": {
+              "twoExtraSmall": {
+                "value": string
+              },
+              "extraSmall": {
+                "value": string
+              },
+              "small": {
+                "value": string
+              },
+              "medium": {
+                "value": string
+              },
+              "large": {
+                "value": string
+              },
+              "extraLarge": {
+                "value": string
+              },
+              "twoExtraLarge": {
+                "value": string
+              },
+              "threeExtraLarge": {
+                "value": string
+              },
+              "fourExtraLarge": {
+                "value": string
+              },
+              "fiveExtraLarge": {
+                "value": string
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "borderWidths": {
+    "dic": {
+      "system": {
+        "dimension": {
+          "border": {
+            "medium": {
+              "value": string
+            },
+            "thick": {
+              "value": string
+            },
+            "extraThick": {
+              "value": string
+            }
+          }
+        }
+      }
+    }
+  },
   "radii": {
     "dic": {
       "system": {
@@ -334,6 +584,34 @@ declare const tokens: {
             },
             "extraLarge": {
               "value": string
+            }
+          }
+        }
+      }
+    }
+  },
+  "textStyles": {
+    "dic": {
+      "system": {
+        "typography": {
+          "body": {
+            "medium": {
+              "value": {
+                "fontFamily": string,
+                "fontSize": string,
+                "fontWeight": number,
+                "letterSpacing": string,
+                "lineHeight": number
+              }
+            },
+            "medium_sp": {
+              "value": {
+                "fontFamily": string,
+                "fontSize": string,
+                "fontWeight": number,
+                "letterSpacing": string,
+                "lineHeight": number
+              }
             }
           }
         }

@@ -1,8 +1,9 @@
 import { defineTextStyles, defineTokens } from "@pandacss/dev";
 import spreadTokens from "@spread/design-token/panda";
 
-export const SpreadSemanticTokens = defineTokens({});
+// PandaCSSのtokensとtextStylesが混在しているので分離する
+const { textStyles, ...tokens } = spreadTokens;
 
-export const SpreadTokens = defineTokens(spreadTokens);
+export const SpreadTokens = defineTokens(tokens);
 
-export const SpreadTypography = defineTextStyles({});
+export const SpreadTypography = defineTextStyles(textStyles);

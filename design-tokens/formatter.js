@@ -137,13 +137,25 @@ const pandaCssObjectFormat = (o) => {
           path.unshift("fonts");
         } else if (type === "fontWeight") {
           path.unshift("fontWeights");
+        } else if (pathAsStr.match(/\.typography\.scale\./)) {
+          path.unshift("fontSizes");
         } else if (type === "shadow") {
           path.unshift("shadows");
         } else if (pathAsStr.match(/\.radius\./)) {
           path.unshift("radii");
+        } else if (pathAsStr.match(/\.opacity\./)) {
+          path.unshift("opacity");
+        } else if (pathAsStr.match(/\.dimension\.scale\./)) {
+          path.unshift("spacing");
+        } else if (pathAsStr.match(/\.dimension\.spacing\./)) {
+          path.unshift("spacing");
+        } else if (pathAsStr.match(/\.dimension\.border\./)) {
+          path.unshift("borderWidths");
+        } else if (pathAsStr.match(/\.system\.typography\./)) {
+          path.unshift("textStyles");
         } else {
           // Token Typesに該当しないものは省く
-          continue;
+          path.unshift("unclassified");
         }
 
         let r = res;
@@ -162,7 +174,6 @@ const pandaCssObjectFormat = (o) => {
     }
   };
   walker(structuredClone(o));
-
   return res;
 };
 
@@ -173,7 +184,7 @@ const valueTypeConverter = (obj) => {
   for (const key in obj) {
     let value = obj[key];
     if (convert2number.includes(key)) {
-      value = parseInt(value);
+      value = parseFloat(value);
     }
     ret[key] = value;
   }

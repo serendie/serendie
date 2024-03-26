@@ -16,6 +16,8 @@ const buttonStyle = cva({
     variant: {
       primary: {
         color: "white",
+        borderWidth: "dic.system.dimension.border.thick",
+        padding: "dic.reference.dimension.scale.11",
         bg: "dic.reference.color.scale.red.300",
         _hover: {
           bg: "dic.reference.color.scale.red.400",

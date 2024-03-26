@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 21 Mar 2024 07:46:11 GMT
+ * Generated on Tue, 26 Mar 2024 01:09:36 GMT
  */
 
 export default {
@@ -216,6 +216,112 @@ export default {
       }
     }
   },
+  "spacing": {
+    "dic": {
+      "reference": {
+        "dimension": {
+          "scale": {
+            "0": {
+              "value": "0px"
+            },
+            "1": {
+              "value": "1px"
+            },
+            "2": {
+              "value": "2px"
+            },
+            "3": {
+              "value": "4px"
+            },
+            "4": {
+              "value": "8px"
+            },
+            "5": {
+              "value": "12px"
+            },
+            "6": {
+              "value": "16px"
+            },
+            "7": {
+              "value": "20px"
+            },
+            "8": {
+              "value": "24px"
+            },
+            "9": {
+              "value": "28px"
+            },
+            "10": {
+              "value": "32px"
+            },
+            "11": {
+              "value": "36px"
+            },
+            "12": {
+              "value": "40px"
+            },
+            "13": {
+              "value": "48px"
+            },
+            "14": {
+              "value": "56px"
+            },
+            "15": {
+              "value": "64px"
+            },
+            "16": {
+              "value": "72px"
+            },
+            "17": {
+              "value": "80px"
+            },
+            "18": {
+              "value": "96px"
+            }
+          }
+        }
+      },
+      "system": {
+        "dimension": {
+          "spacing": {
+            "twoExtraSmall": {
+              "value": "4px"
+            },
+            "extraSmall": {
+              "value": "8px"
+            },
+            "small": {
+              "value": "12px"
+            },
+            "medium": {
+              "value": "16px"
+            },
+            "large": {
+              "value": "20px"
+            },
+            "extraLarge": {
+              "value": "24px"
+            },
+            "twoExtraLarge": {
+              "value": "32px"
+            },
+            "threeExtraLarge": {
+              "value": "40px"
+            },
+            "fourExtraLarge": {
+              "value": "48px"
+            },
+            "fiveExtraLarge": {
+              "value": "64px"
+            },
+            "sixExtraLarge": {
+              "value": "80px"
+            }
+          }
+        }
+      }
+    }
+  },
   "shadows": {
     "dic": {
       "reference": {
@@ -282,6 +388,51 @@ export default {
       }
     }
   },
+  "opacity": {
+    "dic": {
+      "reference": {
+        "elevation": {
+          "opacity": {
+            "scale": {
+              "0": {
+                "value": 0
+              },
+              "1": {
+                "value": 0.1
+              },
+              "2": {
+                "value": 0.2
+              },
+              "3": {
+                "value": 0.3
+              },
+              "4": {
+                "value": 0.4
+              },
+              "5": {
+                "value": 0.5
+              },
+              "6": {
+                "value": 0.6
+              },
+              "7": {
+                "value": 0.7
+              },
+              "8": {
+                "value": 0.8
+              },
+              "9": {
+                "value": 0.9
+              },
+              "10": {
+                "value": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  },
   "fonts": {
     "dic": {
       "reference": {
@@ -314,6 +465,105 @@ export default {
       }
     }
   },
+  "fontSizes": {
+    "dic": {
+      "reference": {
+        "typography": {
+          "scale": {
+            "large": {
+              "fourExtraSmall": {
+                "value": "10px"
+              },
+              "threeExtraSmall": {
+                "value": "11px"
+              },
+              "twoExtraSmall": {
+                "value": "12px"
+              },
+              "extraSmall": {
+                "value": "13px"
+              },
+              "small": {
+                "value": "14px"
+              },
+              "medium": {
+                "value": "16px"
+              },
+              "large": {
+                "value": "18px"
+              },
+              "extraLarge": {
+                "value": "21px"
+              },
+              "twoExtraLarge": {
+                "value": "26px"
+              },
+              "threeExtraLarge": {
+                "value": "32px"
+              },
+              "fourExtraLarge": {
+                "value": "43px"
+              },
+              "fiveExtraLarge": {
+                "value": "64px"
+              }
+            },
+            "small": {
+              "twoExtraSmall": {
+                "value": "10px"
+              },
+              "extraSmall": {
+                "value": "11px"
+              },
+              "small": {
+                "value": "12px"
+              },
+              "medium": {
+                "value": "14px"
+              },
+              "large": {
+                "value": "16px"
+              },
+              "extraLarge": {
+                "value": "19px"
+              },
+              "twoExtraLarge": {
+                "value": "22px"
+              },
+              "threeExtraLarge": {
+                "value": "28px"
+              },
+              "fourExtraLarge": {
+                "value": "37px"
+              },
+              "fiveExtraLarge": {
+                "value": "56px"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "borderWidths": {
+    "dic": {
+      "system": {
+        "dimension": {
+          "border": {
+            "medium": {
+              "value": "1px"
+            },
+            "thick": {
+              "value": "2px"
+            },
+            "extraThick": {
+              "value": "4px"
+            }
+          }
+        }
+      }
+    }
+  },
   "radii": {
     "dic": {
       "system": {
@@ -333,6 +583,34 @@ export default {
             },
             "extraLarge": {
               "value": "16px"
+            }
+          }
+        }
+      }
+    }
+  },
+  "textStyles": {
+    "dic": {
+      "system": {
+        "typography": {
+          "body": {
+            "medium": {
+              "value": {
+                "fontFamily": "Noto Sans JP",
+                "fontSize": "16px",
+                "fontWeight": 400,
+                "letterSpacing": "0px",
+                "lineHeight": 1.5
+              }
+            },
+            "medium_sp": {
+              "value": {
+                "fontFamily": "Noto Sans JP",
+                "fontSize": "14px",
+                "fontWeight": 400,
+                "letterSpacing": "0px",
+                "lineHeight": 1.5
+              }
             }
           }
         }
