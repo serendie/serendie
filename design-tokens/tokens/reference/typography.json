@@ -22,8 +22,26 @@
             "$type": "fontWeight"
           }
         },
+        "lineHeight": {
+          "none": {
+            "$value": 1,
+            "$type": "number"
+          },
+          "tight": {
+            "$value": 1.4,
+            "$type": "number"
+          },
+          "normal": {
+            "$value": 1.6,
+            "$type": "number"
+          },
+          "relaxed": {
+            "$value": 1.8,
+            "$type": "number"
+          }
+        },
         "scale": {
-          "large": {
+          "expanded": {
             "fourExtraSmall": {
               "$value": "10px",
               "$type": "dimension"
@@ -73,7 +91,7 @@
               "$type": "dimension"
             }
           },
-          "small": {
+          "compact": {
             "twoExtraSmall": {
               "$value": "10px",
               "$type": "dimension"
