@@ -154,7 +154,7 @@ const pandaCssObjectFormat = (o) => {
         } else if (pathAsStr.match(/\.system\.typography\./)) {
           path.unshift("textStyles");
         } else {
-          // Token Typesに該当しないものは省く
+          // Token Typesに該当しないもの
           path.unshift("unclassified");
         }
 
@@ -174,6 +174,13 @@ const pandaCssObjectFormat = (o) => {
     }
   };
   walker(structuredClone(o));
+
+  if (res["unclassified"]) {
+    // Token Typesに該当しないものを出力
+    console.warn("unclassified tokens", res["unclassified"]);
+    delete res["unclassified"];
+  }
+
   return res;
 };
 
