@@ -121,44 +121,44 @@ const pandaCssObjectFormat = (o) => {
   const res = {};
   const walker = (obj) => {
     for (const key in obj) {
-      if (typeof obj[key] === "object") {
-        if (obj[key].path) {
-          const path = obj[key].path;
-          const value = valueTypeConverter(obj[key].value);
-          const type = obj[key].$type;
-          const pathAsStr = path.join(".");
+      if (typeof obj[key] !== "object") continue;
+      const cur = obj[key];
+      const path = cur.path;
+      if (path) {
+        const value = valueTypeConverter(cur.value);
+        const type = cur.$type;
+        const pathAsStr = path.join(".");
 
-          // ここでToken Typesを判定する
-          // https://panda-css.com/docs/theming/tokens
-          if (type === "color") {
-            path.unshift("colors");
-          } else if (type === "fontFamily") {
-            path.unshift("fonts");
-          } else if (type === "fontWeight") {
-            path.unshift("fontWeights");
-          } else if (type === "shadow") {
-            path.unshift("shadows");
-          } else if (pathAsStr.match(/\.radius\./)) {
-            path.unshift("radii");
-          } else {
-            // Token Typesに該当しないものは省く
-            continue;
-          }
-
-          let r = res;
-          while (path.length > 0) {
-            const p = path.shift();
-            if (path.length === 0) {
-              r[p] = { value };
-            }
-            if (r[p] === undefined) {
-              r[p] = {};
-            }
-            r = r[p];
-          }
+        // ここでToken Typesを判定する
+        // https://panda-css.com/docs/theming/tokens
+        if (type === "color") {
+          path.unshift("colors");
+        } else if (type === "fontFamily") {
+          path.unshift("fonts");
+        } else if (type === "fontWeight") {
+          path.unshift("fontWeights");
+        } else if (type === "shadow") {
+          path.unshift("shadows");
+        } else if (pathAsStr.match(/\.radius\./)) {
+          path.unshift("radii");
+        } else {
+          // Token Typesに該当しないものは省く
+          continue;
         }
-        walker(obj[key]);
+
+        let r = res;
+        while (path.length > 0) {
+          const p = path.shift();
+          if (path.length === 0) {
+            r[p] = { value };
+          }
+          if (r[p] === undefined) {
+            r[p] = {};
+          }
+          r = r[p];
+        }
       }
+      walker(obj[key]);
     }
   };
   walker(structuredClone(o));
