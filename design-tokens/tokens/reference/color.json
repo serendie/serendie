@@ -15,6 +15,20 @@
               "$type": "color"
             }
           },
+          "transparency": {
+            "5": {
+              "$value": "#0000000D",
+              "$type": "color"
+            },
+            "10": {
+              "$value": "#0000001A",
+              "$type": "color"
+            },
+            "20": {
+              "$value": "#00000033",
+              "$type": "color"
+            }
+          },
           "gray": {
             "100": {
               "$value": "#F7F8F9",
