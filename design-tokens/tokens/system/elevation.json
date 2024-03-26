@@ -1,0 +1,86 @@
+{
+  "dic": {
+    "system": {
+      "elevation": {
+        "shadow": {
+          "level1": {
+            "$type": "shadow",
+            "$value": {
+              "color": "#0000004D",
+              "offsetX": "0px",
+              "offsetY": "1px",
+              "blur": "2px",
+              "spread": "0px"
+            }
+          },
+          "level2": {
+            "$type": "shadow",
+            "$value": {
+              "color": "#00000033",
+              "offsetX": "0px",
+              "offsetY": "1px",
+              "blur": "4px",
+              "spread": "0px"
+            }
+          },
+          "level3": {
+            "$type": "shadow",
+            "$value": {
+              "color": "#00000033",
+              "offsetX": "0px",
+              "offsetY": "2px",
+              "blur": "8px",
+              "spread": "0px"
+            }
+          },
+          "level4": {
+            "$type": "shadow",
+            "$value": {
+              "color": "#00000033",
+              "offsetX": "0px",
+              "offsetY": "4px",
+              "blur": "12px",
+              "spread": "0px"
+            }
+          },
+          "level5": {
+            "$type": "shadow",
+            "$value": {
+              "color": "#00000033",
+              "offsetX": "0px",
+              "offsetY": "8px",
+              "blur": "24px",
+              "spread": "0px"
+            }
+          }
+        },
+        "zIndex": {
+          "deepDive": {
+            "$type": "number",
+            "$value": -1000
+          },
+          "base": {
+            "$type": "number",
+            "$value": 0
+          },
+          "docked": {
+            "$type": "number",
+            "$value": 10
+          },
+          "dropdown": {
+            "$type": "number",
+            "$value": 500
+          },
+          "modal": {
+            "$type": "number",
+            "$value": 1000
+          },
+          "toast": {
+            "$type": "number",
+            "$value": 2000
+          }
+        }
+      }
+    }
+  }
+}
