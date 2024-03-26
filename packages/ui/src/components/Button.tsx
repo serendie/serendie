@@ -1,10 +1,6 @@
 import { useState } from "react";
 import { cva } from "../../styled-system/css";
 import { styled } from "../../styled-system/jsx";
-import tokens from "@spread/design-token";
-//import { Button as AriaButton } from "react-aria-components";
-
-console.log(tokens);
 
 const buttonStyle = cva({
   base: {
@@ -71,12 +67,6 @@ const buttonStyle = cva({
   },
 });
 
-//export const Button = styled(AriaButton, buttonStyle);
-
-//export const Button: React.FC = (props) => {
-//return <AriaButton {...props} />;
-//};
-
 export const Button = styled("button", buttonStyle);
 
 export const Button2 = () => {
@@ -87,5 +77,3 @@ export const Button2 = () => {
     </Button>
   );
 };
-
-//export const Button3 = AriaButton;
