@@ -120,6 +120,14 @@ function traverseToken({
         key,
         object.$value
       );
+    } else if (type === "dimension") {
+      tokens[key] = createToken(
+        collection,
+        modeId,
+        "FLOAT",
+        key,
+        Number(object.$value.replace("px", ""))
+      );
     } else {
       console.log("unsupported type", type, object);
     }
