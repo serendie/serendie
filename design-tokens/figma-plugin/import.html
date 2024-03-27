@@ -72,33 +72,16 @@
   <input placeholder="Mode Name" type="text" value="" id="mode" />
   <textarea required placeholder="Tokens JSON">
 {
-  "color": {
-    "grouptyped": {
-      "$type": "color",
-      "brown": { "$value": "#a2845e" },
-      "danger-deep": { "$value": "{color.valuetyped.danger}" }
+  "dic": {
+    "ref": {
+      "blue": {
+        "$value": "#248eff",
+        "$type": "color"
+      }
     },
-    "valuetyped": {
-      "red": {
-        "$value": "{color.deep.deep.deep.deep.deep}"
-      },
-      "danger": { "$value": "{color.valuetyped.red}" }
-    },
-    "deep": {"deep": {"deep": {"deep": {"deep": {"$type": "color", "$value": "#FF0000" }}}}}
-  },
-  "spacing": {
-    "$type": "number",
-    "some numbers": {
-      "spacer0": {"$value": 0},
-      "spacerXs": {"$value": 4},
-      "spacerS": {"$value": 8},
-      "spacerM": {"$value": 16},
-      "spacerX": {"$value": 24},
-      "spacerXl": {"$value": 32},
-      "spacerXxl": {"$value": 40},
-      "spacex": {
-        "funniness": {"$value": 0},
-        "cleverness": {"$value": 1}
+    "sys": {
+      "primary": {
+        "$value": "{dic.ref.blue}"
       }
     }
   }
