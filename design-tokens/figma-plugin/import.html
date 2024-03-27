@@ -66,8 +66,10 @@
     placeholder="Collection Name"
     required
     type="text"
-    value="Wild Examples"
+    value="dic"
+    id="collection"
   />
+  <input placeholder="Mode Name" type="text" value="" id="mode" />
   <textarea required placeholder="Tokens JSON">
 {
   "color": {
@@ -108,12 +110,13 @@
 
 <script>
   document.querySelector("form").addEventListener("submit", (e) => {
-    const fileName = document.querySelector("input").value.trim();
+    const fileName = document.querySelector("#collection").value.trim();
+    const modeName = document.querySelector("#mode").value.trim();
     const body = document.querySelector("textarea").value.trim();
     e.preventDefault();
     if (isValidJSON(body) && fileName) {
       parent.postMessage(
-        { pluginMessage: { fileName, body, type: "IMPORT" } },
+        { pluginMessage: { fileName, modeName, body, type: "IMPORT" } },
         "*"
       );
     } else {
