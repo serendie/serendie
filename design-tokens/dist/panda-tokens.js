@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 26 Mar 2024 01:26:56 GMT
+ * Generated on Wed, 27 Mar 2024 23:27:43 GMT
  */
 
 export default {
@@ -17,6 +17,17 @@ export default {
             "black": {
               "1000": {
                 "value": "#000000"
+              }
+            },
+            "transparency": {
+              "5": {
+                "value": "#0000000D"
+              },
+              "10": {
+                "value": "#0000001A"
+              },
+              "20": {
+                "value": "#00000033"
               }
             },
             "gray": {
@@ -322,72 +333,6 @@ export default {
       }
     }
   },
-  "shadows": {
-    "dic": {
-      "reference": {
-        "elevation": {
-          "shadow": {
-            "scale": {
-              "0": {
-                "value": {
-                  "color": "#00000000",
-                  "offsetX": 0,
-                  "offsetY": 0,
-                  "blur": 0,
-                  "spread": 0
-                }
-              },
-              "1": {
-                "value": {
-                  "color": "#0000004D",
-                  "offsetX": 0,
-                  "offsetY": 1,
-                  "blur": 2,
-                  "spread": 0
-                }
-              },
-              "2": {
-                "value": {
-                  "color": "#00000033",
-                  "offsetX": 0,
-                  "offsetY": 1,
-                  "blur": 4,
-                  "spread": 0
-                }
-              },
-              "3": {
-                "value": {
-                  "color": "#00000033",
-                  "offsetX": 0,
-                  "offsetY": 2,
-                  "blur": 8,
-                  "spread": 0
-                }
-              },
-              "4": {
-                "value": {
-                  "color": "#00000033",
-                  "offsetX": 0,
-                  "offsetY": 4,
-                  "blur": 12,
-                  "spread": 0
-                }
-              },
-              "5": {
-                "value": {
-                  "color": "#00000033",
-                  "offsetX": 0,
-                  "offsetY": 8,
-                  "blur": 24,
-                  "spread": 0
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
   "opacity": {
     "dic": {
       "reference": {
@@ -470,7 +415,7 @@ export default {
       "reference": {
         "typography": {
           "scale": {
-            "large": {
+            "expanded": {
               "fourExtraSmall": {
                 "value": "10px"
               },
@@ -508,7 +453,7 @@ export default {
                 "value": "64px"
               }
             },
-            "small": {
+            "compact": {
               "twoExtraSmall": {
                 "value": "10px"
               },
@@ -589,27 +534,324 @@ export default {
       }
     }
   },
+  "shadows": {
+    "dic": {
+      "system": {
+        "elevation": {
+          "shadow": {
+            "level1": {
+              "value": {
+                "color": "#0000004D",
+                "offsetX": 0,
+                "offsetY": 1,
+                "blur": 2,
+                "spread": 0
+              }
+            },
+            "level2": {
+              "value": {
+                "color": "#00000033",
+                "offsetX": 0,
+                "offsetY": 1,
+                "blur": 4,
+                "spread": 0
+              }
+            },
+            "level3": {
+              "value": {
+                "color": "#00000033",
+                "offsetX": 0,
+                "offsetY": 2,
+                "blur": 8,
+                "spread": 0
+              }
+            },
+            "level4": {
+              "value": {
+                "color": "#00000033",
+                "offsetX": 0,
+                "offsetY": 4,
+                "blur": 12,
+                "spread": 0
+              }
+            },
+            "level5": {
+              "value": {
+                "color": "#00000033",
+                "offsetX": 0,
+                "offsetY": 8,
+                "blur": 24,
+                "spread": 0
+              }
+            }
+          }
+        }
+      }
+    }
+  },
   "textStyles": {
     "dic": {
       "system": {
         "typography": {
-          "body": {
-            "medium": {
+          "display": {
+            "small_compact": {
               "value": {
-                "fontFamily": "Noto Sans JP",
-                "fontSize": "16px",
+                "fontSize": "37px",
                 "fontWeight": 400,
-                "letterSpacing": "0px",
-                "lineHeight": 1.5
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
               }
             },
-            "medium_sp": {
+            "medium_compact": {
               "value": {
+                "fontSize": "56px",
+                "fontWeight": 400,
                 "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            },
+            "small_expanded": {
+              "value": {
+                "fontSize": "43px",
+                "fontWeight": 400,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            },
+            "medium_expanded": {
+              "value": {
+                "fontSize": "64px",
+                "fontWeight": 400,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            }
+          },
+          "headline": {
+            "small_compact": {
+              "value": {
+                "fontSize": "28px",
+                "fontWeight": 400,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            },
+            "medium_compact": {
+              "value": {
+                "fontSize": "37px",
+                "fontWeight": 400,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            },
+            "large_compact": {
+              "value": {
+                "fontSize": "56px",
+                "fontWeight": 400,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            },
+            "small_expanded": {
+              "value": {
+                "fontSize": "21px",
+                "fontWeight": 400,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            },
+            "medium_expanded": {
+              "value": {
+                "fontSize": "26px",
+                "fontWeight": 400,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            },
+            "large_expanded": {
+              "value": {
+                "fontSize": "32px",
+                "fontWeight": 400,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            }
+          },
+          "title": {
+            "small_compact": {
+              "value": {
+                "fontSize": "16px",
+                "fontWeight": 700,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            },
+            "medium_compact": {
+              "value": {
+                "fontSize": "19px",
+                "fontWeight": 700,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            },
+            "large_compact": {
+              "value": {
+                "fontSize": "22px",
+                "fontWeight": 700,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            },
+            "small_expanded": {
+              "value": {
+                "fontSize": "14px",
+                "fontWeight": 700,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            },
+            "medium_expanded": {
+              "value": {
+                "fontSize": "16px",
+                "fontWeight": 700,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            },
+            "large_expanded": {
+              "value": {
+                "fontSize": "18px",
+                "fontWeight": 700,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            }
+          },
+          "body": {
+            "small_compact": {
+              "value": {
                 "fontSize": "14px",
                 "fontWeight": 400,
-                "letterSpacing": "0px",
-                "lineHeight": 1.5
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            },
+            "medium_compact": {
+              "value": {
+                "fontSize": "16px",
+                "fontWeight": 400,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            },
+            "large_compact": {
+              "value": {
+                "fontSize": "19px",
+                "fontWeight": 400,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            },
+            "small_expanded": {
+              "value": {
+                "fontSize": "13px",
+                "fontWeight": 400,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            },
+            "medium_expanded": {
+              "value": {
+                "fontSize": "14px",
+                "fontWeight": 400,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            },
+            "large_expanded": {
+              "value": {
+                "fontSize": "16px",
+                "fontWeight": 400,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.6,
+                "letterSpacing": "0px"
+              }
+            }
+          },
+          "label": {
+            "small_compact": {
+              "value": {
+                "fontSize": "10px",
+                "fontWeight": 400,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.4,
+                "letterSpacing": "0px"
+              }
+            },
+            "medium_compact": {
+              "value": {
+                "fontSize": "11px",
+                "fontWeight": 400,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.4,
+                "letterSpacing": "0px"
+              }
+            },
+            "large_compact": {
+              "value": {
+                "fontSize": "12px",
+                "fontWeight": 400,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.4,
+                "letterSpacing": "0px"
+              }
+            },
+            "small_expanded": {
+              "value": {
+                "fontSize": "10px",
+                "fontWeight": 400,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.4,
+                "letterSpacing": "0px"
+              }
+            },
+            "medium_expanded": {
+              "value": {
+                "fontSize": "11px",
+                "fontWeight": 400,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.4,
+                "letterSpacing": "0px"
+              }
+            },
+            "large_expanded": {
+              "value": {
+                "fontSize": "12px",
+                "fontWeight": 400,
+                "fontFamily": "Noto Sans JP",
+                "lineHeight": 1.4,
+                "letterSpacing": "0px"
               }
             }
           }

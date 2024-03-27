@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 26 Mar 2024 01:26:56 GMT
+ * Generated on Wed, 27 Mar 2024 23:27:43 GMT
  */
 
 export default tokens;
@@ -17,6 +17,17 @@ declare const tokens: {
             },
             "black": {
               "1000": {
+                "value": string
+              }
+            },
+            "transparency": {
+              "5": {
+                "value": string
+              },
+              "10": {
+                "value": string
+              },
+              "20": {
                 "value": string
               }
             },
@@ -323,72 +334,6 @@ declare const tokens: {
       }
     }
   },
-  "shadows": {
-    "dic": {
-      "reference": {
-        "elevation": {
-          "shadow": {
-            "scale": {
-              "0": {
-                "value": {
-                  "color": string,
-                  "offsetX": number,
-                  "offsetY": number,
-                  "blur": number,
-                  "spread": number
-                }
-              },
-              "1": {
-                "value": {
-                  "color": string,
-                  "offsetX": number,
-                  "offsetY": number,
-                  "blur": number,
-                  "spread": number
-                }
-              },
-              "2": {
-                "value": {
-                  "color": string,
-                  "offsetX": number,
-                  "offsetY": number,
-                  "blur": number,
-                  "spread": number
-                }
-              },
-              "3": {
-                "value": {
-                  "color": string,
-                  "offsetX": number,
-                  "offsetY": number,
-                  "blur": number,
-                  "spread": number
-                }
-              },
-              "4": {
-                "value": {
-                  "color": string,
-                  "offsetX": number,
-                  "offsetY": number,
-                  "blur": number,
-                  "spread": number
-                }
-              },
-              "5": {
-                "value": {
-                  "color": string,
-                  "offsetX": number,
-                  "offsetY": number,
-                  "blur": number,
-                  "spread": number
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
   "opacity": {
     "dic": {
       "reference": {
@@ -471,7 +416,7 @@ declare const tokens: {
       "reference": {
         "typography": {
           "scale": {
-            "large": {
+            "expanded": {
               "fourExtraSmall": {
                 "value": string
               },
@@ -509,7 +454,7 @@ declare const tokens: {
                 "value": string
               }
             },
-            "small": {
+            "compact": {
               "twoExtraSmall": {
                 "value": string
               },
@@ -590,27 +535,324 @@ declare const tokens: {
       }
     }
   },
+  "shadows": {
+    "dic": {
+      "system": {
+        "elevation": {
+          "shadow": {
+            "level1": {
+              "value": {
+                "color": string,
+                "offsetX": number,
+                "offsetY": number,
+                "blur": number,
+                "spread": number
+              }
+            },
+            "level2": {
+              "value": {
+                "color": string,
+                "offsetX": number,
+                "offsetY": number,
+                "blur": number,
+                "spread": number
+              }
+            },
+            "level3": {
+              "value": {
+                "color": string,
+                "offsetX": number,
+                "offsetY": number,
+                "blur": number,
+                "spread": number
+              }
+            },
+            "level4": {
+              "value": {
+                "color": string,
+                "offsetX": number,
+                "offsetY": number,
+                "blur": number,
+                "spread": number
+              }
+            },
+            "level5": {
+              "value": {
+                "color": string,
+                "offsetX": number,
+                "offsetY": number,
+                "blur": number,
+                "spread": number
+              }
+            }
+          }
+        }
+      }
+    }
+  },
   "textStyles": {
     "dic": {
       "system": {
         "typography": {
-          "body": {
-            "medium": {
+          "display": {
+            "small_compact": {
               "value": {
-                "fontFamily": string,
                 "fontSize": string,
                 "fontWeight": number,
-                "letterSpacing": string,
-                "lineHeight": number
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
               }
             },
-            "medium_sp": {
+            "medium_compact": {
               "value": {
-                "fontFamily": string,
                 "fontSize": string,
                 "fontWeight": number,
-                "letterSpacing": string,
-                "lineHeight": number
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "small_expanded": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "medium_expanded": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            }
+          },
+          "headline": {
+            "small_compact": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "medium_compact": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "large_compact": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "small_expanded": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "medium_expanded": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "large_expanded": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            }
+          },
+          "title": {
+            "small_compact": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "medium_compact": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "large_compact": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "small_expanded": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "medium_expanded": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "large_expanded": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            }
+          },
+          "body": {
+            "small_compact": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "medium_compact": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "large_compact": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "small_expanded": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "medium_expanded": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "large_expanded": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            }
+          },
+          "label": {
+            "small_compact": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "medium_compact": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "large_compact": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "small_expanded": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "medium_expanded": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "large_expanded": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
               }
             }
           }

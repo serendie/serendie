@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 26 Mar 2024 01:26:56 GMT
+ * Generated on Wed, 27 Mar 2024 23:27:43 GMT
  */
 
 export default tokens;
@@ -14,6 +14,11 @@ declare const tokens: {
           },
           "black": {
             "1000": string
+          },
+          "transparency": {
+            "5": string,
+            "10": string,
+            "20": string
           },
           "gray": {
             "100": string,
@@ -113,52 +118,6 @@ declare const tokens: {
         }
       },
       "elevation": {
-        "shadow": {
-          "scale": {
-            "0": {
-              "color": string,
-              "offsetX": string,
-              "offsetY": string,
-              "blur": string,
-              "spread": string
-            },
-            "1": {
-              "color": string,
-              "offsetX": string,
-              "offsetY": string,
-              "blur": string,
-              "spread": string
-            },
-            "2": {
-              "color": string,
-              "offsetX": string,
-              "offsetY": string,
-              "blur": string,
-              "spread": string
-            },
-            "3": {
-              "color": string,
-              "offsetX": string,
-              "offsetY": string,
-              "blur": string,
-              "spread": string
-            },
-            "4": {
-              "color": string,
-              "offsetX": string,
-              "offsetY": string,
-              "blur": string,
-              "spread": string
-            },
-            "5": {
-              "color": string,
-              "offsetX": string,
-              "offsetY": string,
-              "blur": string,
-              "spread": string
-            }
-          }
-        },
         "opacity": {
           "scale": {
             "0": number,
@@ -184,8 +143,14 @@ declare const tokens: {
           "regular": number,
           "bold": number
         },
+        "lineHeight": {
+          "none": number,
+          "tight": number,
+          "normal": number,
+          "relaxed": number
+        },
         "scale": {
-          "large": {
+          "expanded": {
             "fourExtraSmall": string,
             "threeExtraSmall": string,
             "twoExtraSmall": string,
@@ -199,7 +164,7 @@ declare const tokens: {
             "fourExtraLarge": string,
             "fiveExtraLarge": string
           },
-          "small": {
+          "compact": {
             "twoExtraSmall": string,
             "extraSmall": string,
             "small": string,
@@ -215,6 +180,38 @@ declare const tokens: {
       }
     },
     "system": {
+      "color": {
+        "impression": {
+          "primary": string,
+          "onPrimary": string,
+          "primaryContainer": string,
+          "onPrimaryContainer": string,
+          "notice": string,
+          "onNotice": string,
+          "noticeContainer": string,
+          "onNoticeContainer": string,
+          "negative": string,
+          "onNegative": string,
+          "negativeContainer": string,
+          "onNegativeContainer": string,
+          "positive": string,
+          "onPositive": string,
+          "positiveContainer": string,
+          "onPositiveContainer": string
+        },
+        "component": {
+          "surface": string,
+          "onSurface": string,
+          "outline": string,
+          "outlineVariant": string,
+          "scrim": string
+        },
+        "interaction": {
+          "disabled": string,
+          "hovered": string,
+          "hoveredVariant": string
+        }
+      },
       "dimension": {
         "spacing": {
           "twoExtraSmall": string,
@@ -242,21 +239,258 @@ declare const tokens: {
           "extraLarge": string
         }
       },
-      "typography": {
-        "body": {
-          "medium": {
-            "fontFamily": string,
-            "fontSize": string,
-            "fontWeight": number,
-            "letterSpacing": string,
-            "lineHeight": number
+      "elevation": {
+        "shadow": {
+          "level1": {
+            "color": string,
+            "offsetX": string,
+            "offsetY": string,
+            "blur": string,
+            "spread": string
           },
-          "medium_sp": {
-            "fontFamily": string,
+          "level2": {
+            "color": string,
+            "offsetX": string,
+            "offsetY": string,
+            "blur": string,
+            "spread": string
+          },
+          "level3": {
+            "color": string,
+            "offsetX": string,
+            "offsetY": string,
+            "blur": string,
+            "spread": string
+          },
+          "level4": {
+            "color": string,
+            "offsetX": string,
+            "offsetY": string,
+            "blur": string,
+            "spread": string
+          },
+          "level5": {
+            "color": string,
+            "offsetX": string,
+            "offsetY": string,
+            "blur": string,
+            "spread": string
+          }
+        },
+        "zIndex": {
+          "deepDive": number,
+          "base": number,
+          "docked": number,
+          "dropdown": number,
+          "modal": number,
+          "toast": number
+        }
+      },
+      "typography": {
+        "display": {
+          "small_compact": {
             "fontSize": string,
             "fontWeight": number,
-            "letterSpacing": string,
-            "lineHeight": number
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "medium_compact": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "small_expanded": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "medium_expanded": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          }
+        },
+        "headline": {
+          "small_compact": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "medium_compact": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "large_compact": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "small_expanded": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "medium_expanded": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "large_expanded": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          }
+        },
+        "title": {
+          "small_compact": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "medium_compact": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "large_compact": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "small_expanded": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "medium_expanded": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "large_expanded": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          }
+        },
+        "body": {
+          "small_compact": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "medium_compact": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "large_compact": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "small_expanded": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "medium_expanded": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "large_expanded": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          }
+        },
+        "label": {
+          "small_compact": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "medium_compact": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "large_compact": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "small_expanded": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "medium_expanded": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "large_expanded": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
           }
         }
       }

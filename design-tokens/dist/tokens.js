@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 26 Mar 2024 01:26:56 GMT
+ * Generated on Wed, 27 Mar 2024 23:27:43 GMT
  */
 
 export default {
@@ -13,6 +13,11 @@ export default {
           },
           "black": {
             "1000": "#000000"
+          },
+          "transparency": {
+            "5": "#0000000D",
+            "10": "#0000001A",
+            "20": "#00000033"
           },
           "gray": {
             "100": "#F7F8F9",
@@ -112,52 +117,6 @@ export default {
         }
       },
       "elevation": {
-        "shadow": {
-          "scale": {
-            "0": {
-              "color": "#00000000",
-              "offsetX": "0px",
-              "offsetY": "0px",
-              "blur": "0px",
-              "spread": "0px"
-            },
-            "1": {
-              "color": "#0000004D",
-              "offsetX": "0px",
-              "offsetY": "1px",
-              "blur": "2px",
-              "spread": "0px"
-            },
-            "2": {
-              "color": "#00000033",
-              "offsetX": "0px",
-              "offsetY": "1px",
-              "blur": "4px",
-              "spread": "0px"
-            },
-            "3": {
-              "color": "#00000033",
-              "offsetX": "0px",
-              "offsetY": "2px",
-              "blur": "8px",
-              "spread": "0px"
-            },
-            "4": {
-              "color": "#00000033",
-              "offsetX": "0px",
-              "offsetY": "4px",
-              "blur": "12px",
-              "spread": "0px"
-            },
-            "5": {
-              "color": "#00000033",
-              "offsetX": "0px",
-              "offsetY": "8px",
-              "blur": "24px",
-              "spread": "0px"
-            }
-          }
-        },
         "opacity": {
           "scale": {
             "0": 0,
@@ -183,8 +142,14 @@ export default {
           "regular": 400,
           "bold": 700
         },
+        "lineHeight": {
+          "none": 1,
+          "tight": 1.4,
+          "normal": 1.6,
+          "relaxed": 1.8
+        },
         "scale": {
-          "large": {
+          "expanded": {
             "fourExtraSmall": "10px",
             "threeExtraSmall": "11px",
             "twoExtraSmall": "12px",
@@ -198,7 +163,7 @@ export default {
             "fourExtraLarge": "43px",
             "fiveExtraLarge": "64px"
           },
-          "small": {
+          "compact": {
             "twoExtraSmall": "10px",
             "extraSmall": "11px",
             "small": "12px",
@@ -214,6 +179,38 @@ export default {
       }
     },
     "system": {
+      "color": {
+        "impression": {
+          "primary": "#0066DF",
+          "onPrimary": "#FFFFFF",
+          "primaryContainer": "#0066DF",
+          "onPrimaryContainer": "#FFFFFF",
+          "notice": "#EDA608",
+          "onNotice": "#FFFFFF",
+          "noticeContainer": "#EDA608",
+          "onNoticeContainer": "#FFFFFF",
+          "negative": "#D61930",
+          "onNegative": "#FFFFFF",
+          "negativeContainer": "#D61930",
+          "onNegativeContainer": "#FFFFFF",
+          "positive": "#279B20",
+          "onPositive": "#FFFFFF",
+          "positiveContainer": "#279B20",
+          "onPositiveContainer": "#FFFFFF"
+        },
+        "component": {
+          "surface": "#FFFFFF",
+          "onSurface": "#000000",
+          "outline": "#CED5D9",
+          "outlineVariant": "#8C959C",
+          "scrim": "#0000001A"
+        },
+        "interaction": {
+          "disabled": "#EBEEEF",
+          "hovered": "#00000033",
+          "hoveredVariant": "#0000000D"
+        }
+      },
       "dimension": {
         "spacing": {
           "twoExtraSmall": "4px",
@@ -241,21 +238,258 @@ export default {
           "extraLarge": "16px"
         }
       },
-      "typography": {
-        "body": {
-          "medium": {
-            "fontFamily": "Noto Sans JP",
-            "fontSize": "16px",
-            "fontWeight": 400,
-            "letterSpacing": "0px",
-            "lineHeight": 1.5
+      "elevation": {
+        "shadow": {
+          "level1": {
+            "color": "#0000004D",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "2px",
+            "spread": "0px"
           },
-          "medium_sp": {
+          "level2": {
+            "color": "#00000033",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "4px",
+            "spread": "0px"
+          },
+          "level3": {
+            "color": "#00000033",
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "8px",
+            "spread": "0px"
+          },
+          "level4": {
+            "color": "#00000033",
+            "offsetX": "0px",
+            "offsetY": "4px",
+            "blur": "12px",
+            "spread": "0px"
+          },
+          "level5": {
+            "color": "#00000033",
+            "offsetX": "0px",
+            "offsetY": "8px",
+            "blur": "24px",
+            "spread": "0px"
+          }
+        },
+        "zIndex": {
+          "deepDive": -1000,
+          "base": 0,
+          "docked": 10,
+          "dropdown": 500,
+          "modal": 1000,
+          "toast": 2000
+        }
+      },
+      "typography": {
+        "display": {
+          "small_compact": {
+            "fontSize": "37px",
+            "fontWeight": 400,
             "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          },
+          "medium_compact": {
+            "fontSize": "56px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          },
+          "small_expanded": {
+            "fontSize": "43px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          },
+          "medium_expanded": {
+            "fontSize": "64px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          }
+        },
+        "headline": {
+          "small_compact": {
+            "fontSize": "28px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          },
+          "medium_compact": {
+            "fontSize": "37px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          },
+          "large_compact": {
+            "fontSize": "56px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          },
+          "small_expanded": {
+            "fontSize": "21px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          },
+          "medium_expanded": {
+            "fontSize": "26px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          },
+          "large_expanded": {
+            "fontSize": "32px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          }
+        },
+        "title": {
+          "small_compact": {
+            "fontSize": "16px",
+            "fontWeight": 700,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          },
+          "medium_compact": {
+            "fontSize": "19px",
+            "fontWeight": 700,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          },
+          "large_compact": {
+            "fontSize": "22px",
+            "fontWeight": 700,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          },
+          "small_expanded": {
+            "fontSize": "14px",
+            "fontWeight": 700,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          },
+          "medium_expanded": {
+            "fontSize": "16px",
+            "fontWeight": 700,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          },
+          "large_expanded": {
+            "fontSize": "18px",
+            "fontWeight": 700,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          }
+        },
+        "body": {
+          "small_compact": {
             "fontSize": "14px",
             "fontWeight": 400,
-            "letterSpacing": "0px",
-            "lineHeight": 1.5
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          },
+          "medium_compact": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          },
+          "large_compact": {
+            "fontSize": "19px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          },
+          "small_expanded": {
+            "fontSize": "13px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          },
+          "medium_expanded": {
+            "fontSize": "14px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          },
+          "large_expanded": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          }
+        },
+        "label": {
+          "small_compact": {
+            "fontSize": "10px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.4,
+            "letterSpacing": "0px"
+          },
+          "medium_compact": {
+            "fontSize": "11px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.4,
+            "letterSpacing": "0px"
+          },
+          "large_compact": {
+            "fontSize": "12px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.4,
+            "letterSpacing": "0px"
+          },
+          "small_expanded": {
+            "fontSize": "10px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.4,
+            "letterSpacing": "0px"
+          },
+          "medium_expanded": {
+            "fontSize": "11px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.4,
+            "letterSpacing": "0px"
+          },
+          "large_expanded": {
+            "fontSize": "12px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.4,
+            "letterSpacing": "0px"
           }
         }
       }
