@@ -18,8 +18,8 @@ async function createCollection(name, modeName) {
   }
 }
 
-async function createToken(collection, modeId, type, name, value) {
-  const localVariables = await figma.variables.getLocalVariablesAsync();
+function createToken(collection, modeId, type, name, value) {
+  const localVariables = figma.variables.getLocalVariables();
   const token =
     localVariables.find(
       (e) => e.name === name && e.variableCollectionId === collection.id
