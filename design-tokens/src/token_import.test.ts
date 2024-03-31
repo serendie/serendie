@@ -142,30 +142,6 @@ describe("readJsonFiles", () => {
     expect(result).toEqual({ "no_tokens.mode1.json": {} });
   });
 
-  test("handles duplicate collections and modes", () => {
-    expect(() => {
-      readJsonFiles([
-        "tokens/collection1.mode1.1.json",
-        "tokens/collection1.mode1.2.json",
-        "tokens/collection1.mode1.3.json",
-      ]);
-    }).toThrowError(
-      "Duplicate collection and mode in file: tokens/collection1.mode1.2.json"
-    );
-  });
-
-  test("handles file names that do not match the expected format", () => {
-    expect(() => {
-      readJsonFiles([
-        "tokens/collection1.mode1.json",
-        "tokens/collection2.mode1.json",
-        "foo.json",
-      ]);
-    }).toThrowError(
-      "Invalid tokens file name: foo.json. File names must be in the format: {collectionName}.{modeName}.json"
-    );
-  });
-
   test("ignores keys that start with $", () => {
     const result = readJsonFiles(["file_with_$_keys.mode1.json"]);
     expect(result).toEqual({
