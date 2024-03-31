@@ -9,7 +9,7 @@ import { GetLocalVariablesResponse } from "@figma/rest-api-spec";
 describe("readJsonFiles", () => {
   vi.mock("fs", () => {
     const MOCK_FILE_INFO: { [fileName: string]: string } = {
-      "tokens/color.default.json": JSON.stringify({
+      "tokens/reference/color.default.json": JSON.stringify({
         dic: {
           reference: {
             color: {
@@ -24,18 +24,9 @@ describe("readJsonFiles", () => {
               },
             },
           },
-          system: {
-            color: {
-              primary: {
-                $value: "{dic.reference.color.scale.blue.100}",
-                $type: "color",
-                $description: "Primary color",
-              },
-            },
-          },
         },
       }),
-      "tokens/dimension.default.json": JSON.stringify({
+      "tokens/reference/dimension.default.json": JSON.stringify({
         dic: {
           reference: {
             dimension: {
@@ -44,25 +35,6 @@ describe("readJsonFiles", () => {
                   $value: "1px",
                   $type: "dimension",
                   $description: "1px",
-                },
-              },
-              fontSize: {
-                small: {
-                  $value: "14px",
-                  $type: "dimension",
-                  $description: "Small font size",
-                },
-                medium: {
-                  $value: "16px",
-                  $type: "dimension",
-                  $description: "Medium font size",
-                },
-              },
-              letterSpacing: {
-                normal: {
-                  $value: "0px",
-                  $type: "dimension",
-                  $description: "Normal letter spacing",
                 },
               },
             },
@@ -80,145 +52,28 @@ describe("readJsonFiles", () => {
           },
         },
       }),
-      "tokens/shadow.default.json": JSON.stringify({
+      "tokens/system/color.default.json": JSON.stringify({
         dic: {
-          reference: {
-            shadow: {
-              scale: {
-                1: {
-                  $value: {
-                    color: "#0000004D",
-                    offsetX: "0px",
-                    offsetY: "1px",
-                    blur: "2px",
-                    spread: "0px",
-                  },
-                  $type: "shadow",
-                  $description: "Shadow 1",
-                },
-              },
-            },
-          },
           system: {
-            elevation: {
-              1: {
-                $value: "{dic.reference.shadow.scale.1}",
-                $type: "shadow",
-                $description: "Elevation 1",
-              },
-            },
-          },
-        },
-      }),
-      "tokens/number.default.json": JSON.stringify({
-        dic: {
-          reference: {
-            number: {
-              opacity: {
-                scale: {
-                  4: {
-                    $value: "0.4",
-                    $type: "number",
-                    $description: "10%",
-                  },
-                },
-              },
-              lineHeight: {
-                normal: {
-                  $value: "1.5",
-                  $type: "number",
-                  $description: "Normal line height",
-                },
-              },
-            },
-          },
-          system: {
-            number: {
-              opacity: {
-                disabled: {
-                  $value: "{dic.reference.number.opacity.scale.4}",
-                  $type: "number",
-                  $description: "Disabled opacity",
-                },
-              },
-            },
-          },
-        },
-      }),
-      "tokens/fontFamily.default.json": JSON.stringify({
-        dic: {
-          reference: {
-            fontFamily: {
+            color: {
               primary: {
-                $value: "Noto Sans JP",
-                $type: "fontFamily",
-                $description: "Primary font",
-              },
-              monospace: {
-                $value: "Noto Sans Mono",
-                $type: "fontFamily",
-                $description: "Monospace font",
+                $value: "{dic.reference.color.scale.blue.100}",
+                $type: "color",
+                $description: "Primary color",
               },
             },
           },
         },
       }),
-      "tokens/fontWeight.default.json": JSON.stringify({
-        dic: {
-          reference: {
-            fontWeight: {
-              regular: {
-                $value: 400,
-                $type: "fontWeight",
-                $description: "Regular weight",
-              },
-              bold: {
-                $value: 700,
-                $type: "fontWeight",
-                $description: "Bold weight",
-              },
-            },
-          },
-        },
-      }),
-      "tokens/typography.sp.json": JSON.stringify({
+      "tokens/system/dimension.default.json": JSON.stringify({
         dic: {
           system: {
-            typography: {
-              title: {
+            dimension: {
+              border: {
                 medium: {
-                  $value: {
-                    fontFamily: "{dic.reference.fontFamily.primary}",
-                    fontSize: "{dic.reference.dimension.fontSize.small}",
-                    fontWeight: "{dic.reference.fontWeight.bold}",
-                    letterSpacing:
-                      "{dic.reference.dimension.letterSpacing.normal}",
-                    lineHeight: "{dic.reference.number.lineHeight.normal}",
-                  },
-                  $type: "typography",
-                  $description: "Title medium on sp",
-                },
-              },
-            },
-          },
-        },
-      }),
-      "tokens/typography.pc.json": JSON.stringify({
-        dic: {
-          system: {
-            typography: {
-              title: {
-                medium: {
-                  $value: {
-                    fontFamily: "{dic.reference.fontFamily.primary}",
-                    fontSize: "{dic.reference.dimension.fontSize.medium}",
-                    fontWeight: "{dic.reference.fontWeight.bold}",
-                    letterSpacing:
-                      "{dic.reference.dimension.letterSpacing.normal}",
-                    lineHeight: "{dic.reference.number.lineHeight.normal}",
-                  },
-                  $type: "typography",
-                  $description: "Title medium on pc",
+                  $value: "{dic.reference.dimension.scale.1}",
+                  $type: "dimension",
+                  $description: "Medium border",
                 },
               },
             },
@@ -248,14 +103,10 @@ describe("readJsonFiles", () => {
 
   test("reads all files and flattens tokens inside", () => {
     const result = readJsonFiles([
-      "tokens/color.default.json",
-      "tokens/dimension.default.json",
-      "tokens/shadow.default.json",
-      "tokens/number.default.json",
-      "tokens/fontFamily.default.json",
-      "tokens/fontWeight.default.json",
-      "tokens/typography.sp.json",
-      "tokens/typography.pc.json",
+      "tokens/reference/color.default.json",
+      "tokens/reference/dimension.default.json",
+      "tokens/system/color.default.json",
+      "tokens/system/dimension.default.json",
     ]);
 
     expect(result).toEqual({
@@ -277,110 +128,10 @@ describe("readJsonFiles", () => {
           $type: "dimension",
           $description: "1px",
         },
-        "dic/reference/dimension/fontSize/small": {
-          $value: "14px",
-          $type: "dimension",
-          $description: "Small font size",
-        },
-        "dic/reference/dimension/fontSize/medium": {
-          $value: "16px",
-          $type: "dimension",
-          $description: "Medium font size",
-        },
-        "dic/reference/dimension/letterSpacing/normal": {
-          $value: "0px",
-          $type: "dimension",
-          $description: "Normal letter spacing",
-        },
         "dic/system/dimension/border/medium": {
           $value: "{dic.reference.dimension.scale.1}",
           $type: "dimension",
           $description: "Medium border",
-        },
-      },
-      "shadow.default.json": {
-        "dic/reference/shadow/scale/1": {
-          $value: {
-            color: "#0000004D",
-            offsetX: "0px",
-            offsetY: "1px",
-            blur: "2px",
-            spread: "0px",
-          },
-          $type: "shadow",
-          $description: "Shadow 1",
-        },
-        "dic/system/elevation/1": {
-          $value: "{dic.reference.shadow.scale.1}",
-          $type: "shadow",
-          $description: "Elevation 1",
-        },
-      },
-      "number.default.json": {
-        "dic/reference/number/opacity/scale/4": {
-          $value: "0.4",
-          $type: "number",
-          $description: "10%",
-        },
-        "dic/reference/number/lineHeight/normal": {
-          $value: "1.5",
-          $type: "number",
-          $description: "Normal line height",
-        },
-        "dic/system/number/opacity/disabled": {
-          $value: "{dic.reference.number.opacity.scale.4}",
-          $type: "number",
-          $description: "Disabled opacity",
-        },
-      },
-      "fontFamily.default.json": {
-        "dic/reference/fontFamily/primary": {
-          $value: "Noto Sans JP",
-          $type: "fontFamily",
-          $description: "Primary font",
-        },
-        "dic/reference/fontFamily/monospace": {
-          $value: "Noto Sans Mono",
-          $type: "fontFamily",
-          $description: "Monospace font",
-        },
-      },
-      "fontWeight.default.json": {
-        "dic/reference/fontWeight/regular": {
-          $value: 400,
-          $type: "fontWeight",
-          $description: "Regular weight",
-        },
-        "dic/reference/fontWeight/bold": {
-          $value: 700,
-          $type: "fontWeight",
-          $description: "Bold weight",
-        },
-      },
-      "typography.sp.json": {
-        "dic/system/typography/title/medium": {
-          $value: {
-            fontFamily: "{dic.reference.fontFamily.primary}",
-            fontSize: "{dic.reference.dimension.fontSize.small}",
-            fontWeight: "{dic.reference.fontWeight.bold}",
-            letterSpacing: "{dic.reference.dimension.letterSpacing.normal}",
-            lineHeight: "{dic.reference.number.lineHeight.normal}",
-          },
-          $type: "typography",
-          $description: "Title medium on sp",
-        },
-      },
-      "typography.pc.json": {
-        "dic/system/typography/title/medium": {
-          $value: {
-            fontFamily: "{dic.reference.fontFamily.primary}",
-            fontSize: "{dic.reference.dimension.fontSize.medium}",
-            fontWeight: "{dic.reference.fontWeight.bold}",
-            letterSpacing: "{dic.reference.dimension.letterSpacing.normal}",
-            lineHeight: "{dic.reference.number.lineHeight.normal}",
-          },
-          $type: "typography",
-          $description: "Title medium on pc",
         },
       },
     });
@@ -463,110 +214,10 @@ describe("generatePostVariablesPayload", () => {
           $type: "dimension",
           $description: "1px",
         },
-        "dic/reference/dimension/fontSize/small": {
-          $value: "14px",
-          $type: "dimension",
-          $description: "Small font size",
-        },
-        "dic/reference/dimension/fontSize/medium": {
-          $value: "16px",
-          $type: "dimension",
-          $description: "Medium font size",
-        },
-        "dic/reference/dimension/letterSpacing/normal": {
-          $value: "0px",
-          $type: "dimension",
-          $description: "Normal letter spacing",
-        },
         "dic/system/dimension/border/medium": {
           $value: "{dic.reference.dimension.scale.1}",
           $type: "dimension",
           $description: "Medium border",
-        },
-      },
-      "shadow.default.json": {
-        "dic/reference/shadow/scale/1": {
-          $value: {
-            color: "#0000004D",
-            offsetX: "0px",
-            offsetY: "1px",
-            blur: "2px",
-            spread: "0px",
-          },
-          $type: "shadow",
-          $description: "Shadow 1",
-        },
-        "dic/system/elevation/1": {
-          $value: "{dic.reference.shadow.scale.1}",
-          $type: "shadow",
-          $description: "Elevation 1",
-        },
-      },
-      "number.default.json": {
-        "dic/reference/number/opacity/scale/4": {
-          $value: "0.4",
-          $type: "number",
-          $description: "10%",
-        },
-        "dic/reference/number/lineHeight/normal": {
-          $value: "Normal line height",
-          $type: "number",
-          $description: "Normal line height",
-        },
-        "dic/system/number/opacity/disabled": {
-          $value: "{dic.reference.number.opacity.scale.4}",
-          $type: "number",
-          $description: "Disabled opacity",
-        },
-      },
-      "fontFamily.default.json": {
-        "dic/reference/fontFamily/primary": {
-          $value: "Noto Sans JP",
-          $type: "fontFamily",
-          $description: "Primary font",
-        },
-        "dic/reference/fontFamily/monospace": {
-          $value: "Noto Sans Mono",
-          $type: "fontFamily",
-          $description: "Monospace font",
-        },
-      },
-      "fontWeight.default.json": {
-        "dic/reference/fontWeight/regular": {
-          $value: 400,
-          $type: "fontWeight",
-          $description: "Regular weight",
-        },
-        "dic/reference/fontWeight/bold": {
-          $value: 700,
-          $type: "fontWeight",
-          $description: "Bold weight",
-        },
-      },
-      "typography.sp.json": {
-        "dic/system/typography/title/medium": {
-          $value: {
-            fontFamily: "{dic.reference.fontFamily.primary}",
-            fontSize: "{dic.reference.dimension.fontSize.small}",
-            fontWeight: "{dic.reference.fontWeight.bold}",
-            letterSpacing: "{dic.reference.dimension.letterSpacing.normal}",
-            lineHeight: "{dic.reference.number.lineHeight.normal}",
-          },
-          $type: "typography",
-          $description: "Title medium on sp",
-        },
-      },
-      "typography.pc.json": {
-        "dic/system/typography/title/medium": {
-          $value: {
-            fontFamily: "{dic.reference.fontFamily.primary}",
-            fontSize: "{dic.reference.dimension.fontSize.medium}",
-            fontWeight: "{dic.reference.fontWeight.bold}",
-            letterSpacing: "{dic.reference.dimension.letterSpacing.normal}",
-            lineHeight: "{dic.reference.number.lineHeight.normal}",
-          },
-          $type: "typography",
-          $description: "Title medium on pc",
         },
       },
     };
@@ -589,12 +240,6 @@ describe("generatePostVariablesPayload", () => {
         name: "dimension",
         initialModeId: "default",
       },
-      {
-        action: "CREATE",
-        id: "number",
-        name: "number",
-        initialModeId: "default",
-      },
     ]);
 
     expect(result.variableModes).toEqual([
@@ -609,12 +254,6 @@ describe("generatePostVariablesPayload", () => {
         id: "default",
         name: "default",
         variableCollectionId: "dimension",
-      },
-      {
-        action: "UPDATE",
-        id: "default",
-        name: "default",
-        variableCollectionId: "number",
       },
     ]);
 
@@ -651,22 +290,6 @@ describe("generatePostVariablesPayload", () => {
         resolvedType: "FLOAT",
         description: "Medium border",
       },
-      {
-        action: "CREATE",
-        id: "dic/reference/number/opacity/scale/4",
-        name: "dic/reference/number/opacity/scale/4",
-        variableCollectionId: "number",
-        resolvedType: "FLOAT",
-        description: "10%",
-      },
-      {
-        action: "CREATE",
-        id: "dic/system/number/opacity/disabled",
-        name: "dic/system/number/opacity/disabled",
-        variableCollectionId: "number",
-        resolvedType: "FLOAT",
-        description: "Disabled opacity",
-      },
     ]);
 
     expect(result.variableModeValues).toEqual([
@@ -694,19 +317,6 @@ describe("generatePostVariablesPayload", () => {
         value: {
           type: "VARIABLE_ALIAS",
           id: "dic/reference/dimension/scale/1",
-        },
-      },
-      {
-        variableId: "dic/reference/number/opacity/scale/4",
-        modeId: "default",
-        value: 0.4,
-      },
-      {
-        variableId: "dic/system/number/opacity/disabled",
-        modeId: "default",
-        value: {
-          type: "VARIABLE_ALIAS",
-          id: "dic/reference/number/opacity/scale/4",
         },
       },
     ]);
