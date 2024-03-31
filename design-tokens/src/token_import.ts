@@ -14,7 +14,7 @@ import {
 } from "@figma/rest-api-spec";
 import { areSetsEqual } from "./utils.js";
 import { colorApproximatelyEqual, parseColor } from "./color.js";
-import { parseDimension } from "./dimension";
+import { parseDimension } from "./dimension.js";
 
 export type FlattenedTokensByFile = {
   [fileName: string]: {
