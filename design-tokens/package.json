@@ -3,7 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "exports": "./dist/tokens.js",
+  "exports": {
+    ".": {
+      "import": "./dist/tokens.js",
+      "types": "./dist/tokens.d.ts"
+    },
+    "./panda": {
+      "import": "./dist/panda-tokens.js",
+      "types": "./dist/panda-tokens.d.ts"
+    }
+  },
   "scripts": {
     "build": "node build.js",
     "test": "vitest",

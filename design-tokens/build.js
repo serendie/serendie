@@ -1,8 +1,8 @@
 import StyleDictionary from "style-dictionary-utils";
-import { w3cTokenJsonParser } from "style-dictionary-utils/dist/parser/w3c-token-json-parser.js";
+import { SpreadParser } from "./parser.js";
 import "./formatter.js";
 
-StyleDictionary.registerParser(w3cTokenJsonParser);
+StyleDictionary.registerParser(SpreadParser);
 
 const myStyleDictionary = StyleDictionary.extend({
   source: ["tokens/**/*.json"],
@@ -13,21 +13,24 @@ const myStyleDictionary = StyleDictionary.extend({
         "name/cti/camel",
         "time/seconds",
         "content/icon",
-        "dimension/pixelToRem",
         "color/css",
       ],
       files: [
         {
-          destination: "dist/tokens.cjs",
-          format: "javascript/module",
+          destination: "dist/tokens.js",
+          format: "spread-module",
         },
         {
-          destination: "dist/tokens.js",
+          destination: "dist/tokens.d.ts",
+          format: "spread-module-declarations",
+        },
+        {
+          destination: "dist/panda-tokens.js",
           format: "panda-css-module",
         },
         {
-          format: "typescript/module-declarations",
-          destination: "dist/tokens.d.ts",
+          destination: "dist/panda-tokens.d.ts",
+          format: "panda-css-module-declarations",
         },
       ],
     },

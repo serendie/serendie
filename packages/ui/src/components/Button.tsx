@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { cva } from "../../styled-system/css";
 import { styled } from "../../styled-system/jsx";
-//import { Button as AriaButton } from "react-aria-components";
 
 const buttonStyle = cva({
   base: {
@@ -13,29 +12,35 @@ const buttonStyle = cva({
     variant: {
       primary: {
         color: "white",
-        bg: "primary",
-        "&[data-hovered]": {
-          bg: "purple",
+        borderWidth: "dic.system.dimension.border.thick",
+        padding: "dic.reference.dimension.scale.11",
+        bg: "dic.reference.color.scale.red.300",
+        _hover: {
+          bg: "dic.reference.color.scale.red.400",
         },
-        "&[data-pressed]": {
-          color: "primary",
-          bg: "black",
+        _active: {
+          bg: "dic.reference.color.scale.red.500",
         },
       },
       secondary: {
         color: "secondary",
-        bg: "gray",
-        "&[data-hovered]": {
-          bg: "purple.200",
+        bg: "dic.reference.color.scale.green.300",
+        _hover: {
+          bg: "dic.reference.color.scale.green.400",
         },
-        "&[data-pressed]": {
-          color: "primary",
-          bg: "black.200",
+        _active: {
+          bg: "dic.reference.color.scale.green.500",
         },
       },
       tertiary: {
         color: "black",
-        bg: "spreadPrimaryColor",
+        bg: "dic.reference.color.scale.orange.300",
+        _hover: {
+          bg: "dic.reference.color.scale.orange.400",
+        },
+        _active: {
+          bg: "dic.reference.color.scale.orange.500",
+        },
       },
     },
     size: {
@@ -62,12 +67,6 @@ const buttonStyle = cva({
   },
 });
 
-//export const Button = styled(AriaButton, buttonStyle);
-
-//export const Button: React.FC = (props) => {
-//return <AriaButton {...props} />;
-//};
-
 export const Button = styled("button", buttonStyle);
 
 export const Button2 = () => {
@@ -78,5 +77,3 @@ export const Button2 = () => {
     </Button>
   );
 };
-
-//export const Button3 = AriaButton;

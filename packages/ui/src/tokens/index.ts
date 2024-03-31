@@ -1,11 +1,9 @@
-import { Tokens } from "@pandacss/dev";
-import dt from "@spread/design-token";
+import { defineTextStyles, defineTokens } from "@pandacss/dev";
+import spreadTokens from "@spread/design-token/panda";
 
-export const SpreadTokens: Tokens = {
-  colors: {
-    secondary: { value: "#00ff00" },
-    tertiary: { value: "#00ffff" },
-    spreadPrimaryColor: { value: "#ff00ff" },
-    ...dt.color,
-  },
-};
+// PandaCSSのtokensとtextStylesが混在しているので分離する
+const { textStyles, ...tokens } = spreadTokens;
+
+export const SpreadTokens = defineTokens(tokens);
+
+export const SpreadTypography = defineTextStyles(textStyles);

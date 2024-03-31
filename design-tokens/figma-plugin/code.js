@@ -1,17 +1,29 @@
 console.clear();
 
-async function createCollection(name) {
+async function createCollection(name, modeName) {
   const collections = await figma.variables.getLocalVariableCollectionsAsync();
   const existingCollection = collections.find((e) => e.name === name);
   const collection =
     existingCollection || figma.variables.createVariableCollection(name);
 
-  const modeId = collection.modes[0].modeId;
-  return { collection, modeId };
+  if (modeName) {
+    const existingMode = collection.modes.find((e) => e.name === modeName);
+    if (existingMode) {
+      return { collection, modeId: existingMode.modeId };
+    } else {
+      return { collection, modeId: collection.addMode(modeName) };
+    }
+  } else {
+    return { collection, modeId: collection.modes[0].modeId };
+  }
 }
 
 function createToken(collection, modeId, type, name, value) {
-  const token = figma.variables.createVariable(name, collection, type);
+  const localVariables = figma.variables.getLocalVariables();
+  const token =
+    localVariables.find(
+      (e) => e.name === name && e.variableCollectionId === collection.id
+    ) || figma.variables.createVariable(name, collection, type);
   token.setValueForMode(modeId, value);
   return token;
 }
@@ -24,9 +36,9 @@ function createVariable(collection, modeId, key, valueKey, tokens) {
   });
 }
 
-async function importJSONFile({ fileName, body }) {
+async function importJSONFile({ fileName, modeName, body }) {
   const json = JSON.parse(body);
-  const { collection, modeId } = await createCollection(fileName);
+  const { collection, modeId } = await createCollection(fileName, modeName);
   const aliases = {};
   const tokens = {};
   Object.entries(json).forEach(([key, object]) => {
@@ -108,6 +120,14 @@ function traverseToken({
         key,
         object.$value
       );
+    } else if (type === "dimension") {
+      tokens[key] = createToken(
+        collection,
+        modeId,
+        "FLOAT",
+        key,
+        Number(object.$value.replace("px", ""))
+      );
     } else {
       console.log("unsupported type", type, object);
     }
@@ -170,8 +190,8 @@ async function processCollection({ name, modes, variableIds }) {
 figma.ui.onmessage = async (e) => {
   console.log("code received message", e);
   if (e.type === "IMPORT") {
-    const { fileName, body } = e;
-    await importJSONFile({ fileName, body });
+    const { fileName, modeName, body } = e;
+    await importJSONFile({ fileName, modeName, body });
   } else if (e.type === "EXPORT") {
     await exportToJSON();
   }
