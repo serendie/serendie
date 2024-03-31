@@ -272,7 +272,7 @@ describe("generatePostVariablesPayload", () => {
       {
         variableId: "dic/reference/color/scale/blue/100",
         modeId: "default",
-        value: { r: 1, g: 1, b: 1 },
+        value: { r: 0.8588235294117647, g: 0.9529411764705882, b: 1 },
       },
       {
         variableId: "dic/system/color/primary",
