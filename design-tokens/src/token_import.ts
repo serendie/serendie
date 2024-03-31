@@ -322,7 +322,10 @@ export const generatePostVariablesPayload = (
       (mode) => mode.name === modeName
     );
     // Use the actual mode id or use the name as the temporary id
-    const modeId = variableMode ? variableMode.modeId : modeName;
+    const modeId = variableMode
+      ? variableMode.modeId
+      : `${collectionName}.${modeName}`;
+    const modeNameInPayload = variableMode ? variableMode.name : modeName;
 
     if (
       !variableCollection &&
@@ -341,7 +344,7 @@ export const generatePostVariablesPayload = (
       postVariablesPayload.variableModes?.push({
         action: "UPDATE",
         id: modeId,
-        name: modeId,
+        name: modeNameInPayload,
         variableCollectionId,
       });
     }
@@ -360,7 +363,7 @@ export const generatePostVariablesPayload = (
       postVariablesPayload.variableModes?.push({
         action: "CREATE",
         id: modeId,
-        name: modeId,
+        name: modeNameInPayload,
         variableCollectionId,
       });
     }
