@@ -37,6 +37,34 @@ const main = async () => {
     console.log(green("✅ Tokens are already up to date with the Figma file"));
     return;
   }
+
+  const apiResp = await api.postVariables(fileKey, postVariablesPayload);
+
+  console.log("POST variables API response:", apiResp);
+
+  if (postVariablesPayload.variableCollections?.length) {
+    console.log(
+      "Update variable collections",
+      postVariablesPayload.variableCollections
+    );
+  }
+
+  if (postVariablesPayload.variableModes?.length) {
+    console.log("Update variable modes", postVariablesPayload.variableModes);
+  }
+
+  if (postVariablesPayload.variables?.length) {
+    console.log("Update variables", postVariablesPayload.variables);
+  }
+
+  if (postVariablesPayload.variableModeValues?.length) {
+    console.log(
+      "Update variable mode values",
+      postVariablesPayload.variableModeValues
+    );
+  }
+
+  console.log(green("✅ Figma file has been updated with the new tokens"));
 };
 
 main();
