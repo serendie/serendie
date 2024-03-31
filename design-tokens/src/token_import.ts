@@ -18,18 +18,8 @@ export type FlattenedTokensByFile = {
 export const readJsonFiles = (files: string[]) => {
   const tokensJsonByFile: FlattenedTokensByFile = {};
 
-  const seenCollectionsAndModes = new Set<string>();
-
   for (const file of files) {
     const baseFileName = path.basename(file);
-    const { collectionName, modeName } =
-      collectionAndModeFromFileName(baseFileName);
-
-    if (seenCollectionsAndModes.has(`${collectionName}.${modeName}`)) {
-      throw new Error(`Duplicate collection and mode in file: ${file}`);
-    }
-
-    seenCollectionsAndModes.add(`${collectionName}.${modeName}`);
 
     const fileContent = fs.readFileSync(file, { encoding: "utf-8" });
 
@@ -39,8 +29,17 @@ export const readJsonFiles = (files: string[]) => {
 
     const tokensFile: TokensFile = JSON.parse(fileContent);
 
-    tokensJsonByFile[baseFileName] = flattenTokensFile(tokensFile);
+    if (tokensJsonByFile[baseFileName]) {
+      tokensJsonByFile[baseFileName] = {
+        ...tokensJsonByFile[baseFileName],
+        ...flattenTokensFile(tokensFile),
+      };
+    } else {
+      tokensJsonByFile[baseFileName] = flattenTokensFile(tokensFile);
+    }
   }
+
+  console.log("Tokens by file:", tokensJsonByFile);
 
   return tokensJsonByFile;
 };
@@ -148,7 +147,7 @@ export const generatePostVariablesPayload = (
     variableModeValues: [],
   };
 
-  for (const [fileName, tokens] of Object.entries(tokensByFile)) {
+  for (const [fileName, _] of Object.entries(tokensByFile)) {
     const { collectionName, modeName } =
       collectionAndModeFromFileName(fileName);
 
