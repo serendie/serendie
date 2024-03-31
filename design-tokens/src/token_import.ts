@@ -27,6 +27,7 @@ export const readJsonFiles = (files: string[]) => {
 
   for (const file of files) {
     const baseFileName = path.basename(file);
+    const { collectionName } = collectionAndModeFromFileName(baseFileName);
 
     const fileContent = fs.readFileSync(file, { encoding: "utf-8" });
 
@@ -36,13 +37,15 @@ export const readJsonFiles = (files: string[]) => {
 
     const tokensFile: TokensFile = JSON.parse(fileContent);
 
-    if (tokensJsonByFile[baseFileName]) {
-      tokensJsonByFile[baseFileName] = {
-        ...tokensJsonByFile[baseFileName],
-        ...flattenTokensFile(tokensFile),
-      };
-    } else {
-      tokensJsonByFile[baseFileName] = flattenTokensFile(tokensFile);
+    if (collectionName === "color" || collectionName === "dimension") {
+      if (tokensJsonByFile[baseFileName]) {
+        tokensJsonByFile[baseFileName] = {
+          ...tokensJsonByFile[baseFileName],
+          ...flattenTokensFile(tokensFile),
+        };
+      } else {
+        tokensJsonByFile[baseFileName] = flattenTokensFile(tokensFile);
+      }
     }
   }
 

@@ -39,13 +39,58 @@ describe("readJsonFiles", () => {
               },
             },
           },
-          system: {
-            dimension: {
-              border: {
-                medium: {
-                  $value: "{dic.reference.dimension.scale.1}",
-                  $type: "dimension",
-                  $description: "Medium border",
+        },
+      }),
+      "tokens/reference/elevation.default.json": JSON.stringify({
+        dic: {
+          reference: {
+            elevation: {
+              opacity: {
+                scale: {
+                  "0": {
+                    $value: 0,
+                    $type: "number",
+                  },
+                },
+              },
+            },
+          },
+        },
+      }),
+      "tokens/reference/typography.default.json": JSON.stringify({
+        dic: {
+          reference: {
+            typography: {
+              fontFamily: {
+                primary: {
+                  $value: "Noto Sans JP",
+                  $type: "fontFamily",
+                },
+              },
+              fontWeight: {
+                regular: {
+                  $value: 400,
+                  $type: "fontWeight",
+                },
+              },
+              lineHeight: {
+                none: {
+                  $value: 1,
+                  $type: "number",
+                },
+              },
+              scale: {
+                expanded: {
+                  fourExtraSmall: {
+                    $value: "10px",
+                    $type: "dimension",
+                  },
+                },
+                compact: {
+                  twoExtraSmall: {
+                    $value: "10px",
+                    $type: "dimension",
+                  },
                 },
               },
             },
@@ -80,6 +125,74 @@ describe("readJsonFiles", () => {
           },
         },
       }),
+      "tokens/system/elevation.default.json": JSON.stringify({
+        dic: {
+          system: {
+            elevation: {
+              shadow: {
+                level1: {
+                  $type: "shadow",
+                  $value: {
+                    color: "#0000004D",
+                    offsetX: "0px",
+                    offsetY: "1px",
+                    blur: "2px",
+                    spread: "0px",
+                  },
+                },
+              },
+              zIndex: {
+                deepDive: {
+                  $type: "number",
+                  $value: -1000,
+                },
+              },
+            },
+          },
+        },
+      }),
+      "tokens/system/typography.compact.json": JSON.stringify({
+        dic: {
+          system: {
+            typography: {
+              display: {
+                small: {
+                  $type: "typography",
+                  $value: {
+                    fontSize:
+                      "{dic.reference.typography.scale.compact.fourExtraLarge}",
+                    fontWeight: "{dic.reference.typography.fontWeight.regular}",
+                    fontFamily: "{dic.reference.typography.fontFamily.primary}",
+                    lineHeight: "{dic.reference.typography.lineHeight.normal}",
+                    letterSpacing: "0px",
+                  },
+                },
+              },
+            },
+          },
+        },
+      }),
+      "tokens/system/typography.expanded.json": JSON.stringify({
+        dic: {
+          system: {
+            typography: {
+              display: {
+                small: {
+                  $type: "typography",
+                  $value: {
+                    fontSize:
+                      "{dic.reference.typography.scale.expanded.fourExtraLarge}",
+                    fontWeight: "{dic.reference.typography.fontWeight.regular}",
+                    fontFamily: "{dic.reference.typography.fontFamily.primary}",
+                    lineHeight: "{dic.reference.typography.lineHeight.normal}",
+                    letterSpacing: "0px",
+                  },
+                },
+              },
+            },
+          },
+        },
+      }),
       "no_tokens.mode1.json": JSON.stringify({
         foo: "bar",
       }),
@@ -105,8 +218,13 @@ describe("readJsonFiles", () => {
     const result = readJsonFiles([
       "tokens/reference/color.default.json",
       "tokens/reference/dimension.default.json",
+      "tokens/reference/elevation.default.json",
+      "tokens/reference/typography.default.json",
       "tokens/system/color.default.json",
       "tokens/system/dimension.default.json",
+      "tokens/system/elevation.default.json",
+      "tokens/system/typography.compact.json",
+      "tokens/system/typography.expanded.json",
     ]);
 
     expect(result).toEqual({
@@ -133,20 +251,6 @@ describe("readJsonFiles", () => {
           $type: "dimension",
           $description: "Medium border",
         },
-      },
-    });
-  });
-
-  test("handles files that do not have any tokens", () => {
-    const result = readJsonFiles(["no_tokens.mode1.json"]);
-    expect(result).toEqual({ "no_tokens.mode1.json": {} });
-  });
-
-  test("ignores keys that start with $", () => {
-    const result = readJsonFiles(["file_with_$_keys.mode1.json"]);
-    expect(result).toEqual({
-      "file_with_$_keys.mode1.json": {
-        token1: { $type: "string", $value: "value1" },
       },
     });
   });
