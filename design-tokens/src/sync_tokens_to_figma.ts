@@ -1,10 +1,9 @@
 import "dotenv/config";
-import * as fs from "fs";
 
 import FigmaApi from "./figma_api.js";
 
 import { generatePostVariablesPayload, readJsonFiles } from "./token_import.js";
-import { green } from "./utils.js";
+import { green, tokenFiles } from "./utils.js";
 
 const main = async () => {
   if (!process.env.PERSONAL_ACCESS_TOKEN || !process.env.FILE_KEY) {
@@ -15,9 +14,7 @@ const main = async () => {
   const fileKey = process.env.FILE_KEY;
 
   const TOKENS_DIR = "tokens";
-  const tokensFiles = fs
-    .readdirSync(TOKENS_DIR)
-    .map((file: string) => `${TOKENS_DIR}/${file}`);
+  const tokensFiles = tokenFiles(TOKENS_DIR);
 
   const tokensByFile = readJsonFiles(tokensFiles);
 
