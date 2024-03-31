@@ -98,8 +98,6 @@ export const generatePostVariablesPayload = (
   tokensByFile: FlattenedTokensByFile,
   localVariables: GetLocalVariablesResponse
 ) => {
-  console.log(tokensByFile);
-
   const localVariableCollectionsByName: {
     [name: string]: LocalVariableCollection;
   } = {};
@@ -149,6 +147,65 @@ export const generatePostVariablesPayload = (
     variables: [],
     variableModeValues: [],
   };
+
+  for (const [fileName, tokens] of Object.entries(tokensByFile)) {
+    const { collectionName, modeName } =
+      collectionAndModeFromFileName(fileName);
+
+    const variableCollection = localVariableCollectionsByName[collectionName];
+    // Use the actual variable collection id or use the name as the temporary id
+    const variableCollectionId = variableCollection
+      ? variableCollection.id
+      : collectionName;
+    const variableMode = variableCollection?.modes.find(
+      (mode) => mode.name === modeName
+    );
+    // Use the actual mode id or use the name as the temporary id
+    const modeId = variableMode ? variableMode.modeId : modeName;
+
+    if (
+      !variableCollection &&
+      !postVariablesPayload.variableCollections?.find(
+        (c) => c.id === variableCollectionId
+      )
+    ) {
+      postVariablesPayload.variableCollections?.push({
+        action: "CREATE",
+        id: variableCollectionId,
+        name: variableCollectionId,
+        initialModeId: modeId, // Use the initial mode as the first mode
+      });
+
+      // Rename the initial mode, since we're using it as our first mode in the collection
+      postVariablesPayload.variableModes?.push({
+        action: "UPDATE",
+        id: modeId,
+        name: modeId,
+        variableCollectionId,
+      });
+    }
+
+    // Add a new mode if it doesn't exist in the Figma file
+    // and it's not the initial mode in the collection
+    if (
+      !variableMode &&
+      !postVariablesPayload.variableCollections?.find(
+        (c) =>
+          c.id === variableCollectionId &&
+          "initialModeId" in c &&
+          c.initialModeId === modeId
+      )
+    ) {
+      postVariablesPayload.variableModes?.push({
+        action: "CREATE",
+        id: modeId,
+        name: modeId,
+        variableCollectionId,
+      });
+    }
+  }
+
+  console.log("Post variables payload:", postVariablesPayload);
 
   return postVariablesPayload;
 };
