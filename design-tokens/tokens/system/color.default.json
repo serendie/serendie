@@ -4,80 +4,104 @@
       "color": {
         "impression": {
           "primary": {
-            "$value": "{dic.reference.color.scale.blue.600}"
+            "$value": "{dic.reference.color.scale.blue.600}",
+            "$type": "color"
           },
           "onPrimary": {
-            "$value": "{dic.reference.color.scale.white.1000}"
+            "$value": "{dic.reference.color.scale.white.1000}",
+            "$type": "color"
           },
           "primaryContainer": {
-            "$value": "{dic.reference.color.scale.blue.600}"
+            "$value": "{dic.reference.color.scale.blue.600}",
+            "$type": "color"
           },
           "onPrimaryContainer": {
-            "$value": "{dic.reference.color.scale.white.1000}"
+            "$value": "{dic.reference.color.scale.white.1000}",
+            "$type": "color"
           },
           "notice": {
-            "$value": "{dic.reference.color.scale.yellow.600}"
+            "$value": "{dic.reference.color.scale.yellow.600}",
+            "$type": "color"
           },
           "onNotice": {
-            "$value": "{dic.reference.color.scale.white.1000}"
+            "$value": "{dic.reference.color.scale.white.1000}",
+            "$type": "color"
           },
           "noticeContainer": {
-            "$value": "{dic.reference.color.scale.yellow.600}"
+            "$value": "{dic.reference.color.scale.yellow.600}",
+            "$type": "color"
           },
           "onNoticeContainer": {
-            "$value": "{dic.reference.color.scale.white.1000}"
+            "$value": "{dic.reference.color.scale.white.1000}",
+            "$type": "color"
           },
           "negative": {
-            "$value": "{dic.reference.color.scale.red.600}"
+            "$value": "{dic.reference.color.scale.red.600}",
+            "$type": "color"
           },
           "onNegative": {
-            "$value": "{dic.reference.color.scale.white.1000}"
+            "$value": "{dic.reference.color.scale.white.1000}",
+            "$type": "color"
           },
           "negativeContainer": {
-            "$value": "{dic.reference.color.scale.red.600}"
+            "$value": "{dic.reference.color.scale.red.600}",
+            "$type": "color"
           },
           "onNegativeContainer": {
-            "$value": "{dic.reference.color.scale.white.1000}"
+            "$value": "{dic.reference.color.scale.white.1000}",
+            "$type": "color"
           },
           "positive": {
-            "$value": "{dic.reference.color.scale.green.600}"
+            "$value": "{dic.reference.color.scale.green.600}",
+            "$type": "color"
           },
           "onPositive": {
-            "$value": "{dic.reference.color.scale.white.1000}"
+            "$value": "{dic.reference.color.scale.white.1000}",
+            "$type": "color"
           },
           "positiveContainer": {
-            "$value": "{dic.reference.color.scale.green.600}"
+            "$value": "{dic.reference.color.scale.green.600}",
+            "$type": "color"
           },
           "onPositiveContainer": {
-            "$value": "{dic.reference.color.scale.white.1000}"
+            "$value": "{dic.reference.color.scale.white.1000}",
+            "$type": "color"
           }
         },
         "component": {
           "surface": {
-            "$value": "{dic.reference.color.scale.white.1000}"
+            "$value": "{dic.reference.color.scale.white.1000}",
+            "$type": "color"
           },
           "onSurface": {
-            "$value": "{dic.reference.color.scale.black.1000}"
+            "$value": "{dic.reference.color.scale.black.1000}",
+            "$type": "color"
           },
           "outline": {
-            "$value": "{dic.reference.color.scale.gray.300}"
+            "$value": "{dic.reference.color.scale.gray.300}",
+            "$type": "color"
           },
           "outlineVariant": {
-            "$value": "{dic.reference.color.scale.gray.500}"
+            "$value": "{dic.reference.color.scale.gray.500}",
+            "$type": "color"
           },
           "scrim": {
-            "$value": "{dic.reference.color.scale.transparency.10}"
+            "$value": "{dic.reference.color.scale.transparency.10}",
+            "$type": "color"
           }
         },
         "interaction": {
           "disabled": {
-            "$value": "{dic.reference.color.scale.gray.200}"
+            "$value": "{dic.reference.color.scale.gray.200}",
+            "$type": "color"
           },
           "hovered": {
-            "$value": "{dic.reference.color.scale.transparency.20}"
+            "$value": "{dic.reference.color.scale.transparency.20}",
+            "$type": "color"
           },
           "hoveredVariant": {
-            "$value": "{dic.reference.color.scale.transparency.5}"
+            "$value": "{dic.reference.color.scale.transparency.5}",
+            "$type": "color"
           }
         }
       }
