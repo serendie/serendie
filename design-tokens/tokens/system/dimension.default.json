@@ -4,64 +4,83 @@
       "dimension": {
         "spacing": {
           "twoExtraSmall": {
+            "$type": "dimension",
             "$value": "{dic.reference.dimension.scale.3}"
           },
           "extraSmall": {
+            "$type": "dimension",
             "$value": "{dic.reference.dimension.scale.4}"
           },
           "small": {
+            "$type": "dimension",
             "$value": "{dic.reference.dimension.scale.5}"
           },
           "medium": {
+            "$type": "dimension",
             "$value": "{dic.reference.dimension.scale.6}"
           },
           "large": {
+            "$type": "dimension",
             "$value": "{dic.reference.dimension.scale.7}"
           },
           "extraLarge": {
+            "$type": "dimension",
             "$value": "{dic.reference.dimension.scale.8}"
           },
           "twoExtraLarge": {
+            "$type": "dimension",
             "$value": "{dic.reference.dimension.scale.10}"
           },
           "threeExtraLarge": {
+            "$type": "dimension",
             "$value": "{dic.reference.dimension.scale.12}"
           },
           "fourExtraLarge": {
+            "$type": "dimension",
             "$value": "{dic.reference.dimension.scale.13}"
           },
           "fiveExtraLarge": {
+            "$type": "dimension",
             "$value": "{dic.reference.dimension.scale.15}"
           },
           "sixExtraLarge": {
+            "$type": "dimension",
             "$value": "{dic.reference.dimension.scale.17}"
           }
         },
         "border": {
           "medium": {
+            "$type": "dimension",
             "$value": "{dic.reference.dimension.scale.1}"
           },
           "thick": {
+            "$type": "dimension",
             "$value": "{dic.reference.dimension.scale.2}"
           },
           "extraThick": {
+            "$type": "dimension",
             "$value": "{dic.reference.dimension.scale.3}"
           }
         },
         "radius": {
           "extraSmall": {
+            "$type": "dimension",
             "$value": "{dic.reference.dimension.scale.2}"
           },
           "small": {
+            "$type": "dimension",
             "$value": "{dic.reference.dimension.scale.3}"
           },
           "medium": {
+            "$type": "dimension",
             "$value": "{dic.reference.dimension.scale.4}"
           },
           "large": {
+            "$type": "dimension",
             "$value": "{dic.reference.dimension.scale.5}"
           },
           "extraLarge": {
+            "$type": "dimension",
             "$value": "{dic.reference.dimension.scale.6}"
           }
         }
