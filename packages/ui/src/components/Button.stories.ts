@@ -12,7 +12,7 @@ const meta: Meta<typeof Button> = {
   },
   argTypes: {
     type: {
-      options: ["filled", "outlined", "ghost"],
+      options: ["filled", "outline", "ghost"],
       control: { type: "radio" },
     },
     size: {

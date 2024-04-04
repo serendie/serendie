@@ -39,17 +39,28 @@ const buttonStyle = cva({
       },
       outline: {
         color: "dic.system.color.component.onSurface",
-        border: "1px solid",
-        borderColor: "dic.system.color.component.outline",
+        outline: "1px solid",
+        outlineColor: "dic.system.color.component.outline",
         bgColor: "dic.system.color.component.surface",
         _hover: {
           bgColor: "dic.system.color.interaction.hoveredVariant",
         },
         _focus: {
+          outlineColor: "dic.system.color.component.outlineVariant",
           bgColor: "dic.system.color.interaction.hoveredVariant",
         },
       },
-      ghost: {},
+      ghost: {
+        outline: "1px solid",
+        outlineColor: "transparent",
+        _hover: {
+          bgColor: "dic.system.color.interaction.hoveredVariant",
+        },
+        _focus: {
+          bgColor: "dic.system.color.interaction.hoveredVariant",
+          outlineColor: "dic.system.color.component.outlineVariant",
+        },
+      },
     },
     size: {
       medium: {
