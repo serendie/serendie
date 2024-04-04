@@ -56,7 +56,7 @@ const buttonStyle = cva({
         px: "dic.system.dimension.spacing.extraLarge",
         py: "dic.system.dimension.spacing.small",
         fontSize: "dic.reference.typography.scale.compact.medium",
-        md: {
+        sm: {
           fontSize: "dic.reference.typography.scale.expanded.medium",
         },
       },
@@ -64,7 +64,7 @@ const buttonStyle = cva({
         px: "dic.system.dimension.spacing.small",
         py: "dic.system.dimension.spacing.twoExtraSmall",
         fontSize: "dic.reference.typography.scale.compact.small",
-        md: {
+        sm: {
           fontSize: "dic.reference.typography.scale.expanded.small",
         },
       },
