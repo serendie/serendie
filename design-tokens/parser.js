@@ -7,10 +7,10 @@ export const SpreadParser = {
     const match = filePath.match(/\.(\w+).json$/);
     if (match) {
       const postfix = match[1];
-      return appendPostfixToValueWalk(obj, postfix);
-    } else {
-      return obj;
+      // defaultの場合はpostfixを付与しない
+      if (postfix !== "default") return appendPostfixToValueWalk(obj, postfix);
     }
+    return obj;
   },
 };
 

@@ -141,6 +141,10 @@ const pandaCssObjectFormat = (o) => {
           path.unshift("fontSizes");
         } else if (type === "shadow") {
           path.unshift("shadows");
+        } else if (pathAsStr.match(/\.zIndex\./)) {
+          path.unshift("zIndex");
+        } else if (pathAsStr.match(/\.lineHeight\./)) {
+          path.unshift("lineHeights");
         } else if (pathAsStr.match(/\.radius\./)) {
           path.unshift("radii");
         } else if (pathAsStr.match(/\.opacity\./)) {
@@ -177,7 +181,8 @@ const pandaCssObjectFormat = (o) => {
 
   if (res["unclassified"]) {
     // Token Typesに該当しないものを出力
-    console.warn("unclassified tokens", res["unclassified"]);
+    console.warn("unclassified tokens");
+    console.dir(res["unclassified"], { depth: null });
     delete res["unclassified"];
   }
 
