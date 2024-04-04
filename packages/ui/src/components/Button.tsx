@@ -1,4 +1,5 @@
-import { cva } from "../../styled-system/css";
+import React from "react";
+import { css, cva } from "../../styled-system/css";
 import { styled } from "../../styled-system/jsx";
 import { StyledVariantProps } from "../../styled-system/types";
 
@@ -63,4 +64,16 @@ const buttonStyle = cva({
 
 export type ButtonVariants = StyledVariantProps<typeof Button>;
 
-export const Button = styled("button", buttonStyle);
+// forward ref でボタンをラップ
+export const ButtonWithRef = React.forwardRef<
+  HTMLButtonElement,
+  React.ButtonHTMLAttributes<HTMLButtonElement>
+>(({ children, ...props }, ref) => {
+  return (
+    <button ref={ref} {...props}>
+      <span className={css({ pos: "relative", zIndex: 1 })}>{children}</span>
+    </button>
+  );
+});
+
+export const Button = styled(ButtonWithRef, buttonStyle);
