@@ -10,6 +10,9 @@ const buttonStyle = cva({
   base: {
     borderRadius: "full",
     position: "relative",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
   variants: {
     type: {
@@ -39,19 +42,19 @@ const buttonStyle = cva({
     },
     size: {
       medium: {
-        px: "3",
-        py: "2",
-        fontSize: "dic.reference.typography.scale.expanded.medium",
-        sm: {
-          fontSize: "dic.reference.typography.scale.compact.medium",
+        px: "dic.system.dimension.spacing.extraLarge",
+        py: "dic.system.dimension.spacing.small",
+        fontSize: "dic.reference.typography.scale.compact.medium",
+        md: {
+          fontSize: "dic.reference.typography.scale.expanded.medium",
         },
       },
       small: {
-        px: "3",
-        py: "2",
-        fontSize: "dic.reference.typography.scale.expanded.small",
-        sm: {
-          fontSize: "dic.reference.typography.scale.compact.small",
+        px: "dic.system.dimension.spacing.small",
+        py: "dic.system.dimension.spacing.twoExtraSmall",
+        fontSize: "dic.reference.typography.scale.compact.small",
+        md: {
+          fontSize: "dic.reference.typography.scale.expanded.small",
         },
       },
     },
