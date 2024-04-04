@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { cva } from "../../styled-system/css";
 import { styled } from "../../styled-system/jsx";
+import { StyledVariantProps } from "../../styled-system/types";
 
 const buttonStyle = cva({
   base: {
@@ -67,13 +67,6 @@ const buttonStyle = cva({
   },
 });
 
-export const Button = styled("button", buttonStyle);
+export type ButtonVariants = StyledVariantProps<typeof Button>;
 
-export const Button2 = () => {
-  const [onOff, setOnOff] = useState("off");
-  return (
-    <Button onClick={() => setOnOff(onOff === "on" ? "off" : "on")}>
-      {onOff}
-    </Button>
-  );
-};
+export const Button = styled("button", buttonStyle);
