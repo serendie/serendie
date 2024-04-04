@@ -13,11 +13,11 @@ const buttonStyle = cva({
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
+    overflow: "hidden",
   },
   variants: {
     type: {
       filled: {
-        overflow: "hidden",
         bg: "dic.system.color.impression.primaryContainer",
         color: "dic.system.color.impression.onPrimaryContainer",
         _hover: {
@@ -37,7 +37,18 @@ const buttonStyle = cva({
           },
         },
       },
-      outline: {},
+      outline: {
+        color: "dic.system.color.component.onSurface",
+        border: "1px solid",
+        borderColor: "dic.system.color.component.outline",
+        bgColor: "dic.system.color.component.surface",
+        _hover: {
+          bgColor: "dic.system.color.interaction.hoveredVariant",
+        },
+        _focus: {
+          bgColor: "dic.system.color.interaction.hoveredVariant",
+        },
+      },
       ghost: {},
     },
     size: {

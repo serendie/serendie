@@ -39,3 +39,17 @@ export const Small: Story = {
     size: "small",
   },
 };
+
+export const Outline: Story = {
+  args: {
+    children: "Outline Button",
+    type: "outline",
+  },
+};
+
+export const Ghost: Story = {
+  args: {
+    children: "Ghost Button",
+    type: "ghost",
+  },
+};
