@@ -28,7 +28,7 @@ const buttonStyle = cva({
             bg: "dic.system.color.interaction.hovered",
           },
         },
-        _focus: {
+        _focusVisible: {
           _after: {
             content: "''",
             position: "absolute",
@@ -45,7 +45,7 @@ const buttonStyle = cva({
         _hover: {
           bgColor: "dic.system.color.interaction.hoveredVariant",
         },
-        _focus: {
+        _focusVisible: {
           outlineColor: "dic.system.color.component.outlineVariant",
           bgColor: "dic.system.color.interaction.hoveredVariant",
         },
@@ -56,7 +56,7 @@ const buttonStyle = cva({
         _hover: {
           bgColor: "dic.system.color.interaction.hoveredVariant",
         },
-        _focus: {
+        _focusVisible: {
           bgColor: "dic.system.color.interaction.hoveredVariant",
           outlineColor: "dic.system.color.component.outlineVariant",
         },
