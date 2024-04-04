@@ -2,68 +2,62 @@ import { cva } from "../../styled-system/css";
 import { styled } from "../../styled-system/jsx";
 import { StyledVariantProps } from "../../styled-system/types";
 
+//Note:  Filledがデフォルト
+//typeにルックを定義、sizeには余白やフォントのサイズを定義するイメージ
+
 const buttonStyle = cva({
   base: {
-    color: "red",
-    textAlign: "center",
-    borderRadius: "md",
+    borderRadius: "full",
+    position: "relative",
   },
   variants: {
-    variant: {
-      primary: {
-        color: "white",
-        borderWidth: "dic.system.dimension.border.thick",
-        padding: "dic.reference.dimension.scale.11",
-        bg: "dic.reference.color.scale.red.300",
+    type: {
+      filled: {
+        overflow: "hidden",
+        bg: "dic.system.color.impression.primaryContainer",
+        color: "dic.system.color.impression.onPrimaryContainer",
         _hover: {
-          bg: "dic.reference.color.scale.red.400",
+          _after: {
+            content: "''",
+            position: "absolute",
+            inset: "0",
+            bg: "dic.system.color.interaction.hovered",
+          },
         },
-        _active: {
-          bg: "dic.reference.color.scale.red.500",
+        _focus: {
+          _after: {
+            content: "''",
+            position: "absolute",
+            inset: "0",
+            bg: "dic.system.color.interaction.hovered",
+          },
         },
       },
-      secondary: {
-        color: "secondary",
-        bg: "dic.reference.color.scale.green.300",
-        _hover: {
-          bg: "dic.reference.color.scale.green.400",
-        },
-        _active: {
-          bg: "dic.reference.color.scale.green.500",
-        },
-      },
-      tertiary: {
-        color: "black",
-        bg: "dic.reference.color.scale.orange.300",
-        _hover: {
-          bg: "dic.reference.color.scale.orange.400",
-        },
-        _active: {
-          bg: "dic.reference.color.scale.orange.500",
-        },
-      },
+      outline: {},
+      ghost: {},
     },
     size: {
-      sm: {
-        fontSize: "sm",
-        px: "2",
-        py: "1",
-      },
-      md: {
-        fontSize: "md",
+      medium: {
         px: "3",
         py: "2",
+        fontSize: "dic.reference.typography.scale.expanded.medium",
+        sm: {
+          fontSize: "dic.reference.typography.scale.compact.medium",
+        },
       },
-      lg: {
-        fontSize: "lg",
-        px: "4",
-        py: "3",
+      small: {
+        px: "3",
+        py: "2",
+        fontSize: "dic.reference.typography.scale.expanded.small",
+        sm: {
+          fontSize: "dic.reference.typography.scale.compact.small",
+        },
       },
     },
   },
   defaultVariants: {
-    variant: "primary",
-    size: "md",
+    type: "filled",
+    size: "medium",
   },
 });
 

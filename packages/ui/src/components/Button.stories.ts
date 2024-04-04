@@ -7,16 +7,16 @@ const meta: Meta<typeof Button> = {
   parameters: {
     controls: {
       expanded: true,
-      include: ["children", "variant", "size"],
+      include: ["children", "type", "size"],
     },
   },
   argTypes: {
-    variant: {
-      options: ["primary", "secondary", "tertiary"],
+    type: {
+      options: ["filled", "outlined", "ghost"],
       control: { type: "radio" },
     },
     size: {
-      options: ["small", "medium", "large"],
+      options: ["small", "medium"],
       control: { type: "radio" },
     },
   },
@@ -26,8 +26,16 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Default: Story = {
+export const Medium: Story = {
   args: {
     children: "Button",
+    size: "medium",
+  },
+};
+
+export const Small: Story = {
+  args: {
+    children: "Button",
+    size: "small",
   },
 };
