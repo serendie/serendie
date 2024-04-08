@@ -7,17 +7,23 @@ const meta: Meta<typeof Button> = {
   parameters: {
     controls: {
       expanded: true,
-      include: ["children", "type", "size"],
+      include: ["children", "type", "size", "disabled"],
     },
   },
   argTypes: {
+    disabled: {
+      control: { type: "boolean" },
+      defaultValue: false,
+    },
     type: {
       options: ["filled", "outline", "ghost"],
       control: { type: "radio" },
+      defaultValue: "filled",
     },
     size: {
       options: ["small", "medium"],
       control: { type: "radio" },
+      defaultValue: "medium",
     },
   },
 };
@@ -30,6 +36,7 @@ export const Medium: Story = {
   args: {
     children: "Button",
     size: "medium",
+    disabled: false,
   },
 };
 

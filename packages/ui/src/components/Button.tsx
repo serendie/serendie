@@ -53,6 +53,7 @@ const buttonStyle = cva({
       ghost: {
         outline: "1px solid",
         outlineColor: "transparent",
+        color: "dic.system.color.impression.primary",
         _hover: {
           bgColor: "dic.system.color.interaction.hoveredVariant",
         },
@@ -89,7 +90,6 @@ const buttonStyle = cva({
 
 export type ButtonVariants = StyledVariantProps<typeof Button>;
 
-// forward ref でボタンをラップ
 export const ButtonWithRef = React.forwardRef<
   HTMLButtonElement,
   React.ButtonHTMLAttributes<HTMLButtonElement>
