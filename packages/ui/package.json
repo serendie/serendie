@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "tsup --watch",
+    "dev": "vite",
     "build:panda": "panda codegen",
-    "build:components": "tsup",
+    "build:components": "vite build",
     "build": "npm run build:panda && npm run build:components",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "storybook": "storybook dev -p 6006",
@@ -19,6 +19,7 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
+    "@material-design-icons/svg": "^0.14.13",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -46,12 +47,13 @@
     "storybook": "^7.6.12",
     "tsup": "^8.0.1",
     "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "vite": "^5.0.8",
+    "vite-plugin-svgr": "^4.2.0"
   },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
+      "require": "./dist/index.umd.cjs",
       "import": "./dist/index.js"
     },
     "./css": {
