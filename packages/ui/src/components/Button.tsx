@@ -36,6 +36,13 @@ const buttonStyle = cva({
             bg: "dic.system.color.interaction.hovered",
           },
         },
+        _disabled: {
+          bg: "dic.system.color.interaction.disabled",
+          color: "dic.system.color.component.onSurface",
+          "&>span": {
+            opacity: "dic.reference.elevation.opacity.scale.3",
+          },
+        },
       },
       outline: {
         color: "dic.system.color.component.onSurface",
@@ -49,6 +56,13 @@ const buttonStyle = cva({
           outlineColor: "dic.system.color.component.outlineVariant",
           bgColor: "dic.system.color.interaction.hoveredVariant",
         },
+        _disabled: {
+          bg: "dic.system.color.interaction.disabled",
+          color: "dic.system.color.component.onSurface",
+          "&>span": {
+            opacity: "dic.reference.elevation.opacity.scale.3",
+          },
+        },
       },
       ghost: {
         outline: "1px solid",
@@ -60,6 +74,13 @@ const buttonStyle = cva({
         _focusVisible: {
           bgColor: "dic.system.color.interaction.hoveredVariant",
           outlineColor: "dic.system.color.component.outlineVariant",
+        },
+        _disabled: {
+          // TODO: Fix the color
+          color: "dic.system.color.component.onSurface",
+          "&>span": {
+            opacity: "dic.reference.elevation.opacity.scale.3",
+          },
         },
       },
     },
