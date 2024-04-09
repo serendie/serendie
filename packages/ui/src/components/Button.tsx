@@ -1,7 +1,6 @@
 import React from "react";
 import { css, cva } from "../../styled-system/css";
 import { styled } from "../../styled-system/jsx";
-import { StyledVariantProps } from "../../styled-system/types";
 
 //Note:  Filledがデフォルト
 //typeにルックを定義、sizeには余白やフォントのサイズを定義するイメージ
@@ -108,8 +107,6 @@ const buttonStyle = cva({
     size: "medium",
   },
 });
-
-export type ButtonVariants = StyledVariantProps<typeof Button>;
 
 export const ButtonWithRef = React.forwardRef<
   HTMLButtonElement,
