@@ -95,6 +95,11 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.gray.200}"
           },
+          "disabledOnSurface": {
+            "$type": "color",
+            "$value": "{dic.reference.color.scale.gray.400}",
+            "$description": "surface colorをdisabledした色"
+          },
           "hovered": {
             "$type": "color",
             "$value": "{dic.reference.color.scale.transparency.20}"
@@ -106,7 +111,7 @@
           "hoveredOnPrimary": {
             "$type": "color",
             "$value": "{dic.reference.color.scale.transparency.60}",
-            "$description": "primary colorをhoverする前提で調整した半透明色"
+            "$description": "primary colorをhoverする半透明レイヤー"
           }
         }
       }
