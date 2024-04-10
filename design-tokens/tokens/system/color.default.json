@@ -102,6 +102,11 @@
           "hoveredVariant": {
             "$type": "color",
             "$value": "{dic.reference.color.scale.transparency.5}"
+          },
+          "hoveredOnPrimary": {
+            "$type": "color",
+            "$value": "{dic.reference.color.scale.transparency.60}",
+            "$description": "primary colorをhoverする前提で調整した半透明色"
           }
         }
       }
