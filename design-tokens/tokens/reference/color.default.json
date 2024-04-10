@@ -27,6 +27,10 @@
             "20": {
               "$value": "#00000033",
               "$type": "color"
+            },
+            "60": {
+              "$value": "#FFFFFF99",
+              "$type": "color"
             }
           },
           "gray": {
