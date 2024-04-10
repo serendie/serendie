@@ -82,6 +82,16 @@
             "$value": "{dic.reference.color.scale.gray.500}",
             "$description": "placeholderやsupportingTextに使用"
           },
+          "inverseSurface": {
+            "$type": "color",
+            "$value": "{dic.reference.color.scale.gray.1000}",
+            "$description": "toastやtooltipなどに使用するsurfaceの反対色"
+          },
+          "inverseOnSurface": {
+            "$type": "color",
+            "$value": "{dic.reference.color.scale.white.1000}",
+            "$description": "surfaceの反対色を地にした際のテキスト色"
+          },
           "outline": {
             "$type": "color",
             "$value": "{dic.reference.color.scale.gray.300}"
