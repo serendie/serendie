@@ -77,6 +77,11 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.black.1000}"
           },
+          "onSurfaceVariant": {
+            "$type": "color",
+            "$value": "{dic.reference.color.scale.gray.500}",
+            "$description": "placeholderやsupportingTextに使用"
+          },
           "outline": {
             "$type": "color",
             "$value": "{dic.reference.color.scale.gray.300}"
