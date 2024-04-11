@@ -62,20 +62,10 @@ const buttonStyle = cva({
     size: {
       large: {},
       medium: {
-        px: "dic.system.dimension.spacing.extraLarge",
-        py: "dic.system.dimension.spacing.small",
-        fontSize: "dic.reference.typography.scale.compact.medium",
-        sm: {
-          fontSize: "dic.reference.typography.scale.expanded.medium",
-        },
+        p: "dic.system.dimension.spacing.extraLarge",
       },
       small: {
-        px: "dic.system.dimension.spacing.small",
-        py: "dic.system.dimension.spacing.twoExtraSmall",
-        fontSize: "dic.reference.typography.scale.compact.small",
-        sm: {
-          fontSize: "dic.reference.typography.scale.expanded.small",
-        },
+        p: "dic.system.dimension.spacing.small",
       },
     },
   },
@@ -86,11 +76,11 @@ const buttonStyle = cva({
   },
 });
 
-type Variants = RecipeVariantProps<typeof buttonStyle>;
+type VariantsProps = RecipeVariantProps<typeof buttonStyle>;
 
 type ButtonProps = {
   icon: SvgIconName;
-} & Variants &
+} & VariantsProps &
   Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children">;
 
 export const IconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -102,5 +92,3 @@ export const IconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
     );
   }
 );
-
-//export const IconButton = styled(ButtonWithRef, buttonStyle);

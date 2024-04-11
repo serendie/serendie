@@ -16,7 +16,7 @@ const meta: Meta<typeof IconButton> = {
       defaultValue: false,
     },
     type: {
-      options: ["filled", "outline", "ghost"],
+      options: ["outline", "ghost"],
       control: { type: "radio" },
       defaultValue: "filled",
     },
@@ -31,8 +31,18 @@ const meta: Meta<typeof IconButton> = {
 export default meta;
 type Story = StoryObj<typeof IconButton>;
 
-export const Medium: Story = {
+export const Rectangle: Story = {
   args: {
+    shape: "rectangle",
+    icon: "add",
+    size: "medium",
+    disabled: false,
+  },
+};
+
+export const Circle: Story = {
+  args: {
+    shape: "circle",
     icon: "add",
     size: "medium",
     disabled: false,
