@@ -1,17 +1,18 @@
 import React from "react";
-import { css, cva } from "../../styled-system/css";
+import { cva } from "../../styled-system/css";
 import { styled } from "../../styled-system/jsx";
 import { SvgIcon, SvgIconName } from "./SvgIcon";
+import { RecipeVariantProps } from "../../styled-system/types";
 
 const buttonStyle = cva({
   base: {
     borderRadius: "full",
     position: "relative",
     display: "inline-flex",
-    gap: "dic.system.dimension.spacing.twoExtraSmall",
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
+    color: "dic.system.color.component.onSurface",
   },
   variants: {
     shape: {
@@ -20,7 +21,6 @@ const buttonStyle = cva({
     },
     type: {
       outline: {
-        color: "dic.system.color.component.onSurface",
         outline: "1px solid",
         outlineColor: "dic.system.color.component.outline",
         bgColor: "dic.system.color.component.surface",
@@ -86,18 +86,21 @@ const buttonStyle = cva({
   },
 });
 
+type Variants = RecipeVariantProps<typeof buttonStyle>;
+
 type ButtonProps = {
   icon: SvgIconName;
-} & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children">;
+} & Variants &
+  Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children">;
 
-const ButtonWithRef = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ icon, ...props }, ref) => {
+export const IconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ icon, size, ...props }, ref) => {
     return (
-      <button ref={ref} {...props}>
-        <SvgIcon size="24px" icon={icon} />
-      </button>
+      <styled.button ref={ref} className={buttonStyle()} {...props}>
+        <SvgIcon size={size === "large" ? "40px" : "24px"} icon={icon} />
+      </styled.button>
     );
   }
 );
 
-export const IconButton = styled(ButtonWithRef, buttonStyle);
+//export const IconButton = styled(ButtonWithRef, buttonStyle);

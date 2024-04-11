@@ -21,7 +21,7 @@ const meta: Meta<typeof IconButton> = {
       defaultValue: "filled",
     },
     size: {
-      options: ["small", "medium"],
+      options: ["large", "medium", "small"],
       control: { type: "radio" },
       defaultValue: "medium",
     },
