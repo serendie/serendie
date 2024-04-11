@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Button } from "./Button";
+import { SvgIcon } from "./SvgIcon";
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -58,5 +59,13 @@ export const Ghost: Story = {
   args: {
     children: "Ghost Button",
     type: "ghost",
+  },
+};
+
+export const WithIcon: Story = {
+  args: {
+    children: "Button",
+    leftIcon: <SvgIcon icon="chevron_left" />,
+    rightIcon: <SvgIcon icon="chevron_right" />,
   },
 };

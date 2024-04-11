@@ -10,6 +10,7 @@ const buttonStyle = cva({
     borderRadius: "full",
     position: "relative",
     display: "inline-flex",
+    gap: "dic.system.dimension.spacing.twoExtraSmall",
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
@@ -108,15 +109,28 @@ const buttonStyle = cva({
   },
 });
 
-export const ButtonWithRef = React.forwardRef<
-  HTMLButtonElement,
-  React.ButtonHTMLAttributes<HTMLButtonElement>
->(({ children, ...props }, ref) => {
-  return (
-    <button ref={ref} {...props}>
-      <span className={css({ pos: "relative", zIndex: 1 })}>{children}</span>
-    </button>
-  );
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
+}
+
+const Span = styled("span", {
+  base: {
+    position: "relative",
+    zIndex: 1,
+  },
 });
+
+export const ButtonWithRef = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ children, leftIcon, rightIcon, ...props }, ref) => {
+    return (
+      <button ref={ref} {...props}>
+        {leftIcon && <Span>{leftIcon}</Span>}
+        <Span>{children}</Span>
+        {rightIcon && <Span>{rightIcon}</Span>}
+      </button>
+    );
+  }
+);
 
 export const Button = styled(ButtonWithRef, buttonStyle);
