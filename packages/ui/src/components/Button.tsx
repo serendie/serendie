@@ -121,7 +121,7 @@ const Span = styled("span", {
   },
 });
 
-export const ButtonWithRef = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const ButtonWithRef = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ children, leftIcon, rightIcon, ...props }, ref) => {
     return (
       <button ref={ref} {...props}>
