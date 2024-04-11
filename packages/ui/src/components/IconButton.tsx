@@ -14,34 +14,11 @@ const buttonStyle = cva({
     overflow: "hidden",
   },
   variants: {
+    shape: {
+      rectangle: {},
+      circle: {},
+    },
     type: {
-      filled: {
-        bg: "dic.system.color.impression.primaryContainer",
-        color: "dic.system.color.impression.onPrimaryContainer",
-        _hover: {
-          _after: {
-            content: "''",
-            position: "absolute",
-            inset: "0",
-            bg: "dic.system.color.interaction.hovered",
-          },
-        },
-        _focusVisible: {
-          _after: {
-            content: "''",
-            position: "absolute",
-            inset: "0",
-            bg: "dic.system.color.interaction.hovered",
-          },
-        },
-        _disabled: {
-          bg: "dic.system.color.interaction.disabled",
-          color: "dic.system.color.component.onSurface",
-          "&>span": {
-            opacity: "dic.reference.elevation.opacity.scale.3",
-          },
-        },
-      },
       outline: {
         color: "dic.system.color.component.onSurface",
         outline: "1px solid",
@@ -83,6 +60,7 @@ const buttonStyle = cva({
       },
     },
     size: {
+      large: {},
       medium: {
         px: "dic.system.dimension.spacing.extraLarge",
         py: "dic.system.dimension.spacing.small",
@@ -102,7 +80,8 @@ const buttonStyle = cva({
     },
   },
   defaultVariants: {
-    type: "filled",
+    shape: "circle",
+    type: "outline",
     size: "medium",
   },
 });
@@ -115,7 +94,7 @@ const ButtonWithRef = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ icon, ...props }, ref) => {
     return (
       <button ref={ref} {...props}>
-        <SvgIcon icon={icon} />
+        <SvgIcon size="24px" icon={icon} />
       </button>
     );
   }
