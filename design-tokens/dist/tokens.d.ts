@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 04 Apr 2024 03:47:20 GMT
+ * Generated on Thu, 11 Apr 2024 01:18:05 GMT
  */
 
 export default tokens;
@@ -18,7 +18,8 @@ declare const tokens: {
           "transparency": {
             "5": string,
             "10": string,
-            "20": string
+            "20": string,
+            "60": string
           },
           "gray": {
             "100": string,
@@ -202,14 +203,19 @@ declare const tokens: {
         "component": {
           "surface": string,
           "onSurface": string,
+          "onSurfaceVariant": string,
+          "inverseSurface": string,
+          "inverseOnSurface": string,
           "outline": string,
           "outlineVariant": string,
           "scrim": string
         },
         "interaction": {
           "disabled": string,
+          "disabledOnSurface": string,
           "hovered": string,
-          "hoveredVariant": string
+          "hoveredVariant": string,
+          "hoveredOnPrimary": string
         }
       },
       "dimension": {

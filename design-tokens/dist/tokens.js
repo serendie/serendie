@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 04 Apr 2024 03:47:20 GMT
+ * Generated on Thu, 11 Apr 2024 01:18:05 GMT
  */
 
 export default {
@@ -17,7 +17,8 @@ export default {
           "transparency": {
             "5": "#0000000D",
             "10": "#0000001A",
-            "20": "#00000033"
+            "20": "#00000033",
+            "60": "#FFFFFF99"
           },
           "gray": {
             "100": "#F7F8F9",
@@ -201,14 +202,19 @@ export default {
         "component": {
           "surface": "#FFFFFF",
           "onSurface": "#000000",
+          "onSurfaceVariant": "#8C959C",
+          "inverseSurface": "#23292D",
+          "inverseOnSurface": "#FFFFFF",
           "outline": "#CED5D9",
           "outlineVariant": "#8C959C",
           "scrim": "#0000001A"
         },
         "interaction": {
           "disabled": "#EBEEEF",
+          "disabledOnSurface": "#AEB8C0",
           "hovered": "#00000033",
-          "hoveredVariant": "#0000000D"
+          "hoveredVariant": "#0000000D",
+          "hoveredOnPrimary": "#FFFFFF99"
         }
       },
       "dimension": {

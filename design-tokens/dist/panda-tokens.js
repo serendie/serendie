@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 04 Apr 2024 03:47:20 GMT
+ * Generated on Thu, 11 Apr 2024 01:18:05 GMT
  */
 
 export default {
@@ -28,6 +28,9 @@ export default {
               },
               "20": {
                 "value": "#00000033"
+              },
+              "60": {
+                "value": "#FFFFFF99"
               }
             },
             "gray": {
@@ -284,6 +287,15 @@ export default {
             "onSurface": {
               "value": "#000000"
             },
+            "onSurfaceVariant": {
+              "value": "#8C959C"
+            },
+            "inverseSurface": {
+              "value": "#23292D"
+            },
+            "inverseOnSurface": {
+              "value": "#FFFFFF"
+            },
             "outline": {
               "value": "#CED5D9"
             },
@@ -298,11 +310,17 @@ export default {
             "disabled": {
               "value": "#EBEEEF"
             },
+            "disabledOnSurface": {
+              "value": "#AEB8C0"
+            },
             "hovered": {
               "value": "#00000033"
             },
             "hoveredVariant": {
               "value": "#0000000D"
+            },
+            "hoveredOnPrimary": {
+              "value": "#FFFFFF99"
             }
           }
         }
@@ -693,7 +711,7 @@ export default {
       }
     }
   },
-  "zIndices": {
+  "zIndex": {
     "dic": {
       "system": {
         "elevation": {
