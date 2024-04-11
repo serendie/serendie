@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 04 Apr 2024 03:47:20 GMT
+ * Generated on Thu, 11 Apr 2024 01:18:05 GMT
  */
 
 export default tokens;
@@ -28,6 +28,9 @@ declare const tokens: {
                 "value": string
               },
               "20": {
+                "value": string
+              },
+              "60": {
                 "value": string
               }
             },
@@ -285,6 +288,15 @@ declare const tokens: {
             "onSurface": {
               "value": string
             },
+            "onSurfaceVariant": {
+              "value": string
+            },
+            "inverseSurface": {
+              "value": string
+            },
+            "inverseOnSurface": {
+              "value": string
+            },
             "outline": {
               "value": string
             },
@@ -299,10 +311,16 @@ declare const tokens: {
             "disabled": {
               "value": string
             },
+            "disabledOnSurface": {
+              "value": string
+            },
             "hovered": {
               "value": string
             },
             "hoveredVariant": {
+              "value": string
+            },
+            "hoveredOnPrimary": {
               "value": string
             }
           }
@@ -694,7 +712,7 @@ declare const tokens: {
       }
     }
   },
-  "zIndices": {
+  "zIndex": {
     "dic": {
       "system": {
         "elevation": {
