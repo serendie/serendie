@@ -1,5 +1,5 @@
 import React from "react";
-import { css, cva } from "../../styled-system/css";
+import { cva } from "../../styled-system/css";
 import { styled } from "../../styled-system/jsx";
 
 //Note:  Filledがデフォルト
