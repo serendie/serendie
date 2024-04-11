@@ -76,8 +76,7 @@ const buttonStyle = cva({
           outlineColor: "dic.system.color.component.outlineVariant",
         },
         _disabled: {
-          // TODO: Fix the color
-          color: "dic.system.color.component.onSurface",
+          color: "dic.dic.system.color.interaction.disabledOnSurface",
           "&>span": {
             opacity: "dic.reference.elevation.opacity.scale.3",
           },
