@@ -125,9 +125,9 @@ export const ButtonWithRef = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ children, leftIcon, rightIcon, ...props }, ref) => {
     return (
       <button ref={ref} {...props}>
-        {leftIcon && <Span>{leftIcon}</Span>}
+        {leftIcon && <Span p={"2px"}>{leftIcon}</Span>}
         <Span>{children}</Span>
-        {rightIcon && <Span>{rightIcon}</Span>}
+        {rightIcon && <Span p={"2px"}>{rightIcon}</Span>}
       </button>
     );
   }
