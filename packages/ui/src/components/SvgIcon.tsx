@@ -13,8 +13,10 @@ const icons = {
   face,
 };
 
+export type SvgIconName = keyof typeof icons;
+
 interface SvgIconProps extends React.SVGProps<SVGSVGElement> {
-  icon: keyof typeof icons;
+  icon: SvgIconName;
   size?: string;
 }
 
