@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import Close from "@material-design-icons/svg/round/close.svg";
 
 import { SvgIcon } from "./SvgIcon";
 
@@ -22,6 +23,7 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    icon: "face",
+    icon: "chevron_left",
+    size: "2em",
   },
 };
