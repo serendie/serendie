@@ -312,26 +312,26 @@ describe("generatePostVariablesPayload", () => {
         action: "CREATE",
         id: "color",
         name: "color",
-        initialModeId: "default",
+        initialModeId: "color.default",
       },
       {
         action: "CREATE",
         id: "dimension",
         name: "dimension",
-        initialModeId: "default",
+        initialModeId: "dimension.default",
       },
     ]);
 
     expect(result.variableModes).toEqual([
       {
         action: "UPDATE",
-        id: "default",
+        id: "color.default",
         name: "default",
         variableCollectionId: "color",
       },
       {
         action: "UPDATE",
-        id: "default",
+        id: "dimension.default",
         name: "default",
         variableCollectionId: "dimension",
       },
@@ -375,12 +375,12 @@ describe("generatePostVariablesPayload", () => {
     expect(result.variableModeValues).toEqual([
       {
         variableId: "dic/reference/color/scale/blue/100",
-        modeId: "default",
+        modeId: "color.default",
         value: { r: 0.8588235294117647, g: 0.9529411764705882, b: 1 },
       },
       {
         variableId: "dic/system/color/primary",
-        modeId: "default",
+        modeId: "color.default",
         value: {
           type: "VARIABLE_ALIAS",
           id: "dic/reference/color/scale/blue/100",
@@ -388,12 +388,12 @@ describe("generatePostVariablesPayload", () => {
       },
       {
         variableId: "dic/reference/dimension/scale/1",
-        modeId: "default",
+        modeId: "dimension.default",
         value: 1,
       },
       {
         variableId: "dic/system/dimension/border/medium",
-        modeId: "default",
+        modeId: "dimension.default",
         value: {
           type: "VARIABLE_ALIAS",
           id: "dic/reference/dimension/scale/1",
