@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 27 Mar 2024 23:27:43 GMT
+ * Generated on Thu, 11 Apr 2024 01:18:05 GMT
  */
 
 export default {
@@ -28,6 +28,9 @@ export default {
               },
               "20": {
                 "value": "#00000033"
+              },
+              "60": {
+                "value": "#FFFFFF99"
               }
             },
             "gray": {
@@ -224,6 +227,103 @@ export default {
             }
           }
         }
+      },
+      "system": {
+        "color": {
+          "impression": {
+            "primary": {
+              "value": "#0066DF"
+            },
+            "onPrimary": {
+              "value": "#FFFFFF"
+            },
+            "primaryContainer": {
+              "value": "#0066DF"
+            },
+            "onPrimaryContainer": {
+              "value": "#FFFFFF"
+            },
+            "notice": {
+              "value": "#EDA608"
+            },
+            "onNotice": {
+              "value": "#FFFFFF"
+            },
+            "noticeContainer": {
+              "value": "#EDA608"
+            },
+            "onNoticeContainer": {
+              "value": "#FFFFFF"
+            },
+            "negative": {
+              "value": "#D61930"
+            },
+            "onNegative": {
+              "value": "#FFFFFF"
+            },
+            "negativeContainer": {
+              "value": "#D61930"
+            },
+            "onNegativeContainer": {
+              "value": "#FFFFFF"
+            },
+            "positive": {
+              "value": "#279B20"
+            },
+            "onPositive": {
+              "value": "#FFFFFF"
+            },
+            "positiveContainer": {
+              "value": "#279B20"
+            },
+            "onPositiveContainer": {
+              "value": "#FFFFFF"
+            }
+          },
+          "component": {
+            "surface": {
+              "value": "#FFFFFF"
+            },
+            "onSurface": {
+              "value": "#000000"
+            },
+            "onSurfaceVariant": {
+              "value": "#8C959C"
+            },
+            "inverseSurface": {
+              "value": "#23292D"
+            },
+            "inverseOnSurface": {
+              "value": "#FFFFFF"
+            },
+            "outline": {
+              "value": "#CED5D9"
+            },
+            "outlineVariant": {
+              "value": "#8C959C"
+            },
+            "scrim": {
+              "value": "#0000001A"
+            }
+          },
+          "interaction": {
+            "disabled": {
+              "value": "#EBEEEF"
+            },
+            "disabledOnSurface": {
+              "value": "#AEB8C0"
+            },
+            "hovered": {
+              "value": "#00000033"
+            },
+            "hoveredVariant": {
+              "value": "#0000000D"
+            },
+            "hoveredOnPrimary": {
+              "value": "#FFFFFF99"
+            }
+          }
+        }
       }
     }
   },
@@ -410,6 +510,28 @@ export default {
       }
     }
   },
+  "lineHeights": {
+    "dic": {
+      "reference": {
+        "typography": {
+          "lineHeight": {
+            "none": {
+              "value": 1
+            },
+            "tight": {
+              "value": 1.4
+            },
+            "normal": {
+              "value": 1.6
+            },
+            "relaxed": {
+              "value": 1.8
+            }
+          }
+        }
+      }
+    }
+  },
   "fontSizes": {
     "dic": {
       "reference": {
@@ -583,6 +705,34 @@ export default {
                 "blur": 24,
                 "spread": 0
               }
+            }
+          }
+        }
+      }
+    }
+  },
+  "zIndex": {
+    "dic": {
+      "system": {
+        "elevation": {
+          "zIndex": {
+            "deepDive": {
+              "value": -1000
+            },
+            "base": {
+              "value": 0
+            },
+            "docked": {
+              "value": 10
+            },
+            "dropdown": {
+              "value": 500
+            },
+            "modal": {
+              "value": 1000
+            },
+            "toast": {
+              "value": 2000
             }
           }
         }
