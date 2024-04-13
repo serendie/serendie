@@ -16,7 +16,7 @@
   "scripts": {
     "build": "node build.js",
     "test": "vitest",
-    "sync-figma-to-tokens": "ts-node-esm -P tsconfig.json src/sync_tokens_to_figma.ts"
+    "sync-figma-to-tokens": "tsx src/sync_tokens_to_figma.ts"
   },
   "devDependencies": {
     "@figma/rest-api-spec": "^0.10.0",
@@ -28,7 +28,7 @@
   "dependencies": {
     "axios": "^1.6.7",
     "dotenv": "^16.4.5",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.7.2",
     "typescript": "^5.4.2"
   }
 }
