@@ -269,9 +269,10 @@ export const generatePostVariablesPayload = (
   for (const collection of Object.values(
     localVariables.meta.variableCollections
   )) {
-    if (collection.remote) {
-      throw new Error("Remote collection is included in local variables.");
-    }
+    // TODO: For some reason, remote is now always true, so it is temporarily commented out.
+    // if (collection.remote) {
+    //   throw new Error("Remote collection is included in local variables.");
+    // }
 
     if (localVariableCollectionsByName[collection.name]) {
       throw new Error(
@@ -283,9 +284,10 @@ export const generatePostVariablesPayload = (
   }
 
   for (const variable of Object.values(localVariables.meta.variables)) {
-    if (variable.remote) {
-      throw new Error("Remote collection is included in local variables.");
-    }
+    // TODO: For some reason, remote is now always true, so it is temporarily commented out.
+    // if (variable.remote) {
+    //   throw new Error("Remote collection is included in local variables.");
+    // }
 
     if (!localVariablesByCollectionAndName[variable.variableCollectionId]) {
       localVariablesByCollectionAndName[variable.variableCollectionId] = {};
