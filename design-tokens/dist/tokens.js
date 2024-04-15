@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 15 Apr 2024 11:50:13 GMT
+ * Generated on Mon, 15 Apr 2024 12:29:32 GMT
  */
 
 export default {
@@ -241,7 +241,8 @@ export default {
           "small": "4px",
           "medium": "8px",
           "large": "12px",
-          "extraLarge": "16px"
+          "extraLarge": "16px",
+          "full": "9999px"
         }
       },
       "elevation": {

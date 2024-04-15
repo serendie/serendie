@@ -177,6 +177,15 @@
                 "scopes": ["CORNER_RADIUS"]
               }
             }
+          },
+          "full": {
+            "$type": "dimension",
+            "$value": "9999px",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["CORNER_RADIUS"]
+              }
+            }
           }
         }
       }
