@@ -5,83 +5,178 @@
         "spacing": {
           "twoExtraSmall": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.3}"
+            "$value": "{dic.reference.dimension.scale.3}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["GAP"]
+              }
+            }
           },
           "extraSmall": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.4}"
+            "$value": "{dic.reference.dimension.scale.4}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["GAP"]
+              }
+            }
           },
           "small": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.5}"
+            "$value": "{dic.reference.dimension.scale.5}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["GAP"]
+              }
+            }
           },
           "medium": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.6}"
+            "$value": "{dic.reference.dimension.scale.6}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["GAP"]
+              }
+            }
           },
           "large": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.7}"
+            "$value": "{dic.reference.dimension.scale.7}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["GAP"]
+              }
+            }
           },
           "extraLarge": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.8}"
+            "$value": "{dic.reference.dimension.scale.8}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["GAP"]
+              }
+            }
           },
           "twoExtraLarge": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.10}"
+            "$value": "{dic.reference.dimension.scale.10}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["GAP"]
+              }
+            }
           },
           "threeExtraLarge": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.12}"
+            "$value": "{dic.reference.dimension.scale.12}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["GAP"]
+              }
+            }
           },
           "fourExtraLarge": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.13}"
+            "$value": "{dic.reference.dimension.scale.13}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["GAP"]
+              }
+            }
           },
           "fiveExtraLarge": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.15}"
+            "$value": "{dic.reference.dimension.scale.15}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["GAP"]
+              }
+            }
           },
           "sixExtraLarge": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.17}"
+            "$value": "{dic.reference.dimension.scale.17}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["GAP"]
+              }
+            }
           }
         },
         "border": {
           "medium": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.1}"
+            "$value": "{dic.reference.dimension.scale.1}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["STROKE_FLOAT"]
+              }
+            }
           },
           "thick": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.2}"
+            "$value": "{dic.reference.dimension.scale.2}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["STROKE_FLOAT"]
+              }
+            }
           },
           "extraThick": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.3}"
+            "$value": "{dic.reference.dimension.scale.3}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["STROKE_FLOAT"]
+              }
+            }
           }
         },
         "radius": {
           "extraSmall": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.2}"
+            "$value": "{dic.reference.dimension.scale.2}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["CORNER_RADIUS"]
+              }
+            }
           },
           "small": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.3}"
+            "$value": "{dic.reference.dimension.scale.3}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["CORNER_RADIUS"]
+              }
+            }
           },
           "medium": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.4}"
+            "$value": "{dic.reference.dimension.scale.4}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["CORNER_RADIUS"]
+              }
+            }
           },
           "large": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.5}"
+            "$value": "{dic.reference.dimension.scale.5}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["CORNER_RADIUS"]
+              }
+            }
           },
           "extraLarge": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.6}"
+            "$value": "{dic.reference.dimension.scale.6}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["CORNER_RADIUS"]
+              }
+            }
           }
         }
       }

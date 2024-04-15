@@ -5,128 +5,273 @@
         "impression": {
           "primary": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.blue.600}"
+            "$value": "{dic.reference.color.scale.blue.600}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["ALL_FILLS", "STROKE_COLOR"]
+              }
+            }
           },
           "onPrimary": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.white.1000}"
+            "$value": "{dic.reference.color.scale.white.1000}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
+              }
+            }
           },
           "primaryContainer": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.blue.600}"
+            "$value": "{dic.reference.color.scale.blue.600}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+              }
+            }
           },
           "onPrimaryContainer": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.white.1000}"
+            "$value": "{dic.reference.color.scale.white.1000}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["ALL_FILLS", "STROKE_COLOR"]
+              }
+            }
           },
           "notice": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.yellow.600}"
+            "$value": "{dic.reference.color.scale.yellow.600}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["ALL_FILLS", "STROKE_COLOR"]
+              }
+            }
           },
           "onNotice": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.white.1000}"
+            "$value": "{dic.reference.color.scale.white.1000}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
+              }
+            }
           },
           "noticeContainer": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.yellow.600}"
+            "$value": "{dic.reference.color.scale.yellow.600}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+              }
+            }
           },
           "onNoticeContainer": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.white.1000}"
+            "$value": "{dic.reference.color.scale.white.1000}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["ALL_FILLS", "STROKE_COLOR"]
+              }
+            }
           },
           "negative": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.red.600}"
+            "$value": "{dic.reference.color.scale.red.600}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["ALL_FILLS", "STROKE_COLOR"]
+              }
+            }
           },
           "onNegative": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.white.1000}"
+            "$value": "{dic.reference.color.scale.white.1000}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
+              }
+            }
           },
           "negativeContainer": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.red.600}"
+            "$value": "{dic.reference.color.scale.red.600}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+              }
+            }
           },
           "onNegativeContainer": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.white.1000}"
+            "$value": "{dic.reference.color.scale.white.1000}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["ALL_FILLS", "STROKE_COLOR"]
+              }
+            }
           },
           "positive": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.green.600}"
+            "$value": "{dic.reference.color.scale.green.600}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["ALL_FILLS", "STROKE_COLOR"]
+              }
+            }
           },
           "onPositive": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.white.1000}"
+            "$value": "{dic.reference.color.scale.white.1000}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
+              }
+            }
           },
           "positiveContainer": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.green.600}"
+            "$value": "{dic.reference.color.scale.green.600}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+              }
+            }
           },
           "onPositiveContainer": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.white.1000}"
+            "$value": "{dic.reference.color.scale.white.1000}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["ALL_FILLS", "STROKE_COLOR"]
+              }
+            }
           }
         },
         "component": {
           "surface": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.white.1000}"
+            "$value": "{dic.reference.color.scale.white.1000}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+              }
+            }
           },
           "onSurface": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.black.1000}"
+            "$value": "{dic.reference.color.scale.black.1000}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
+              }
+            }
           },
           "onSurfaceVariant": {
             "$type": "color",
             "$value": "{dic.reference.color.scale.gray.500}",
-            "$description": "placeholderやsupportingTextに使用"
+            "$description": "placeholderやsupportingTextに使用",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
+              }
+            }
           },
           "inverseSurface": {
             "$type": "color",
             "$value": "{dic.reference.color.scale.gray.1000}",
-            "$description": "toastやtooltipなどに使用するsurfaceの反対色"
+            "$description": "toastやtooltipなどに使用するsurfaceの反対色",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+              }
+            }
           },
           "inverseOnSurface": {
             "$type": "color",
             "$value": "{dic.reference.color.scale.white.1000}",
-            "$description": "surfaceの反対色を地にした際のテキスト色"
+            "$description": "surfaceの反対色を地にした際のテキスト色",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
+              }
+            }
           },
           "outline": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.gray.300}"
+            "$value": "{dic.reference.color.scale.gray.300}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["STROKE_COLOR"]
+              }
+            }
           },
           "outlineVariant": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.gray.500}"
+            "$value": "{dic.reference.color.scale.gray.500}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["STROKE_COLOR"]
+              }
+            }
           },
           "scrim": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.transparency.10}"
+            "$value": "{dic.reference.color.scale.transparency.10}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+              }
+            }
           }
         },
         "interaction": {
           "disabled": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.gray.200}"
+            "$value": "{dic.reference.color.scale.gray.200}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["ALL_FILLS"]
+              }
+            }
           },
           "disabledOnSurface": {
             "$type": "color",
             "$value": "{dic.reference.color.scale.gray.400}",
-            "$description": "surface colorをdisabledした色"
+            "$description": "surface colorをdisabledした色",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["ALL_FILLS", "STROKE_COLOR"]
+              }
+            }
           },
           "hovered": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.transparency.20}"
+            "$value": "{dic.reference.color.scale.transparency.20}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+              }
+            }
           },
           "hoveredVariant": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.transparency.5}"
+            "$value": "{dic.reference.color.scale.transparency.5}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+              }
+            }
           },
           "hoveredOnPrimary": {
             "$type": "color",
             "$value": "{dic.reference.color.scale.transparency.60}",
-            "$description": "primary colorをhoverする半透明レイヤー"
+            "$description": "primary colorをhoverする半透明レイヤー",
+            "$extensions": {
+              "com.figma": {
+                "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+              }
+            }
           }
         }
       }
