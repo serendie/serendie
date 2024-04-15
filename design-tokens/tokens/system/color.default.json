@@ -231,7 +231,7 @@
             "$value": "{dic.reference.color.scale.gray.200}",
             "$extensions": {
               "com.figma": {
-                "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
+                "scopes": ["ALL_FILLS"]
               }
             }
           },
@@ -241,7 +241,7 @@
             "$description": "surface colorをdisabledした色",
             "$extensions": {
               "com.figma": {
-                "scopes": ["SHAPE_FILL"]
+                "scopes": ["ALL_FILLS", "STROKE_COLOR"]
               }
             }
           },
@@ -250,7 +250,7 @@
             "$value": "{dic.reference.color.scale.transparency.20}",
             "$extensions": {
               "com.figma": {
-                "scopes": ["SHAPE_FILL"]
+                "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
             }
           },
@@ -259,7 +259,7 @@
             "$value": "{dic.reference.color.scale.transparency.5}",
             "$extensions": {
               "com.figma": {
-                "scopes": ["SHAPE_FILL"]
+                "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
             }
           },
@@ -269,7 +269,7 @@
             "$description": "primary colorをhoverする半透明レイヤー",
             "$extensions": {
               "com.figma": {
-                "scopes": ["SHAPE_FILL"]
+                "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
             }
           }
