@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 15 Apr 2024 11:50:13 GMT
+ * Generated on Mon, 15 Apr 2024 12:29:32 GMT
  */
 
 export default tokens;
@@ -242,7 +242,8 @@ declare const tokens: {
           "small": string,
           "medium": string,
           "large": string,
-          "extraLarge": string
+          "extraLarge": string,
+          "full": string
         }
       },
       "elevation": {

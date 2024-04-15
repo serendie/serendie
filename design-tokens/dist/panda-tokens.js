@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 15 Apr 2024 11:50:13 GMT
+ * Generated on Mon, 15 Apr 2024 12:29:32 GMT
  */
 
 export default {
@@ -650,6 +650,9 @@ export default {
             },
             "extraLarge": {
               "value": "16px"
+            },
+            "full": {
+              "value": "9999px"
             }
           }
         }
