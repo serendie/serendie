@@ -89,6 +89,16 @@
           }
         },
         "body": {
+          "extraSmall": {
+            "$type": "typography",
+            "$value": {
+              "fontSize": "{dic.reference.typography.scale.expanded.twoExtraSmall}",
+              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
+              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
+              "lineHeight": "{dic.reference.typography.lineHeight.tight}",
+              "letterSpacing": "0px"
+            }
+          },
           "small": {
             "$type": "typography",
             "$value": {
