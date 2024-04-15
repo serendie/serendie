@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 11 Apr 2024 01:18:05 GMT
+ * Generated on Mon, 15 Apr 2024 11:50:13 GMT
  */
 
 export default {
@@ -411,6 +411,13 @@ export default {
           }
         },
         "body": {
+          "extraSmall_compact": {
+            "fontSize": "12px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.4,
+            "letterSpacing": "0px"
+          },
           "small_compact": {
             "fontSize": "14px",
             "fontWeight": 400,
@@ -430,6 +437,13 @@ export default {
             "fontWeight": 400,
             "fontFamily": "Noto Sans JP",
             "lineHeight": 1.6,
+            "letterSpacing": "0px"
+          },
+          "extraSmall_expanded": {
+            "fontSize": "12px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1.4,
             "letterSpacing": "0px"
           },
           "small_expanded": {
@@ -456,45 +470,59 @@ export default {
         },
         "label": {
           "small_compact": {
-            "fontSize": "10px",
+            "fontSize": "11px",
             "fontWeight": 400,
             "fontFamily": "Noto Sans JP",
-            "lineHeight": 1.4,
+            "lineHeight": 1,
             "letterSpacing": "0px"
           },
           "medium_compact": {
-            "fontSize": "11px",
+            "fontSize": "12px",
             "fontWeight": 400,
             "fontFamily": "Noto Sans JP",
-            "lineHeight": 1.4,
+            "lineHeight": 1,
             "letterSpacing": "0px"
           },
           "large_compact": {
-            "fontSize": "12px",
+            "fontSize": "14px",
             "fontWeight": 400,
             "fontFamily": "Noto Sans JP",
-            "lineHeight": 1.4,
+            "lineHeight": 1,
+            "letterSpacing": "0px"
+          },
+          "extraLarge_compact": {
+            "fontSize": "16px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1,
             "letterSpacing": "0px"
           },
           "small_expanded": {
-            "fontSize": "10px",
-            "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
-            "lineHeight": 1.4,
-            "letterSpacing": "0px"
-          },
-          "medium_expanded": {
             "fontSize": "11px",
             "fontWeight": 400,
             "fontFamily": "Noto Sans JP",
-            "lineHeight": 1.4,
+            "lineHeight": 1,
             "letterSpacing": "0px"
           },
-          "large_expanded": {
+          "medium_expanded": {
             "fontSize": "12px",
             "fontWeight": 400,
             "fontFamily": "Noto Sans JP",
-            "lineHeight": 1.4,
+            "lineHeight": 1,
+            "letterSpacing": "0px"
+          },
+          "large_expanded": {
+            "fontSize": "13px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1,
+            "letterSpacing": "0px"
+          },
+          "extraLarge_expanded": {
+            "fontSize": "14px",
+            "fontWeight": 400,
+            "fontFamily": "Noto Sans JP",
+            "lineHeight": 1,
             "letterSpacing": "0px"
           }
         }

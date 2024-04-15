@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 11 Apr 2024 01:18:05 GMT
+ * Generated on Mon, 15 Apr 2024 11:50:13 GMT
  */
 
 export default tokens;
@@ -895,6 +895,15 @@ declare const tokens: {
             }
           },
           "body": {
+            "extraSmall_compact": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
             "small_compact": {
               "value": {
                 "fontSize": string,
@@ -914,6 +923,15 @@ declare const tokens: {
               }
             },
             "large_compact": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "extraSmall_expanded": {
               "value": {
                 "fontSize": string,
                 "fontWeight": number,
@@ -978,6 +996,15 @@ declare const tokens: {
                 "letterSpacing": string
               }
             },
+            "extraLarge_compact": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
             "small_expanded": {
               "value": {
                 "fontSize": string,
@@ -997,6 +1024,15 @@ declare const tokens: {
               }
             },
             "large_expanded": {
+              "value": {
+                "fontSize": string,
+                "fontWeight": number,
+                "fontFamily": string,
+                "lineHeight": number,
+                "letterSpacing": string
+              }
+            },
+            "extraLarge_expanded": {
               "value": {
                 "fontSize": string,
                 "fontWeight": number,

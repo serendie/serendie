@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 11 Apr 2024 01:18:05 GMT
+ * Generated on Mon, 15 Apr 2024 11:50:13 GMT
  */
 
 export default tokens;
@@ -412,6 +412,13 @@ declare const tokens: {
           }
         },
         "body": {
+          "extraSmall_compact": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
           "small_compact": {
             "fontSize": string,
             "fontWeight": number,
@@ -427,6 +434,13 @@ declare const tokens: {
             "letterSpacing": string
           },
           "large_compact": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "extraSmall_expanded": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
@@ -477,6 +491,13 @@ declare const tokens: {
             "lineHeight": number,
             "letterSpacing": string
           },
+          "extraLarge_compact": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
           "small_expanded": {
             "fontSize": string,
             "fontWeight": number,
@@ -492,6 +513,13 @@ declare const tokens: {
             "letterSpacing": string
           },
           "large_expanded": {
+            "fontSize": string,
+            "fontWeight": number,
+            "fontFamily": string,
+            "lineHeight": number,
+            "letterSpacing": string
+          },
+          "extraLarge_expanded": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
