@@ -134,30 +134,40 @@
           "small": {
             "$type": "typography",
             "$value": {
-              "fontSize": "{dic.reference.typography.scale.expanded.fourExtraSmall}",
+              "fontSize": "{dic.reference.typography.scale.expanded.threeExtraSmall}",
               "fontWeight": "{dic.reference.typography.fontWeight.regular}",
               "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-              "lineHeight": "{dic.reference.typography.lineHeight.tight}",
+              "lineHeight": "{dic.reference.typography.lineHeight.none}",
               "letterSpacing": "0px"
             }
           },
           "medium": {
             "$type": "typography",
             "$value": {
-              "fontSize": "{dic.reference.typography.scale.expanded.threeExtraSmall}",
+              "fontSize": "{dic.reference.typography.scale.expanded.twoExtraSmall}",
               "fontWeight": "{dic.reference.typography.fontWeight.regular}",
               "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-              "lineHeight": "{dic.reference.typography.lineHeight.tight}",
+              "lineHeight": "{dic.reference.typography.lineHeight.none}",
               "letterSpacing": "0px"
             }
           },
           "large": {
             "$type": "typography",
             "$value": {
-              "fontSize": "{dic.reference.typography.scale.expanded.twoExtraSmall}",
+              "fontSize": "{dic.reference.typography.scale.expanded.extraSmall}",
               "fontWeight": "{dic.reference.typography.fontWeight.regular}",
               "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-              "lineHeight": "{dic.reference.typography.lineHeight.tight}",
+              "lineHeight": "{dic.reference.typography.lineHeight.none}",
+              "letterSpacing": "0px"
+            }
+          },
+          "extraLarge": {
+            "$type": "typography",
+            "$value": {
+              "fontSize": "{dic.reference.typography.scale.expanded.small}",
+              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
+              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
+              "lineHeight": "{dic.reference.typography.lineHeight.none}",
               "letterSpacing": "0px"
             }
           }
