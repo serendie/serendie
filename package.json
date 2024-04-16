@@ -18,5 +18,8 @@
     "packages/*",
     "apps/*",
     "design-tokens"
-  ]
+  ],
+  "devDependencies": {
+    "@pandacss/eslint-plugin": "^0.1.1"
+  }
 }
