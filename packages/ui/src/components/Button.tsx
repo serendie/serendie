@@ -7,13 +7,14 @@ import { styled } from "../../styled-system/jsx";
 
 const buttonStyle = cva({
   base: {
-    borderRadius: "full",
+    borderRadius: "dic.system.dimension.radius.full",
     position: "relative",
     display: "inline-flex",
     gap: "dic.system.dimension.spacing.twoExtraSmall",
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
+    cursor: "pointer",
   },
   variants: {
     type: {
@@ -38,10 +39,7 @@ const buttonStyle = cva({
         },
         _disabled: {
           bg: "dic.system.color.interaction.disabled",
-          color: "dic.system.color.component.onSurface",
-          "&>span": {
-            opacity: "dic.reference.elevation.opacity.scale.3",
-          },
+          color: "dic.system.color.interaction.disabledOnSurface",
         },
       },
       outline: {
@@ -58,10 +56,8 @@ const buttonStyle = cva({
         },
         _disabled: {
           bg: "dic.system.color.interaction.disabled",
-          color: "dic.system.color.component.onSurface",
-          "&>span": {
-            opacity: "dic.reference.elevation.opacity.scale.3",
-          },
+          color: "dic.system.color.interaction.disabledOnSurface",
+          outline: "none",
         },
       },
       ghost: {
@@ -76,10 +72,7 @@ const buttonStyle = cva({
           outlineColor: "dic.system.color.component.outlineVariant",
         },
         _disabled: {
-          color: "dic.dic.system.color.interaction.disabledOnSurface",
-          "&>span": {
-            opacity: "dic.reference.elevation.opacity.scale.3",
-          },
+          color: "dic.system.color.interaction.disabledOnSurface",
         },
       },
     },
