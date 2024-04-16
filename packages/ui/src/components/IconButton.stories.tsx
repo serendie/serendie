@@ -7,13 +7,18 @@ const meta: Meta<typeof IconButton> = {
   parameters: {
     controls: {
       expanded: true,
-      include: ["children", "type", "size", "disabled"],
+      include: ["shape", "type", "size", "disabled"],
     },
   },
   argTypes: {
     disabled: {
       control: { type: "boolean" },
       defaultValue: false,
+    },
+    shape: {
+      options: ["circle", "rectangle"],
+      control: { type: "radio" },
+      defaultValue: "rectangle",
     },
     type: {
       options: ["outline", "ghost"],
