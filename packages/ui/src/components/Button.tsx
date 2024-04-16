@@ -8,7 +8,7 @@ import { styled } from "../../styled-system/jsx";
 // outlineとroundedは角Rのみ違うので共通部を切り出している
 const outlineCss = {
   color: "dic.system.color.component.onSurface",
-  outline: "1px solid",
+  outline: "token(dic.system.dimension.border.medium) solid",
   outlineColor: "dic.system.color.component.outline",
   bgColor: "dic.system.color.component.surface",
   _enabled: {
@@ -131,7 +131,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
 const Span = styled("span", {
   base: {
     position: "relative",
-    zIndex: 1,
+    zIndex: "dic.system.elevation.zIndex.base",
   },
 });
 
