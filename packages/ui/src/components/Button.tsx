@@ -101,10 +101,13 @@ const buttonStyle = cva({
   },
 });
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  leftIcon?: React.ReactNode;
-  rightIcon?: React.ReactNode;
-}
+// leftIconとrightIconを両方指定できないようにする
+type ExclusiveButtonProps =
+  | ({ leftIcon: React.ReactNode } & { rightIcon?: never })
+  | ({ leftIcon?: never } & { rightIcon: React.ReactNode });
+
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
+  ExclusiveButtonProps;
 
 const Span = styled("span", {
   base: {
