@@ -80,17 +80,17 @@ const buttonStyle = cva({
       medium: {
         px: "dic.system.dimension.spacing.extraLarge",
         py: "dic.system.dimension.spacing.small",
-        fontSize: "dic.reference.typography.scale.compact.medium",
+        textStyle: "dic.system.typography.label.large_compact",
         sm: {
-          fontSize: "dic.reference.typography.scale.expanded.medium",
+          textStyle: "dic.system.typography.label.large_expanded",
         },
       },
       small: {
         px: "dic.system.dimension.spacing.small",
         py: "dic.system.dimension.spacing.twoExtraSmall",
-        fontSize: "dic.reference.typography.scale.compact.small",
+        textStyle: "dic.system.typography.label.medium_compact",
         sm: {
-          fontSize: "dic.reference.typography.scale.expanded.small",
+          textStyle: "dic.system.typography.label.medium_expanded",
         },
       },
     },
