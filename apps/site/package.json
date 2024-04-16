@@ -34,6 +34,7 @@
     "@storybook/react": "^7.6.17",
     "@storybook/react-vite": "^7.6.17",
     "@storybook/test": "^7.6.17",
-    "storybook": "^7.6.17"
+    "storybook": "^7.6.17",
+    "vite-plugin-svgr": "^4.2.0"
   }
 }

@@ -1,79 +1,175 @@
-import { useState } from "react";
-import { cva } from "../../styled-system/css";
+import React from "react";
+import { css, cva, cx } from "../../styled-system/css";
 import { styled } from "../../styled-system/jsx";
+import { SystemStyleObject } from "@pandacss/dev";
 
-const buttonStyle = cva({
+//Note:  Filledがデフォルト
+//typeにルックを定義、sizeには余白やフォントのサイズを定義するイメージ
+
+// outlineとroundedは角Rのみ違うので共通部を切り出している
+const outlineCss: SystemStyleObject = {
+  color: "dic.system.color.component.onSurface",
+  outlineWidth: "dic.system.dimension.border.medium",
+  outlineStyle: "solid",
+  outlineColor: "dic.system.color.component.outline",
+  bgColor: "dic.system.color.component.surface",
+  _enabled: {
+    _hover: {
+      bgColor: "dic.system.color.interaction.hoveredVariant",
+    },
+    _focusVisible: {
+      outlineColor: "dic.system.color.component.outlineVariant",
+      bgColor: "dic.system.color.interaction.hoveredVariant",
+    },
+  },
+  _disabled: {
+    bgColor: "dic.system.color.interaction.disabled",
+    color: "dic.system.color.interaction.disabledOnSurface",
+    outline: "none",
+  },
+};
+
+export const ButtonStyle = cva({
   base: {
-    color: "red",
-    textAlign: "center",
-    borderRadius: "md",
+    borderRadius: "dic.system.dimension.radius.full",
+    position: "relative",
+    display: "inline-flex",
+    gap: "dic.system.dimension.spacing.twoExtraSmall",
+    alignItems: "center",
+    justifyContent: "center",
+    overflow: "hidden",
+    cursor: "pointer",
+    _disabled: {
+      cursor: "not-allowed",
+    },
   },
   variants: {
-    variant: {
-      primary: {
-        color: "white",
-        borderWidth: "dic.system.dimension.border.thick",
-        padding: "dic.reference.dimension.scale.11",
-        bg: "dic.reference.color.scale.red.300",
-        _hover: {
-          bg: "dic.reference.color.scale.red.400",
+    type: {
+      filled: {
+        bg: "dic.system.color.impression.primaryContainer",
+        color: "dic.system.color.impression.onPrimaryContainer",
+        _enabled: {
+          _hover: {
+            _after: {
+              content: "''",
+              position: "absolute",
+              inset: "0",
+              bg: "dic.system.color.interaction.hovered",
+            },
+          },
+          _focusVisible: {
+            _after: {
+              content: "''",
+              position: "absolute",
+              inset: "0",
+              bg: "dic.system.color.interaction.hovered",
+            },
+          },
         },
-        _active: {
-          bg: "dic.reference.color.scale.red.500",
+        _disabled: {
+          bg: "dic.system.color.interaction.disabled",
+          color: "dic.system.color.interaction.disabledOnSurface",
         },
       },
-      secondary: {
-        color: "secondary",
-        bg: "dic.reference.color.scale.green.300",
-        _hover: {
-          bg: "dic.reference.color.scale.green.400",
+      ghost: {
+        color: "dic.system.color.impression.primary",
+        _enabled: {
+          _hover: {
+            bgColor: "dic.system.color.interaction.hoveredVariant",
+          },
+          _focusVisible: {
+            bgColor: "dic.system.color.interaction.hoveredVariant",
+            outlineWidth: "dic.system.dimension.border.medium",
+            outlineStyle: "solid",
+            outlineColor: "dic.system.color.component.outlineVariant",
+          },
         },
-        _active: {
-          bg: "dic.reference.color.scale.green.500",
+        _disabled: {
+          color: "dic.system.color.interaction.disabledOnSurface",
         },
       },
-      tertiary: {
-        color: "black",
-        bg: "dic.reference.color.scale.orange.300",
-        _hover: {
-          bg: "dic.reference.color.scale.orange.400",
-        },
-        _active: {
-          bg: "dic.reference.color.scale.orange.500",
-        },
+      outline: outlineCss,
+      rounded: {
+        ...outlineCss,
+        borderRadius: "dic.system.dimension.radius.medium",
       },
     },
     size: {
-      sm: {
-        fontSize: "sm",
-        px: "2",
-        py: "1",
+      medium: {
+        px: "dic.system.dimension.spacing.extraLarge",
+        py: "dic.system.dimension.spacing.small",
+        textStyle: "dic.system.typography.label.large_compact",
+        sm: {
+          textStyle: "dic.system.typography.label.large_expanded",
+        },
       },
-      md: {
-        fontSize: "md",
-        px: "3",
-        py: "2",
-      },
-      lg: {
-        fontSize: "lg",
-        px: "4",
-        py: "3",
+      small: {
+        px: "dic.system.dimension.spacing.small",
+        py: "dic.system.dimension.spacing.twoExtraSmall",
+        textStyle: "dic.system.typography.label.medium_compact",
+        sm: {
+          textStyle: "dic.system.typography.label.medium_expanded",
+        },
       },
     },
   },
   defaultVariants: {
-    variant: "primary",
-    size: "md",
+    type: "filled",
+    size: "medium",
   },
 });
 
-export const Button = styled("button", buttonStyle);
+// leftIconとrightIconを両方指定できないようにする
+type ExclusiveButtonProps =
+  | ({ leftIcon: React.ReactNode } & { rightIcon?: never })
+  | ({ leftIcon?: never } & { rightIcon: React.ReactNode });
 
-export const Button2 = () => {
-  const [onOff, setOnOff] = useState("off");
-  return (
-    <Button onClick={() => setOnOff(onOff === "on" ? "off" : "on")}>
-      {onOff}
-    </Button>
-  );
-};
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
+  ExclusiveButtonProps & {
+    // TODO: buttonStyleからsizeの型情報を取りたい
+    size?: "small" | "medium";
+  };
+
+const Span = styled("span", {
+  base: {
+    position: "relative",
+    zIndex: "dic.system.elevation.zIndex.base",
+  },
+});
+
+const ButtonWithRef = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ children, leftIcon, rightIcon, size, className, ...props }, ref) => {
+    const iconPaddingCss = css(
+      leftIcon || rightIcon
+        ? size === "medium"
+          ? {
+              //アイコンがある側 `spacing.medium`、無い側は`spacing.extraLarge`
+              paddingLeft: leftIcon
+                ? "dic.system.dimension.spacing.medium"
+                : "dic.system.dimension.spacing.extraLarge",
+              paddingRight: rightIcon
+                ? "dic.system.dimension.spacing.medium"
+                : "dic.system.dimension.spacing.extraLarge",
+            }
+          : {
+              //アイコンがある側 `spacing.extraSmall`、無い側は`spacing.medium`
+              paddingLeft: leftIcon
+                ? "dic.system.dimension.spacing.extraSmall"
+                : "dic.system.dimension.spacing.medium",
+              paddingRight: rightIcon
+                ? "dic.system.dimension.spacing.extraSmall"
+                : "dic.system.dimension.spacing.medium",
+            }
+        : {}
+    );
+    return (
+      <button ref={ref} className={cx(iconPaddingCss, className)} {...props}>
+        {leftIcon && <Span p={"2px"}>{leftIcon}</Span>}
+        <Span>{children}</Span>
+        {rightIcon && <Span p={"2px"}>{rightIcon}</Span>}
+      </button>
+    );
+  }
+);
+
+export const Button = styled(ButtonWithRef, ButtonStyle);
