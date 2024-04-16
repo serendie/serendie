@@ -1,11 +1,33 @@
 import React from "react";
-import { cva } from "../../styled-system/css";
+import { css, cva, cx } from "../../styled-system/css";
 import { styled } from "../../styled-system/jsx";
 
 //Note:  Filledがデフォルト
 //typeにルックを定義、sizeには余白やフォントのサイズを定義するイメージ
 
-const buttonStyle = cva({
+// outlineとroundedは角Rのみ違うので共通部を切り出している
+const outlineCss = {
+  color: "dic.system.color.component.onSurface",
+  outline: "1px solid",
+  outlineColor: "dic.system.color.component.outline",
+  bgColor: "dic.system.color.component.surface",
+  _enabled: {
+    _hover: {
+      bgColor: "dic.system.color.interaction.hoveredVariant",
+    },
+    _focusVisible: {
+      outlineColor: "dic.system.color.component.outlineVariant",
+      bgColor: "dic.system.color.interaction.hoveredVariant",
+    },
+  },
+  _disabled: {
+    bgColor: "dic.system.color.interaction.disabled",
+    color: "dic.system.color.interaction.disabledOnSurface",
+    outline: "none",
+  },
+};
+
+export const ButtonStyle = cva({
   base: {
     borderRadius: "dic.system.dimension.radius.full",
     position: "relative",
@@ -47,26 +69,6 @@ const buttonStyle = cva({
           color: "dic.system.color.interaction.disabledOnSurface",
         },
       },
-      outline: {
-        color: "dic.system.color.component.onSurface",
-        outline: "1px solid",
-        outlineColor: "dic.system.color.component.outline",
-        bgColor: "dic.system.color.component.surface",
-        _enabled: {
-          _hover: {
-            bgColor: "dic.system.color.interaction.hoveredVariant",
-          },
-          _focusVisible: {
-            outlineColor: "dic.system.color.component.outlineVariant",
-            bgColor: "dic.system.color.interaction.hoveredVariant",
-          },
-        },
-        _disabled: {
-          bgColor: "dic.system.color.interaction.disabled",
-          color: "dic.system.color.interaction.disabledOnSurface",
-          outline: "none",
-        },
-      },
       ghost: {
         outline: "1px solid",
         outlineColor: "transparent",
@@ -83,6 +85,11 @@ const buttonStyle = cva({
         _disabled: {
           color: "dic.system.color.interaction.disabledOnSurface",
         },
+      },
+      outline: outlineCss,
+      rounded: {
+        ...outlineCss,
+        borderRadius: "dic.system.dimension.radius.medium",
       },
     },
     size: {
@@ -116,7 +123,10 @@ type ExclusiveButtonProps =
   | ({ leftIcon?: never } & { rightIcon: React.ReactNode });
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
-  ExclusiveButtonProps;
+  ExclusiveButtonProps & {
+    // TODO: buttonStyleからsizeの型情報を取りたい
+    size?: "small" | "medium";
+  };
 
 const Span = styled("span", {
   base: {
@@ -126,9 +136,32 @@ const Span = styled("span", {
 });
 
 const ButtonWithRef = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, leftIcon, rightIcon, ...props }, ref) => {
+  ({ children, leftIcon, rightIcon, size, className, ...props }, ref) => {
+    const iconPaddingCss = css(
+      leftIcon || rightIcon
+        ? size === "medium"
+          ? {
+              //アイコンがある側 `spacing.medium`、無い側は`spacing.extraLarge`
+              paddingLeft: leftIcon
+                ? "dic.system.dimension.spacing.medium"
+                : "dic.system.dimension.spacing.extraLarge",
+              paddingRight: rightIcon
+                ? "dic.system.dimension.spacing.medium"
+                : "dic.system.dimension.spacing.extraLarge",
+            }
+          : {
+              //アイコンがある側 `spacing.extraSmall`、無い側は`spacing.medium`
+              paddingLeft: leftIcon
+                ? "dic.system.dimension.spacing.extraSmall"
+                : "dic.system.dimension.spacing.medium",
+              paddingRight: rightIcon
+                ? "dic.system.dimension.spacing.extraSmall"
+                : "dic.system.dimension.spacing.medium",
+            }
+        : {}
+    );
     return (
-      <button ref={ref} {...props}>
+      <button ref={ref} className={cx(iconPaddingCss, className)} {...props}>
         {leftIcon && <Span p={"2px"}>{leftIcon}</Span>}
         <Span>{children}</Span>
         {rightIcon && <Span p={"2px"}>{rightIcon}</Span>}
@@ -137,4 +170,4 @@ const ButtonWithRef = React.forwardRef<HTMLButtonElement, ButtonProps>(
   }
 );
 
-export const Button = styled(ButtonWithRef, buttonStyle);
+export const Button = styled(ButtonWithRef, ButtonStyle);

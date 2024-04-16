@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Button } from "./Button";
+import { Button, ButtonStyle } from "./Button";
 import { SvgIcon } from "./SvgIcon";
 
 const meta: Meta<typeof Button> = {
@@ -17,12 +17,12 @@ const meta: Meta<typeof Button> = {
       defaultValue: false,
     },
     type: {
-      options: ["filled", "outline", "ghost"],
+      options: ButtonStyle.variantMap.type,
       control: { type: "radio" },
       defaultValue: "filled",
     },
     size: {
-      options: ["small", "medium"],
+      options: ButtonStyle.variantMap.size,
       control: { type: "radio" },
       defaultValue: "medium",
     },
@@ -62,10 +62,23 @@ export const Ghost: Story = {
   },
 };
 
-export const WithIcon: Story = {
+export const Rounded: Story = {
+  args: {
+    children: "Rounded Button",
+    type: "ghost",
+  },
+};
+
+export const WithLeftIcon: Story = {
   args: {
     children: "Button",
     leftIcon: <SvgIcon icon="chevron_left" />,
+  },
+};
+
+export const WithRightIcon: Story = {
+  args: {
+    children: "Button",
     rightIcon: <SvgIcon icon="chevron_right" />,
   },
 };
