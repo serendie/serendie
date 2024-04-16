@@ -1,14 +1,16 @@
 import React from "react";
 import { css, cva, cx } from "../../styled-system/css";
 import { styled } from "../../styled-system/jsx";
+import { SystemStyleObject } from "@pandacss/dev";
 
 //Note:  Filledがデフォルト
 //typeにルックを定義、sizeには余白やフォントのサイズを定義するイメージ
 
 // outlineとroundedは角Rのみ違うので共通部を切り出している
-const outlineCss = {
+const outlineCss: SystemStyleObject = {
   color: "dic.system.color.component.onSurface",
-  outline: "token(dic.system.dimension.border.medium) solid",
+  outlineWidth: "dic.system.dimension.border.medium",
+  outlineStyle: "solid",
   outlineColor: "dic.system.color.component.outline",
   bgColor: "dic.system.color.component.surface",
   _enabled: {
@@ -70,8 +72,6 @@ export const ButtonStyle = cva({
         },
       },
       ghost: {
-        outline: "1px solid",
-        outlineColor: "transparent",
         color: "dic.system.color.impression.primary",
         _enabled: {
           _hover: {
@@ -79,6 +79,8 @@ export const ButtonStyle = cva({
           },
           _focusVisible: {
             bgColor: "dic.system.color.interaction.hoveredVariant",
+            outlineWidth: "dic.system.dimension.border.medium",
+            outlineStyle: "solid",
             outlineColor: "dic.system.color.component.outlineVariant",
           },
         },
