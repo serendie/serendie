@@ -15,26 +15,31 @@ const buttonStyle = cva({
     justifyContent: "center",
     overflow: "hidden",
     cursor: "pointer",
+    _disabled: {
+      cursor: "not-allowed",
+    },
   },
   variants: {
     type: {
       filled: {
         bg: "dic.system.color.impression.primaryContainer",
         color: "dic.system.color.impression.onPrimaryContainer",
-        _hover: {
-          _after: {
-            content: "''",
-            position: "absolute",
-            inset: "0",
-            bg: "dic.system.color.interaction.hovered",
+        _enabled: {
+          _hover: {
+            _after: {
+              content: "''",
+              position: "absolute",
+              inset: "0",
+              bg: "dic.system.color.interaction.hovered",
+            },
           },
-        },
-        _focusVisible: {
-          _after: {
-            content: "''",
-            position: "absolute",
-            inset: "0",
-            bg: "dic.system.color.interaction.hovered",
+          _focusVisible: {
+            _after: {
+              content: "''",
+              position: "absolute",
+              inset: "0",
+              bg: "dic.system.color.interaction.hovered",
+            },
           },
         },
         _disabled: {
@@ -47,15 +52,17 @@ const buttonStyle = cva({
         outline: "1px solid",
         outlineColor: "dic.system.color.component.outline",
         bgColor: "dic.system.color.component.surface",
-        _hover: {
-          bgColor: "dic.system.color.interaction.hoveredVariant",
-        },
-        _focusVisible: {
-          outlineColor: "dic.system.color.component.outlineVariant",
-          bgColor: "dic.system.color.interaction.hoveredVariant",
+        _enabled: {
+          _hover: {
+            bgColor: "dic.system.color.interaction.hoveredVariant",
+          },
+          _focusVisible: {
+            outlineColor: "dic.system.color.component.outlineVariant",
+            bgColor: "dic.system.color.interaction.hoveredVariant",
+          },
         },
         _disabled: {
-          bg: "dic.system.color.interaction.disabled",
+          bgColor: "dic.system.color.interaction.disabled",
           color: "dic.system.color.interaction.disabledOnSurface",
           outline: "none",
         },
@@ -64,12 +71,14 @@ const buttonStyle = cva({
         outline: "1px solid",
         outlineColor: "transparent",
         color: "dic.system.color.impression.primary",
-        _hover: {
-          bgColor: "dic.system.color.interaction.hoveredVariant",
-        },
-        _focusVisible: {
-          bgColor: "dic.system.color.interaction.hoveredVariant",
-          outlineColor: "dic.system.color.component.outlineVariant",
+        _enabled: {
+          _hover: {
+            bgColor: "dic.system.color.interaction.hoveredVariant",
+          },
+          _focusVisible: {
+            bgColor: "dic.system.color.interaction.hoveredVariant",
+            outlineColor: "dic.system.color.component.outlineVariant",
+          },
         },
         _disabled: {
           color: "dic.system.color.interaction.disabledOnSurface",
