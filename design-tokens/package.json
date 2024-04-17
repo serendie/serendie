@@ -14,9 +14,9 @@
     }
   },
   "scripts": {
-    "build": "node style-dictonary/build.js",
+    "build": "node style_dictonary/build.js",
     "test": "vitest",
-    "sync-figma-to-tokens": "tsx src/sync_tokens_to_figma.ts"
+    "sync-json-to-figma": "tsx json_to_figma/sync_tokens_to_figma.ts"
   },
   "devDependencies": {
     "@figma/rest-api-spec": "^0.10.0",
