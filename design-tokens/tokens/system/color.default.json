@@ -43,10 +43,10 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.white.1000}",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.impression.onPrimaryContainer"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.impression.onPrimaryContainer"
+                },
                 "scopes": ["ALL_FILLS", "STROKE_COLOR"]
               }
             }
@@ -67,10 +67,10 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.white.1000}",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.impression.onNotice"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.impression.onNotice"
+                },
                 "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
               }
             }
@@ -79,10 +79,10 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.yellow.600}",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.impression.noticeContainer"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.impression.noticeContainer"
+                },
                 "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
             }
@@ -91,10 +91,10 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.white.1000}",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.impression.onNoticeContainer"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.impression.onNoticeContainer"
+                },
                 "scopes": ["ALL_FILLS", "STROKE_COLOR"]
               }
             }
@@ -103,10 +103,10 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.red.600}",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.impression.negative"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.impression.negative"
+                },
                 "scopes": ["ALL_FILLS", "STROKE_COLOR"]
               }
             }
@@ -115,10 +115,10 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.white.1000}",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.impression.onNegative"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.impression.onNegative"
+                },
                 "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
               }
             }
@@ -127,10 +127,10 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.red.600}",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.impression.negativeContainer"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.impression.negativeContainer"
+                },
                 "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
             }
@@ -139,10 +139,10 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.white.1000}",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.impression.onNegativeContainer"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.impression.onNegativeContainer"
+                },
                 "scopes": ["ALL_FILLS", "STROKE_COLOR"]
               }
             }
@@ -151,10 +151,10 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.green.600}",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.impression.positive"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.impression.positive"
+                },
                 "scopes": ["ALL_FILLS", "STROKE_COLOR"]
               }
             }
@@ -163,10 +163,10 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.white.1000}",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.impression.onPositive"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.impression.onPositive"
+                },
                 "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
               }
             }
@@ -175,10 +175,10 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.green.600}",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.impression.positiveContainer"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.impression.positiveContainer"
+                },
                 "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
             }
@@ -187,10 +187,10 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.white.1000}",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.impression.onPositiveContainer"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.impression.onPositiveContainer"
+                },
                 "scopes": ["ALL_FILLS", "STROKE_COLOR"]
               }
             }
@@ -201,10 +201,10 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.white.1000}",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.component.surface"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.component.surface"
+                },
                 "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
             }
@@ -213,10 +213,10 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.black.1000}",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.component.onSurface"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.component.onSurface"
+                },
                 "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
               }
             }
@@ -226,10 +226,10 @@
             "$value": "{dic.reference.color.scale.gray.500}",
             "$description": "placeholderやsupportingTextに使用",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.component.onSurfaceVariant"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.component.onSurfaceVariant"
+                },
                 "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
               }
             }
@@ -239,10 +239,10 @@
             "$value": "{dic.reference.color.scale.gray.1000}",
             "$description": "toastやtooltipなどに使用するsurfaceの反対色",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.component.inverseSurface"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.component.inverseSurface"
+                },
                 "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
             }
@@ -252,10 +252,10 @@
             "$value": "{dic.reference.color.scale.white.1000}",
             "$description": "surfaceの反対色を地にした際のテキスト色",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.component.inverseOnSurface"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.component.inverseOnSurface"
+                },
                 "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
               }
             }
@@ -264,10 +264,10 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.gray.300}",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.component.outline"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.component.outline"
+                },
                 "scopes": ["STROKE_COLOR"]
               }
             }
@@ -276,10 +276,10 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.gray.500}",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.component.outlineVariant"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.component.outlineVariant"
+                },
                 "scopes": ["STROKE_COLOR"]
               }
             }
@@ -289,10 +289,10 @@
             "$value": "{dic.reference.color.scale.transparency.10}",
             "$description": "modalやdrawerの背景色として使用する色",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.component.scrim"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.component.scrim"
+                },
                 "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
             }
@@ -303,10 +303,10 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.gray.200}",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.interaction.disabled"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.interaction.disabled"
+                },
                 "scopes": ["ALL_FILLS"]
               }
             }
@@ -316,10 +316,10 @@
             "$value": "{dic.reference.color.scale.gray.400}",
             "$description": "surface colorをdisabledした色",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.interaction.disabledOnSurface"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.interaction.disabledOnSurface"
+                },
                 "scopes": ["ALL_FILLS", "STROKE_COLOR"]
               }
             }
@@ -328,10 +328,10 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.transparency.20}",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.interaction.hovered"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.interaction.hovered"
+                },
                 "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
             }
@@ -340,10 +340,10 @@
             "$type": "color",
             "$value": "{dic.reference.color.scale.transparency.5}",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.interaction.hoveredVariant"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.interaction.hoveredVariant"
+                },
                 "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
             }
@@ -353,10 +353,10 @@
             "$value": "{dic.reference.color.scale.transparency.60}",
             "$description": "primary colorをhoverする半透明レイヤー",
             "$extensions": {
-              "codeSyntax": {
-                "WEB": "dic.system.color.interaction.hoveredOnPrimary"
-              },
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.color.interaction.hoveredOnPrimary"
+                },
                 "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
             }

@@ -8,6 +8,9 @@
             "$value": "{dic.reference.dimension.scale.3}",
             "$extensions": {
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.dimension.spacing.twoExtraSmall"
+                },
                 "scopes": ["GAP"]
               }
             }
@@ -17,6 +20,9 @@
             "$value": "{dic.reference.dimension.scale.4}",
             "$extensions": {
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.dimension.spacing.extraSmall"
+                },
                 "scopes": ["GAP"]
               }
             }
@@ -26,6 +32,9 @@
             "$value": "{dic.reference.dimension.scale.5}",
             "$extensions": {
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.dimension.spacing.small"
+                },
                 "scopes": ["GAP"]
               }
             }
@@ -35,6 +44,9 @@
             "$value": "{dic.reference.dimension.scale.6}",
             "$extensions": {
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.dimension.spacing.medium"
+                },
                 "scopes": ["GAP"]
               }
             }
@@ -44,6 +56,9 @@
             "$value": "{dic.reference.dimension.scale.7}",
             "$extensions": {
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.dimension.spacing.large"
+                },
                 "scopes": ["GAP"]
               }
             }
@@ -53,6 +68,9 @@
             "$value": "{dic.reference.dimension.scale.8}",
             "$extensions": {
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.dimension.spacing.extraLarge"
+                },
                 "scopes": ["GAP"]
               }
             }
@@ -62,6 +80,9 @@
             "$value": "{dic.reference.dimension.scale.10}",
             "$extensions": {
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.dimension.spacing.twoExtraLarge"
+                },
                 "scopes": ["GAP"]
               }
             }
@@ -71,6 +92,9 @@
             "$value": "{dic.reference.dimension.scale.12}",
             "$extensions": {
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.dimension.spacing.threeExtraLarge"
+                },
                 "scopes": ["GAP"]
               }
             }
@@ -80,6 +104,9 @@
             "$value": "{dic.reference.dimension.scale.13}",
             "$extensions": {
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.dimension.spacing.fourExtraLarge"
+                },
                 "scopes": ["GAP"]
               }
             }
@@ -89,6 +116,9 @@
             "$value": "{dic.reference.dimension.scale.15}",
             "$extensions": {
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.dimension.spacing.fiveExtraLarge"
+                },
                 "scopes": ["GAP"]
               }
             }
@@ -98,6 +128,9 @@
             "$value": "{dic.reference.dimension.scale.17}",
             "$extensions": {
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.dimension.spacing.sixExtraLarge"
+                },
                 "scopes": ["GAP"]
               }
             }
@@ -109,6 +142,9 @@
             "$value": "{dic.reference.dimension.scale.1}",
             "$extensions": {
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.dimension.border.medium"
+                },
                 "scopes": ["STROKE_FLOAT"]
               }
             }
@@ -118,6 +154,9 @@
             "$value": "{dic.reference.dimension.scale.2}",
             "$extensions": {
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.dimension.border.thick"
+                },
                 "scopes": ["STROKE_FLOAT"]
               }
             }
@@ -127,6 +166,9 @@
             "$value": "{dic.reference.dimension.scale.3}",
             "$extensions": {
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.dimension.border.extraThick"
+                },
                 "scopes": ["STROKE_FLOAT"]
               }
             }
@@ -138,6 +180,9 @@
             "$value": "{dic.reference.dimension.scale.2}",
             "$extensions": {
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.dimension.radius.extraSmall"
+                },
                 "scopes": ["CORNER_RADIUS"]
               }
             }
@@ -147,6 +192,9 @@
             "$value": "{dic.reference.dimension.scale.3}",
             "$extensions": {
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.dimension.radius.small"
+                },
                 "scopes": ["CORNER_RADIUS"]
               }
             }
@@ -156,6 +204,9 @@
             "$value": "{dic.reference.dimension.scale.4}",
             "$extensions": {
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.dimension.radius.medium"
+                },
                 "scopes": ["CORNER_RADIUS"]
               }
             }
@@ -165,6 +216,9 @@
             "$value": "{dic.reference.dimension.scale.5}",
             "$extensions": {
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.dimension.radius.large"
+                },
                 "scopes": ["CORNER_RADIUS"]
               }
             }
@@ -174,6 +228,9 @@
             "$value": "{dic.reference.dimension.scale.6}",
             "$extensions": {
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.dimension.radius.extraLarge"
+                },
                 "scopes": ["CORNER_RADIUS"]
               }
             }
@@ -183,6 +240,9 @@
             "$value": "9999px",
             "$extensions": {
               "com.figma": {
+                "codeSyntax": {
+                  "WEB": "dic.system.dimension.radius.full"
+                },
                 "scopes": ["CORNER_RADIUS"]
               }
             }
