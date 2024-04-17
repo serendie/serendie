@@ -6,7 +6,7 @@
    - コンポーネントライブラリ
    - Storybook を内包
    - npm パッケージとして配布
-2. Design Token (`/design-tokens`)
+2. [Design Token](https://github.com/takram-design-engineering/spread/blob/main/design-tokens/README.md#design-token) (`/design-tokens`)
    - デザイントークンを定義した JSON
    - Spread UI から参照
 3. Apps
