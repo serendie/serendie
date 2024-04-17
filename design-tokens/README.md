@@ -8,7 +8,7 @@
   - 1 つのファイルが、Figma 上で 1 つのモードとして展開されます
   - `.expanded.json` のように 2 重拡張子でモード名を表現します。`.default.json`とした場合は、Figma Variables のデフォルトモードとして扱われます。
 
-## JSON to Figma Script (/src)
+## JSON to Figma Script (/json_to_figma)
 
 デザイントークン JSON ファイルを、Figma Variables に展開する (JSON to Figma) ためのスクリプトです。Figma REST API を使うため、エンタープライズプラン契約の Figma ファイルのみ実行可能です。
 
@@ -29,7 +29,7 @@ FILE_KEY=該当FigmaファイルのKEY
 npm run sync-figma-to-tokens
 ```
 
-## Style Dictonary
+## Style Dictonary (/style_dictonary)
 
 デザイントークン JSON ファイルを、React/Panda CSS で利用しやすい状態に加工するビルドスクリプトです。生成物は `/dist` に書き出され、Spread UI から利用されます。
 
@@ -38,3 +38,7 @@ npm run sync-figma-to-tokens
 ```
 npm run build
 ```
+
+## Figma Plugin (/figma_plugin)
+
+JSON to Figma Variables 用のプラグイン。API を使わずにアドホックに試したいときに使う想定
