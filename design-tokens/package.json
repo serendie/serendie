@@ -14,7 +14,7 @@
     }
   },
   "scripts": {
-    "build": "node build.js",
+    "build": "node style-dictonary/build.js",
     "test": "vitest",
     "sync-figma-to-tokens": "tsx src/sync_tokens_to_figma.ts"
   },
