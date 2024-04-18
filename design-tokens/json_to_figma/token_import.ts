@@ -16,6 +16,8 @@ import { areSetsEqual } from "./utils.js";
 import { colorApproximatelyEqual, parseColor } from "./color.js";
 import { parseDimension } from "./dimension.js";
 
+const isSilentMode = process.argv.includes("--silent");
+
 export type FlattenedTokensByFile = {
   [fileName: string]: {
     [tokenName: string]: Token;
@@ -49,7 +51,9 @@ export const readJsonFiles = (files: string[]) => {
     }
   }
 
-  console.log("Tokens by file:", tokensJsonByFile);
+  if (!isSilentMode) {
+    console.log("Tokens by file:", tokensJsonByFile);
+  }
 
   return tokensJsonByFile;
 };
@@ -298,11 +302,13 @@ export const generatePostVariablesPayload = (
     ] = variable;
   }
 
-  console.log(
-    "Local variable collections in Figma file:",
-    localVariableCollectionsByName,
-    localVariablesByCollectionAndName
-  );
+  if (!isSilentMode) {
+    console.log(
+      "Local variable collections in Figma file:",
+      localVariableCollectionsByName,
+      localVariablesByCollectionAndName
+    );
+  }
 
   const postVariablesPayload: PostVariablesRequestBody = {
     variableCollections: [],

@@ -16,7 +16,8 @@
   "scripts": {
     "build": "node style_dictonary/build.js",
     "test": "vitest",
-    "sync-json-to-figma": "tsx json_to_figma/sync_tokens_to_figma.ts"
+    "sync-json-to-figma": "tsx json_to_figma/sync_tokens_to_figma.ts",
+    "ci": "tsx json_to_figma/sync_tokens_to_figma.ts --silent"
   },
   "devDependencies": {
     "@figma/rest-api-spec": "^0.10.0",
