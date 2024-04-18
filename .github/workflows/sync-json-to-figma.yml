@@ -22,10 +22,10 @@ jobs:
     steps:
       - name: Install Node.js
         uses: actions/setup-node@v4
-        cache: "npm"
-        cache-dependency-path: design-tokens/package-lock.json
         with:
           node-version: "20"
+          cache: "npm"
+          cache-dependency-path: design-tokens/package-lock.json
 
       - name: Set NPM version
         run: npm install -g npm@latest
