@@ -1,12 +1,10 @@
 name: Build Design Tokens by StyleDictonary
 
 on:
-  pull_request:
+  push:
     branches:
-      - "**"
       # - main
-    # types:
-    #   - closed
+      - "**"
     paths:
       - "design-tokens/tokens/**"
       - ".github/workflows/build-tokens-and-create-pr.yml"
