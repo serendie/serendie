@@ -42,26 +42,14 @@ jobs:
       - name: Run StyleDictonary
         run: npm run build -w design-tokens
 
-      - name: Commit and push changes
-        run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
-          git checkout -b update-design-token-dist
-          git add .
-          git commit -m "Build design-tokens by StyleDictonary"
-          git push origin update-design-token-dist
-
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        id: cpr
+        uses: peter-evans/create-pull-request@v6
         with:
-          title: "Build design-tokens by StyleDictonary"
+          commit-message: Build design tokens by StyleDictonary
           branch: update-design-token-dist
-          body: "This PR updates the build artifacts."
-          base: "main"
-
-      - name: Request review from PR creator
-        uses: peter-evans/create-pull-request@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
+          delete-branch: true
+          title: "Build design tokens by StyleDictonary"
+          body: |
+            This PR updates the build artifacts.
           reviewers: ${{ github.actor }}
