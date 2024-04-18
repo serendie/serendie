@@ -9,7 +9,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.impression.primary"
+                  "WEB": "'dic.system.color.impression.primary'"
                 },
                 "scopes": ["ALL_FILLS", "STROKE_COLOR"]
               }
@@ -21,7 +21,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.impression.onPrimary"
+                  "WEB": "'dic.system.color.impression.onPrimary'"
                 },
                 "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
               }
@@ -33,7 +33,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.impression.primaryContainer"
+                  "WEB": "'dic.system.color.impression.primaryContainer'"
                 },
                 "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
@@ -45,7 +45,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.impression.onPrimaryContainer"
+                  "WEB": "'dic.system.color.impression.onPrimaryContainer'"
                 },
                 "scopes": ["ALL_FILLS", "STROKE_COLOR"]
               }
@@ -57,7 +57,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.impression.notice"
+                  "WEB": "'dic.system.color.impression.notice'"
                 },
                 "scopes": ["ALL_FILLS", "STROKE_COLOR"]
               }
@@ -69,7 +69,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.impression.onNotice"
+                  "WEB": "'dic.system.color.impression.onNotice'"
                 },
                 "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
               }
@@ -81,7 +81,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.impression.noticeContainer"
+                  "WEB": "'dic.system.color.impression.noticeContainer'"
                 },
                 "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
@@ -93,7 +93,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.impression.onNoticeContainer"
+                  "WEB": "'dic.system.color.impression.onNoticeContainer'"
                 },
                 "scopes": ["ALL_FILLS", "STROKE_COLOR"]
               }
@@ -105,7 +105,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.impression.negative"
+                  "WEB": "'dic.system.color.impression.negative'"
                 },
                 "scopes": ["ALL_FILLS", "STROKE_COLOR"]
               }
@@ -117,7 +117,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.impression.onNegative"
+                  "WEB": "'dic.system.color.impression.onNegative'"
                 },
                 "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
               }
@@ -129,7 +129,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.impression.negativeContainer"
+                  "WEB": "'dic.system.color.impression.negativeContainer'"
                 },
                 "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
@@ -141,7 +141,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.impression.onNegativeContainer"
+                  "WEB": "'dic.system.color.impression.onNegativeContainer'"
                 },
                 "scopes": ["ALL_FILLS", "STROKE_COLOR"]
               }
@@ -153,7 +153,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.impression.positive"
+                  "WEB": "'dic.system.color.impression.positive'"
                 },
                 "scopes": ["ALL_FILLS", "STROKE_COLOR"]
               }
@@ -165,7 +165,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.impression.onPositive"
+                  "WEB": "'dic.system.color.impression.onPositive'"
                 },
                 "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
               }
@@ -177,7 +177,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.impression.positiveContainer"
+                  "WEB": "'dic.system.color.impression.positiveContainer'"
                 },
                 "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
@@ -189,7 +189,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.impression.onPositiveContainer"
+                  "WEB": "'dic.system.color.impression.onPositiveContainer'"
                 },
                 "scopes": ["ALL_FILLS", "STROKE_COLOR"]
               }
@@ -203,7 +203,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.component.surface"
+                  "WEB": "'dic.system.color.component.surface'"
                 },
                 "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
@@ -215,7 +215,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.component.onSurface"
+                  "WEB": "'dic.system.color.component.onSurface'"
                 },
                 "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
               }
@@ -228,7 +228,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.component.onSurfaceVariant"
+                  "WEB": "'dic.system.color.component.onSurfaceVariant'"
                 },
                 "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
               }
@@ -241,7 +241,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.component.inverseSurface"
+                  "WEB": "'dic.system.color.component.inverseSurface'"
                 },
                 "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
@@ -254,7 +254,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.component.inverseOnSurface"
+                  "WEB": "'dic.system.color.component.inverseOnSurface'"
                 },
                 "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
               }
@@ -266,7 +266,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.component.outline"
+                  "WEB": "'dic.system.color.component.outline'"
                 },
                 "scopes": ["STROKE_COLOR"]
               }
@@ -278,7 +278,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.component.outlineVariant"
+                  "WEB": "'dic.system.color.component.outlineVariant'"
                 },
                 "scopes": ["STROKE_COLOR"]
               }
@@ -291,7 +291,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.component.scrim"
+                  "WEB": "'dic.system.color.component.scrim'"
                 },
                 "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
@@ -305,7 +305,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.interaction.disabled"
+                  "WEB": "'dic.system.color.interaction.disabled'"
                 },
                 "scopes": ["ALL_FILLS"]
               }
@@ -318,7 +318,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.interaction.disabledOnSurface"
+                  "WEB": "'dic.system.color.interaction.disabledOnSurface'"
                 },
                 "scopes": ["ALL_FILLS", "STROKE_COLOR"]
               }
@@ -330,7 +330,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.interaction.hovered"
+                  "WEB": "'dic.system.color.interaction.hovered'"
                 },
                 "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
@@ -342,7 +342,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.interaction.hoveredVariant"
+                  "WEB": "'dic.system.color.interaction.hoveredVariant'"
                 },
                 "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }
@@ -355,7 +355,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.color.interaction.hoveredOnPrimary"
+                  "WEB": "'dic.system.color.interaction.hoveredOnPrimary'"
                 },
                 "scopes": ["FRAME_FILL", "SHAPE_FILL"]
               }

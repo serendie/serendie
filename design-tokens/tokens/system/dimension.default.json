@@ -9,7 +9,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.dimension.spacing.twoExtraSmall"
+                  "WEB": "'dic.system.dimension.spacing.twoExtraSmall'"
                 },
                 "scopes": ["GAP"]
               }
@@ -21,7 +21,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.dimension.spacing.extraSmall"
+                  "WEB": "'dic.system.dimension.spacing.extraSmall'"
                 },
                 "scopes": ["GAP"]
               }
@@ -33,7 +33,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.dimension.spacing.small"
+                  "WEB": "'dic.system.dimension.spacing.small'"
                 },
                 "scopes": ["GAP"]
               }
@@ -45,7 +45,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.dimension.spacing.medium"
+                  "WEB": "'dic.system.dimension.spacing.medium'"
                 },
                 "scopes": ["GAP"]
               }
@@ -57,7 +57,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.dimension.spacing.large"
+                  "WEB": "'dic.system.dimension.spacing.large'"
                 },
                 "scopes": ["GAP"]
               }
@@ -69,7 +69,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.dimension.spacing.extraLarge"
+                  "WEB": "'dic.system.dimension.spacing.extraLarge'"
                 },
                 "scopes": ["GAP"]
               }
@@ -81,7 +81,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.dimension.spacing.twoExtraLarge"
+                  "WEB": "'dic.system.dimension.spacing.twoExtraLarge'"
                 },
                 "scopes": ["GAP"]
               }
@@ -93,7 +93,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.dimension.spacing.threeExtraLarge"
+                  "WEB": "'dic.system.dimension.spacing.threeExtraLarge'"
                 },
                 "scopes": ["GAP"]
               }
@@ -105,7 +105,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.dimension.spacing.fourExtraLarge"
+                  "WEB": "'dic.system.dimension.spacing.fourExtraLarge'"
                 },
                 "scopes": ["GAP"]
               }
@@ -117,7 +117,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.dimension.spacing.fiveExtraLarge"
+                  "WEB": "'dic.system.dimension.spacing.fiveExtraLarge'"
                 },
                 "scopes": ["GAP"]
               }
@@ -129,7 +129,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.dimension.spacing.sixExtraLarge"
+                  "WEB": "'dic.system.dimension.spacing.sixExtraLarge'"
                 },
                 "scopes": ["GAP"]
               }
@@ -143,7 +143,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.dimension.border.medium"
+                  "WEB": "'dic.system.dimension.border.medium'"
                 },
                 "scopes": ["STROKE_FLOAT"]
               }
@@ -155,7 +155,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.dimension.border.thick"
+                  "WEB": "'dic.system.dimension.border.thick'"
                 },
                 "scopes": ["STROKE_FLOAT"]
               }
@@ -167,7 +167,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.dimension.border.extraThick"
+                  "WEB": "'dic.system.dimension.border.extraThick'"
                 },
                 "scopes": ["STROKE_FLOAT"]
               }
@@ -181,7 +181,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.dimension.radius.extraSmall"
+                  "WEB": "'dic.system.dimension.radius.extraSmall'"
                 },
                 "scopes": ["CORNER_RADIUS"]
               }
@@ -193,7 +193,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.dimension.radius.small"
+                  "WEB": "'dic.system.dimension.radius.small'"
                 },
                 "scopes": ["CORNER_RADIUS"]
               }
@@ -205,7 +205,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.dimension.radius.medium"
+                  "WEB": "'dic.system.dimension.radius.medium'"
                 },
                 "scopes": ["CORNER_RADIUS"]
               }
@@ -217,7 +217,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.dimension.radius.large"
+                  "WEB": "'dic.system.dimension.radius.large'"
                 },
                 "scopes": ["CORNER_RADIUS"]
               }
@@ -229,7 +229,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.dimension.radius.extraLarge"
+                  "WEB": "'dic.system.dimension.radius.extraLarge'"
                 },
                 "scopes": ["CORNER_RADIUS"]
               }
@@ -241,7 +241,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "dic.system.dimension.radius.full"
+                  "WEB": "'dic.system.dimension.radius.full'"
                 },
                 "scopes": ["CORNER_RADIUS"]
               }
