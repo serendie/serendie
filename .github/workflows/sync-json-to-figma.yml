@@ -24,8 +24,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
-          cache-dependency-path: design-tokens/package-lock.json
 
       - name: Set NPM version
         run: npm install -g npm@latest
@@ -33,7 +31,17 @@ jobs:
       - name: Clone repo
         uses: actions/checkout@v3
 
+      - name: Cache Dependency
+        uses: actions/cache@v3
+        id: cache_dependency
+        env:
+          cache-name: cache-dependency
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
+
       - name: Install dependencies
+        if: ${{ steps.cache_dependency.outputs.cache-hit != 'true' }}
         run: npm install
 
       - name: Sync json to Figma file
