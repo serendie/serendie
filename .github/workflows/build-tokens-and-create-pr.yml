@@ -3,15 +3,12 @@ name: Build Design Tokens by StyleDictonary
 on:
   push:
     branches:
-      # - main
-      - "**"
+      - main
     paths:
       - "design-tokens/tokens/**"
-      - ".github/workflows/build-tokens-and-create-pr.yml"
 
 jobs:
   build-tokens-and-create-pr:
-    # if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Install Node.js
@@ -50,5 +47,6 @@ jobs:
           delete-branch: true
           title: "Build design tokens by StyleDictonary"
           body: |
-            This PR updates the build artifacts.
+            This PR updates the build artifacts of design tokens.
+            Please review!👨🏻‍🔧
           reviewers: ${{ github.actor }}
