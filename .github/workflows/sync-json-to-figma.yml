@@ -17,10 +17,13 @@ on:
 
 jobs:
   sync-tokens-to-figma:
+    # if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Install Node.js
         uses: actions/setup-node@v4
+        cache: "npm"
+        cache-dependency-path: design-tokens/package-lock.json
         with:
           node-version: "20"
 
