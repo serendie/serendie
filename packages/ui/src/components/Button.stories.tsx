@@ -8,7 +8,7 @@ const meta: Meta<typeof Button> = {
   parameters: {
     controls: {
       expanded: true,
-      include: ["children", "type", "size", "disabled"],
+      include: ["children", "styleType", "size", "disabled"],
     },
   },
   argTypes: {
@@ -16,8 +16,8 @@ const meta: Meta<typeof Button> = {
       control: { type: "boolean" },
       defaultValue: false,
     },
-    type: {
-      options: ButtonStyle.variantMap.type,
+    styleType: {
+      options: ButtonStyle.variantMap.styleType,
       control: { type: "radio" },
       defaultValue: "filled",
     },
@@ -51,21 +51,21 @@ export const Small: Story = {
 export const Outline: Story = {
   args: {
     children: "Outline Button",
-    type: "outline",
+    styleType: "outline",
   },
 };
 
 export const Ghost: Story = {
   args: {
     children: "Ghost Button",
-    type: "ghost",
+    styleType: "ghost",
   },
 };
 
 export const Rounded: Story = {
   args: {
     children: "Rounded Button",
-    type: "ghost",
+    styleType: "ghost",
   },
 };
 

@@ -1,7 +1,8 @@
 import React from "react";
 import { css, cva, cx } from "../../styled-system/css";
-import { styled } from "../../styled-system/jsx";
+import { styled, splitCssProps } from "../../styled-system/jsx";
 import { SystemStyleObject } from "@pandacss/dev";
+import { HTMLStyledProps, StyledVariantProps } from "../../styled-system/types";
 
 //Note:  Filledがデフォルト
 //typeにルックを定義、sizeには余白やフォントのサイズを定義するイメージ
@@ -44,7 +45,7 @@ export const ButtonStyle = cva({
     },
   },
   variants: {
-    type: {
+    styleType: {
       filled: {
         bg: "dic.system.color.impression.primaryContainer",
         color: "dic.system.color.impression.onPrimaryContainer",
@@ -114,21 +115,21 @@ export const ButtonStyle = cva({
     },
   },
   defaultVariants: {
-    type: "filled",
+    styleType: "filled",
     size: "medium",
   },
 });
 
+const StyledButton = styled("button", ButtonStyle);
+
 // leftIconとrightIconを両方指定できないようにする
-type ExclusiveButtonProps =
+type ExclusiveIconProps =
   | ({ leftIcon: React.ReactNode } & { rightIcon?: never })
   | ({ leftIcon?: never } & { rightIcon: React.ReactNode });
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
-  ExclusiveButtonProps & {
-    // TODO: buttonStyleからsizeの型情報を取りたい
-    size?: "small" | "medium";
-  };
+type ButtonProps = HTMLStyledProps<"button"> &
+  StyledVariantProps<typeof StyledButton> &
+  ExclusiveIconProps;
 
 const Span = styled("span", {
   base: {
@@ -137,11 +138,14 @@ const Span = styled("span", {
   },
 });
 
-const ButtonWithRef = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, leftIcon, rightIcon, size, className, ...props }, ref) => {
-    const iconPaddingCss = css(
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ children, leftIcon, rightIcon, ...props }, ref) => {
+    const [cssProps, componentProps] = splitCssProps(props);
+    const { css: cssPropsCss, ...cssPropsRest } = cssProps;
+
+    const iconPaddingCss =
       leftIcon || rightIcon
-        ? size === "medium"
+        ? props.size === "medium"
           ? {
               //アイコンがある側 `spacing.medium`、無い側は`spacing.extraLarge`
               paddingLeft: leftIcon
@@ -160,16 +164,19 @@ const ButtonWithRef = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 ? "dic.system.dimension.spacing.extraSmall"
                 : "dic.system.dimension.spacing.medium",
             }
-        : {}
-    );
+        : {};
     return (
-      <button ref={ref} className={cx(iconPaddingCss, className)} {...props}>
+      <StyledButton
+        ref={ref}
+        className={cx(
+          ButtonStyle(componentProps),
+          css(cssPropsRest, cssPropsCss, iconPaddingCss)
+        )}
+        {...props}>
         {leftIcon && <Span p={"2px"}>{leftIcon}</Span>}
         <Span>{children}</Span>
         {rightIcon && <Span p={"2px"}>{rightIcon}</Span>}
-      </button>
+      </StyledButton>
     );
   }
 );
-
-export const Button = styled(ButtonWithRef, ButtonStyle);
