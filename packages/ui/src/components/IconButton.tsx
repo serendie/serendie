@@ -2,7 +2,7 @@ import React from "react";
 import { cva } from "../../styled-system/css";
 import { styled } from "../../styled-system/jsx";
 import { SvgIcon, SvgIconName } from "./SvgIcon";
-import { getToken } from "../tokens/token";
+import { getToken } from "../tokens/getToken";
 
 export const IconButtonStyle = cva({
   base: {
