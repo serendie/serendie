@@ -35,5 +35,5 @@ jobs:
       - name: Sync json to Figma file
         run: npm run sync-json-to-figma -w design-tokens
         env:
-          FILE_KEY: ${{ github.event.inputs.file_key }}
-          PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_ACTION_VARIABLES_SYNC_FIGMA_TOKEN }}
+          FILE_KEY: ${{ secrets.SYNC_FIGMA_FILE_KEY }}
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.SYNC_FIGMA_PERSONAL_ACCESS_TOKEN }}
