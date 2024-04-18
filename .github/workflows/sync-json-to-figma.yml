@@ -1,4 +1,4 @@
-name: Sync design-tokens to Figma
+name: Sync Design Tokens to Figma
 
 on:
   pull_request:
