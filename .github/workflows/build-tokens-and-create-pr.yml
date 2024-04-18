@@ -1,4 +1,4 @@
-name: Build Design Tokens by StyleDictonary
+name: Build Design Tokens by Style Dictionary
 
 on:
   push:
@@ -35,17 +35,17 @@ jobs:
         if: ${{ steps.cache_dependency.outputs.cache-hit != 'true' }}
         run: npm install
 
-      - name: Run StyleDictonary
+      - name: Run Style Dictionary
         run: npm run build -w design-tokens
 
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v6
         with:
-          commit-message: Build design tokens by StyleDictonary
+          commit-message: Build design tokens
           branch: update-design-token-dist
           delete-branch: true
-          title: "Build design tokens by StyleDictonary"
+          title: "Build design tokens by Style Dictionary"
           body: |
             This PR updates the build artifacts of design tokens.
             Please review!👨🏻‍🔧
