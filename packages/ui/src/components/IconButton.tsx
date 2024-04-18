@@ -2,26 +2,30 @@ import React from "react";
 import { cva } from "../../styled-system/css";
 import { styled } from "../../styled-system/jsx";
 import { SvgIcon, SvgIconName } from "./SvgIcon";
-import { RecipeVariantProps } from "../../styled-system/types";
+import { getToken } from "../tokens/token";
 
-const buttonStyle = cva({
+export const IconButtonStyle = cva({
   base: {
-    borderRadius: "full",
     position: "relative",
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
     color: "dic.system.color.component.onSurface",
+    outlineWidth: "dic.system.dimension.border.medium",
+    outlineStyle: "solid",
   },
   variants: {
     shape: {
-      rectangle: {},
-      circle: {},
+      rectangle: {
+        borderRadius: "dic.system.dimension.radius.medium",
+      },
+      circle: {
+        borderRadius: "dic.system.dimension.radius.full",
+      },
     },
     type: {
       outline: {
-        outline: "1px solid",
         outlineColor: "dic.system.color.component.outline",
         bgColor: "dic.system.color.component.surface",
         _hover: {
@@ -40,9 +44,7 @@ const buttonStyle = cva({
         },
       },
       ghost: {
-        outline: "1px solid",
         outlineColor: "transparent",
-        color: "dic.system.color.impression.primary",
         _hover: {
           bgColor: "dic.system.color.interaction.hoveredVariant",
         },
@@ -60,12 +62,18 @@ const buttonStyle = cva({
       },
     },
     size: {
-      large: {},
+      // TODO: PandaのTokenのsizesにも、dimensionを入れて`{}`を外したい
+      large: {
+        w: "{spacing.dic.system.dimension.spacing.sixExtraLarge}",
+        h: "{spacing.dic.system.dimension.spacing.sixExtraLarge}",
+      },
       medium: {
-        p: "dic.system.dimension.spacing.extraLarge",
+        w: "{spacing.dic.system.dimension.spacing.threeExtraLarge}",
+        h: "{spacing.dic.system.dimension.spacing.threeExtraLarge}",
       },
       small: {
-        p: "dic.system.dimension.spacing.small",
+        w: "{spacing.dic.system.dimension.spacing.twoExtraLarge}",
+        h: "{spacing.dic.system.dimension.spacing.twoExtraLarge}",
       },
     },
   },
@@ -76,19 +84,28 @@ const buttonStyle = cva({
   },
 });
 
-type VariantsProps = RecipeVariantProps<typeof buttonStyle>;
-
+// shapeがrectangleの時はsizeにlargeを取れないのですが、型芸になりそうなので受け入れています
 type ButtonProps = {
   icon: SvgIconName;
-} & VariantsProps &
-  Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children">;
+  size: (typeof IconButtonStyle.variantMap.size)[number];
+} & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children">;
 
-export const IconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const IconButtonWithRef = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ icon, size, ...props }, ref) => {
+    const token = getToken();
     return (
-      <styled.button ref={ref} className={buttonStyle()} {...props}>
-        <SvgIcon size={size === "large" ? "40px" : "24px"} icon={icon} />
+      <styled.button ref={ref} className={IconButtonStyle()} {...props}>
+        <SvgIcon
+          size={
+            size === "large"
+              ? token.dic.reference.dimension.scale[12]
+              : token.dic.reference.dimension.scale[8]
+          }
+          icon={icon}
+        />
       </styled.button>
     );
   }
 );
+
+export const IconButton = styled(IconButtonWithRef, IconButtonStyle);

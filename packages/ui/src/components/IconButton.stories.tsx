@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { IconButton } from "./IconButton";
+import { IconButton, IconButtonStyle } from "./IconButton";
 
 const meta: Meta<typeof IconButton> = {
   component: IconButton,
@@ -16,17 +16,17 @@ const meta: Meta<typeof IconButton> = {
       defaultValue: false,
     },
     shape: {
-      options: ["circle", "rectangle"],
+      options: IconButtonStyle.variantMap.shape,
       control: { type: "radio" },
       defaultValue: "rectangle",
     },
     type: {
-      options: ["outline", "ghost"],
+      options: IconButtonStyle.variantMap.type,
       control: { type: "radio" },
       defaultValue: "filled",
     },
     size: {
-      options: ["large", "medium", "small"],
+      options: IconButtonStyle.variantMap.size,
       control: { type: "radio" },
       defaultValue: "medium",
     },

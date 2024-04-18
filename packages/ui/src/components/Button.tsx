@@ -126,8 +126,7 @@ type ExclusiveButtonProps =
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   ExclusiveButtonProps & {
-    // TODO: buttonStyleからsizeの型情報を取りたい
-    size?: "small" | "medium";
+    size?: (typeof ButtonStyle.variantMap.size)[number];
   };
 
 const Span = styled("span", {
