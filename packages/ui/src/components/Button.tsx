@@ -123,15 +123,13 @@ export const ButtonStyle = cva({
 const StyledButton = styled("button", ButtonStyle);
 
 // leftIconとrightIconを両方指定できないようにする
-type ExclusiveButtonProps =
+type ExclusiveIconProps =
   | ({ leftIcon: React.ReactNode } & { rightIcon?: never })
   | ({ leftIcon?: never } & { rightIcon: React.ReactNode });
 
 type ButtonProps = HTMLStyledProps<"button"> &
   StyledVariantProps<typeof StyledButton> &
-  ExclusiveButtonProps & {
-    size?: (typeof ButtonStyle.variantMap.size)[number];
-  };
+  ExclusiveIconProps;
 
 const Span = styled("span", {
   base: {
