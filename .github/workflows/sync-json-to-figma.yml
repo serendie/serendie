@@ -46,15 +46,15 @@ jobs:
 
       - name: Sync json to Figma file
         run: |
-          npm run ci:sync-json-to-figma -w design-tokens  &> diff.txt # 
-          less diff.txt
+          npm run ci:sync-json-to-figma -w design-tokens  &> output.txt # 
+          less output.txt
         env:
           FILE_KEY: ${{ secrets.SYNC_FIGMA_FILE_KEY }}
           PERSONAL_ACCESS_TOKEN: ${{ secrets.SYNC_FIGMA_PERSONAL_ACCESS_TOKEN }}
 
       - id: get-comment-body
         run: |
-          body="$(cat diff.txt)"
+          body="$(cat output.txt)"
           body="${body//'%'/'%25'}"
           body="${body//$'\n'/'%0A'}"
           body="${body//$'\r'/'%0D'}" 
@@ -65,7 +65,7 @@ jobs:
         with:
           issue-number: ${{ github.event.pull_request.number }}
           body: |
-            ## ♻️ Sync Design Tokens to Figma
+            ## 📡 Sync Design Tokens to Figma
             ```bash
             ${{ steps.get-comment-body.outputs.body }}
             ```
