@@ -29,10 +29,10 @@ jobs:
         run: npm install -g npm@latest
 
       - name: Clone repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Cache Dependency
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         id: cache_dependency
         env:
           cache-name: cache-dependency
