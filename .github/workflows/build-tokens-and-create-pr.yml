@@ -1,0 +1,67 @@
+name: Build Design Tokens by StyleDictonary
+
+on:
+  pull_request:
+    branches:
+      - main
+    # types:
+    #   - closed
+    paths:
+      - "design-tokens/tokens/**"
+      - ".github/workflows/build-tokens-and-create-pr.yml"
+
+jobs:
+  build-tokens-and-create-pr:
+    # if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Set NPM version
+        run: npm install -g npm@latest
+
+      - name: Clone repo
+        uses: actions/checkout@v4
+
+      - name: Cache Dependency
+        uses: actions/cache@v4
+        id: cache_dependency
+        env:
+          cache-name: cache-dependency
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies
+        if: ${{ steps.cache_dependency.outputs.cache-hit != 'true' }}
+        run: npm install
+
+      - name: Run StyleDictonary
+        run: npm run build -w design-tokens
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git checkout -b update-design-token-dist
+          git add .
+          git commit -m "Build design-tokens by StyleDictonary"
+          git push origin update-design-token-dist
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: "Build design-tokens by StyleDictonary"
+          branch: update-design-token-dist
+          body: "This PR updates the build artifacts."
+          base: "main"
+
+      - name: Request review from PR creator
+        uses: peter-evans/create-pull-request@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          reviewers: ${{ github.actor }}
