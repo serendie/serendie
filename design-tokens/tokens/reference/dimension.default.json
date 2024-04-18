@@ -5,79 +5,174 @@
         "scale": {
           "0": {
             "$value": "0px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
           },
           "1": {
             "$value": "1px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
           },
           "2": {
             "$value": "2px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
           },
           "3": {
             "$value": "4px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
           },
           "4": {
             "$value": "8px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
           },
           "5": {
             "$value": "12px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
           },
           "6": {
             "$value": "16px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
           },
           "7": {
             "$value": "20px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
           },
           "8": {
             "$value": "24px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
           },
           "9": {
             "$value": "28px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
           },
           "10": {
             "$value": "32px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
           },
           "11": {
             "$value": "36px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
           },
           "12": {
             "$value": "40px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
           },
           "13": {
             "$value": "48px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
           },
           "14": {
             "$value": "56px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
           },
           "15": {
             "$value": "64px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
           },
           "16": {
             "$value": "72px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
           },
           "17": {
             "$value": "80px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
           },
           "18": {
             "$value": "96px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
           }
         }
       }
