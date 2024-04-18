@@ -46,7 +46,7 @@ jobs:
 
       - name: Sync json to Figma file
         run: |
-          npm run sync-json-to-figma -w design-tokens  &> diff.txt # 
+          npm run ci:sync-json-to-figma -w design-tokens  &> diff.txt # 
           less diff.txt
         env:
           FILE_KEY: ${{ secrets.SYNC_FIGMA_FILE_KEY }}
@@ -65,7 +65,7 @@ jobs:
         with:
           issue-number: ${{ github.event.pull_request.number }}
           body: |
-            ## 🍰  diff 🍰 
+            ## ♻️ Sync Design Tokens to Figma
             ```bash
             ${{ steps.get-comment-body.outputs.body }}
             ```
