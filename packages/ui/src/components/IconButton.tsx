@@ -1,8 +1,13 @@
 import React from "react";
-import { cva } from "../../styled-system/css";
-import { styled } from "../../styled-system/jsx";
+import { css, cva, cx } from "../../styled-system/css";
+import {
+  HTMLStyledProps,
+  splitCssProps,
+  styled,
+} from "../../styled-system/jsx";
 import { SvgIcon, SvgIconName } from "./SvgIcon";
 import { getToken } from "../tokens/getToken";
+import { StyledVariantProps } from "../../styled-system/types";
 
 export const IconButtonStyle = cva({
   base: {
@@ -31,7 +36,7 @@ export const IconButtonStyle = cva({
         borderRadius: "dic.system.dimension.radius.full",
       },
     },
-    type: {
+    styleType: {
       outline: {
         outlineColor: "dic.system.color.component.outline",
         bgColor: "dic.system.color.component.surface",
@@ -89,37 +94,48 @@ export const IconButtonStyle = cva({
   ],
   defaultVariants: {
     shape: "circle",
-    type: "outline",
+    styleType: "outline",
     size: "medium",
   },
 });
+
+const StyledIconButton = styled("button", IconButtonStyle);
 
 /**
  * TODO: できれば
  * shapeがrectangleの時はsizeにlargeを取れず、
  * shapeがcircleの時にはtypeにoutlinedを取れないようにしたい
  */
-type ButtonProps = {
-  icon: SvgIconName;
-  size: (typeof IconButtonStyle.variantMap.size)[number];
-} & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "children">;
+type ButtonProps = StyledVariantProps<typeof StyledIconButton> &
+  Omit<HTMLStyledProps<"button">, "children"> & {
+    icon: SvgIconName;
+  };
 
-const IconButtonWithRef = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ icon, size, ...props }, ref) => {
+export const IconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ icon, ...props }, ref) => {
+    /* NOTE: 自前でstyled componentsを作る場合はちょっとややこしい手順が必要
+     https://panda-css.com/docs/concepts/style-props#making-your-own-styled-components
+    */
+    const [cssProps, componentProps] = splitCssProps(props);
+    const { css: cssPropsCss, ...cssPropsRest } = cssProps;
     const token = getToken();
     return (
-      <styled.button ref={ref} className={IconButtonStyle()} {...props}>
+      <StyledIconButton
+        ref={ref}
+        className={cx(
+          IconButtonStyle(componentProps),
+          css(cssPropsRest, cssPropsCss)
+        )}
+        {...props}>
         <SvgIcon
           size={
-            size === "large"
+            props.size === "large"
               ? token.dic.reference.dimension.scale[12]
               : token.dic.reference.dimension.scale[8]
           }
           icon={icon}
         />
-      </styled.button>
+      </StyledIconButton>
     );
   }
 );
-
-export const IconButton = styled(IconButtonWithRef, IconButtonStyle);

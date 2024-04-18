@@ -7,7 +7,7 @@ const meta: Meta<typeof IconButton> = {
   parameters: {
     controls: {
       expanded: true,
-      include: ["shape", "type", "size", "disabled"],
+      include: ["shape", "styleType", "size", "disabled", "mt"],
     },
   },
   argTypes: {
@@ -20,8 +20,8 @@ const meta: Meta<typeof IconButton> = {
       control: { type: "radio" },
       defaultValue: "rectangle",
     },
-    type: {
-      options: IconButtonStyle.variantMap.type,
+    styleType: {
+      options: IconButtonStyle.variantMap.styleType,
       control: { type: "radio" },
       defaultValue: "filled",
     },
@@ -43,6 +43,7 @@ export const Rectangle: Story = {
     size: "medium",
     disabled: false,
   },
+  render: (props) => <IconButton {...props} />,
 };
 
 export const Circle: Story = {
