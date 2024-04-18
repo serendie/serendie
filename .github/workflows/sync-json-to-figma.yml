@@ -1,0 +1,39 @@
+name: Sync tokens to Figma
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "design-tokens/tokens/**"
+      - ".github/workflows/sync-json-to-figma.yml"
+  workflow_dispatch:
+    inputs:
+      file_key:
+        description: "The file key of the Figma file to be updated"
+        required: true
+
+jobs:
+  sync-tokens-to-figma:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+          cache: npm
+
+      - name: Set NPM version
+        run: npm install -g npm@latest
+
+      - name: Clone repo
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Sync tokens to Figma file
+        run: npm run sync-json-to-figma -w design-tokens
+        env:
+          FILE_KEY: ${{ github.event.inputs.file_key }}
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_ACTION_VARIABLES_SYNC_FIGMA_TOKEN }}
