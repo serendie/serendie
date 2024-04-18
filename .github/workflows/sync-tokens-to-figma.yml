@@ -8,7 +8,7 @@ on:
       - closed
     paths:
       - "design-tokens/tokens/**"
-      - ".github/workflows/sync-json-to-figma.yml"
+      # - ".github/workflows/sync-json-to-figma.yml"
 
 jobs:
   sync-tokens-to-figma:
