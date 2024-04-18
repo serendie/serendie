@@ -4,8 +4,8 @@ on:
   pull_request:
     branches:
       - main
-    # types:
-    #   - closed
+    types:
+      - closed
     paths:
       - "design-tokens/tokens/**"
       - ".github/workflows/sync-json-to-figma.yml"
@@ -17,7 +17,7 @@ on:
 
 jobs:
   sync-tokens-to-figma:
-    # if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Install Node.js
