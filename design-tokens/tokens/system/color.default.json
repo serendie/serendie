@@ -200,6 +200,7 @@
           "surface": {
             "$type": "color",
             "$value": "{dic.reference.color.scale.white.1000}",
+            "$description": "bodyの背景色などサイトのベースカラー",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
@@ -212,6 +213,7 @@
           "onSurface": {
             "$type": "color",
             "$value": "{dic.reference.color.scale.black.1000}",
+            "$description": "surface色を地にしたオブジェクト色",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
@@ -224,7 +226,7 @@
           "onSurfaceVariant": {
             "$type": "color",
             "$value": "{dic.reference.color.scale.gray.500}",
-            "$description": "placeholderやsupportingTextに使用",
+            "$description": "プレイスホルダーやサブテキストなどonSurfaceに強弱をつける際に利用",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
@@ -250,7 +252,7 @@
           "inverseOnSurface": {
             "$type": "color",
             "$value": "{dic.reference.color.scale.white.1000}",
-            "$description": "surfaceの反対色を地にした際のテキスト色",
+            "$description": "surfaceの反対色を地にしたオブジェクト色",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
@@ -263,6 +265,7 @@
           "outline": {
             "$type": "color",
             "$value": "{dic.reference.color.scale.gray.300}",
+            "$description": "ボタンやフォームなどのアウトライン色",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
@@ -302,6 +305,7 @@
           "disabled": {
             "$type": "color",
             "$value": "{dic.reference.color.scale.gray.200}",
+            "$description": "disabled状態のオブジェクト色",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
@@ -314,7 +318,7 @@
           "disabledOnSurface": {
             "$type": "color",
             "$value": "{dic.reference.color.scale.gray.400}",
-            "$description": "surface colorをdisabledした色",
+            "$description": "onSurface色をdisabled状態にするときに使用",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
@@ -327,6 +331,7 @@
           "hovered": {
             "$type": "color",
             "$value": "{dic.reference.color.scale.transparency.20}",
+            "$description": "hover状態のオブジェクトに重ねわせる半透明色",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
@@ -351,7 +356,7 @@
           "hoveredOnPrimary": {
             "$type": "color",
             "$value": "{dic.reference.color.scale.transparency.60}",
-            "$description": "primary colorをhoverする半透明レイヤー",
+            "$description": "primaryなど有彩色を使用したhover状態のオブジェクトに重ね合わせる半透明色",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
