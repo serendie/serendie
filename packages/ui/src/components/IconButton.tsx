@@ -14,6 +14,13 @@ export const IconButtonStyle = cva({
     color: "dic.system.color.component.onSurface",
     outlineWidth: "dic.system.dimension.border.medium",
     outlineStyle: "solid",
+    cursor: "pointer",
+    _disabled: {
+      color: "dic.system.color.interaction.disabledOnSurface",
+      cursor: "not-allowed",
+      outlineColor: "transparent",
+      bg: "dic.system.color.interaction.disabled",
+    },
   },
   variants: {
     shape: {
@@ -28,55 +35,58 @@ export const IconButtonStyle = cva({
       outline: {
         outlineColor: "dic.system.color.component.outline",
         bgColor: "dic.system.color.component.surface",
-        _hover: {
-          bgColor: "dic.system.color.interaction.hoveredVariant",
-        },
-        _focusVisible: {
-          outlineColor: "dic.system.color.component.outlineVariant",
-          bgColor: "dic.system.color.interaction.hoveredVariant",
-        },
-        _disabled: {
-          bg: "dic.system.color.interaction.disabled",
-          color: "dic.system.color.component.onSurface",
-          "&>span": {
-            opacity: "dic.reference.elevation.opacity.scale.3",
+        _enabled: {
+          _hover: {
+            bgColor: "dic.system.color.interaction.hoveredVariant",
+          },
+          _focusVisible: {
+            outlineColor: "dic.system.color.component.outlineVariant",
+            bgColor: "dic.system.color.interaction.hoveredVariant",
           },
         },
       },
       ghost: {
         outlineColor: "transparent",
-        _hover: {
-          bgColor: "dic.system.color.interaction.hoveredVariant",
-        },
-        _focusVisible: {
-          bgColor: "dic.system.color.interaction.hoveredVariant",
-          outlineColor: "dic.system.color.component.outlineVariant",
+        _enabled: {
+          _hover: {
+            bgColor: "dic.system.color.interaction.hoveredVariant",
+          },
+          _focusVisible: {
+            bgColor: "dic.system.color.interaction.hoveredVariant",
+            outlineColor: "dic.system.color.component.outlineVariant",
+          },
         },
         _disabled: {
-          // TODO: Fix the color
-          color: "dic.system.color.component.onSurface",
-          "&>span": {
-            opacity: "dic.reference.elevation.opacity.scale.3",
-          },
+          bg: "transparent",
         },
       },
     },
     size: {
       // TODO: PandaのTokenのsizesにも、dimensionを入れて`{}`を外したい
       large: {
-        w: "{spacing.dic.system.dimension.spacing.sixExtraLarge}",
-        h: "{spacing.dic.system.dimension.spacing.sixExtraLarge}",
+        w: "{spacing.dic.reference.dimension.scale.17}",
+        h: "{spacing.dic.reference.dimension.scale.17}",
       },
       medium: {
-        w: "{spacing.dic.system.dimension.spacing.threeExtraLarge}",
-        h: "{spacing.dic.system.dimension.spacing.threeExtraLarge}",
+        w: "{spacing.dic.reference.dimension.scale.12}",
+        h: "{spacing.dic.reference.dimension.scale.12}",
       },
       small: {
-        w: "{spacing.dic.system.dimension.spacing.twoExtraLarge}",
-        h: "{spacing.dic.system.dimension.spacing.twoExtraLarge}",
+        w: "{spacing.dic.reference.dimension.scale.10}",
+        h: "{spacing.dic.reference.dimension.scale.10}",
       },
     },
   },
+  compoundVariants: [
+    {
+      // rectangle/smallの場合は横長
+      shape: "rectangle",
+      size: "small",
+      css: {
+        w: "{spacing.dic.reference.dimension.scale.12}",
+      },
+    },
+  ],
   defaultVariants: {
     shape: "circle",
     type: "outline",
@@ -84,7 +94,11 @@ export const IconButtonStyle = cva({
   },
 });
 
-// shapeがrectangleの時はsizeにlargeを取れないのですが、型芸になりそうなので受け入れています
+/**
+ * TODO: できれば
+ * shapeがrectangleの時はsizeにlargeを取れず、
+ * shapeがcircleの時にはtypeにoutlinedを取れないようにしたい
+ */
 type ButtonProps = {
   icon: SvgIconName;
   size: (typeof IconButtonStyle.variantMap.size)[number];
