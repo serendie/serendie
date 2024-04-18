@@ -3,7 +3,8 @@ name: Build Design Tokens by StyleDictonary
 on:
   pull_request:
     branches:
-      - main
+      - "**"
+      # - main
     # types:
     #   - closed
     paths:
