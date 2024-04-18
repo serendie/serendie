@@ -2,8 +2,8 @@ name: Sync design-tokens to Figma
 
 on:
   push:
-    branches:
-      - main
+    # branches:
+    #   - main
     paths:
       - "design-tokens/tokens/**"
       - ".github/workflows/sync-json-to-figma.yml"
@@ -21,7 +21,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20.x"
-          cache: npm
 
       - name: Set NPM version
         run: npm install -g npm@latest
