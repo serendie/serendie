@@ -32,7 +32,28 @@ jobs:
         run: npm install
 
       - name: Sync json to Figma file
-        run: npm run sync-json-to-figma -w design-tokens
+        run: |
+          npm run sync-json-to-figma -w design-tokens  &> diff.txt # 
+          less diff.txt
         env:
           FILE_KEY: ${{ secrets.SYNC_FIGMA_FILE_KEY }}
           PERSONAL_ACCESS_TOKEN: ${{ secrets.SYNC_FIGMA_PERSONAL_ACCESS_TOKEN }}
+
+      - id: get-comment-body
+        run: |
+          body="$(cat diff.txt)"
+          body="${body//'%'/'%25'}"
+          body="${body//$'\n'/'%0A'}"
+          body="${body//$'\r'/'%0D'}" 
+          echo "::set-output name=body::$body"
+
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            ## 🍰  diff 🍰 
+            ```bash
+            ${{ steps.get-comment-body.outputs.body }}
+            ```
+          reactions: rocket
