@@ -1,9 +1,11 @@
-name: Sync design-tokens to Figma
+name: Sync Design Tokens to Figma
 
 on:
-  push:
+  pull_request:
     branches:
       - main
+    types:
+      - closed
     paths:
       - "design-tokens/tokens/**"
       - ".github/workflows/sync-json-to-figma.yml"
@@ -15,13 +17,13 @@ on:
 
 jobs:
   sync-tokens-to-figma:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20.x"
-          cache: npm
+          node-version: "20"
 
       - name: Set NPM version
         run: npm install -g npm@latest
@@ -29,11 +31,42 @@ jobs:
       - name: Clone repo
         uses: actions/checkout@v3
 
+      - name: Cache Dependency
+        uses: actions/cache@v3
+        id: cache_dependency
+        env:
+          cache-name: cache-dependency
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
+
       - name: Install dependencies
+        if: ${{ steps.cache_dependency.outputs.cache-hit != 'true' }}
         run: npm install
 
       - name: Sync json to Figma file
-        run: npm run sync-json-to-figma -w design-tokens
+        run: |
+          npm run ci:sync-json-to-figma -w design-tokens  &> output.txt # 
+          less output.txt
         env:
-          FILE_KEY: ${{ github.event.inputs.file_key }}
-          PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_ACTION_VARIABLES_SYNC_FIGMA_TOKEN }}
+          FILE_KEY: ${{ secrets.SYNC_FIGMA_FILE_KEY }}
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.SYNC_FIGMA_PERSONAL_ACCESS_TOKEN }}
+
+      - id: get-comment-body
+        run: |
+          body="$(cat output.txt)"
+          body="${body//'%'/'%25'}"
+          body="${body//$'\n'/'%0A'}"
+          body="${body//$'\r'/'%0D'}" 
+          echo "::set-output name=body::$body"
+
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            ## 📡 Sync Design Tokens to Figma
+            ```bash
+            ${{ steps.get-comment-body.outputs.body }}
+            ```
+          reactions: rocket
