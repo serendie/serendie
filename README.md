@@ -2,7 +2,7 @@
 
 3 つのプロジェクトから構成されるモノレポ
 
-1. Spread UI (`/packages/ui`)
+1. Spread UI (`/ui`)
    - コンポーネントライブラリ
    - Storybook を内包
    - npm パッケージとして配布
