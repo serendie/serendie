@@ -1,9 +1,11 @@
 name: Sync design-tokens to Figma
 
 on:
-  push:
-    # branches:
-    #   - main
+  pull_request:
+    branches:
+      - main
+    # types:
+    #   - closed
     paths:
       - "design-tokens/tokens/**"
       - ".github/workflows/sync-json-to-figma.yml"
