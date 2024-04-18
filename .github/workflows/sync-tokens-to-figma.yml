@@ -9,11 +9,6 @@ on:
     paths:
       - "design-tokens/tokens/**"
       - ".github/workflows/sync-json-to-figma.yml"
-  workflow_dispatch:
-    inputs:
-      file_key:
-        description: "The file key of the Figma file to be updated"
-        required: true
 
 jobs:
   sync-tokens-to-figma:
