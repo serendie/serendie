@@ -328,6 +328,19 @@
               }
             }
           },
+          "selectedSurface": {
+            "$type": "color",
+            "$value": "{dic.reference.color.scale.blue.100}",
+            "$description": "surface色をselected状態にするときに使用 (ListItemなど)",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {
+                  "WEB": "'dic.system.color.interaction.selectedSurface'"
+                },
+                "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+              }
+            }
+          },
           "hovered": {
             "$type": "color",
             "$value": "{dic.reference.color.scale.transparency.20}",
