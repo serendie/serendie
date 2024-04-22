@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 17 Apr 2024 10:06:18 GMT
+ * Generated on Mon, 22 Apr 2024 10:35:22 GMT
  */
 
 export default {
@@ -312,6 +312,9 @@ export default {
             },
             "disabledOnSurface": {
               "value": "#AEB8C0"
+            },
+            "selectedSurface": {
+              "value": "#DBF3FF"
             },
             "hovered": {
               "value": "#00000033"

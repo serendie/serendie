@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 17 Apr 2024 10:06:18 GMT
+ * Generated on Mon, 22 Apr 2024 10:35:22 GMT
  */
 
 export default tokens;
@@ -213,6 +213,7 @@ declare const tokens: {
         "interaction": {
           "disabled": string,
           "disabledOnSurface": string,
+          "selectedSurface": string,
           "hovered": string,
           "hoveredVariant": string,
           "hoveredOnPrimary": string
