@@ -1,5 +1,6 @@
 import { Combobox, ComboboxRootProps, Portal } from "@ark-ui/react";
 import { sva } from "../../styled-system/css";
+import { SvgIcon } from "./SvgIcon";
 /*
  * 検索候補を出すことができるサーチコンボボックス
  * https://ark-ui.com/docs/components/combobox
@@ -27,6 +28,7 @@ export const Search: React.FC<ComboboxRootProps<string>> = ({
       {...props}
       className={styles.root}>
       <Combobox.Label>Framework</Combobox.Label>
+      <SvgIcon icon="search" />
       <Combobox.Control>
         <Combobox.Input />
         <Combobox.Trigger>Open</Combobox.Trigger>
