@@ -1,5 +1,4 @@
 import { SpreadPreset } from "./src/preset";
-import pandaPreset from "@pandacss/preset-panda";
 
 import { defineConfig } from "@pandacss/dev";
 
@@ -17,5 +16,5 @@ export default defineConfig({
   outdir: "styled-system",
   outExtension: "js",
   jsxFramework: "react",
-  presets: [pandaPreset, SpreadPreset],
+  presets: [SpreadPreset],
 });
