@@ -24,6 +24,7 @@ type Story = StoryObj<typeof Search>;
 export const Basic: Story = {
   args: {
     disabled: false,
+    placeholder: "デバイスIDなどを検索",
     items,
   },
 };
