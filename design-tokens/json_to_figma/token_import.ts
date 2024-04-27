@@ -182,6 +182,12 @@ const variableResolvedTypeFromToken = (token: Token) => {
       return "COLOR";
     case "dimension":
       return "FLOAT";
+    case "fontFamily":
+      return "STRING";
+    case "fontWeight":
+      return "FLOAT";
+    case "number":
+      return "FLOAT";
     default:
       throw new Error(`Invalid token $type: ${token.$type}`);
   }
