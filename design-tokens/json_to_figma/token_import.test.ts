@@ -389,6 +389,90 @@ describe("generatePostVariablesPayload", () => {
           $description: "Medium border",
         },
       },
+      "typography.compact.json": {
+        "dic/reference/typography/fontFamily/primary": {
+          $value: "Noto Sans JP",
+          $type: "fontFamily",
+          $description: "Primary font family",
+        },
+        "dic/reference/typography/fontWeight/regular": {
+          $value: 400,
+          $type: "fontWeight",
+          $description: "Regular font weight",
+        },
+        "dic/reference/typography/lineHeight/none": {
+          $value: 1,
+          $type: "number",
+          $description: "None line height",
+        },
+        "dic/reference/typography/letterSpacing/none": {
+          $value: "0px",
+          $type: "dimension",
+          $description: "None letter spacing",
+        },
+        "dic/reference/typography/scale/compact/twoExtraSmall": {
+          $value: "10px",
+          $type: "dimension",
+          $description: "Two extra small",
+        },
+        "dic/reference/typography/scale/expanded/fourExtraSmall": {
+          $value: "10px",
+          $type: "dimension",
+          $description: "Four extra small",
+        },
+        "dic/system/typography/display/small/fontFamily": {
+          $value: "{dic.reference.typography.fontFamily.primary}",
+          $type: "fontFamily",
+          $description: "Primary font family",
+        },
+        "dic/system/typography/display/small/fontSize": {
+          $value: "{dic.reference.typography.scale.compact.twoExtraSmall}",
+          $type: "dimension",
+          $description: "Two extra small",
+        },
+        "dic/system/typography/display/small/fontWeight": {
+          $value: "{dic.reference.typography.fontWeight.regular}",
+          $type: "fontWeight",
+          $description: "Regular font weight",
+        },
+        "dic/system/typography/display/small/letterSpacing": {
+          $value: "{dic.reference.typography.letterSpacing.none}",
+          $type: "dimension",
+          $description: "None letter spacing",
+        },
+        "dic/system/typography/display/small/lineHeight": {
+          $value: "{dic.reference.typography.lineHeight.none}",
+          $type: "number",
+          $description: "None line height",
+        },
+      },
+      "typography.expanded.json": {
+        "dic/system/typography/display/small/fontFamily": {
+          $value: "{dic.reference.typography.fontFamily.primary}",
+          $type: "fontFamily",
+          $description: "Primary font family",
+        },
+        "dic/system/typography/display/small/fontSize": {
+          $value: "{dic.reference.typography.scale.expanded.fourExtraSmall}",
+          $type: "dimension",
+          $description: "Four extra small",
+        },
+        "dic/system/typography/display/small/fontWeight": {
+          $value: "{dic.reference.typography.fontWeight.regular}",
+          $type: "fontWeight",
+          $description: "Regular font weight",
+        },
+        "dic/system/typography/display/small/letterSpacing": {
+          $value: "{dic.reference.typography.letterSpacing.none}",
+          $type: "dimension",
+          $description: "None letter spacing",
+        },
+        "dic/system/typography/display/small/lineHeight": {
+          $value: "{dic.reference.typography.lineHeight.none}",
+          $type: "number",
+          $description: "None line height",
+        },
+      },
     };
 
     const result = generatePostVariablesPayload(
@@ -409,6 +493,12 @@ describe("generatePostVariablesPayload", () => {
         name: "dimension",
         initialModeId: "dimension.default",
       },
+      {
+        action: "CREATE",
+        id: "typography",
+        name: "typography",
+        initialModeId: "typography.compact",
+      },
     ]);
 
     expect(result.variableModes).toEqual([
@@ -423,6 +513,18 @@ describe("generatePostVariablesPayload", () => {
         id: "dimension.default",
         name: "default",
         variableCollectionId: "dimension",
+      },
+      {
+        action: "UPDATE",
+        id: "typography.compact",
+        name: "compact",
+        variableCollectionId: "typography",
+      },
+      {
+        action: "CREATE",
+        id: "typography.expanded",
+        name: "expanded",
+        variableCollectionId: "typography",
       },
     ]);
 
@@ -459,6 +561,94 @@ describe("generatePostVariablesPayload", () => {
         resolvedType: "FLOAT",
         description: "Medium border",
       },
+      {
+        action: "CREATE",
+        description: "Primary font family",
+        id: "dic/reference/typography/fontFamily/primary",
+        name: "dic/reference/typography/fontFamily/primary",
+        resolvedType: "STRING",
+        variableCollectionId: "typography",
+      },
+      {
+        action: "CREATE",
+        description: "Regular font weight",
+        id: "dic/reference/typography/fontWeight/regular",
+        name: "dic/reference/typography/fontWeight/regular",
+        resolvedType: "FLOAT",
+        variableCollectionId: "typography",
+      },
+      {
+        action: "CREATE",
+        description: "None line height",
+        id: "dic/reference/typography/lineHeight/none",
+        name: "dic/reference/typography/lineHeight/none",
+        resolvedType: "FLOAT",
+        variableCollectionId: "typography",
+      },
+      {
+        action: "CREATE",
+        description: "None letter spacing",
+        id: "dic/reference/typography/letterSpacing/none",
+        name: "dic/reference/typography/letterSpacing/none",
+        resolvedType: "FLOAT",
+        variableCollectionId: "typography",
+      },
+      {
+        action: "CREATE",
+        description: "Two extra small",
+        id: "dic/reference/typography/scale/compact/twoExtraSmall",
+        name: "dic/reference/typography/scale/compact/twoExtraSmall",
+        resolvedType: "FLOAT",
+        variableCollectionId: "typography",
+      },
+      {
+        action: "CREATE",
+        description: "Four extra small",
+        id: "dic/reference/typography/scale/expanded/fourExtraSmall",
+        name: "dic/reference/typography/scale/expanded/fourExtraSmall",
+        resolvedType: "FLOAT",
+        variableCollectionId: "typography",
+      },
+      {
+        action: "CREATE",
+        description: "Primary font family",
+        id: "dic/system/typography/display/small/fontFamily",
+        name: "dic/system/typography/display/small/fontFamily",
+        resolvedType: "STRING",
+        variableCollectionId: "typography",
+      },
+      {
+        action: "CREATE",
+        description: "Two extra small",
+        id: "dic/system/typography/display/small/fontSize",
+        name: "dic/system/typography/display/small/fontSize",
+        resolvedType: "FLOAT",
+        variableCollectionId: "typography",
+      },
+      {
+        action: "CREATE",
+        description: "Regular font weight",
+        id: "dic/system/typography/display/small/fontWeight",
+        name: "dic/system/typography/display/small/fontWeight",
+        resolvedType: "FLOAT",
+        variableCollectionId: "typography",
+      },
+      {
+        action: "CREATE",
+        description: "None letter spacing",
+        id: "dic/system/typography/display/small/letterSpacing",
+        name: "dic/system/typography/display/small/letterSpacing",
+        resolvedType: "FLOAT",
+        variableCollectionId: "typography",
+      },
+      {
+        action: "CREATE",
+        description: "None line height",
+        id: "dic/system/typography/display/small/lineHeight",
+        name: "dic/system/typography/display/small/lineHeight",
+        resolvedType: "FLOAT",
+        variableCollectionId: "typography",
+      },
     ]);
 
     expect(result.variableModeValues).toEqual([
@@ -487,6 +677,116 @@ describe("generatePostVariablesPayload", () => {
           type: "VARIABLE_ALIAS",
           id: "dic/reference/dimension/scale/1",
         },
+      },
+      {
+        modeId: "typography.compact",
+        value: "Noto Sans JP",
+        variableId: "dic/reference/typography/fontFamily/primary",
+      },
+      {
+        modeId: "typography.compact",
+        value: 400,
+        variableId: "dic/reference/typography/fontWeight/regular",
+      },
+      {
+        modeId: "typography.compact",
+        value: 1,
+        variableId: "dic/reference/typography/lineHeight/none",
+      },
+      {
+        modeId: "typography.compact",
+        value: 0,
+        variableId: "dic/reference/typography/letterSpacing/none",
+      },
+      {
+        modeId: "typography.compact",
+        value: 10,
+        variableId: "dic/reference/typography/scale/compact/twoExtraSmall",
+      },
+      {
+        modeId: "typography.compact",
+        value: 10,
+        variableId: "dic/reference/typography/scale/expanded/fourExtraSmall",
+      },
+      {
+        modeId: "typography.compact",
+        value: {
+          id: "dic/reference/typography/fontFamily/primary",
+          type: "VARIABLE_ALIAS",
+        },
+        variableId: "dic/system/typography/display/small/fontFamily",
+      },
+      {
+        modeId: "typography.compact",
+        value: {
+          id: "dic/reference/typography/scale/compact/twoExtraSmall",
+          type: "VARIABLE_ALIAS",
+        },
+        variableId: "dic/system/typography/display/small/fontSize",
+      },
+      {
+        modeId: "typography.compact",
+        value: {
+          id: "dic/reference/typography/fontWeight/regular",
+          type: "VARIABLE_ALIAS",
+        },
+        variableId: "dic/system/typography/display/small/fontWeight",
+      },
+      {
+        modeId: "typography.compact",
+        value: {
+          id: "dic/reference/typography/letterSpacing/none",
+          type: "VARIABLE_ALIAS",
+        },
+        variableId: "dic/system/typography/display/small/letterSpacing",
+      },
+      {
+        modeId: "typography.compact",
+        value: {
+          id: "dic/reference/typography/lineHeight/none",
+          type: "VARIABLE_ALIAS",
+        },
+        variableId: "dic/system/typography/display/small/lineHeight",
+      },
+      {
+        modeId: "typography.expanded",
+        value: {
+          id: "dic/reference/typography/fontFamily/primary",
+          type: "VARIABLE_ALIAS",
+        },
+        variableId: "dic/system/typography/display/small/fontFamily",
+      },
+      {
+        modeId: "typography.expanded",
+        value: {
+          id: "dic/reference/typography/scale/expanded/fourExtraSmall",
+          type: "VARIABLE_ALIAS",
+        },
+        variableId: "dic/system/typography/display/small/fontSize",
+      },
+      {
+        modeId: "typography.expanded",
+        value: {
+          id: "dic/reference/typography/fontWeight/regular",
+          type: "VARIABLE_ALIAS",
+        },
+        variableId: "dic/system/typography/display/small/fontWeight",
+      },
+      {
+        modeId: "typography.expanded",
+        value: {
+          id: "dic/reference/typography/letterSpacing/none",
+          type: "VARIABLE_ALIAS",
+        },
+        variableId: "dic/system/typography/display/small/letterSpacing",
+      },
+      {
+        modeId: "typography.expanded",
+        value: {
+          id: "dic/reference/typography/lineHeight/none",
+          type: "VARIABLE_ALIAS",
+        },
+        variableId: "dic/system/typography/display/small/lineHeight",
       },
     ]);
   });
