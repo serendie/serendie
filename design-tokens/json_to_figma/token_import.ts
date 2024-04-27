@@ -99,10 +99,11 @@ const flattenTokensFile = (
 };
 
 const getReferenceToken = (originalTokens: any, aliasToken: string): Token => {
-  const { $value, $type, ...others } = aliasToken
-    .replace(/[{}]/g, "")
-    .split(".")
-    .reduce((obj, key: string) => obj[key], originalTokens);
+  const { $value, $type, ...others } =
+    aliasToken
+      .replace(/[{}]/g, "")
+      .split(".")
+      .reduce((obj, key: string) => obj[key], originalTokens) || {};
 
   if ($type) {
     return { $value: aliasToken, $type, ...others };
