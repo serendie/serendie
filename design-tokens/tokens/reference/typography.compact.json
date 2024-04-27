@@ -40,6 +40,12 @@
             "$type": "number"
           }
         },
+        "letterSpacing": {
+          "none": {
+            "$value": "0px",
+            "$type": "dimension"
+          }
+        },
         "scale": {
           "expanded": {
             "fourExtraSmall": {
