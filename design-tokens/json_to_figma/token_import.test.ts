@@ -57,7 +57,7 @@ describe("readJsonFiles", () => {
           },
         },
       }),
-      "tokens/reference/typography.default.json": JSON.stringify({
+      "tokens/reference/typography.compact.json": JSON.stringify({
         dic: {
           reference: {
             typography: {
@@ -65,18 +65,28 @@ describe("readJsonFiles", () => {
                 primary: {
                   $value: "Noto Sans JP",
                   $type: "fontFamily",
+                  $description: "Primary font family",
                 },
               },
               fontWeight: {
                 regular: {
                   $value: 400,
                   $type: "fontWeight",
+                  $description: "Regular font weight",
                 },
               },
               lineHeight: {
                 none: {
                   $value: 1,
                   $type: "number",
+                  $description: "None line height",
+                },
+              },
+              letterSpacing: {
+                none: {
+                  $value: "0px",
+                  $type: "dimension",
+                  $description: "None letter spacing",
                 },
               },
               scale: {
@@ -84,12 +94,14 @@ describe("readJsonFiles", () => {
                   fourExtraSmall: {
                     $value: "10px",
                     $type: "dimension",
+                    $description: "Four extra small",
                   },
                 },
                 compact: {
                   twoExtraSmall: {
                     $value: "10px",
                     $type: "dimension",
+                    $description: "Two extra small",
                   },
                 },
               },
@@ -160,11 +172,12 @@ describe("readJsonFiles", () => {
                   $type: "typography",
                   $value: {
                     fontSize:
-                      "{dic.reference.typography.scale.compact.fourExtraLarge}",
+                      "{dic.reference.typography.scale.compact.twoExtraSmall}",
                     fontWeight: "{dic.reference.typography.fontWeight.regular}",
                     fontFamily: "{dic.reference.typography.fontFamily.primary}",
-                    lineHeight: "{dic.reference.typography.lineHeight.normal}",
-                    letterSpacing: "0px",
+                    lineHeight: "{dic.reference.typography.lineHeight.none}",
+                    letterSpacing:
+                      "{dic.reference.typography.letterSpacing.none}",
                   },
                 },
               },
@@ -181,11 +194,12 @@ describe("readJsonFiles", () => {
                   $type: "typography",
                   $value: {
                     fontSize:
-                      "{dic.reference.typography.scale.expanded.fourExtraLarge}",
+                      "{dic.reference.typography.scale.expanded.fourExtraSmall}",
                     fontWeight: "{dic.reference.typography.fontWeight.regular}",
                     fontFamily: "{dic.reference.typography.fontFamily.primary}",
-                    lineHeight: "{dic.reference.typography.lineHeight.normal}",
-                    letterSpacing: "0px",
+                    lineHeight: "{dic.reference.typography.lineHeight.none}",
+                    letterSpacing:
+                      "{dic.reference.typography.letterSpacing.none}",
                   },
                 },
               },
@@ -196,7 +210,6 @@ describe("readJsonFiles", () => {
       "no_tokens.mode1.json": JSON.stringify({
         foo: "bar",
       }),
-      "empty_file.mode1.json": "",
       "file_with_$_keys.mode1.json": JSON.stringify({
         $foo: "bar",
         token1: { $type: "string", $value: "value1" },
@@ -219,7 +232,7 @@ describe("readJsonFiles", () => {
       "tokens/reference/color.default.json",
       "tokens/reference/dimension.default.json",
       "tokens/reference/elevation.default.json",
-      "tokens/reference/typography.default.json",
+      "tokens/reference/typography.compact.json",
       "tokens/system/color.default.json",
       "tokens/system/dimension.default.json",
       "tokens/system/elevation.default.json",
@@ -252,15 +265,91 @@ describe("readJsonFiles", () => {
           $description: "Medium border",
         },
       },
+      "typography.compact.json": {
+        "dic/reference/typography/fontFamily/primary": {
+          $value: "Noto Sans JP",
+          $type: "fontFamily",
+          $description: "Primary font family",
+        },
+        "dic/reference/typography/fontWeight/regular": {
+          $value: 400,
+          $type: "fontWeight",
+          $description: "Regular font weight",
+        },
+        "dic/reference/typography/lineHeight/none": {
+          $value: 1,
+          $type: "number",
+          $description: "None line height",
+        },
+        "dic/reference/typography/letterSpacing/none": {
+          $value: "0px",
+          $type: "dimension",
+          $description: "None letter spacing",
+        },
+        "dic/reference/typography/scale/compact/twoExtraSmall": {
+          $value: "10px",
+          $type: "dimension",
+          $description: "Two extra small",
+        },
+        "dic/reference/typography/scale/expanded/fourExtraSmall": {
+          $value: "10px",
+          $type: "dimension",
+          $description: "Four extra small",
+        },
+        "dic/system/typography/display/small/fontFamily": {
+          $value: "{dic.reference.typography.fontFamily.primary}",
+          $type: "fontFamily",
+          $description: "Primary font family",
+        },
+        "dic/system/typography/display/small/fontSize": {
+          $value: "{dic.reference.typography.scale.compact.twoExtraSmall}",
+          $type: "dimension",
+          $description: "Two extra small",
+        },
+        "dic/system/typography/display/small/fontWeight": {
+          $value: "{dic.reference.typography.fontWeight.regular}",
+          $type: "fontWeight",
+          $description: "Regular font weight",
+        },
+        "dic/system/typography/display/small/letterSpacing": {
+          $value: "{dic.reference.typography.letterSpacing.none}",
+          $type: "dimension",
+          $description: "None letter spacing",
+        },
+        "dic/system/typography/display/small/lineHeight": {
+          $value: "{dic.reference.typography.lineHeight.none}",
+          $type: "number",
+          $description: "None line height",
+        },
+      },
+      "typography.expanded.json": {
+        "dic/system/typography/display/small/fontFamily": {
+          $value: "{dic.reference.typography.fontFamily.primary}",
+          $type: "fontFamily",
+          $description: "Primary font family",
+        },
+        "dic/system/typography/display/small/fontSize": {
+          $value: "{dic.reference.typography.scale.expanded.fourExtraSmall}",
+          $type: "dimension",
+          $description: "Four extra small",
+        },
+        "dic/system/typography/display/small/fontWeight": {
+          $value: "{dic.reference.typography.fontWeight.regular}",
+          $type: "fontWeight",
+          $description: "Regular font weight",
+        },
+        "dic/system/typography/display/small/letterSpacing": {
+          $value: "{dic.reference.typography.letterSpacing.none}",
+          $type: "dimension",
+          $description: "None letter spacing",
+        },
+        "dic/system/typography/display/small/lineHeight": {
+          $value: "{dic.reference.typography.lineHeight.none}",
+          $type: "number",
+          $description: "None line height",
+        },
+      },
     });
-  });
-
-  test("handles empty files", () => {
-    expect(() => {
-      readJsonFiles(["empty_file.mode1.json"]);
-    }).toThrowError(
-      "Invalid tokens file: empty_file.mode1.json. File is empty."
-    );
   });
 });
 

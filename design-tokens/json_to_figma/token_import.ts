@@ -1,7 +1,13 @@
 import * as fs from "fs";
 import * as path from "path";
+import merge from "deepmerge";
 
-import { Token, TokenOrTokenGroup, TokensFile } from "./token_types";
+import {
+  Token,
+  TokenOrTokenGroup,
+  TokensFile,
+  isTypography,
+} from "./token_types";
 import {
   GetLocalVariablesResponse,
   LocalVariable,
@@ -26,10 +32,19 @@ export type FlattenedTokensByFile = {
 
 export const readJsonFiles = (files: string[]) => {
   const tokensJsonByFile: FlattenedTokensByFile = {};
+  let mergedTokensByFile = {};
+
+  files.map((file) => {
+    mergedTokensByFile = merge(
+      mergedTokensByFile,
+      JSON.parse(fs.readFileSync(file, { encoding: "utf-8" }))
+    );
+  });
 
   for (const file of files) {
     const baseFileName = path.basename(file);
-    const { collectionName } = collectionAndModeFromFileName(baseFileName);
+    const { collectionName, modeName } =
+      collectionAndModeFromFileName(baseFileName);
 
     const fileContent = fs.readFileSync(file, { encoding: "utf-8" });
 
@@ -39,14 +54,21 @@ export const readJsonFiles = (files: string[]) => {
 
     const tokensFile: TokensFile = JSON.parse(fileContent);
 
-    if (collectionName === "color" || collectionName === "dimension") {
+    if (
+      ["color", "dimension"].includes(collectionName) ||
+      (collectionName === "typography" &&
+        (modeName === "compact" || modeName === "expanded"))
+    ) {
       if (tokensJsonByFile[baseFileName]) {
         tokensJsonByFile[baseFileName] = {
           ...tokensJsonByFile[baseFileName],
-          ...flattenTokensFile(tokensFile),
+          ...flattenTokensFile(tokensFile, mergedTokensByFile),
         };
       } else {
-        tokensJsonByFile[baseFileName] = flattenTokensFile(tokensFile);
+        tokensJsonByFile[baseFileName] = flattenTokensFile(
+          tokensFile,
+          mergedTokensByFile
+        );
       }
     }
   }
@@ -58,7 +80,10 @@ export const readJsonFiles = (files: string[]) => {
   return tokensJsonByFile;
 };
 
-const flattenTokensFile = (tokensFile: TokensFile) => {
+const flattenTokensFile = (
+  tokensFile: TokensFile,
+  originalTokens: TokenOrTokenGroup
+) => {
   const flattenedTokens: { [tokenName: string]: Token } = {};
 
   for (const [tokenGroup, groupValues] of Object.entries(tokensFile)) {
@@ -66,31 +91,75 @@ const flattenTokensFile = (tokensFile: TokensFile) => {
       key: tokenGroup,
       object: groupValues,
       tokens: flattenedTokens,
+      originalTokens: originalTokens,
     });
   }
 
   return flattenedTokens;
 };
 
+const getReferenceToken = (originalTokens: any, aliasToken: string): Token => {
+  const { $value, $type, ...others } = aliasToken
+    .replace(/[{}]/g, "")
+    .split(".")
+    .reduce((obj, key: string) => obj[key], originalTokens);
+
+  if ($type) {
+    return { $value: aliasToken, $type, ...others };
+  }
+
+  throw new Error(`Invalid alias token: ${aliasToken}`);
+};
+
 const traverseCollection = ({
   key,
   object,
   tokens,
+  originalTokens,
 }: {
   key: string;
   object: TokenOrTokenGroup;
   tokens: { [tokenName: string]: Token };
+  originalTokens: TokenOrTokenGroup;
 }) => {
-  if (key.charAt(0) === "$") {
-    return;
-  }
-
   if (object.$value) {
-    tokens[key] = object;
+    if (object.$type === "typography" && typeof object.$value === "object") {
+      tokens[`${key}/fontFamily`] = getReferenceToken(
+        originalTokens,
+        object.$value.fontFamily
+      );
+      tokens[`${key}/fontSize`] = getReferenceToken(
+        originalTokens,
+        object.$value.fontSize
+      );
+      if (typeof object.$value.fontWeight === "string") {
+        tokens[`${key}/fontWeight`] = getReferenceToken(
+          originalTokens,
+          object.$value.fontWeight
+        );
+      }
+      if (typeof object.$value.lineHeight === "string") {
+        tokens[`${key}/lineHeight`] = getReferenceToken(
+          originalTokens,
+          object.$value.lineHeight
+        );
+      }
+      tokens[`${key}/letterSpacing`] = getReferenceToken(
+        originalTokens,
+        object.$value.letterSpacing
+      );
+    } else {
+      tokens[key] = object;
+    }
   } else {
     for (const [_key, _object] of Object.entries(object)) {
       if (_key.charAt(0) !== "$" && typeof _object === "object") {
-        traverseCollection({ key: `${key}/${_key}`, object: _object, tokens });
+        traverseCollection({
+          key: `${key}/${_key}`,
+          object: _object,
+          tokens,
+          originalTokens,
+        });
       }
     }
   }
@@ -163,7 +232,11 @@ const variableValueFromToken = (
     return parseDimension(token.$value);
   }
 
-  return token.$value;
+  if (!isTypography(token.$value)) {
+    return token.$value;
+  }
+
+  throw new Error(`Invalid token value: ${token.$value}`);
 };
 
 const compareVariableValues = (a: VariableValue, b: VariableValue) => {
