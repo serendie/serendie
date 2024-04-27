@@ -5,138 +5,293 @@
         "fontFamily": {
           "primary": {
             "$value": "Noto Sans JP",
-            "$type": "fontFamily"
+            "$type": "fontFamily",
+            "$extensions": {
+              "com.figma": {
+                "hiddenFromPublishing": true
+              }
+            }
           },
           "monospace": {
             "$value": "Noto Sans Mono",
-            "$type": "fontFamily"
+            "$type": "fontFamily",
+            "$extensions": {
+              "com.figma": {
+                "hiddenFromPublishing": true
+              }
+            }
           }
         },
         "fontWeight": {
           "regular": {
             "$value": 400,
-            "$type": "fontWeight"
+            "$type": "fontWeight",
+            "$extensions": {
+              "com.figma": {
+                "hiddenFromPublishing": true
+              }
+            }
           },
           "bold": {
             "$value": 700,
-            "$type": "fontWeight"
+            "$type": "fontWeight",
+            "$extensions": {
+              "com.figma": {
+                "hiddenFromPublishing": true
+              }
+            }
           }
         },
         "lineHeight": {
           "none": {
             "$value": 1,
-            "$type": "number"
+            "$type": "number",
+            "$extensions": {
+              "com.figma": {
+                "hiddenFromPublishing": true
+              }
+            }
           },
           "tight": {
             "$value": 1.4,
-            "$type": "number"
+            "$type": "number",
+            "$extensions": {
+              "com.figma": {
+                "hiddenFromPublishing": true
+              }
+            }
           },
           "normal": {
             "$value": 1.6,
-            "$type": "number"
+            "$type": "number",
+            "$extensions": {
+              "com.figma": {
+                "hiddenFromPublishing": true
+              }
+            }
           },
           "relaxed": {
             "$value": 1.8,
-            "$type": "number"
+            "$type": "number",
+            "$extensions": {
+              "com.figma": {
+                "hiddenFromPublishing": true
+              }
+            }
           }
         },
         "letterSpacing": {
           "none": {
             "$value": "0px",
-            "$type": "dimension"
+            "$type": "dimension",
+            "$extensions": {
+              "com.figma": {
+                "hiddenFromPublishing": true
+              }
+            }
           }
         },
         "scale": {
           "expanded": {
             "fourExtraSmall": {
               "$value": "10px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             },
             "threeExtraSmall": {
               "$value": "11px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             },
             "twoExtraSmall": {
               "$value": "12px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             },
             "extraSmall": {
               "$value": "13px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             },
             "small": {
               "$value": "14px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             },
             "medium": {
               "$value": "16px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             },
             "large": {
               "$value": "18px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             },
             "extraLarge": {
               "$value": "21px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             },
             "twoExtraLarge": {
               "$value": "26px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             },
             "threeExtraLarge": {
               "$value": "32px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             },
             "fourExtraLarge": {
               "$value": "43px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             },
             "fiveExtraLarge": {
               "$value": "64px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             }
           },
           "compact": {
             "twoExtraSmall": {
               "$value": "10px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             },
             "extraSmall": {
               "$value": "11px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             },
             "small": {
               "$value": "12px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             },
             "medium": {
               "$value": "14px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             },
             "large": {
               "$value": "16px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             },
             "extraLarge": {
               "$value": "19px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             },
             "twoExtraLarge": {
               "$value": "22px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             },
             "threeExtraLarge": {
               "$value": "28px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             },
             "fourExtraLarge": {
               "$value": "37px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             },
             "fiveExtraLarge": {
               "$value": "56px",
-              "$type": "dimension"
+              "$type": "dimension",
+              "$extensions": {
+                "com.figma": {
+                  "hiddenFromPublishing": true
+                }
+              }
             }
           }
         }
