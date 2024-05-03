@@ -1,17 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { RadioButton, RadioButtonProps, RadioButtonStyle } from "./RadioButton";
-import { RadioGroup } from "@ark-ui/react";
+import { RadioGroup } from "./RadioGroup";
 
 const meta: Meta<typeof RadioButton> = {
   component: RadioButton,
-  decorators: [
-    (Story) => (
-      <RadioGroup.Root>
-        <Story />
-      </RadioGroup.Root>
-    ),
-  ],
+  decorators: [(Story) => <Story />],
   argTypes: {
     variant: {
       options: RadioButtonStyle.variantMap.variant,
@@ -29,7 +23,7 @@ export default meta;
 type Story = StoryObj<typeof RadioButton>;
 
 const Template = (args: RadioButtonProps) => (
-  <>
+  <RadioGroup onValueChange={(e) => console.log(e.value)}>
     <RadioButton
       {...args}
       label="タイトルタイトル1"
@@ -54,7 +48,7 @@ const Template = (args: RadioButtonProps) => (
       value="itemD"
       helperText={args.helperText}
     />
-  </>
+  </RadioGroup>
 );
 
 export const Expanded: Story = {
@@ -73,6 +67,32 @@ export const Compact: Story = {
 
 export const WithHelperText: Story = {
   render: Template,
+  args: {
+    variant: "expanded",
+    helperText:
+      "補足テキスト補足テキスト補足テキスト補足テキスト補足テキスト補足テキスト",
+  },
+};
+
+export const Disabled: Story = {
+  render: (args: RadioButtonProps) => (
+    <RadioGroup onValueChange={(e) => console.log(e.value)} defaultValue="itemE">
+      <RadioButton
+        {...args}
+        label="タイトルタイトル1"
+        value="itemE"
+        helperText={args.helperText}
+        disabled
+      />
+      <RadioButton
+        {...args}
+        label="タイトルタイトル2"
+        value="itemF"
+        helperText={args.helperText}
+        disabled
+      />
+    </RadioGroup>
+  ),
   args: {
     variant: "expanded",
     helperText:
