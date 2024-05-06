@@ -9,7 +9,14 @@ import { SvgIcon } from "./SvgIcon";
  */
 
 export const SearchStyle = sva({
-  slots: ["input", "control", "combobox", "comboboxItem", "iconBox"],
+  slots: [
+    "input",
+    "control",
+    "combobox",
+    "comboboxItem",
+    "iconBox",
+    "closeIcon",
+  ],
   base: {
     control: {
       display: "inline-grid",
@@ -71,6 +78,12 @@ export const SearchStyle = sva({
         color: "dic.system.color.interaction.disabledOnSurface",
       },
     },
+    closeIcon: {
+      opacity: 0,
+      "[data-state=open] &": {
+        opacity: 1,
+      },
+    },
   },
   variants: {
     size: {
@@ -95,12 +108,12 @@ export const Search: React.FC<SearchStyleProps> = ({
           <SvgIcon icon="search" />
         </div>
         <Combobox.Input className={styles.input} />
-        {/*
-        ARK UIではOpenのトリガーも用意されているがデザインではナシ
-        */}
-        <Combobox.ClearTrigger>
-          <SvgIcon icon="close" />
-        </Combobox.ClearTrigger>
+        {/* ARK UIではOpenのトリガーも用意されているがデザインではナシ */}
+        <Combobox.Trigger>
+          <div className={styles.closeIcon}>
+            <SvgIcon icon="close" />
+          </div>
+        </Combobox.Trigger>
       </Combobox.Control>
       {items.length > 0 && (
         <Portal>

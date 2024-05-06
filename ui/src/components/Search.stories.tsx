@@ -1,7 +1,24 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Search } from "./Search";
 
-const items = ["React", "Vue", "Angular", "Svelte", "Ember", "Preact"];
+const items = [
+  "React",
+  "Vue",
+  "Angular",
+  "Svelte",
+  "Ember",
+  "React",
+  "Vue",
+  "Angular",
+  "Svelte",
+  "Ember",
+  "React",
+  "Vue",
+  "Angular",
+  "Svelte",
+  "Ember",
+  "Preact",
+];
 
 const meta: Meta<typeof Search> = {
   component: Search,
