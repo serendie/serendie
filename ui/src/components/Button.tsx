@@ -100,7 +100,7 @@ export const ButtonStyle = cva({
         px: "dic.system.dimension.spacing.extraLarge",
         py: "dic.system.dimension.spacing.small",
         textStyle: "dic.system.typography.label.large_compact",
-        compact: {
+        expanded: {
           textStyle: "dic.system.typography.label.large_expanded",
         },
       },
@@ -108,7 +108,7 @@ export const ButtonStyle = cva({
         px: "dic.system.dimension.spacing.small",
         py: "dic.system.dimension.spacing.twoExtraSmall",
         textStyle: "dic.system.typography.label.medium_compact",
-        compact: {
+        expanded: {
           textStyle: "dic.system.typography.label.medium_expanded",
         },
       },

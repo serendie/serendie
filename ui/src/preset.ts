@@ -6,7 +6,7 @@ export const SpreadPreset: Preset = {
   theme: {
     extend: {
       breakpoints: {
-        compact: "640px",
+        expanded: "640px", // TODO: 定義どうするか
       },
       recipes: SpreadRecipes,
       tokens: {
