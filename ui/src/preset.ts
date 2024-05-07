@@ -5,6 +5,9 @@ import { SpreadTokens, SpreadTypography } from "./tokens";
 export const SpreadPreset: Preset = {
   theme: {
     extend: {
+      breakpoints: {
+        compact: "640px",
+      },
       recipes: SpreadRecipes,
       tokens: {
         ...SpreadTokens,
