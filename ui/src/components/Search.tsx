@@ -70,6 +70,10 @@ export const SearchStyle = sva({
     comboboxItem: {
       display: "flex",
       gap: "dic.system.dimension.spacing.small",
+      cursor: "pointer",
+      _highlighted: {
+        backgroundColor: "dic.system.color.interaction.hoveredVariant",
+      },
     },
     iconBox: {
       w: "40px",
