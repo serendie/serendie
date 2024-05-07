@@ -1,7 +1,10 @@
 import { Combobox, ComboboxRootProps, Portal } from "@ark-ui/react";
-import { RecipeVariantProps, css, cx, sva } from "../../styled-system/css";
+import { RecipeVariantProps, sva } from "../../styled-system/css";
 import { SvgIcon } from "./SvgIcon";
 import { Box } from "../../styled-system/jsx";
+import { getToken } from "../tokens/getToken";
+
+const { dic } = getToken();
 
 /*
  * 検索候補を出すことができるサーチコンボボックス
@@ -138,13 +141,13 @@ export const Search: React.FC<SearchStyleProps> = ({
     <Combobox.Root items={items} lazyMount unmountOnExit {...props}>
       <Combobox.Control className={styles.control}>
         <div className={styles.iconBox}>
-          <SvgIcon icon="search" size="20" />
+          <SvgIcon icon="search" size={dic.system.dimension.spacing.large} />
         </div>
         <Combobox.Input className={styles.input} />
         {/* ARK UIではOpenのトリガーも用意されているがデザインではナシ */}
         <Combobox.Trigger>
           <div className={styles.closeIcon}>
-            <SvgIcon icon="close" size="20" />
+            <SvgIcon icon="close" size={dic.system.dimension.spacing.large} />
           </div>
         </Combobox.Trigger>
       </Combobox.Control>
@@ -158,7 +161,10 @@ export const Search: React.FC<SearchStyleProps> = ({
                     key={i}
                     item={item}
                     className={styles.comboboxItem}>
-                    <Box w={20} h={20} />
+                    <Box
+                      w="dic.system.dimension.spacing.large"
+                      h="dic.system.dimension.spacing.large"
+                    />
                     <Combobox.ItemText>{item}</Combobox.ItemText>
                   </Combobox.Item>
                 ))}
