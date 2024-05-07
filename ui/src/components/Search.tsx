@@ -21,7 +21,6 @@ export const SearchStyle = sva({
     control: {
       display: "inline-grid",
       lineHeight: "1",
-      fontSize: "dic.system.font.size.small",
       gridTemplateColumns: "auto 1fr auto",
       paddingTop: "dic.system.dimension.spacing.small",
       paddingRight: "dic.system.dimension.spacing.extraSmall",
@@ -58,7 +57,6 @@ export const SearchStyle = sva({
     },
     combobox: {
       bgColor: "dic.system.color.component.surface",
-      fontSize: "dic.system.font.size.small",
       borderRadius: "dic.system.dimension.radius.medium",
       boxShadow: "dic.system.elevation.shadow.level1",
       zIndex: "dic.system.elevation.zIndex.dropdown",
@@ -87,8 +85,32 @@ export const SearchStyle = sva({
   },
   variants: {
     size: {
-      small: {},
+      medium: {
+        control: {
+          bg: {
+            base: "red",
+            sm: "blue",
+          },
+        },
+        combobox: {
+          textStyle: {
+            base: "dic.system.typography.body.medium_compact",
+            sm: "dic.system.typography.body.medium_expanded",
+          },
+        },
+      },
+      small: {
+        combobox: {
+          fontStyle: {
+            base: "dic.system.typography.body.medium_compact",
+            sm: "dic.system.typography.body.medium_expanded",
+          },
+        },
+      },
     },
+  },
+  defaultVariants: {
+    size: "medium",
   },
 });
 
@@ -126,7 +148,6 @@ export const Search: React.FC<SearchStyleProps> = ({
                     item={item}
                     className={styles.comboboxItem}>
                     <Combobox.ItemText>{item}</Combobox.ItemText>
-                    <Combobox.ItemIndicator>✓</Combobox.ItemIndicator>
                   </Combobox.Item>
                 ))}
               </Combobox.ItemGroup>
