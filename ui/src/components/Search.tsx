@@ -1,6 +1,8 @@
 import { Combobox, ComboboxRootProps, Portal } from "@ark-ui/react";
-import { RecipeVariantProps, sva } from "../../styled-system/css";
+import { RecipeVariantProps, css, cx, sva } from "../../styled-system/css";
 import { SvgIcon } from "./SvgIcon";
+import { Box } from "../../styled-system/jsx";
+
 /*
  * 検索候補を出すことができるサーチコンボボックス
  * https://ark-ui.com/docs/components/combobox
@@ -63,10 +65,8 @@ export const SearchStyle = sva({
       width: "100%",
     },
     comboboxItem: {
-      paddingTop: "dic.system.dimension.spacing.extraSmall",
-      paddingRight: "dic.system.dimension.spacing.medium",
-      paddingBottom: "dic.system.dimension.spacing.extraSmall",
-      paddingLeft: "dic.system.dimension.spacing.medium",
+      display: "flex",
+      gap: "dic.system.dimension.spacing.small",
     },
     iconBox: {
       w: "40px",
@@ -87,24 +87,35 @@ export const SearchStyle = sva({
     size: {
       medium: {
         control: {
-          bg: {
-            base: "red",
-            sm: "blue",
-          },
-        },
-        combobox: {
           textStyle: {
             base: "dic.system.typography.body.medium_compact",
-            sm: "dic.system.typography.body.medium_expanded",
+            expanded: "dic.system.typography.body.medium_expanded",
+          },
+        },
+        comboboxItem: {
+          paddingRight: "dic.system.dimension.spacing.medium",
+          paddingLeft: "dic.system.dimension.spacing.medium",
+          paddingBottom: {
+            base: "dic.system.dimension.spacing.small",
+            expanded: "dic.system.dimension.spacing.extraSmall",
+          },
+          paddingTop: {
+            base: "dic.system.dimension.spacing.small",
+            expanded: "dic.system.dimension.spacing.extraSmall",
           },
         },
       },
       small: {
-        combobox: {
-          fontStyle: {
-            base: "dic.system.typography.body.medium_compact",
-            sm: "dic.system.typography.body.medium_expanded",
+        control: {
+          textStyle: {
+            base: "dic.system.typography.body.small_compact",
           },
+        },
+        comboboxItem: {
+          paddingTop: "dic.system.dimension.spacing.extraSmall",
+          paddingRight: "dic.system.dimension.spacing.medium",
+          paddingBottom: "dic.system.dimension.spacing.extraSmall",
+          paddingLeft: "dic.system.dimension.spacing.medium",
         },
       },
     },
@@ -127,13 +138,13 @@ export const Search: React.FC<SearchStyleProps> = ({
     <Combobox.Root items={items} lazyMount unmountOnExit {...props}>
       <Combobox.Control className={styles.control}>
         <div className={styles.iconBox}>
-          <SvgIcon icon="search" />
+          <SvgIcon icon="search" size="20" />
         </div>
         <Combobox.Input className={styles.input} />
         {/* ARK UIではOpenのトリガーも用意されているがデザインではナシ */}
         <Combobox.Trigger>
           <div className={styles.closeIcon}>
-            <SvgIcon icon="close" />
+            <SvgIcon icon="close" size="20" />
           </div>
         </Combobox.Trigger>
       </Combobox.Control>
@@ -147,6 +158,7 @@ export const Search: React.FC<SearchStyleProps> = ({
                     key={i}
                     item={item}
                     className={styles.comboboxItem}>
+                    <Box w={20} h={20} />
                     <Combobox.ItemText>{item}</Combobox.ItemText>
                   </Combobox.Item>
                 ))}
