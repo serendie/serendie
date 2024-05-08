@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 22 Apr 2024 10:35:22 GMT
+ * Generated on Tue, 07 May 2024 15:52:31 GMT
  */
 
 export default tokens;
@@ -116,6 +116,12 @@ declare const tokens: {
           "16": string,
           "17": string,
           "18": string
+        },
+        "breakpoint": {
+          "small": string,
+          "medium": string,
+          "large": string,
+          "extraLarge": string
         }
       },
       "elevation": {
@@ -245,6 +251,10 @@ declare const tokens: {
           "large": string,
           "extraLarge": string,
           "full": string
+        },
+        "breakpoint": {
+          "compact": string,
+          "expanded": string
         }
       },
       "elevation": {

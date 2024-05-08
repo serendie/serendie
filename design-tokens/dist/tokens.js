@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 22 Apr 2024 10:35:22 GMT
+ * Generated on Tue, 07 May 2024 15:52:31 GMT
  */
 
 export default {
@@ -115,6 +115,12 @@ export default {
           "16": "72px",
           "17": "80px",
           "18": "96px"
+        },
+        "breakpoint": {
+          "small": "640px",
+          "medium": "768px",
+          "large": "1024px",
+          "extraLarge": "1280px"
         }
       },
       "elevation": {
@@ -244,6 +250,10 @@ export default {
           "large": "12px",
           "extraLarge": "16px",
           "full": "9999px"
+        },
+        "breakpoint": {
+          "compact": "0px",
+          "expanded": "768px"
         }
       },
       "elevation": {

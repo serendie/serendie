@@ -247,6 +247,26 @@
               }
             }
           }
+        },
+        "breakpoint": {
+          "compact": {
+            "$type": "dimension",
+            "$value": "0px",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
+          },
+          "expanded": {
+            "$type": "dimension",
+            "$value": "{dic.reference.dimension.breakpoint.medium}",
+            "$extensions": {
+              "com.figma": {
+                "scopes": []
+              }
+            }
+          }
         }
       }
     }
