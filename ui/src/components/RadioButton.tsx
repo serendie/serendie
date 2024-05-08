@@ -26,6 +26,13 @@ export const RadioButtonStyle = sva({
       _disabled: {
         opacity: 0.6,
       },
+      _focusVisible: {
+        outlineStyle: "solid",
+        outlineOffset: "-2px",
+        outlineWidth: "1.5px",
+        outlineColor: "dic.system.color.impression.primary",
+        borderRadius: "dic.system.dimension.radius.full",
+      },
     },
     checkedIcon: {
       color: "dic.system.color.impression.primary",
@@ -127,6 +134,7 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
 };
 
 // TODO: アイコンコンポーネントは後で別ファイルに切り出す
+// Disabled のスタイルが2色をブレンドしているため2つのpathを重ねているが方針決めたら修正
 interface IconProps extends React.SVGProps<SVGSVGElement> {}
 
 const CheckedIcon: React.FC<IconProps> = (props) => (
