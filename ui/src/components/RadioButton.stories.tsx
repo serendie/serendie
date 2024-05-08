@@ -1,17 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { RadioButton, RadioButtonProps, RadioButtonStyle } from "./RadioButton";
+import { RadioButton, RadioButtonProps } from "./RadioButton";
 import { RadioGroup } from "./RadioGroup";
 
 const meta: Meta<typeof RadioButton> = {
   component: RadioButton,
   decorators: [(Story) => <Story />],
   argTypes: {
-    variant: {
-      options: RadioButtonStyle.variantMap.variant,
-      control: { type: "radio" },
-      defaultValue: "expanded",
-    },
     helperText: {
       control: { type: "text" },
       defaultValue: "",
@@ -51,24 +46,15 @@ const Template = (args: RadioButtonProps) => (
   </RadioGroup>
 );
 
-export const Expanded: Story = {
-  render: Template,
-  args: {
-    variant: "expanded",
-  },
-};
 
-export const Compact: Story = {
+
+export const Default: Story = {
   render: Template,
-  args: {
-    variant: "compact",
-  },
 };
 
 export const WithHelperText: Story = {
   render: Template,
   args: {
-    variant: "expanded",
     helperText:
       "補足テキスト補足テキスト補足テキスト補足テキスト補足テキスト補足テキスト",
   },
@@ -94,7 +80,6 @@ export const Disabled: Story = {
     </RadioGroup>
   ),
   args: {
-    variant: "expanded",
     helperText:
       "補足テキスト補足テキスト補足テキスト補足テキスト補足テキスト補足テキスト",
   },

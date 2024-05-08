@@ -50,44 +50,26 @@ export const RadioButtonStyle = sva({
       flexFlow: "column",
     },
     itemText: {
-      fontFamily: "dic.reference.typography.fontFamily.primary",
       color: "dic.system.color.component.onSurface",
       lineHeight: "dic.reference.typography.lineHeight.tight",
       _disabled: {
         color: "dic.system.color.interaction.disabledOnSurface",
       },
+      textStyle: "dic.system.typography.body.medium_compact",
+      _expanded: {
+        textStyle: "dic.system.typography.body.medium_expanded"
+      },
     },
     helperText: {
-      fontFamily: "dic.reference.typography.fontFamily.primary",
       color: "dic.system.color.component.onSurfaceVariant",
       marginTop: "dic.system.dimension.spacing.twoExtraSmall",
       lineHeight: "dic.reference.typography.lineHeight.tight",
+      textStyle: "dic.system.typography.body.extraSmall_compact",
+      _expanded: {
+        textStyle: "dic.system.typography.body.extraSmall_expanded"
+      },
       _disabled: {
         color: "dic.system.color.interaction.disabledOnSurface",
-      },
-    },
-  },
-  defaultVariants: {
-    variant: "expanded",
-  },
-  // TODO: fontSize で system.typography.body を参照できないため後で差し替える
-  variants: {
-    variant: {
-      expanded: {
-        itemText: {
-          fontSize: "dic.reference.typography.scale.expanded.small",
-        },
-        helperText: {
-          fontSize: "dic.reference.typography.scale.expanded.twoExtraSmall",
-        },
-      },
-      compact: {
-        itemText: {
-          fontSize: "dic.reference.typography.scale.compact.large",
-        },
-        helperText: {
-          fontSize: "dic.reference.typography.scale.compact.small",
-        },
       },
     },
   },
