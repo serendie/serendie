@@ -1,8 +1,6 @@
 import {
   RadioGroup,
-  RadioGroupItemControlProps,
   RadioGroupItemProps,
-  RadioGroupItemTextProps,
 } from "@ark-ui/react";
 import { RecipeVariantProps, sva } from "../../styled-system/css";
 import { CSSProperties } from "react";
@@ -24,6 +22,7 @@ export const RadioButtonStyle = sva({
       paddingY: "dic.system.dimension.spacing.small",
       paddingX: "dic.system.dimension.spacing.medium",
       cursor: "pointer",
+
     },
     itemControl: {
       flexShrink: 0,
@@ -97,12 +96,9 @@ export const RadioButtonStyle = sva({
 type RadioButtonItemProps = {
   label: string;
   helperText?: string;
-  variant?: "expanded" | "compact";
 };
 
 export type RadioButtonProps = RadioGroupItemProps &
-  RadioGroupItemControlProps &
-  RadioGroupItemTextProps &
   RecipeVariantProps<typeof RadioButtonStyle> &
   RadioButtonItemProps;
 
@@ -112,32 +108,37 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
   helperText,
   ...props
 }) => {
-  const styles = RadioButtonStyle(props);
+  const [cssProps, radioProps] = RadioButtonStyle.splitVariantProps(props);
+  const styles = RadioButtonStyle(cssProps);
   const itemStyle: CSSProperties = helperText
     ? { alignItems: "flex-start" }
     : {};
 
   return (
     <RadioGroup.Item
-      key={value}
       value={value}
       className={styles.item}
       style={itemStyle}
-      {...props}
+      {...radioProps}
     >
-      <RadioGroup.ItemControl className={styles.itemControl} asChild>
-        <CheckedIcon className={styles.checkedIcon} />
-      </RadioGroup.ItemControl>
-      <div className={styles.itemTextGroup}>
-        <RadioGroup.ItemText className={styles.itemText}>
-          {label}
-        </RadioGroup.ItemText>
-        {helperText && (
-          <RadioGroup.ItemText className={styles.helperText}>
-            {helperText}
-          </RadioGroup.ItemText>
-        )}
-      </div>
+      {(state) => (
+        <>
+          {console.log(state)}
+          <RadioGroup.ItemControl className={styles.itemControl} asChild>
+            <CheckedIcon className={styles.checkedIcon} />
+          </RadioGroup.ItemControl>
+          <div className={styles.itemTextGroup}>
+            <RadioGroup.ItemText className={styles.itemText}>
+              {label}
+            </RadioGroup.ItemText>
+            {helperText && (
+              <RadioGroup.ItemText className={styles.helperText}>
+                {helperText}
+              </RadioGroup.ItemText>
+            )}
+          </div>
+        </>
+      )}
     </RadioGroup.Item>
   );
 };
