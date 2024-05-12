@@ -20,7 +20,6 @@ const Template = (args: SwitchProps) => (
   <Switch
     {...args}
     label="タイトルタイトル1"
-    value="itemA"
     helperText={args.helperText}
   />
 );
@@ -43,7 +42,6 @@ export const Disabled: Story = {
       <Switch
         {...args}
         label="タイトルタイトル1"
-        value="itemA"
         helperText={args.helperText}
         checked
         disabled
@@ -51,7 +49,6 @@ export const Disabled: Story = {
       <Switch
         {...args}
         label="タイトルタイトル1"
-        value="itemA"
         helperText={args.helperText}
         disabled
       />

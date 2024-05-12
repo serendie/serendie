@@ -1,10 +1,9 @@
 import { Switch as ArkSwitch, SwitchRootProps } from "@ark-ui/react";
 import { CSSProperties, forwardRef } from "react";
-import { switchAnatomy } from "@ark-ui/anatomy";
-import { RecipeVariantProps, sva } from "../../styled-system/css";
+import { RecipeVariantProps, cx, sva } from "../../styled-system/css";
 
 export const SwitchStyle = sva({
-  slots: [...switchAnatomy.keys(), "textGroup", "helperText"],
+  slots: ["root", "control", "thumb", "label", "textGroup", "helperText"],
   base: {
     root: {
       display: "flex",
@@ -14,10 +13,11 @@ export const SwitchStyle = sva({
       paddingX: "dic.system.dimension.spacing.medium",
     },
     control: {
+      cursor: "pointer",
       width: 52,
       height: 32,
       flexShrink: 0,
-      background: "dic.system.color.interaction.disabled",
+      backgroundColor: "dic.system.color.interaction.disabled",
       borderRadius: "dic.system.dimension.radius.full",
       borderWidth: 1,
       borderColor: "dic.system.color.component.outline",
@@ -25,18 +25,20 @@ export const SwitchStyle = sva({
       transitionProperty: "background, borderColor",
       transitionTimingFunction: "cubic-bezier(.2, 0, 0, 1)",
       _checked: {
-        background: "dic.system.color.impression.primary",
+        backgroundColor: "dic.system.color.impression.primary",
         borderColor: "dic.system.color.impression.primary",
         _disabled: {
-          background: "dic.system.color.interaction.disabled",
+          backgroundColor:
+            "color-mix(in srgb, {colors.dic.system.color.impression.primary}, {colors.dic.system.color.interaction.hoveredOnPrimary});",
+          borderColor: "transparent",
         },
       },
       _disabled: {
+        cursor: "default",
         background: "dic.system.color.interaction.disabled",
-        opacity: 0.9,
-        _checked: {
-          background: "dic.system.color.interaction.disabled",
-        },
+      },
+      ".group:has(:focus-visible) &": {
+        borderColor: "dic.system.color.impression.primary",
       },
     },
     thumb: {
@@ -58,7 +60,6 @@ export const SwitchStyle = sva({
       },
     },
     label: {
-      width: 160,
       lineHeight: "dic.system.dimension.lineHeight.medium",
       fontFamily: "dic.reference.typography.fontFamily.primary",
       color: "dic.system.color.component.onSurface",
@@ -101,8 +102,8 @@ export type SwitchProps = SwitchRootProps &
 
 export const Switch = forwardRef<HTMLLabelElement, SwitchProps>(
   ({ label, helperText, ...props }, ref) => {
-  const [cssProps, switchProps] = SwitchStyle.splitVariantProps(props);
-  const styles = SwitchStyle(cssProps);
+    const [cssProps, switchProps] = SwitchStyle.splitVariantProps(props);
+    const styles = SwitchStyle(cssProps);
     const rootStyle: CSSProperties = helperText
       ? { alignItems: "flex-start" }
       : {};
@@ -110,7 +111,7 @@ export const Switch = forwardRef<HTMLLabelElement, SwitchProps>(
     return (
       <ArkSwitch.Root
         ref={ref}
-        className={styles.root}
+        className={cx("group", styles.root)}
         style={rootStyle}
         {...switchProps}
       >
