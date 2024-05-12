@@ -82,13 +82,6 @@ describe("readJsonFiles", () => {
                   $description: "None line height",
                 },
               },
-              letterSpacing: {
-                none: {
-                  $value: "0px",
-                  $type: "dimension",
-                  $description: "None letter spacing",
-                },
-              },
               scale: {
                 expanded: {
                   fourExtraSmall: {
@@ -176,8 +169,7 @@ describe("readJsonFiles", () => {
                     fontWeight: "{dic.reference.typography.fontWeight.regular}",
                     fontFamily: "{dic.reference.typography.fontFamily.primary}",
                     lineHeight: "{dic.reference.typography.lineHeight.none}",
-                    letterSpacing:
-                      "{dic.reference.typography.letterSpacing.none}",
+                    letterSpacing: "0px",
                   },
                 },
               },
@@ -198,8 +190,7 @@ describe("readJsonFiles", () => {
                     fontWeight: "{dic.reference.typography.fontWeight.regular}",
                     fontFamily: "{dic.reference.typography.fontFamily.primary}",
                     lineHeight: "{dic.reference.typography.lineHeight.none}",
-                    letterSpacing:
-                      "{dic.reference.typography.letterSpacing.none}",
+                    letterSpacing: "0px",
                   },
                 },
               },
@@ -286,11 +277,6 @@ describe("readJsonFiles", () => {
           $type: "number",
           $description: "None line height",
         },
-        "dic/reference/typography/letterSpacing/none": {
-          $value: "0px",
-          $type: "dimension",
-          $description: "None letter spacing",
-        },
         "dic/reference/typography/scale/compact/twoExtraSmall": {
           $value: "10px",
           $type: "dimension",
@@ -319,9 +305,8 @@ describe("readJsonFiles", () => {
           $description: "Regular font weight",
         },
         "dic/system/typography/display/small/letterSpacing": {
-          $value: "{dic.reference.typography.letterSpacing.none}",
+          $value: "0px",
           $type: "dimension",
-          $description: "None letter spacing",
         },
         "dic/system/typography/display/small/lineHeight": {
           $value: "{dic.reference.typography.lineHeight.none}",
@@ -346,9 +331,8 @@ describe("readJsonFiles", () => {
           $description: "Regular font weight",
         },
         "dic/system/typography/display/small/letterSpacing": {
-          $value: "{dic.reference.typography.letterSpacing.none}",
+          $value: "0px",
           $type: "dimension",
-          $description: "None letter spacing",
         },
         "dic/system/typography/display/small/lineHeight": {
           $value: "{dic.reference.typography.lineHeight.none}",
@@ -424,11 +408,6 @@ describe("generatePostVariablesPayload", () => {
           $type: "number",
           $description: "None line height",
         },
-        "dic/reference/typography/letterSpacing/none": {
-          $value: "0px",
-          $type: "dimension",
-          $description: "None letter spacing",
-        },
         "dic/reference/typography/scale/compact/twoExtraSmall": {
           $value: "10px",
           $type: "dimension",
@@ -457,9 +436,8 @@ describe("generatePostVariablesPayload", () => {
           $description: "Regular font weight",
         },
         "dic/system/typography/display/small/letterSpacing": {
-          $value: "{dic.reference.typography.letterSpacing.none}",
+          $value: "0px",
           $type: "dimension",
-          $description: "None letter spacing",
         },
         "dic/system/typography/display/small/lineHeight": {
           $value: "{dic.reference.typography.lineHeight.none}",
@@ -484,9 +462,8 @@ describe("generatePostVariablesPayload", () => {
           $description: "Regular font weight",
         },
         "dic/system/typography/display/small/letterSpacing": {
-          $value: "{dic.reference.typography.letterSpacing.none}",
+          $value: "0px",
           $type: "dimension",
-          $description: "None letter spacing",
         },
         "dic/system/typography/display/small/lineHeight": {
           $value: "{dic.reference.typography.lineHeight.none}",
@@ -644,14 +621,6 @@ describe("generatePostVariablesPayload", () => {
       },
       {
         action: "CREATE",
-        description: "None letter spacing",
-        id: "dic/reference/typography/letterSpacing/none",
-        name: "dic/reference/typography/letterSpacing/none",
-        resolvedType: "FLOAT",
-        variableCollectionId: "typography-reference",
-      },
-      {
-        action: "CREATE",
         description: "Two extra small",
         id: "dic/reference/typography/scale/compact/twoExtraSmall",
         name: "dic/reference/typography/scale/compact/twoExtraSmall",
@@ -692,7 +661,6 @@ describe("generatePostVariablesPayload", () => {
       },
       {
         action: "CREATE",
-        description: "None letter spacing",
         id: "dic/system/typography/display/small/letterSpacing",
         name: "dic/system/typography/display/small/letterSpacing",
         resolvedType: "FLOAT",
@@ -752,11 +720,6 @@ describe("generatePostVariablesPayload", () => {
       },
       {
         modeId: "typography-reference.default",
-        value: 0,
-        variableId: "dic/reference/typography/letterSpacing/none",
-      },
-      {
-        modeId: "typography-reference.default",
         value: 10,
         variableId: "dic/reference/typography/scale/compact/twoExtraSmall",
       },
@@ -791,10 +754,7 @@ describe("generatePostVariablesPayload", () => {
       },
       {
         modeId: "typography-system.compact",
-        value: {
-          id: "dic/reference/typography/letterSpacing/none",
-          type: "VARIABLE_ALIAS",
-        },
+        value: 0,
         variableId: "dic/system/typography/display/small/letterSpacing",
       },
       {
@@ -831,10 +791,7 @@ describe("generatePostVariablesPayload", () => {
       },
       {
         modeId: "typography-system.expanded",
-        value: {
-          id: "dic/reference/typography/letterSpacing/none",
-          type: "VARIABLE_ALIAS",
-        },
+        value: 0,
         variableId: "dic/system/typography/display/small/letterSpacing",
       },
       {

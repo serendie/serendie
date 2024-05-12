@@ -80,17 +80,6 @@
             }
           }
         },
-        "letterSpacing": {
-          "none": {
-            "$value": "0px",
-            "$type": "dimension",
-            "$extensions": {
-              "com.figma": {
-                "hiddenFromPublishing": true
-              }
-            }
-          }
-        },
         "scale": {
           "expanded": {
             "fourExtraSmall": {

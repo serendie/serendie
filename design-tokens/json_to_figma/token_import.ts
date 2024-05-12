@@ -147,10 +147,10 @@ const traverseCollection = ({
           object.$value.lineHeight
         );
       }
-      tokens[`${key}/letterSpacing`] = getReferenceToken(
-        originalTokens,
-        object.$value.letterSpacing
-      );
+      tokens[`${key}/letterSpacing`] = {
+        $value: object.$value.letterSpacing,
+        $type: "dimension",
+      };
     } else {
       tokens[key] = object;
     }

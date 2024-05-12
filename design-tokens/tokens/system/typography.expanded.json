@@ -10,7 +10,7 @@
               "fontWeight": "{dic.reference.typography.fontWeight.regular}",
               "fontFamily": "{dic.reference.typography.fontFamily.primary}",
               "lineHeight": "{dic.reference.typography.lineHeight.normal}",
-              "letterSpacing": "{dic.reference.typography.letterSpacing.none}"
+              "letterSpacing": "0px"
             }
           },
           "medium": {
@@ -20,7 +20,7 @@
               "fontWeight": "{dic.reference.typography.fontWeight.regular}",
               "fontFamily": "{dic.reference.typography.fontFamily.primary}",
               "lineHeight": "{dic.reference.typography.lineHeight.normal}",
-              "letterSpacing": "{dic.reference.typography.letterSpacing.none}"
+              "letterSpacing": "0px"
             }
           }
         },
@@ -32,7 +32,7 @@
               "fontWeight": "{dic.reference.typography.fontWeight.regular}",
               "fontFamily": "{dic.reference.typography.fontFamily.primary}",
               "lineHeight": "{dic.reference.typography.lineHeight.normal}",
-              "letterSpacing": "{dic.reference.typography.letterSpacing.none}"
+              "letterSpacing": "0px"
             }
           },
           "medium": {
@@ -42,7 +42,7 @@
               "fontWeight": "{dic.reference.typography.fontWeight.regular}",
               "fontFamily": "{dic.reference.typography.fontFamily.primary}",
               "lineHeight": "{dic.reference.typography.lineHeight.normal}",
-              "letterSpacing": "{dic.reference.typography.letterSpacing.none}"
+              "letterSpacing": "0px"
             }
           },
           "large": {
@@ -52,7 +52,7 @@
               "fontWeight": "{dic.reference.typography.fontWeight.regular}",
               "fontFamily": "{dic.reference.typography.fontFamily.primary}",
               "lineHeight": "{dic.reference.typography.lineHeight.normal}",
-              "letterSpacing": "{dic.reference.typography.letterSpacing.none}"
+              "letterSpacing": "0px"
             }
           }
         },
@@ -64,7 +64,7 @@
               "fontWeight": "{dic.reference.typography.fontWeight.bold}",
               "fontFamily": "{dic.reference.typography.fontFamily.primary}",
               "lineHeight": "{dic.reference.typography.lineHeight.normal}",
-              "letterSpacing": "{dic.reference.typography.letterSpacing.none}"
+              "letterSpacing": "0px"
             }
           },
           "medium": {
@@ -74,7 +74,7 @@
               "fontWeight": "{dic.reference.typography.fontWeight.bold}",
               "fontFamily": "{dic.reference.typography.fontFamily.primary}",
               "lineHeight": "{dic.reference.typography.lineHeight.normal}",
-              "letterSpacing": "{dic.reference.typography.letterSpacing.none}"
+              "letterSpacing": "0px"
             }
           },
           "large": {
@@ -84,7 +84,7 @@
               "fontWeight": "{dic.reference.typography.fontWeight.bold}",
               "fontFamily": "{dic.reference.typography.fontFamily.primary}",
               "lineHeight": "{dic.reference.typography.lineHeight.normal}",
-              "letterSpacing": "{dic.reference.typography.letterSpacing.none}"
+              "letterSpacing": "0px"
             }
           }
         },
@@ -96,7 +96,7 @@
               "fontWeight": "{dic.reference.typography.fontWeight.regular}",
               "fontFamily": "{dic.reference.typography.fontFamily.primary}",
               "lineHeight": "{dic.reference.typography.lineHeight.tight}",
-              "letterSpacing": "{dic.reference.typography.letterSpacing.none}"
+              "letterSpacing": "0px"
             }
           },
           "small": {
@@ -106,7 +106,7 @@
               "fontWeight": "{dic.reference.typography.fontWeight.regular}",
               "fontFamily": "{dic.reference.typography.fontFamily.primary}",
               "lineHeight": "{dic.reference.typography.lineHeight.normal}",
-              "letterSpacing": "{dic.reference.typography.letterSpacing.none}"
+              "letterSpacing": "0px"
             }
           },
           "medium": {
@@ -116,7 +116,7 @@
               "fontWeight": "{dic.reference.typography.fontWeight.regular}",
               "fontFamily": "{dic.reference.typography.fontFamily.primary}",
               "lineHeight": "{dic.reference.typography.lineHeight.normal}",
-              "letterSpacing": "{dic.reference.typography.letterSpacing.none}"
+              "letterSpacing": "0px"
             }
           },
           "large": {
@@ -126,7 +126,7 @@
               "fontWeight": "{dic.reference.typography.fontWeight.regular}",
               "fontFamily": "{dic.reference.typography.fontFamily.primary}",
               "lineHeight": "{dic.reference.typography.lineHeight.normal}",
-              "letterSpacing": "{dic.reference.typography.letterSpacing.none}"
+              "letterSpacing": "0px"
             }
           }
         },
@@ -138,7 +138,7 @@
               "fontWeight": "{dic.reference.typography.fontWeight.regular}",
               "fontFamily": "{dic.reference.typography.fontFamily.primary}",
               "lineHeight": "{dic.reference.typography.lineHeight.none}",
-              "letterSpacing": "{dic.reference.typography.letterSpacing.none}"
+              "letterSpacing": "0px"
             }
           },
           "medium": {
@@ -148,7 +148,7 @@
               "fontWeight": "{dic.reference.typography.fontWeight.regular}",
               "fontFamily": "{dic.reference.typography.fontFamily.primary}",
               "lineHeight": "{dic.reference.typography.lineHeight.none}",
-              "letterSpacing": "{dic.reference.typography.letterSpacing.none}"
+              "letterSpacing": "0px"
             }
           },
           "large": {
@@ -158,7 +158,7 @@
               "fontWeight": "{dic.reference.typography.fontWeight.regular}",
               "fontFamily": "{dic.reference.typography.fontFamily.primary}",
               "lineHeight": "{dic.reference.typography.lineHeight.none}",
-              "letterSpacing": "{dic.reference.typography.letterSpacing.none}"
+              "letterSpacing": "0px"
             }
           },
           "extraLarge": {
@@ -168,7 +168,7 @@
               "fontWeight": "{dic.reference.typography.fontWeight.regular}",
               "fontFamily": "{dic.reference.typography.fontFamily.primary}",
               "lineHeight": "{dic.reference.typography.lineHeight.none}",
-              "letterSpacing": "{dic.reference.typography.letterSpacing.none}"
+              "letterSpacing": "0px"
             }
           }
         }
