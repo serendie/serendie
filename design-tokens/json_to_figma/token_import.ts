@@ -34,23 +34,29 @@ export const readJsonFiles = (files: string[]) => {
   const tokensJsonByFile: FlattenedTokensByFile = {};
   let mergedTokensByFile = {};
 
-  files.map((file) => {
-    mergedTokensByFile = merge(
-      mergedTokensByFile,
-      JSON.parse(fs.readFileSync(file, { encoding: "utf-8" }))
-    );
-  });
-
-  for (const file of files) {
-    const { collectionName } = collectionAndModeFromFileName(file);
-
+  const fileContent = (file: string) => {
     const fileContent = fs.readFileSync(file, { encoding: "utf-8" });
 
     if (!fileContent) {
       throw new Error(`Invalid tokens file: ${file}. File is empty.`);
     }
 
-    const tokensFile: TokensFile = JSON.parse(fileContent);
+    return fileContent;
+  };
+
+  files.map((file) => {
+    fileContent(file);
+
+    mergedTokensByFile = merge(
+      mergedTokensByFile,
+      JSON.parse(fileContent(file))
+    );
+  });
+
+  for (const file of files) {
+    const { collectionName } = collectionAndModeFromFileName(file);
+
+    const tokensFile: TokensFile = JSON.parse(fileContent(file));
 
     if (
       /\b(color|dimension|typography)-(reference|system)\b/.test(collectionName)

@@ -210,6 +210,7 @@ describe("readJsonFiles", () => {
       "no_tokens.mode1.json": JSON.stringify({
         foo: "bar",
       }),
+      "empty_file.mode1.json": "",
       "file_with_$_keys.mode1.json": JSON.stringify({
         $foo: "bar",
         token1: { $type: "string", $value: "value1" },
@@ -356,6 +357,14 @@ describe("readJsonFiles", () => {
         },
       },
     });
+  });
+
+  test("handles empty files", () => {
+    expect(() => {
+      readJsonFiles(["empty_file.mode1.json"]);
+    }).toThrowError(
+      "Invalid tokens file: empty_file.mode1.json. File is empty."
+    );
   });
 });
 
