@@ -23,28 +23,23 @@ export const RadioButtonStyle = sva({
     },
     itemControl: {
       flexShrink: 0,
-      _disabled: {
-        opacity: 0.6,
-      },
       ".group:has(:focus-visible) &": {
-        bg: "dic.reference.color.scale.blue.100",
+        backgroundColor: "dic.reference.color.scale.blue.100",
         borderRadius: "dic.system.dimension.radius.full",
       },
     },
     checkedIcon: {
       color: "dic.system.color.impression.primary",
       _disabled: {
-        "& .isDisabled": {
-          color: "color-mix(in srgb, {colors.dic.system.color.impression.primary}, {colors.dic.system.color.interaction.hoveredOnPrimary});",
-        },
+        color:
+          "color-mix(in srgb, {colors.dic.system.color.impression.primary}, {colors.dic.system.color.interaction.hoveredOnPrimary});",
       },
     },
     unCheckedIcon: {
       color: "dic.system.color.component.outlineVariant",
       _disabled: {
-        "& .isDisabled": {
-          color: "dic.system.color.interaction.hoveredOnPrimary",
-        },
+        color:
+          "color-mix(in srgb, {colors.dic.system.color.component.outlineVariant}, {colors.dic.system.color.interaction.hoveredOnPrimary});",
       },
     },
     itemTextGroup: {
@@ -131,7 +126,6 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
 };
 
 // TODO: アイコンコンポーネントは後で別ファイルに切り出す
-// Disabled のスタイルが2色をブレンドしているため2つのpathを重ねているが方針決めたら修正
 interface IconProps extends React.SVGProps<SVGSVGElement> {}
 
 const CheckedIcon: React.FC<IconProps> = (props) => (
@@ -147,18 +141,8 @@ const CheckedIcon: React.FC<IconProps> = (props) => (
       fill="currentColor"
     />
     <path
-      d="M12 4.75C7.99594 4.75 4.75 7.99594 4.75 12C4.75 16.0041 7.99594 19.25 12 19.25C16.0041 19.25 19.25 16.0041 19.25 12C19.25 7.99594 16.0041 4.75 12 4.75ZM3.25 12C3.25 7.16751 7.16751 3.25 12 3.25C16.8325 3.25 20.75 7.16751 20.75 12C20.75 16.8325 16.8325 20.75 12 20.75C7.16751 20.75 3.25 16.8325 3.25 12Z"
-      fill="currentColor"
-      className="isDisabled"
-    />
-    <path
       d="M18 12C18 15.3137 15.3137 18 12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12Z"
       fill="currentColor"
-    />
-    <path
-      d="M18 12C18 15.3137 15.3137 18 12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12Z"
-      fill="currentColor"
-      className="isDisabled"
     />
   </svg>
 );
@@ -174,11 +158,6 @@ const UnCheckedIcon: React.FC<IconProps> = (props) => (
     <path
       d="M12 4.75C7.99594 4.75 4.75 7.99594 4.75 12C4.75 16.0041 7.99594 19.25 12 19.25C16.0041 19.25 19.25 16.0041 19.25 12C19.25 7.99594 16.0041 4.75 12 4.75ZM3.25 12C3.25 7.16751 7.16751 3.25 12 3.25C16.8325 3.25 20.75 7.16751 20.75 12C20.75 16.8325 16.8325 20.75 12 20.75C7.16751 20.75 3.25 16.8325 3.25 12Z"
       fill="currentColor"
-    />
-    <path
-      d="M12 4.75C7.99594 4.75 4.75 7.99594 4.75 12C4.75 16.0041 7.99594 19.25 12 19.25C16.0041 19.25 19.25 16.0041 19.25 12C19.25 7.99594 16.0041 4.75 12 4.75ZM3.25 12C3.25 7.16751 7.16751 3.25 12 3.25C16.8325 3.25 20.75 7.16751 20.75 12C20.75 16.8325 16.8325 20.75 12 20.75C7.16751 20.75 3.25 16.8325 3.25 12Z"
-      fill="currentColor"
-      className="isDisabled"
     />
   </svg>
 );
