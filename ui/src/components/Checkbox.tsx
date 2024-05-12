@@ -1,5 +1,5 @@
 import { Checkbox as ArkCheckbox, CheckboxRootProps } from "@ark-ui/react";
-import { RecipeVariantProps, sva } from "../../styled-system/css";
+import { RecipeVariantProps, cx, sva } from "../../styled-system/css";
 import { CSSProperties } from "react";
 
 export const CheckboxStyle = sva({
@@ -23,6 +23,13 @@ export const CheckboxStyle = sva({
     },
     itemControl: {
       flexShrink: 0,
+      ".group:has(:focus-visible) &": {
+        outlineStyle: "solid",
+        outlineOffset: "-2px",
+        outlineWidth: "1.5px",
+        outlineColor: "dic.system.color.impression.primary",
+        borderRadius: "dic.system.dimension.radius.small",
+      }
     },
     checkedIcon: {
       width: "dic.reference.dimension.scale.8",
@@ -40,7 +47,6 @@ export const CheckboxStyle = sva({
         },
       },
     },
-
     uncheckedIcon: {
       width: "dic.reference.dimension.scale.8",
       height: "dic.reference.dimension.scale.8",
@@ -104,7 +110,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
     <ArkCheckbox.Root
       key={value}
       value={value}
-      className={styles.root}
+      className={cx("group", styles.root)}
       style={rootStyle}
       {...checkboxProps}
     >
