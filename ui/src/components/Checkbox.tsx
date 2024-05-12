@@ -108,7 +108,6 @@ export const Checkbox: React.FC<CheckboxProps> = ({
 
   return (
     <ArkCheckbox.Root
-      key={value}
       value={value}
       className={cx("group", styles.root)}
       style={rootStyle}
