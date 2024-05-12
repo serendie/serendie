@@ -1,5 +1,5 @@
 import { RadioGroup, RadioGroupItemProps } from "@ark-ui/react";
-import { RecipeVariantProps, sva } from "../../styled-system/css";
+import { RecipeVariantProps, cx, sva } from "../../styled-system/css";
 import { CSSProperties } from "react";
 
 export const RadioButtonStyle = sva({
@@ -26,11 +26,8 @@ export const RadioButtonStyle = sva({
       _disabled: {
         opacity: 0.6,
       },
-      _focusVisible: {
-        outlineStyle: "solid",
-        outlineOffset: "-2px",
-        outlineWidth: "1.5px",
-        outlineColor: "dic.system.color.impression.primary",
+      ".group:has(:focus-visible) &": {
+        bg: "dic.reference.color.scale.blue.100",
         borderRadius: "dic.system.dimension.radius.full",
       },
     },
@@ -38,7 +35,7 @@ export const RadioButtonStyle = sva({
       color: "dic.system.color.impression.primary",
       _disabled: {
         "& .isDisabled": {
-          color: "dic.system.color.interaction.hoveredOnPrimary",
+          color: "color-mix(in srgb, {colors.dic.system.color.impression.primary}, {colors.dic.system.color.interaction.hoveredOnPrimary});",
         },
       },
     },
@@ -104,7 +101,7 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
   return (
     <RadioGroup.Item
       value={value}
-      className={styles.item}
+      className={cx("group", styles.item)}
       style={itemStyle}
       {...radioProps}
     >
