@@ -42,9 +42,7 @@ export const readJsonFiles = (files: string[]) => {
   });
 
   for (const file of files) {
-    const baseFileName = path.basename(file);
-    const { collectionName, modeName } =
-      collectionAndModeFromFileName(baseFileName);
+    const { collectionName } = collectionAndModeFromFileName(file);
 
     const fileContent = fs.readFileSync(file, { encoding: "utf-8" });
 
@@ -55,17 +53,15 @@ export const readJsonFiles = (files: string[]) => {
     const tokensFile: TokensFile = JSON.parse(fileContent);
 
     if (
-      ["color", "dimension"].includes(collectionName) ||
-      (collectionName === "typography" &&
-        (modeName === "compact" || modeName === "expanded"))
+      /\b(color|dimension|typography)-(reference|system)\b/.test(collectionName)
     ) {
-      if (tokensJsonByFile[baseFileName]) {
-        tokensJsonByFile[baseFileName] = {
-          ...tokensJsonByFile[baseFileName],
+      if (tokensJsonByFile[file]) {
+        tokensJsonByFile[file] = {
+          ...tokensJsonByFile[file],
           ...flattenTokensFile(tokensFile, mergedTokensByFile),
         };
       } else {
-        tokensJsonByFile[baseFileName] = flattenTokensFile(
+        tokensJsonByFile[file] = flattenTokensFile(
           tokensFile,
           mergedTokensByFile
         );
@@ -167,14 +163,22 @@ const traverseCollection = ({
 };
 
 const collectionAndModeFromFileName = (fileName: string) => {
-  const fileNameParts = fileName.split(".");
-  if (fileNameParts.length < 3) {
+  const directoryNameParts = fileName.split("/");
+  if (directoryNameParts.length < 3) {
     throw new Error(
-      `Invalid tokens file name: ${fileName}. File names must be in the format: {collectionName}.{modeName}.json`
+      `Invalid tokens file path: ${fileName}. File paths must be in the format: tokens/{categoryName}/{typeName}.{modeName}.json`
     );
   }
-  const [collectionName, modeName] = fileNameParts;
-  return { collectionName, modeName };
+  const [_, categoryName] = directoryNameParts;
+  const baseFileName = path.basename(fileName);
+  const fileNameParts = baseFileName.split(".");
+  if (fileNameParts.length < 3) {
+    throw new Error(
+      `Invalid tokens file name: ${fileName}. File names must be in the format: {typeName}.{modeName}.json`
+    );
+  }
+  const [typeName, modeName] = fileNameParts;
+  return { collectionName: `${typeName}-${categoryName}`, modeName: modeName };
 };
 
 const variableResolvedTypeFromToken = (token: Token) => {
