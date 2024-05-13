@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 07 May 2024 15:52:31 GMT
+ * Generated on Mon, 13 May 2024 09:08:20 GMT
  */
 
 export default {
@@ -194,12 +194,12 @@ export default {
           "onPrimaryContainer": "#FFFFFF",
           "notice": "#EDA608",
           "onNotice": "#FFFFFF",
-          "noticeContainer": "#EDA608",
-          "onNoticeContainer": "#FFFFFF",
+          "noticeContainer": "#FFE265",
+          "onNoticeContainer": "#000000",
           "negative": "#D61930",
           "onNegative": "#FFFFFF",
-          "negativeContainer": "#D61930",
-          "onNegativeContainer": "#FFFFFF",
+          "negativeContainer": "#FFD2D1",
+          "onNegativeContainer": "#000000",
           "positive": "#279B20",
           "onPositive": "#FFFFFF",
           "positiveContainer": "#279B20",

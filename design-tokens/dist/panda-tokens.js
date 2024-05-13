@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 07 May 2024 15:52:31 GMT
+ * Generated on Mon, 13 May 2024 09:08:20 GMT
  */
 
 export default {
@@ -250,10 +250,10 @@ export default {
               "value": "#FFFFFF"
             },
             "noticeContainer": {
-              "value": "#EDA608"
+              "value": "#FFE265"
             },
             "onNoticeContainer": {
-              "value": "#FFFFFF"
+              "value": "#000000"
             },
             "negative": {
               "value": "#D61930"
@@ -262,10 +262,10 @@ export default {
               "value": "#FFFFFF"
             },
             "negativeContainer": {
-              "value": "#D61930"
+              "value": "#FFD2D1"
             },
             "onNegativeContainer": {
-              "value": "#FFFFFF"
+              "value": "#000000"
             },
             "positive": {
               "value": "#279B20"
