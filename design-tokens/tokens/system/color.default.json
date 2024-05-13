@@ -77,7 +77,7 @@
           },
           "noticeContainer": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.yellow.600}",
+            "$value": "{dic.reference.color.scale.yellow.200}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
@@ -89,7 +89,7 @@
           },
           "onNoticeContainer": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.white.1000}",
+            "$value": "{dic.reference.color.scale.black.1000}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
@@ -125,7 +125,7 @@
           },
           "negativeContainer": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.red.600}",
+            "$value": "{dic.reference.color.scale.red.200}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
@@ -137,7 +137,7 @@
           },
           "onNegativeContainer": {
             "$type": "color",
-            "$value": "{dic.reference.color.scale.white.1000}",
+            "$value": "{dic.reference.color.scale.black.1000}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
