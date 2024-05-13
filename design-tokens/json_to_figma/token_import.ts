@@ -1,7 +1,13 @@
 import * as fs from "fs";
 import * as path from "path";
+import merge from "deepmerge";
 
-import { Token, TokenOrTokenGroup, TokensFile } from "./token_types";
+import {
+  Token,
+  TokenOrTokenGroup,
+  TokensFile,
+  isTypography,
+} from "./token_types";
 import {
   GetLocalVariablesResponse,
   LocalVariable,
@@ -26,27 +32,45 @@ export type FlattenedTokensByFile = {
 
 export const readJsonFiles = (files: string[]) => {
   const tokensJsonByFile: FlattenedTokensByFile = {};
+  let mergedTokensByFile = {};
 
-  for (const file of files) {
-    const baseFileName = path.basename(file);
-    const { collectionName } = collectionAndModeFromFileName(baseFileName);
-
+  const fileContent = (file: string) => {
     const fileContent = fs.readFileSync(file, { encoding: "utf-8" });
 
     if (!fileContent) {
       throw new Error(`Invalid tokens file: ${file}. File is empty.`);
     }
 
-    const tokensFile: TokensFile = JSON.parse(fileContent);
+    return fileContent;
+  };
 
-    if (collectionName === "color" || collectionName === "dimension") {
-      if (tokensJsonByFile[baseFileName]) {
-        tokensJsonByFile[baseFileName] = {
-          ...tokensJsonByFile[baseFileName],
-          ...flattenTokensFile(tokensFile),
+  files.map((file) => {
+    fileContent(file);
+
+    mergedTokensByFile = merge(
+      mergedTokensByFile,
+      JSON.parse(fileContent(file))
+    );
+  });
+
+  for (const file of files) {
+    const { collectionName } = collectionAndModeFromFileName(file);
+
+    const tokensFile: TokensFile = JSON.parse(fileContent(file));
+
+    if (
+      /\b(color|dimension|typography)-(reference|system)\b/.test(collectionName)
+    ) {
+      if (tokensJsonByFile[file]) {
+        tokensJsonByFile[file] = {
+          ...tokensJsonByFile[file],
+          ...flattenTokensFile(tokensFile, mergedTokensByFile),
         };
       } else {
-        tokensJsonByFile[baseFileName] = flattenTokensFile(tokensFile);
+        tokensJsonByFile[file] = flattenTokensFile(
+          tokensFile,
+          mergedTokensByFile
+        );
       }
     }
   }
@@ -58,7 +82,10 @@ export const readJsonFiles = (files: string[]) => {
   return tokensJsonByFile;
 };
 
-const flattenTokensFile = (tokensFile: TokensFile) => {
+const flattenTokensFile = (
+  tokensFile: TokensFile,
+  originalTokens: TokenOrTokenGroup
+) => {
   const flattenedTokens: { [tokenName: string]: Token } = {};
 
   for (const [tokenGroup, groupValues] of Object.entries(tokensFile)) {
@@ -66,45 +93,98 @@ const flattenTokensFile = (tokensFile: TokensFile) => {
       key: tokenGroup,
       object: groupValues,
       tokens: flattenedTokens,
+      originalTokens: originalTokens,
     });
   }
 
   return flattenedTokens;
 };
 
+const getReferenceToken = (originalTokens: any, aliasToken: string): Token => {
+  const { $value, $type, ...others } =
+    aliasToken
+      .replace(/[{}]/g, "")
+      .split(".")
+      .reduce((obj, key: string) => obj[key], originalTokens) || {};
+
+  if ($type) {
+    return { $value: aliasToken, $type, ...others };
+  }
+
+  throw new Error(`Invalid alias token: ${aliasToken}`);
+};
+
 const traverseCollection = ({
   key,
   object,
   tokens,
+  originalTokens,
 }: {
   key: string;
   object: TokenOrTokenGroup;
   tokens: { [tokenName: string]: Token };
+  originalTokens: TokenOrTokenGroup;
 }) => {
-  if (key.charAt(0) === "$") {
-    return;
-  }
-
   if (object.$value) {
-    tokens[key] = object;
+    if (object.$type === "typography" && typeof object.$value === "object") {
+      tokens[`${key}/fontFamily`] = getReferenceToken(
+        originalTokens,
+        object.$value.fontFamily
+      );
+      tokens[`${key}/fontSize`] = getReferenceToken(
+        originalTokens,
+        object.$value.fontSize
+      );
+      if (typeof object.$value.fontWeight === "string") {
+        tokens[`${key}/fontWeight`] = getReferenceToken(
+          originalTokens,
+          object.$value.fontWeight
+        );
+      }
+      if (typeof object.$value.lineHeight === "string") {
+        tokens[`${key}/lineHeight`] = getReferenceToken(
+          originalTokens,
+          object.$value.lineHeight
+        );
+      }
+      tokens[`${key}/letterSpacing`] = {
+        $value: object.$value.letterSpacing,
+        $type: "dimension",
+      };
+    } else {
+      tokens[key] = object;
+    }
   } else {
     for (const [_key, _object] of Object.entries(object)) {
       if (_key.charAt(0) !== "$" && typeof _object === "object") {
-        traverseCollection({ key: `${key}/${_key}`, object: _object, tokens });
+        traverseCollection({
+          key: `${key}/${_key}`,
+          object: _object,
+          tokens,
+          originalTokens,
+        });
       }
     }
   }
 };
 
 const collectionAndModeFromFileName = (fileName: string) => {
-  const fileNameParts = fileName.split(".");
-  if (fileNameParts.length < 3) {
+  const directoryNameParts = fileName.split("/");
+  if (directoryNameParts.length < 3) {
     throw new Error(
-      `Invalid tokens file name: ${fileName}. File names must be in the format: {collectionName}.{modeName}.json`
+      `Invalid tokens file path: ${fileName}. File paths must be in the format: tokens/{categoryName}/{typeName}.{modeName}.json`
     );
   }
-  const [collectionName, modeName] = fileNameParts;
-  return { collectionName, modeName };
+  const [_, categoryName] = directoryNameParts;
+  const baseFileName = path.basename(fileName);
+  const fileNameParts = baseFileName.split(".");
+  if (fileNameParts.length < 3) {
+    throw new Error(
+      `Invalid tokens file name: ${fileName}. File names must be in the format: {typeName}.{modeName}.json`
+    );
+  }
+  const [typeName, modeName] = fileNameParts;
+  return { collectionName: `${typeName}-${categoryName}`, modeName: modeName };
 };
 
 const variableResolvedTypeFromToken = (token: Token) => {
@@ -112,6 +192,12 @@ const variableResolvedTypeFromToken = (token: Token) => {
     case "color":
       return "COLOR";
     case "dimension":
+      return "FLOAT";
+    case "fontFamily":
+      return "STRING";
+    case "fontWeight":
+      return "FLOAT";
+    case "number":
       return "FLOAT";
     default:
       throw new Error(`Invalid token $type: ${token.$type}`);
@@ -163,7 +249,11 @@ const variableValueFromToken = (
     return parseDimension(token.$value);
   }
 
-  return token.$value;
+  if (!isTypography(token.$value)) {
+    return token.$value;
+  }
+
+  throw new Error(`Invalid token value: ${token.$value}`);
 };
 
 const compareVariableValues = (a: VariableValue, b: VariableValue) => {
