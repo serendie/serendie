@@ -217,6 +217,7 @@ export const Select: React.FC<SelectStyleProps> = ({
       )}
       <Portal>
         <ArkSelect.Positioner>
+          {/* TODO: 上部に僅かに隙間があるので詰めたいがAPIが見つからない、、、 */}
           <ArkSelect.Content className={styles.content}>
             <ArkSelect.ItemGroup id={id}>
               {props.items.map((item, i) => (
