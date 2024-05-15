@@ -27,7 +27,7 @@ export const SelectStyle = sva({
       bg: "dic.system.color.component.surface",
       cursor: "pointer",
       _enabled: {
-        _focus: {
+        _focusVisible: {
           outlineWidth: "dic.system.dimension.border.thick",
           outlineColor: "dic.system.color.impression.primary",
         },
