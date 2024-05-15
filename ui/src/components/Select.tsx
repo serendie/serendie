@@ -1,54 +1,54 @@
-import { Combobox, ComboboxRootProps, Portal } from "@ark-ui/react";
-import { RecipeVariantProps, sva } from "../../styled-system/css";
+import { Select as ArkSelect, Portal, SelectRootProps } from "@ark-ui/react";
+import { RecipeVariantProps, css, sva } from "../../styled-system/css";
+import { useId } from "react";
 import { SvgIcon } from "./SvgIcon";
-import { Box } from "../../styled-system/jsx";
-import { getToken } from "../tokens/getToken";
-
-const { dic } = getToken();
-
-/*
- * 検索候補を出すことができるサーチコンボボックス
- * https://ark-ui.com/docs/components/combobox
- * 候補のリストを受け取っていない時には通常の検索窓として使える
- * items: 検索候補のリスト、Easyさを優先しているので型はstringのみ
- */
 
 export const SelectStyle = sva({
-  slots: [
-    "input",
-    "control",
-    "combobox",
-    "comboboxItem",
-    "iconBox",
-    "closeIcon",
-  ],
+  slots: ["root", "valueText", "control", "content", "item", "iconBox"],
   base: {
-    control: {
+    root: {
       display: "inline-grid",
-      lineHeight: "1",
-      gridTemplateColumns: "auto 1fr auto",
+      gridTemplateColumns: "minmax(auto, 300px)",
+    },
+    control: {
+      width: "100%",
+      textAlign: "left",
+      display: "grid",
+      gridTemplateColumns: "1fr auto",
       paddingTop: "dic.system.dimension.spacing.small",
       paddingRight: "dic.system.dimension.spacing.extraSmall",
       paddingBottom: "dic.system.dimension.spacing.small",
-      paddingLeft: "dic.system.dimension.spacing.twoExtraSmall",
+      paddingLeft: "dic.system.dimension.spacing.medium",
       alignItems: "center",
       borderRadius: "dic.system.dimension.radius.medium",
       outlineStyle: "solid",
       outlineWidth: "dic.system.dimension.border.medium",
       outlineColor: "dic.system.color.component.outline",
       bg: "dic.system.color.component.surface",
-      _focus: {
-        outlineWidth: "dic.system.dimension.border.thick",
-        outlineColor: "dic.system.color.impression.primary",
+      cursor: "pointer",
+      _enabled: {
+        _focus: {
+          outlineWidth: "dic.system.dimension.border.thick",
+          outlineColor: "dic.system.color.impression.primary",
+        },
+        _hover: {
+          outlineColor: "dic.system.color.interaction.hovered",
+          bg: "color-mix(in srgb, {colors.dic.system.color.component.surface}, {colors.dic.system.color.interaction.hoveredVariant})",
+        },
       },
       _disabled: {
         bgColor: "dic.system.color.interaction.disabled",
         cursor: "not-allowed",
       },
+      _invalid: {
+        outlineColor: "dic.system.color.impression.negative",
+      },
     },
-    input: {
+    valueText: {
       outline: "none",
       width: "100%",
+      whiteSpace: "nowrap",
+      overflow: "hidden",
       textOverflow: "ellipsis",
       _placeholder: {
         color: "dic.system.color.component.onSurfaceVariant",
@@ -60,16 +60,20 @@ export const SelectStyle = sva({
         },
       },
     },
-    combobox: {
+    content: {
       bgColor: "dic.system.color.component.surface",
       borderRadius: "dic.system.dimension.radius.medium",
       boxShadow: "dic.system.elevation.shadow.level1",
       zIndex: "dic.system.elevation.zIndex.dropdown",
       width: "100%",
+      cursor: "pointer",
     },
-    comboboxItem: {
+    item: {
       display: "flex",
       gap: "dic.system.dimension.spacing.small",
+      _highlighted: {
+        backgroundColor: "dic.system.color.interaction.hoveredVariant",
+      },
     },
     iconBox: {
       w: "40px",
@@ -79,23 +83,17 @@ export const SelectStyle = sva({
         color: "dic.system.color.interaction.disabledOnSurface",
       },
     },
-    closeIcon: {
-      opacity: 0,
-      "[data-state=open] &": {
-        opacity: 1,
-      },
-    },
   },
   variants: {
     size: {
       medium: {
-        control: {
+        root: {
           textStyle: {
             base: "dic.system.typography.body.medium_compact",
             expanded: "dic.system.typography.body.medium_expanded",
           },
         },
-        comboboxItem: {
+        item: {
           paddingRight: "dic.system.dimension.spacing.medium",
           paddingLeft: "dic.system.dimension.spacing.medium",
           paddingBottom: {
@@ -109,12 +107,19 @@ export const SelectStyle = sva({
         },
       },
       small: {
-        control: {
+        root: {
+          gridTemplateColumns: "minmax(auto, 150px)",
           textStyle: {
             base: "dic.system.typography.body.small_compact",
           },
         },
-        comboboxItem: {
+        control: {
+          paddingTop: "dic.system.dimension.spacing.twoExtraSmall",
+          paddingRight: "dic.system.dimension.spacing.extraSmall",
+          paddingBottom: "dic.system.dimension.spacing.twoExtraSmall",
+          paddingLeft: "dic.system.dimension.spacing.extraSmall",
+        },
+        item: {
           paddingTop: "dic.system.dimension.spacing.extraSmall",
           paddingRight: "dic.system.dimension.spacing.medium",
           paddingBottom: "dic.system.dimension.spacing.extraSmall",
@@ -128,51 +133,88 @@ export const SelectStyle = sva({
   },
 });
 
-type SelectStyleProps = ComboboxRootProps<string> &
+type Props = {
+  placeholder?: string;
+  label?: string;
+  required?: boolean;
+  invalidMessage?: string;
+};
+
+type selectItem = {
+  label: string;
+  value: string;
+};
+
+type SelectStyleProps = Props &
+  SelectRootProps<selectItem> &
   RecipeVariantProps<typeof SelectStyle>;
 
 export const Select: React.FC<SelectStyleProps> = ({
-  items = [],
+  placeholder = "",
+  label,
+  required,
+  invalid,
+  invalidMessage,
   ...props
 }) => {
-  const styles = SelectStyle(props);
+  const [styleProps, selectProps] = SelectStyle.splitVariantProps(props);
+  const styles = SelectStyle(styleProps);
+  const id = useId(); // TODO: Ark UI 3.0.0 からIDの指定いらなくなる
 
   return (
-    <Combobox.Root items={items} lazyMount unmountOnExit {...props}>
-      <Combobox.Control className={styles.control}>
-        <div className={styles.iconBox}>
-          <SvgIcon icon="search" size={dic.system.dimension.spacing.large} />
-        </div>
-        <Combobox.Input className={styles.input} />
-        {/* ARK UIではOpenのトリガーも用意されているがデザインではナシ */}
-        <Combobox.Trigger>
-          <div className={styles.closeIcon}>
-            <SvgIcon icon="close" size={dic.system.dimension.spacing.large} />
-          </div>
-        </Combobox.Trigger>
-      </Combobox.Control>
-      {items.length > 0 && (
-        <Portal>
-          <Combobox.Positioner>
-            <Combobox.Content className={styles.combobox}>
-              <Combobox.ItemGroup id="framework">
-                {items.map((item, i) => (
-                  <Combobox.Item
-                    key={i}
-                    item={item}
-                    className={styles.comboboxItem}>
-                    <Box
-                      w="dic.system.dimension.spacing.large"
-                      h="dic.system.dimension.spacing.large"
-                    />
-                    <Combobox.ItemText>{item}</Combobox.ItemText>
-                  </Combobox.Item>
-                ))}
-              </Combobox.ItemGroup>
-            </Combobox.Content>
-          </Combobox.Positioner>
-        </Portal>
+    <ArkSelect.Root
+      {...selectProps}
+      invalid={invalid}
+      className={styles.root}
+      positioning={{ sameWidth: true }}>
+      {label && styleProps.size != "small" && (
+        // smallの場合はラベルを表示しない
+        <ArkSelect.Label
+          className={css({ mb: "dic.system.dimension.spacing.extraSmall" })}>
+          {label}
+          {required && (
+            <span
+              className={css({
+                pl: "dic.system.dimension.spacing.extraSmall",
+                mb: "dic.system.dimension.spacing.extraSmall",
+                color: "dic.system.color.impression.negative",
+              })}>
+              必須
+            </span>
+          )}
+        </ArkSelect.Label>
       )}
-    </Combobox.Root>
+      <ArkSelect.Control>
+        <ArkSelect.Trigger className={styles.control}>
+          <ArkSelect.ValueText
+            placeholder={placeholder}
+            className={styles.valueText}
+          />
+          <SvgIcon icon="expandMore" size="20" className={styles.iconBox} />
+        </ArkSelect.Trigger>
+        {invalid && invalidMessage && (
+          <div
+            className={css({
+              mt: "dic.system.dimension.spacing.extraSmall",
+              color: "dic.system.color.impression.negative",
+            })}>
+            {invalidMessage}
+          </div>
+        )}
+      </ArkSelect.Control>
+      <Portal>
+        <ArkSelect.Positioner>
+          <ArkSelect.Content className={styles.content}>
+            <ArkSelect.ItemGroup id={id}>
+              {props.items.map((item, i) => (
+                <ArkSelect.Item key={i} item={item} className={styles.item}>
+                  <ArkSelect.ItemText>{item.label}</ArkSelect.ItemText>
+                </ArkSelect.Item>
+              ))}
+            </ArkSelect.ItemGroup>
+          </ArkSelect.Content>
+        </ArkSelect.Positioner>
+      </Portal>
+    </ArkSelect.Root>
   );
 };
