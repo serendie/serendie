@@ -38,6 +38,7 @@ export const SelectStyle = sva({
       },
       _disabled: {
         bgColor: "dic.system.color.interaction.disabled",
+        color: "dic.system.color.interaction.disabledOnSurface",
         cursor: "not-allowed",
       },
       _invalid: {
@@ -50,12 +51,11 @@ export const SelectStyle = sva({
       whiteSpace: "nowrap",
       overflow: "hidden",
       textOverflow: "ellipsis",
-      _placeholder: {
+      "[data-placeholder-shown] &": {
         color: "dic.system.color.component.onSurfaceVariant",
       },
       _disabled: {
-        color: "dic.system.color.interaction.disabledOnSurface",
-        _placeholder: {
+        "[data-placeholder-shown] &": {
           color: "dic.system.color.interaction.disabledOnSurface",
         },
       },
@@ -118,6 +118,10 @@ export const SelectStyle = sva({
           paddingRight: "dic.system.dimension.spacing.extraSmall",
           paddingBottom: "dic.system.dimension.spacing.twoExtraSmall",
           paddingLeft: "dic.system.dimension.spacing.extraSmall",
+          borderRadius: "dic.system.dimension.radius.small",
+        },
+        content: {
+          borderRadius: "dic.system.dimension.radius.small",
         },
         item: {
           paddingTop: "dic.system.dimension.spacing.extraSmall",
