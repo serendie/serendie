@@ -173,6 +173,7 @@ export const Select: React.FC<SelectStyleProps> = ({
           className={css({ mb: "dic.system.dimension.spacing.extraSmall" })}>
           {label}
           {required && (
+            // とりあえず必須メッセージはハードコード
             <span
               className={css({
                 pl: "dic.system.dimension.spacing.extraSmall",
