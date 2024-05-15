@@ -4,13 +4,14 @@ import { useId } from "react";
 import { SvgIcon } from "./SvgIcon";
 
 export const SelectStyle = sva({
-  slots: ["root", "valueText", "control", "content", "item", "iconBox"],
+  slots: ["root", "valueText", "trigger", "content", "item", "iconBox"],
   base: {
     root: {
       display: "inline-grid",
       gridTemplateColumns: "minmax(auto, 300px)",
+      rowGap: "dic.system.dimension.spacing.extraSmall",
     },
-    control: {
+    trigger: {
       width: "100%",
       textAlign: "left",
       display: "grid",
@@ -113,7 +114,7 @@ export const SelectStyle = sva({
             base: "dic.system.typography.body.small_compact",
           },
         },
-        control: {
+        trigger: {
           paddingTop: "dic.system.dimension.spacing.twoExtraSmall",
           paddingRight: "dic.system.dimension.spacing.extraSmall",
           paddingBottom: "dic.system.dimension.spacing.twoExtraSmall",
@@ -174,14 +175,18 @@ export const Select: React.FC<SelectStyleProps> = ({
       {label && styleProps.size != "small" && (
         // smallの場合はラベルを表示しない
         <ArkSelect.Label
-          className={css({ mb: "dic.system.dimension.spacing.extraSmall" })}>
+          className={css({
+            textStyle: {
+              base: "dic.system.typography.label.medium_compact",
+              expanded: "dic.system.typography.label.medium_expanded",
+            },
+          })}>
           {label}
           {required && (
             // とりあえず必須メッセージはハードコード
             <span
               className={css({
                 pl: "dic.system.dimension.spacing.extraSmall",
-                mb: "dic.system.dimension.spacing.extraSmall",
                 color: "dic.system.color.impression.negative",
               })}>
               必須
@@ -190,23 +195,26 @@ export const Select: React.FC<SelectStyleProps> = ({
         </ArkSelect.Label>
       )}
       <ArkSelect.Control>
-        <ArkSelect.Trigger className={styles.control}>
+        <ArkSelect.Trigger className={styles.trigger}>
           <ArkSelect.ValueText
             placeholder={placeholder}
             className={styles.valueText}
           />
           <SvgIcon icon="expandMore" size="20" className={styles.iconBox} />
         </ArkSelect.Trigger>
-        {invalid && invalidMessage && (
-          <div
-            className={css({
-              mt: "dic.system.dimension.spacing.extraSmall",
-              color: "dic.system.color.impression.negative",
-            })}>
-            {invalidMessage}
-          </div>
-        )}
       </ArkSelect.Control>
+      {invalid && invalidMessage && (
+        <div
+          className={css({
+            textStyle: {
+              base: "dic.system.typography.body.extraSmall_compact",
+              expanded: "dic.system.typography.body.extraSmall_expanded",
+            },
+            color: "dic.system.color.impression.negative",
+          })}>
+          {invalidMessage}
+        </div>
+      )}
       <Portal>
         <ArkSelect.Positioner>
           <ArkSelect.Content className={styles.content}>
