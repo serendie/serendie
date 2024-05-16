@@ -105,6 +105,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
     const showMessageField = description || (invalid && invalidMessage);
 
     return (
+      // NOTE: rootのサイズやマージンなどをプロパティとして渡したくなる気がする
       <div className={styles.root}>
         <label className={styles.label}>
           {label}
