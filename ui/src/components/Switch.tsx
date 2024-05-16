@@ -43,8 +43,8 @@ export const SwitchStyle = sva({
     },
     thumb: {
       display: "block",
-      width: "dic.reference.dimension.scale.7",
-      height: "dic.reference.dimension.scale.7",
+      width: 20,
+      height: 20,
       marginY: 5,
       marginX: 6,
       background: "dic.system.color.component.surface",
@@ -60,8 +60,6 @@ export const SwitchStyle = sva({
       },
     },
     label: {
-      lineHeight: "dic.system.dimension.lineHeight.medium",
-      fontFamily: "dic.reference.typography.fontFamily.primary",
       color: "dic.system.color.component.onSurface",
       textStyle: "dic.system.typography.body.medium_compact",
       _expanded: {
