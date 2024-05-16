@@ -1,6 +1,8 @@
 import { RadioGroup, RadioGroupItemProps } from "@ark-ui/react";
 import { RecipeVariantProps, cx, sva } from "../../styled-system/css";
 import { CSSProperties } from "react";
+import RadioChecked from "../assets/radioChecked.svg?react";
+import RadioUnChecked from "../assets/radioUnchecked.svg?react";
 
 export const RadioButtonStyle = sva({
   slots: [
@@ -102,9 +104,9 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
         <>
           <RadioGroup.ItemControl className={styles.itemControl} asChild>
             {state.isChecked ? (
-              <CheckedIcon className={styles.checkedIcon} />
+              <RadioChecked className={styles.checkedIcon} />
             ) : (
-              <UnCheckedIcon className={styles.unCheckedIcon} />
+              <RadioUnChecked className={styles.unCheckedIcon} />
             )}
           </RadioGroup.ItemControl>
           <div className={styles.itemTextGroup}>
@@ -122,40 +124,3 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
     </RadioGroup.Item>
   );
 };
-
-// TODO: アイコンコンポーネントは後で別ファイルに切り出す
-interface IconProps extends React.SVGProps<SVGSVGElement> {}
-
-const CheckedIcon: React.FC<IconProps> = (props) => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
-    <path
-      d="M12 4.75C7.99594 4.75 4.75 7.99594 4.75 12C4.75 16.0041 7.99594 19.25 12 19.25C16.0041 19.25 19.25 16.0041 19.25 12C19.25 7.99594 16.0041 4.75 12 4.75ZM3.25 12C3.25 7.16751 7.16751 3.25 12 3.25C16.8325 3.25 20.75 7.16751 20.75 12C20.75 16.8325 16.8325 20.75 12 20.75C7.16751 20.75 3.25 16.8325 3.25 12Z"
-      fill="currentColor"
-    />
-    <path
-      d="M18 12C18 15.3137 15.3137 18 12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12Z"
-      fill="currentColor"
-    />
-  </svg>
-);
-
-const UnCheckedIcon: React.FC<IconProps> = (props) => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
-    <path
-      d="M12 4.75C7.99594 4.75 4.75 7.99594 4.75 12C4.75 16.0041 7.99594 19.25 12 19.25C16.0041 19.25 19.25 16.0041 19.25 12C19.25 7.99594 16.0041 4.75 12 4.75ZM3.25 12C3.25 7.16751 7.16751 3.25 12 3.25C16.8325 3.25 20.75 7.16751 20.75 12C20.75 16.8325 16.8325 20.75 12 20.75C7.16751 20.75 3.25 16.8325 3.25 12Z"
-      fill="currentColor"
-    />
-  </svg>
-);
