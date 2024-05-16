@@ -50,6 +50,10 @@ const TextFieldStyle = sva({
         backgroundColor: "dic.system.color.interaction.disabled",
         cursor: "not-allowed",
       },
+
+      _invalid: {
+        outlineColor: "dic.system.color.impression.negative",
+      },
     },
     input: {
       outline: "none",
@@ -128,6 +132,7 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
         </label>
         <div
           className={styles.inputWrapper}
+          data-invalid={invalid ? true : undefined}
           data-disabled={disabled ? true : undefined}>
           <input
             ref={mergedRef}
@@ -138,10 +143,10 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
             className={styles.input}
             {...selectProps}
           />
-          {!disabled && (
-            /* disabledの場合はアイコンを表示しない */
-            <div className={styles.icon}>
-              {invalid ? (
+          <div className={styles.icon}>
+            {!disabled &&
+              /* disabledの場合はアイコンを表示しない */
+              (invalid ? (
                 <span
                   className={css({
                     color: "dic.system.color.impression.negative",
@@ -152,9 +157,8 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
                 <button onClick={resetValue} aria-label="値をクリア">
                   <SvgIcon icon="close" size="20" />
                 </button>
-              )}
-            </div>
-          )}
+              ))}
+          </div>
         </div>
         {showMessageField && (
           <div className={styles.messageField}>
