@@ -4,6 +4,7 @@ import chevron_right from "@material-design-icons/svg/round/chevron_right.svg?re
 import close from "@material-design-icons/svg/round/close.svg?react";
 import face from "@material-design-icons/svg/round/face.svg?react";
 import search from "@material-design-icons/svg/round/search.svg?react";
+import expandMore from "@material-design-icons/svg/round/expand_more.svg?react";
 import { css } from "../../styled-system/css";
 
 const icons = {
@@ -13,6 +14,7 @@ const icons = {
   close,
   face,
   search,
+  expandMore,
 };
 
 export type SvgIconName = keyof typeof icons;
