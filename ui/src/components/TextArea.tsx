@@ -1,17 +1,15 @@
 import React from "react";
 import mergeRefs from "merge-refs";
 import { forwardRef } from "react";
-import { css, sva } from "../../styled-system/css";
-import { SvgIcon } from "./SvgIcon";
+import { sva } from "../../styled-system/css";
 
-const TextFieldStyle = sva({
+const TextAreaStyle = sva({
   slots: [
     "root",
     "label",
     "required",
-    "inputWrapper",
-    "input",
-    "icon",
+    "wrapper",
+    "textarea",
     "messageField",
     "description",
     "invalidMessage",
@@ -32,7 +30,7 @@ const TextFieldStyle = sva({
         expanded: "dic.system.typography.label.medium_expanded",
       },
     },
-    inputWrapper: {
+    wrapper: {
       display: "grid",
       gridTemplateColumns: "1fr auto",
       alignItems: "center",
@@ -47,28 +45,16 @@ const TextFieldStyle = sva({
       },
       _disabled: {
         backgroundColor: "dic.system.color.interaction.disabled",
-        cursor: "not-allowed",
-      },
-
-      _invalid: {
-        outlineColor: "dic.system.color.impression.negative",
       },
     },
-    input: {
+    textarea: {
       outline: "none",
       paddingTop: "dic.system.dimension.spacing.extraSmall",
-      paddingRight: "dic.system.dimension.spacing.twoExtraSmall",
+      paddingRight: "dic.system.dimension.spacing.small",
       paddingBottom: "dic.system.dimension.spacing.extraSmall",
-      paddingLeft: "dic.system.dimension.spacing.medium",
-    },
-    icon: {
-      display: "grid",
-      placeItems: "center",
-      w: "48px",
-      h: "48px",
-      expanded: {
-        w: "44px",
-        h: "44px",
+      paddingLeft: "dic.system.dimension.spacing.small",
+      _disabled: {
+        cursor: "not-allowed",
       },
     },
     required: {
@@ -76,6 +62,8 @@ const TextFieldStyle = sva({
       color: "dic.system.color.impression.negative",
     },
     messageField: {
+      textAlign: "right",
+      color: "dic.system.color.component.onSurfaceVariant",
       textStyle: {
         base: "dic.system.typography.body.extraSmall_compact",
         expanded: "dic.system.typography.body.extraSmall_expanded",
@@ -92,9 +80,9 @@ type Props = {
   description?: string;
   invalid?: boolean;
   invalidMessage?: string;
-} & React.InputHTMLAttributes<HTMLInputElement>;
+} & React.TextareaHTMLAttributes<HTMLTextAreaElement>;
 
-export const TextField = forwardRef<HTMLInputElement, Props>(
+export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
   (
     {
       placeholder,
@@ -103,39 +91,16 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
       required,
       invalidMessage,
       invalid,
-      type = "text",
       disabled,
-      onChange,
-      value,
       ...props
     },
     ref
   ) => {
-    const inputRef = React.useRef<HTMLInputElement>(null);
+    const inputRef = React.useRef<HTMLTextAreaElement>(null);
     const mergedRef = mergeRefs(inputRef, ref);
-    const [styleProps, selectProps] = TextFieldStyle.splitVariantProps(props);
-    const styles = TextFieldStyle(styleProps);
+    const [styleProps, selectProps] = TextAreaStyle.splitVariantProps(props);
+    const styles = TextAreaStyle(styleProps);
     const showMessageField = description || (invalid && invalidMessage);
-    const [_value, setValue] = React.useState(props.defaultValue || value);
-
-    const resetValue = () => {
-      const e = {
-        target: { value: "" },
-      } as React.ChangeEvent<HTMLInputElement>;
-
-      onValueChange(e);
-      props.onReset?.(e);
-      if (inputRef.current) {
-        inputRef.current.value = "";
-      }
-    };
-
-    const onValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setValue(e.target.value);
-      if (onChange) {
-        onChange(e);
-      }
-    };
 
     return (
       <div className={styles.root}>
@@ -147,39 +112,16 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
           )}
         </label>
         <div
-          className={styles.inputWrapper}
-          data-invalid={invalid ? true : undefined}
+          className={styles.wrapper}
           data-disabled={disabled ? true : undefined}>
-          <input
+          <textarea
             ref={mergedRef}
             placeholder={placeholder}
             required={required}
             disabled={disabled}
-            value={value}
-            type={type}
-            className={styles.input}
-            onChange={onValueChange}
+            className={styles.textarea}
             {...selectProps}
           />
-          <div className={styles.icon}>
-            {!disabled &&
-              /* disabledの場合はアイコンを表示しない */
-              (invalid ? (
-                <span
-                  className={css({
-                    color: "dic.system.color.impression.negative",
-                  })}>
-                  <SvgIcon icon="error" size="20" />
-                </span>
-              ) : _value ? (
-                <button
-                  className={css({ cursor: "pointer" })}
-                  onClick={resetValue}
-                  aria-label="値をクリア">
-                  <SvgIcon icon="close" size="20" />
-                </button>
-              ) : null)}
-          </div>
         </div>
         {showMessageField && (
           <div className={styles.messageField}>
