@@ -59,17 +59,13 @@ const TextFieldStyle = sva({
       paddingLeft: "dic.system.dimension.spacing.medium",
     },
     icon: {
-      display: "flex",
+      display: "grid",
+      placeItems: "center",
       w: "48px",
       h: "48px",
       expanded: {
         w: "44px",
         h: "44px",
-      },
-      alignItems: "center",
-      justifyContent: "center",
-      "[data-disabled] &": {
-        color: "dic.system.color.interaction.disabled",
       },
     },
     required: {
