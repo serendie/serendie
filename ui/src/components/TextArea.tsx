@@ -38,13 +38,15 @@ const TextAreaStyle = sva({
       outlineWidth: "dic.system.dimension.border.medium",
       outlineColor: "dic.system.color.component.outline",
       borderRadius: "dic.system.dimension.radius.medium",
-
       _focusWithin: {
         outlineWidth: "dic.system.dimension.border.thick",
         outlineColor: "dic.system.color.impression.primary",
       },
       _disabled: {
         backgroundColor: "dic.system.color.interaction.disabled",
+      },
+      _invalid: {
+        outlineColor: "dic.system.color.impression.negative",
       },
     },
     textarea: {
@@ -113,6 +115,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
         </label>
         <div
           className={styles.wrapper}
+          data-invalid={invalid ? true : undefined}
           data-disabled={disabled ? true : undefined}>
           <textarea
             ref={mergedRef}

@@ -40,7 +40,6 @@ const TextFieldStyle = sva({
       outlineWidth: "dic.system.dimension.border.medium",
       outlineColor: "dic.system.color.component.outline",
       borderRadius: "dic.system.dimension.radius.medium",
-
       _focusWithin: {
         outlineWidth: "dic.system.dimension.border.thick",
         outlineColor: "dic.system.color.impression.primary",
@@ -49,7 +48,6 @@ const TextFieldStyle = sva({
         backgroundColor: "dic.system.color.interaction.disabled",
         cursor: "not-allowed",
       },
-
       _invalid: {
         outlineColor: "dic.system.color.impression.negative",
       },
