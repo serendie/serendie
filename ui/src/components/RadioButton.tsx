@@ -24,7 +24,7 @@ export const RadioButtonStyle = sva({
     itemControl: {
       flexShrink: 0,
       ".group:has(:focus-visible) &": {
-        backgroundColor: "dic.reference.color.scale.blue.100",
+        backgroundColor: "dic.system.color.interaction.selectedSurface",
         borderRadius: "dic.system.dimension.radius.full",
       },
     },
@@ -48,7 +48,6 @@ export const RadioButtonStyle = sva({
     },
     itemText: {
       color: "dic.system.color.component.onSurface",
-      lineHeight: "dic.reference.typography.lineHeight.tight",
       textStyle: "dic.system.typography.body.medium_compact",
       _expanded: {
         textStyle: "dic.system.typography.body.medium_expanded",
@@ -60,7 +59,6 @@ export const RadioButtonStyle = sva({
     helperText: {
       color: "dic.system.color.component.onSurfaceVariant",
       marginTop: "dic.system.dimension.spacing.twoExtraSmall",
-      lineHeight: "dic.reference.typography.lineHeight.tight",
       textStyle: "dic.system.typography.body.extraSmall_compact",
       _expanded: {
         textStyle: "dic.system.typography.body.extraSmall_expanded",

@@ -32,8 +32,8 @@ export const CheckboxStyle = sva({
       }
     },
     checkedIcon: {
-      width: "dic.reference.dimension.scale.8",
-      height: "dic.reference.dimension.scale.8",
+      width: 24,
+      height: 24,
       color: "dic.system.color.impression.primary",
       "& .checkmark": {
         color: "dic.system.color.impression.onPrimaryContainer",
@@ -48,8 +48,8 @@ export const CheckboxStyle = sva({
       },
     },
     uncheckedIcon: {
-      width: "dic.reference.dimension.scale.8",
-      height: "dic.reference.dimension.scale.8",
+      width: 24,
+      height: 24,
       color: "dic.system.color.component.outlineVariant",
       _disabled: {
         color: "dic.system.color.interaction.disabledOnSurface",
@@ -61,7 +61,6 @@ export const CheckboxStyle = sva({
     },
     itemText: {
       color: "dic.system.color.component.onSurface",
-      lineHeight: "dic.reference.typography.lineHeight.normal",
       textStyle: "dic.system.typography.body.medium_compact",
       _expanded: {
         textStyle: "dic.system.typography.body.medium_expanded",
@@ -73,7 +72,6 @@ export const CheckboxStyle = sva({
     helperText: {
       color: "dic.system.color.component.onSurfaceVariant",
       marginTop: "dic.system.dimension.spacing.twoExtraSmall",
-      lineHeight: "dic.reference.typography.lineHeight.tight",
       textStyle: "dic.system.typography.body.extraSmall_compact",
       _expanded: {
         textStyle: "dic.system.typography.body.extraSmall_expanded",
