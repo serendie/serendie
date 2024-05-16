@@ -13,7 +13,8 @@ const meta: Meta<typeof TextField> = {
     required: true,
     disabled: false,
     invalid: false,
-    invalidMessage: "",
+    invalidMessage: "入力の誤りに関するテキスト",
+    description: "入力方法などに関するヘルプテキスト",
     placeholder: "プレースホルダー",
   },
 };
@@ -32,6 +33,5 @@ export const Disabled: Story = {
 export const HasError: Story = {
   args: {
     invalid: true,
-    invalidMessage: "エラーメッセージ",
   },
 };
