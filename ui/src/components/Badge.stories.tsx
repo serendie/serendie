@@ -18,6 +18,10 @@ const meta: Meta<typeof Badge> = {
       defaultValue: "gray",
     },
   },
+  args: {
+    children: "Badge",
+    color: "gray",
+  },
 };
 
 export default meta;
@@ -25,24 +29,18 @@ type Story = StoryObj<typeof Badge>;
 
 export const Small: Story = {
   args: {
-    children: "Label",
     size: "small",
-    color: "gray",
   },
 };
 
 export const Medium: Story = {
   args: {
-    children: "Label",
     size: "medium",
-    color: "gray",
   },
 };
 
 export const Large: Story = {
   args: {
-    children: "Label",
     size: "large",
-    color: "gray",
   },
 };

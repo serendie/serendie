@@ -1,3 +1,4 @@
+import { DetailedHTMLProps, HTMLAttributes } from "react";
 import { css, cva, cx } from "../../styled-system/css";
 import {
   HTMLStyledProps,
@@ -8,17 +9,10 @@ import { StyledVariantProps } from "../../styled-system/types";
 
 export const BadgeStyle = cva({
   base: {
-    height: "24px",
     display: "inline-flex",
     alignItems: "center",
-    pr: "dic.system.dimension.spacing.extraSmall",
-    pl: "dic.system.dimension.spacing.extraSmall",
     borderRadius: "dic.system.dimension.radius.extraLarge",
     bg: "dic.system.color.interaction.hoveredVariant",
-    textStyle: "dic.system.typography.label.medium_compact",
-    expanded: {
-      textStyle: "dic.system.typography.label.large_expanded",
-    },
   },
   variants: {
     size: {
@@ -31,7 +25,15 @@ export const BadgeStyle = cva({
           textStyle: "dic.system.typography.label.small_expanded",
         },
       },
-      medium: {},
+      medium: {
+        height: "24px",
+        pr: "dic.system.dimension.spacing.extraSmall",
+        pl: "dic.system.dimension.spacing.extraSmall",
+        textStyle: "dic.system.typography.label.medium_compact",
+        expanded: {
+          textStyle: "dic.system.typography.label.medium_expanded",
+        },
+      },
       large: {
         height: "32px",
         pr: "dic.system.dimension.spacing.medium",
@@ -99,14 +101,12 @@ export const BadgeStyle = cva({
   },
 });
 
-const StyledBadge = styled("button", BadgeStyle);
+const StyledBadge = styled("span", BadgeStyle);
 
 type BadgeProps = HTMLStyledProps<"span"> &
   StyledVariantProps<typeof StyledBadge>;
 
-export const Badge: React.FC<
-  BadgeProps & { ref?: React.Ref<HTMLButtonElement> }
-> = ({ children, ...props }) => {
+export const Badge: React.FC<BadgeProps> = ({ children, ...props }) => {
   const [cssProps, componentProps] = splitCssProps(props);
   const { css: cssPropsCss, ...cssPropsRest } = cssProps;
 
