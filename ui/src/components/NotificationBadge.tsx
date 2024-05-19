@@ -8,9 +8,6 @@ const NotificationBadgeStyle = cva({
     justifyContent: "center",
     height: 16,
     minWidth: 16,
-    top: "-5px",
-    right: "-5px",
-    backgroundColor: "dic.system.color.impression.negative",
     color: "dic.system.color.impression.onNegative",
     borderRadius: "dic.system.dimension.radius.full",
     paddingX: "dic.system.dimension.spacing.twoExtraSmall",
@@ -29,6 +26,12 @@ const NotificationBadgeStyle = cva({
         backgroundColor: "dic.system.color.impression.primary",
       },
     },
+    noNumber: {
+      true: {
+        minW: 8,
+        height: 8,
+      },
+    },
   },
   defaultVariants: {
     variant: "primary",
@@ -43,19 +46,14 @@ export type NotificationBadgeProps = {
 
 export const NotificationBadge: React.FC<NotificationBadgeProps> = ({
   count,
-  noNumber,
   ...props
 }) => {
   const [cssProps, componentProps] =
     NotificationBadgeStyle.splitVariantProps(props);
   const styles = NotificationBadgeStyle(cssProps);
 
-  if (noNumber) {
-    return (
-      <div>
-        <div className={styles} {...componentProps}></div>
-      </div>
-    );
+  if (props.noNumber) {
+    return <div className={styles} {...componentProps}></div>;
   }
 
   if (count === 0) {
@@ -63,12 +61,10 @@ export const NotificationBadge: React.FC<NotificationBadgeProps> = ({
   }
 
   return (
-    <div>
-      <div className={styles} {...componentProps}>
-        <span style={{ height: 11 }}>
-          {count > 99 ? "99+" : count > 0 ? count : null}
-        </span>
-      </div>
+    <div className={styles} {...componentProps}>
+      <span style={{ height: 11 }}>
+        {count > 99 ? "99+" : count > 0 ? count : null}
+      </span>
     </div>
   );
 };
