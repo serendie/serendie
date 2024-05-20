@@ -27,7 +27,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@ark-ui/react": "^2.2.2",
+    "@ark-ui/react": "^3.0.0",
     "@pandacss/dev": "^0.30.1",
     "@spread/design-token": "^0.0.0",
     "@storybook/addon-essentials": "^8.0.5",
