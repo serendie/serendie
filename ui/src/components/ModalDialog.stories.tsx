@@ -10,7 +10,12 @@ const meta: Meta<typeof ModalDialog> = {
       expanded: true,
     },
   },
-  args: {},
+  args: {
+    title: "Dialog Title",
+    closeButtonLabel: "Close",
+    buttonLabel: "Button",
+    children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam",
+  },
 };
 
 export default meta;
@@ -23,14 +28,13 @@ const DialogOpenTemplate = (args: ModalDialogProps) => {
       <Button onClick={() => setIsOpen(true)}>Open Dialog</Button>
       <ModalDialog
         {...args}
-        title="Dialog Title"
-        closeButtonLabel="Close"
-        buttonLabel="Button"
-        onButtonClick={() => setIsOpen(false)}
         isOpen={isOpen}
-        onOpenChange={(e) => setIsOpen(e.open)}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-      </ModalDialog>
+        onOpenChange={(e) => setIsOpen(e.open)}
+        onButtonClick={() => {
+          alert("Button clicked");
+          setIsOpen(false);
+        }}
+      />
     </>
   );
 };

@@ -5,7 +5,14 @@ import { RecipeVariantProps, css, sva } from "../../styled-system/css";
 import { Button } from "./Button";
 
 const ModalDialogStyle = sva({
-  slots: ["root", "content", "title", "description", "closeTrigger"],
+  slots: [
+    "root",
+    "content",
+    "title",
+    "description",
+    "buttonWrapper",
+    "closeTrigger",
+  ],
 });
 
 type Props = {
@@ -23,7 +30,10 @@ export type ModalDialogProps = Props &
 
 export const ModalDialog: React.FC<ModalDialogProps> = ({
   isOpen,
+  title,
   closeButtonLabel,
+  buttonLabel,
+  onButtonClick,
   children,
   ...rest
 }) => {
@@ -33,11 +43,14 @@ export const ModalDialog: React.FC<ModalDialogProps> = ({
         <Dialog.Backdrop />
         <Dialog.Positioner>
           <Dialog.Content>
-            <Dialog.Title>Dialog Title</Dialog.Title>
+            <Dialog.Title>{title}</Dialog.Title>
             <Dialog.Description>{children}</Dialog.Description>
-            <Dialog.CloseTrigger asChild>
-              <Button>{closeButtonLabel || "閉じる"}</Button>
-            </Dialog.CloseTrigger>
+            <div>
+              <Dialog.CloseTrigger asChild>
+                <Button>{closeButtonLabel || "閉じる"}</Button>
+              </Dialog.CloseTrigger>
+              <Button onClick={onButtonClick}>{buttonLabel}</Button>
+            </div>
           </Dialog.Content>
         </Dialog.Positioner>
       </Portal>
