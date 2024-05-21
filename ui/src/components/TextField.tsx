@@ -106,6 +106,8 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
       invalid,
       type = "text",
       disabled,
+      onChange,
+      value,
       ...props
     },
     ref
@@ -115,9 +117,24 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
     const [styleProps, selectProps] = TextFieldStyle.splitVariantProps(props);
     const styles = TextFieldStyle(styleProps);
     const showMessageField = description || (invalid && invalidMessage);
+    const [_value, setValue] = React.useState(props.defaultValue || value);
+
     const resetValue = () => {
+      const e = {
+        target: { value: "" },
+      } as React.ChangeEvent<HTMLInputElement>;
+
+      onValueChange(e);
+      props.onReset?.(e);
       if (inputRef.current) {
         inputRef.current.value = "";
+      }
+    };
+
+    const onValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setValue(e.target.value);
+      if (onChange) {
+        onChange(e);
       }
     };
 
@@ -139,8 +156,10 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
             placeholder={placeholder}
             required={required}
             disabled={disabled}
+            value={value}
             type={type}
             className={styles.input}
+            onChange={onValueChange}
             {...selectProps}
           />
           <div className={styles.icon}>
@@ -153,11 +172,14 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
                   })}>
                   <SvgIcon icon="error" size="20" />
                 </span>
-              ) : (
-                <button onClick={resetValue} aria-label="値をクリア">
+              ) : _value ? (
+                <button
+                  className={css({ cursor: "pointer" })}
+                  onClick={resetValue}
+                  aria-label="値をクリア">
                   <SvgIcon icon="close" size="20" />
                 </button>
-              ))}
+              ) : null)}
           </div>
         </div>
         {showMessageField && (
