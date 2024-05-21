@@ -1,21 +1,21 @@
-import { RadioGroup, RadioGroupItemProps } from "@ark-ui/react";
+import { Checkbox as ArkCheckbox, CheckboxRootProps } from "@ark-ui/react";
 import { RecipeVariantProps, cx, sva } from "../../styled-system/css";
 import { CSSProperties } from "react";
-import RadioChecked from "../assets/radioChecked.svg?react";
-import RadioUnChecked from "../assets/radioUnchecked.svg?react";
+import CheckboxCheckedIcon from "../assets/checkboxChecked.svg?react";
+import CheckboxUncheckedIcon from "../assets/checkboxUnchecked.svg?react";
 
-export const RadioButtonStyle = sva({
+export const CheckboxStyle = sva({
   slots: [
-    "item",
+    "root",
     "itemControl",
     "checkedIcon",
-    "unCheckedIcon",
+    "uncheckedIcon",
     "itemTextGroup",
     "itemText",
     "helperText",
   ],
   base: {
-    item: {
+    root: {
       display: "flex",
       alignItems: "center",
       gap: "dic.system.dimension.spacing.medium",
@@ -26,22 +26,36 @@ export const RadioButtonStyle = sva({
     itemControl: {
       flexShrink: 0,
       ".group:has(:focus-visible) &": {
-        backgroundColor: "dic.system.color.interaction.selectedSurface",
-        borderRadius: "dic.system.dimension.radius.full",
-      },
+        outlineStyle: "solid",
+        outlineOffset: "-2px",
+        outlineWidth: "1.5px",
+        outlineColor: "dic.system.color.impression.primary",
+        borderRadius: "dic.system.dimension.radius.small",
+      }
     },
     checkedIcon: {
+      width: 24,
+      height: 24,
       color: "dic.system.color.impression.primary",
+      "& .checkmark": {
+        color: "dic.system.color.impression.onPrimaryContainer",
+      },
       _disabled: {
         color:
           "color-mix(in srgb, {colors.dic.system.color.impression.primary}, {colors.dic.system.color.interaction.hoveredOnPrimary});",
+        "& .checkmark": {
+          color:
+            "color-mix(in srgb, {colors.dic.system.color.interaction.disabled}, {colors.dic.system.color.impression.onPrimaryContainer});",
+        },
       },
     },
-    unCheckedIcon: {
-      color: "dic.system.color.component.outlineVariant",
+    uncheckedIcon: {
+      width: 24,
+      height: 24,
+      color: "dic.system.color.component.outline",
       _disabled: {
         color:
-          "color-mix(in srgb, {colors.dic.system.color.component.outlineVariant}, {colors.dic.system.color.interaction.hoveredOnPrimary});",
+          "color-mix(in srgb, {colors.dic.system.color.component.outline}, {colors.dic.system.color.interaction.hoveredOnPrimary});",
       },
     },
     itemTextGroup: {
@@ -72,55 +86,55 @@ export const RadioButtonStyle = sva({
   },
 });
 
-type RadioButtonItemProps = {
+type CheckboxItemProps = {
   label: string;
   helperText?: string;
 };
 
-export type RadioButtonProps = RadioGroupItemProps &
-  RecipeVariantProps<typeof RadioButtonStyle> &
-  RadioButtonItemProps;
+export type CheckboxProps = CheckboxRootProps &
+  RecipeVariantProps<typeof CheckboxStyle> &
+  CheckboxItemProps;
 
-export const RadioButton: React.FC<RadioButtonProps> = ({
+export const Checkbox: React.FC<CheckboxProps> = ({
   value,
   label,
   helperText,
   ...props
 }) => {
-  const [cssProps, radioProps] = RadioButtonStyle.splitVariantProps(props);
-  const styles = RadioButtonStyle(cssProps);
-  const itemStyle: CSSProperties = helperText
+  const [cssProps, checkboxProps] = CheckboxStyle.splitVariantProps(props);
+  const styles = CheckboxStyle(cssProps);
+  const rootStyle: CSSProperties = helperText
     ? { alignItems: "flex-start" }
     : {};
 
   return (
-    <RadioGroup.Item
+    <ArkCheckbox.Root
       value={value}
-      className={cx("group", styles.item)}
-      style={itemStyle}
-      {...radioProps}
+      className={cx("group", styles.root)}
+      style={rootStyle}
+      {...checkboxProps}
     >
       {(state) => (
         <>
-          <RadioGroup.ItemControl className={styles.itemControl} asChild>
+          <ArkCheckbox.Control className={styles.itemControl} asChild>
             {state.isChecked ? (
-              <RadioChecked className={styles.checkedIcon} />
+              <CheckboxCheckedIcon className={styles.checkedIcon} />
             ) : (
-              <RadioUnChecked className={styles.unCheckedIcon} />
+              <CheckboxUncheckedIcon className={styles.uncheckedIcon} />
             )}
-          </RadioGroup.ItemControl>
+          </ArkCheckbox.Control>
           <div className={styles.itemTextGroup}>
-            <RadioGroup.ItemText className={styles.itemText}>
+            <ArkCheckbox.Label className={styles.itemText}>
               {label}
-            </RadioGroup.ItemText>
+            </ArkCheckbox.Label>
             {helperText && (
-              <RadioGroup.ItemText className={styles.helperText}>
+              <ArkCheckbox.Label className={styles.helperText}>
                 {helperText}
-              </RadioGroup.ItemText>
+              </ArkCheckbox.Label>
             )}
           </div>
         </>
       )}
-    </RadioGroup.Item>
+    </ArkCheckbox.Root>
   );
 };
