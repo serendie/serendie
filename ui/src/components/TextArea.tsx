@@ -51,10 +51,10 @@ const TextAreaStyle = sva({
     },
     textarea: {
       outline: "none",
-      paddingTop: "dic.system.dimension.spacing.extraSmall",
-      paddingRight: "dic.system.dimension.spacing.small",
-      paddingBottom: "dic.system.dimension.spacing.extraSmall",
-      paddingLeft: "dic.system.dimension.spacing.small",
+      marginTop: "dic.system.dimension.spacing.extraSmall",
+      marginRight: "dic.system.dimension.spacing.small",
+      marginBottom: "dic.system.dimension.spacing.extraSmall",
+      marginLeft: "dic.system.dimension.spacing.small",
       _disabled: {
         cursor: "not-allowed",
       },
