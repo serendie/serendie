@@ -124,8 +124,8 @@ const StyledButton = styled("button", ButtonStyle);
 
 // leftIconとrightIconを両方指定できないようにする
 type ExclusiveIconProps =
-  | ({ leftIcon: React.ReactNode } & { rightIcon?: never })
-  | ({ leftIcon?: never } & { rightIcon: React.ReactNode });
+  | ({ leftIcon?: React.ReactNode } & { rightIcon?: never })
+  | ({ leftIcon?: never } & { rightIcon?: React.ReactNode });
 
 type ButtonProps = HTMLStyledProps<"button"> &
   StyledVariantProps<typeof StyledButton> &
