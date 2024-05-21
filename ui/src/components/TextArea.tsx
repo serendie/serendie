@@ -52,8 +52,9 @@ const TextAreaStyle = sva({
     textarea: {
       outline: "none",
       marginTop: "dic.system.dimension.spacing.extraSmall",
-      marginRight: "dic.system.dimension.spacing.small",
-      marginBottom: "dic.system.dimension.spacing.extraSmall",
+      // NOTE: Figmaの値と違うがリサイズハンドルを考慮して小さくしている
+      marginRight: "dic.system.dimension.spacing.twoExtraSmall",
+      marginBottom: "dic.system.dimension.spacing.twoExtraSmall",
       marginLeft: "dic.system.dimension.spacing.small",
       _disabled: {
         cursor: "not-allowed",
