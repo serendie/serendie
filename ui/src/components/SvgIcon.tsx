@@ -5,6 +5,7 @@ import close from "@material-design-icons/svg/round/close.svg?react";
 import face from "@material-design-icons/svg/round/face.svg?react";
 import search from "@material-design-icons/svg/round/search.svg?react";
 import expandMore from "@material-design-icons/svg/round/expand_more.svg?react";
+import error from "@material-design-icons/svg/round/error.svg?react";
 import { css } from "../../styled-system/css";
 
 const icons = {
@@ -15,6 +16,7 @@ const icons = {
   face,
   search,
   expandMore,
+  error,
 };
 
 export type SvgIconName = keyof typeof icons;
