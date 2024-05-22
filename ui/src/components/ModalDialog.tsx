@@ -75,8 +75,8 @@ type Props = {
   isOpen: boolean;
   title: string;
   children: React.ReactNode;
-  closeButtonLabel?: string;
-  buttonLabel: string;
+  cancelButtonLabel?: string;
+  submitButtonLabel: string;
   onButtonClick: () => void;
 };
 
@@ -87,8 +87,8 @@ export type ModalDialogProps = Props &
 export const ModalDialog: React.FC<ModalDialogProps> = ({
   isOpen,
   title,
-  closeButtonLabel,
-  buttonLabel,
+  cancelButtonLabel,
+  submitButtonLabel,
   onButtonClick,
   children,
   ...rest
@@ -107,10 +107,10 @@ export const ModalDialog: React.FC<ModalDialogProps> = ({
               </Dialog.Description>
             </div>
             <div className={styles.buttonWrapper}>
-              <Button onClick={onButtonClick}>{buttonLabel}</Button>
+              <Button onClick={onButtonClick}>{submitButtonLabel}</Button>
               <Dialog.CloseTrigger asChild>
                 <Button styleType="ghost">
-                  {closeButtonLabel || "閉じる"}
+                  {cancelButtonLabel || "閉じる"}
                 </Button>
               </Dialog.CloseTrigger>
             </div>
