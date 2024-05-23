@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react(), svgr()],
   build: {
     lib: {
-      entry: ["src/index.ts", "src/styles.css"],
+      entry: ["src/index.ts", "src/font.ts", "src/styles.css"],
       name: "Spread",
     },
     rollupOptions: {
