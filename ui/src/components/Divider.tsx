@@ -1,66 +1,42 @@
-import { css, cva, cx } from "../../styled-system/css";
-import {
-  HTMLStyledProps,
-  splitCssProps,
-  styled,
-} from "../../styled-system/jsx";
-import { StyledVariantProps } from "../../styled-system/types";
+import { cva } from "../../styled-system/css";
+import { styled } from "../../styled-system/jsx";
 
 export const DividerStyle = cva({
   base: {
     border: "none",
   },
   variants: {
-    colorType: {
+    color: {
       light: {
-        bg: "dic.reference.color.scale.gray.200",
+        borderColor: "dic.reference.color.scale.gray.200",
       },
       normal: {
-        bg: "dic.reference.color.scale.gray.300",
+        borderColor: "dic.reference.color.scale.gray.300",
       },
       dark: {
-        bg: "dic.reference.color.scale.gray.400",
+        borderColor: "dic.system.color.component.outlineVariant",
       },
     },
     type: {
       horizontal: {
         width: "100%",
-        height: "1px",
+        height: "dic.reference.dimension.scale.1",
+        borderBottom: "solid",
+        borderWidth: "dic.system.dimension.border.medium",
       },
       vertical: {
-        width: "1px",
+        borderLeft: "solid",
+        width: "dic.reference.dimension.scale.1",
+        borderWidth: "dic.system.dimension.border.medium",
         height: "100%",
         minHeight: "10px",
       },
     },
   },
   defaultVariants: {
-    colorType: "normal",
+    color: "normal",
     type: "horizontal",
   },
 });
 
-type Props = {
-  type?: "horizontal" | "vertical";
-};
-
-const StyledDivider = styled("hr", DividerStyle);
-
-type DividerProps = Props &
-  HTMLStyledProps<"hr"> &
-  StyledVariantProps<typeof StyledDivider>;
-
-export const Divider: React.FC<DividerProps> = ({ ...props }) => {
-  const [cssProps, componentProps] = splitCssProps(props);
-  const { css: cssPropsCss, ...cssPropsRest } = cssProps;
-
-  return (
-    <StyledDivider
-      className={cx(
-        DividerStyle(componentProps),
-        css(cssPropsRest, cssPropsCss)
-      )}
-      {...props}
-    ></StyledDivider>
-  );
-};
+export const Divider = styled("hr", DividerStyle);

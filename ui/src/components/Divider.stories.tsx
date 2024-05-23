@@ -7,8 +7,8 @@ const meta: Meta<typeof Divider> = {
     controls: { expanded: true },
   },
   argTypes: {
-    colorType: {
-      options: DividerStyle.variantMap.colorType,
+    color: {
+      options: DividerStyle.variantMap.color,
       control: { type: "select" },
       defaultValue: "normal",
     },
@@ -19,7 +19,7 @@ const meta: Meta<typeof Divider> = {
     },
   },
   args: {
-    colorType: "normal",
+    color: "normal",
   },
 };
 
