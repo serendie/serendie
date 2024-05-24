@@ -25,9 +25,8 @@ const meta: Meta<typeof Banner> = {
     },
   },
   args: {
-    icon: "add",
-    title: "タイトルタイトルタイトルタ",
-    text: "補足テキスト補足テキスト補足テキスト補足テキ",
+    title: "タイトルテキストを投入",
+    text: "補足テキストを投入",
   },
 };
 

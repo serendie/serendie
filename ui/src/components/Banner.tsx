@@ -77,10 +77,18 @@ export const Banner: React.FC<
   const [bannerProps, cssProps] = BannerStyle.splitVariantProps(props);
   const classes = BannerStyle(bannerProps);
 
+  const variantType = bannerProps.type || "information";
+  const defaultIcon: SvgIconName =
+    variantType === "error"
+      ? "error_fill"
+      : variantType === "warning"
+      ? "error"
+      : "info";
+
   return (
     <div className={cx(classes.container, css(cssProps))} {...props}>
       <div className={classes.icon}>
-        <SvgIcon icon={icon} size={"24px"} />
+        <SvgIcon icon={icon || defaultIcon} size={"24px"} />
       </div>
       <h2 className={classes.title}>{title}</h2>
       <p className={classes.text}>{text}</p>
