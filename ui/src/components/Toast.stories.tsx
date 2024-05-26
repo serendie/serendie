@@ -21,7 +21,6 @@ export const Default: Story = {
           toaster.create({
             title: "テキストテキストテキスト",
             duration: 3000,
-            type: "info",
           })
         }
       >

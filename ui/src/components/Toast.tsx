@@ -4,12 +4,11 @@ import { SvgIcon } from "..";
 import { SvgIconName } from "./SvgIcon";
 
 export const ToastStyle = sva({
-  slots: ["root", "textGroup", "icon", "text"],
+  slots: ["root", "textGroup", "text"],
   base: {
     root: {
       display: "flex",
       alignItems: "center",
-      background: "dic.system.color.component.inverseSurface",
       paddingX: "dic.system.dimension.spacing.extraLarge",
       borderRadius: "dic.system.dimension.radius.medium",
       boxShadow: "dic.system.elevation.shadow.level3",
@@ -20,13 +19,7 @@ export const ToastStyle = sva({
       alignItems: "center",
       gap: "dic.system.dimension.spacing.twoExtraSmall",
     },
-    icon: {
-      width: 24,
-      height: 24,
-      color: "dic.system.color.impression.positive",
-    },
     text: {
-      color: "dic.system.color.component.inverseOnSurface",
       textStyle: "dic.system.typography.body.small_compact",
       _expanded: {
         textStyle: "dic.system.typography.body.small_expanded",
@@ -66,14 +59,14 @@ const [Toast, toaster] = createToaster({
     const type = toast.type === "error" ? "error" : "default";
     const styles = ToastStyle({ variant: type });
 
-    let iconType: SvgIconName | undefined = undefined;
-    if (toast.type === "success") {
-      iconType = "checkCircle";
-    } else if (toast.type === "custom") {
-      iconType = "check";
-    } else if (toast.type === "error") {
-      iconType = "error";
-    }
+    type ToastType = "success" | "custom" | "error"
+    const iconMap: { [key in ToastType]?: SvgIconName  } = {
+      success: "checkCircle",
+      custom: "check",
+      error: "error",
+    };
+
+    const iconType: SvgIconName | undefined = iconMap[toast.type as ToastType]
 
     return (
       <ArkToast.Root key={toast.rootProps.id} className={styles.root}>
