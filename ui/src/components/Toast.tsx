@@ -1,6 +1,7 @@
 import { sva } from "../../styled-system/css";
 import { Toast as ArkToast, createToaster } from "@ark-ui/react";
-import CheckIcon from "../assets/check.svg?react";
+import { SvgIcon } from "..";
+import { SvgIconName } from "./SvgIcon";
 
 export const ToastStyle = sva({
   slots: ["root", "textGroup", "icon", "text"],
@@ -32,17 +33,52 @@ export const ToastStyle = sva({
       },
     },
   },
+  variants: {
+    variant: {
+      default: {
+        root: {
+          background: "dic.system.color.component.inverseSurface",
+        },
+        text: {
+          color: "dic.system.color.component.inverseOnSurface",
+        },
+      },
+      error: {
+        root: {
+          background: "dic.system.color.impression.negativeContainer",
+          borderColor: "dic.system.color.impression.negative",
+          borderWidth: 1,
+        },
+        text: {
+          color: "dic.system.color.impression.negative",
+        },
+      },
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+  }
 });
 
 const [Toast, toaster] = createToaster({
   placement: "bottom",
   render: (toast) => {
-    const styles = ToastStyle();
+    const type = toast.type === "error" ? "error" : "default";
+    const styles = ToastStyle({ variant: type });
+
+    let iconType: SvgIconName | undefined = undefined;
+    if (toast.type === "success") {
+      iconType = "checkCircle";
+    } else if (toast.type === "custom") {
+      iconType = "check";
+    } else if (toast.type === "error") {
+      iconType = "error";
+    }
 
     return (
       <ArkToast.Root key={toast.rootProps.id} className={styles.root}>
         <div className={styles.textGroup}>
-          {toast.type === "success" && <CheckIcon className={styles.icon} />}
+          {iconType && <SvgIcon icon={iconType} size="24px" />}
           <ArkToast.Title className={styles.text}>{toast.title}</ArkToast.Title>
         </div>
       </ArkToast.Root>

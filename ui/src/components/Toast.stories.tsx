@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Toast, toaster } from "./Toast";
 import { Button } from "./Button";
+import { Stack } from "../../styled-system/jsx";
 
 const meta: Meta<typeof Toast> = {
   component: Toast,
@@ -18,8 +19,9 @@ export const Default: Story = {
         size="medium"
         onClick={() =>
           toaster.create({
-            title: "トーストトーストトースト",
+            title: "テキストテキストテキスト",
             duration: 3000,
+            type: "info",
           })
         }
       >
@@ -33,13 +35,48 @@ export const Default: Story = {
 export const WithIcon: Story = {
   render: () => (
     <div>
+      <Stack direction="row">
+        <Button
+          size="medium"
+          onClick={() =>
+            toaster.create({
+              title: "テキストテキストテキスト",
+              duration: 3000,
+              type: "success",
+            })
+          }
+        >
+          Success Toast
+        </Button>
+        <Button
+          size="medium"
+          onClick={() =>
+            toaster.create({
+              title: "テキストテキストテキスト",
+              duration: 3000,
+              type: "custom",
+            })
+          }
+        >
+          Check Toast
+        </Button>
+      </Stack>
+
+      <Toast />
+    </div>
+  ),
+};
+
+export const Error: Story = {
+  render: () => (
+    <div>
       <Button
         size="medium"
         onClick={() =>
           toaster.create({
-            title: "トーストトーストトースト",
+            title: "テキストテキストテキスト",
             duration: 3000,
-            type: "success",
+            type: "error",
           })
         }
       >
