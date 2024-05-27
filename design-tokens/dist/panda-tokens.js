@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 13 May 2024 09:08:20 GMT
+ * Generated on Mon, 27 May 2024 14:24:35 GMT
  */
 
 export default {
@@ -487,7 +487,7 @@ export default {
         "typography": {
           "fontFamily": {
             "primary": {
-              "value": "Noto Sans JP"
+              "value": "inherit"
             },
             "monospace": {
               "value": "Noto Sans Mono"
@@ -754,7 +754,7 @@ export default {
               "value": {
                 "fontSize": "37px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -763,7 +763,7 @@ export default {
               "value": {
                 "fontSize": "56px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -772,7 +772,7 @@ export default {
               "value": {
                 "fontSize": "43px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -781,7 +781,7 @@ export default {
               "value": {
                 "fontSize": "64px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -792,7 +792,7 @@ export default {
               "value": {
                 "fontSize": "28px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -801,7 +801,7 @@ export default {
               "value": {
                 "fontSize": "37px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -810,7 +810,7 @@ export default {
               "value": {
                 "fontSize": "56px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -819,7 +819,7 @@ export default {
               "value": {
                 "fontSize": "21px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -828,7 +828,7 @@ export default {
               "value": {
                 "fontSize": "26px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -837,7 +837,7 @@ export default {
               "value": {
                 "fontSize": "32px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -848,7 +848,7 @@ export default {
               "value": {
                 "fontSize": "16px",
                 "fontWeight": 700,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -857,7 +857,7 @@ export default {
               "value": {
                 "fontSize": "19px",
                 "fontWeight": 700,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -866,7 +866,7 @@ export default {
               "value": {
                 "fontSize": "22px",
                 "fontWeight": 700,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -875,7 +875,7 @@ export default {
               "value": {
                 "fontSize": "14px",
                 "fontWeight": 700,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -884,7 +884,7 @@ export default {
               "value": {
                 "fontSize": "16px",
                 "fontWeight": 700,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -893,7 +893,7 @@ export default {
               "value": {
                 "fontSize": "18px",
                 "fontWeight": 700,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -904,7 +904,7 @@ export default {
               "value": {
                 "fontSize": "12px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.4,
                 "letterSpacing": "0px"
               }
@@ -913,7 +913,7 @@ export default {
               "value": {
                 "fontSize": "14px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -922,7 +922,7 @@ export default {
               "value": {
                 "fontSize": "16px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -931,7 +931,7 @@ export default {
               "value": {
                 "fontSize": "19px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -940,7 +940,7 @@ export default {
               "value": {
                 "fontSize": "12px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.4,
                 "letterSpacing": "0px"
               }
@@ -949,7 +949,7 @@ export default {
               "value": {
                 "fontSize": "13px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -958,7 +958,7 @@ export default {
               "value": {
                 "fontSize": "14px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -967,7 +967,7 @@ export default {
               "value": {
                 "fontSize": "16px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1.6,
                 "letterSpacing": "0px"
               }
@@ -978,7 +978,7 @@ export default {
               "value": {
                 "fontSize": "11px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1,
                 "letterSpacing": "0px"
               }
@@ -987,7 +987,7 @@ export default {
               "value": {
                 "fontSize": "12px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1,
                 "letterSpacing": "0px"
               }
@@ -996,7 +996,7 @@ export default {
               "value": {
                 "fontSize": "14px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1,
                 "letterSpacing": "0px"
               }
@@ -1005,7 +1005,7 @@ export default {
               "value": {
                 "fontSize": "16px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1,
                 "letterSpacing": "0px"
               }
@@ -1014,7 +1014,7 @@ export default {
               "value": {
                 "fontSize": "11px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1,
                 "letterSpacing": "0px"
               }
@@ -1023,7 +1023,7 @@ export default {
               "value": {
                 "fontSize": "12px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1,
                 "letterSpacing": "0px"
               }
@@ -1032,7 +1032,7 @@ export default {
               "value": {
                 "fontSize": "13px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1,
                 "letterSpacing": "0px"
               }
@@ -1041,7 +1041,7 @@ export default {
               "value": {
                 "fontSize": "14px",
                 "fontWeight": 400,
-                "fontFamily": "Noto Sans JP",
+                "fontFamily": "inherit",
                 "lineHeight": 1,
                 "letterSpacing": "0px"
               }
