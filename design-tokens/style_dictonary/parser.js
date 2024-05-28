@@ -10,6 +10,7 @@ export const SpreadParser = {
       // defaultの場合はpostfixを付与しない
       if (postfix !== "default") return appendPostfixToValueWalk(obj, postfix);
     }
+    replaceFontFamily(obj);
     return obj;
   },
 };
@@ -22,6 +23,27 @@ function appendPostfixToValueWalk(obj, postfix) {
         ret[key + "_" + postfix] = appendPostfixToValueWalk(obj[key], postfix);
       } else {
         ret[key] = appendPostfixToValueWalk(obj[key], postfix);
+      }
+    }
+  } else {
+    return obj;
+  }
+  return ret;
+}
+
+function replaceFontFamily(obj) {
+  const ret = {};
+  if (typeof obj === "object") {
+    if (obj.$type === "fontFamily" && obj.value) {
+      // これ以上探索する必要がないので$valueのみ置換してobjを返却
+      if (obj.value === "Noto Sans JP") {
+        // ui側でhtmlのfont-familyを指定しているので、ここではinheritに置換
+        obj.value = `inherit`;
+      }
+      return obj;
+    } else {
+      for (const key in obj) {
+        ret[key] = replaceFontFamily(obj[key]);
       }
     }
   } else {
