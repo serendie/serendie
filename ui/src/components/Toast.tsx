@@ -63,7 +63,7 @@ const [Toast, toaster] = createToaster({
     const iconMap: { [key in ToastType]?: SvgIconName  } = {
       success: "checkCircle",
       custom: "check",
-      error: "error",
+      error: "errorFilled",
     };
 
     const iconType: SvgIconName | undefined = iconMap[toast.type as ToastType]

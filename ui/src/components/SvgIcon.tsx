@@ -4,7 +4,7 @@ import checkCircle from "../assets/checkCircle.svg?react";
 import chevron_left from "@material-design-icons/svg/round/chevron_left.svg?react";
 import chevron_right from "@material-design-icons/svg/round/chevron_right.svg?react";
 import close from "@material-design-icons/svg/round/close.svg?react";
-import error from "../assets/error.svg?react";
+import errorFilled from "../assets/errorFilled.svg?react";
 import face from "@material-design-icons/svg/round/face.svg?react";
 import search from "@material-design-icons/svg/round/search.svg?react";
 import expandMore from "@material-design-icons/svg/round/expand_more.svg?react";
@@ -20,7 +20,7 @@ const icons = {
   face,
   search,
   expandMore,
-  error,
+  errorFilled,
 };
 
 export type SvgIconName = keyof typeof icons;
