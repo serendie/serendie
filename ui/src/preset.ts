@@ -18,7 +18,9 @@ export const SpreadPreset: Preset = {
           ...SpreadTokens["spacing"],
         },
       },
-      textStyles: SpreadTypography,
+      textStyles: {
+        ...SpreadTypography,
+      },
     },
   },
 };

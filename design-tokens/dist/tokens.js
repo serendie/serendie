@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 13 May 2024 09:08:20 GMT
+ * Generated on Mon, 27 May 2024 14:24:35 GMT
  */
 
 export default {
@@ -142,7 +142,7 @@ export default {
       },
       "typography": {
         "fontFamily": {
-          "primary": "Noto Sans JP",
+          "primary": "inherit",
           "monospace": "Noto Sans Mono"
         },
         "fontWeight": {
@@ -308,28 +308,28 @@ export default {
           "small_compact": {
             "fontSize": "37px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           },
           "medium_compact": {
             "fontSize": "56px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           },
           "small_expanded": {
             "fontSize": "43px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           },
           "medium_expanded": {
             "fontSize": "64px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           }
@@ -338,42 +338,42 @@ export default {
           "small_compact": {
             "fontSize": "28px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           },
           "medium_compact": {
             "fontSize": "37px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           },
           "large_compact": {
             "fontSize": "56px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           },
           "small_expanded": {
             "fontSize": "21px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           },
           "medium_expanded": {
             "fontSize": "26px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           },
           "large_expanded": {
             "fontSize": "32px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           }
@@ -382,42 +382,42 @@ export default {
           "small_compact": {
             "fontSize": "16px",
             "fontWeight": 700,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           },
           "medium_compact": {
             "fontSize": "19px",
             "fontWeight": 700,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           },
           "large_compact": {
             "fontSize": "22px",
             "fontWeight": 700,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           },
           "small_expanded": {
             "fontSize": "14px",
             "fontWeight": 700,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           },
           "medium_expanded": {
             "fontSize": "16px",
             "fontWeight": 700,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           },
           "large_expanded": {
             "fontSize": "18px",
             "fontWeight": 700,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           }
@@ -426,56 +426,56 @@ export default {
           "extraSmall_compact": {
             "fontSize": "12px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.4,
             "letterSpacing": "0px"
           },
           "small_compact": {
             "fontSize": "14px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           },
           "medium_compact": {
             "fontSize": "16px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           },
           "large_compact": {
             "fontSize": "19px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           },
           "extraSmall_expanded": {
             "fontSize": "12px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.4,
             "letterSpacing": "0px"
           },
           "small_expanded": {
             "fontSize": "13px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           },
           "medium_expanded": {
             "fontSize": "14px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           },
           "large_expanded": {
             "fontSize": "16px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1.6,
             "letterSpacing": "0px"
           }
@@ -484,56 +484,56 @@ export default {
           "small_compact": {
             "fontSize": "11px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1,
             "letterSpacing": "0px"
           },
           "medium_compact": {
             "fontSize": "12px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1,
             "letterSpacing": "0px"
           },
           "large_compact": {
             "fontSize": "14px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1,
             "letterSpacing": "0px"
           },
           "extraLarge_compact": {
             "fontSize": "16px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1,
             "letterSpacing": "0px"
           },
           "small_expanded": {
             "fontSize": "11px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1,
             "letterSpacing": "0px"
           },
           "medium_expanded": {
             "fontSize": "12px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1,
             "letterSpacing": "0px"
           },
           "large_expanded": {
             "fontSize": "13px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1,
             "letterSpacing": "0px"
           },
           "extraLarge_expanded": {
             "fontSize": "14px",
             "fontWeight": 400,
-            "fontFamily": "Noto Sans JP",
+            "fontFamily": "inherit",
             "lineHeight": 1,
             "letterSpacing": "0px"
           }
