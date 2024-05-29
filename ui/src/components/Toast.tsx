@@ -1,5 +1,9 @@
 import { sva } from "../../styled-system/css";
-import { Toast as ArkToast, createToaster } from "@ark-ui/react";
+import {
+  Toast as ArkToast,
+  createToaster,
+  Toaster as ArkToaster,
+} from "@ark-ui/react";
 import { SvgIcon } from "..";
 import { SvgIconName } from "./SvgIcon";
 
@@ -50,33 +54,47 @@ export const ToastStyle = sva({
   },
   defaultVariants: {
     variant: "default",
-  }
-});
-
-const [Toast, toaster] = createToaster({
-  placement: "bottom",
-  render: (toast) => {
-    const type = toast.type === "error" ? "error" : "default";
-    const styles = ToastStyle({ variant: type });
-
-    type ToastType = "success" | "custom" | "error"
-    const iconMap: { [key in ToastType]?: SvgIconName  } = {
-      success: "checkCircle",
-      custom: "check",
-      error: "errorFilled",
-    };
-
-    const iconType: SvgIconName | undefined = iconMap[toast.type as ToastType]
-
-    return (
-      <ArkToast.Root key={toast.rootProps.id} className={styles.root}>
-        <div className={styles.textGroup}>
-          {iconType && <SvgIcon icon={iconType} size="24px" />}
-          <ArkToast.Title className={styles.text}>{toast.title}</ArkToast.Title>
-        </div>
-      </ArkToast.Root>
-    );
   },
 });
 
-export { Toast, toaster };
+const toaster = createToaster({
+  placement: "bottom",
+});
+
+type ToastProps = {
+  toaster: ReturnType<typeof createToaster>;
+};
+
+const Toast: React.FC<ToastProps> = ({ toaster }) => {
+  type ToastType = "success" | "custom" | "error";
+  const iconMap: { [key in ToastType]?: SvgIconName } = {
+    success: "checkCircle",
+    custom: "check",
+    error: "errorFilled",
+  };
+
+  return (
+    <ArkToaster toaster={toaster}>
+      {(toast) => {
+        const type = toast.type === "error" ? "error" : "default";
+        const styles = ToastStyle({ variant: type });
+
+        const iconType: SvgIconName | undefined =
+          iconMap[toast.type as ToastType];
+
+        return (
+          <ArkToast.Root key={toast.id} className={styles.root}>
+            <div className={styles.textGroup}>
+              {iconType && <SvgIcon icon={iconType} size="24px" />}
+              <ArkToast.Title className={styles.text}>
+                {toast.title}
+              </ArkToast.Title>
+            </div>
+          </ArkToast.Root>
+        );
+      }}
+    </ArkToaster>
+  );
+};
+
+export { Toast,  toaster };

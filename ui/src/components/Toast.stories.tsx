@@ -26,7 +26,7 @@ export const Default: Story = {
       >
         Show Toast
       </Button>
-      <Toast />
+      <Toast toaster={toaster} />
     </div>
   ),
 };
@@ -61,7 +61,7 @@ export const WithIcon: Story = {
         </Button>
       </Stack>
 
-      <Toast />
+      <Toast toaster={toaster} />
     </div>
   ),
 };
@@ -81,7 +81,7 @@ export const Error: Story = {
       >
         Show Toast
       </Button>
-      <Toast />
+      <Toast toaster={toaster} />
     </div>
   ),
 };
