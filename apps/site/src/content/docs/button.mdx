@@ -6,9 +6,8 @@ description: 説明テキストがはいります説明テキストがはいり�
 
 import { ButtonSample } from "../../sampleComponents/ButtonSample.tsx";
 import buttonSampleRaw from "../../sampleComponents/ButtonSample.tsx?raw";
+import { Code } from "src/components/Code";
 
-## Sample
+<ButtonSample client:load />
 
-<ButtonSample />
-
-<pre>{buttonSampleRaw}</pre>
+<Code code={buttonSampleRaw} client:load />
