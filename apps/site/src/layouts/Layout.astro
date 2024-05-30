@@ -2,7 +2,7 @@
 import "../index.css";
 import { getCollection } from "astro:content";
 import { siteConfig } from "../../siteConfog";
-import { styled, HStack } from "@spread/ui/jsx";
+import { styled } from "@spread/ui/jsx";
 
 interface Props {
   title: string;
@@ -64,6 +64,16 @@ const Sidebar = styled("aside",{
 
 const Main = styled("main",{
   base: {
+    pt:'dic.system.dimension.spacing.threeExtraLarge',
+    pr:'dic.system.dimension.spacing.fiveExtraLarge',
+    pb:'dic.system.dimension.spacing.threeExtraLarge',
+    pl:'dic.system.dimension.spacing.fiveExtraLarge',
+  }
+});
+
+const MainTitle = styled("h1",{
+  base: {
+    textStyle: "dic.system.typography.headline.large_expanded"
   }
 });
 
@@ -115,7 +125,7 @@ const ListItem = styled("li",{
   </head>
   <Body>
     <Header>
-      <H1>{siteConfig.siteName}</H1>
+      <H1><a href="/">{siteConfig.siteName}</a></H1>
     </Header>
     <MainGrid>
       <Sidebar>
@@ -131,6 +141,7 @@ const ListItem = styled("li",{
         </List>
       </Sidebar>
       <Main>
+        <MainTitle>{title}</MainTitle>
         <slot />
       </Main>
     </MainGrid>
