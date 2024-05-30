@@ -73,7 +73,8 @@ const Main = styled("main",{
 
 const MainTitle = styled("h1",{
   base: {
-    textStyle: "dic.system.typography.headline.large_expanded"
+    textStyle: "dic.system.typography.headline.large_expanded",
+    mb: "dic.system.dimension.spacing.medium",
   }
 });
 
@@ -95,13 +96,17 @@ const List = styled("ul",{
   }
 });
 
-const ListItem = styled("li",{
+const ListItemLink = styled("a",{
   base: {
+    display: "block",
     textStyle: "dic.system.typography.label.extraLarge_expanded",
     pt:'dic.system.dimension.spacing.extraSmall',
     pr: 'dic.system.dimension.spacing.extraLarge',
     pb:'dic.system.dimension.spacing.extraSmall',
     pl: 'dic.system.dimension.spacing.extraLarge',
+    _hover: {
+      backgroundColor: "dic.system.color.interaction.hoverSurface",
+    }
   },
   variants: {
     active: {
@@ -133,9 +138,11 @@ const ListItem = styled("li",{
         <List>
           {
             docs.map((item) => (
-              <ListItem active={item.data.title === title}>
-                <a href={`/docs/${item.slug}`}>{item.data.title}</a>
-              </ListItem>
+              <li>
+                <ListItemLink  href={`/docs/${item.slug}`} active={item.data.title === title}>
+                  {item.data.title}
+                </ListItemLink>
+              </li>
             ))
           }
         </List>

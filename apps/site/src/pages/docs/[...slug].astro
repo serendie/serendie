@@ -1,4 +1,5 @@
 ---
+import { styled } from '@spread/ui/jsx';
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 // 1. Generate a new path for every collection entry
@@ -11,9 +12,37 @@ export async function getStaticPaths() {
 // 2. For your template, you can get the entry directly from the prop
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const SubTitle = styled('h2',{
+  base: {
+    textStyle: "dic.system.typography.title.medium_expanded",
+    mb: "dic.system.dimension.spacing.medium",
+  }
+})
+
+const Description = styled('p',{
+  base: {
+    textStyle: "dic.dic.system.typography.body.extraSmall_expanded",
+    mb: "dic.system.dimension.spacing.medium",
+  }
+})
+
+const Container = styled('div',{
+  base: {
+    maxW: "769px",
+  }
+})
+
 ---
 
 <Layout title={entry.data.title}>
-<h1>{entry.data.title}</h1>
-<Content />
-
+  <Container>
+  {entry.data.subTitle && (
+    <SubTitle>{entry.data.subTitle}</SubTitle>
+  )}
+  {entry.data.description && (
+    <Description>{entry.data.description}</Description>
+  )}
+  <Content />
+</Container>
+</Layout>
