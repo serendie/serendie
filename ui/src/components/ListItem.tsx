@@ -2,6 +2,7 @@ import { CSSProperties } from "react";
 import { SvgIcon } from "..";
 import { sva } from "../../styled-system/css";
 import { SvgIconName } from "./SvgIcon";
+import { NotificationBadge } from "./NotificationBadge";
 
 export const ListItemStyle = sva({
   slots: [
@@ -31,6 +32,7 @@ export const ListItemStyle = sva({
       display: "flex",
       flexDirection: "column",
       gap: "dic.system.dimension.spacing.extraSmall",
+      flexGrow: 1,
     },
     text: {
       textStyle: "dic.system.typography.label.extraLarge_compact",
@@ -38,14 +40,37 @@ export const ListItemStyle = sva({
       _expanded: {
         textStyle: "dic.system.typography.label.extraLarge_expanded",
       },
+      _disabled: {
+        opacity: 0.3,
+      }
     },
     description: {
-      textStyle: "dic.system.typography.body.small_compact",
+      textStyle: "dic.system.typography.body.extraSmall_compact",
       color: "dic.system.color.component.onSurfaceVariant",
       _expanded: {
-        textStyle: "dic.system.typography.body.small_expanded",
+        textStyle: "dic.system.typography.body.extraSmall_expanded",
       },
+      _disabled: {
+        opacity: 0.3,
+      }
     },
+    leftIcon: {
+      flexShrink: 0,
+      _disabled: {
+        opacity: 0.3,
+      }
+    },
+    rightIcon: {
+      flexShrink: 0,
+      _disabled: {
+        opacity: 0.3,
+      }
+    },
+    badge: {
+      flexShrink: 0,
+      height: 24,
+      minW: 24,
+    }
   },
 });
 
@@ -54,31 +79,50 @@ type ListItemProps = {
   description?: string;
   rightIcon?: SvgIconName;
   leftIcon?: SvgIconName;
+  isLargeLeftIcon?: boolean;
   badge?: number;
+  children?: React.ReactNode;
+  disabled?: boolean;
 };
 
 export const ListItem: React.FC<ListItemProps> = ({
   leftIcon,
+  rightIcon,
+  isLargeLeftIcon,
   text,
   description,
+  badge,
+  children,
   ...props
 }) => {
   const styles = ListItemStyle(props);
   const itemStyle: CSSProperties = description
     ? { alignItems: "flex-start" }
     : {};
+  const iconSize = isLargeLeftIcon ? "40px" : "24px";
 
   return (
-    <li className={styles.root} style={itemStyle}>
+    <li className={styles.root} style={itemStyle} {...props}>
       {leftIcon && (
-        <div>
-          <SvgIcon icon={leftIcon} size="24px"/>
+        <div className={styles.leftIcon}>
+          <SvgIcon icon={leftIcon} size={iconSize} />
         </div>
       )}
       <div className={styles.textGroup}>
         <span className={styles.text}>{text}</span>
         <span className={styles.description}>{description}</span>
+        {children}
       </div>
+      {badge && (
+        <div className={styles.badge}>
+          <NotificationBadge count={badge} variant="secondary" />
+        </div>
+      )}
+      {rightIcon && (
+        <div className={styles.rightIcon}>
+          <SvgIcon icon={rightIcon} size="24px" />
+        </div>
+      )}
     </li>
   );
 };
