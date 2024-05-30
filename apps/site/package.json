@@ -10,6 +10,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "storybook": "storybook dev -p 6006",
+    "panda": "panda",
     "build-storybook": "storybook build -o public/storybook"
   },
   "dependencies": {
