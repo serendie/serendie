@@ -1,38 +1,68 @@
 ---
 import { css } from "@spread/ui/css";
-import {Flex} from "@spread/ui/jsx";
-import "../index.css"
+import "../index.css";
 import { getCollection } from "astro:content";
+import { siteConfig } from "../../siteConfog";
+import { Flex, styled } from "../../styled-system/jsx";
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 const docs = await getCollection("docs");
 
+const Header = styled("header",{
+  base: {
+    pt: "dic.system.dimension.spacing.extraLarge",
+    pr: "dic.system.dimension.spacing.threeExtraLarge",
+    pb: "dic.system.dimension.spacing.extraLarge",
+    pl: "dic.system.dimension.spacing.threeExtraLarge",
+    display: "flex",
+    justifyContent: "start",
+    alignItems: "center",
+    borderBottom: "1px solid",
+    borderColor: "dic.system.color.component.outline",
+    borderWidth: "0px 0px dic.system.dimension.border.medium 0px"
+  }
+});
+
+const H1 = styled("h1",{
+  base: {
+    textStyle: "dic.system.typography.title.large_expanded",
+  }
+});
+
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{title}</title>
-	</head>
-	<body class={css({p:5})}>
-		<Flex gap={10}>
-			<aside>
-				<h2 class={css({fontWeight:"bold", mb:5})}>Components</h2>
-				<ul>
-					{docs.map(item =>(<li><a href={`/docs/${item.slug}`}>{item.data.title}</a></li>))}
-				</ul>
-			</aside>
-			<main>
-				<slot />
-			</main>
-		</Flex>
-	</body>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={siteConfig.siteDescirption} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}{title && " | "}{siteConfig.siteName}</title>
+  </head>
+  <body>
+    <Header>
+      <H1>{siteConfig.siteName}</H1>
+    </Header>
+    <Flex gap={10}>
+      <aside>
+        <h2 class={css({ fontWeight: "bold", mb: 5 })}>Components</h2>
+        <ul>
+          {
+            docs.map((item) => (
+              <li>
+                <a href={`/docs/${item.slug}`}>{item.data.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </aside>
+      <main>
+        <slot />
+      </main>
+    </Flex>
+  </body>
 </html>
-
