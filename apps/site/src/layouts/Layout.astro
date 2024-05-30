@@ -1,15 +1,23 @@
 ---
-import { css } from "@spread/ui/css";
 import "../index.css";
 import { getCollection } from "astro:content";
 import { siteConfig } from "../../siteConfog";
-import { Flex, styled } from "../../styled-system/jsx";
+import { styled, HStack } from "@spread/ui/jsx";
+
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
 const docs = await getCollection("docs");
+
+const Body = styled("body",{
+  base: {
+    display: "grid",
+    gridTemplateRows: "auto 1fr",
+    alignItems: "start",
+  }
+});
 
 const Header = styled("header",{
   base: {
@@ -20,9 +28,9 @@ const Header = styled("header",{
     display: "flex",
     justifyContent: "start",
     alignItems: "center",
-    borderBottom: "1px solid",
+    borderBottom: "solid",
     borderColor: "dic.system.color.component.outline",
-    borderWidth: "0px 0px dic.system.dimension.border.medium 0px"
+    borderBottomWidth: "dic.system.dimension.border.medium"
   }
 });
 
@@ -32,37 +40,99 @@ const H1 = styled("h1",{
   }
 });
 
+const MainGrid = styled("div",{
+  base: {
+    h: "100%",
+    display: "grid",
+    gridTemplateColumns: "240px 1fr",
+  }
+});
+
+const Sidebar = styled("aside",{
+  base: {
+    w: "240px",
+    h: "100%",
+    py: "dic.system.dimension.spacing.extraLarge",
+    display: "flex",
+    flexDirection: "column",
+    borderRight: "solid",
+    borderColor: "dic.system.color.component.outline",
+    borderRightWidth: "dic.system.dimension.border.medium",
+    backgroundColor:  "#FBFCFD"
+  }
+});
+
+const Main = styled("main",{
+  base: {
+  }
+});
+
+const SidebarLabel = styled("h2",{
+  base: {
+    textStyle: "dic.system.typography.label.medium_expanded",
+    pt:'dic.system.dimension.spacing.extraSmall',
+    pr: 'dic.system.dimension.spacing.extraLarge',
+    pb:'dic.system.dimension.spacing.extraSmall',
+    pl: 'dic.system.dimension.spacing.extraLarge',
+  }
+});
+
+const List = styled("ul",{
+  base: {
+    listStyle: "none",
+    p: 0,
+    m: 0
+  }
+});
+
+const ListItem = styled("li",{
+  base: {
+    textStyle: "dic.system.typography.label.extraLarge_expanded",
+    pt:'dic.system.dimension.spacing.extraSmall',
+    pr: 'dic.system.dimension.spacing.extraLarge',
+    pb:'dic.system.dimension.spacing.extraSmall',
+    pl: 'dic.system.dimension.spacing.extraLarge',
+  },
+  variants: {
+    active: {
+      true: {
+        backgroundColor: "dic.system.color.interaction.selectedSurface",
+      }
+    }
+  }
+});
+
 ---
 
 <!doctype html>
-<html lang="ja">
+<html lang="ja" style="height: 100%">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={siteConfig.siteDescirption} />
+    <meta name="description" content={siteConfig.siteDescription} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}{title && " | "}{siteConfig.siteName}</title>
   </head>
-  <body>
+  <Body>
     <Header>
       <H1>{siteConfig.siteName}</H1>
     </Header>
-    <Flex gap={10}>
-      <aside>
-        <h2 class={css({ fontWeight: "bold", mb: 5 })}>Components</h2>
-        <ul>
+    <MainGrid>
+      <Sidebar>
+        <SidebarLabel>Components</SidebarLabel>
+        <List>
           {
             docs.map((item) => (
-              <li>
+              <ListItem active={item.data.title === title}>
                 <a href={`/docs/${item.slug}`}>{item.data.title}</a>
-              </li>
+              </ListItem>
             ))
           }
-        </ul>
-      </aside>
-      <main>
+        </List>
+      </Sidebar>
+      <Main>
         <slot />
-      </main>
-    </Flex>
-  </body>
+      </Main>
+    </MainGrid>
+  </Body>
 </html>
