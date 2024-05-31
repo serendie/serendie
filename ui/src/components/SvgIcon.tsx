@@ -8,6 +8,9 @@ import expandMore from "@material-design-icons/svg/round/expand_more.svg?react";
 import error from "../assets/error.svg?react";
 import error_fill from "../assets/errorFill.svg?react";
 import info from "@material-design-icons/svg/outlined/info.svg?react";
+import menu from "@material-design-icons/svg/round/menu.svg?react";
+import account_circle from "@material-design-icons/svg/round/account_circle.svg?react";
+import settings from "@material-design-icons/svg/round/settings.svg?react";
 import { css } from "../../styled-system/css";
 
 const icons = {
@@ -21,6 +24,9 @@ const icons = {
   error,
   error_fill,
   info,
+  menu,
+  account_circle,
+  settings,
 };
 
 export type SvgIconName = keyof typeof icons;
