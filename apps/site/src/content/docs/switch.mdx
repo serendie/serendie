@@ -6,8 +6,8 @@ description: 説明テキストがはいります説明テキストがはいり�
 
 import { SwitchSample } from "src/sampleComponents/SwitchSample";
 import switchSampleRaw from "src/sampleComponents/SwitchSample.tsx?raw";
-import { Code } from "src/components/Code";
+import { Code } from "astro:components";
 
 <SwitchSample client:load />
 
-<Code code={switchSampleRaw} client:load />
+<Code code={switchSampleRaw} lang="tsx" />
