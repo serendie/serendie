@@ -8,19 +8,19 @@ const NotificationBadgeStyle = sva({
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      height: 16,
-      minWidth: 16,
+      height: 24,
+      minWidth: 24,
       color: "dic.system.color.impression.onNegative",
       borderRadius: "dic.system.dimension.radius.full",
       paddingX: "dic.system.dimension.spacing.twoExtraSmall",
-      paddingBottom: 2,
       textStyle: "dic.system.typography.label.small_compact",
       _expanded: {
         textStyle: "dic.system.typography.label.small_expanded",
       },
     },
     text: {
-      height: 11,
+      height: 24,
+      lineHeight: "24px",
     },
   },
   variants: {
