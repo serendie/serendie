@@ -1,13 +1,14 @@
 ---
 title: Button
-subTitle: ボタン
-description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
 ---
 
 import { ButtonSample } from "../../sampleComponents/ButtonSample.tsx";
 import buttonSampleRaw from "../../sampleComponents/ButtonSample.tsx?raw";
-import { Code } from "astro:components";
+import Code from "../../components/Code.astro";
 
-<ButtonSample client:load />
-
-<Code code={buttonSampleRaw} lang="tsx" />
+<Code
+  title="ボタン"
+  description="説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります"
+  code={buttonSampleRaw}>
+  <ButtonSample client:load />
+</Code>

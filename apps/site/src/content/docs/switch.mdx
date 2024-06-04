@@ -6,8 +6,18 @@ description: 説明テキストがはいります説明テキストがはいり�
 
 import { SwitchSample } from "src/sampleComponents/SwitchSample";
 import switchSampleRaw from "src/sampleComponents/SwitchSample.tsx?raw";
-import { Code } from "astro:components";
+import Code from "../../components/Code.astro";
 
-<SwitchSample client:load />
+<Code
+  title="スイッチ"
+  description="説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります"
+  code={switchSampleRaw}>
+  <SwitchSample client:load />
+</Code>
 
-<Code code={switchSampleRaw} lang="tsx" />
+<Code
+  title="スイッチ2"
+  description="説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります"
+  code={switchSampleRaw}>
+  <SwitchSample client:load />
+</Code>

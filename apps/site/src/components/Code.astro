@@ -1,23 +1,51 @@
-import { useState, useEffect } from "react";
-import { codeToHtml } from "shiki";
+---
+import { Box, styled } from "@spread/ui/jsx";
+import { Code as AstroCode } from "astro:components";
+import type { BundledLanguage } from "shiki";
 
-interface CodeProps {
+interface Props {
+  title: string;
+  description: string;
   code: string;
-  lang?: string;
+  storyUrl?: string;
+  language?: BundledLanguage;
 }
 
-export function Code({ code, lang = "jsx" }: CodeProps) {
-  const [html, setHtml] = useState("");
 
-  useEffect(() => {
-    (async () => {
-      const html = await codeToHtml(code, {
-        lang: lang,
-        theme: "one-light",
-      });
-      setHtml(html);
-    })();
-  }, [code, lang]);
+const {
+  title, 
+  description,
+  code,
+  storyUrl,
+  language
+} = Astro.props
 
-  return <div dangerouslySetInnerHTML={{ __html: html }} />;
-}
+
+const SubTitle = styled('h2',{
+  base: {
+    textStyle: "dic.system.typography.title.medium_expanded",
+    mb: "dic.system.dimension.spacing.medium",
+  }
+})
+
+const Description = styled('p',{
+  base: {
+    textStyle: "dic.dic.system.typography.body.extraSmall_expanded",
+    mb: "dic.system.dimension.spacing.medium",
+  }
+})
+
+const Container = styled('div',{
+  base: {
+    maxW: "769px",
+  }
+})
+---
+
+
+<Container>
+  <SubTitle>{title}</SubTitle>
+  <Description>{description}</Description>
+  <slot />
+  <AstroCode code={code} lang={language??"tsx"} theme={"github-light"} />
+</Container>
