@@ -7,6 +7,7 @@ const meta: Meta<typeof ListItem> = {
   parameters: {
     controls: {
       expanded: true,
+      include: ["text", "description", "rightIcon", "leftIcon", "badge", "disabled", "isLargeLeftIcon"],
     },
   },
   decorators: [(Story) => (
@@ -44,15 +45,29 @@ type Story = StoryObj<typeof ListItem>;
 
 export const Basic: Story = {
   args: {
-    text: "リストスタイル0",
+    leftIcon: "search",
+    text: "リストスタイル",
+  }
+};
+
+export const Description: Story = {
+  args: {
+    leftIcon: "search",
+    text: "リストスタイル",
+    description: "補足テキスト補足テキスト",
+  }
+};
+
+export const RightIcon: Story = {
+  args: {
     rightIcon: "chevron_right",
+    text: "リストスタイル",
   }
 };
 
 export const Badge: Story = {
   args: {
-    leftIcon: "error",
-    isLargeLeftIcon: true,
+    leftIcon: "search",
     text: "リストスタイル1",
     description: "補足テキスト補足テキスト10分前",
     badge: 100,

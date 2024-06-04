@@ -110,6 +110,8 @@ export const ListItem: React.FC<ListItemProps> = ({
   const itemStyle: CSSProperties = description
     ? { alignItems: "flex-start" }
     : {};
+  const textGroupStyle: CSSProperties =
+    description || children ? { alignItems: "flex-start" } : { gap: 0 };
   const iconSize = isLargeLeftIcon ? "40px" : "24px";
 
   return (
@@ -119,7 +121,7 @@ export const ListItem: React.FC<ListItemProps> = ({
           <SvgIcon icon={leftIcon} size={iconSize} />
         </div>
       )}
-      <div className={styles.textGroup}>
+      <div className={styles.textGroup} style={textGroupStyle}>
         <span className={styles.text}>{text}</span>
         <span className={styles.description}>{description}</span>
         {children}
