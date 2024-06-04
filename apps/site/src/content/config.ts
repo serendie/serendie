@@ -4,6 +4,8 @@ const docsCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
+    componentName: z.string(),
+    description: z.string(),
     lastUpdated: z.string().optional(),
   }),
 });

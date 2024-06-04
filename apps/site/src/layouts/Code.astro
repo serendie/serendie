@@ -1,5 +1,6 @@
 ---
-import { Box, styled } from "@spread/ui/jsx";
+import { Button } from "@spread/ui";
+import { Box, Flex, styled } from "@spread/ui/jsx";
 import { Code as AstroCode } from "astro:components";
 import type { BundledLanguage } from "shiki";
 
@@ -37,15 +38,29 @@ const Description = styled('p',{
 
 const Container = styled('div',{
   base: {
-    maxW: "769px",
+    mb:"dic.system.dimension.spacing.threeExtraLarge",
   }
 })
+
 ---
 
 
 <Container>
-  <SubTitle>{title}</SubTitle>
+  <Flex justifyContent={"space-between"}>
+    <SubTitle>{title}</SubTitle>
+    <Button>Storybook</Button>
+  </Flex>
   <Description>{description}</Description>
-  <slot />
-  <AstroCode code={code} lang={language??"tsx"} theme={"github-light"} />
+  <Box>
+    <slot />
+    <Box mt="dic.system.dimension.spacing.threeExtraLarge">
+      <Flex justifyContent={"space-between"}>
+        <Button>
+        Code
+        </Button>
+        <Button>Copy</Button>
+      </Flex>
+      <AstroCode code={code} lang={language??"tsx"} theme={"github-light"} />
+    </Box>
+  </Box>
 </Container>

@@ -1,14 +1,16 @@
 ---
 title: Button
+componentName: ボタン
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
 ---
 
 import { ButtonSample } from "../../sampleComponents/ButtonSample.tsx";
 import buttonSampleRaw from "../../sampleComponents/ButtonSample.tsx?raw";
-import Code from "../../components/Code.astro";
+import Code from "../../layouts/Code.astro";
 
 <Code
-  title="ボタン"
-  description="説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります"
+  title="Size"
+  description="Common buttonのサイズはSmallとMediumの2種類あります。SmallはPCなどの大きな画面でマウス操作をする前提で使用することを推奨しています。また、Mediumは画面サイズにかかわらず使用できますが、スマートフォンなどの画面では基本サイズになります。"
   code={buttonSampleRaw}>
   <ButtonSample client:load />
 </Code>
