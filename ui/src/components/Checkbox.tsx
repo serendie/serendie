@@ -31,7 +31,7 @@ export const CheckboxStyle = sva({
         outlineWidth: "1.5px",
         outlineColor: "dic.system.color.impression.primary",
         borderRadius: "dic.system.dimension.radius.small",
-      }
+      },
     },
     checkedIcon: {
       width: 24,
@@ -114,27 +114,30 @@ export const Checkbox: React.FC<CheckboxProps> = ({
       style={rootStyle}
       {...checkboxProps}
     >
-      {(state) => (
-        <>
-          <ArkCheckbox.Control className={styles.itemControl} asChild>
-            {state.isChecked ? (
-              <CheckboxCheckedIcon className={styles.checkedIcon} />
-            ) : (
-              <CheckboxUncheckedIcon className={styles.uncheckedIcon} />
-            )}
-          </ArkCheckbox.Control>
-          <div className={styles.itemTextGroup}>
-            <ArkCheckbox.Label className={styles.itemText}>
-              {label}
-            </ArkCheckbox.Label>
-            {helperText && (
-              <ArkCheckbox.Label className={styles.helperText}>
-                {helperText}
-              </ArkCheckbox.Label>
-            )}
-          </div>
-        </>
-      )}
+      <ArkCheckbox.Control className={styles.itemControl}>
+        <ArkCheckbox.Context>
+          {(checkbox) => (
+            <>
+              {checkbox.checked ? (
+                <CheckboxCheckedIcon className={styles.checkedIcon} />
+              ) : (
+                <CheckboxUncheckedIcon className={styles.uncheckedIcon} />
+              )}
+            </>
+          )}
+        </ArkCheckbox.Context>
+      </ArkCheckbox.Control>
+      <div className={styles.itemTextGroup}>
+        <ArkCheckbox.Label className={styles.itemText}>
+          {label}
+        </ArkCheckbox.Label>
+        {helperText && (
+          <ArkCheckbox.Label className={styles.helperText}>
+            {helperText}
+          </ArkCheckbox.Label>
+        )}
+      </div>
+      <ArkCheckbox.HiddenInput />
     </ArkCheckbox.Root>
   );
 };
