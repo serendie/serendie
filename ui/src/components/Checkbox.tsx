@@ -114,19 +114,17 @@ export const Checkbox: React.FC<CheckboxProps> = ({
       style={rootStyle}
       {...checkboxProps}
     >
-      <ArkCheckbox.Control className={styles.itemControl}>
-        <ArkCheckbox.Context>
-          {(checkbox) => (
-            <>
-              {checkbox.checked ? (
-                <CheckboxCheckedIcon className={styles.checkedIcon} />
-              ) : (
-                <CheckboxUncheckedIcon className={styles.uncheckedIcon} />
-              )}
-            </>
-          )}
-        </ArkCheckbox.Context>
-      </ArkCheckbox.Control>
+      <ArkCheckbox.Context>
+        {(checkbox) => (
+          <ArkCheckbox.Control className={styles.itemControl}>
+            {checkbox.checked ? (
+              <CheckboxCheckedIcon className={styles.checkedIcon} />
+            ) : (
+              <CheckboxUncheckedIcon className={styles.uncheckedIcon} />
+            )}
+          </ArkCheckbox.Control>
+        )}
+      </ArkCheckbox.Context>
       <div className={styles.itemTextGroup}>
         <ArkCheckbox.Label className={styles.itemText}>
           {label}

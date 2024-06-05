@@ -100,27 +100,28 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
       style={itemStyle}
       {...radioProps}
     >
-      {(state) => (
-        <>
+      <RadioGroup.ItemContext>
+        {(radio) => (
           <RadioGroup.ItemControl className={styles.itemControl} asChild>
-            {state.isChecked ? (
+            {radio.checked ? (
               <RadioChecked className={styles.checkedIcon} />
             ) : (
               <RadioUnChecked className={styles.unCheckedIcon} />
             )}
           </RadioGroup.ItemControl>
-          <div className={styles.itemTextGroup}>
-            <RadioGroup.ItemText className={styles.itemText}>
-              {label}
-            </RadioGroup.ItemText>
-            {helperText && (
-              <RadioGroup.ItemText className={styles.helperText}>
-                {helperText}
-              </RadioGroup.ItemText>
-            )}
-          </div>
-        </>
-      )}
+        )}
+      </RadioGroup.ItemContext>
+      <div className={styles.itemTextGroup}>
+        <RadioGroup.ItemText className={styles.itemText}>
+          {label}
+        </RadioGroup.ItemText>
+        {helperText && (
+          <RadioGroup.ItemText className={styles.helperText}>
+            {helperText}
+          </RadioGroup.ItemText>
+        )}
+      </div>
+      <RadioGroup.ItemHiddenInput />
     </RadioGroup.Item>
   );
 };
