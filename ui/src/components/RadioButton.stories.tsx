@@ -46,8 +46,6 @@ const Template = (args: RadioButtonProps) => (
   </RadioGroup>
 );
 
-
-
 export const Default: Story = {
   render: Template,
 };
@@ -62,7 +60,10 @@ export const WithHelperText: Story = {
 
 export const Disabled: Story = {
   render: (args: RadioButtonProps) => (
-    <RadioGroup onValueChange={(e) => console.log(e.value)} defaultValue="itemE">
+    <RadioGroup
+      onValueChange={(e) => console.log(e.value)}
+      defaultValue="itemE"
+    >
       <RadioButton
         {...args}
         label="タイトルタイトル1"
