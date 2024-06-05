@@ -1,30 +1,31 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { BottomNavigation } from "./BottomNavigation";
-import { BottomNavigationItem } from "./BottomNavigationItem";
+import {
+  BottomNavigationItem,
+  BottomNavigationItemProps,
+} from "./BottomNavigationItem";
 
 const meta: Meta<typeof BottomNavigationItem> = {
   component: BottomNavigationItem,
-  decorators: [
-    (Story) => (
-      <BottomNavigation>
-        <Story />
-      </BottomNavigation>
-    ),
-  ],
-  argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof BottomNavigationItem>;
 
 export const Default: Story = {
-  render: () => (
-    <>
-      <BottomNavigationItem icon="search" label="ホーム" isActive />
-      <BottomNavigationItem icon="search" label="トーク" dot/>
+  render: (args: BottomNavigationItemProps) => (
+    <BottomNavigation>
+      <BottomNavigationItem {...args} />
+      <BottomNavigationItem icon="search" label="検索" />
+      <BottomNavigationItem icon="search" label="トーク" dot />
       <BottomNavigationItem icon="search" label="カレンダー" count={3} />
-      <BottomNavigationItem icon="search" label="アカウント" />
-    </>
+      <BottomNavigationItem icon="search" label="アカウント" count={100} />
+    </BottomNavigation>
   ),
+  args: {
+    label: "ホーム",
+    icon: "search",
+    isActive: true,
+  },
 };
