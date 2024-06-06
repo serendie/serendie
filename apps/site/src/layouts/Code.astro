@@ -14,7 +14,6 @@ interface Props {
   language?: BundledLanguage;
 }
 
-
 const {
   title, 
   description,
@@ -56,23 +55,12 @@ const StyledButton = styled('button', {
     <StorybookButton href={storyUrl} />
   </Flex>
   <Description mb="dic.system.dimension.spacing.twoExtraLarge" fontSize="dic.reference.typography.scale.expanded.extraSmall">{description}</Description>
-  <Box
-         border={"solid"} borderColor="dic.system.color.component.outline"
-         borderWidth="dic.system.dimension.border.medium"
-         borderRadius='dic.system.dimension.radius.large'
-         overflow='hidden'
-  >
+  <Box border={"solid"} borderColor="dic.system.color.component.outline" borderWidth="dic.system.dimension.border.medium" borderRadius='dic.system.dimension.radius.large' overflow='hidden'>
     <Box p='dic.system.dimension.spacing.threeExtraLarge' borderBottomColor="dic.system.color.component.outline" borderBottomWidth="dic.system.dimension.border.medium"> 
       <slot />
     </Box>
-    <Box
-    py='dic.system.dimension.spacing.extraLarge'
-    px='dic.system.dimension.spacing.twoExtraLarge'
-    bg="dic.reference.color.scale.gray.100"
-    >
-      <Flex justifyContent={"space-between"}
-      py='dic.system.dimension.spacing.small' px='dic.system.dimension.spacing.extraSmall'
-      >
+    <Box py='dic.system.dimension.spacing.extraLarge' px='dic.system.dimension.spacing.twoExtraLarge' bg="dic.reference.color.scale.gray.100">
+      <Flex justifyContent={"space-between"} py='dic.system.dimension.spacing.small' px='dic.system.dimension.spacing.extraSmall'>
         <StyledButton data-toggle-code display="inline-flex" alignItems={"center"} textStyle="dic.system.typography.body.medium_expanded">
           <SvgIcon icon={"chevron_right"} size={"20px"} className={css({mr:"dic.system.dimension.spacing.extraSmall"})} />
           Code
