@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { SvgIcon } from "./SvgIcon";
+import { css } from "../../styled-system/css";
 
 const meta: Meta<typeof SvgIcon> = {
   component: SvgIcon,
@@ -16,5 +17,15 @@ export const Primary: Story = {
   args: {
     icon: "chevron_left",
     size: "2em",
+  },
+};
+
+export const CustomClassName: Story = {
+  args: {
+    icon: "chevron_left",
+    size: "2em",
+    className: css({
+      color: "dic.reference.color.scale.orange.500",
+    }),
   },
 };

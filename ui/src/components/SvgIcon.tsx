@@ -11,7 +11,7 @@ import error from "../assets/error.svg?react";
 import error_fill from "../assets/errorFill.svg?react";
 import errorCircle from "../assets/errorCircle.svg?react";
 import info from "@material-design-icons/svg/outlined/info.svg?react";
-import { css } from "../../styled-system/css";
+import { css, cx } from "../../styled-system/css";
 
 const icons = {
   add,
@@ -36,7 +36,12 @@ interface SvgIconProps extends React.SVGProps<SVGSVGElement> {
   size?: string;
 }
 
-export const SvgIcon: React.FC<SvgIconProps> = ({ icon, size, ...props }) => {
+export const SvgIcon: React.FC<SvgIconProps> = ({
+  icon,
+  size,
+  className,
+  ...props
+}) => {
   const Svg = icons[icon];
 
   return Svg ? (
@@ -44,9 +49,12 @@ export const SvgIcon: React.FC<SvgIconProps> = ({ icon, size, ...props }) => {
       {...props}
       width={size || "1em"}
       height={size || "1em"}
-      className={css({
-        fill: "currentColor",
-      })}
+      className={cx(
+        css({
+          fill: "currentColor",
+        }),
+        className
+      )}
     />
   ) : null;
 };
