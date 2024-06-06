@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { TopAppBar } from "./TopAppBar";
+import { IconButton } from "./IconButton";
 
 const meta: Meta<typeof TopAppBar> = {
   component: TopAppBar,
@@ -12,41 +13,96 @@ const meta: Meta<typeof TopAppBar> = {
 };
 type Story = StoryObj<typeof TopAppBar>;
 
+export const All: Story = {
+  render: (args) => {
+    return (
+      <>
+        <TopAppBar
+          type={"navbar"}
+          headingIconButton={
+            <>
+              <IconButton shape="rectangle" styleType="ghost" icon="menu" />
+            </>
+          }
+          trailingIconButtons={
+            <>
+              <IconButton shape="rectangle" styleType="ghost" icon="search" />
+              <IconButton shape="rectangle" styleType="ghost" icon="add" />
+              <IconButton shape="rectangle" styleType="ghost" icon="info" />
+            </>
+          }
+        />
+        <TopAppBar
+          type={"titleBar"}
+          title="Title Bar"
+          headingIconButton={
+            <>
+              <IconButton
+                shape="rectangle"
+                styleType="ghost"
+                icon="chevron_left"
+              />
+            </>
+          }
+          trailingIconButtons={
+            <>
+              <IconButton shape="rectangle" styleType="ghost" icon="add" />
+            </>
+          }
+        />
+      </>
+    );
+  },
+};
+
 export const Navbar: Story = {
-  args: {
-    pageTitle: "Navbar Title",
-    buttons: {
-      navbarLeft: [{ icon: "menu" }],
-      navbarRight: [{ icon: "account_circle" }],
-      pageTitleLeft: [{ icon: "chevron_left" }],
-      pageTitleRight: [{ icon: "settings" }],
-    },
+  render: (args) => {
+    return (
+      <>
+        <TopAppBar
+          type={"navbar"}
+          headingIconButton={
+            <>
+              <IconButton shape="rectangle" styleType="ghost" icon="menu" />
+            </>
+          }
+          trailingIconButtons={
+            <>
+              <IconButton shape="rectangle" styleType="ghost" icon="search" />
+              <IconButton shape="rectangle" styleType="ghost" icon="add" />
+              <IconButton shape="rectangle" styleType="ghost" icon="info" />
+            </>
+          }
+        />
+      </>
+    );
   },
 };
 
-export const WithoutPageTitle: Story = {
-  args: {
-    buttons: {
-      navbarLeft: [{ icon: "menu" }],
-      navbarRight: [{ icon: "account_circle" }],
-    },
-  },
-};
-
-export const WithoutNavbar: Story = {
-  args: {
-    pageTitle: "Navbar Title",
-    buttons: {},
-  },
-};
-
-export const WithoutNavbarWithIcons: Story = {
-  args: {
-    pageTitle: "Navbar Title",
-    buttons: {
-      pageTitleLeft: [{ icon: "chevron_left" }],
-      pageTitleRight: [{ icon: "settings" }],
-    },
+export const Title: Story = {
+  render: (args) => {
+    return (
+      <>
+        <TopAppBar
+          type={"titleBar"}
+          title="Title Bar"
+          headingIconButton={
+            <>
+              <IconButton
+                shape="rectangle"
+                styleType="ghost"
+                icon="chevron_left"
+              />
+            </>
+          }
+          trailingIconButtons={
+            <>
+              <IconButton shape="rectangle" styleType="ghost" icon="add" />
+            </>
+          }
+        />
+      </>
+    );
   },
 };
 

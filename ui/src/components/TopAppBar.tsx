@@ -1,133 +1,94 @@
-import { ComponentProps } from "react";
-import { css, cx, sva } from "../../styled-system/css";
-import { IconButton } from "./IconButton";
+import { RecipeVariantProps, css, cx, sva } from "../../styled-system/css";
 
 const topAppBarStyle = sva({
-  slots: [
-    "root",
-    "navbar",
-    "navbarItem",
-    "pageTitleContainer",
-    "pageTitleContainerLeft",
-    "pageTitleContainerRight",
-    "pageTitle",
-    "button",
-  ],
+  slots: ["root", "container", "left", "buttonContainer", "title"],
   base: {
     root: {
       width: "100%",
       backgroundColor: "dic.system.color.component.surface",
     },
-    navbar: {
+    container: {
       height: "48px",
       display: "flex",
       justifyContent: "space-between",
+      gap: "8px",
       alignItems: "center",
+    },
+    left: {
+      display: "flex",
+      alignItems: "center",
+      gap: "8px",
       width: "100%",
     },
-    navbarItem: {
+    buttonContainer: {
       display: "flex",
       alignItems: "center",
+      gap: "8px",
     },
-    pageTitleContainer: {
-      pt: "dic.system.dimension.spacing.small",
-      pr: "dic.system.dimension.spacing.medium",
-      pb: "dic.system.dimension.spacing.medium",
-      pl: "dic.system.dimension.spacing.medium",
-    },
-    pageTitleContainerLeft: {
-      display: "flex",
-      alignItems: "center",
-      width: "100%",
-    },
-    pageTitleContainerRight: {
-      display: "flex",
-      alignItems: "center",
-    },
-    pageTitle: {
+    title: {
       textStyle: "dic.system.typography.title.medium_compact",
       width: "100%",
       _expanded: {
         textStyle: "dic.system.typography.title.medium_expanded",
       },
     },
-    button: {
-      cursor: "pointer",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      p: "4px",
-    },
   },
   variants: {
     type: {
-      pageTitleWithIcons: {
-        pageTitleContainer: {
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          pt: "initial",
-          pr: "initial",
-          pb: "initial",
-          pl: "initial",
+      navbar: {},
+      titleBar: {},
+      titleBarTitleOnly: {
+        root: {
+          _lastOfType: {
+            paddingBottom: "8px",
+          },
+          _firstOfType: {
+            paddingBottom: "0px",
+          },
         },
       },
     },
   },
+  defaultVariants: {
+    type: "navbar",
+  },
 });
 
-type Item = ComponentProps<typeof IconButton>[];
-type Props = React.FC<{
-  buttons?: {
-    navbarLeft?: Item;
-    navbarRight?: Item;
-    pageTitleLeft?: Item;
-    pageTitleRight?: Item;
-  };
-  pageTitle?: string;
-}>;
+type VariantProps = Omit<RecipeVariantProps<typeof topAppBarStyle>, "type">;
+
+type BaseProps = {
+  headingIconButton?: React.ReactNode;
+  trailingIconButtons?: React.ReactNode;
+  title?: string;
+} & VariantProps;
+
+type NavbarProps = BaseProps & { type: "navbar"; title?: string };
+type TitleBarProps = BaseProps & { type: "titleBar"; title: string };
+
+type Props = React.FC<NavbarProps | TitleBarProps>;
 
 export const TopAppBar: Props = ({
-  buttons: { navbarLeft, navbarRight, pageTitleLeft, pageTitleRight } = {},
-  pageTitle,
+  headingIconButton,
+  trailingIconButtons,
+  title,
   ...props
 }) => {
-  const [, cssProps] = topAppBarStyle.splitVariantProps(props);
+  const [variantProps, cssProps] = topAppBarStyle.splitVariantProps(props);
 
-  const classes = topAppBarStyle({
-    type: pageTitleLeft || pageTitleRight ? "pageTitleWithIcons" : undefined,
-  });
+  // titleのみの場合はtitleBarTitleOnlyを適用
+  const isTitleOnly = !headingIconButton && !trailingIconButtons && title;
 
-  const renderButtons = (buttons?: Item) =>
-    buttons?.map(({ id, shape, styleType, ...props }) => (
-      <div className={classes.button} key={id}>
-        <IconButton
-          shape={shape || "rectangle"}
-          styleType={styleType || "ghost"}
-          {...props}
-        ></IconButton>
-      </div>
-    ));
+  const classes = topAppBarStyle(variantProps);
 
   return (
     <nav className={cx(classes.root, css(cssProps))}>
-      {(navbarLeft || navbarRight) && (
-        <ul className={classes.navbar}>
-          <li className={classes.navbarItem}>{renderButtons(navbarLeft)}</li>
-          <li className={classes.navbarItem}>{renderButtons(navbarRight)}</li>
-        </ul>
-      )}
-      {(pageTitle || (pageTitleLeft && pageTitleRight)) && (
-        <div className={classes.pageTitleContainer}>
-          <div className={classes.pageTitleContainerLeft}>
-            {renderButtons(pageTitleLeft)}
-            <h1 className={classes.pageTitle}>{pageTitle}</h1>
-          </div>
-          <div className={classes.pageTitleContainerRight}>
-            {renderButtons(pageTitleRight)}
-          </div>
+      <div className={classes.container}>
+        <div className={classes.left}>
+          <div className={classes.buttonContainer}>{headingIconButton}</div>
+          <h1 className={classes.title}>{title}</h1>
         </div>
-      )}
+        <div className={classes.buttonContainer}>{trailingIconButtons}</div>
+      </div>
     </nav>
   );
 };
