@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 
 import { Drawer, DrawerProps } from "./Drawer";
 import { useState } from "react";
-import { Button } from "./Button";
+import { IconButton } from "./IconButton";
 
 const meta: Meta<typeof Drawer> = {
   component: Drawer,
@@ -16,7 +16,11 @@ const DrawerOpenTemplate = (args: DrawerProps) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <Button onClick={() => setIsOpen(true)}>Open Dialog</Button>
+      <IconButton
+        shape="rectangle"
+        icon="add"
+        onClick={() => setIsOpen(true)}
+      />
       <Drawer
         {...args}
         isOpen={isOpen}

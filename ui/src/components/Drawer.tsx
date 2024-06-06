@@ -14,8 +14,7 @@ const DrawerStyle = sva({
     content: {
       position: "fixed",
       top: "0",
-      width: "375px",
-      minWidth: "375px",
+      width: "calc(100% - {spacing.dic.system.dimension.spacing.extraLarge})",
       maxWidth: "375px",
       height: "100vh",
       gap: "dic.system.dimension.spacing.twoExtraLarge",
