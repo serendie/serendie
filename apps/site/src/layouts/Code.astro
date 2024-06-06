@@ -1,8 +1,9 @@
 ---
-import { Button } from "@spread/ui";
+import { Button, SvgIcon } from "@spread/ui";
 import { Box, Flex, styled } from "@spread/ui/jsx";
 import { Code as AstroCode } from "astro:components";
 import type { BundledLanguage } from "shiki";
+import { StorybookButton } from "../comopnents/StorybookButton.tsx";
 
 interface Props {
   title: string;
@@ -42,25 +43,43 @@ const Container = styled('div',{
   }
 })
 
----
+const StyledButton = styled('button')
 
+---
 
 <Container>
   <Flex justifyContent={"space-between"}>
     <SubTitle>{title}</SubTitle>
-    <Button>Storybook</Button>
+    <StorybookButton href={storyUrl} />
   </Flex>
   <Description>{description}</Description>
   <Box>
     <slot />
     <Box mt="dic.system.dimension.spacing.threeExtraLarge">
       <Flex justifyContent={"space-between"}>
-        <Button>
-        Code
-        </Button>
+        <StyledButton data-toggle-code cursor="pointer" display="inline-flex" alignItems={"center"}>
+          <SvgIcon icon={"chevron_right"} />
+          Code
+        </StyledButton>
         <Button>Copy</Button>
       </Flex>
+      <div style={{"display": "none"}}>
       <AstroCode code={code} lang={language??"tsx"} theme={"github-light"} />
+      </div>
     </Box>
   </Box>
 </Container>
+<script>
+  const buttons = document.querySelectorAll('[data-toggle-code]');
+
+  buttons.forEach((button) => {
+    const code = button?.parentElement?.nextElementSibling;
+    
+    button?.addEventListener('click', () => {
+      if(code) {
+        const codeElement = code as HTMLElement;
+        codeElement.style.display = codeElement.style.display === 'none' ? 'block' : 'none';
+      }
+    });
+  });
+</script>
