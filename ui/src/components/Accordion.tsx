@@ -1,13 +1,13 @@
 import { SvgIcon } from "..";
 import { sva } from "../../styled-system/css";
 import { Accordion as ArkAccordion } from "@ark-ui/react";
+import { RecipeVariantProps } from "../../styled-system/types";
 
 const AccordionStyle = sva({
   slots: ["item", "title", "itemIndicator", "icon", "description"],
   base: {
     item: {
-      display: "grid",
-      gridTemplateColumns: "1fr 24px",
+      display: "flex",
       width: "100%",
       gap: "dic.system.dimension.spacing.extraSmall",
       paddingX: "dic.system.dimension.spacing.medium",
@@ -18,22 +18,25 @@ const AccordionStyle = sva({
       cursor: "pointer",
     },
     title: {
+      flex: 1,
       textAlign: "left",
-      gap: "8px",
+      color: "dic.system.color.component.onSurface",
       textStyle: "dic.system.typography.body.medium_compact",
       _expanded: {
         textStyle: "dic.system.typography.body.medium_expanded",
       },
     },
     itemIndicator: {
+      flex: "0 0 24px",
       transition: "transform 0.2s",
       _open: {
         transform: "rotate(180deg)",
-      }
+      },
     },
     icon: {
       width: 24,
       height: 24,
+      color: "dic.system.color.component.onSurface",
     },
     description: {
       paddingX: "dic.system.dimension.spacing.medium",
@@ -45,13 +48,30 @@ const AccordionStyle = sva({
       },
     },
   },
+  variants: {
+    isLeftIcon: {
+      true: {
+        item: {
+          flexDirection: "row-reverse",
+        },
+        itemIndicator: {
+          transform: "rotate(-90deg)",
+          _open: {
+            transform: "rotate(0deg)",
+          },
+        },
+      },
+    },
+  },
 });
 
-export type AccordionProps = {
+export type AccordionBaseProps = {
   title: string;
   description: string;
-  headingIcon?: boolean;
 };
+
+export type AccordionProps = AccordionBaseProps &
+  RecipeVariantProps<typeof AccordionStyle>;
 
 export const Accordion: React.FC<AccordionProps> = ({
   title,
