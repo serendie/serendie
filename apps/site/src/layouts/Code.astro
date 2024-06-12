@@ -55,12 +55,23 @@ const StyledButton = styled('button', {
     <StorybookButton href={storyUrl} />
   </Flex>
   <Description mb="sd.system.dimension.spacing.twoExtraLarge" fontSize="sd.reference.typography.scale.expanded.extraSmall">{description}</Description>
-  <Box border={"solid"} borderColor="sd.system.color.component.outline" borderWidth="sd.system.dimension.border.medium" borderRadius='sd.system.dimension.radius.large' overflow='hidden'>
+  <Box
+         border={"solid"} borderColor="sd.system.color.component.outline"
+         borderWidth="sd.system.dimension.border.medium"
+         borderRadius='sd.system.dimension.radius.large'
+         overflow='hidden'
+  >
     <Box p='sd.system.dimension.spacing.threeExtraLarge' borderBottomColor="sd.system.color.component.outline" borderBottomWidth="sd.system.dimension.border.medium"> 
       <slot />
     </Box>
-    <Box py='sd.system.dimension.spacing.extraLarge' px='sd.system.dimension.spacing.twoExtraLarge' bg="sd.reference.color.scale.gray.100">
-      <Flex justifyContent={"space-between"} py='sd.system.dimension.spacing.small' px='sd.system.dimension.spacing.extraSmall'>
+    <Box
+    py='sd.system.dimension.spacing.extraLarge'
+    px='sd.system.dimension.spacing.twoExtraLarge'
+    bg="sd.reference.color.scale.gray.100"
+    >
+      <Flex justifyContent={"space-between"}
+      py='sd.system.dimension.spacing.small' px='sd.system.dimension.spacing.extraSmall'
+      >
         <StyledButton data-toggle-code display="inline-flex" alignItems={"center"} textStyle="sd.system.typography.body.medium_expanded">
           <SvgIcon icon={"chevron_right"} size={"20px"} className={css({mr:"sd.system.dimension.spacing.extraSmall"})} />
           Code
