@@ -7,7 +7,7 @@ const meta: Meta<typeof ListItem> = {
   parameters: {
     controls: {
       expanded: true,
-      include: ["text", "description", "rightIcon", "leftIcon", "badge", "disabled", "isLargeLeftIcon"],
+      include: ["title", "description", "rightIcon", "leftIcon", "badge", "disabled", "isLargeLeftIcon"],
     },
   },
   decorators: [(Story) => (
@@ -31,7 +31,7 @@ const meta: Meta<typeof ListItem> = {
     rightIcon: {
       control: { type: "text" },
     },
-    text: {
+    title: {
       control: { type: "text" },
     },
     description: {
@@ -46,14 +46,14 @@ type Story = StoryObj<typeof ListItem>;
 export const Basic: Story = {
   args: {
     leftIcon: "search",
-    text: "リストスタイル",
+    title: "リストスタイル",
   }
 };
 
 export const Description: Story = {
   args: {
     leftIcon: "search",
-    text: "リストスタイル",
+    title: "リストスタイル",
     description: "補足テキスト補足テキスト",
   }
 };
@@ -61,14 +61,14 @@ export const Description: Story = {
 export const RightIcon: Story = {
   args: {
     rightIcon: "chevron_right",
-    text: "リストスタイル",
+    title: "リストスタイル",
   }
 };
 
 export const Badge: Story = {
   args: {
     leftIcon: "search",
-    text: "リストスタイル1",
+    title: "リストスタイル1",
     description: "補足テキスト補足テキスト10分前",
     badge: 100,
   }

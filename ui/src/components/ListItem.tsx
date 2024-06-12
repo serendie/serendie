@@ -10,7 +10,7 @@ export const ListItemStyle = sva({
   slots: [
     "root",
     "textGroup",
-    "text",
+    "title",
     "description",
     "rightIcon",
     "leftIcon",
@@ -36,7 +36,7 @@ export const ListItemStyle = sva({
       gap: "dic.system.dimension.spacing.twoExtraSmall",
       flexGrow: 1,
     },
-    text: {
+    title: {
       textStyle: "dic.system.typography.label.extraLarge_compact",
       color: "dic.system.color.component.onSurface",
       _expanded: {
@@ -77,7 +77,7 @@ export const ListItemStyle = sva({
 });
 
 type ListItemBaseProps = {
-  text: string;
+  title: string;
   description?: string;
   rightIcon?: SvgIconName;
   leftIcon?: SvgIconName;
@@ -99,7 +99,7 @@ export const ListItem: React.FC<ListItemProps> = ({
   leftIcon,
   rightIcon,
   isLargeLeftIcon,
-  text,
+  title,
   description,
   badge,
   children,
@@ -122,7 +122,7 @@ export const ListItem: React.FC<ListItemProps> = ({
         </div>
       )}
       <div className={styles.textGroup} style={textGroupStyle}>
-        <span className={styles.text}>{text}</span>
+        <span className={styles.title}>{title}</span>
         <span className={styles.description}>{description}</span>
         {children}
       </div>
