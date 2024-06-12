@@ -38,6 +38,12 @@ export const TabItemStyle = sva({
           color: "dic.system.color.interaction.disabledOnSurface",
         }
       },
+      _focusVisible: {
+        outlineWidth: "1px",
+        outlineStyle: "solid",
+        outlineColor: "dic.system.color.component.outline",
+        outlineOffset: "-1px",
+      }
     },
     dot: {
       height: 8,
