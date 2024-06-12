@@ -13,8 +13,8 @@ export const StorybookButton: React.FC<StorybookButtonProps> = ({
       onClick={() => window.open(href, "_blank")}
       size={"small"}
       // TODO: styleType=rectangle の実装待ち
-      styleType={"outline"}
-      rightIcon={<SvgIcon icon={"chevron_right"} />}>
+      styleType={"ghost"}
+      rightIcon={<SvgIcon icon={"arrow_blank"} />}>
       Storybook
     </Button>
   );

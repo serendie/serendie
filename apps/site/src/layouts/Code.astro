@@ -4,6 +4,7 @@ import { Box, Flex, styled } from "@spread/ui/jsx";
 import { Code as AstroCode } from "astro:components";
 import type { BundledLanguage } from "shiki";
 import { StorybookButton } from "../comopnents/StorybookButton.tsx";
+import { css } from "@spread/ui/css";
 
 interface Props {
   title: string;
@@ -22,50 +23,65 @@ const {
   language
 } = Astro.props
 
+const Container = styled('div',{
+  base: {
+    textStyle: "dic.system.typography.body.small_expanded",
+    mb:"dic.system.dimension.spacing.threeExtraLarge",
+  }
+})
 
 const SubTitle = styled('h2',{
   base: {
-    textStyle: "dic.system.typography.title.medium_expanded",
-    mb: "dic.system.dimension.spacing.medium",
+    textStyle: "dic.system.typography.title.large_expanded",
   }
 })
 
 const Description = styled('p',{
   base: {
-    textStyle: "dic.dic.system.typography.body.extraSmall_expanded",
     mb: "dic.system.dimension.spacing.medium",
   }
 })
 
-const Container = styled('div',{
+const StyledButton = styled('button', {
   base: {
-    mb:"dic.system.dimension.spacing.threeExtraLarge",
+    cursor: "pointer",
   }
 })
-
-const StyledButton = styled('button')
 
 ---
 
 <Container>
-  <Flex justifyContent={"space-between"}>
+  <Flex justifyContent={"space-between"} mb="dic.system.dimension.spacing.small">
     <SubTitle>{title}</SubTitle>
     <StorybookButton href={storyUrl} />
   </Flex>
-  <Description>{description}</Description>
-  <Box>
-    <slot />
-    <Box mt="dic.system.dimension.spacing.threeExtraLarge">
-      <Flex justifyContent={"space-between"}>
-        <StyledButton data-toggle-code cursor="pointer" display="inline-flex" alignItems={"center"}>
-          <SvgIcon icon={"chevron_right"} />
+  <Description mb="dic.system.dimension.spacing.twoExtraLarge" fontSize="dic.reference.typography.scale.expanded.extraSmall">{description}</Description>
+  <Box
+         border={"solid"} borderColor="dic.system.color.component.outline"
+         borderWidth="dic.system.dimension.border.medium"
+         borderRadius='dic.system.dimension.radius.large'
+         overflow='hidden'
+  >
+    <Box p='dic.system.dimension.spacing.threeExtraLarge' borderBottomColor="dic.system.color.component.outline" borderBottomWidth="dic.system.dimension.border.medium"> 
+      <slot />
+    </Box>
+    <Box
+    py='dic.system.dimension.spacing.extraLarge'
+    px='dic.system.dimension.spacing.twoExtraLarge'
+    bg="dic.reference.color.scale.gray.100"
+    >
+      <Flex justifyContent={"space-between"}
+      py='dic.system.dimension.spacing.small' px='dic.system.dimension.spacing.extraSmall'
+      >
+        <StyledButton data-toggle-code display="inline-flex" alignItems={"center"} textStyle="dic.system.typography.body.medium_expanded">
+          <SvgIcon icon={"chevron_right"} size={"20px"} className={css({mr:"dic.system.dimension.spacing.extraSmall"})} />
           Code
         </StyledButton>
-        <Button>Copy</Button>
+        <StyledButton aria-label="Copy"><SvgIcon size={"20px"} icon={"clipboard_copy"}/></StyledButton>
       </Flex>
-      <div style={{"display": "none"}}>
-      <AstroCode code={code} lang={language??"tsx"} theme={"github-light"} />
-      </div>
+      <Box style={{"display": "none"}} pt="dic.system.dimension.spacing.medium" px="dic.system.dimension.spacing.medium" fontSize="dic.reference.typography.scale.compact.small" >
+      <AstroCode code={code} lang={language??"tsx"} theme={"github-light"} style="background: transparent" />
+      </Box>
     </Box>
   </Box>
 </Container>

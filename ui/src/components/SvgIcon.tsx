@@ -1,6 +1,8 @@
 import add from "@material-design-icons/svg/round/add.svg?react";
 import check from "../assets/check.svg?react";
 import checkCircle from "../assets/checkCircle.svg?react";
+import arrow_outward from "@material-design-icons/svg/round/arrow_outward.svg?react";
+import content_copy from "@material-design-icons/svg/round/content_copy.svg?react";
 import chevron_left from "@material-design-icons/svg/round/chevron_left.svg?react";
 import chevron_right from "@material-design-icons/svg/round/chevron_right.svg?react";
 import close from "@material-design-icons/svg/round/close.svg?react";
@@ -17,6 +19,10 @@ const icons = {
   add,
   check,
   checkCircle,
+  arrow_outward,
+  arrow_blank: arrow_outward,
+  content_copy,
+  clipboard_copy: content_copy,
   chevron_left,
   chevron_right,
   close,
