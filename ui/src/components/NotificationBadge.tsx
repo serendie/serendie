@@ -24,6 +24,23 @@ const NotificationBadgeStyle = sva({
     },
   },
   variants: {
+    size: {
+      small: {
+        root: {
+          height: 16,
+          minWidth: 16,
+          paddingX: "dic.system.dimension.spacing.twoExtraSmall",
+        },
+
+      },
+      medium: {
+        root: {
+          height: 24,
+          minWidth: 24,
+          paddingX: "dic.system.dimension.spacing.extraSmall",
+        },
+      },
+    },
     variant: {
       primary: {
         root: {
@@ -40,6 +57,7 @@ const NotificationBadgeStyle = sva({
       true: {
         root: {
           height: 8,
+          paddingX: 0,
           minWidth: 8,
         },
       },
@@ -47,11 +65,12 @@ const NotificationBadgeStyle = sva({
   },
   defaultVariants: {
     variant: "primary",
+    size: "medium",
   },
 });
 
 type BadgeProps = {
-  count: number;
+  count?: number;
 };
 
 export type NotificationBadgeProps = BadgeProps &
@@ -70,7 +89,7 @@ export const NotificationBadge: React.FC<NotificationBadgeProps> = ({
     return <div className={styles.root} {...componentProps}></div>;
   }
 
-  if (count < 1) {
+  if (!count || count < 1) {
     return null;
   }
 

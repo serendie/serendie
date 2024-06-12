@@ -6,11 +6,12 @@ export const TabsStyle = sva({
   base: {
     root: {
       display: "flex",
-      flexDirection: "column",
+      paddingX: "dic.system.dimension.spacing.medium",
     },
     list: {
       display: "flex",
-      gap: "dic.system.dimension.spacing.medium",
+      alignItems: "center",
+      justifyContent: "space-around",
     },
   },
 });
@@ -28,7 +29,7 @@ export const Tabs: React.FC<TabsProps> = ({ children, ...props }) => {
 
   return (
     <ArkTabs.Root className={styles.root} {...componentProps} >
-      <ArkTabs.List>
+      <ArkTabs.List className={styles.list}>
         {children}
       </ArkTabs.List>
     </ArkTabs.Root>
