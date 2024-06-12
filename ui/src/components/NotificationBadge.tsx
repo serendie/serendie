@@ -12,7 +12,7 @@ const NotificationBadgeStyle = sva({
       minWidth: 24,
       color: "dic.system.color.impression.onNegative",
       borderRadius: "dic.system.dimension.radius.full",
-      paddingX: "dic.system.dimension.spacing.extraSmall",
+      paddingX: "dic.system.dimension.spacing.twoExtraSmall",
       textStyle: "dic.system.typography.label.small_compact",
       _expanded: {
         textStyle: "dic.system.typography.label.small_expanded",
