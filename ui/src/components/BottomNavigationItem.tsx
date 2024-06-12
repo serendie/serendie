@@ -26,7 +26,7 @@ export const BottomNavigationItemStyle = sva({
       },
     },
     icon: {
-      color: "dic.system.color.impression.primary",
+      color: "dic.system.color.component.onSurface",
     },
     badge: {
       position: "absolute",
