@@ -45,14 +45,14 @@ type Story = StoryObj<typeof ListItem>;
 
 export const Basic: Story = {
   args: {
-    leftIcon: "search",
+    leftIcon: "texture",
     title: "リストスタイル",
   }
 };
 
 export const Description: Story = {
   args: {
-    leftIcon: "search",
+    leftIcon: "texture",
     title: "リストスタイル",
     description: "補足テキスト補足テキスト",
   }
@@ -67,7 +67,7 @@ export const RightIcon: Story = {
 
 export const Badge: Story = {
   args: {
-    leftIcon: "search",
+    leftIcon: "texture",
     title: "リストスタイル1",
     description: "補足テキスト補足テキスト10分前",
     badge: 100,

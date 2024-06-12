@@ -8,6 +8,7 @@ import chevron_right from "@material-design-icons/svg/round/chevron_right.svg?re
 import close from "@material-design-icons/svg/round/close.svg?react";
 import face from "@material-design-icons/svg/round/face.svg?react";
 import search from "@material-design-icons/svg/round/search.svg?react";
+import texture from "../assets/texture.svg?react";
 import expandMore from "@material-design-icons/svg/round/expand_more.svg?react";
 import error from "../assets/error.svg?react";
 import error_fill from "../assets/errorFill.svg?react";
@@ -28,6 +29,7 @@ const icons = {
   close,
   face,
   search,
+  texture,
   expandMore,
   errorCircle,
   error,
