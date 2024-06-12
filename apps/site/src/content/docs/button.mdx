@@ -1,14 +1,16 @@
 ---
 title: Button
+componentName: ボタン
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
 ---
 
-import { Button } from "@spread/ui";
+import { ButtonSample } from "../../sampleComponents/ButtonSample.tsx";
+import buttonSampleRaw from "../../sampleComponents/ButtonSample.tsx?raw";
+import Code from "../../layouts/Code.astro";
 
-<iframe
-  src="/storybook/iframe.html?viewMode=story&shortcuts=false&singleStory=true&id=button--primary"
-  width="800"
-  height="400"></iframe>
-
-```jsx
-<Button>Click me</Button>
-```
+<Code
+  title="Size"
+  description="Common buttonのサイズはSmallとMediumの2種類あります。SmallはPCなどの大きな画面でマウス操作をする前提で使用することを推奨しています。また、Mediumは画面サイズにかかわらず使用できますが、スマートフォンなどの画面では基本サイズになります。"
+  code={buttonSampleRaw}>
+  <ButtonSample client:load />
+</Code>
