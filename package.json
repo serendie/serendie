@@ -3,15 +3,15 @@
   "name": "spread",
   "version": "0.0.1",
   "scripts": {
-    "prepare": "npm run panda codegen -w @spread/ui",
+    "prepare": "npm run build:ui",
     "storybook": "npm run storybook -w @spread/ui",
     "build": "npm run build:site",
     "build:ui": "npm run build --workspace @spread/ui",
     "build:site": "npm run build --workspace @spread/site",
+    "dev:site": "npm run dev --workspace @spread/site",
     "dev:example": "npm run dev --workspace @spread/example",
     "dev:ui": "npm run dev --workspace @spread/ui",
     "dev": "npm run dev:example && npm run dev:ui",
-    "postinstall": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "workspaces": [

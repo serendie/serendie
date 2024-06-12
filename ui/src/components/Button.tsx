@@ -1,14 +1,13 @@
 import React from "react";
 import { css, cva, cx } from "../../styled-system/css";
 import { styled, splitCssProps } from "../../styled-system/jsx";
-import { SystemStyleObject } from "@pandacss/dev";
 import { HTMLStyledProps, StyledVariantProps } from "../../styled-system/types";
 
 //Note:  Filledがデフォルト
 //typeにルックを定義、sizeには余白やフォントのサイズを定義するイメージ
 
 // outlineとroundedは角Rのみ違うので共通部を切り出している
-const outlineCss: SystemStyleObject = {
+const outlineCss = {
   color: "dic.system.color.component.onSurface",
   outlineWidth: "dic.system.dimension.border.medium",
   outlineStyle: "solid",
