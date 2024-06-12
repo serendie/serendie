@@ -7,6 +7,7 @@ export const TabItemStyle = sva({
   base: {
     trigger: {
       display: "flex",
+      justifyContent: "center",
       flex: 1,
       gap: "dic.system.dimension.spacing.twoExtraSmall",
       alignItems: "center",
@@ -27,12 +28,15 @@ export const TabItemStyle = sva({
         fontWeight: "bold",
         borderBottomColor: "dic.system.color.impression.primary",
       },
-      _hover: {
-        color: "dic.system.color.impression.primary",
-      },
       _disabled: {
         cursor: "default",
         color: "dic.system.color.interaction.disabledOnSurface",
+      },
+      _hover: {
+        color: "dic.system.color.impression.primary",
+        _disabled: {
+          color: "dic.system.color.interaction.disabledOnSurface",
+        }
       },
     },
     dot: {

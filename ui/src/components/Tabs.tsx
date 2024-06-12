@@ -10,6 +10,7 @@ export const TabsStyle = sva({
     },
     list: {
       display: "flex",
+      flex: 1,
       alignItems: "center",
       justifyContent: "space-around",
     },
