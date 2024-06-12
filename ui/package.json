@@ -50,6 +50,7 @@
     "storybook": "^8.1.4",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
+    "vite-plugin-dts": "^3.9.1",
     "vite-plugin-svgr": "^4.2.0"
   },
   "exports": {

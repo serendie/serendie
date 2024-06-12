@@ -1,7 +1,7 @@
 // https://ark-ui.com/docs/react/components/dialog
 
 import { Dialog, DialogRootProps, Portal } from "@ark-ui/react";
-import { RecipeVariantProps, css, sva } from "../../styled-system/css";
+import { RecipeVariantProps, sva } from "../../styled-system/css";
 import { Button } from "./Button";
 
 const ModalDialogStyle = sva({
