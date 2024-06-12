@@ -1,9 +1,6 @@
 import { RecipeVariantProps, sva } from "../../styled-system/css";
-import { getToken } from "../tokens/getToken";
 import { NotificationBadge } from "./NotificationBadge";
 import { SvgIcon, SvgIconName } from "./SvgIcon";
-
-const { dic } = getToken();
 
 export const BottomNavigationItemStyle = sva({
   slots: ["root", "iconGroup", "icon", "label", "badge"],
@@ -28,6 +25,9 @@ export const BottomNavigationItemStyle = sva({
         textStyle: "dic.system.typography.label.small_compact",
       },
     },
+    icon: {
+      color: "dic.system.color.impression.primary",
+    },
     badge: {
       position: "absolute",
       top: "-6px",
@@ -40,6 +40,9 @@ export const BottomNavigationItemStyle = sva({
         label: {
           color: "dic.system.color.impression.primary",
         },
+        icon: {
+          color: "dic.system.color.impression.primary",
+        }
       },
     },
     dot: {
@@ -75,7 +78,6 @@ export const BottomNavigationItem: React.FC<BottomNavigationItemProps> = ({
     BottomNavigationItemStyle.splitVariantProps(props);
   const styles = BottomNavigationItemStyle(cssProps);
   const dot = cssProps.dot;
-  const iconColor = cssProps.isActive ? dic.system.color.impression.primary : dic.system.color.component.onSurface;
 
   return (
     <button className={styles.root} {...componentProps}>
@@ -83,7 +85,7 @@ export const BottomNavigationItem: React.FC<BottomNavigationItemProps> = ({
         <div className={styles.badge}>
           <NotificationBadge count={count || 0} noNumber={dot} />
         </div>
-        <SvgIcon icon={icon} size="24px" color={iconColor} />
+        <SvgIcon icon={icon} size="24px" className={styles.icon}/>
       </div>
       <span className={styles.label}>{label}</span>
     </button>
