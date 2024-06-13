@@ -1,7 +1,7 @@
-import { Button } from "@serendie/ui";
+import { Button } from "@spread/ui";
 import { HBox, VBox } from "src/components/LayoutUtils";
 
-export function ButtonSample() {
+export function ButtonSample2() {
   return (
     <HBox>
       <VBox>
