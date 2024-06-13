@@ -1,17 +1,15 @@
 import { Button } from "@spread/ui";
-import { HBox, VBox } from "src/components/LayoutUtils";
+import type { ComponentProps } from "react";
+import { StateMatrix } from "src/components/StateMatrix";
 
-export function ButtonSample2() {
+export const ButtonSample2: React.FC = () => {
   return (
-    <HBox>
-      <VBox>
-        <Button size="small">Click me</Button>
-        <p>Small</p>
-      </VBox>
-      <VBox>
-        <Button size="medium">Click me</Button>
-        <p>Medium</p>
-      </VBox>
-    </HBox>
+    <StateMatrix<ComponentProps<typeof Button>>
+      component={Button}
+      children="Button"
+      propsName="styleType"
+      states={["enabled", "hover", "focus-visible", "disabled"]}
+      props={["filled", "ghost", "outline", "rounded"]}
+    />
   );
-}
+};
