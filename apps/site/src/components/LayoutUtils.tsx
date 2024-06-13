@@ -17,3 +17,25 @@ export const VBox = styled(Box, {
     gap: "dic.system.dimension.spacing.medium",
   },
 });
+
+export const Dl = styled("dl", {
+  base: {
+    display: "grid",
+    gridTemplateColumns: "80px auto",
+    alignItems: "center",
+    rowGap: "dic.system.dimension.spacing.threeExtraLarge",
+    columnGap: "dic.system.dimension.spacing.medium",
+  },
+});
+
+export const Dt = styled("dt", {
+  base: {
+    fontWeight: "bold",
+  },
+});
+
+export const Dd = styled("dd", {
+  base: {
+    margin: 0,
+  },
+});
