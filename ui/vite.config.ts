@@ -14,7 +14,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: ["src/index.ts", "src/styles.css"],
-      name: "Spread",
+      name: "Serendie",
     },
     rollupOptions: {
       // 外部化する依存関係

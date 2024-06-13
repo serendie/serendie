@@ -10,12 +10,12 @@ const NotificationBadgeStyle = sva({
       justifyContent: "center",
       height: 24,
       minWidth: 24,
-      color: "dic.system.color.impression.onNegative",
-      borderRadius: "dic.system.dimension.radius.full",
-      paddingX: "dic.system.dimension.spacing.twoExtraSmall",
-      textStyle: "dic.system.typography.label.small_compact",
+      color: "sd.system.color.impression.onNegative",
+      borderRadius: "sd.system.dimension.radius.full",
+      paddingX: "sd.system.dimension.spacing.twoExtraSmall",
+      textStyle: "sd.system.typography.label.small_compact",
       _expanded: {
-        textStyle: "dic.system.typography.label.small_expanded",
+        textStyle: "sd.system.typography.label.small_expanded",
       },
     },
     text: {
@@ -27,12 +27,12 @@ const NotificationBadgeStyle = sva({
     variant: {
       primary: {
         root: {
-          backgroundColor: "dic.system.color.impression.negative",
+          backgroundColor: "sd.system.color.impression.negative",
         },
       },
       secondary: {
         root: {
-          backgroundColor: "dic.system.color.impression.primary",
+          backgroundColor: "sd.system.color.impression.primary",
         },
       },
     },

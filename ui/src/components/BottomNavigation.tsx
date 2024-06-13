@@ -8,9 +8,9 @@ export const BottomNavigationStyle = sva({
       alignItems: "center",
       justifyContent: "space-around",
       height: 64,
-      paddingX: "dic.system.dimension.spacing.medium",
+      paddingX: "sd.system.dimension.spacing.medium",
       borderTop: "1px solid",
-      borderTopColor: "dic.system.color.component.outline",
+      borderTopColor: "sd.system.color.component.outline",
     },
   },
 });

@@ -20,37 +20,37 @@ export const ListItemStyle = sva({
     root: {
       display: "flex",
       alignItems: "center",
-      paddingX: "dic.system.dimension.spacing.medium",
-      paddingY: "dic.system.dimension.spacing.extraSmall",
-      gap: "dic.system.dimension.spacing.small",
-      background: "dic.system.color.component.surface",
+      paddingX: "sd.system.dimension.spacing.medium",
+      paddingY: "sd.system.dimension.spacing.extraSmall",
+      gap: "sd.system.dimension.spacing.small",
+      background: "sd.system.color.component.surface",
       cursor: "pointer",
       _hover: {
         background:
-          "color-mix(in srgb, {colors.dic.system.color.interaction.hoveredVariant}, {colors.dic.system.color.component.surface});",
+          "color-mix(in srgb, {colors.sd.system.color.interaction.hoveredVariant}, {colors.sd.system.color.component.surface});",
       },
     },
     textGroup: {
       display: "flex",
       flexDirection: "column",
-      gap: "dic.system.dimension.spacing.twoExtraSmall",
+      gap: "sd.system.dimension.spacing.twoExtraSmall",
       flexGrow: 1,
     },
     title: {
-      textStyle: "dic.system.typography.label.extraLarge_compact",
-      color: "dic.system.color.component.onSurface",
+      textStyle: "sd.system.typography.label.extraLarge_compact",
+      color: "sd.system.color.component.onSurface",
       _expanded: {
-        textStyle: "dic.system.typography.label.extraLarge_expanded",
+        textStyle: "sd.system.typography.label.extraLarge_expanded",
       },
       _disabled: {
         opacity: 0.3,
       },
     },
     description: {
-      textStyle: "dic.system.typography.body.extraSmall_compact",
-      color: "dic.system.color.component.onSurfaceVariant",
+      textStyle: "sd.system.typography.body.extraSmall_compact",
+      color: "sd.system.color.component.onSurfaceVariant",
       _expanded: {
-        textStyle: "dic.system.typography.body.extraSmall_expanded",
+        textStyle: "sd.system.typography.body.extraSmall_expanded",
       },
       _disabled: {
         opacity: 0.3,
