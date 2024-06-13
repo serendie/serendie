@@ -1,25 +1,25 @@
 {
-  "dic": {
+  "sd": {
     "system": {
       "typography": {
         "display": {
           "small": {
             "$type": "typography",
             "$value": {
-              "fontSize": "{dic.reference.typography.scale.expanded.fourExtraLarge}",
-              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
-              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "fontSize": "{sd.reference.typography.scale.expanded.fourExtraLarge}",
+              "fontWeight": "{sd.reference.typography.fontWeight.regular}",
+              "fontFamily": "{sd.reference.typography.fontFamily.primary}",
+              "lineHeight": "{sd.reference.typography.lineHeight.normal}",
               "letterSpacing": "0px"
             }
           },
           "medium": {
             "$type": "typography",
             "$value": {
-              "fontSize": "{dic.reference.typography.scale.expanded.fiveExtraLarge}",
-              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
-              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "fontSize": "{sd.reference.typography.scale.expanded.fiveExtraLarge}",
+              "fontWeight": "{sd.reference.typography.fontWeight.regular}",
+              "fontFamily": "{sd.reference.typography.fontFamily.primary}",
+              "lineHeight": "{sd.reference.typography.lineHeight.normal}",
               "letterSpacing": "0px"
             }
           }
@@ -28,30 +28,30 @@
           "small": {
             "$type": "typography",
             "$value": {
-              "fontSize": "{dic.reference.typography.scale.expanded.extraLarge}",
-              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
-              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "fontSize": "{sd.reference.typography.scale.expanded.extraLarge}",
+              "fontWeight": "{sd.reference.typography.fontWeight.regular}",
+              "fontFamily": "{sd.reference.typography.fontFamily.primary}",
+              "lineHeight": "{sd.reference.typography.lineHeight.normal}",
               "letterSpacing": "0px"
             }
           },
           "medium": {
             "$type": "typography",
             "$value": {
-              "fontSize": "{dic.reference.typography.scale.expanded.twoExtraLarge}",
-              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
-              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "fontSize": "{sd.reference.typography.scale.expanded.twoExtraLarge}",
+              "fontWeight": "{sd.reference.typography.fontWeight.regular}",
+              "fontFamily": "{sd.reference.typography.fontFamily.primary}",
+              "lineHeight": "{sd.reference.typography.lineHeight.normal}",
               "letterSpacing": "0px"
             }
           },
           "large": {
             "$type": "typography",
             "$value": {
-              "fontSize": "{dic.reference.typography.scale.expanded.threeExtraLarge}",
-              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
-              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "fontSize": "{sd.reference.typography.scale.expanded.threeExtraLarge}",
+              "fontWeight": "{sd.reference.typography.fontWeight.regular}",
+              "fontFamily": "{sd.reference.typography.fontFamily.primary}",
+              "lineHeight": "{sd.reference.typography.lineHeight.normal}",
               "letterSpacing": "0px"
             }
           }
@@ -60,30 +60,30 @@
           "small": {
             "$type": "typography",
             "$value": {
-              "fontSize": "{dic.reference.typography.scale.expanded.small}",
-              "fontWeight": "{dic.reference.typography.fontWeight.bold}",
-              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "fontSize": "{sd.reference.typography.scale.expanded.small}",
+              "fontWeight": "{sd.reference.typography.fontWeight.bold}",
+              "fontFamily": "{sd.reference.typography.fontFamily.primary}",
+              "lineHeight": "{sd.reference.typography.lineHeight.normal}",
               "letterSpacing": "0px"
             }
           },
           "medium": {
             "$type": "typography",
             "$value": {
-              "fontSize": "{dic.reference.typography.scale.expanded.medium}",
-              "fontWeight": "{dic.reference.typography.fontWeight.bold}",
-              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "fontSize": "{sd.reference.typography.scale.expanded.medium}",
+              "fontWeight": "{sd.reference.typography.fontWeight.bold}",
+              "fontFamily": "{sd.reference.typography.fontFamily.primary}",
+              "lineHeight": "{sd.reference.typography.lineHeight.normal}",
               "letterSpacing": "0px"
             }
           },
           "large": {
             "$type": "typography",
             "$value": {
-              "fontSize": "{dic.reference.typography.scale.expanded.large}",
-              "fontWeight": "{dic.reference.typography.fontWeight.bold}",
-              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "fontSize": "{sd.reference.typography.scale.expanded.large}",
+              "fontWeight": "{sd.reference.typography.fontWeight.bold}",
+              "fontFamily": "{sd.reference.typography.fontFamily.primary}",
+              "lineHeight": "{sd.reference.typography.lineHeight.normal}",
               "letterSpacing": "0px"
             }
           }
@@ -92,40 +92,40 @@
           "extraSmall": {
             "$type": "typography",
             "$value": {
-              "fontSize": "{dic.reference.typography.scale.expanded.twoExtraSmall}",
-              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
-              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-              "lineHeight": "{dic.reference.typography.lineHeight.tight}",
+              "fontSize": "{sd.reference.typography.scale.expanded.twoExtraSmall}",
+              "fontWeight": "{sd.reference.typography.fontWeight.regular}",
+              "fontFamily": "{sd.reference.typography.fontFamily.primary}",
+              "lineHeight": "{sd.reference.typography.lineHeight.tight}",
               "letterSpacing": "0px"
             }
           },
           "small": {
             "$type": "typography",
             "$value": {
-              "fontSize": "{dic.reference.typography.scale.expanded.extraSmall}",
-              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
-              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "fontSize": "{sd.reference.typography.scale.expanded.extraSmall}",
+              "fontWeight": "{sd.reference.typography.fontWeight.regular}",
+              "fontFamily": "{sd.reference.typography.fontFamily.primary}",
+              "lineHeight": "{sd.reference.typography.lineHeight.normal}",
               "letterSpacing": "0px"
             }
           },
           "medium": {
             "$type": "typography",
             "$value": {
-              "fontSize": "{dic.reference.typography.scale.expanded.small}",
-              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
-              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "fontSize": "{sd.reference.typography.scale.expanded.small}",
+              "fontWeight": "{sd.reference.typography.fontWeight.regular}",
+              "fontFamily": "{sd.reference.typography.fontFamily.primary}",
+              "lineHeight": "{sd.reference.typography.lineHeight.normal}",
               "letterSpacing": "0px"
             }
           },
           "large": {
             "$type": "typography",
             "$value": {
-              "fontSize": "{dic.reference.typography.scale.expanded.medium}",
-              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
-              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-              "lineHeight": "{dic.reference.typography.lineHeight.normal}",
+              "fontSize": "{sd.reference.typography.scale.expanded.medium}",
+              "fontWeight": "{sd.reference.typography.fontWeight.regular}",
+              "fontFamily": "{sd.reference.typography.fontFamily.primary}",
+              "lineHeight": "{sd.reference.typography.lineHeight.normal}",
               "letterSpacing": "0px"
             }
           }
@@ -134,40 +134,40 @@
           "small": {
             "$type": "typography",
             "$value": {
-              "fontSize": "{dic.reference.typography.scale.expanded.threeExtraSmall}",
-              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
-              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-              "lineHeight": "{dic.reference.typography.lineHeight.none}",
+              "fontSize": "{sd.reference.typography.scale.expanded.threeExtraSmall}",
+              "fontWeight": "{sd.reference.typography.fontWeight.regular}",
+              "fontFamily": "{sd.reference.typography.fontFamily.primary}",
+              "lineHeight": "{sd.reference.typography.lineHeight.none}",
               "letterSpacing": "0px"
             }
           },
           "medium": {
             "$type": "typography",
             "$value": {
-              "fontSize": "{dic.reference.typography.scale.expanded.twoExtraSmall}",
-              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
-              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-              "lineHeight": "{dic.reference.typography.lineHeight.none}",
+              "fontSize": "{sd.reference.typography.scale.expanded.twoExtraSmall}",
+              "fontWeight": "{sd.reference.typography.fontWeight.regular}",
+              "fontFamily": "{sd.reference.typography.fontFamily.primary}",
+              "lineHeight": "{sd.reference.typography.lineHeight.none}",
               "letterSpacing": "0px"
             }
           },
           "large": {
             "$type": "typography",
             "$value": {
-              "fontSize": "{dic.reference.typography.scale.expanded.extraSmall}",
-              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
-              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-              "lineHeight": "{dic.reference.typography.lineHeight.none}",
+              "fontSize": "{sd.reference.typography.scale.expanded.extraSmall}",
+              "fontWeight": "{sd.reference.typography.fontWeight.regular}",
+              "fontFamily": "{sd.reference.typography.fontFamily.primary}",
+              "lineHeight": "{sd.reference.typography.lineHeight.none}",
               "letterSpacing": "0px"
             }
           },
           "extraLarge": {
             "$type": "typography",
             "$value": {
-              "fontSize": "{dic.reference.typography.scale.expanded.small}",
-              "fontWeight": "{dic.reference.typography.fontWeight.regular}",
-              "fontFamily": "{dic.reference.typography.fontFamily.primary}",
-              "lineHeight": "{dic.reference.typography.lineHeight.none}",
+              "fontSize": "{sd.reference.typography.scale.expanded.small}",
+              "fontWeight": "{sd.reference.typography.fontWeight.regular}",
+              "fontFamily": "{sd.reference.typography.fontFamily.primary}",
+              "lineHeight": "{sd.reference.typography.lineHeight.none}",
               "letterSpacing": "0px"
             }
           }
