@@ -75,9 +75,6 @@ export const TopAppBar: Props = ({
 }) => {
   const [variantProps, cssProps] = topAppBarStyle.splitVariantProps(props);
 
-  // titleのみの場合はtitleBarTitleOnlyを適用
-  const isTitleOnly = !headingIconButton && !trailingIconButtons && title;
-
   const classes = topAppBarStyle(variantProps);
 
   return (
