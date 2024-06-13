@@ -18,30 +18,30 @@ export const RadioButtonStyle = sva({
     item: {
       display: "flex",
       alignItems: "center",
-      gap: "dic.system.dimension.spacing.medium",
-      paddingY: "dic.system.dimension.spacing.small",
-      paddingX: "dic.system.dimension.spacing.medium",
+      gap: "sd.system.dimension.spacing.medium",
+      paddingY: "sd.system.dimension.spacing.small",
+      paddingX: "sd.system.dimension.spacing.medium",
       cursor: "pointer",
     },
     itemControl: {
       flexShrink: 0,
       ".group:has(:focus-visible) &": {
-        backgroundColor: "dic.system.color.interaction.selectedSurface",
-        borderRadius: "dic.system.dimension.radius.full",
+        backgroundColor: "sd.system.color.interaction.selectedSurface",
+        borderRadius: "sd.system.dimension.radius.full",
       },
     },
     checkedIcon: {
-      color: "dic.system.color.impression.primary",
+      color: "sd.system.color.impression.primary",
       _disabled: {
         color:
-          "color-mix(in srgb, {colors.dic.system.color.impression.primary}, {colors.dic.system.color.interaction.hoveredOnPrimary});",
+          "color-mix(in srgb, {colors.sd.system.color.impression.primary}, {colors.sd.system.color.interaction.hoveredOnPrimary});",
       },
     },
     unCheckedIcon: {
-      color: "dic.system.color.component.outlineVariant",
+      color: "sd.system.color.component.outlineVariant",
       _disabled: {
         color:
-          "color-mix(in srgb, {colors.dic.system.color.component.outlineVariant}, {colors.dic.system.color.interaction.hoveredOnPrimary});",
+          "color-mix(in srgb, {colors.sd.system.color.component.outlineVariant}, {colors.sd.system.color.interaction.hoveredOnPrimary});",
       },
     },
     itemTextGroup: {
@@ -49,24 +49,24 @@ export const RadioButtonStyle = sva({
       flexFlow: "column",
     },
     itemText: {
-      color: "dic.system.color.component.onSurface",
-      textStyle: "dic.system.typography.body.medium_compact",
+      color: "sd.system.color.component.onSurface",
+      textStyle: "sd.system.typography.body.medium_compact",
       _expanded: {
-        textStyle: "dic.system.typography.body.medium_expanded",
+        textStyle: "sd.system.typography.body.medium_expanded",
       },
       _disabled: {
-        color: "dic.system.color.interaction.disabledOnSurface",
+        color: "sd.system.color.interaction.disabledOnSurface",
       },
     },
     helperText: {
-      color: "dic.system.color.component.onSurfaceVariant",
-      marginTop: "dic.system.dimension.spacing.twoExtraSmall",
-      textStyle: "dic.system.typography.body.extraSmall_compact",
+      color: "sd.system.color.component.onSurfaceVariant",
+      marginTop: "sd.system.dimension.spacing.twoExtraSmall",
+      textStyle: "sd.system.typography.body.extraSmall_compact",
       _expanded: {
-        textStyle: "dic.system.typography.body.extraSmall_expanded",
+        textStyle: "sd.system.typography.body.extraSmall_expanded",
       },
       _disabled: {
-        color: "dic.system.color.interaction.disabledOnSurface",
+        color: "sd.system.color.interaction.disabledOnSurface",
       },
     },
   },

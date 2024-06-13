@@ -1,6 +1,6 @@
 import { w3cTokenJsonParser } from "style-dictionary-utils/dist/parser/w3c-token-json-parser.js";
 
-export const SpreadParser = {
+export const SerendieParser = {
   pattern: /\.json$/,
   parse: ({ filePath, contents }) => {
     const obj = w3cTokenJsonParser.parse({ filePath, contents });

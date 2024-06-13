@@ -1,4 +1,4 @@
-import { SpreadPreset } from "@spread/ui";
+import { SerendiePreset } from "@serendie/ui";
 import { defineConfig } from "@pandacss/dev";
 
 export default defineConfig({
@@ -21,6 +21,6 @@ export default defineConfig({
   outdir: "styled-system",
   outExtension: "js",
   jsxFramework: "react",
-  importMap: "@spread/ui",
-  presets: [SpreadPreset],
+  importMap: "@serendie/ui",
+  presets: [SerendiePreset],
 });

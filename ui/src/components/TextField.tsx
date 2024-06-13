@@ -20,16 +20,16 @@ const TextFieldStyle = sva({
     root: {
       display: "inline-grid",
       gridTemplateColumns: "minmax(auto, 300px)",
-      rowGap: "dic.system.dimension.spacing.extraSmall",
+      rowGap: "sd.system.dimension.spacing.extraSmall",
       textStyle: {
-        base: "dic.system.typography.body.medium_compact",
-        expanded: "dic.system.typography.body.medium_expanded",
+        base: "sd.system.typography.body.medium_compact",
+        expanded: "sd.system.typography.body.medium_expanded",
       },
     },
     label: {
       textStyle: {
-        base: "dic.system.typography.label.medium_compact",
-        expanded: "dic.system.typography.label.medium_expanded",
+        base: "sd.system.typography.label.medium_compact",
+        expanded: "sd.system.typography.label.medium_expanded",
       },
     },
     inputWrapper: {
@@ -37,27 +37,27 @@ const TextFieldStyle = sva({
       gridTemplateColumns: "1fr auto",
       alignItems: "center",
       outlineStyle: "solid",
-      outlineWidth: "dic.system.dimension.border.medium",
-      outlineColor: "dic.system.color.component.outline",
-      borderRadius: "dic.system.dimension.radius.medium",
+      outlineWidth: "sd.system.dimension.border.medium",
+      outlineColor: "sd.system.color.component.outline",
+      borderRadius: "sd.system.dimension.radius.medium",
       _focusWithin: {
-        outlineWidth: "dic.system.dimension.border.thick",
-        outlineColor: "dic.system.color.impression.primary",
+        outlineWidth: "sd.system.dimension.border.thick",
+        outlineColor: "sd.system.color.impression.primary",
       },
       _disabled: {
-        backgroundColor: "dic.system.color.interaction.disabled",
+        backgroundColor: "sd.system.color.interaction.disabled",
         cursor: "not-allowed",
       },
       _invalid: {
-        outlineColor: "dic.system.color.impression.negative",
+        outlineColor: "sd.system.color.impression.negative",
       },
     },
     input: {
       outline: "none",
-      paddingTop: "dic.system.dimension.spacing.extraSmall",
-      paddingRight: "dic.system.dimension.spacing.twoExtraSmall",
-      paddingBottom: "dic.system.dimension.spacing.extraSmall",
-      paddingLeft: "dic.system.dimension.spacing.medium",
+      paddingTop: "sd.system.dimension.spacing.extraSmall",
+      paddingRight: "sd.system.dimension.spacing.twoExtraSmall",
+      paddingBottom: "sd.system.dimension.spacing.extraSmall",
+      paddingLeft: "sd.system.dimension.spacing.medium",
     },
     icon: {
       display: "grid",
@@ -70,17 +70,17 @@ const TextFieldStyle = sva({
       },
     },
     required: {
-      pl: "dic.system.dimension.spacing.extraSmall",
-      color: "dic.system.color.impression.negative",
+      pl: "sd.system.dimension.spacing.extraSmall",
+      color: "sd.system.color.impression.negative",
     },
     messageField: {
       textStyle: {
-        base: "dic.system.typography.body.extraSmall_compact",
-        expanded: "dic.system.typography.body.extraSmall_expanded",
+        base: "sd.system.typography.body.extraSmall_compact",
+        expanded: "sd.system.typography.body.extraSmall_expanded",
       },
     },
     invalidMessage: {
-      color: "dic.system.color.impression.negative",
+      color: "sd.system.color.impression.negative",
     },
   },
 });
@@ -165,7 +165,7 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
               (invalid ? (
                 <span
                   className={css({
-                    color: "dic.system.color.impression.negative",
+                    color: "sd.system.color.impression.negative",
                   })}>
                   <SvgIcon icon="error" size="20" />
                 </span>

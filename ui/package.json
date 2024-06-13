@@ -1,5 +1,5 @@
 {
-  "name": "@spread/ui",
+  "name": "@serendie/ui",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -29,7 +29,7 @@
   "devDependencies": {
     "@ark-ui/react": "^3.0.0",
     "@pandacss/dev": "^0.30.1",
-    "@spread/design-token": "^0.0.0",
+    "@serendie/design-token": "^0.0.0",
     "@storybook/addon-essentials": "^8.1.4",
     "@storybook/addon-interactions": "^8.1.4",
     "@storybook/addon-links": "^8.1.4",

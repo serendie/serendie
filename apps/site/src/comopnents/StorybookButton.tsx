@@ -1,4 +1,4 @@
-import { Button, SvgIcon } from "@spread/ui";
+import { Button, SvgIcon } from "@serendie/ui";
 
 interface StorybookButtonProps {
   href?: string;

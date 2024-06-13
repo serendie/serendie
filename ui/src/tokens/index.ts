@@ -1,8 +1,8 @@
-import spreadTokens from "@spread/design-token/panda";
+import serendieTokens from "@serendie/design-token/panda";
 
 // PandaCSSのtokensとtextStylesが混在しているので分離する
-const { textStyles, ...tokens } = spreadTokens;
+const { textStyles, ...tokens } = serendieTokens;
 
-export const SpreadTokens = tokens;
+export const SerendieTokens = tokens;
 
-export const SpreadTypography = textStyles;
+export const SerendieTypography = textStyles;

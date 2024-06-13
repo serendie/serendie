@@ -2,7 +2,7 @@
 import "../index.css";
 import { getCollection } from "astro:content";
 import { siteConfig } from "../../siteConfog";
-import { styled } from "@spread/ui/jsx";
+import { styled } from "@serendie/ui/jsx";
 
 interface Props {
   title: string;
@@ -21,22 +21,22 @@ const Body = styled("body",{
 
 const Header = styled("header",{
   base: {
-    pt: "dic.system.dimension.spacing.extraLarge",
-    pr: "dic.system.dimension.spacing.threeExtraLarge",
-    pb: "dic.system.dimension.spacing.extraLarge",
-    pl: "dic.system.dimension.spacing.threeExtraLarge",
+    pt: "sd.system.dimension.spacing.extraLarge",
+    pr: "sd.system.dimension.spacing.threeExtraLarge",
+    pb: "sd.system.dimension.spacing.extraLarge",
+    pl: "sd.system.dimension.spacing.threeExtraLarge",
     display: "flex",
     justifyContent: "start",
     alignItems: "center",
     borderBottom: "solid",
-    borderColor: "dic.system.color.component.outline",
-    borderBottomWidth: "dic.system.dimension.border.medium"
+    borderColor: "sd.system.color.component.outline",
+    borderBottomWidth: "sd.system.dimension.border.medium"
   }
 });
 
 const H1 = styled("h1",{
   base: {
-    textStyle: "dic.system.typography.title.large_expanded",
+    textStyle: "sd.system.typography.title.large_expanded",
   }
 });
 
@@ -52,39 +52,39 @@ const Sidebar = styled("aside",{
   base: {
     w: "240px",
     h: "100%",
-    py: "dic.system.dimension.spacing.extraLarge",
+    py: "sd.system.dimension.spacing.extraLarge",
     display: "flex",
     flexDirection: "column",
     borderRight: "solid",
-    borderColor: "dic.system.color.component.outline",
-    borderRightWidth: "dic.system.dimension.border.medium",
+    borderColor: "sd.system.color.component.outline",
+    borderRightWidth: "sd.system.dimension.border.medium",
     backgroundColor:  "#FBFCFD"
   }
 });
 
 const Main = styled("main",{
   base: {
-    pt:'dic.system.dimension.spacing.threeExtraLarge',
-    pr:'dic.system.dimension.spacing.fiveExtraLarge',
-    pb:'dic.system.dimension.spacing.threeExtraLarge',
-    pl:'dic.system.dimension.spacing.fiveExtraLarge',
+    pt:'sd.system.dimension.spacing.threeExtraLarge',
+    pr:'sd.system.dimension.spacing.fiveExtraLarge',
+    pb:'sd.system.dimension.spacing.threeExtraLarge',
+    pl:'sd.system.dimension.spacing.fiveExtraLarge',
   }
 });
 
 const MainTitle = styled("h1",{
   base: {
-    textStyle: "dic.system.typography.headline.large_expanded",
-    mb: "dic.system.dimension.spacing.medium",
+    textStyle: "sd.system.typography.headline.large_expanded",
+    mb: "sd.system.dimension.spacing.medium",
   }
 });
 
 const SidebarLabel = styled("h2",{
   base: {
-    textStyle: "dic.system.typography.label.medium_expanded",
-    pt:'dic.system.dimension.spacing.extraSmall',
-    pr: 'dic.system.dimension.spacing.extraLarge',
-    pb:'dic.system.dimension.spacing.extraSmall',
-    pl: 'dic.system.dimension.spacing.extraLarge',
+    textStyle: "sd.system.typography.label.medium_expanded",
+    pt:'sd.system.dimension.spacing.extraSmall',
+    pr: 'sd.system.dimension.spacing.extraLarge',
+    pb:'sd.system.dimension.spacing.extraSmall',
+    pl: 'sd.system.dimension.spacing.extraLarge',
   }
 });
 
@@ -99,19 +99,19 @@ const List = styled("ul",{
 const ListItemLink = styled("a",{
   base: {
     display: "block",
-    textStyle: "dic.system.typography.label.extraLarge_expanded",
-    pt:'dic.system.dimension.spacing.extraSmall',
-    pr: 'dic.system.dimension.spacing.extraLarge',
-    pb:'dic.system.dimension.spacing.extraSmall',
-    pl: 'dic.system.dimension.spacing.extraLarge',
+    textStyle: "sd.system.typography.label.extraLarge_expanded",
+    pt:'sd.system.dimension.spacing.extraSmall',
+    pr: 'sd.system.dimension.spacing.extraLarge',
+    pb:'sd.system.dimension.spacing.extraSmall',
+    pl: 'sd.system.dimension.spacing.extraLarge',
     _hover: {
-      backgroundColor: "dic.system.color.interaction.hoverSurface",
+      backgroundColor: "sd.system.color.interaction.hoverSurface",
     }
   },
   variants: {
     active: {
       true: {
-        backgroundColor: "dic.system.color.interaction.selectedSurface",
+        backgroundColor: "sd.system.color.interaction.selectedSurface",
       }
     }
   }
