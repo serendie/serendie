@@ -1,5 +1,8 @@
 #!bin/bash
 
+# cd project root
+cd $(git rev-parse --show-toplevel)
+
 # Replace dic to sd
 
 rg -w -l -g '!*.sh' 'dic' | xargs perl -pi -e 's/\bdic\b/sd/g' 
