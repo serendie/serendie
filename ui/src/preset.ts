@@ -2,6 +2,7 @@ import { Preset } from "@pandacss/dev";
 import { SpreadRecipes } from "./recipes";
 import { SpreadTokens, SpreadTypography } from "./tokens";
 import { getToken } from "./tokens/getToken";
+import { SpreadKeyframes } from "./keyframes";
 
 const { dic } = getToken();
 
@@ -20,6 +21,9 @@ export const SpreadPreset: Preset = {
       },
       textStyles: {
         ...SpreadTypography,
+      },
+      keyframes: {
+        ...SpreadKeyframes,
       },
     },
   },
