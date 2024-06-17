@@ -1,9 +1,9 @@
 import { Tabs as ArkTabs } from "@ark-ui/react";
-import { sva } from "../../styled-system/css";
+import { RecipeVariantProps, sva } from "../../styled-system/css";
 import { NotificationBadge } from "./NotificationBadge";
 
 export const TabItemStyle = sva({
-  slots: ["trigger", "dot", "badge"],
+  slots: ["trigger", "dot", "badgeBox", "badge"],
   base: {
     trigger: {
       display: "flex",
@@ -36,33 +36,45 @@ export const TabItemStyle = sva({
         color: "dic.system.color.impression.primary",
         _disabled: {
           color: "dic.system.color.interaction.disabledOnSurface",
-        }
+        },
       },
       _focusVisible: {
         outlineWidth: "1px",
         outlineStyle: "solid",
         outlineColor: "dic.system.color.component.outline",
         outlineOffset: "-1px",
-      }
+      },
     },
     dot: {
       height: 8,
       width: 8,
     },
-    badge: {
+    badgeBox: {
       height: 16,
       width: 16,
+    },
+    badge: {
+      backgroundColor:
+        "color-mix(in srgb, {colors.dic.system.color.interaction.hoveredOnPrimary}, {colors.dic.system.color.impression.negativeContainer});",
     },
   },
 });
 
-export type TabItemProps = {
+type TabItemBaseProps = {
   title: string;
   value: string;
-  disabled?: boolean;
   dot?: boolean;
+  disabled?: boolean;
   badge?: number;
 };
+
+type ExclusiveBadgeProps =
+  | ({ badge?: number } & { dot?: never })
+  | ({ badge?: never } & { dot?: boolean });
+
+export type TabItemProps = TabItemBaseProps &
+  RecipeVariantProps<typeof TabItemStyle> &
+  ExclusiveBadgeProps;
 
 export const TabItem: React.FC<TabItemProps> = ({
   title,
@@ -74,6 +86,7 @@ export const TabItem: React.FC<TabItemProps> = ({
 }) => {
   const [cssProps, componentProps] = TabItemStyle.splitVariantProps(props);
   const styles = TabItemStyle(cssProps);
+  const badgeStyle = disabled ? styles.badge : "";
 
   return (
     <ArkTabs.Trigger
@@ -85,12 +98,16 @@ export const TabItem: React.FC<TabItemProps> = ({
       <span>{title}</span>
       {dot && (
         <div className={styles.dot}>
-          <NotificationBadge noNumber />
+          <NotificationBadge noNumber className={badgeStyle} />
         </div>
       )}
       {badge && (
-        <div className={styles.badge}>
-          <NotificationBadge count={badge} size="small" />
+        <div className={styles.badgeBox}>
+          <NotificationBadge
+            count={badge}
+            size="small"
+            className={badgeStyle}
+          />
         </div>
       )}
     </ArkTabs.Trigger>
