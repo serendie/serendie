@@ -5,8 +5,11 @@ description: 説明テキストがはいります説明テキストがはいり�
 ---
 
 import Code from "@/layouts/Code.astro";
-import { SizeSample, StateSample } from "@/sampleComponents/ButtonSample.tsx";
-import sizeSampleRaw from "@/sampleComponents/ButtonSample.tsx?raw";
+import { SizeSample } from "@/sampleComponents/Button/SizeSample";
+import sizeSampleRaw from "@/sampleComponents/Button/SizeSample.tsx?raw";
+import { TypeSample } from "@/sampleComponents/Button/TypeSample";
+import typeSampleRaw from "@/sampleComponents/Button/TypeSample.tsx?raw";
+import { StateSample } from "@/sampleComponents/Button/StateSample";
 
 <Code
   title="Size"
@@ -14,6 +17,14 @@ import sizeSampleRaw from "@/sampleComponents/ButtonSample.tsx?raw";
   code={sizeSampleRaw}
 >
   <SizeSample client:load />
+</Code>
+
+<Code
+  title="Types"
+  description="ButtonのサイズはSmallとMediumの2種類あります。SmallはPCなどの大きな画面でマウス操作をする前提で使用することを推奨しています。また、Mediumは画面サイズにかかわらず使用できますが、スマートフォンなどの画面では基本サイズになります。"
+  code={typeSampleRaw}
+>
+  <TypeSample client:load />
 </Code>
 
 <Code
