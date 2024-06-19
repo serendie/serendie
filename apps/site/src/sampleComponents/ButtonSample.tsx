@@ -1,7 +1,9 @@
 import { Button } from "@serendie/ui";
 import { HBox, VBox } from "src/components/LayoutUtils";
+import type { ComponentProps } from "react";
+import { StateMatrix } from "src/components/StateMatrix";
 
-export function ButtonSample() {
+export function SizeSample() {
   return (
     <HBox>
       <VBox>
@@ -15,3 +17,15 @@ export function ButtonSample() {
     </HBox>
   );
 }
+
+export const StateSample: React.FC = () => {
+  return (
+    <StateMatrix<ComponentProps<typeof Button>>
+      component={Button}
+      children="Button"
+      propsName="styleType"
+      states={["enabled", "hover", "focus-visible", "disabled"]}
+      props={["filled", "ghost", "outline", "rounded"]}
+    />
+  );
+};
