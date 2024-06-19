@@ -6,9 +6,11 @@ description: 説明テキストがはいります説明テキストがはいり�
 
 import Code from "@/layouts/Code.astro";
 import { SizeSample } from "@/sampleCode/Button/SizeSample";
-import sizeSampleRaw from "@/sampleComponents/Button/SizeSample.tsx?raw";
+import sizeSampleRaw from "@/sampleCode/Button/SizeSample.tsx?raw";
 import { TypeSample } from "@/sampleCode/Button/TypeSample";
-import typeSampleRaw from "@/sampleComponents/Button/TypeSample.tsx?raw";
+import typeSampleRaw from "@/sampleCode/Button/TypeSample.tsx?raw";
+import { IconSample } from "@/sampleCode/Button/IconSample";
+import iconSampleRaw from "@/sampleCode/Button/IconSample.tsx?raw";
 import { StateSample } from "@/sampleCode/Button/StateSample";
 
 <Code
@@ -25,6 +27,14 @@ import { StateSample } from "@/sampleCode/Button/StateSample";
   code={typeSampleRaw}
 >
   <TypeSample client:load />
+</Code>
+
+<Code
+  title="With Icon"
+  description="ラベルの左右にアイコンを入れることができます。ボタンの意図をより明確にユーザーに伝えることができます。"
+  code={iconSampleRaw}
+>
+  <IconSample client:load />
 </Code>
 
 <Code
