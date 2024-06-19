@@ -73,7 +73,7 @@ export const RadioButtonStyle = sva({
 });
 
 type RadioButtonItemProps = {
-  label: string;
+  label?: string;
   helperText?: string;
 };
 
@@ -112,9 +112,11 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
         )}
       </RadioGroup.ItemContext>
       <div className={styles.itemTextGroup}>
-        <RadioGroup.ItemText className={styles.itemText}>
-          {label}
-        </RadioGroup.ItemText>
+        {label && (
+          <RadioGroup.ItemText className={styles.itemText}>
+            {label}
+          </RadioGroup.ItemText>
+        )}
         {helperText && (
           <RadioGroup.ItemText className={styles.helperText}>
             {helperText}
