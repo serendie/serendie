@@ -45,56 +45,60 @@ export const StateMatrix = <ComponentProps,>({
         mb: "-sd.system.dimension.spacing.extraLarge",
       })}
     >
-      <tr>
-        <th
-          className={css({
-            textAlign: "left",
-            pr: "sd.system.dimension.spacing.fourExtraLarge",
-            pb: "sd.system.dimension.spacing.threeExtraLarge",
-          })}
-        ></th>
-        {states.map((state) => (
-          <th
-            key={state}
-            className={css({
-              pr: "sd.system.dimension.spacing.extraLarge",
-              pb: "sd.system.dimension.spacing.threeExtraLarge",
-            })}
-          >
-            {stateProps[state].label}
-          </th>
-        ))}
-      </tr>
-      {props.map((prop, i) => (
-        <tr key={i}>
+      <tbody>
+        <tr>
           <th
             className={css({
               textAlign: "left",
               pr: "sd.system.dimension.spacing.fourExtraLarge",
-              pb: "sd.system.dimension.spacing.extraLarge",
+              pb: "sd.system.dimension.spacing.threeExtraLarge",
             })}
-          >
-            {prop?.toString()}
-          </th>
-          {states.map((state, i) => (
-            <td
-              key={i}
+          />
+          {states.map((state) => (
+            <th
+              key={state}
               className={css({
-                //pointerEvents: "none",
                 pr: "sd.system.dimension.spacing.extraLarge",
+                pb: "sd.system.dimension.spacing.threeExtraLarge",
+              })}
+            >
+              {stateProps[state].label}
+            </th>
+          ))}
+        </tr>
+        {props.map((prop, i) => (
+          <tr key={i}>
+            <th
+              className={css({
+                textAlign: "left",
+                pr: "sd.system.dimension.spacing.fourExtraLarge",
                 pb: "sd.system.dimension.spacing.extraLarge",
               })}
             >
-              <Component
-                {...{ [propsName]: prop }}
-                {...{ [stateProps[state].dataProps]: true }}
+              {prop?.toString()}
+            </th>
+            {states.map((state, i) => (
+              <td
+                key={i}
+                className={css({
+                  //pointerEvents: "none",
+                  pr: "sd.system.dimension.spacing.extraLarge",
+                  pb: "sd.system.dimension.spacing.extraLarge",
+                })}
               >
-                {children}
-              </Component>
-            </td>
-          ))}
-        </tr>
-      ))}
+                <Component
+                  {...{ [propsName]: prop }}
+                  {...(stateProps[state].dataProps && {
+                    [stateProps[state].dataProps]: "true",
+                  })}
+                >
+                  {children}
+                </Component>
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
     </table>
   );
 };
