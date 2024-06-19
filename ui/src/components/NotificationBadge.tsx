@@ -1,4 +1,4 @@
-import { RecipeVariantProps, sva } from "../../styled-system/css";
+import { RecipeVariantProps, cx, sva } from "../../styled-system/css";
 
 const NotificationBadgeStyle = sva({
   slots: ["root", "text"],
@@ -24,6 +24,22 @@ const NotificationBadgeStyle = sva({
     },
   },
   variants: {
+    size: {
+      small: {
+        root: {
+          height: 16,
+          minWidth: 16,
+          paddingX: "dic.system.dimension.spacing.twoExtraSmall",
+        },
+      },
+      medium: {
+        root: {
+          height: 24,
+          minWidth: 24,
+          paddingX: "dic.system.dimension.spacing.extraSmall",
+        },
+      },
+    },
     variant: {
       primary: {
         root: {
@@ -40,6 +56,7 @@ const NotificationBadgeStyle = sva({
       true: {
         root: {
           height: 8,
+          paddingX: 0,
           minWidth: 8,
         },
       },
@@ -47,11 +64,13 @@ const NotificationBadgeStyle = sva({
   },
   defaultVariants: {
     variant: "primary",
+    size: "medium",
   },
 });
 
 type BadgeProps = {
-  count: number;
+  count?: number;
+  className?: string;
 };
 
 export type NotificationBadgeProps = BadgeProps &
@@ -60,6 +79,7 @@ export type NotificationBadgeProps = BadgeProps &
 export const NotificationBadge: React.FC<NotificationBadgeProps> = ({
   count,
   noNumber,
+  className,
   ...props
 }) => {
   const [cssProps, componentProps] =
@@ -67,15 +87,15 @@ export const NotificationBadge: React.FC<NotificationBadgeProps> = ({
   const styles = NotificationBadgeStyle({ noNumber, ...cssProps });
 
   if (noNumber) {
-    return <div className={styles.root} {...componentProps}></div>;
+    return <div className={cx(styles.root, className)} {...componentProps}></div>;
   }
 
-  if (count < 1) {
+  if (!count || count < 1) {
     return null;
   }
 
   return (
-    <div className={styles.root} {...componentProps}>
+    <div className={cx(styles.root, className)} {...componentProps}>
       <span className={styles.text}>{count > 99 ? "99+" : count}</span>
     </div>
   );
