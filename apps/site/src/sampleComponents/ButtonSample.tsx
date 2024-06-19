@@ -1,5 +1,17 @@
 import { Button } from "@serendie/ui";
+import { HBox, VBox } from "src/components/LayoutUtils";
 
 export function ButtonSample() {
-  return <Button>Click me</Button>;
+  return (
+    <HBox>
+      <VBox>
+        <Button size="small">Click me</Button>
+        <p>Small</p>
+      </VBox>
+      <VBox>
+        <Button size="medium">Click me</Button>
+        <p>Medium</p>
+      </VBox>
+    </HBox>
+  );
 }

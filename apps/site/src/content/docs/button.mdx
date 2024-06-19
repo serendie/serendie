@@ -6,6 +6,8 @@ description: 説明テキストがはいります説明テキストがはいり�
 
 import { ButtonSample } from "../../sampleComponents/ButtonSample.tsx";
 import buttonSampleRaw from "../../sampleComponents/ButtonSample.tsx?raw";
+import { ButtonSample2 } from "../../sampleComponents/ButtonSample2.tsx";
+import buttonSampleRaw2 from "../../sampleComponents/ButtonSample2.tsx?raw";
 import Code from "../../layouts/Code.astro";
 
 <Code
@@ -13,4 +15,11 @@ import Code from "../../layouts/Code.astro";
   description="Common buttonのサイズはSmallとMediumの2種類あります。SmallはPCなどの大きな画面でマウス操作をする前提で使用することを推奨しています。また、Mediumは画面サイズにかかわらず使用できますが、スマートフォンなどの画面では基本サイズになります。"
   code={buttonSampleRaw}>
   <ButtonSample client:load />
+</Code>
+
+<Code
+  title="States"
+  description="状態はEnabled、Hovered、Focus Visible、Disabledがあります。"
+  code={buttonSampleRaw2}>
+  <ButtonSample2 client:load />
 </Code>
