@@ -6,7 +6,7 @@ export const TabsStyle = sva({
   base: {
     root: {
       display: "flex",
-      paddingX: "dic.system.dimension.spacing.medium",
+      paddingX: "sd.system.dimension.spacing.medium",
     },
     list: {
       display: "flex",

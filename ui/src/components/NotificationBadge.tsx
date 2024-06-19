@@ -29,14 +29,14 @@ const NotificationBadgeStyle = sva({
         root: {
           height: 16,
           minWidth: 16,
-          paddingX: "dic.system.dimension.spacing.twoExtraSmall",
+          paddingX: "sd.system.dimension.spacing.twoExtraSmall",
         },
       },
       medium: {
         root: {
           height: 24,
           minWidth: 24,
-          paddingX: "dic.system.dimension.spacing.extraSmall",
+          paddingX: "sd.system.dimension.spacing.extraSmall",
         },
       },
     },
