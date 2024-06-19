@@ -18,6 +18,7 @@ export const ListItemStyle = sva({
   ],
   base: {
     root: {
+      height: 48,
       display: "flex",
       alignItems: "center",
       paddingX: "sd.system.dimension.spacing.medium",
