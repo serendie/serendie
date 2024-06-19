@@ -33,6 +33,7 @@ const TextFieldStyle = sva({
       },
     },
     inputWrapper: {
+      height: 48,
       display: "grid",
       gridTemplateColumns: "1fr auto",
       alignItems: "center",
