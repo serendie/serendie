@@ -1,0 +1,40 @@
+---
+title: IconButton
+componentName: アイコンボタン
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+---
+
+import Code from "@/layouts/Code.astro";
+import { SizeSample } from "@/sampleCode/IconButton/SizeSample";
+import sizeSampleRaw from "@/sampleCode/IconButton/SizeSample.tsx?raw";
+import { TypeSample } from "@/sampleCode/IconButton/TypeSample";
+import typeSampleRaw from "@/sampleCode/IconButton/TypeSample.tsx?raw";
+import { ShapeSample } from "@/sampleCode/IconButton/ShapeSample";
+import shapeSampleRaw from "@/sampleCode/IconButton/ShapeSample.tsx?raw";
+
+<Code
+  title="Shapes"
+  description="ボタンの形状はRectanbleとCircleの2種類あります。"
+  code={shapeSampleRaw}
+  storyPath="/story/components-iconbutton--rectangle"
+>
+  <ShapeSample client:load />
+</Code>
+
+<Code
+  title="Size"
+  description="サイズはSmall、Medium、Largeの3種類あります。"
+  code={sizeSampleRaw}
+  storyPath="/story/components-iconbutton--small"
+>
+  <SizeSample client:load />
+</Code>
+
+<Code
+  title="Types"
+  description="3種類から用途に合わせて使い分けをします。それぞれの用途はガイドラインを参照してください。"
+  code={typeSampleRaw}
+  storyPath="/story/components-iconbutton--outlined"
+>
+  <TypeSample client:load />
+</Code>

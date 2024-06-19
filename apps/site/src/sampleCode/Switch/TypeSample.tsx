@@ -1,13 +1,13 @@
 import { Switch } from "@serendie/ui";
 import { useState } from "react";
 
-export function SwitchSample() {
+export function TypeSample() {
   const [checked, setChecked] = useState(false);
   const handleClick = () => {
     setChecked(!checked);
   };
 
   return (
-    <Switch checked={checked} onClick={handleClick} label={"Switch Me!"} />
+    <Switch checked={checked} onClick={handleClick} label={"スイッチラベル"} />
   );
 }

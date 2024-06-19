@@ -9,8 +9,8 @@ import { css } from "@serendie/ui/css";
 interface Props {
   title: string;
   description: string;
-  code: string;
-  storyUrl?: string;
+  code?: string;
+  storyPath?: string;
   language?: BundledLanguage;
 }
 
@@ -18,7 +18,7 @@ const {
   title, 
   description,
   code,
-  storyUrl,
+  storyPath,
   language
 } = Astro.props
 
@@ -52,7 +52,9 @@ const StyledButton = styled('button', {
 <Container data-code-container>
   <Flex justifyContent={"space-between"} mb="sd.system.dimension.spacing.small">
     <SubTitle>{title}</SubTitle>
-    <StorybookButton href={storyUrl} />
+    {
+      storyPath && <StorybookButton storyPath={storyPath} client:load/>
+    }
   </Flex>
   <Description mb="sd.system.dimension.spacing.twoExtraLarge" fontSize="sd.reference.typography.scale.expanded.extraSmall">{description}</Description>
   <Box
@@ -61,10 +63,11 @@ const StyledButton = styled('button', {
          borderRadius='sd.system.dimension.radius.large'
          overflow='hidden'
   >
-    <Box p='sd.system.dimension.spacing.threeExtraLarge' borderBottomColor="sd.system.color.component.outline" borderBottomWidth="sd.system.dimension.border.medium"> 
+    <Box p='sd.system.dimension.spacing.threeExtraLarge' borderBottomColor="sd.system.color.component.outline" borderBottomWidth={code ? 'sd.system.dimension.border.medium' : 'none'}> 
       <slot />
     </Box>
-    <Box
+    {
+      code && <Box
     py='sd.system.dimension.spacing.extraLarge'
     px='sd.system.dimension.spacing.twoExtraLarge'
     bg="sd.reference.color.scale.gray.100"
@@ -88,6 +91,7 @@ const StyledButton = styled('button', {
       <AstroCode code={code} lang={language??"tsx"} theme={"github-light"} style="background: transparent" />
       </Box>
     </Box>
+    }
   </Box>
 </Container>
 

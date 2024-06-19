@@ -2,7 +2,7 @@ import { Switch } from "@serendie/ui";
 import { useState } from "react";
 import { Dd, Dl, Dt } from "src/components/LayoutUtils";
 
-export function SwitchSample2() {
+export function StateSample() {
   const [checked, setChecked] = useState(false);
   const handleClick = () => {
     setChecked(!checked);

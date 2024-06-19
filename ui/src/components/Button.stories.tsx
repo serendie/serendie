@@ -48,10 +48,10 @@ export const Small: Story = {
   },
 };
 
-export const Outline: Story = {
+export const Outlined: Story = {
   args: {
-    children: "Outline Button",
-    styleType: "outline",
+    children: "Outlined Button",
+    styleType: "outlined",
   },
 };
 
@@ -62,10 +62,10 @@ export const Ghost: Story = {
   },
 };
 
-export const Rounded: Story = {
+export const Rectangle: Story = {
   args: {
-    children: "Rounded Button",
-    styleType: "ghost",
+    children: "Rectangle Button",
+    styleType: "rectangle",
   },
 };
 

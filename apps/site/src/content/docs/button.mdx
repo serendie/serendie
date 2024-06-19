@@ -4,22 +4,46 @@ componentName: ボタン
 description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
 ---
 
-import { ButtonSample } from "../../sampleComponents/ButtonSample.tsx";
-import buttonSampleRaw from "../../sampleComponents/ButtonSample.tsx?raw";
-import { ButtonSample2 } from "../../sampleComponents/ButtonSample2.tsx";
-import buttonSampleRaw2 from "../../sampleComponents/ButtonSample2.tsx?raw";
-import Code from "../../layouts/Code.astro";
+import Code from "@/layouts/Code.astro";
+import { SizeSample } from "@/sampleCode/Button/SizeSample";
+import sizeSampleRaw from "@/sampleCode/Button/SizeSample.tsx?raw";
+import { TypeSample } from "@/sampleCode/Button/TypeSample";
+import typeSampleRaw from "@/sampleCode/Button/TypeSample.tsx?raw";
+import { IconSample } from "@/sampleCode/Button/IconSample";
+import iconSampleRaw from "@/sampleCode/Button/IconSample.tsx?raw";
+import { StateSample } from "@/sampleCode/Button/StateSample";
 
 <Code
   title="Size"
-  description="Common buttonのサイズはSmallとMediumの2種類あります。SmallはPCなどの大きな画面でマウス操作をする前提で使用することを推奨しています。また、Mediumは画面サイズにかかわらず使用できますが、スマートフォンなどの画面では基本サイズになります。"
-  code={buttonSampleRaw}>
-  <ButtonSample client:load />
+  description="ButtonのサイズはSmallとMediumの2種類あります。SmallはPCなどの大きな画面でマウス操作をする前提で使用することを推奨しています。また、Mediumは画面サイズにかかわらず使用できますが、スマートフォンなどの画面では基本サイズになります。"
+  code={sizeSampleRaw}
+  storyPath="/story/components-button--medium"
+>
+  <SizeSample client:load />
+</Code>
+
+<Code
+  title="Types"
+  description="4種類から用途に合わせて使い分けをします。それぞれの用途はガイドラインを参照してください。"
+  code={typeSampleRaw}
+  storyPath="/story/components-button--outlined"
+>
+  <TypeSample client:load />
+</Code>
+
+<Code
+  title="With Icon"
+  description="ラベルの左右にアイコンを入れることができます。ボタンの意図をより明確にユーザーに伝えることができます。"
+  code={iconSampleRaw}
+  storyPath="/story/components-button--with-left-icon"
+>
+  <IconSample client:load />
 </Code>
 
 <Code
   title="States"
   description="状態はEnabled、Hovered、Focus Visible、Disabledがあります。"
-  code={buttonSampleRaw2}>
-  <ButtonSample2 client:load />
+  storyPath="/docs/components-button--docs"
+>
+  <StateSample client:load />
 </Code>

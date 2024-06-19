@@ -4,22 +4,26 @@ componentName: スイッチ
 description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
 ---
 
-import { SwitchSample } from "src/sampleComponents/SwitchSample";
-import switchSampleRaw from "src/sampleComponents/SwitchSample.tsx?raw";
-import { SwitchSample2 } from "src/sampleComponents/SwitchSample2";
-import switchSampleRaw2 from "src/sampleComponents/SwitchSample2.tsx?raw";
-import Code from "../../layouts/Code.astro";
+import Code from "@/layouts/Code.astro";
+import { TypeSample } from "@/sampleCode/Switch/TypeSample";
+import typeSampleRaw from "@/sampleCode/Switch/TypeSample.tsx?raw";
+import { StateSample } from "@/sampleCode/Switch/StateSample";
+import stateSampleRaw from "@/sampleCode/Switch/StateSample.tsx?raw";
 
 <Code
-  title="スイッチ"
+  title="Types"
   description="説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります"
-  code={switchSampleRaw}>
-  <SwitchSample client:load />
+  code={typeSampleRaw}
+  storyPath="/story/components-switch--default"
+>
+  <TypeSample client:load />
 </Code>
 
 <Code
   title="States"
   description="説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります"
-  code={switchSampleRaw2}>
-  <SwitchSample2 client:load />
+  code={stateSampleRaw}
+  storyPath="/docs/components-switch--docs"
+>
+  <StateSample client:load />
 </Code>
