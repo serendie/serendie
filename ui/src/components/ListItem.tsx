@@ -24,7 +24,6 @@ export const ListItemStyle = sva({
       paddingX: "sd.system.dimension.spacing.medium",
       paddingY: "sd.system.dimension.spacing.extraSmall",
       gap: "sd.system.dimension.spacing.small",
-      background: "sd.system.color.component.surface",
       cursor: "pointer",
       _hover: {
         background:
