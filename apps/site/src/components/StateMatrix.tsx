@@ -43,23 +43,24 @@ export const StateMatrix = <ComponentProps,>({
       className={css({
         mr: "-sd.system.dimension.spacing.extraLarge",
         mb: "-sd.system.dimension.spacing.extraLarge",
-      })}>
+      })}
+    >
       <tr>
         <th
           className={css({
             textAlign: "left",
             pr: "sd.system.dimension.spacing.fourExtraLarge",
             pb: "sd.system.dimension.spacing.threeExtraLarge",
-          })}>
-          {propsName?.toString()}
-        </th>
+          })}
+        ></th>
         {states.map((state) => (
           <th
             key={state}
             className={css({
               pr: "sd.system.dimension.spacing.extraLarge",
               pb: "sd.system.dimension.spacing.threeExtraLarge",
-            })}>
+            })}
+          >
             {stateProps[state].label}
           </th>
         ))}
@@ -71,7 +72,8 @@ export const StateMatrix = <ComponentProps,>({
               textAlign: "left",
               pr: "sd.system.dimension.spacing.fourExtraLarge",
               pb: "sd.system.dimension.spacing.extraLarge",
-            })}>
+            })}
+          >
             {prop?.toString()}
           </th>
           {states.map((state, i) => (
@@ -81,10 +83,12 @@ export const StateMatrix = <ComponentProps,>({
                 //pointerEvents: "none",
                 pr: "sd.system.dimension.spacing.extraLarge",
                 pb: "sd.system.dimension.spacing.extraLarge",
-              })}>
+              })}
+            >
               <Component
                 {...{ [propsName]: prop }}
-                {...{ [stateProps[state].dataProps]: true }}>
+                {...{ [stateProps[state].dataProps]: true }}
+              >
                 {children}
               </Component>
             </td>
