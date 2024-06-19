@@ -54,3 +54,23 @@ export const Circle: Story = {
     disabled: false,
   },
 };
+
+export const Outline: Story = {
+  args: {
+    shape: "circle",
+    icon: "add",
+    size: "medium",
+    styleType: "outline",
+    disabled: false,
+  },
+};
+
+export const Ghost: Story = {
+  args: {
+    shape: "circle",
+    icon: "add",
+    size: "medium",
+    styleType: "ghost",
+    disabled: false,
+  },
+};
