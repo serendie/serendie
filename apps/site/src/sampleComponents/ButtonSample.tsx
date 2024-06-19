@@ -25,7 +25,7 @@ export const StateSample: React.FC = () => {
       children="Button"
       propsName="styleType"
       states={["enabled", "hover", "focus-visible", "disabled"]}
-      props={["filled", "ghost", "outline", "rounded"]}
+      props={["filled", "ghost", "outlined", "rectangle"]}
     />
   );
 };

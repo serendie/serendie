@@ -6,7 +6,7 @@ import { HTMLStyledProps, StyledVariantProps } from "../../styled-system/types";
 //Note:  Filledがデフォルト
 //typeにルックを定義、sizeには余白やフォントのサイズを定義するイメージ
 
-// outlineとroundedは角Rのみ違うので共通部を切り出している
+// outlineとrectangleは角Rのみ違うので共通部を切り出している
 const outlineCss = {
   color: "sd.system.color.component.onSurface",
   outlineWidth: "sd.system.dimension.border.medium",
@@ -88,8 +88,8 @@ export const ButtonStyle = cva({
           color: "sd.system.color.interaction.disabledOnSurface",
         },
       },
-      outline: outlineCss,
-      rounded: {
+      outlined: outlineCss,
+      rectangle: {
         ...outlineCss,
         borderRadius: "sd.system.dimension.radius.medium",
       },
@@ -171,7 +171,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           ButtonStyle(componentProps),
           css(cssPropsRest, cssPropsCss, iconPaddingCss)
         )}
-        {...props}>
+        {...props}
+      >
         {leftIcon && <Span p={"2px"}>{leftIcon}</Span>}
         <Span>{children}</Span>
         {rightIcon && <Span p={"2px"}>{rightIcon}</Span>}
