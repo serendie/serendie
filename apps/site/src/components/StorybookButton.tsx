@@ -1,12 +1,13 @@
 import { Button, SvgIcon } from "@serendie/ui";
 
 interface StorybookButtonProps {
-  href?: string;
+  storyPath: string;
 }
 
 export const StorybookButton: React.FC<StorybookButtonProps> = ({
-  href = "#",
+  storyPath,
 }) => {
+  const href = `/storybook?path=${storyPath}`;
   return (
     <Button
       // TODO: ButtonLinkとかにして、<a>でリンクするようにしたい

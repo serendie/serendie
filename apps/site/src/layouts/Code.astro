@@ -10,7 +10,7 @@ interface Props {
   title: string;
   description: string;
   code?: string;
-  storyUrl?: string;
+  storyPath?: string;
   language?: BundledLanguage;
 }
 
@@ -18,7 +18,7 @@ const {
   title, 
   description,
   code,
-  storyUrl,
+  storyPath,
   language
 } = Astro.props
 
@@ -52,7 +52,9 @@ const StyledButton = styled('button', {
 <Container data-code-container>
   <Flex justifyContent={"space-between"} mb="sd.system.dimension.spacing.small">
     <SubTitle>{title}</SubTitle>
-    <StorybookButton href={storyUrl} />
+    {
+      storyPath && <StorybookButton storyPath={storyPath} client:load/>
+    }
   </Flex>
   <Description mb="sd.system.dimension.spacing.twoExtraLarge" fontSize="sd.reference.typography.scale.expanded.extraSmall">{description}</Description>
   <Box
