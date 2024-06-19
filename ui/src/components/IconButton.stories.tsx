@@ -55,6 +55,43 @@ export const Circle: Story = {
   },
 };
 
+export const Small: Story = {
+  args: {
+    shape: "circle",
+    icon: "add",
+    size: "small",
+    disabled: false,
+  },
+};
+
+export const Medium: Story = {
+  args: {
+    shape: "circle",
+    icon: "add",
+    size: "medium",
+    disabled: false,
+  },
+};
+
+export const Large: Story = {
+  args: {
+    shape: "circle",
+    icon: "add",
+    size: "large",
+    disabled: false,
+  },
+};
+
+export const Filled: Story = {
+  args: {
+    shape: "circle",
+    icon: "add",
+    size: "medium",
+    styleType: "filled",
+    disabled: false,
+  },
+};
+
 export const Outlined: Story = {
   args: {
     shape: "circle",
