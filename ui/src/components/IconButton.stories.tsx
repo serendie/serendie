@@ -18,7 +18,7 @@ const meta: Meta<typeof IconButton> = {
     shape: {
       options: IconButtonStyle.variantMap.shape,
       control: { type: "radio" },
-      defaultValue: "rectangle",
+      defaultValue: "circle",
     },
     styleType: {
       options: IconButtonStyle.variantMap.styleType,
@@ -55,12 +55,12 @@ export const Circle: Story = {
   },
 };
 
-export const Outline: Story = {
+export const Outlined: Story = {
   args: {
     shape: "circle",
     icon: "add",
     size: "medium",
-    styleType: "outline",
+    styleType: "outlined",
     disabled: false,
   },
 };

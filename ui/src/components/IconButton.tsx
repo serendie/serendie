@@ -47,7 +47,8 @@ export const IconButtonStyle = cva({
               position: "absolute",
               inset: "0",
               bg: "sd.system.color.interaction.hoveredVariant",
-            },          },
+            },
+          },
           _focusVisible: {
             outlineColor: "sd.system.color.component.outline",
             _after: {
@@ -59,7 +60,7 @@ export const IconButtonStyle = cva({
           },
         },
       },
-      outline: {
+      outlined: {
         outlineColor: "sd.system.color.component.outline",
         bgColor: "sd.system.color.component.surface",
         _enabled: {
