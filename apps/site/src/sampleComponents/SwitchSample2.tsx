@@ -1,4 +1,4 @@
-import { Switch } from "@spread/ui";
+import { Switch } from "@serendie/ui";
 import { useState } from "react";
 import { Dd, Dl, Dt } from "src/components/LayoutUtils";
 

@@ -1,4 +1,4 @@
-import { css } from "@spread/ui/css";
+import { css } from "@serendie/ui/css";
 import type { ReactNode } from "react";
 
 type state = "enabled" | "hover" | "focus-visible" | "disabled";
@@ -41,15 +41,15 @@ export const StateMatrix = <ComponentProps,>({
   return (
     <table
       className={css({
-        mr: "-dic.system.dimension.spacing.extraLarge",
-        mb: "-dic.system.dimension.spacing.extraLarge",
+        mr: "-sd.system.dimension.spacing.extraLarge",
+        mb: "-sd.system.dimension.spacing.extraLarge",
       })}>
       <tr>
         <th
           className={css({
             textAlign: "left",
-            pr: "dic.system.dimension.spacing.fourExtraLarge",
-            pb: "dic.system.dimension.spacing.threeExtraLarge",
+            pr: "sd.system.dimension.spacing.fourExtraLarge",
+            pb: "sd.system.dimension.spacing.threeExtraLarge",
           })}>
           {propsName?.toString()}
         </th>
@@ -57,8 +57,8 @@ export const StateMatrix = <ComponentProps,>({
           <th
             key={state}
             className={css({
-              pr: "dic.system.dimension.spacing.extraLarge",
-              pb: "dic.system.dimension.spacing.threeExtraLarge",
+              pr: "sd.system.dimension.spacing.extraLarge",
+              pb: "sd.system.dimension.spacing.threeExtraLarge",
             })}>
             {stateProps[state].label}
           </th>
@@ -69,8 +69,8 @@ export const StateMatrix = <ComponentProps,>({
           <th
             className={css({
               textAlign: "left",
-              pr: "dic.system.dimension.spacing.fourExtraLarge",
-              pb: "dic.system.dimension.spacing.extraLarge",
+              pr: "sd.system.dimension.spacing.fourExtraLarge",
+              pb: "sd.system.dimension.spacing.extraLarge",
             })}>
             {prop?.toString()}
           </th>
@@ -79,8 +79,8 @@ export const StateMatrix = <ComponentProps,>({
               key={i}
               className={css({
                 //pointerEvents: "none",
-                pr: "dic.system.dimension.spacing.extraLarge",
-                pb: "dic.system.dimension.spacing.extraLarge",
+                pr: "sd.system.dimension.spacing.extraLarge",
+                pb: "sd.system.dimension.spacing.extraLarge",
               })}>
               <Component
                 {...{ [propsName]: prop }}

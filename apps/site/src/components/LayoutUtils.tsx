@@ -1,11 +1,11 @@
-import { Box, styled } from "@spread/ui/jsx";
+import { Box, styled } from "@serendie/ui/jsx";
 
 export const HBox = styled(Box, {
   base: {
     display: "flex",
     justifyContent: "flex-start",
     alignItems: "flex-end",
-    gap: "dic.system.dimension.spacing.extraLarge",
+    gap: "sd.system.dimension.spacing.extraLarge",
   },
 });
 
@@ -14,7 +14,7 @@ export const VBox = styled(Box, {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    gap: "dic.system.dimension.spacing.medium",
+    gap: "sd.system.dimension.spacing.medium",
   },
 });
 
@@ -23,8 +23,8 @@ export const Dl = styled("dl", {
     display: "grid",
     gridTemplateColumns: "80px auto",
     alignItems: "center",
-    rowGap: "dic.system.dimension.spacing.threeExtraLarge",
-    columnGap: "dic.system.dimension.spacing.medium",
+    rowGap: "sd.system.dimension.spacing.threeExtraLarge",
+    columnGap: "sd.system.dimension.spacing.medium",
   },
 });
 

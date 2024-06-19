@@ -1,4 +1,4 @@
-import { Button } from "@spread/ui";
+import { Button } from "@serendie/ui";
 import type { ComponentProps } from "react";
 import { StateMatrix } from "src/components/StateMatrix";
 
