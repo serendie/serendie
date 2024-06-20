@@ -5,6 +5,7 @@ type state = "enabled" | "hover" | "focus-visible" | "disabled";
 
 interface StateMatrixProps<ComponentProps> {
   component: React.ElementType;
+  defaultProps?: ComponentProps;
   // TODO: この辺の型が適当
   propsName: keyof ComponentProps;
   props: Array<ComponentProps[keyof ComponentProps]>;
@@ -14,6 +15,7 @@ interface StateMatrixProps<ComponentProps> {
 
 export const StateMatrix = <ComponentProps,>({
   component: Component,
+  defaultProps,
   propsName,
   props,
   children,
@@ -41,6 +43,7 @@ export const StateMatrix = <ComponentProps,>({
   return (
     <table
       className={css({
+        tableLayout: "fixed",
         mr: "-sd.system.dimension.spacing.extraLarge",
         mb: "-sd.system.dimension.spacing.extraLarge",
       })}
@@ -86,14 +89,23 @@ export const StateMatrix = <ComponentProps,>({
                   pb: "sd.system.dimension.spacing.extraLarge",
                 })}
               >
-                <Component
-                  {...{ [propsName]: prop }}
-                  {...(stateProps[state].dataProps && {
-                    [stateProps[state].dataProps]: "true",
+                <div
+                  className={css({
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
                   })}
                 >
-                  {children}
-                </Component>
+                  <Component
+                    {...defaultProps}
+                    {...{ [propsName]: prop }}
+                    {...(stateProps[state].dataProps && {
+                      [stateProps[state].dataProps]: "true",
+                    })}
+                  >
+                    {children}
+                  </Component>
+                </div>
               </td>
             ))}
           </tr>
