@@ -1,0 +1,29 @@
+---
+title: List Item
+componentName: リストアイテム
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+---
+
+import Code from "@/layouts/Code.astro";
+import { TypeSample } from "@/sampleCode/ListItem/TypeSample";
+import typeSampleRaw from "@/sampleCode/ListItem/TypeSample.tsx?raw";
+import { StateSample } from "@/sampleCode/ListItem/StateSample";
+import stateSampleRaw from "@/sampleCode/ListItem/StateSample.tsx?raw";
+
+<Code
+  title="Type"
+  description="ListItemのタイプはDefaultとLinkの2種類あります。"
+  code={typeSampleRaw}
+  storyPath="/story/components-listitem--docs"
+>
+  <TypeSample client:load />
+</Code>
+
+<Code
+  title="State"
+  description="ListItemの状態"
+  code={stateSampleRaw}
+  storyPath="/story/components-listitem--docs"
+>
+  <StateSample client:load />
+</Code>

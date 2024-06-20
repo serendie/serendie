@@ -5,6 +5,7 @@ export * from "./components/Button.tsx";
 export * from "./components/Checkbox.tsx";
 export * from "./components/Divider.tsx";
 export * from "./components/IconButton.tsx";
+export * from "./components/ListItem.tsx";
 export * from "./components/ModalDialog.tsx";
 export * from "./components/NotificationBadge.tsx";
 export * from "./components/ProgressIndicator.tsx";
