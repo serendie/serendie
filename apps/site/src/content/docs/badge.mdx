@@ -1,0 +1,29 @@
+---
+title: Badge
+componentName: バッジ
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+---
+
+import Code from "@/layouts/Code.astro";
+import { SizeSample } from "@/sampleCode/Badge/SizeSample";
+import sizeSampleRaw from "@/sampleCode/Badge/SizeSample.tsx?raw";
+import { StateSample } from "@/sampleCode/Badge/StateSample";
+import stateSampleRaw from "@/sampleCode/Badge/StateSample.tsx?raw";
+
+<Code
+  title="Size"
+  description="サイズはSmall、Mediumの2種類あります。"
+  code={sizeSampleRaw}
+  storyPath="/story/components-select--basic"
+>
+  <SizeSample client:load />
+</Code>
+
+<Code
+  title="State"
+  description="状態はEnabled、Hovered、Focus、Disabled, Errorがあります。"
+  code={stateSampleRaw}
+  storyPath="/story/components-select--disabled"
+>
+  <StateSample client:load />
+</Code>
