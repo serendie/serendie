@@ -58,6 +58,9 @@ export const ButtonStyle = cva({
             },
           },
           _focusVisible: {
+            outlineWidth: "sd.system.dimension.border.medium",
+            outlineStyle: "solid",
+            outlineColor: "sd.system.color.interaction.hovered",
             _after: {
               content: "''",
               position: "absolute",
