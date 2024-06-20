@@ -3,7 +3,7 @@ import { RecipeVariantProps, css, cva, cx } from "../../styled-system/css";
 export const ProgressIndicatorStyle = cva({
   base: {
     animation: "1s linear infinite spin",
-    stroke: "dic.reference.color.scale.gray.400",
+    stroke: "sd.reference.color.scale.gray.400",
   },
   variants: {
     size: {
