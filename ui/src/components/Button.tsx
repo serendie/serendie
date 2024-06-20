@@ -96,6 +96,7 @@ export const ButtonStyle = cva({
     },
     size: {
       medium: {
+        height: 48,
         px: "sd.system.dimension.spacing.extraLarge",
         py: "sd.system.dimension.spacing.small",
         textStyle: "sd.system.typography.label.large_compact",
@@ -104,6 +105,7 @@ export const ButtonStyle = cva({
         },
       },
       small: {
+        height: 32,
         px: "sd.system.dimension.spacing.small",
         py: "sd.system.dimension.spacing.twoExtraSmall",
         textStyle: "sd.system.typography.label.medium_compact",

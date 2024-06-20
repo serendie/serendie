@@ -96,8 +96,8 @@ export const IconButtonStyle = cva({
         h: "{spacing.sd.reference.dimension.scale.17}",
       },
       medium: {
-        w: "{spacing.sd.reference.dimension.scale.12}",
-        h: "{spacing.sd.reference.dimension.scale.12}",
+        w: "{spacing.sd.reference.dimension.scale.13}",
+        h: "{spacing.sd.reference.dimension.scale.13}",
       },
       small: {
         w: "{spacing.sd.reference.dimension.scale.10}",
