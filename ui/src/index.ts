@@ -9,6 +9,7 @@ export * from "./components/BottomNavigationItem.tsx";
 export * from "./components/Button.tsx";
 export * from "./components/Checkbox.tsx";
 export * from "./components/Divider.tsx";
+export * from "./components/Drawer.tsx";
 export * from "./components/IconButton.tsx";
 export * from "./components/List.tsx";
 export * from "./components/ListItem.tsx";
