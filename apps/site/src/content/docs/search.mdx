@@ -1,0 +1,29 @@
+---
+title: Search
+componentName: サーチ
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+---
+
+import Code from "@/layouts/Code.astro";
+import { SizeSample } from "@/sampleCode/Search/SizeSample";
+import sizeSampleRaw from "@/sampleCode/Search/SizeSample.tsx?raw";
+import { StateSample } from "@/sampleCode/Search/StateSample";
+import stateSampleRaw from "@/sampleCode/Search/StateSample.tsx?raw";
+
+<Code
+  title="Size"
+  description="SearchのサイズはSmallとMediumの2種類あります。"
+  code={sizeSampleRaw}
+  storyPath="/story/components-progressindicator--docs"
+>
+  <SizeSample client:load />
+</Code>
+
+<Code
+  title="State"
+  description="Searchの状態"
+  code={stateSampleRaw}
+  storyPath="/story/components-progressindicator--docs"
+>
+  <StateSample client:load />
+</Code>
