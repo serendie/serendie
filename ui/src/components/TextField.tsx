@@ -33,6 +33,7 @@ const TextFieldStyle = sva({
       },
     },
     inputWrapper: {
+      height: 48,
       display: "grid",
       gridTemplateColumns: "1fr auto",
       alignItems: "center",
@@ -40,6 +41,7 @@ const TextFieldStyle = sva({
       outlineWidth: "sd.system.dimension.border.medium",
       outlineColor: "sd.system.color.component.outline",
       borderRadius: "sd.system.dimension.radius.medium",
+      backgroundColor: "sd.system.color.component.surface",
       _focusWithin: {
         outlineWidth: "sd.system.dimension.border.thick",
         outlineColor: "sd.system.color.impression.primary",

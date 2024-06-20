@@ -1,0 +1,18 @@
+---
+title: TextArea
+componentName: テキストエリア
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+---
+
+import Code from "@/layouts/Code.astro";
+import { StateSample } from "@/sampleCode/TextArea/StateSample";
+import stateSampleRaw from "@/sampleCode/TextArea/StateSample.tsx?raw";
+
+<Code
+  title="States"
+  description="説明テキストが入ります"
+  code={stateSampleRaw}
+  storyPath="/story/components-textarea--basic"
+>
+  <StateSample client:load />
+</Code>
