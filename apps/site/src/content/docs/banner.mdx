@@ -1,0 +1,18 @@
+---
+title: Banner
+componentName: バナー
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+---
+
+import Code from "@/layouts/Code.astro";
+import { TypeSample } from "@/sampleCode/Banner/TypeSample";
+import typeSampleRaw from "@/sampleCode/Banner/TypeSample.tsx?raw";
+
+<Code
+  title="Types"
+  description="説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります"
+  code={typeSampleRaw}
+  storyPath="/story/components-banner--information"
+>
+  <TypeSample client:load />
+</Code>
