@@ -1,12 +1,12 @@
 /**
  * Do not edit directly
- * Generated on Tue, 04 Jun 2024 12:29:24 GMT
+ * Generated on Thu, 13 Jun 2024 13:13:42 GMT
  */
 
 export default tokens;
 declare const tokens: {
   "colors": {
-    "dic": {
+    "sd": {
       "reference": {
         "color": {
           "scale": {
@@ -332,7 +332,7 @@ declare const tokens: {
     }
   },
   "spacing": {
-    "dic": {
+    "sd": {
       "reference": {
         "dimension": {
           "scale": {
@@ -438,7 +438,7 @@ declare const tokens: {
     }
   },
   "opacity": {
-    "dic": {
+    "sd": {
       "reference": {
         "elevation": {
           "opacity": {
@@ -483,7 +483,7 @@ declare const tokens: {
     }
   },
   "fonts": {
-    "dic": {
+    "sd": {
       "reference": {
         "typography": {
           "fontFamily": {
@@ -499,7 +499,7 @@ declare const tokens: {
     }
   },
   "fontWeights": {
-    "dic": {
+    "sd": {
       "reference": {
         "typography": {
           "fontWeight": {
@@ -515,7 +515,7 @@ declare const tokens: {
     }
   },
   "lineHeights": {
-    "dic": {
+    "sd": {
       "reference": {
         "typography": {
           "lineHeight": {
@@ -537,7 +537,7 @@ declare const tokens: {
     }
   },
   "fontSizes": {
-    "dic": {
+    "sd": {
       "reference": {
         "typography": {
           "scale": {
@@ -617,7 +617,7 @@ declare const tokens: {
     }
   },
   "borderWidths": {
-    "dic": {
+    "sd": {
       "system": {
         "dimension": {
           "border": {
@@ -636,7 +636,7 @@ declare const tokens: {
     }
   },
   "radii": {
-    "dic": {
+    "sd": {
       "system": {
         "dimension": {
           "radius": {
@@ -664,7 +664,7 @@ declare const tokens: {
     }
   },
   "shadows": {
-    "dic": {
+    "sd": {
       "system": {
         "elevation": {
           "shadow": {
@@ -719,7 +719,7 @@ declare const tokens: {
     }
   },
   "zIndex": {
-    "dic": {
+    "sd": {
       "system": {
         "elevation": {
           "zIndex": {
@@ -747,7 +747,7 @@ declare const tokens: {
     }
   },
   "textStyles": {
-    "dic": {
+    "sd": {
       "system": {
         "typography": {
           "display": {

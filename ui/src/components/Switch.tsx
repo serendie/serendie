@@ -8,37 +8,37 @@ export const SwitchStyle = sva({
     root: {
       display: "flex",
       alignItems: "center",
-      gap: "dic.system.dimension.spacing.medium",
-      paddingY: "dic.system.dimension.spacing.small",
-      paddingX: "dic.system.dimension.spacing.medium",
+      gap: "sd.system.dimension.spacing.medium",
+      paddingY: "sd.system.dimension.spacing.small",
+      paddingX: "sd.system.dimension.spacing.medium",
     },
     control: {
       cursor: "pointer",
       width: 52,
       height: 32,
       flexShrink: 0,
-      backgroundColor: "dic.system.color.interaction.disabled",
-      borderRadius: "dic.system.dimension.radius.full",
+      backgroundColor: "sd.system.color.interaction.disabled",
+      borderRadius: "sd.system.dimension.radius.full",
       borderWidth: 1,
-      borderColor: "dic.system.color.component.outline",
+      borderColor: "sd.system.color.component.outline",
       transitionDuration: ".2s",
       transitionProperty: "background, borderColor",
       transitionTimingFunction: "cubic-bezier(.2, 0, 0, 1)",
       _checked: {
-        backgroundColor: "dic.system.color.impression.primary",
-        borderColor: "dic.system.color.impression.primary",
+        backgroundColor: "sd.system.color.impression.primary",
+        borderColor: "sd.system.color.impression.primary",
         _disabled: {
           backgroundColor:
-            "color-mix(in srgb, {colors.dic.system.color.impression.primary}, {colors.dic.system.color.interaction.hoveredOnPrimary});",
+            "color-mix(in srgb, {colors.sd.system.color.impression.primary}, {colors.sd.system.color.interaction.hoveredOnPrimary});",
           borderColor: "transparent",
         },
       },
       _disabled: {
         cursor: "default",
-        background: "dic.system.color.interaction.disabled",
+        background: "sd.system.color.interaction.disabled",
       },
       ".group:has(:focus-visible) &": {
-        borderColor: "dic.system.color.impression.primary",
+        borderColor: "sd.system.color.impression.primary",
       },
     },
     thumb: {
@@ -47,26 +47,26 @@ export const SwitchStyle = sva({
       height: 20,
       marginY: 5,
       marginX: 6,
-      background: "dic.system.color.component.surface",
-      borderRadius: "dic.system.dimension.radius.full",
-      borderColor: "dic.system.color.component.outline",
+      background: "sd.system.color.component.surface",
+      borderRadius: "sd.system.dimension.radius.full",
+      borderColor: "sd.system.color.component.outline",
       borderWidth: 1,
       transitionDuration: ".3s",
       transitionProperty: "transform, borderColor",
       transitionTimingFunction: "cubic-bezier(.2, 0, 0, 1)",
       _checked: {
         transform: "translateX(19px)",
-        borderColor: "dic.system.color.component.surface",
+        borderColor: "sd.system.color.component.surface",
       },
     },
     label: {
-      color: "dic.system.color.component.onSurface",
-      textStyle: "dic.system.typography.body.medium_compact",
+      color: "sd.system.color.component.onSurface",
+      textStyle: "sd.system.typography.body.medium_compact",
       _expanded: {
-        textStyle: "dic.system.typography.body.medium_expanded",
+        textStyle: "sd.system.typography.body.medium_expanded",
       },
       _disabled: {
-        color: "dic.system.color.interaction.disabledOnSurface",
+        color: "sd.system.color.interaction.disabledOnSurface",
       },
     },
     textGroup: {
@@ -75,15 +75,15 @@ export const SwitchStyle = sva({
       width: 160,
     },
     helperText: {
-      color: "dic.system.color.component.onSurfaceVariant",
-      marginTop: "dic.system.dimension.spacing.twoExtraSmall",
-      lineHeight: "dic.reference.typography.lineHeight.tight",
-      textStyle: "dic.system.typography.body.extraSmall_compact",
+      color: "sd.system.color.component.onSurfaceVariant",
+      marginTop: "sd.system.dimension.spacing.twoExtraSmall",
+      lineHeight: "sd.reference.typography.lineHeight.tight",
+      textStyle: "sd.system.typography.body.extraSmall_compact",
       _expanded: {
-        textStyle: "dic.system.typography.body.extraSmall_expanded",
+        textStyle: "sd.system.typography.body.extraSmall_expanded",
       },
       _disabled: {
-        color: "dic.system.color.interaction.disabledOnSurface",
+        color: "sd.system.color.interaction.disabledOnSurface",
       },
     },
   },
@@ -124,6 +124,7 @@ export const Switch = forwardRef<HTMLLabelElement, SwitchProps>(
         <ArkSwitch.Control className={styles.control}>
           <ArkSwitch.Thumb className={styles.thumb} />
         </ArkSwitch.Control>
+        <ArkSwitch.HiddenInput />
       </ArkSwitch.Root>
     );
   }

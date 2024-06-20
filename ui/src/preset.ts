@@ -1,26 +1,26 @@
 import { Preset } from "@pandacss/dev";
-import { SpreadRecipes } from "./recipes";
-import { SpreadTokens, SpreadTypography } from "./tokens";
+import { SerendieRecipes } from "./recipes";
+import { SerendieTokens, SerendieTypography } from "./tokens";
 import { getToken } from "./tokens/getToken";
 import { SpreadKeyframes } from "./keyframes";
 
-const { dic } = getToken();
+const { sd } = getToken();
 
-export const SpreadPreset: Preset = {
+export const SerendiePreset: Preset = {
   theme: {
     extend: {
       breakpoints: {
-        expanded: dic.system.dimension.breakpoint.expanded,
+        expanded: sd.system.dimension.breakpoint.expanded,
       },
-      recipes: SpreadRecipes,
+      recipes: SerendieRecipes,
       tokens: {
-        ...SpreadTokens,
+        ...SerendieTokens,
         sizes: {
-          ...SpreadTokens["spacing"],
+          ...SerendieTokens["spacing"],
         },
       },
       textStyles: {
-        ...SpreadTypography,
+        ...SerendieTypography,
       },
       keyframes: {
         ...SpreadKeyframes,

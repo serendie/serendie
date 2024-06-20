@@ -1,4 +1,4 @@
-import { SpreadPreset } from "./src/preset";
+import { SerendiePreset } from "./src/preset";
 
 import { defineConfig } from "@pandacss/dev";
 
@@ -16,5 +16,5 @@ export default defineConfig({
   outdir: "styled-system",
   outExtension: "js",
   jsxFramework: "react",
-  presets: [SpreadPreset],
+  presets: [SerendiePreset],
 });

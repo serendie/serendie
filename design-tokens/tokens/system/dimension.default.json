@@ -1,15 +1,15 @@
 {
-  "dic": {
+  "sd": {
     "system": {
       "dimension": {
         "spacing": {
           "twoExtraSmall": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.3}",
+            "$value": "{sd.reference.dimension.scale.3}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "'dic.system.dimension.spacing.twoExtraSmall'"
+                  "WEB": "'sd.system.dimension.spacing.twoExtraSmall'"
                 },
                 "scopes": ["GAP"]
               }
@@ -17,11 +17,11 @@
           },
           "extraSmall": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.4}",
+            "$value": "{sd.reference.dimension.scale.4}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "'dic.system.dimension.spacing.extraSmall'"
+                  "WEB": "'sd.system.dimension.spacing.extraSmall'"
                 },
                 "scopes": ["GAP"]
               }
@@ -29,11 +29,11 @@
           },
           "small": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.5}",
+            "$value": "{sd.reference.dimension.scale.5}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "'dic.system.dimension.spacing.small'"
+                  "WEB": "'sd.system.dimension.spacing.small'"
                 },
                 "scopes": ["GAP"]
               }
@@ -41,11 +41,11 @@
           },
           "medium": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.6}",
+            "$value": "{sd.reference.dimension.scale.6}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "'dic.system.dimension.spacing.medium'"
+                  "WEB": "'sd.system.dimension.spacing.medium'"
                 },
                 "scopes": ["GAP"]
               }
@@ -53,11 +53,11 @@
           },
           "large": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.7}",
+            "$value": "{sd.reference.dimension.scale.7}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "'dic.system.dimension.spacing.large'"
+                  "WEB": "'sd.system.dimension.spacing.large'"
                 },
                 "scopes": ["GAP"]
               }
@@ -65,11 +65,11 @@
           },
           "extraLarge": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.8}",
+            "$value": "{sd.reference.dimension.scale.8}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "'dic.system.dimension.spacing.extraLarge'"
+                  "WEB": "'sd.system.dimension.spacing.extraLarge'"
                 },
                 "scopes": ["GAP"]
               }
@@ -77,11 +77,11 @@
           },
           "twoExtraLarge": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.10}",
+            "$value": "{sd.reference.dimension.scale.10}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "'dic.system.dimension.spacing.twoExtraLarge'"
+                  "WEB": "'sd.system.dimension.spacing.twoExtraLarge'"
                 },
                 "scopes": ["GAP"]
               }
@@ -89,11 +89,11 @@
           },
           "threeExtraLarge": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.12}",
+            "$value": "{sd.reference.dimension.scale.12}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "'dic.system.dimension.spacing.threeExtraLarge'"
+                  "WEB": "'sd.system.dimension.spacing.threeExtraLarge'"
                 },
                 "scopes": ["GAP"]
               }
@@ -101,11 +101,11 @@
           },
           "fourExtraLarge": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.13}",
+            "$value": "{sd.reference.dimension.scale.13}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "'dic.system.dimension.spacing.fourExtraLarge'"
+                  "WEB": "'sd.system.dimension.spacing.fourExtraLarge'"
                 },
                 "scopes": ["GAP"]
               }
@@ -113,11 +113,11 @@
           },
           "fiveExtraLarge": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.15}",
+            "$value": "{sd.reference.dimension.scale.15}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "'dic.system.dimension.spacing.fiveExtraLarge'"
+                  "WEB": "'sd.system.dimension.spacing.fiveExtraLarge'"
                 },
                 "scopes": ["GAP"]
               }
@@ -125,11 +125,11 @@
           },
           "sixExtraLarge": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.17}",
+            "$value": "{sd.reference.dimension.scale.17}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "'dic.system.dimension.spacing.sixExtraLarge'"
+                  "WEB": "'sd.system.dimension.spacing.sixExtraLarge'"
                 },
                 "scopes": ["GAP"]
               }
@@ -139,11 +139,11 @@
         "border": {
           "medium": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.1}",
+            "$value": "{sd.reference.dimension.scale.1}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "'dic.system.dimension.border.medium'"
+                  "WEB": "'sd.system.dimension.border.medium'"
                 },
                 "scopes": ["STROKE_FLOAT"]
               }
@@ -151,11 +151,11 @@
           },
           "thick": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.2}",
+            "$value": "{sd.reference.dimension.scale.2}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "'dic.system.dimension.border.thick'"
+                  "WEB": "'sd.system.dimension.border.thick'"
                 },
                 "scopes": ["STROKE_FLOAT"]
               }
@@ -163,11 +163,11 @@
           },
           "extraThick": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.3}",
+            "$value": "{sd.reference.dimension.scale.3}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "'dic.system.dimension.border.extraThick'"
+                  "WEB": "'sd.system.dimension.border.extraThick'"
                 },
                 "scopes": ["STROKE_FLOAT"]
               }
@@ -177,11 +177,11 @@
         "radius": {
           "extraSmall": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.2}",
+            "$value": "{sd.reference.dimension.scale.2}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "'dic.system.dimension.radius.extraSmall'"
+                  "WEB": "'sd.system.dimension.radius.extraSmall'"
                 },
                 "scopes": ["CORNER_RADIUS"]
               }
@@ -189,11 +189,11 @@
           },
           "small": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.3}",
+            "$value": "{sd.reference.dimension.scale.3}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "'dic.system.dimension.radius.small'"
+                  "WEB": "'sd.system.dimension.radius.small'"
                 },
                 "scopes": ["CORNER_RADIUS"]
               }
@@ -201,11 +201,11 @@
           },
           "medium": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.4}",
+            "$value": "{sd.reference.dimension.scale.4}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "'dic.system.dimension.radius.medium'"
+                  "WEB": "'sd.system.dimension.radius.medium'"
                 },
                 "scopes": ["CORNER_RADIUS"]
               }
@@ -213,11 +213,11 @@
           },
           "large": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.5}",
+            "$value": "{sd.reference.dimension.scale.5}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "'dic.system.dimension.radius.large'"
+                  "WEB": "'sd.system.dimension.radius.large'"
                 },
                 "scopes": ["CORNER_RADIUS"]
               }
@@ -225,11 +225,11 @@
           },
           "extraLarge": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.scale.6}",
+            "$value": "{sd.reference.dimension.scale.6}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "'dic.system.dimension.radius.extraLarge'"
+                  "WEB": "'sd.system.dimension.radius.extraLarge'"
                 },
                 "scopes": ["CORNER_RADIUS"]
               }
@@ -241,7 +241,7 @@
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
-                  "WEB": "'dic.system.dimension.radius.full'"
+                  "WEB": "'sd.system.dimension.radius.full'"
                 },
                 "scopes": ["CORNER_RADIUS"]
               }
@@ -260,7 +260,7 @@
           },
           "expanded": {
             "$type": "dimension",
-            "$value": "{dic.reference.dimension.breakpoint.medium}",
+            "$value": "{sd.reference.dimension.breakpoint.medium}",
             "$extensions": {
               "com.figma": {
                 "scopes": []

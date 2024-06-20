@@ -9,21 +9,21 @@ const AccordionStyle = sva({
     item: {
       display: "flex",
       width: "100%",
-      gap: "dic.system.dimension.spacing.extraSmall",
-      paddingX: "dic.system.dimension.spacing.medium",
-      paddingY: "dic.system.dimension.spacing.small",
+      gap: "sd.system.dimension.spacing.extraSmall",
+      paddingX: "sd.system.dimension.spacing.medium",
+      paddingY: "sd.system.dimension.spacing.small",
       _hover: {
-        bg: "color-mix(in srgb, {colors.dic.system.color.component.surface}, {colors.dic.system.color.interaction.hoveredVariant})",
+        bg: "color-mix(in srgb, {colors.sd.system.color.component.surface}, {colors.sd.system.color.interaction.hoveredVariant})",
       },
       cursor: "pointer",
     },
     title: {
       flex: 1,
       textAlign: "left",
-      color: "dic.system.color.component.onSurface",
-      textStyle: "dic.system.typography.body.medium_compact",
+      color: "sd.system.color.component.onSurface",
+      textStyle: "sd.system.typography.body.medium_compact",
       _expanded: {
-        textStyle: "dic.system.typography.body.medium_expanded",
+        textStyle: "sd.system.typography.body.medium_expanded",
       },
     },
     itemIndicator: {
@@ -36,15 +36,15 @@ const AccordionStyle = sva({
     icon: {
       width: 24,
       height: 24,
-      color: "dic.system.color.component.onSurface",
+      color: "sd.system.color.component.onSurface",
     },
     description: {
-      paddingX: "dic.system.dimension.spacing.medium",
-      paddingTop: "dic.system.dimension.spacing.small",
-      paddingBottom: "dic.system.dimension.spacing.medium",
-      textStyle: "dic.system.typography.body.medium_compact",
+      paddingX: "sd.system.dimension.spacing.medium",
+      paddingTop: "sd.system.dimension.spacing.small",
+      paddingBottom: "sd.system.dimension.spacing.medium",
+      textStyle: "sd.system.typography.body.medium_compact",
       _expanded: {
-        textStyle: "dic.system.typography.body.medium_expanded",
+        textStyle: "sd.system.typography.body.medium_expanded",
       },
     },
   },

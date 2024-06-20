@@ -1,5 +1,5 @@
 {
-  "name": "@spread/site",
+  "name": "@serendie/site",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -17,7 +17,7 @@
     "@astrojs/check": "^0.7.0",
     "@astrojs/mdx": "^3.0.1",
     "@astrojs/react": "^3.4.0",
-    "@spread/ui": "*",
+    "@serendie/ui": "*",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "astro": "^4.9.2",

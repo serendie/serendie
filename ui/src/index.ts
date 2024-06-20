@@ -1,4 +1,4 @@
-export { SpreadPreset } from "./preset";
+export { SerendiePreset } from "./preset";
 
 export * from "./components/Badge.tsx";
 export * from "./components/Button.tsx";

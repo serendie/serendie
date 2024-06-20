@@ -18,9 +18,9 @@ export const CheckboxStyle = sva({
     root: {
       display: "flex",
       alignItems: "center",
-      gap: "dic.system.dimension.spacing.medium",
-      paddingY: "dic.system.dimension.spacing.small",
-      paddingX: "dic.system.dimension.spacing.medium",
+      gap: "sd.system.dimension.spacing.medium",
+      paddingY: "sd.system.dimension.spacing.small",
+      paddingX: "sd.system.dimension.spacing.medium",
       cursor: "pointer",
     },
     itemControl: {
@@ -29,33 +29,33 @@ export const CheckboxStyle = sva({
         outlineStyle: "solid",
         outlineOffset: "-2px",
         outlineWidth: "1.5px",
-        outlineColor: "dic.system.color.impression.primary",
-        borderRadius: "dic.system.dimension.radius.small",
+        outlineColor: "sd.system.color.impression.primary",
+        borderRadius: "sd.system.dimension.radius.small",
       },
     },
     checkedIcon: {
       width: 24,
       height: 24,
-      color: "dic.system.color.impression.primary",
+      color: "sd.system.color.impression.primary",
       "& .checkmark": {
-        color: "dic.system.color.impression.onPrimaryContainer",
+        color: "sd.system.color.impression.onPrimaryContainer",
       },
       _disabled: {
         color:
-          "color-mix(in srgb, {colors.dic.system.color.impression.primary}, {colors.dic.system.color.interaction.hoveredOnPrimary});",
+          "color-mix(in srgb, {colors.sd.system.color.impression.primary}, {colors.sd.system.color.interaction.hoveredOnPrimary});",
         "& .checkmark": {
           color:
-            "color-mix(in srgb, {colors.dic.system.color.interaction.disabled}, {colors.dic.system.color.impression.onPrimaryContainer});",
+            "color-mix(in srgb, {colors.sd.system.color.interaction.disabled}, {colors.sd.system.color.impression.onPrimaryContainer});",
         },
       },
     },
     uncheckedIcon: {
       width: 24,
       height: 24,
-      color: "dic.system.color.component.outline",
+      color: "sd.system.color.component.outline",
       _disabled: {
         color:
-          "color-mix(in srgb, {colors.dic.system.color.component.outline}, {colors.dic.system.color.interaction.hoveredOnPrimary});",
+          "color-mix(in srgb, {colors.sd.system.color.component.outline}, {colors.sd.system.color.interaction.hoveredOnPrimary});",
       },
     },
     itemTextGroup: {
@@ -63,24 +63,24 @@ export const CheckboxStyle = sva({
       flexFlow: "column",
     },
     itemText: {
-      color: "dic.system.color.component.onSurface",
-      textStyle: "dic.system.typography.body.medium_compact",
+      color: "sd.system.color.component.onSurface",
+      textStyle: "sd.system.typography.body.medium_compact",
       _expanded: {
-        textStyle: "dic.system.typography.body.medium_expanded",
+        textStyle: "sd.system.typography.body.medium_expanded",
       },
       _disabled: {
-        color: "dic.system.color.interaction.disabledOnSurface",
+        color: "sd.system.color.interaction.disabledOnSurface",
       },
     },
     helperText: {
-      color: "dic.system.color.component.onSurfaceVariant",
-      marginTop: "dic.system.dimension.spacing.twoExtraSmall",
-      textStyle: "dic.system.typography.body.extraSmall_compact",
+      color: "sd.system.color.component.onSurfaceVariant",
+      marginTop: "sd.system.dimension.spacing.twoExtraSmall",
+      textStyle: "sd.system.typography.body.extraSmall_compact",
       _expanded: {
-        textStyle: "dic.system.typography.body.extraSmall_expanded",
+        textStyle: "sd.system.typography.body.extraSmall_expanded",
       },
       _disabled: {
-        color: "dic.system.color.interaction.disabledOnSurface",
+        color: "sd.system.color.interaction.disabledOnSurface",
       },
     },
   },
