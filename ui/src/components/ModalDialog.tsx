@@ -60,7 +60,6 @@ const ModalDialogStyle = sva({
     },
     buttonWrapper: {
       display: "flex",
-      flexDirection: "column",
       alignItems: "center",
       gap: "sd.system.dimension.spacing.medium",
       expanded: {
