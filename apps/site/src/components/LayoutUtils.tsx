@@ -26,6 +26,17 @@ export const Dl = styled("dl", {
     rowGap: "sd.system.dimension.spacing.threeExtraLarge",
     columnGap: "sd.system.dimension.spacing.medium",
   },
+  variants: {
+    variant: {
+      dim: {
+        rowGap: 0,
+        "& dd": {
+          bg: "sd.reference.color.scale.gray.100",
+          p: "24px",
+        },
+      },
+    },
+  },
 });
 
 export const Dt = styled("dt", {
