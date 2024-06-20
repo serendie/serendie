@@ -1,22 +1,12 @@
 import { Switch } from "@serendie/ui";
-import { useState } from "react";
 import { Dd, Dl, Dt } from "src/components/LayoutUtils";
 
 export function StateSample() {
-  const [checked, setChecked] = useState(false);
-  const handleClick = () => {
-    setChecked(!checked);
-  };
-
   return (
     <Dl>
       <Dt>Enabled</Dt>
       <Dd>
-        <Switch
-          checked={checked}
-          onClick={handleClick}
-          label={"スイッチラベル"}
-        />
+        <Switch label={"スイッチラベル"} />
       </Dd>
       <Dt>Checked</Dt>
       <Dd>
@@ -32,12 +22,7 @@ export function StateSample() {
       </Dd>
       <Dt>Focused</Dt>
       <Dd>
-        <Switch
-          checked={false}
-          data-focus
-          onClick={handleClick}
-          label={"スイッチラベル"}
-        />
+        <Switch checked={false} data-focus label={"スイッチラベル"} />
       </Dd>
     </Dl>
   );

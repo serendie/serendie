@@ -8,6 +8,10 @@ export function TypeSample() {
   };
 
   return (
-    <Switch checked={checked} onClick={handleClick} label={"スイッチラベル"} />
+    <Switch
+      checked={checked}
+      onCheckedChange={handleClick}
+      label={"スイッチラベル"}
+    />
   );
 }
