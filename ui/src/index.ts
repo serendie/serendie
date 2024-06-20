@@ -7,6 +7,7 @@ export * from "./components/Divider.tsx";
 export * from "./components/IconButton.tsx";
 export * from "./components/ModalDialog.tsx";
 export * from "./components/NotificationBadge.tsx";
+export * from "./components/ProgressIndicator.tsx";
 export * from "./components/RadioButton.tsx";
 export * from "./components/RadioGroup.tsx";
 export * from "./components/Search.tsx";
