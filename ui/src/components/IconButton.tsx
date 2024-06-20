@@ -46,11 +46,13 @@ export const IconButtonStyle = cva({
               content: "''",
               position: "absolute",
               inset: "0",
-              bg: "sd.system.color.interaction.hoveredVariant",
+              bg: "sd.system.color.interaction.hovered",
             },
           },
           _focusVisible: {
-            outlineColor: "sd.system.color.component.outline",
+            outlineWidth: "sd.system.dimension.border.medium",
+            outlineStyle: "solid",
+            outlineColor: "sd.system.color.interaction.hovered",
             _after: {
               content: "''",
               position: "absolute",
