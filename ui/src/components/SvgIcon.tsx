@@ -15,6 +15,8 @@ import error_fill from "../assets/errorFill.svg?react";
 import errorCircle from "../assets/errorCircle.svg?react";
 import info from "@material-design-icons/svg/outlined/info.svg?react";
 import menu from "@material-design-icons/svg/round/menu.svg?react";
+import account_circle from "@material-design-icons/svg/round/account_circle.svg?react";
+import settings from "@material-design-icons/svg/round/settings.svg?react";
 import { css, cx } from "../../styled-system/css";
 
 const icons = {
@@ -37,6 +39,8 @@ const icons = {
   error_fill,
   info,
   menu,
+  account_circle,
+  settings,
 };
 
 export type SvgIconName = keyof typeof icons;
