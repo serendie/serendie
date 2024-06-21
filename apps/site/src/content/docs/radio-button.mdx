@@ -1,0 +1,29 @@
+---
+title: Radio Button
+componentName: ラジオボタン
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+---
+
+import Code from "@/layouts/Code.astro";
+import { TypeSample } from "@/sampleCode/RadioButton/TypeSample";
+import typeSampleRaw from "@/sampleCode/RadioButton/TypeSample.tsx?raw";
+import { StateSample } from "@/sampleCode/RadioButton/StateSample";
+import stateSampleRaw from "@/sampleCode/RadioButton/StateSample.tsx?raw";
+
+<Code
+  title="Types"
+  description="3種類から用途に合わせて使い分けをします。それぞれの用途はガイドラインを参照してください。"
+  code={typeSampleRaw}
+  storyPath="/story/components-checkbox--basic"
+>
+  <TypeSample client:load />
+</Code>
+
+<Code
+  title="States"
+  description="3種類から用途に合わせて使い分けをします。それぞれの用途はガイドラインを参照してください。"
+  code={stateSampleRaw}
+  storyPath="/story/components-checkbox--basic"
+>
+  <StateSample client:load />
+</Code>
