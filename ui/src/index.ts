@@ -8,6 +8,7 @@ export * from "./components/BottomNavigation.tsx";
 export * from "./components/BottomNavigationItem.tsx";
 export * from "./components/Button.tsx";
 export * from "./components/Checkbox.tsx";
+export * from "./components/DashboardWidget.tsx";
 export * from "./components/Divider.tsx";
 export * from "./components/Drawer.tsx";
 export * from "./components/IconButton.tsx";
