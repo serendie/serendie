@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Toast, createToaster } from "./Toast";
+import { Toast, toaster } from "./Toast";
 import { Button } from "./Button";
 import { Stack } from "../../styled-system/jsx";
 
@@ -14,7 +14,6 @@ export default meta;
 
 export const Default: Story = {
   render: () => {
-    const toaster = createToaster({ placement: "bottom" });
     return (
       <div>
         <Button
@@ -36,7 +35,6 @@ export const Default: Story = {
 
 export const WithIcon: Story = {
   render: () => {
-    const toaster = createToaster({ placement: "bottom" });
     return (
       <div>
         <Stack direction="row">
@@ -74,7 +72,6 @@ export const WithIcon: Story = {
 
 export const Error: Story = {
   render: () => {
-    const toaster = createToaster({ placement: "bottom" });
     return (
       <div>
         <Button

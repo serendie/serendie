@@ -1,7 +1,6 @@
-import { Button, Toast, createToaster } from "@serendie/ui";
+import { Button, Toast, toaster } from "@serendie/ui";
 
 export function ToastSample() {
-  const toaster = createToaster({ placement: "bottom" });
   return (
     <div>
       <Button

@@ -57,8 +57,12 @@ export const ToastStyle = sva({
   },
 });
 
+const toaster: ReturnType<typeof createToaster> = createToaster({
+  placement: "bottom",
+});
+
 type ToastProps = {
-  toaster: ReturnType<typeof createToaster>;
+  toaster: typeof toaster;
 };
 
 const Toast: React.FC<ToastProps> = ({ toaster }) => {
@@ -94,4 +98,4 @@ const Toast: React.FC<ToastProps> = ({ toaster }) => {
 };
 
 // eslint-disable-next-line react-refresh/only-export-components
-export { Toast, createToaster };
+export { Toast, toaster };
