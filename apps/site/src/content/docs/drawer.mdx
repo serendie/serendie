@@ -1,0 +1,18 @@
+---
+title: Drawer
+componentName: ドロワー
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+---
+
+import Code from "@/layouts/Code.astro";
+import { TypeSample } from "@/sampleCode/Drawer/TypeSample";
+import typeSampleRaw from "@/sampleCode/Drawer/TypeSample.tsx?raw";
+
+<Code
+  title="Types"
+  description="説明テキストが入ります"
+  code={typeSampleRaw}
+  storyPath="/story/components-drawer--left"
+>
+  <TypeSample client:load />
+</Code>
