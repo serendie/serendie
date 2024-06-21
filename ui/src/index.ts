@@ -28,3 +28,4 @@ export * from "./components/Tabs.tsx";
 export * from "./components/TextArea.tsx";
 export * from "./components/TextField.tsx";
 export * from "./components/Toast.tsx";
+export * from "./components/TopAppBar.tsx";
