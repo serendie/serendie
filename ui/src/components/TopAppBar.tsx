@@ -5,7 +5,7 @@ const topAppBarStyle = sva({
   base: {
     root: {
       width: "100%",
-      backgroundColor: "dic.system.color.component.surface",
+      backgroundColor: "sd.system.color.component.surface",
     },
     container: {
       height: "48px",
@@ -26,10 +26,10 @@ const topAppBarStyle = sva({
       gap: "8px",
     },
     title: {
-      textStyle: "dic.system.typography.title.medium_compact",
+      textStyle: "sd.system.typography.title.medium_compact",
       width: "100%",
       _expanded: {
-        textStyle: "dic.system.typography.title.medium_expanded",
+        textStyle: "sd.system.typography.title.medium_expanded",
       },
     },
   },
