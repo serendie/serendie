@@ -137,6 +137,7 @@ export const DashboardWidget: React.FC<DashboardWidgetProps> = ({
   children,
   linkTo,
 }) => {
+  // Variantはコンポーネント内部でのみ使用
   const style = DashboardWidgetStyle({
     values:
       values === undefined
