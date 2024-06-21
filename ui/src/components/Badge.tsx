@@ -1,4 +1,3 @@
-import { DetailedHTMLProps, HTMLAttributes } from "react";
 import { css, cva, cx } from "../../styled-system/css";
 import {
   HTMLStyledProps,
