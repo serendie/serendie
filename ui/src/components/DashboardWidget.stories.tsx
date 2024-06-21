@@ -55,11 +55,11 @@ const DashboardPlaceholderStyle = cva({
     width: "100%",
     height: "100%",
     minHeight: "160px",
-    bgColor: "dic.reference.color.scale.gray.200",
+    bgColor: "sd.reference.color.scale.gray.200",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: "dic.system.dimension.radius.medium",
+    borderRadius: "sd.system.dimension.radius.medium",
   },
 });
 

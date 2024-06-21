@@ -20,13 +20,13 @@ const DashboardWidgetStyle = sva({
     root: {
       display: "flex",
       flexDirection: "column",
-      gap: "dic.system.dimension.spacing.medium",
-      py: "dic.system.dimension.spacing.small",
-      px: "dic.system.dimension.spacing.medium",
+      gap: "sd.system.dimension.spacing.medium",
+      py: "sd.system.dimension.spacing.small",
+      px: "sd.system.dimension.spacing.medium",
 
       width: "100%",
-      bgColor: "dic.system.color.component.surface",
-      borderRadius: "dic.system.dimension.radius.medium",
+      bgColor: "sd.system.color.component.surface",
+      borderRadius: "sd.system.dimension.radius.medium",
     },
     labelContainer: {
       display: "flex",
@@ -38,26 +38,26 @@ const DashboardWidgetStyle = sva({
     label: {
       display: "flex",
       alignItems: "center",
-      gap: "dic.system.dimension.spacing.medium",
+      gap: "sd.system.dimension.spacing.medium",
       width: "100%",
     },
     labelTitle: {
-      textStyle: "dic.system.typography.label.extraLarge_compact",
+      textStyle: "sd.system.typography.label.extraLarge_compact",
       _expanded: {
-        textStyle: "dic.system.typography.label.extraLarge_expanded",
+        textStyle: "sd.system.typography.label.extraLarge_expanded",
       },
     },
     labelText: {
-      textStyle: "dic.system.typography.label.small_compact",
-      color: "dic.system.color.component.onSurfaceVariant",
+      textStyle: "sd.system.typography.label.small_compact",
+      color: "sd.system.color.component.onSurfaceVariant",
       _expanded: {
-        textStyle: "dic.system.typography.label.small_expanded",
+        textStyle: "sd.system.typography.label.small_expanded",
       },
     },
     area: {
       display: "grid",
       gridTemplateColumns: "1fr",
-      gap: "dic.system.dimension.spacing.medium",
+      gap: "sd.system.dimension.spacing.medium",
     },
     areaContainer: {},
     areaValue: {
@@ -66,28 +66,28 @@ const DashboardWidgetStyle = sva({
       alignSelf: "flex-end",
     },
     areaValueLabel: {
-      color: "dic.system.color.component.onSurfaceVariant",
-      textStyle: "dic.system.typography.label.small_compact",
+      color: "sd.system.color.component.onSurfaceVariant",
+      textStyle: "sd.system.typography.label.small_compact",
       _expanded: {
-        textStyle: "dic.system.typography.label.small_expanded",
+        textStyle: "sd.system.typography.label.small_expanded",
       },
     },
     areaValueContainer: {
       display: "flex",
       alignItems: "baseline",
-      gap: "dic.system.dimension.spacing.twoExtraSmall",
+      gap: "sd.system.dimension.spacing.twoExtraSmall",
     },
     areaValueNumber: {
-      textStyle: "dic.system.typography.title.large_compact",
+      textStyle: "sd.system.typography.title.large_compact",
       _expanded: {
-        textStyle: "dic.system.typography.title.large_expanded",
+        textStyle: "sd.system.typography.title.large_expanded",
       },
     },
     areaValueNumberUnit: {
-      color: "dic.system.color.component.onSurfaceVariant",
-      textStyle: "dic.system.typography.label.small_compact",
+      color: "sd.system.color.component.onSurfaceVariant",
+      textStyle: "sd.system.typography.label.small_compact",
       _expanded: {
-        textStyle: "dic.system.typography.label.small_expanded",
+        textStyle: "sd.system.typography.label.small_expanded",
       },
     },
   },
@@ -101,7 +101,7 @@ const DashboardWidgetStyle = sva({
       singleValue: {
         area: {
           gridTemplateColumns: "auto 1fr",
-          gap: "dic.system.dimension.spacing.twoExtraLarge",
+          gap: "sd.system.dimension.spacing.twoExtraLarge",
         },
       },
       doubleValue: {
