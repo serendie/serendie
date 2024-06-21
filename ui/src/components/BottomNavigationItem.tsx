@@ -10,7 +10,7 @@ export const BottomNavigationItemStyle = sva({
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      gap: "dic.system.dimension.spacing.twoExtraSmall",
+      gap: "sd.system.dimension.spacing.twoExtraSmall",
       height: 64,
       flex: 1,
       cursor: "pointer",
@@ -19,14 +19,14 @@ export const BottomNavigationItemStyle = sva({
       position: "relative",
     },
     label: {
-      color: "dic.system.color.component.onSurface",
-      textStyle: "dic.system.typography.label.small_compact",
+      color: "sd.system.color.component.onSurface",
+      textStyle: "sd.system.typography.label.small_compact",
       expanded: {
-        textStyle: "dic.system.typography.label.small_compact",
+        textStyle: "sd.system.typography.label.small_compact",
       },
     },
     icon: {
-      color: "dic.system.color.component.onSurface",
+      color: "sd.system.color.component.onSurface",
     },
     badge: {
       position: "absolute",
@@ -38,10 +38,10 @@ export const BottomNavigationItemStyle = sva({
     isActive: {
       true: {
         label: {
-          color: "dic.system.color.impression.primary",
+          color: "sd.system.color.impression.primary",
         },
         icon: {
-          color: "dic.system.color.impression.primary",
+          color: "sd.system.color.impression.primary",
         }
       },
     },
@@ -83,7 +83,7 @@ export const BottomNavigationItem: React.FC<BottomNavigationItemProps> = ({
     <button className={styles.root} {...componentProps}>
       <div className={styles.iconGroup}>
         <div className={styles.badge}>
-          <NotificationBadge count={count || 0} noNumber={dot} />
+          <NotificationBadge count={count || 0} noNumber={dot} size="small" />
         </div>
         <SvgIcon icon={icon} size="24px" className={styles.icon}/>
       </div>

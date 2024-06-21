@@ -1,8 +1,8 @@
 import StyleDictionary from "style-dictionary-utils";
-import { SpreadParser } from "./parser.js";
+import { SerendieParser } from "./parser.js";
 import "./formatter.js";
 
-StyleDictionary.registerParser(SpreadParser);
+StyleDictionary.registerParser(SerendieParser);
 
 const myStyleDictionary = StyleDictionary.extend({
   source: ["tokens/**/*.json"],
@@ -18,11 +18,11 @@ const myStyleDictionary = StyleDictionary.extend({
       files: [
         {
           destination: "dist/tokens.js",
-          format: "spread-module",
+          format: "serendie-module",
         },
         {
           destination: "dist/tokens.d.ts",
-          format: "spread-module-declarations",
+          format: "serendie-module-declarations",
         },
         {
           destination: "dist/panda-tokens.js",

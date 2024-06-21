@@ -8,26 +8,26 @@ export const DividerStyle = cva({
   variants: {
     color: {
       light: {
-        borderColor: "dic.reference.color.scale.gray.200",
+        borderColor: "sd.reference.color.scale.gray.200",
       },
       normal: {
-        borderColor: "dic.reference.color.scale.gray.300",
+        borderColor: "sd.reference.color.scale.gray.300",
       },
       dark: {
-        borderColor: "dic.system.color.component.outlineVariant",
+        borderColor: "sd.system.color.component.outlineVariant",
       },
     },
     type: {
       horizontal: {
         width: "100%",
-        height: "dic.reference.dimension.scale.1",
+        height: "sd.reference.dimension.scale.1",
         borderBottom: "solid",
-        borderWidth: "dic.system.dimension.border.medium",
+        borderWidth: "sd.system.dimension.border.medium",
       },
       vertical: {
         borderLeft: "solid",
-        width: "dic.reference.dimension.scale.1",
-        borderWidth: "dic.system.dimension.border.medium",
+        width: "sd.reference.dimension.scale.1",
+        borderWidth: "sd.system.dimension.border.medium",
         height: "100%",
         minHeight: "10px",
       },

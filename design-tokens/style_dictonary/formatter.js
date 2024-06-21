@@ -7,7 +7,7 @@ const { fileHeader } = StyleDictionary.formatHelpers;
  * 値と小要素を持つ場合にはDEFAULTというキーに値が入る
  */
 StyleDictionary.registerFormat({
-  name: "spread-module",
+  name: "serendie-module",
   formatter: ({ dictionary, file }) => {
     const res = format(dictionary.tokens);
     return (
@@ -39,7 +39,7 @@ const format = (obj) => {
 };
 
 StyleDictionary.registerFormat({
-  name: "spread-module-declarations",
+  name: "serendie-module-declarations",
   formatter: ({ dictionary, file }) => {
     const res = format(dictionary.tokens);
     const moduleName = "tokens";

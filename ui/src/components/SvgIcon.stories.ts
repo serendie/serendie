@@ -25,7 +25,7 @@ export const CustomClassName: Story = {
     icon: "chevron_left",
     size: "2em",
     className: css({
-      color: "dic.reference.color.scale.orange.500",
+      color: "sd.reference.color.scale.orange.500",
     }),
   },
 };

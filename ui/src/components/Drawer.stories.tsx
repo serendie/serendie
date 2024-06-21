@@ -19,6 +19,7 @@ const DrawerOpenTemplate = (args: DrawerProps) => {
       <IconButton
         shape="rectangle"
         icon="menu"
+        styleType="outlined"
         onClick={() => setIsOpen(true)}
       />
       <Drawer

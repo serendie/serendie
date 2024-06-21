@@ -6,35 +6,35 @@ import { HTMLStyledProps, StyledVariantProps } from "../../styled-system/types";
 //Note:  Filledがデフォルト
 //typeにルックを定義、sizeには余白やフォントのサイズを定義するイメージ
 
-// outlineとroundedは角Rのみ違うので共通部を切り出している
+// outlineとrectangleは角Rのみ違うので共通部を切り出している
 const outlineCss = {
-  color: "dic.system.color.component.onSurface",
-  outlineWidth: "dic.system.dimension.border.medium",
+  color: "sd.system.color.component.onSurface",
+  outlineWidth: "sd.system.dimension.border.medium",
   outlineStyle: "solid",
-  outlineColor: "dic.system.color.component.outline",
-  bgColor: "dic.system.color.component.surface",
+  outlineColor: "sd.system.color.component.outline",
+  bgColor: "sd.system.color.component.surface",
   _enabled: {
     _hover: {
-      bgColor: "dic.system.color.interaction.hoveredVariant",
+      bgColor: "sd.system.color.interaction.hoveredVariant",
     },
     _focusVisible: {
-      outlineColor: "dic.system.color.component.outlineVariant",
-      bgColor: "dic.system.color.interaction.hoveredVariant",
+      outlineColor: "sd.system.color.component.outlineVariant",
+      bgColor: "sd.system.color.interaction.hoveredVariant",
     },
   },
   _disabled: {
-    bgColor: "dic.system.color.interaction.disabled",
-    color: "dic.system.color.interaction.disabledOnSurface",
+    bgColor: "sd.system.color.interaction.disabled",
+    color: "sd.system.color.interaction.disabledOnSurface",
     outline: "none",
   },
 };
 
 export const ButtonStyle = cva({
   base: {
-    borderRadius: "dic.system.dimension.radius.full",
+    borderRadius: "sd.system.dimension.radius.full",
     position: "relative",
     display: "inline-flex",
-    gap: "dic.system.dimension.spacing.twoExtraSmall",
+    gap: "sd.system.dimension.spacing.twoExtraSmall",
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
@@ -46,69 +46,74 @@ export const ButtonStyle = cva({
   variants: {
     styleType: {
       filled: {
-        bg: "dic.system.color.impression.primaryContainer",
-        color: "dic.system.color.impression.onPrimaryContainer",
+        bg: "sd.system.color.impression.primaryContainer",
+        color: "sd.system.color.impression.onPrimaryContainer",
         _enabled: {
           _hover: {
             _after: {
               content: "''",
               position: "absolute",
               inset: "0",
-              bg: "dic.system.color.interaction.hovered",
+              bg: "sd.system.color.interaction.hovered",
             },
           },
           _focusVisible: {
+            outlineWidth: "sd.system.dimension.border.medium",
+            outlineStyle: "solid",
+            outlineColor: "sd.system.color.interaction.hovered",
             _after: {
               content: "''",
               position: "absolute",
               inset: "0",
-              bg: "dic.system.color.interaction.hovered",
+              bg: "sd.system.color.interaction.hovered",
             },
           },
         },
         _disabled: {
-          bg: "dic.system.color.interaction.disabled",
-          color: "dic.system.color.interaction.disabledOnSurface",
+          bg: "sd.system.color.interaction.disabled",
+          color: "sd.system.color.interaction.disabledOnSurface",
         },
       },
       ghost: {
-        color: "dic.system.color.impression.primary",
+        color: "sd.system.color.impression.primary",
         _enabled: {
           _hover: {
-            bgColor: "dic.system.color.interaction.hoveredVariant",
+            bgColor: "sd.system.color.interaction.hoveredVariant",
           },
           _focusVisible: {
-            bgColor: "dic.system.color.interaction.hoveredVariant",
-            outlineWidth: "dic.system.dimension.border.medium",
+            bgColor: "sd.system.color.interaction.hoveredVariant",
+            outlineWidth: "sd.system.dimension.border.medium",
             outlineStyle: "solid",
-            outlineColor: "dic.system.color.component.outlineVariant",
+            outlineColor: "sd.system.color.component.outlineVariant",
           },
         },
         _disabled: {
-          color: "dic.system.color.interaction.disabledOnSurface",
+          color: "sd.system.color.interaction.disabledOnSurface",
         },
       },
-      outline: outlineCss,
-      rounded: {
+      outlined: outlineCss,
+      rectangle: {
         ...outlineCss,
-        borderRadius: "dic.system.dimension.radius.medium",
+        borderRadius: "sd.system.dimension.radius.medium",
       },
     },
     size: {
       medium: {
-        px: "dic.system.dimension.spacing.extraLarge",
-        py: "dic.system.dimension.spacing.small",
-        textStyle: "dic.system.typography.label.large_compact",
+        height: 48,
+        px: "sd.system.dimension.spacing.extraLarge",
+        py: "sd.system.dimension.spacing.small",
+        textStyle: "sd.system.typography.label.large_compact",
         expanded: {
-          textStyle: "dic.system.typography.label.large_expanded",
+          textStyle: "sd.system.typography.label.large_expanded",
         },
       },
       small: {
-        px: "dic.system.dimension.spacing.small",
-        py: "dic.system.dimension.spacing.twoExtraSmall",
-        textStyle: "dic.system.typography.label.medium_compact",
+        height: 32,
+        px: "sd.system.dimension.spacing.small",
+        py: "sd.system.dimension.spacing.twoExtraSmall",
+        textStyle: "sd.system.typography.label.medium_compact",
         expanded: {
-          textStyle: "dic.system.typography.label.medium_expanded",
+          textStyle: "sd.system.typography.label.medium_expanded",
         },
       },
     },
@@ -133,7 +138,7 @@ type ButtonProps = HTMLStyledProps<"button"> &
 const Span = styled("span", {
   base: {
     position: "relative",
-    zIndex: "dic.system.elevation.zIndex.base",
+    zIndex: "sd.system.elevation.zIndex.base",
   },
 });
 
@@ -148,20 +153,20 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           ? {
               //アイコンがある側 `spacing.medium`、無い側は`spacing.extraLarge`
               paddingLeft: leftIcon
-                ? "dic.system.dimension.spacing.medium"
-                : "dic.system.dimension.spacing.extraLarge",
+                ? "sd.system.dimension.spacing.medium"
+                : "sd.system.dimension.spacing.extraLarge",
               paddingRight: rightIcon
-                ? "dic.system.dimension.spacing.medium"
-                : "dic.system.dimension.spacing.extraLarge",
+                ? "sd.system.dimension.spacing.medium"
+                : "sd.system.dimension.spacing.extraLarge",
             }
           : {
               //アイコンがある側 `spacing.extraSmall`、無い側は`spacing.medium`
               paddingLeft: leftIcon
-                ? "dic.system.dimension.spacing.extraSmall"
-                : "dic.system.dimension.spacing.medium",
+                ? "sd.system.dimension.spacing.extraSmall"
+                : "sd.system.dimension.spacing.medium",
               paddingRight: rightIcon
-                ? "dic.system.dimension.spacing.extraSmall"
-                : "dic.system.dimension.spacing.medium",
+                ? "sd.system.dimension.spacing.extraSmall"
+                : "sd.system.dimension.spacing.medium",
             }
         : {};
     return (
@@ -171,7 +176,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           ButtonStyle(componentProps),
           css(cssPropsRest, cssPropsCss, iconPaddingCss)
         )}
-        {...props}>
+        {...props}
+      >
         {leftIcon && <Span p={"2px"}>{leftIcon}</Span>}
         <Span>{children}</Span>
         {rightIcon && <Span p={"2px"}>{rightIcon}</Span>}

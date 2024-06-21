@@ -1,5 +1,5 @@
 ---
-import { styled } from '@spread/ui/jsx';
+import { styled } from '@serendie/ui/jsx';
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 // 1. Generate a new path for every collection entry
@@ -15,15 +15,15 @@ const { Content } = await entry.render();
 
 const ComponentName = styled('h2',{
   base: {
-    textStyle: "dic.system.typography.title.medium_expanded",
-    mb: "dic.system.dimension.spacing.medium",
+    textStyle: "sd.system.typography.title.medium_expanded",
+    mb: "sd.system.dimension.spacing.medium",
   }
 })
 
 const Description = styled('p',{
   base: {
-    textStyle: "dic.system.typography.body.small_expanded",
-    mb: "dic.system.dimension.spacing.threeExtraLarge",
+    textStyle: "sd.system.typography.body.small_expanded",
+    mb: "sd.system.dimension.spacing.threeExtraLarge",
   }
 })
 

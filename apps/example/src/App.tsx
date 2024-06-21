@@ -1,6 +1,6 @@
-import { Button, Switch } from "@spread/ui";
-import { Center, HStack } from "@spread/ui/jsx";
-import { css } from "@spread/ui/css";
+import { Button, Switch } from "@serendie/ui";
+import { Center, HStack } from "@serendie/ui/jsx";
+import { css } from "@serendie/ui/css";
 
 function App() {
   return (

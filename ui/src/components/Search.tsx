@@ -4,7 +4,7 @@ import { SvgIcon } from "./SvgIcon";
 import { Box } from "../../styled-system/jsx";
 import { getToken } from "../tokens/getToken";
 
-const { dic } = getToken();
+const { sd } = getToken();
 
 /*
  * 検索候補を出すことができるサーチコンボボックス
@@ -24,25 +24,26 @@ export const SearchStyle = sva({
   ],
   base: {
     control: {
+      height: 48,
       display: "inline-grid",
       lineHeight: "1",
       gridTemplateColumns: "auto 1fr auto",
-      paddingTop: "dic.system.dimension.spacing.small",
-      paddingRight: "dic.system.dimension.spacing.extraSmall",
-      paddingBottom: "dic.system.dimension.spacing.small",
-      paddingLeft: "dic.system.dimension.spacing.twoExtraSmall",
+      paddingTop: "sd.system.dimension.spacing.small",
+      paddingRight: "sd.system.dimension.spacing.extraSmall",
+      paddingBottom: "sd.system.dimension.spacing.small",
+      paddingLeft: "sd.system.dimension.spacing.twoExtraSmall",
       alignItems: "center",
-      borderRadius: "dic.system.dimension.radius.medium",
+      borderRadius: "sd.system.dimension.radius.medium",
       outlineStyle: "solid",
-      outlineWidth: "dic.system.dimension.border.medium",
-      outlineColor: "dic.system.color.component.outline",
-      bg: "dic.system.color.component.surface",
+      outlineWidth: "sd.system.dimension.border.medium",
+      outlineColor: "sd.system.color.component.outline",
+      bg: "sd.system.color.component.surface",
       _focus: {
-        outlineWidth: "dic.system.dimension.border.thick",
-        outlineColor: "dic.system.color.impression.primary",
+        outlineWidth: "sd.system.dimension.border.thick",
+        outlineColor: "sd.system.color.impression.primary",
       },
       _disabled: {
-        bgColor: "dic.system.color.interaction.disabled",
+        bgColor: "sd.system.color.interaction.disabled",
         cursor: "not-allowed",
       },
     },
@@ -51,28 +52,28 @@ export const SearchStyle = sva({
       width: "100%",
       textOverflow: "ellipsis",
       _placeholder: {
-        color: "dic.system.color.component.onSurfaceVariant",
+        color: "sd.system.color.component.onSurfaceVariant",
       },
       _disabled: {
-        color: "dic.system.color.interaction.disabledOnSurface",
+        color: "sd.system.color.interaction.disabledOnSurface",
         _placeholder: {
-          color: "dic.system.color.interaction.disabledOnSurface",
+          color: "sd.system.color.interaction.disabledOnSurface",
         },
       },
     },
     combobox: {
-      bgColor: "dic.system.color.component.surface",
-      borderRadius: "dic.system.dimension.radius.medium",
-      boxShadow: "dic.system.elevation.shadow.level1",
-      zIndex: "dic.system.elevation.zIndex.dropdown",
+      bgColor: "sd.system.color.component.surface",
+      borderRadius: "sd.system.dimension.radius.medium",
+      boxShadow: "sd.system.elevation.shadow.level1",
+      zIndex: "sd.system.elevation.zIndex.dropdown",
       width: "100%",
     },
     comboboxItem: {
       display: "flex",
-      gap: "dic.system.dimension.spacing.small",
+      gap: "sd.system.dimension.spacing.small",
       cursor: "pointer",
       _highlighted: {
-        backgroundColor: "dic.system.color.interaction.hoveredVariant",
+        backgroundColor: "sd.system.color.interaction.hoveredVariant",
       },
     },
     iconBox: {
@@ -80,7 +81,7 @@ export const SearchStyle = sva({
       display: "flex",
       justifyContent: "center",
       "[data-disabled] &": {
-        color: "dic.system.color.interaction.disabledOnSurface",
+        color: "sd.system.color.interaction.disabledOnSurface",
       },
     },
     closeIcon: {
@@ -95,34 +96,34 @@ export const SearchStyle = sva({
       medium: {
         control: {
           textStyle: {
-            base: "dic.system.typography.body.medium_compact",
-            expanded: "dic.system.typography.body.medium_expanded",
+            base: "sd.system.typography.body.medium_compact",
+            expanded: "sd.system.typography.body.medium_expanded",
           },
         },
         comboboxItem: {
-          paddingRight: "dic.system.dimension.spacing.medium",
-          paddingLeft: "dic.system.dimension.spacing.medium",
+          paddingRight: "sd.system.dimension.spacing.medium",
+          paddingLeft: "sd.system.dimension.spacing.medium",
           paddingBottom: {
-            base: "dic.system.dimension.spacing.small",
-            expanded: "dic.system.dimension.spacing.extraSmall",
+            base: "sd.system.dimension.spacing.small",
+            expanded: "sd.system.dimension.spacing.extraSmall",
           },
           paddingTop: {
-            base: "dic.system.dimension.spacing.small",
-            expanded: "dic.system.dimension.spacing.extraSmall",
+            base: "sd.system.dimension.spacing.small",
+            expanded: "sd.system.dimension.spacing.extraSmall",
           },
         },
       },
       small: {
         control: {
           textStyle: {
-            base: "dic.system.typography.body.small_compact",
+            base: "sd.system.typography.body.small_compact",
           },
         },
         comboboxItem: {
-          paddingTop: "dic.system.dimension.spacing.extraSmall",
-          paddingRight: "dic.system.dimension.spacing.medium",
-          paddingBottom: "dic.system.dimension.spacing.extraSmall",
-          paddingLeft: "dic.system.dimension.spacing.medium",
+          paddingTop: "sd.system.dimension.spacing.extraSmall",
+          paddingRight: "sd.system.dimension.spacing.medium",
+          paddingBottom: "sd.system.dimension.spacing.extraSmall",
+          paddingLeft: "sd.system.dimension.spacing.medium",
         },
       },
     },
@@ -145,13 +146,13 @@ export const Search: React.FC<SearchStyleProps> = ({
     <Combobox.Root items={items} lazyMount unmountOnExit {...props}>
       <Combobox.Control className={styles.control}>
         <div className={styles.iconBox}>
-          <SvgIcon icon="search" size={dic.system.dimension.spacing.large} />
+          <SvgIcon icon="search" size={sd.system.dimension.spacing.large} />
         </div>
         <Combobox.Input className={styles.input} />
         {/* ARK UIではOpenのトリガーも用意されているがデザインではナシ */}
         <Combobox.Trigger>
           <div className={styles.closeIcon}>
-            <SvgIcon icon="close" size={dic.system.dimension.spacing.large} />
+            <SvgIcon icon="close" size={sd.system.dimension.spacing.large} />
           </div>
         </Combobox.Trigger>
       </Combobox.Control>
@@ -166,8 +167,8 @@ export const Search: React.FC<SearchStyleProps> = ({
                     item={item}
                     className={styles.comboboxItem}>
                     <Box
-                      w="dic.system.dimension.spacing.large"
-                      h="dic.system.dimension.spacing.large"
+                      w="sd.system.dimension.spacing.large"
+                      h="sd.system.dimension.spacing.large"
                     />
                     <Combobox.ItemText>{item}</Combobox.ItemText>
                   </Combobox.Item>

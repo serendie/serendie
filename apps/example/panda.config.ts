@@ -1,4 +1,4 @@
-import { SpreadPreset } from "@spread/ui";
+import { SerendiePreset } from "@serendie/ui";
 import pandaPreset from "@pandacss/preset-panda";
 import { defineConfig } from "@pandacss/dev";
 
@@ -7,7 +7,7 @@ export default defineConfig({
   // preflight: true,
 
   // Where to look for your css declarations
-  presets: [pandaPreset, SpreadPreset],
+  presets: [pandaPreset, SerendiePreset],
   include: ["./src/**/*.{js,jsx,ts,tsx}", "./pages/**/*.{js,jsx,ts,tsx}"],
 
   // Files to exclude
@@ -26,7 +26,7 @@ export default defineConfig({
   },
 
   // The output directory for your css system
-  importMap: "@spread/ui",
+  importMap: "@serendie/ui",
   outdir: "styled-system",
   outExtension: "js",
   jsxFramework: "react",

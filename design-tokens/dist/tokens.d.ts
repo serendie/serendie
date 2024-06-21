@@ -1,11 +1,11 @@
 /**
  * Do not edit directly
- * Generated on Tue, 04 Jun 2024 12:29:24 GMT
+ * Generated on Thu, 13 Jun 2024 13:13:42 GMT
  */
 
 export default tokens;
 declare const tokens: {
-  "dic": {
+  "sd": {
     "reference": {
       "color": {
         "scale": {
