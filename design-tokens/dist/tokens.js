@@ -1,10 +1,10 @@
 /**
  * Do not edit directly
- * Generated on Mon, 27 May 2024 14:24:35 GMT
+ * Generated on Thu, 13 Jun 2024 13:13:42 GMT
  */
 
 export default {
-  "dic": {
+  "sd": {
     "reference": {
       "color": {
         "scale": {

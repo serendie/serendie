@@ -1,38 +1,156 @@
 ---
-import { css } from "@spread/ui/css";
-import {Flex} from "@spread/ui/jsx";
-import "../index.css"
+import "@/index.css";
 import { getCollection } from "astro:content";
+import { siteConfig } from "@/../siteConfig";
+import { styled } from "@serendie/ui/jsx";
+
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 const docs = await getCollection("docs");
 
+const Body = styled("body",{
+  base: {
+    display: "grid",
+    gridTemplateRows: "auto 1fr",
+    alignItems: "start",
+  }
+});
+
+const Header = styled("header",{
+  base: {
+    pt: "sd.system.dimension.spacing.extraLarge",
+    pr: "sd.system.dimension.spacing.threeExtraLarge",
+    pb: "sd.system.dimension.spacing.extraLarge",
+    pl: "sd.system.dimension.spacing.threeExtraLarge",
+    display: "flex",
+    justifyContent: "start",
+    alignItems: "center",
+    borderBottom: "solid",
+    borderColor: "sd.system.color.component.outline",
+    borderBottomWidth: "sd.system.dimension.border.medium"
+  }
+});
+
+const H1 = styled("h1",{
+  base: {
+    textStyle: "sd.system.typography.title.large_expanded",
+  }
+});
+
+const MainGrid = styled("div",{
+  base: {
+    h: "100%",
+    display: "grid",
+    gridTemplateColumns: "240px 1fr",
+  }
+});
+
+const Sidebar = styled("aside",{
+  base: {
+    w: "240px",
+    h: "100%",
+    py: "sd.system.dimension.spacing.extraLarge",
+    display: "flex",
+    flexDirection: "column",
+    borderRight: "solid",
+    borderColor: "sd.system.color.component.outline",
+    borderRightWidth: "sd.system.dimension.border.medium",
+    backgroundColor:  "#FBFCFD"
+  }
+});
+
+const Main = styled("main",{
+  base: {
+    pt:'sd.system.dimension.spacing.threeExtraLarge',
+    pr:'sd.system.dimension.spacing.fiveExtraLarge',
+    pb:'sd.system.dimension.spacing.threeExtraLarge',
+    pl:'sd.system.dimension.spacing.fiveExtraLarge',
+  }
+});
+
+const MainTitle = styled("h1",{
+  base: {
+    textStyle: "sd.system.typography.headline.large_expanded",
+    mb: "sd.system.dimension.spacing.medium",
+  }
+});
+
+const SidebarLabel = styled("h2",{
+  base: {
+    textStyle: "sd.system.typography.label.medium_expanded",
+    pt:'sd.system.dimension.spacing.extraSmall',
+    pr: 'sd.system.dimension.spacing.extraLarge',
+    pb:'sd.system.dimension.spacing.extraSmall',
+    pl: 'sd.system.dimension.spacing.extraLarge',
+  }
+});
+
+const List = styled("ul",{
+  base: {
+    listStyle: "none",
+    p: 0,
+    m: 0
+  }
+});
+
+const ListItemLink = styled("a",{
+  base: {
+    display: "block",
+    textStyle: "sd.system.typography.label.extraLarge_expanded",
+    pt:'sd.system.dimension.spacing.extraSmall',
+    pr: 'sd.system.dimension.spacing.extraLarge',
+    pb:'sd.system.dimension.spacing.extraSmall',
+    pl: 'sd.system.dimension.spacing.extraLarge',
+    _hover: {
+      backgroundColor: "sd.system.color.interaction.hoverSurface",
+    }
+  },
+  variants: {
+    active: {
+      true: {
+        backgroundColor: "sd.system.color.interaction.selectedSurface",
+      }
+    }
+  }
+});
+
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{title}</title>
-	</head>
-	<body class={css({p:5})}>
-		<Flex gap={10}>
-			<aside>
-				<h2 class={css({fontWeight:"bold", mb:5})}>Components</h2>
-				<ul>
-					{docs.map(item =>(<li><a href={`/docs/${item.slug}`}>{item.data.title}</a></li>))}
-				</ul>
-			</aside>
-			<main>
-				<slot />
-			</main>
-		</Flex>
-	</body>
+<html lang="ja" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={siteConfig.siteDescription} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}{title && " | "}{siteConfig.siteName}</title>
+  </head>
+  <Body>
+    <Header>
+      <H1><a href="/">{siteConfig.siteName}</a></H1>
+    </Header>
+    <MainGrid>
+      <Sidebar>
+        <SidebarLabel>Components</SidebarLabel>
+        <List>
+          {
+            docs.map((item) => (
+              <li>
+                <ListItemLink  href={`/docs/${item.slug}`} active={item.data.title === title}>
+                  {item.data.title}
+                </ListItemLink>
+              </li>
+            ))
+          }
+        </List>
+      </Sidebar>
+      <Main>
+        <MainTitle>{title}</MainTitle>
+        <slot />
+      </Main>
+    </MainGrid>
+  </Body>
 </html>
-

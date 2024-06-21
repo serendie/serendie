@@ -2,7 +2,7 @@
 
 ## Design Token JSON File (`/tokens`)
 
-[W3C Design Token Format Module](https://design-tokens.github.io/community-group/format/)の仕様に沿って書かれたデザイントークン本体です。このファイルをデザイントークンの SSOT として、Spread UI 実装や Figma Variables に展開します。
+[W3C Design Token Format Module](https://design-tokens.github.io/community-group/format/)の仕様に沿って書かれたデザイントークン本体です。このファイルをデザイントークンの SSOT として、Serendie UI 実装や Figma Variables に展開します。
 
 - 命名規則
   - 1 つのファイルが、Figma 上で 1 つのモードとして展開されます
@@ -31,7 +31,7 @@ npm run sync-json-to-figma
 
 ## Style Dictonary (`/style_dictonary`)
 
-デザイントークン JSON ファイルを、React/Panda CSS で利用しやすい状態に加工するビルドスクリプトです。生成物は `/dist` に書き出され、Spread UI から利用されます。
+デザイントークン JSON ファイルを、React/Panda CSS で利用しやすい状態に加工するビルドスクリプトです。生成物は `/dist` に書き出され、Serendie UI から利用されます。
 
 ### Usage
 

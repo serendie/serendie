@@ -1,2 +1,2 @@
 @layer reset, base, tokens, recipes, utilities;
-@import "@spread/ui/styles.css";
+@import "@serendie/ui/styles.css";

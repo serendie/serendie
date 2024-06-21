@@ -2,27 +2,27 @@ import { RecipeVariantProps, css, cx, sva } from "../../styled-system/css";
 import { SvgIcon, SvgIconName } from "./SvgIcon";
 
 const BannerStyle = sva({
-  slots: ["container", "icon", "title", "text"],
+  slots: ["container", "icon", "title", "description"],
   base: {
     container: {
       display: "grid",
       gridTemplateColumns: "24px 1fr",
-      columnGap: "dic.system.dimension.spacing.twoExtraSmall",
-      rowGap: "dic.system.dimension.spacing.extraSmall",
-      p: "dic.system.dimension.spacing.small",
-      borderRadius: "dic.system.dimension.radius.medium",
+      columnGap: "sd.system.dimension.spacing.twoExtraSmall",
+      rowGap: "sd.system.dimension.spacing.extraSmall",
+      p: "sd.system.dimension.spacing.small",
+      borderRadius: "sd.system.dimension.radius.medium",
     },
     title: {
-      textStyle: "dic.system.typography.body.medium_compact",
+      textStyle: "sd.system.typography.body.medium_compact",
       expanded: {
-        textStyle: "dic.system.typography.body.medium_expanded",
+        textStyle: "sd.system.typography.body.medium_expanded",
       },
     },
-    text: {
+    description: {
       gridArea: "2 / 2 / 3 / 3",
-      textStyle: "dic.system.typography.body.medium_compact",
+      textStyle: "sd.system.typography.body.medium_compact",
       expanded: {
-        textStyle: "dic.system.typography.body.medium_expanded",
+        textStyle: "sd.system.typography.body.medium_expanded",
       },
     },
   },
@@ -30,32 +30,32 @@ const BannerStyle = sva({
     type: {
       information: {
         container: {
-          bg: "dic.system.color.component.surface",
-          color: "dic.system.color.component.onSurface",
-          borderWidth: "dic.system.dimension.border.medium",
+          bg: "sd.system.color.component.surface",
+          color: "sd.system.color.component.onSurface",
+          borderWidth: "sd.system.dimension.border.medium",
           borderStyle: "solid",
-          borderColor: "dic.system.color.component.outline",
+          borderColor: "sd.system.color.component.outline",
         },
       },
       error: {
         container: {
-          bg: "dic.system.color.impression.negativeContainer",
-          color: "dic.system.color.impression.onNegativeContainer",
-          borderWidth: "dic.system.dimension.border.medium",
+          bg: "sd.system.color.impression.negativeContainer",
+          color: "sd.system.color.impression.onNegativeContainer",
+          borderWidth: "sd.system.dimension.border.medium",
           borderStyle: "solid",
-          borderColor: "dic.system.color.impression.negativeContainer",
+          borderColor: "sd.system.color.impression.negativeContainer",
         },
         icon: {
-          color: "dic.system.color.impression.negative",
+          color: "sd.system.color.impression.negative",
         },
       },
       warning: {
         container: {
-          bg: "dic.system.color.impression.noticeContainer",
-          color: "dic.system.color.impression.onNoticeContainer",
-          borderWidth: "dic.system.dimension.border.medium",
+          bg: "sd.system.color.impression.noticeContainer",
+          color: "sd.system.color.impression.onNoticeContainer",
+          borderWidth: "sd.system.dimension.border.medium",
           borderStyle: "solid",
-          borderColor: "dic.system.color.impression.noticeContainer",
+          borderColor: "sd.system.color.impression.noticeContainer",
         },
       },
     },
@@ -66,14 +66,14 @@ const BannerStyle = sva({
 });
 
 type BannerProps = {
-  icon: SvgIconName;
   title: string;
-  text: string;
+  description: string;
+  icon?: SvgIconName;
 };
 
 export const Banner: React.FC<
   BannerProps & RecipeVariantProps<typeof BannerStyle>
-> = ({ icon, title, text, ...props }) => {
+> = ({ icon, title, description, ...props }) => {
   const [bannerProps, cssProps] = BannerStyle.splitVariantProps(props);
   const classes = BannerStyle(bannerProps);
 
@@ -91,7 +91,7 @@ export const Banner: React.FC<
         <SvgIcon icon={icon || defaultIcon} size={"24px"} />
       </div>
       <h2 className={classes.title}>{title}</h2>
-      <p className={classes.text}>{text}</p>
+      <p className={classes.description}>{description}</p>
     </div>
   );
 };

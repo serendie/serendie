@@ -16,37 +16,62 @@ export const IconButtonStyle = cva({
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
-    color: "dic.system.color.component.onSurface",
-    outlineWidth: "dic.system.dimension.border.medium",
+    color: "sd.system.color.component.onSurface",
+    outlineWidth: "sd.system.dimension.border.medium",
     outlineStyle: "solid",
     cursor: "pointer",
     _disabled: {
-      color: "dic.system.color.interaction.disabledOnSurface",
+      color: "sd.system.color.interaction.disabledOnSurface",
       cursor: "not-allowed",
       outlineColor: "transparent",
-      bg: "dic.system.color.interaction.disabled",
+      bg: "sd.system.color.interaction.disabled",
     },
   },
   variants: {
     shape: {
       rectangle: {
-        borderRadius: "dic.system.dimension.radius.medium",
+        borderRadius: "sd.system.dimension.radius.medium",
       },
       circle: {
-        borderRadius: "dic.system.dimension.radius.full",
+        borderRadius: "sd.system.dimension.radius.full",
       },
     },
     styleType: {
-      outline: {
-        outlineColor: "dic.system.color.component.outline",
-        bgColor: "dic.system.color.component.surface",
+      filled: {
+        color: "sd.system.color.impression.onPrimaryContainer",
+        bgColor: "sd.system.color.impression.primaryContainer",
         _enabled: {
           _hover: {
-            bgColor: "dic.system.color.interaction.hoveredVariant",
+            _after: {
+              content: "''",
+              position: "absolute",
+              inset: "0",
+              bg: "sd.system.color.interaction.hovered",
+            },
           },
           _focusVisible: {
-            outlineColor: "dic.system.color.component.outlineVariant",
-            bgColor: "dic.system.color.interaction.hoveredVariant",
+            outlineWidth: "sd.system.dimension.border.medium",
+            outlineStyle: "solid",
+            outlineColor: "sd.system.color.interaction.hovered",
+            _after: {
+              content: "''",
+              position: "absolute",
+              inset: "0",
+              bg: "sd.system.color.interaction.hovered",
+            },
+          },
+        },
+      },
+      outlined: {
+        outlineColor: "sd.system.color.component.outline",
+        bgColor: "sd.system.color.component.surface",
+        _enabled: {
+          _hover: {
+            bgColor: "sd.system.color.interaction.hoveredVariant",
+          },
+          _focusVisible: {
+            outlineColor: "sd.system.color.component.outlineVariant",
+            bgColor: "sd.system.color.interaction.hoveredVariant",
           },
         },
       },
@@ -54,11 +79,11 @@ export const IconButtonStyle = cva({
         outlineColor: "transparent",
         _enabled: {
           _hover: {
-            bgColor: "dic.system.color.interaction.hoveredVariant",
+            bgColor: "sd.system.color.interaction.hoveredVariant",
           },
           _focusVisible: {
-            bgColor: "dic.system.color.interaction.hoveredVariant",
-            outlineColor: "dic.system.color.component.outlineVariant",
+            bgColor: "sd.system.color.interaction.hoveredVariant",
+            outlineColor: "sd.system.color.component.outlineVariant",
           },
         },
         _disabled: {
@@ -69,32 +94,22 @@ export const IconButtonStyle = cva({
     size: {
       // TODO: PandaのTokenのsizesにも、dimensionを入れて`{}`を外したい
       large: {
-        w: "{spacing.dic.reference.dimension.scale.17}",
-        h: "{spacing.dic.reference.dimension.scale.17}",
+        w: "{spacing.sd.reference.dimension.scale.17}",
+        h: "{spacing.sd.reference.dimension.scale.17}",
       },
       medium: {
-        w: "{spacing.dic.reference.dimension.scale.12}",
-        h: "{spacing.dic.reference.dimension.scale.12}",
+        w: "{spacing.sd.reference.dimension.scale.13}",
+        h: "{spacing.sd.reference.dimension.scale.13}",
       },
       small: {
-        w: "{spacing.dic.reference.dimension.scale.10}",
-        h: "{spacing.dic.reference.dimension.scale.10}",
+        w: "{spacing.sd.reference.dimension.scale.10}",
+        h: "{spacing.sd.reference.dimension.scale.10}",
       },
     },
   },
-  compoundVariants: [
-    {
-      // rectangle/smallの場合は横長
-      shape: "rectangle",
-      size: "small",
-      css: {
-        w: "{spacing.dic.reference.dimension.scale.12}",
-      },
-    },
-  ],
   defaultVariants: {
     shape: "circle",
-    styleType: "outline",
+    styleType: "filled",
     size: "medium",
   },
 });
@@ -126,12 +141,13 @@ export const IconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
           IconButtonStyle(componentProps),
           css(cssPropsRest, cssPropsCss)
         )}
-        {...props}>
+        {...props}
+      >
         <SvgIcon
           size={
             props.size === "large"
-              ? token.dic.reference.dimension.scale[12]
-              : token.dic.reference.dimension.scale[8]
+              ? token.sd.reference.dimension.scale[12]
+              : token.sd.reference.dimension.scale[8]
           }
           icon={icon}
         />

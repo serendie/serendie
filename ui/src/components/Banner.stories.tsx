@@ -15,7 +15,7 @@ const meta: Meta<typeof Banner> = {
     title: {
       control: { type: "text" },
     },
-    text: {
+    description: {
       control: { type: "text" },
     },
     type: {
@@ -25,8 +25,8 @@ const meta: Meta<typeof Banner> = {
     },
   },
   args: {
-    title: "タイトルテキストを投入",
-    text: "補足テキストを投入",
+    title: "タイトルテキスト",
+    description: "補足テキスト",
   },
 };
 

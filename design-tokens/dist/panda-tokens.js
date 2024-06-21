@@ -1,11 +1,11 @@
 /**
  * Do not edit directly
- * Generated on Mon, 27 May 2024 14:24:35 GMT
+ * Generated on Thu, 13 Jun 2024 13:13:42 GMT
  */
 
 export default {
   "colors": {
-    "dic": {
+    "sd": {
       "reference": {
         "color": {
           "scale": {
@@ -331,7 +331,7 @@ export default {
     }
   },
   "spacing": {
-    "dic": {
+    "sd": {
       "reference": {
         "dimension": {
           "scale": {
@@ -437,7 +437,7 @@ export default {
     }
   },
   "opacity": {
-    "dic": {
+    "sd": {
       "reference": {
         "elevation": {
           "opacity": {
@@ -482,7 +482,7 @@ export default {
     }
   },
   "fonts": {
-    "dic": {
+    "sd": {
       "reference": {
         "typography": {
           "fontFamily": {
@@ -498,7 +498,7 @@ export default {
     }
   },
   "fontWeights": {
-    "dic": {
+    "sd": {
       "reference": {
         "typography": {
           "fontWeight": {
@@ -514,7 +514,7 @@ export default {
     }
   },
   "lineHeights": {
-    "dic": {
+    "sd": {
       "reference": {
         "typography": {
           "lineHeight": {
@@ -536,7 +536,7 @@ export default {
     }
   },
   "fontSizes": {
-    "dic": {
+    "sd": {
       "reference": {
         "typography": {
           "scale": {
@@ -616,7 +616,7 @@ export default {
     }
   },
   "borderWidths": {
-    "dic": {
+    "sd": {
       "system": {
         "dimension": {
           "border": {
@@ -635,7 +635,7 @@ export default {
     }
   },
   "radii": {
-    "dic": {
+    "sd": {
       "system": {
         "dimension": {
           "radius": {
@@ -663,7 +663,7 @@ export default {
     }
   },
   "shadows": {
-    "dic": {
+    "sd": {
       "system": {
         "elevation": {
           "shadow": {
@@ -718,7 +718,7 @@ export default {
     }
   },
   "zIndex": {
-    "dic": {
+    "sd": {
       "system": {
         "elevation": {
           "zIndex": {
@@ -746,7 +746,7 @@ export default {
     }
   },
   "textStyles": {
-    "dic": {
+    "sd": {
       "system": {
         "typography": {
           "display": {

@@ -1,4 +1,4 @@
-import { RecipeVariantProps, sva } from "../../styled-system/css";
+import { RecipeVariantProps, cx, sva } from "../../styled-system/css";
 
 const NotificationBadgeStyle = sva({
   slots: ["root", "text"],
@@ -8,31 +8,47 @@ const NotificationBadgeStyle = sva({
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      height: 16,
-      minWidth: 16,
-      color: "dic.system.color.impression.onNegative",
-      borderRadius: "dic.system.dimension.radius.full",
-      paddingX: "dic.system.dimension.spacing.twoExtraSmall",
-      paddingBottom: 2,
-      textStyle: "dic.system.typography.label.small_compact",
+      height: 24,
+      minWidth: 24,
+      color: "sd.system.color.impression.onNegative",
+      borderRadius: "sd.system.dimension.radius.full",
+      paddingX: "sd.system.dimension.spacing.twoExtraSmall",
+      textStyle: "sd.system.typography.label.small_compact",
       _expanded: {
-        textStyle: "dic.system.typography.label.small_expanded",
+        textStyle: "sd.system.typography.label.small_expanded",
       },
     },
     text: {
-      height: 11,
+      height: 24,
+      lineHeight: "24px",
     },
   },
   variants: {
+    size: {
+      small: {
+        root: {
+          height: 16,
+          minWidth: 16,
+          paddingX: "sd.system.dimension.spacing.twoExtraSmall",
+        },
+      },
+      medium: {
+        root: {
+          height: 24,
+          minWidth: 24,
+          paddingX: "sd.system.dimension.spacing.extraSmall",
+        },
+      },
+    },
     variant: {
       primary: {
         root: {
-          backgroundColor: "dic.system.color.impression.negative",
+          backgroundColor: "sd.system.color.impression.negative",
         },
       },
       secondary: {
         root: {
-          backgroundColor: "dic.system.color.impression.primary",
+          backgroundColor: "sd.system.color.impression.primary",
         },
       },
     },
@@ -40,6 +56,7 @@ const NotificationBadgeStyle = sva({
       true: {
         root: {
           height: 8,
+          paddingX: 0,
           minWidth: 8,
         },
       },
@@ -47,11 +64,13 @@ const NotificationBadgeStyle = sva({
   },
   defaultVariants: {
     variant: "primary",
+    size: "medium",
   },
 });
 
 type BadgeProps = {
-  count: number;
+  count?: number;
+  className?: string;
 };
 
 export type NotificationBadgeProps = BadgeProps &
@@ -60,6 +79,7 @@ export type NotificationBadgeProps = BadgeProps &
 export const NotificationBadge: React.FC<NotificationBadgeProps> = ({
   count,
   noNumber,
+  className,
   ...props
 }) => {
   const [cssProps, componentProps] =
@@ -67,15 +87,15 @@ export const NotificationBadge: React.FC<NotificationBadgeProps> = ({
   const styles = NotificationBadgeStyle({ noNumber, ...cssProps });
 
   if (noNumber) {
-    return <div className={styles.root} {...componentProps}></div>;
+    return <div className={cx(styles.root, className)} {...componentProps}></div>;
   }
 
-  if (count < 1) {
+  if (!count || count < 1) {
     return null;
   }
 
   return (
-    <div className={styles.root} {...componentProps}>
+    <div className={cx(styles.root, className)} {...componentProps}>
       <span className={styles.text}>{count > 99 ? "99+" : count}</span>
     </div>
   );
