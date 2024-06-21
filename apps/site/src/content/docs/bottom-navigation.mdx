@@ -1,0 +1,29 @@
+---
+title: Bottom Navigation
+componentName: ボトムナビゲーション
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+---
+
+import Code from "@/layouts/Code.astro";
+import { Sample } from "@/sampleCode/BottomNavigation/Sample";
+import sampleRaw from "@/sampleCode/BottomNavigation/Sample.tsx?raw";
+import { ItemSample } from "@/sampleCode/BottomNavigation/ItemSample";
+import itemSampleRaw from "@/sampleCode/BottomNavigation/ItemSample.tsx?raw";
+
+<Code
+  title="Bottom navigation"
+  description="説明テキストが入ります"
+  code={sampleRaw}
+  storyPath="/story/components-bottom-navigation--left"
+>
+  <Sample client:load />
+</Code>
+
+<Code
+  title="Navigation with notification badges"
+  description="説明テキストが入ります"
+  code={itemSampleRaw}
+  storyPath="/story/components-bottom-navigation--left"
+>
+  <ItemSample client:load />
+</Code>
