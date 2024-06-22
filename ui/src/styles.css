@@ -1,10 +1,10 @@
-@import "@fontsource-variable/noto-sans-jp/index.css";
-@import "@fontsource-variable/roboto-flex/index.css";
 @layer reset, base, tokens, recipes, utilities;
 
 @layer base {
   :root {
-    --global-font-body: "Roboto Flex Variable", "Noto Sans JP Variable",
-      sans-serif;
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+Mono:wght@100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+    --global-font-body: "Roboto Flex", "Noto Sans JP", sans-serif;
+    --global-font-mono: "Noto Sans Mono", monospace;
+    font-optical-sizing: auto;
   }
 }
