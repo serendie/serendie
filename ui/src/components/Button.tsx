@@ -6,7 +6,7 @@ import { HTMLStyledProps, StyledVariantProps } from "../../styled-system/types";
 //Note:  Filledがデフォルト
 //typeにルックを定義、sizeには余白やフォントのサイズを定義するイメージ
 
-// outlineとroundedは角Rのみ違うので共通部を切り出している
+// outlineとrectangleは角Rのみ違うので共通部を切り出している
 const outlineCss = {
   color: "sd.system.color.component.onSurface",
   outlineWidth: "sd.system.dimension.border.medium",
@@ -58,6 +58,9 @@ export const ButtonStyle = cva({
             },
           },
           _focusVisible: {
+            outlineWidth: "sd.system.dimension.border.medium",
+            outlineStyle: "solid",
+            outlineColor: "sd.system.color.interaction.hovered",
             _after: {
               content: "''",
               position: "absolute",
@@ -88,14 +91,15 @@ export const ButtonStyle = cva({
           color: "sd.system.color.interaction.disabledOnSurface",
         },
       },
-      outline: outlineCss,
-      rounded: {
+      outlined: outlineCss,
+      rectangle: {
         ...outlineCss,
         borderRadius: "sd.system.dimension.radius.medium",
       },
     },
     size: {
       medium: {
+        height: 48,
         px: "sd.system.dimension.spacing.extraLarge",
         py: "sd.system.dimension.spacing.small",
         textStyle: "sd.system.typography.label.large_compact",
@@ -104,6 +108,7 @@ export const ButtonStyle = cva({
         },
       },
       small: {
+        height: 32,
         px: "sd.system.dimension.spacing.small",
         py: "sd.system.dimension.spacing.twoExtraSmall",
         textStyle: "sd.system.typography.label.medium_compact",
@@ -171,7 +176,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           ButtonStyle(componentProps),
           css(cssPropsRest, cssPropsCss, iconPaddingCss)
         )}
-        {...props}>
+        {...props}
+      >
         {leftIcon && <Span p={"2px"}>{leftIcon}</Span>}
         <Span>{children}</Span>
         {rightIcon && <Span p={"2px"}>{rightIcon}</Span>}

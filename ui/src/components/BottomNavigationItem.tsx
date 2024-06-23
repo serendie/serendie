@@ -83,7 +83,7 @@ export const BottomNavigationItem: React.FC<BottomNavigationItemProps> = ({
     <button className={styles.root} {...componentProps}>
       <div className={styles.iconGroup}>
         <div className={styles.badge}>
-          <NotificationBadge count={count || 0} noNumber={dot} />
+          <NotificationBadge count={count || 0} noNumber={dot} size="small" />
         </div>
         <SvgIcon icon={icon} size="24px" className={styles.icon}/>
       </div>

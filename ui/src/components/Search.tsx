@@ -24,6 +24,7 @@ export const SearchStyle = sva({
   ],
   base: {
     control: {
+      height: 48,
       display: "inline-grid",
       lineHeight: "1",
       gridTemplateColumns: "auto 1fr auto",

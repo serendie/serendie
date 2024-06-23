@@ -37,7 +37,32 @@ export const IconButtonStyle = cva({
       },
     },
     styleType: {
-      outline: {
+      filled: {
+        color: "sd.system.color.impression.onPrimaryContainer",
+        bgColor: "sd.system.color.impression.primaryContainer",
+        _enabled: {
+          _hover: {
+            _after: {
+              content: "''",
+              position: "absolute",
+              inset: "0",
+              bg: "sd.system.color.interaction.hovered",
+            },
+          },
+          _focusVisible: {
+            outlineWidth: "sd.system.dimension.border.medium",
+            outlineStyle: "solid",
+            outlineColor: "sd.system.color.interaction.hovered",
+            _after: {
+              content: "''",
+              position: "absolute",
+              inset: "0",
+              bg: "sd.system.color.interaction.hovered",
+            },
+          },
+        },
+      },
+      outlined: {
         outlineColor: "sd.system.color.component.outline",
         bgColor: "sd.system.color.component.surface",
         _enabled: {
@@ -73,8 +98,8 @@ export const IconButtonStyle = cva({
         h: "{spacing.sd.reference.dimension.scale.17}",
       },
       medium: {
-        w: "{spacing.sd.reference.dimension.scale.12}",
-        h: "{spacing.sd.reference.dimension.scale.12}",
+        w: "{spacing.sd.reference.dimension.scale.13}",
+        h: "{spacing.sd.reference.dimension.scale.13}",
       },
       small: {
         w: "{spacing.sd.reference.dimension.scale.10}",
@@ -82,19 +107,9 @@ export const IconButtonStyle = cva({
       },
     },
   },
-  compoundVariants: [
-    {
-      // rectangle/smallの場合は横長
-      shape: "rectangle",
-      size: "small",
-      css: {
-        w: "{spacing.sd.reference.dimension.scale.12}",
-      },
-    },
-  ],
   defaultVariants: {
     shape: "circle",
-    styleType: "outline",
+    styleType: "filled",
     size: "medium",
   },
 });
@@ -126,7 +141,8 @@ export const IconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
           IconButtonStyle(componentProps),
           css(cssPropsRest, cssPropsCss)
         )}
-        {...props}>
+        {...props}
+      >
         <SvgIcon
           size={
             props.size === "large"

@@ -94,6 +94,9 @@ export const SelectStyle = sva({
             expanded: "sd.system.typography.body.medium_expanded",
           },
         },
+        trigger: {
+          height: 48,
+        },
         item: {
           paddingRight: "sd.system.dimension.spacing.medium",
           paddingLeft: "sd.system.dimension.spacing.medium",
@@ -115,6 +118,7 @@ export const SelectStyle = sva({
           },
         },
         trigger: {
+          height: 32,
           paddingTop: "sd.system.dimension.spacing.twoExtraSmall",
           paddingRight: "sd.system.dimension.spacing.extraSmall",
           paddingBottom: "sd.system.dimension.spacing.twoExtraSmall",

@@ -2,6 +2,7 @@ import { Preset } from "@pandacss/dev";
 import { SerendieRecipes } from "./recipes";
 import { SerendieTokens, SerendieTypography } from "./tokens";
 import { getToken } from "./tokens/getToken";
+import { SerendieKeyframes } from "./tokens/keyframes";
 
 const { sd } = getToken();
 
@@ -20,6 +21,9 @@ export const SerendiePreset: Preset = {
       },
       textStyles: {
         ...SerendieTypography,
+      },
+      keyframes: {
+        ...SerendieKeyframes,
       },
     },
   },

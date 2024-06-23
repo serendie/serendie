@@ -2,7 +2,7 @@ import { RecipeVariantProps, css, cx, sva } from "../../styled-system/css";
 import { SvgIcon, SvgIconName } from "./SvgIcon";
 
 const BannerStyle = sva({
-  slots: ["container", "icon", "title", "text"],
+  slots: ["container", "icon", "title", "description"],
   base: {
     container: {
       display: "grid",
@@ -18,7 +18,7 @@ const BannerStyle = sva({
         textStyle: "sd.system.typography.body.medium_expanded",
       },
     },
-    text: {
+    description: {
       gridArea: "2 / 2 / 3 / 3",
       textStyle: "sd.system.typography.body.medium_compact",
       expanded: {
@@ -66,14 +66,14 @@ const BannerStyle = sva({
 });
 
 type BannerProps = {
-  icon: SvgIconName;
   title: string;
-  text: string;
+  description: string;
+  icon?: SvgIconName;
 };
 
 export const Banner: React.FC<
   BannerProps & RecipeVariantProps<typeof BannerStyle>
-> = ({ icon, title, text, ...props }) => {
+> = ({ icon, title, description, ...props }) => {
   const [bannerProps, cssProps] = BannerStyle.splitVariantProps(props);
   const classes = BannerStyle(bannerProps);
 
@@ -91,7 +91,7 @@ export const Banner: React.FC<
         <SvgIcon icon={icon || defaultIcon} size={"24px"} />
       </div>
       <h2 className={classes.title}>{title}</h2>
-      <p className={classes.text}>{text}</p>
+      <p className={classes.description}>{description}</p>
     </div>
   );
 };

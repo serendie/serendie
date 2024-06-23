@@ -50,6 +50,16 @@ export const Default: Story = {
   render: Template,
 };
 
+export const NoLabel: Story = {
+  render: () => (
+    <RadioGroup onValueChange={(e) => console.log(e.value)}>
+      <RadioButton value="itemA" />
+      <RadioButton value="itemB" />
+      <RadioButton value="itemC" />
+    </RadioGroup>
+  ),
+};
+
 export const WithHelperText: Story = {
   render: Template,
   args: {
