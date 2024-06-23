@@ -20,15 +20,18 @@ export const ProgressIndicatorStyle = cva({
         height: "96px",
       },
     },
+    onFilled: {
+      true: {
+        stroke: "sd.reference.color.scale.white.1000",
+      },
+    },
   },
   defaultVariants: {
     size: "medium",
   },
 });
 
-type ProgressIndicatorProps = {} & RecipeVariantProps<
-  typeof ProgressIndicatorStyle
->;
+type ProgressIndicatorProps = RecipeVariantProps<typeof ProgressIndicatorStyle>;
 
 export const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
   ...props

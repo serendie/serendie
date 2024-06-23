@@ -2,6 +2,7 @@ import React from "react";
 import { css, cva, cx } from "../../styled-system/css";
 import { styled, splitCssProps } from "../../styled-system/jsx";
 import { HTMLStyledProps, StyledVariantProps } from "../../styled-system/types";
+import { ProgressIndicator } from "..";
 
 //Note:  Filledがデフォルト
 //typeにルックを定義、sizeには余白やフォントのサイズを定義するイメージ
@@ -131,9 +132,13 @@ type ExclusiveIconProps =
   | ({ leftIcon?: React.ReactNode } & { rightIcon?: never })
   | ({ leftIcon?: never } & { rightIcon?: React.ReactNode });
 
+type ButtonLoadingProps = {
+  isLoading?: boolean;
+};
 type ButtonProps = HTMLStyledProps<"button"> &
   StyledVariantProps<typeof StyledButton> &
-  ExclusiveIconProps;
+  ExclusiveIconProps &
+  ButtonLoadingProps;
 
 const Span = styled("span", {
   base: {
@@ -143,7 +148,7 @@ const Span = styled("span", {
 });
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, leftIcon, rightIcon, ...props }, ref) => {
+  ({ children, leftIcon, rightIcon, isLoading, ...props }, ref) => {
     const [cssProps, componentProps] = splitCssProps(props);
     const { css: cssPropsCss, ...cssPropsRest } = cssProps;
 
@@ -169,6 +174,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 : "sd.system.dimension.spacing.medium",
             }
         : {};
+
     return (
       <StyledButton
         ref={ref}
@@ -178,9 +184,15 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         )}
         {...props}
       >
-        {leftIcon && <Span p={"2px"}>{leftIcon}</Span>}
+        {isLoading && (
+          <ProgressIndicator
+            size={componentProps.size}
+            onFilled={props.styleType === "filled"}
+          />
+        )}
+        {!isLoading && leftIcon && <Span p={"2px"}>{leftIcon}</Span>}
         <Span>{children}</Span>
-        {rightIcon && <Span p={"2px"}>{rightIcon}</Span>}
+        {!isLoading && rightIcon && <Span p={"2px"}>{rightIcon}</Span>}
       </StyledButton>
     );
   }
