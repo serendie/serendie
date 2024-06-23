@@ -4,7 +4,7 @@ import { sva } from "../../styled-system/css";
 import { splitCssProps } from "../../styled-system/jsx";
 
 export const DropdownMenuStyle = sva({
-  slots: ["content", "itemGroup", "item"],
+  slots: ["content", "itemGroup", "item", "button", "buttonIcon"],
   base: {
     content: {
       bgColor: "sd.system.color.component.surface",
@@ -14,7 +14,7 @@ export const DropdownMenuStyle = sva({
       outline: "none",
     },
     itemGroup: {
-      padding: "sd.system.dimension.spacing.medium",
+      width: 240,
     },
     item: {
       display: "flex",
@@ -33,9 +33,37 @@ export const DropdownMenuStyle = sva({
       },
       _highlighted: {
         bgColor: "sd.system.color.interaction.hoveredVariant",
+      },
+    },
+    button: {
+      paddingY: "sd.system.dimension.spacing.small",
+      paddingInlineStart: "sd.system.dimension.spacing.medium",
+      paddingRight: "sd.system.dimension.spacing.small",
+      color: "sd.system.color.component.onSurfaceVariant",
+      gap: "sd.system.dimension.spacing.extraSmall",
+      _enabled: {
+        textStyle: "sd.system.typography.body.medium_compact",
+      },
+      _disabled: {
+        textStyle: "sd.system.typography.body.medium_compact",
+        outline: "solid",
+        outlineOffset: "0px",
+        outlineColor: "sd.system.color.component.outline",
+        outlineWidth: "sd.system.dimension.border.medium",
+      },
+      _open: {
+        // Note: leftIcon が _open を受け取れないため button 側で制御
+        "& svg": {
+          transform: "rotate(180deg)",
+        }
       }
     },
-  }
+    buttonIcon: {
+      color: "sd.system.color.component.onSurface",
+      marginLeft: "2px",
+      transition: "transform 0.2s",
+    },
+  },
 });
 
 export type MenuItemProps = {
@@ -44,16 +72,18 @@ export type MenuItemProps = {
   icon?: SvgIconName;
 };
 
-type MenuBaseProps = {
+export type DropdownMenuProps = {
   isIconMenu?: boolean;
   title: string;
   items: MenuItemProps[];
+  disabled?: boolean;
 };
 
-export const DropdownMenu: React.FC<MenuBaseProps> = ({
+export const DropdownMenu: React.FC<DropdownMenuProps> = ({
   isIconMenu,
   title,
   items,
+  disabled,
   ...props
 }) => {
   const [cssProps, componentProps] = splitCssProps(props);
@@ -62,13 +92,35 @@ export const DropdownMenu: React.FC<MenuBaseProps> = ({
   return (
     <ArkMenu.Root {...componentProps}>
       <ArkMenu.Trigger asChild>
-        {isIconMenu ? <IconButton icon="menu" shape="rectangle" /> : <Button styleType="outline" >{title}</Button>}
+        {isIconMenu ? (
+          <IconButton icon="menu" shape="rectangle" disabled={disabled} styleType="outlined"/>
+        ) : (
+          <Button
+            styleType="rectangle"
+            size="medium"
+            disabled={disabled}
+            rightIcon={
+              <SvgIcon
+                icon="expandMore"
+                size="24px"
+                className={styles.buttonIcon}
+              />
+            }
+            className={styles.button}
+          >
+            {title}
+          </Button>
+        )}
       </ArkMenu.Trigger>
       <ArkMenu.Positioner>
         <ArkMenu.Content className={styles.content}>
-          <ArkMenu.ItemGroup>
+          <ArkMenu.ItemGroup className={styles.itemGroup}>
             {items.map((item) => (
-              <ArkMenu.Item key={item.value} value={item.value} className={styles.item}>
+              <ArkMenu.Item
+                key={item.value}
+                value={item.value}
+                className={styles.item}
+              >
                 {item.icon && <SvgIcon icon={item.icon} size="24px" />}
                 {item.label}
               </ArkMenu.Item>

@@ -1,10 +1,24 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { DropdownMenu, MenuItemProps } from "./DropdownMenu";
+import { DropdownMenu, DropdownMenuProps, MenuItemProps } from "./DropdownMenu";
 
 const meta: Meta<typeof DropdownMenu> = {
   component: DropdownMenu,
   decorators: [(Story) => <Story />],
+  argTypes: {
+    title: {
+      control: { type: "text" },
+      defaultValue: "メニュータイトル",
+    },
+    disabled: {
+      control: { type: "boolean" },
+      defaultValue: false,
+    },
+    isIconMenu: {
+      control: { type: "boolean" },
+      defaultValue: false,
+    }
+  },
 };
 
 
@@ -19,10 +33,21 @@ const sampleItems: MenuItemProps[] = [
   { label: "リストタイトル", value: "value5", icon: "texture" },
 ]
 
+const Template = (args: DropdownMenuProps) => (
+  <DropdownMenu {...args} items={sampleItems}/>
+);
+
 export const Default: Story = {
-  render: () => <DropdownMenu title="menu" items={sampleItems}/>,
+  render: Template,
+  args: {
+    title: "メニュータイトル",
+  },
 };
 
 export const Icon: Story = {
-  render: () => <DropdownMenu title="menu" items={sampleItems} isIconMenu/>,
+  render: Template,
+  args: {
+    title: "メニュータイトル",
+    isIconMenu: true,
+  },
 };
