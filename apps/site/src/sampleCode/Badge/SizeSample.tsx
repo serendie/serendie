@@ -1,5 +1,5 @@
-import { Badge, IconButton, Select } from "@serendie/ui";
-import { Dd, Dl, Dt, HBox, VBox } from "src/components/LayoutUtils";
+import { Badge } from "@serendie/ui";
+import { HBox, VBox } from "src/components/LayoutUtils";
 
 export function SizeSample() {
   return (

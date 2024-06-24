@@ -1,4 +1,4 @@
-import { Search, Select } from "@serendie/ui";
+import { Search } from "@serendie/ui";
 import { Dd, Dl, Dt } from "src/components/LayoutUtils";
 
 export function SizeSample() {
