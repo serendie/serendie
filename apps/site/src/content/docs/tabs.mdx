@@ -10,10 +10,9 @@ import tabsSampleRaw from "@/sampleCode/Tabs/TabsSample.tsx?raw";
 import { TabsNotificationSample } from "@/sampleCode/Tabs/TabsNotificationSample";
 import tabsNotificationSampleRaw from "@/sampleCode/Tabs/TabsNotificationSample.tsx?raw";
 import { StateSample } from "@/sampleCode/Tabs/StateSample";
-import stateSampleRaw from "@/sampleCode/Tabs/StateSample.tsx?raw";
 
 <Code
-  title="Tabs"
+  title="Sample"
   description="タブのサンプルコード"
   code={tabsSampleRaw}
   storyPath="/story/components-tabs--default"
@@ -22,17 +21,18 @@ import stateSampleRaw from "@/sampleCode/Tabs/StateSample.tsx?raw";
 </Code>
 
 <Code
-  title="Tabs with Notification"
+  title="With Notification Badge"
   description="通知付きタブのサンプルコード"
-  storyPath="/story/components-tabs--notification"
+  storyPath="/docs/components-tabs--docs"
+  code={tabsNotificationSampleRaw}
 >
   <TabsNotificationSample client:load />
 </Code>
 
 <Code
-  title="State"
+  title="States"
   description="タブの状態一覧"
-  storyPath="/story/components-tabs--default"
+  storyPath="/docs/components-tabs--docs"
 >
   <StateSample client:load />
 </Code>

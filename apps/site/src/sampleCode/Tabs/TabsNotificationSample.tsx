@@ -1,6 +1,5 @@
 import { Dd, Dl, Dt } from "@/components/LayoutUtils";
-import { TabItem } from "@serendie/ui";
-import { Tabs } from "@serendie/ui";
+import { TabItem, Tabs } from "@serendie/ui";
 
 export function TabsNotificationSample() {
   return (
@@ -15,7 +14,7 @@ export function TabsNotificationSample() {
         </Tabs>
       </Dd>
 
-      <Dt>With Notification Badge(non-number)</Dt>
+      <Dt>With Badge</Dt>
       <Dd>
         <Tabs defaultValue="1">
           <TabItem title="連絡先" value="1" dot />
@@ -25,7 +24,7 @@ export function TabsNotificationSample() {
         </Tabs>
       </Dd>
 
-      <Dt>With Notification Badge(number)</Dt>
+      <Dt>With Badge (Number)</Dt>
       <Dd>
         <Tabs defaultValue="1">
           <TabItem title="連絡先" value="1" badge={3} />
