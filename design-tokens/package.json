@@ -11,6 +11,10 @@
     "./panda": {
       "import": "./dist/panda-tokens.js",
       "types": "./dist/panda-tokens.d.ts"
+    },
+    "./token-list": {
+      "import": "./dist/token-list.js",
+      "types": "./dist/token-list.d.ts"
     }
   },
   "scripts": {

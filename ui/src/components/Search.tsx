@@ -150,11 +150,13 @@ export const Search: React.FC<SearchStyleProps> = ({
         </div>
         <Combobox.Input className={styles.input} />
         {/* ARK UIではOpenのトリガーも用意されているがデザインではナシ */}
-        <Combobox.Trigger>
-          <div className={styles.closeIcon}>
-            <SvgIcon icon="close" size={sd.system.dimension.spacing.large} />
-          </div>
-        </Combobox.Trigger>
+        {items.length > 0 && (
+          <Combobox.Trigger>
+            <div className={styles.closeIcon}>
+              <SvgIcon icon="close" size={sd.system.dimension.spacing.large} />
+            </div>
+          </Combobox.Trigger>
+        )}
       </Combobox.Control>
       {items.length > 0 && (
         <Portal>
@@ -165,7 +167,8 @@ export const Search: React.FC<SearchStyleProps> = ({
                   <Combobox.Item
                     key={i}
                     item={item}
-                    className={styles.comboboxItem}>
+                    className={styles.comboboxItem}
+                  >
                     <Box
                       w="sd.system.dimension.spacing.large"
                       h="sd.system.dimension.spacing.large"
