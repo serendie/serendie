@@ -1,4 +1,4 @@
-import { IconButton, ProgressIndicator } from "@serendie/ui";
+import { ProgressIndicator } from "@serendie/ui";
 import { HBox, VBox } from "src/components/LayoutUtils";
 
 export function SizeSample() {
