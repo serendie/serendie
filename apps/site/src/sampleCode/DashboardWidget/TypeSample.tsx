@@ -1,6 +1,6 @@
 import { DashboardWidget } from "@serendie/ui";
 import { Dd, Dl, Dt } from "src/components/LayoutUtils";
-import { cva } from "../../../../../ui/styled-system/css/cva";
+import { cva } from "@serendie/ui/css";
 
 export function TypeSample() {
   return (
