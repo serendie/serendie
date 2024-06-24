@@ -4,8 +4,8 @@ import { TopAppBar } from "@serendie/ui";
 
 export function TypeSample() {
   return (
-    <Dl>
-      <Dt>Navbar</Dt>
+    <Dl variant="dim">
+      <Dt>Nav Bar</Dt>
       <Dd>
         <TopAppBar
           type="navbar"
@@ -18,18 +18,18 @@ export function TypeSample() {
         />
       </Dd>
 
-      <Dt>Title Bar</Dt>
+      <Dt>Title Bar (with Trailing Icon)</Dt>
       <Dd>
         <TopAppBar
           type="titleBar"
-          title="Default"
+          title="Page Title"
           trailingIconButtons={
             <IconButton icon="add" styleType="ghost" shape="rectangle" />
           }
         />
       </Dd>
 
-      <Dt>Navbar + Title Bar</Dt>
+      <Dt>Nav Bar + Title Bar</Dt>
       <Dd>
         <TopAppBar
           type="navbar"
@@ -40,16 +40,10 @@ export function TypeSample() {
             <IconButton icon="search" styleType="ghost" shape="rectangle" />
           }
         />
-        <TopAppBar
-          type="titleBar"
-          title="Default"
-          trailingIconButtons={
-            <IconButton icon="add" styleType="ghost" shape="rectangle" />
-          }
-        />
+        <TopAppBar type="titleBar" title="Page Title" />
       </Dd>
 
-      <Dt>Navbar + Title Bar</Dt>
+      <Dt>Nav Bar + Title Bar (with Icons)</Dt>
       <Dd>
         <TopAppBar
           type="navbar"
@@ -62,7 +56,7 @@ export function TypeSample() {
         />
         <TopAppBar
           type="titleBar"
-          title="Default"
+          title="Page Title"
           headingIconButton={
             <IconButton
               icon="chevron_left"
