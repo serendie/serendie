@@ -1,0 +1,28 @@
+---
+title: Divider
+componentName: ディバイダー
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+---
+
+import Code from "@/layouts/Code.astro";
+import { ColorSample } from "@/sampleCode/Divider/ColorSample";
+import colorSampleRaw from "@/sampleCode/Divider/ColorSample.tsx?raw";
+import { TypeSample } from "@/sampleCode/Divider/TypeSample";
+import typeSampleRaw from "@/sampleCode/Divider/TypeSample.tsx?raw";
+
+<Code
+  title="Color"
+  description="ディバイダーの色を指定します。"
+  code={colorSampleRaw}
+  storyPath="/story/components-divider--horizontal"
+>
+  <ColorSample client:load />
+</Code>
+
+<Code
+  title="Types"
+  description="ディバイダーの種類を指定します。"
+  storyPath="/story/components-divider--vertical"
+>
+  <TypeSample client:load />
+</Code>
