@@ -1,16 +1,10 @@
-import { Badge, IconButton, Select } from "@serendie/ui";
-import { Dd, Dl, Dt, HBox, VBox } from "src/components/LayoutUtils";
-import { css } from "../../../../../ui/styled-system/css/css";
+import { Badge } from "@serendie/ui";
+import { Dd, Dl, Dt, HBox } from "src/components/LayoutUtils";
 
-export function StateSample() {
+export function ColorSample() {
   return (
     <HBox>
-      <Dl
-        className={css({
-          width: "100%",
-          gridTemplateColumns: "80px 1fr 80px 1fr",
-        })}
-      >
+      <Dl w="100%" gridTemplateColumns="80px 1fr 80px 1fr">
         <Dt>Gray</Dt>
         <Dd>
           <Badge>Label</Badge>
