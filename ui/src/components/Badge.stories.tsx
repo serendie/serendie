@@ -12,15 +12,15 @@ const meta: Meta<typeof Badge> = {
       control: { type: "select" },
       defaultValue: "medium",
     },
-    color: {
-      options: BadgeStyle.variantMap.color,
+    styleColor: {
+      options: BadgeStyle.variantMap.styleColor,
       control: { type: "select" },
       defaultValue: "gray",
     },
   },
   args: {
     children: "Badge",
-    color: "gray",
+    styleColor: "gray",
   },
 };
 
