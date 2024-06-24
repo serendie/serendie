@@ -5,25 +5,25 @@ description: 説明テキストがはいります説明テキストがはいり�
 ---
 
 import Code from "@/layouts/Code.astro";
-import { TypeSample } from "@/sampleCode/ListItem/TypeSample";
-import typeSampleRaw from "@/sampleCode/ListItem/TypeSample.tsx?raw";
-import { StateSample } from "@/sampleCode/ListItem/StateSample";
-import stateSampleRaw from "@/sampleCode/ListItem/StateSample.tsx?raw";
+import { TypeSample } from "@/sampleCode/List/TypeSample";
+import typeSampleRaw from "@/sampleCode/List/TypeSample.tsx?raw";
+import { StateSample } from "@/sampleCode/List/StateSample";
+import stateSampleRaw from "@/sampleCode/List/StateSample.tsx?raw";
 
 <Code
   title="Types"
-  description="ListItemのタイプはDefaultとLinkの2種類あります。"
+  description="説明テキストがはいります説明テキストがはいります説明テキストがはいります"
   code={typeSampleRaw}
-  storyPath="/story/components-listitem--docs"
+  storyPath="/story/components-list--basic"
 >
   <TypeSample client:load />
 </Code>
 
 <Code
   title="States"
-  description="ListItemの状態"
+  description="説明テキストがはいります説明テキストがはいります説明テキストがはいります"
   code={stateSampleRaw}
-  storyPath="/story/components-listitem--docs"
+  storyPath="/docs/components-list--docs"
 >
   <StateSample client:load />
 </Code>

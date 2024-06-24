@@ -1,46 +1,53 @@
-import { StateMatrix } from "@/components/StateMatrix";
 import { ListItem } from "@serendie/ui";
-import type { ComponentProps } from "react";
 import { Dd, Dl, Dt } from "src/components/LayoutUtils";
 
 export function TypeSample() {
   return (
-    <Dl>
-      <Dt>Title</Dt>
+    <Dl variant="dim">
+      <Dt>Title Only</Dt>
       <Dd>
-        <ListItem title="リストタイトル" leftIcon="info" />
+        <ListItem title="リストタイトル" />
       </Dd>
 
-      <Dt>Desctiption</Dt>
+      <Dt>Heading Icon</Dt>
+      <Dd>
+        <ListItem title="リストタイトル" leftIcon="texture" />
+      </Dd>
+
+      <Dt>Multiple Lines</Dt>
       <Dd>
         <ListItem
           title="リストタイトル"
           description="補足テキスト"
-          leftIcon="info"
-        />
+          leftIcon="texture"
+        >
+          <p>タイムスタンプなど</p>
+        </ListItem>
       </Dd>
 
-      <Dt>Large Left Icon</Dt>
+      <Dt>Large Heading Icon</Dt>
       <Dd>
-        <ListItem title="リストタイトル" leftIcon="info" isLargeLeftIcon />
+        <ListItem title="リストタイトル" leftIcon="texture" isLargeLeftIcon />
       </Dd>
 
-      <Dt>Large Left Icon with Description</Dt>
+      <Dt>Multiple Lines</Dt>
       <Dd>
         <ListItem
           title="リストタイトル"
           description="補足テキスト"
-          leftIcon="info"
+          leftIcon="texture"
           isLargeLeftIcon
-        />
+        >
+          <p>タイムスタンプなど</p>
+        </ListItem>
       </Dd>
 
-      <Dt>Right Icon</Dt>
+      <Dt>Trailing Icon</Dt>
       <Dd>
         <ListItem title="リストタイトル" rightIcon="chevron_right" />
       </Dd>
 
-      <Dt>Right Icon with Description</Dt>
+      <Dt>Multiple Lines</Dt>
       <Dd>
         <ListItem
           title="リストタイトル"
@@ -49,12 +56,12 @@ export function TypeSample() {
         />
       </Dd>
 
-      <Dt>Badge</Dt>
+      <Dt>With Badge</Dt>
       <Dd>
         <ListItem
           title="リストタイトル"
           description="補足テキスト"
-          leftIcon="face"
+          leftIcon="texture"
           isLargeLeftIcon
           badge={3}
         />

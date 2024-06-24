@@ -1,6 +1,4 @@
-import { StateMatrix } from "@/components/StateMatrix";
 import { ListItem } from "@serendie/ui";
-import type { ComponentProps } from "react";
 import { Dd, Dl, Dt } from "src/components/LayoutUtils";
 
 export function StateSample() {
@@ -8,12 +6,11 @@ export function StateSample() {
     <Dl>
       <Dt>Enabled</Dt>
       <Dd>
-        <ListItem title="リストタイトル" leftIcon="info" />
+        <ListItem title="リストタイトル" leftIcon="texture" />
       </Dd>
-
       <Dt>Disabled</Dt>
       <Dd>
-        <ListItem title="リストタイトル" leftIcon="info" disabled />
+        <ListItem title="リストタイトル" leftIcon="texture" disabled />
       </Dd>
     </Dl>
   );
