@@ -1,6 +1,6 @@
-import { Divider, RadioButton, RadioGroup } from "@serendie/ui";
-import { Dd, Dl, Dt, HBox, VBox } from "src/components/LayoutUtils";
-import { css } from "../../../../../ui/styled-system/css/css";
+import { Divider } from "@serendie/ui";
+import { css } from "@serendie/ui/css";
+import { HBox, VBox } from "src/components/LayoutUtils";
 
 export function TypeSample() {
   return (
