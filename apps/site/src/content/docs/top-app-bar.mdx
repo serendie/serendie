@@ -1,18 +1,18 @@
 ---
-title: Text Area
-componentName: テキストエリア
+title: Top App Bar
+componentName: トップアップバー
 description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
 ---
 
 import Code from "@/layouts/Code.astro";
-import { StateSample } from "@/sampleCode/TextArea/StateSample";
-import stateSampleRaw from "@/sampleCode/TextArea/StateSample.tsx?raw";
+import { TypeSample } from "@/sampleCode/TopAppBar/TypeSample";
+import typeSampleRaw from "@/sampleCode/TopAppBar/TypeSample.tsx?raw";
 
 <Code
-  title="States"
-  description="説明テキストが入ります"
-  code={stateSampleRaw}
-  storyPath="/story/components-textarea--basic"
+  title="Types"
+  description="トップアップバーのタイプ一覧"
+  code={typeSampleRaw}
+  storyPath="/story/components-topappbar--all"
 >
-  <StateSample client:load />
+  <TypeSample client:load />
 </Code>

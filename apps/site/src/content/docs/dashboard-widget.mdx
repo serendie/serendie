@@ -1,0 +1,18 @@
+---
+title: Dashboard Widget
+componentName: ダッシュボードウィジェット
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+---
+
+import Code from "@/layouts/Code.astro";
+import { TypeSample } from "@/sampleCode/DashboardWidget/TypeSample";
+import typeSampleRaw from "@/sampleCode/DashboardWidget/TypeSample.tsx?raw";
+
+<Code
+  title="Types"
+  description="ダッシュボードウィジェットのタイプ一覧"
+  code={typeSampleRaw}
+  storyPath="/story/components-dashboardwidget--no-value"
+>
+  <TypeSample client:load />
+</Code>
