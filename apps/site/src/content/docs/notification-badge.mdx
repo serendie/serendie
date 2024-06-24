@@ -16,7 +16,7 @@ import noNumberSampleRaw from "@/sampleCode/NotificationBadge/NoNumberSample.tsx
   title="Size"
   description="NotificationBadgeのサイズはSmallとMediumの2種類あります。SmallはPCなどの大きな画面でマウス操作をする前提で使用することを推奨しています。また、Mediumは画面サイズにかかわらず使用できますが、スマートフォンなどの画面では基本サイズになります。"
   code={sizeSampleRaw}
-  storyPath="/story/components-notification-badge"
+  storyPath="/story/components-notificationbadge--default&args=size:small"
 >
   <SizeSample client:load />
 </Code>
@@ -27,7 +27,7 @@ import noNumberSampleRaw from "@/sampleCode/NotificationBadge/NoNumberSample.tsx
     "NotificationBadgeのvariantはPrimary、Secondaryの2種類あります。"
   }
   code={variantSampleRaw}
-  storyPath="/story/components-notification-badge--secondary"
+  storyPath="/story/components-notificationbadge--default&args=variant:secondary;size:medium"
 >
   <VariantSample client:load />
 </Code>
@@ -38,7 +38,7 @@ import noNumberSampleRaw from "@/sampleCode/NotificationBadge/NoNumberSample.tsx
     "NotificationBadgeには、数字を表示しないバリエーションもあります。"
   }
   code={noNumberSampleRaw}
-  storyPath="/story/components-notification-badge--secondary"
+  storyPath="/story/components-notificationbadge--no-number"
 >
   <NoNumberSample client:load />
 </Code>
