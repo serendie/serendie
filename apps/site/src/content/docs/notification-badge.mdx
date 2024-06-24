@@ -1,0 +1,44 @@
+---
+title: NotificationBadge
+componentName: バッジ
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+---
+
+import Code from "@/layouts/Code.astro";
+import { SizeSample } from "@/sampleCode/NotificationBadge/SizeSample";
+import sizeSampleRaw from "@/sampleCode/NotificationBadge/SizeSample.tsx?raw";
+import { VariantSample } from "@/sampleCode/NotificationBadge/VariantSample";
+import variantSampleRaw from "@/sampleCode/NotificationBadge/VariantSample.tsx?raw";
+import { NoNumberSample } from "@/sampleCode/NotificationBadge/NoNumberSample";
+import noNumberSampleRaw from "@/sampleCode/NotificationBadge/NoNumberSample.tsx?raw";
+
+<Code
+  title="Size"
+  description="NotificationBadgeのサイズはSmallとMediumの2種類あります。SmallはPCなどの大きな画面でマウス操作をする前提で使用することを推奨しています。また、Mediumは画面サイズにかかわらず使用できますが、スマートフォンなどの画面では基本サイズになります。"
+  code={sizeSampleRaw}
+  storyPath="/story/components-notificationbadge--default&args=size:small"
+>
+  <SizeSample client:load />
+</Code>
+
+<Code
+  title="Types"
+  description={
+    "NotificationBadgeのvariantはPrimary、Secondaryの2種類あります。"
+  }
+  code={variantSampleRaw}
+  storyPath="/story/components-notificationbadge--default&args=variant:secondary;size:medium"
+>
+  <VariantSample client:load />
+</Code>
+
+<Code
+  title={"No Number"}
+  description={
+    "NotificationBadgeには、数字を表示しないバリエーションもあります。"
+  }
+  code={noNumberSampleRaw}
+  storyPath="/story/components-notificationbadge--no-number"
+>
+  <NoNumberSample client:load />
+</Code>
