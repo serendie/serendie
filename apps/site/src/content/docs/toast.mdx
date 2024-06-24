@@ -5,14 +5,14 @@ description: 説明テキストがはいります説明テキストがはいり�
 ---
 
 import Code from "@/layouts/Code.astro";
-import { ToastSample } from "@/sampleCode/Toaster/ToastSample";
-import ToastSampleRaw from "@/sampleCode/Toaster/ToastSample?raw";
+import { ToastSample } from "@/sampleCode/Toast/ToastSample";
+import ToastSampleRaw from "@/sampleCode/Toast/ToastSample?raw";
 
 <Code
-  title="Toast"
+  title="Types"
   description="説明テキストが入ります"
   code={ToastSampleRaw}
-  storyPath="/story/components-textfield--basic"
+  storyPath="/story/components-toast--default"
 >
   <ToastSample client:load />
 </Code>
