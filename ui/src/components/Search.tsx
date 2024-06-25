@@ -24,14 +24,9 @@ export const SearchStyle = sva({
   ],
   base: {
     control: {
-      height: 48,
       display: "inline-grid",
       lineHeight: "1",
       gridTemplateColumns: "auto 1fr auto",
-      paddingTop: "sd.system.dimension.spacing.small",
-      paddingRight: "sd.system.dimension.spacing.extraSmall",
-      paddingBottom: "sd.system.dimension.spacing.small",
-      paddingLeft: "sd.system.dimension.spacing.twoExtraSmall",
       alignItems: "center",
       borderRadius: "sd.system.dimension.radius.medium",
       outlineStyle: "solid",
@@ -77,7 +72,6 @@ export const SearchStyle = sva({
       },
     },
     iconBox: {
-      w: "40px",
       display: "flex",
       justifyContent: "center",
       "[data-disabled] &": {
@@ -94,30 +88,37 @@ export const SearchStyle = sva({
   variants: {
     size: {
       medium: {
+        iconBox: {
+          w: "40px",
+        },
         control: {
-          textStyle: {
-            base: "sd.system.typography.body.medium_compact",
-            expanded: "sd.system.typography.body.medium_expanded",
-          },
+          height: 48,
+          gap: "sd.system.dimension.spacing.extraSmall",
+          textStyle: "sd.system.typography.body.medium_compact",
+          paddingTop: "sd.system.dimension.spacing.small",
+          paddingRight: "sd.system.dimension.spacing.extraSmall",
+          paddingBottom: "sd.system.dimension.spacing.small",
+          paddingLeft: "sd.system.dimension.spacing.twoExtraSmall",
         },
         comboboxItem: {
           paddingRight: "sd.system.dimension.spacing.medium",
           paddingLeft: "sd.system.dimension.spacing.medium",
-          paddingBottom: {
-            base: "sd.system.dimension.spacing.small",
-            expanded: "sd.system.dimension.spacing.extraSmall",
-          },
-          paddingTop: {
-            base: "sd.system.dimension.spacing.small",
-            expanded: "sd.system.dimension.spacing.extraSmall",
-          },
+          paddingBottom: "sd.system.dimension.spacing.extraSmall",
+          paddingTop: "sd.system.dimension.spacing.extraSmall",
         },
       },
       small: {
+        iconBox: {
+          w: "20px",
+        },
         control: {
-          textStyle: {
-            base: "sd.system.typography.body.small_compact",
-          },
+          height: 32,
+          gap: "sd.system.dimension.spacing.twoExtraSmall",
+          textStyle: "sd.system.typography.body.small_compact",
+          paddingTop: "sd.system.dimension.spacing.twoExtraSmall",
+          paddingLeft: "sd.system.dimension.spacing.extraSmall",
+          paddingBottom: "sd.system.dimension.spacing.twoExtraSmall",
+          scrollPaddingLeft: "sd.system.dimension.spacing.twoExtraSmall",
         },
         comboboxItem: {
           paddingTop: "sd.system.dimension.spacing.extraSmall",
