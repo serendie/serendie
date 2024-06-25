@@ -1,0 +1,29 @@
+---
+title: Check Box
+componentName: チェックボックス
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+---
+
+import Code from "@/layouts/Code.astro";
+import { TypeSample } from "@/sampleCode/CheckBox/TypeSample";
+import typeSampleRaw from "@/sampleCode/CheckBox/TypeSample.tsx?raw";
+import { StateSample } from "@/sampleCode/CheckBox/StateSample";
+import stateSampleRaw from "@/sampleCode/CheckBox/StateSample.tsx?raw";
+
+<Code
+  title="Types"
+  description="3種類から用途に合わせて使い分けをします。それぞれの用途はガイドラインを参照してください。"
+  code={typeSampleRaw}
+  storyPath="/story/components-checkbox--default"
+>
+  <TypeSample client:load />
+</Code>
+
+<Code
+  title="States"
+  description="3種類から用途に合わせて使い分けをします。それぞれの用途はガイドラインを参照してください。"
+  code={stateSampleRaw}
+  storyPath="/docs/components-checkbox--docs"
+>
+  <StateSample client:load />
+</Code>

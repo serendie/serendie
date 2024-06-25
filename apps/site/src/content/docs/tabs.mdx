@@ -1,0 +1,38 @@
+---
+title: Tabs
+componentName: タブ
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+---
+
+import Code from "@/layouts/Code.astro";
+import { TabsSample } from "@/sampleCode/Tabs/TabsSample";
+import tabsSampleRaw from "@/sampleCode/Tabs/TabsSample.tsx?raw";
+import { TabsNotificationSample } from "@/sampleCode/Tabs/TabsNotificationSample";
+import tabsNotificationSampleRaw from "@/sampleCode/Tabs/TabsNotificationSample.tsx?raw";
+import { StateSample } from "@/sampleCode/Tabs/StateSample";
+
+<Code
+  title="Sample"
+  description="タブのサンプルコード"
+  code={tabsSampleRaw}
+  storyPath="/story/components-tabs--default"
+>
+  <TabsSample client:load />
+</Code>
+
+<Code
+  title="With Notification Badge"
+  description="通知付きタブのサンプルコード"
+  storyPath="/docs/components-tabs--docs"
+  code={tabsNotificationSampleRaw}
+>
+  <TabsNotificationSample client:load />
+</Code>
+
+<Code
+  title="States"
+  description="タブの状態一覧"
+  storyPath="/docs/components-tabs--docs"
+>
+  <StateSample client:load />
+</Code>

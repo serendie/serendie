@@ -134,6 +134,19 @@ const ListItemLink = styled("a",{
     </Header>
     <MainGrid>
       <Sidebar>
+        <SidebarLabel>Tokens</SidebarLabel>
+        <List>
+              <li>
+                <ListItemLink  href={`/tokens/system`}>
+                  System Tokens
+                </ListItemLink>
+              </li>
+              <li>
+                <ListItemLink  href={`/tokens/reference`} >
+                  Reference Tokens
+                </ListItemLink>
+              </li>
+        </List>
         <SidebarLabel>Components</SidebarLabel>
         <List>
           {

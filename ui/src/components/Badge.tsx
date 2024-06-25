@@ -1,4 +1,3 @@
-import { DetailedHTMLProps, HTMLAttributes } from "react";
 import { css, cva, cx } from "../../styled-system/css";
 import {
   HTMLStyledProps,
@@ -44,7 +43,7 @@ export const BadgeStyle = cva({
         },
       },
     },
-    color: {
+    styleColor: {
       gray: {
         bg: "sd.reference.color.scale.gray.600",
         color: "sd.system.color.component.inverseOnSurface",
@@ -97,7 +96,7 @@ export const BadgeStyle = cva({
   },
   defaultVariants: {
     size: "medium",
-    color: "gray",
+    styleColor: "gray",
   },
 });
 

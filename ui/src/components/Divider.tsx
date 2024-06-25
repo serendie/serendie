@@ -21,11 +21,11 @@ export const DividerStyle = cva({
       horizontal: {
         width: "100%",
         height: "sd.reference.dimension.scale.1",
-        borderBottom: "solid",
+        borderBottomStyle: "solid",
         borderWidth: "sd.system.dimension.border.medium",
       },
       vertical: {
-        borderLeft: "solid",
+        borderLeftStyle: "solid",
         width: "sd.reference.dimension.scale.1",
         borderWidth: "sd.system.dimension.border.medium",
         height: "100%",

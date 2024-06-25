@@ -1,0 +1,18 @@
+---
+title: Toast
+componentName: トースト
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+---
+
+import Code from "@/layouts/Code.astro";
+import { ToastSample } from "@/sampleCode/Toast/ToastSample";
+import ToastSampleRaw from "@/sampleCode/Toast/ToastSample?raw";
+
+<Code
+  title="Types"
+  description="説明テキストが入ります"
+  code={ToastSampleRaw}
+  storyPath="/story/components-toast--default"
+>
+  <ToastSample client:load />
+</Code>
