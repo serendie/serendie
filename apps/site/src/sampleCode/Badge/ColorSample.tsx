@@ -12,57 +12,57 @@ export function ColorSample() {
 
         <Dt>Gray-subtle</Dt>
         <Dd>
-          <Badge color="gray-subtle">Label</Badge>
+          <Badge styleColor="gray-subtle">Label</Badge>
         </Dd>
 
         <Dt>Blue</Dt>
         <Dd>
-          <Badge color="blue">Label</Badge>
+          <Badge styleColor="blue">Label</Badge>
         </Dd>
 
         <Dt>Blue-subtle</Dt>
         <Dd>
-          <Badge color="blue-subtle">Label</Badge>
+          <Badge styleColor="blue-subtle">Label</Badge>
         </Dd>
 
         <Dt>Green</Dt>
         <Dd>
-          <Badge color="green">Label</Badge>
+          <Badge styleColor="green">Label</Badge>
         </Dd>
 
         <Dt>Green-subtle</Dt>
         <Dd>
-          <Badge color="green-subtle">Label</Badge>
+          <Badge styleColor="green-subtle">Label</Badge>
         </Dd>
 
         <Dt>Yellow</Dt>
         <Dd>
-          <Badge color="yellow">Label</Badge>
+          <Badge styleColor="yellow">Label</Badge>
         </Dd>
 
         <Dt>Yellow-subtle</Dt>
         <Dd>
-          <Badge color="yellow-subtle">Label</Badge>
+          <Badge styleColor="yellow-subtle">Label</Badge>
         </Dd>
 
         <Dt>Orange</Dt>
         <Dd>
-          <Badge color="orange">Label</Badge>
+          <Badge styleColor="orange">Label</Badge>
         </Dd>
 
         <Dt>Orange-subtle</Dt>
         <Dd>
-          <Badge color="orange-subtle">Label</Badge>
+          <Badge styleColor="orange-subtle">Label</Badge>
         </Dd>
 
         <Dt>Red</Dt>
         <Dd>
-          <Badge color="red">Label</Badge>
+          <Badge styleColor="red">Label</Badge>
         </Dd>
 
         <Dt>Red-subtle</Dt>
         <Dd>
-          <Badge color="red-subtle">Label</Badge>
+          <Badge styleColor="red-subtle">Label</Badge>
         </Dd>
       </Dl>
     </HBox>
