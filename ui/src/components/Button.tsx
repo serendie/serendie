@@ -187,7 +187,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {isLoading && (
           <ProgressIndicator
             size={componentProps.size}
-            onFilled={props.styleType === "filled"}
+            color={props.styleType === "filled" ? "white" : "gray"}
           />
         )}
         {!isLoading && leftIcon && <Span p={"2px"}>{leftIcon}</Span>}
