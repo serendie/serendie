@@ -7,12 +7,7 @@ export const AvatarStyle = sva({
   slots: ["root", "fallback", "image"],
   base: {
     root: {
-      position: "relative",
-      display: "inline-flex",
-      alignItems: "center",
-      justifyContent: "center",
       borderRadius: "50%",
-      bgColor: "sd.system.color.component.surface",
     },
     fallback: {
       display: "flex",
