@@ -2,6 +2,62 @@ import StyleDictionary from "style-dictionary";
 
 const { fileHeader } = StyleDictionary.formatHelpers;
 
+StyleDictionary.registerFormat({
+  name: "spread-token-list",
+  formatter: ({ dictionary, file }) => {
+    const walker = (obj) => {
+      if (typeof obj !== "object") return obj;
+      const ret = [];
+
+      if (obj.path) {
+        // pathがあるところが末端
+        ret.push({
+          path: obj.path,
+          key: obj.path.join("."),
+          type: obj.$type,
+          value: obj.value,
+          originalValue: obj.original.value,
+        });
+      } else {
+        for (const key in obj) {
+          ret.push(walker(obj[key]));
+        }
+      }
+      return ret.flat();
+    };
+
+    const res = walker(dictionary.tokens);
+    return (
+      fileHeader({ file }) + "export default " + JSON.stringify(res, false, 2)
+    );
+  },
+});
+
+StyleDictionary.registerFormat({
+  name: "spread-token-list-declarations",
+  formatter: ({ file }) => {
+    const output =
+      fileHeader({ file }) +
+      `
+export default tokens;
+
+type value = string | number | Record<string, string | number>;
+
+interface Token {
+    path: string[];
+    key: string;
+    type: string;
+    value: value;
+    originalValue: value;
+}
+
+declare const tokens: Token[];
+`;
+
+    return output;
+  },
+});
+
 /*
  * 単純なオブジェクトに変換するフォーマッター
  * 値と小要素を持つ場合にはDEFAULTというキーに値が入る

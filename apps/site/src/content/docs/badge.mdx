@@ -1,0 +1,29 @@
+---
+title: Badge
+componentName: バッジ
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+---
+
+import Code from "@/layouts/Code.astro";
+import { SizeSample } from "@/sampleCode/Badge/SizeSample";
+import sizeSampleRaw from "@/sampleCode/Badge/SizeSample.tsx?raw";
+import { ColorSample } from "@/sampleCode/Badge/ColorSample";
+import colorSampleRaw from "@/sampleCode/Badge/ColorSample.tsx?raw";
+
+<Code
+  title="Size"
+  description="サイズはSmall、Mediumの2種類あります。"
+  code={sizeSampleRaw}
+  storyPath="/story/components-badge--small"
+>
+  <SizeSample client:load />
+</Code>
+
+<Code
+  title="Color"
+  description="説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります"
+  code={colorSampleRaw}
+  storyPath="/docs/components-badge--docs"
+>
+  <ColorSample client:load />
+</Code>

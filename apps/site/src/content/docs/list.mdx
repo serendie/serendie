@@ -1,0 +1,29 @@
+---
+title: List
+componentName: リストアイテム
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+---
+
+import Code from "@/layouts/Code.astro";
+import { TypeSample } from "@/sampleCode/List/TypeSample";
+import typeSampleRaw from "@/sampleCode/List/TypeSample.tsx?raw";
+import { StateSample } from "@/sampleCode/List/StateSample";
+import stateSampleRaw from "@/sampleCode/List/StateSample.tsx?raw";
+
+<Code
+  title="Types"
+  description="説明テキストがはいります説明テキストがはいります説明テキストがはいります"
+  code={typeSampleRaw}
+  storyPath="/story/components-list--basic"
+>
+  <TypeSample client:load />
+</Code>
+
+<Code
+  title="States"
+  description="説明テキストがはいります説明テキストがはいります説明テキストがはいります"
+  code={stateSampleRaw}
+  storyPath="/docs/components-list--docs"
+>
+  <StateSample client:load />
+</Code>
