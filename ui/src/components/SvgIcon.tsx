@@ -1,4 +1,5 @@
 import add from "@material-design-icons/svg/round/add.svg?react";
+import avatar from "../assets/avatar.svg?react";
 import check from "../assets/check.svg?react";
 import checkCircle from "../assets/checkCircle.svg?react";
 import arrow_outward from "@material-design-icons/svg/round/arrow_outward.svg?react";
@@ -21,6 +22,7 @@ import { css, cx } from "../../styled-system/css";
 
 const icons = {
   add,
+  avatar,
   check,
   checkCircle,
   arrow_outward,
