@@ -37,10 +37,10 @@ export const ListItemStyle = sva({
     textGroup: {
       display: "flex",
       flexDirection: "column",
-      gap: "sd.system.dimension.spacing.twoExtraSmall",
       flexGrow: 1,
     },
     title: {
+      py: "sd.system.dimension.spacing.twoExtraSmall",
       textStyle: "sd.system.typography.label.extraLarge_compact",
       color: "sd.system.color.component.onSurface",
       _expanded: {
@@ -51,6 +51,8 @@ export const ListItemStyle = sva({
       },
     },
     description: {
+      display: "flex",
+      flexDirection: "column",
       textStyle: "sd.system.typography.body.extraSmall_compact",
       color: "sd.system.color.component.onSurfaceVariant",
       _expanded: {
@@ -145,8 +147,10 @@ export const ListItem: React.FC<ListItemProps> = ({
       )}
       <div className={styles.textGroup} style={textGroupStyle}>
         <span className={styles.title}>{title}</span>
-        <span className={styles.description}>{description}</span>
-        {children}
+        <div className={styles.description}>
+          {description}
+          {children}
+        </div>
       </div>
       {badge && (
         <div className={styles.badge}>
