@@ -8,7 +8,7 @@ const meta: Meta<typeof Button> = {
   parameters: {
     controls: {
       expanded: true,
-      include: ["children", "styleType", "size", "disabled"],
+      include: ["children", "styleType", "size", "disabled", "isLoading"],
     },
   },
   argTypes: {
@@ -26,6 +26,10 @@ const meta: Meta<typeof Button> = {
       control: { type: "radio" },
       defaultValue: "medium",
     },
+    isLoading: {
+      control: { type: "boolean" },
+      defaultValue: false,
+    }
   },
 };
 
@@ -38,6 +42,7 @@ export const Medium: Story = {
     children: "Button",
     size: "medium",
     disabled: false,
+    isLoading: false,
   },
 };
 
