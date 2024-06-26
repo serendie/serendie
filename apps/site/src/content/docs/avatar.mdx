@@ -1,0 +1,29 @@
+---
+title: Avatar
+componentName: アバター
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+---
+
+import Code from "@/layouts/Code.astro";
+import { SizeSample } from "@/sampleCode/Avatar/SizeSample";
+import sizeSampleRaw from "@/sampleCode/Avatar/SizeSample.tsx?raw";
+import { TypeSample } from "@/sampleCode/Avatar/TypeSample";
+import typeSampleRaw from "@/sampleCode/Avatar/TypeSample.tsx?raw";
+
+<Code
+  title="Size"
+  description="説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります"
+  code={sizeSampleRaw}
+  storyPath="/story/components-avatar--text&args=size:small"
+>
+  <SizeSample client:load />
+</Code>
+
+<Code
+  title="Types"
+  description="説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります"
+  code={typeSampleRaw}
+  storyPath="/docs/components-avatar--docs"
+>
+  <TypeSample client:load />
+</Code>
