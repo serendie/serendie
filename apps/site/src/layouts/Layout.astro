@@ -137,12 +137,12 @@ const ListItemLink = styled("a",{
         <SidebarLabel>Tokens</SidebarLabel>
         <List>
               <li>
-                <ListItemLink  href={`/tokens/system`}>
+                <ListItemLink  href={`/tokens/system`} active={title === "System tokens"}>
                   System Tokens
                 </ListItemLink>
               </li>
               <li>
-                <ListItemLink  href={`/tokens/reference`} >
+                <ListItemLink  href={`/tokens/reference`} active={title === "Reference tokens"}>
                   Reference Tokens
                 </ListItemLink>
               </li>
