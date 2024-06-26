@@ -66,7 +66,7 @@ type AvatarBaseProps = {
   src?: string;
   alt?: string;
   text?: string;
-  icon?: boolean;
+  placeholder?: "filled" | "outlined";
 };
 
 export type AvatarProps = RecipeVariantProps<typeof AvatarStyle> &
@@ -76,7 +76,7 @@ export const Avatar: React.FC<AvatarProps> = ({
   src,
   alt,
   text,
-  icon,
+  placeholder = "filled",
   size,
   ...props
 }) => {
@@ -89,12 +89,12 @@ export const Avatar: React.FC<AvatarProps> = ({
     <ArkAvatar.Root className={styles.root} {...componentProps}>
       {src ? (
         <ArkAvatar.Image className={styles.image} src={src} alt={alt} />
-      ) : icon ? (
-        <SvgIcon icon="avatar" size={iconSize} />
       ) : text ? (
         <ArkAvatar.Fallback className={styles.fallback}>
           {text.slice(0, 2)}
         </ArkAvatar.Fallback>
+      ) : placeholder === "outlined" ? (
+        <SvgIcon icon="avatar" size={iconSize} />
       ) : (
         <ArkAvatar.Image
           className={styles.image}
