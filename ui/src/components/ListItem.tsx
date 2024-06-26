@@ -9,6 +9,7 @@ import { splitCssProps } from "../../styled-system/jsx";
 export const ListItemStyle = sva({
   slots: [
     "root",
+    "wrapper",
     "textGroup",
     "title",
     "description",
@@ -18,7 +19,10 @@ export const ListItemStyle = sva({
   ],
   base: {
     root: {
-      height: 48,
+      position: "relative",
+    },
+    wrapper: {
+      minH: 48,
       display: "flex",
       alignItems: "center",
       paddingX: "sd.system.dimension.spacing.medium",
@@ -29,14 +33,31 @@ export const ListItemStyle = sva({
         background:
           "color-mix(in srgb, {colors.sd.system.color.interaction.hoveredVariant}, {colors.sd.system.color.component.surface});",
       },
+      _focusVisible: {
+        outline: "1px solid",
+        outlineColor: "sd.system.color.component.outline",
+      },
+      _selected: {
+        background: "sd.system.color.interaction.selectedSurface",
+        _hover: {
+          background: "sd.system.color.interaction.selectedSurface",
+        },
+      },
+      _disabled: {
+        opacity: 0.3,
+        cursor: "not-allowed",
+        _selected: {
+          background: "transparent",
+        },
+      },
     },
     textGroup: {
       display: "flex",
       flexDirection: "column",
-      gap: "sd.system.dimension.spacing.twoExtraSmall",
       flexGrow: 1,
     },
     title: {
+      py: "sd.system.dimension.spacing.twoExtraSmall",
       textStyle: "sd.system.typography.label.extraLarge_compact",
       color: "sd.system.color.component.onSurface",
       _expanded: {
@@ -47,6 +68,8 @@ export const ListItemStyle = sva({
       },
     },
     description: {
+      display: "flex",
+      flexDirection: "column",
       textStyle: "sd.system.typography.body.extraSmall_compact",
       color: "sd.system.color.component.onSurfaceVariant",
       _expanded: {
@@ -58,6 +81,11 @@ export const ListItemStyle = sva({
     },
     leftIcon: {
       flexShrink: 0,
+      "& svg": {
+        display: "block",
+        maxHeight: "100%",
+        maxWidth: "100%",
+      },
       _disabled: {
         opacity: 0.3,
       },
@@ -69,7 +97,9 @@ export const ListItemStyle = sva({
       },
     },
     badge: {
-      flexShrink: 0,
+      position: "absolute",
+      right: "sd.system.dimension.spacing.medium",
+      top: "sd.system.dimension.spacing.extraSmall",
       height: 24,
       minW: 24,
     },
@@ -85,6 +115,8 @@ type ListItemBaseProps = {
   badge?: number;
   children?: React.ReactNode;
   disabled?: boolean;
+  selected?: boolean;
+  focusVisible?: boolean;
 };
 
 type ExclusiveRightItemProps =
@@ -103,6 +135,9 @@ export const ListItem: React.FC<ListItemProps> = ({
   description,
   badge,
   children,
+  disabled,
+  selected,
+  focusVisible,
   ...props
 }) => {
   const [cssProps, componentProps] = splitCssProps(props);
@@ -115,25 +150,44 @@ export const ListItem: React.FC<ListItemProps> = ({
   const iconSize = isLargeLeftIcon ? "40px" : "24px";
 
   return (
-    <li className={styles.root} style={itemStyle} {...componentProps}>
-      {leftIcon && (
-        <div className={styles.leftIcon}>
-          <SvgIcon icon={leftIcon} size={iconSize} />
+    <li className={styles.root} {...componentProps}>
+      <div
+        tabIndex={1}
+        /* TODO: tabIndexでfocusableにしてるけど、そもそもリンクやボタンとして扱うための仕組みが必要 */
+        className={styles.wrapper}
+        style={itemStyle}
+        data-disabled={disabled ? true : undefined}
+        data-selected={selected ? true : undefined}
+        data-focus-visible={focusVisible ? true : undefined}
+      >
+        {leftIcon && (
+          <div
+            className={styles.leftIcon}
+            style={
+              isLargeLeftIcon
+                ? { padding: "0", width: "40px", height: "40px" }
+                : { padding: "0", width: "24px", height: "24px" }
+            }
+          >
+            <SvgIcon icon={leftIcon} size={iconSize} />
+          </div>
+        )}
+        <div className={styles.textGroup} style={textGroupStyle}>
+          <span className={styles.title}>{title}</span>
+          <div className={styles.description}>
+            {description}
+            {children}
+          </div>
         </div>
-      )}
-      <div className={styles.textGroup} style={textGroupStyle}>
-        <span className={styles.title}>{title}</span>
-        <span className={styles.description}>{description}</span>
-        {children}
+        {rightIcon && (
+          <div className={styles.rightIcon}>
+            <SvgIcon icon={rightIcon} size="24px" />
+          </div>
+        )}
       </div>
       {badge && (
         <div className={styles.badge}>
           <NotificationBadge count={badge} variant="secondary" />
-        </div>
-      )}
-      {rightIcon && (
-        <div className={styles.rightIcon}>
-          <SvgIcon icon={rightIcon} size="24px" />
         </div>
       )}
     </li>

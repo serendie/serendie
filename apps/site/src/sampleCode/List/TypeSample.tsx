@@ -1,4 +1,4 @@
-import { ListItem } from "@serendie/ui";
+import { List, ListItem } from "@serendie/ui";
 import { Dd, Dl, Dt } from "src/components/LayoutUtils";
 
 export function TypeSample() {
@@ -6,65 +6,81 @@ export function TypeSample() {
     <Dl variant="dim">
       <Dt>Title Only</Dt>
       <Dd>
-        <ListItem title="リストタイトル" />
+        <List>
+          <ListItem title="リストタイトル" />
+        </List>
       </Dd>
 
       <Dt>Heading Icon</Dt>
       <Dd>
-        <ListItem title="リストタイトル" leftIcon="texture" />
+        <List>
+          <ListItem title="リストタイトル" leftIcon="texture" />
+        </List>
       </Dd>
 
       <Dt>Multiple Lines</Dt>
       <Dd>
-        <ListItem
-          title="リストタイトル"
-          description="補足テキスト"
-          leftIcon="texture"
-        >
-          <p>タイムスタンプなど</p>
-        </ListItem>
+        <List>
+          <ListItem
+            title="リストタイトル"
+            description="補足テキスト"
+            leftIcon="texture"
+          >
+            <p>タイムスタンプなど</p>
+          </ListItem>
+        </List>
       </Dd>
 
       <Dt>Large Heading Icon</Dt>
       <Dd>
-        <ListItem title="リストタイトル" leftIcon="texture" isLargeLeftIcon />
+        <List>
+          <ListItem title="リストタイトル" leftIcon="texture" isLargeLeftIcon />
+        </List>
       </Dd>
 
       <Dt>Multiple Lines</Dt>
       <Dd>
-        <ListItem
-          title="リストタイトル"
-          description="補足テキスト"
-          leftIcon="texture"
-          isLargeLeftIcon
-        >
-          <p>タイムスタンプなど</p>
-        </ListItem>
+        <List>
+          <ListItem
+            title="リストタイトル"
+            description="補足テキスト"
+            leftIcon="texture"
+            isLargeLeftIcon
+          >
+            <p>タイムスタンプなど</p>
+          </ListItem>
+        </List>
       </Dd>
 
       <Dt>Trailing Icon</Dt>
       <Dd>
-        <ListItem title="リストタイトル" rightIcon="chevron_right" />
+        <List>
+          <ListItem title="リストタイトル" rightIcon="chevron_right" />
+        </List>
       </Dd>
 
       <Dt>Multiple Lines</Dt>
       <Dd>
-        <ListItem
-          title="リストタイトル"
-          description="補足テキスト"
-          rightIcon="chevron_right"
-        />
+        <List>
+          <ListItem
+            title="リストタイトル"
+            description="補足テキスト"
+            rightIcon="chevron_right"
+          />
+        </List>
       </Dd>
 
       <Dt>With Badge</Dt>
       <Dd>
-        <ListItem
-          title="リストタイトル"
-          description="補足テキスト"
-          leftIcon="texture"
-          isLargeLeftIcon
-          badge={3}
-        />
+        <List>
+          <ListItem
+            title="リストタイトル"
+            description="補足テキスト"
+            leftIcon="texture"
+            isLargeLeftIcon
+            badge={3}
+          />
+        </List>
       </Dd>
     </Dl>
   );

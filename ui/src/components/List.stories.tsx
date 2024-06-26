@@ -7,21 +7,37 @@ const meta: Meta<typeof ListItem> = {
   parameters: {
     controls: {
       expanded: true,
-      include: ["title", "description", "rightIcon", "leftIcon", "badge", "disabled", "isLargeLeftIcon"],
+      include: [
+        "title",
+        "description",
+        "rightIcon",
+        "leftIcon",
+        "badge",
+        "disabled",
+        "selected",
+        "isLargeLeftIcon",
+      ],
     },
   },
-  decorators: [(Story) => (
-    <List style={{width: 375}}>
-      <Story />
-    </List>
-  )
-],
+  decorators: [
+    (Story) => (
+      <List style={{ width: 375 }}>
+        <Story />
+        <Story />
+        <Story />
+      </List>
+    ),
+  ],
   argTypes: {
     badge: {
       control: { type: "number" },
       defaultValue: 0,
     },
     disabled: {
+      control: { type: "boolean" },
+      defaultValue: false,
+    },
+    selected: {
       control: { type: "boolean" },
       defaultValue: false,
     },
@@ -37,7 +53,7 @@ const meta: Meta<typeof ListItem> = {
     description: {
       control: { type: "text" },
     },
-  }
+  },
 };
 
 export default meta;
@@ -47,7 +63,7 @@ export const Basic: Story = {
   args: {
     leftIcon: "texture",
     title: "リストスタイル",
-  }
+  },
 };
 
 export const Description: Story = {
@@ -55,14 +71,14 @@ export const Description: Story = {
     leftIcon: "texture",
     title: "リストスタイル",
     description: "補足テキスト補足テキスト",
-  }
+  },
 };
 
 export const RightIcon: Story = {
   args: {
     rightIcon: "chevron_right",
     title: "リストスタイル",
-  }
+  },
 };
 
 export const Badge: Story = {
@@ -71,5 +87,5 @@ export const Badge: Story = {
     title: "リストスタイル1",
     description: "補足テキスト補足テキスト10分前",
     badge: 100,
-  }
+  },
 };
