@@ -29,27 +29,26 @@ export const Image: Story = {
   args: {
     size: "medium",
     src: "https://i.pravatar.cc/300",
-    text: "AB"
-  }
+    text: "AB",
+  },
 };
 
 export const Text: Story = {
   args: {
     size: "medium",
-    text: "AB"
-  }
+    text: "AB",
+  },
 };
 
-export const Icon: Story = {
+export const PlaceholderFilled: Story = {
   args: {
     size: "medium",
-    icon: true,
-    text: "IC"
-  }
+  },
 };
 
-export const Placeholder: Story = {
+export const PlaceholderOutlined: Story = {
   args: {
     size: "medium",
-  }
+    placeholder: "outlined",
+  },
 };
