@@ -1,6 +1,6 @@
 export function getTemplate({
   redirectPath,
-  withError
+  withError,
 }: {
   redirectPath: string;
   withError: boolean;
@@ -26,6 +26,7 @@ export function getTemplate({
           min-height: calc(100vh - 7rem);
           padding: 1rem 0;
           max-width: 600px;
+          margin: 0 auto;
         }
 
         .error {
@@ -43,10 +44,14 @@ export function getTemplate({
       <main>
         <article>
           <hgroup>
-            <h1>Password</h1>
+            <h1>Authentication Required</h1>
             <h2>Please enter your password for this site.</h2>
           </hgroup>
-          ${withError ? `<p class="error">Incorrect password, please try again.</p>` : ''}
+          ${
+            withError
+              ? `<p class="error">Incorrect password, please try again.</p>`
+              : ""
+          }
           <form method="post" action="/cfp_login">
             <input type="hidden" name="redirect" value="${redirectPath}" />
             <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required autofocus>
