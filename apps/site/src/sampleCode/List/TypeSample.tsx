@@ -6,12 +6,16 @@ export function TypeSample() {
     <Dl variant="dim">
       <Dt>Title Only</Dt>
       <Dd>
-        <ListItem title="リストタイトル" />
+        <List>
+          <ListItem title="リストタイトル" />
+        </List>
       </Dd>
 
       <Dt>Heading Icon</Dt>
       <Dd>
-        <ListItem title="リストタイトル" leftIcon="texture" />
+        <List>
+          <ListItem title="リストタイトル" leftIcon="texture" />
+        </List>
       </Dd>
 
       <Dt>Multiple Lines</Dt>
