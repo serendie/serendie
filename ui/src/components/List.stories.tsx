@@ -14,6 +14,7 @@ const meta: Meta<typeof ListItem> = {
         "leftIcon",
         "badge",
         "disabled",
+        "selected",
         "isLargeLeftIcon",
       ],
     },
@@ -33,6 +34,10 @@ const meta: Meta<typeof ListItem> = {
       defaultValue: 0,
     },
     disabled: {
+      control: { type: "boolean" },
+      defaultValue: false,
+    },
+    selected: {
       control: { type: "boolean" },
       defaultValue: false,
     },
