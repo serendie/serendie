@@ -18,7 +18,7 @@ export const ListItemStyle = sva({
   ],
   base: {
     root: {
-      height: 48,
+      minH: 48,
       display: "flex",
       alignItems: "center",
       paddingX: "sd.system.dimension.spacing.medium",
@@ -28,6 +28,10 @@ export const ListItemStyle = sva({
       _hover: {
         background:
           "color-mix(in srgb, {colors.sd.system.color.interaction.hoveredVariant}, {colors.sd.system.color.component.surface});",
+      },
+      _focusVisible: {
+        outline: "1px solid",
+        outlineColor: "sd.system.color.component.outline",
       },
     },
     textGroup: {
@@ -58,6 +62,11 @@ export const ListItemStyle = sva({
     },
     leftIcon: {
       flexShrink: 0,
+      "& svg": {
+        display: "block",
+        maxHeight: "100%",
+        maxWidth: "100%",
+      },
       _disabled: {
         opacity: 0.3,
       },
@@ -115,9 +124,22 @@ export const ListItem: React.FC<ListItemProps> = ({
   const iconSize = isLargeLeftIcon ? "40px" : "24px";
 
   return (
-    <li className={styles.root} style={itemStyle} {...componentProps}>
+    <li
+      className={styles.root}
+      style={itemStyle}
+      /* TODO: tabIndexでfocusableにしてるけど、そもそもリンクやボタンとして扱うための仕組みが必要 */
+      tabIndex={1}
+      {...componentProps}
+    >
       {leftIcon && (
-        <div className={styles.leftIcon}>
+        <div
+          className={styles.leftIcon}
+          style={
+            isLargeLeftIcon
+              ? { padding: "0", width: "40px", height: "40px" }
+              : { padding: "0", width: "24px", height: "24px" }
+          }
+        >
           <SvgIcon icon={leftIcon} size={iconSize} />
         </div>
       )}
