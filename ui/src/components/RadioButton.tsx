@@ -4,6 +4,30 @@ import { CSSProperties } from "react";
 import RadioChecked from "../assets/radioChecked.svg?react";
 import RadioUnChecked from "../assets/radioUnchecked.svg?react";
 
+export const radioIconCss = {
+  flexShrink: 0,
+  ".group:has(:focus-visible) &": {
+    backgroundColor: "sd.system.color.interaction.selectedSurface",
+    borderRadius: "sd.system.dimension.radius.full",
+  },
+};
+
+export const radioCheckedIconCss = {
+  color: "sd.system.color.impression.primary",
+  _disabled: {
+    color:
+      "color-mix(in srgb, {colors.sd.system.color.impression.primary}, {colors.sd.system.color.interaction.hoveredOnPrimary});",
+  },
+};
+
+export const radioUncheckedIconCss = {
+  color: "sd.system.color.component.outlineVariant",
+  _disabled: {
+    color:
+      "color-mix(in srgb, {colors.sd.system.color.component.outlineVariant}, {colors.sd.system.color.interaction.hoveredOnPrimary});",
+  },
+};
+
 export const RadioButtonStyle = sva({
   slots: [
     "item",
@@ -23,27 +47,9 @@ export const RadioButtonStyle = sva({
       paddingX: "sd.system.dimension.spacing.medium",
       cursor: "pointer",
     },
-    itemControl: {
-      flexShrink: 0,
-      ".group:has(:focus-visible) &": {
-        backgroundColor: "sd.system.color.interaction.selectedSurface",
-        borderRadius: "sd.system.dimension.radius.full",
-      },
-    },
-    checkedIcon: {
-      color: "sd.system.color.impression.primary",
-      _disabled: {
-        color:
-          "color-mix(in srgb, {colors.sd.system.color.impression.primary}, {colors.sd.system.color.interaction.hoveredOnPrimary});",
-      },
-    },
-    unCheckedIcon: {
-      color: "sd.system.color.component.outlineVariant",
-      _disabled: {
-        color:
-          "color-mix(in srgb, {colors.sd.system.color.component.outlineVariant}, {colors.sd.system.color.interaction.hoveredOnPrimary});",
-      },
-    },
+    itemControl: radioIconCss,
+    checkedIcon: radioCheckedIconCss,
+    unCheckedIcon: radioUncheckedIconCss,
     itemTextGroup: {
       display: "flex",
       flexFlow: "column",
