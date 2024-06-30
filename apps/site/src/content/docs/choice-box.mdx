@@ -1,0 +1,18 @@
+---
+title: Choice Box
+componentName: チョイスボックス
+description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+---
+
+import Code from "@/layouts/Code.astro";
+import { TypeSample } from "@/sampleCode/ChoiceBox/TypeSample";
+import typeSampleRaw from "@/sampleCode/ChoiceBox/TypeSample.tsx?raw";
+
+<Code
+  title="Variations"
+  description="2種類から用途に合わせて使い分けをします。それぞれの用途はガイドラインを参照してください。"
+  code={typeSampleRaw}
+  storyPath="/story/components-choicebox--default"
+>
+  <TypeSample client:load />
+</Code>

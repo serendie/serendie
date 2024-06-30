@@ -2,10 +2,12 @@ import {
   checkboxCheckedIconCss,
   checkboxIconCss,
   checkboxUncheckedIconCss,
+} from "./Checkbox";
+import {
   radioCheckedIconCss,
   radioIconCss,
   radioUncheckedIconCss,
-} from "..";
+} from "./RadioButton";
 import { RadioGroup, RadioGroupItemProps } from "@ark-ui/react";
 import RadioChecked from "../assets/radioChecked.svg?react";
 import RadioUnChecked from "../assets/radioUnchecked.svg?react";
@@ -78,7 +80,11 @@ export const Choicebox: React.FC<ChoiceboxProps> = ({
 
   if (type === "checkbox") {
     return (
-      <ArkCheckbox.Root className={cx("group", styles.root)}>
+      <ArkCheckbox.Root
+        value={value}
+        className={cx("group", styles.root)}
+        {...componentProps}
+      >
         <ArkCheckbox.Context>
           {(checkbox) => (
             <ArkCheckbox.Control className={styles.checkboxItem}>
