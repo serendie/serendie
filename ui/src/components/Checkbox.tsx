@@ -6,6 +6,7 @@ import CheckboxUncheckedIcon from "../assets/checkboxUnchecked.svg?react";
 
 export const checkboxIconCss = {
   flexShrink: 0,
+  cursor: "pointer",
   ".group:has(:focus-visible) &": {
     outlineStyle: "solid",
     outlineOffset: "-2px",

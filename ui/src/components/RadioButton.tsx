@@ -6,6 +6,7 @@ import RadioUnChecked from "../assets/radioUnchecked.svg?react";
 
 export const radioIconCss = {
   flexShrink: 0,
+  cursor: "pointer",
   ".group:has(:focus-visible) &": {
     backgroundColor: "sd.system.color.interaction.selectedSurface",
     borderRadius: "sd.system.dimension.radius.full",
