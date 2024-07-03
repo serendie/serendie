@@ -4,6 +4,45 @@ import { CSSProperties } from "react";
 import CheckboxCheckedIcon from "../assets/checkboxChecked.svg?react";
 import CheckboxUncheckedIcon from "../assets/checkboxUnchecked.svg?react";
 
+export const checkboxIconCss = {
+  flexShrink: 0,
+  cursor: "pointer",
+  ".group:has(:focus-visible) &": {
+    outlineStyle: "solid",
+    outlineOffset: "-2px",
+    outlineWidth: "1.5px",
+    outlineColor: "sd.system.color.impression.primary",
+    borderRadius: "sd.system.dimension.radius.small",
+  },
+};
+
+export const checkboxCheckedIconCss = {
+  width: 24,
+  height: 24,
+  color: "sd.system.color.impression.primary",
+  "& .checkmark": {
+    color: "sd.system.color.impression.onPrimaryContainer",
+  },
+  _disabled: {
+    color:
+      "color-mix(in srgb, {colors.sd.system.color.impression.primary}, {colors.sd.system.color.interaction.hoveredOnPrimary});",
+    "& .checkmark": {
+      color:
+        "color-mix(in srgb, {colors.sd.system.color.interaction.disabled}, {colors.sd.system.color.impression.onPrimaryContainer});",
+    },
+  },
+};
+
+export const checkboxUncheckedIconCss = {
+  width: 24,
+  height: 24,
+  color: "sd.system.color.component.outline",
+  _disabled: {
+    color:
+      "color-mix(in srgb, {colors.sd.system.color.component.outline}, {colors.sd.system.color.interaction.hoveredOnPrimary});",
+  },
+};
+
 export const CheckboxStyle = sva({
   slots: [
     "root",
@@ -23,41 +62,9 @@ export const CheckboxStyle = sva({
       paddingX: "sd.system.dimension.spacing.medium",
       cursor: "pointer",
     },
-    itemControl: {
-      flexShrink: 0,
-      ".group:has(:focus-visible) &": {
-        outlineStyle: "solid",
-        outlineOffset: "-2px",
-        outlineWidth: "1.5px",
-        outlineColor: "sd.system.color.impression.primary",
-        borderRadius: "sd.system.dimension.radius.small",
-      },
-    },
-    checkedIcon: {
-      width: 24,
-      height: 24,
-      color: "sd.system.color.impression.primary",
-      "& .checkmark": {
-        color: "sd.system.color.impression.onPrimaryContainer",
-      },
-      _disabled: {
-        color:
-          "color-mix(in srgb, {colors.sd.system.color.impression.primary}, {colors.sd.system.color.interaction.hoveredOnPrimary});",
-        "& .checkmark": {
-          color:
-            "color-mix(in srgb, {colors.sd.system.color.interaction.disabled}, {colors.sd.system.color.impression.onPrimaryContainer});",
-        },
-      },
-    },
-    uncheckedIcon: {
-      width: 24,
-      height: 24,
-      color: "sd.system.color.component.outline",
-      _disabled: {
-        color:
-          "color-mix(in srgb, {colors.sd.system.color.component.outline}, {colors.sd.system.color.interaction.hoveredOnPrimary});",
-      },
-    },
+    itemControl: checkboxIconCss,
+    checkedIcon: checkboxCheckedIconCss,
+    uncheckedIcon: checkboxUncheckedIconCss,
     itemTextGroup: {
       display: "flex",
       flexFlow: "column",
