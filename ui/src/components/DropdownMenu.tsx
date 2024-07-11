@@ -1,7 +1,6 @@
-import { Menu as ArkMenu } from "@ark-ui/react";
+import { Menu as ArkMenu, MenuRootProps } from "@ark-ui/react";
 import { Button, IconButton, SvgIcon, SvgIconName } from "..";
 import { sva } from "../../styled-system/css";
-import { splitCssProps } from "../../styled-system/jsx";
 
 export const DropdownMenuStyle = sva({
   slots: ["content", "itemGroup", "item", "button", "buttonIcon"],
@@ -56,8 +55,8 @@ export const DropdownMenuStyle = sva({
         // Note: leftIcon が _open を受け取れないため button 側で制御
         "& svg": {
           transform: "rotate(180deg)",
-        }
-      }
+        },
+      },
     },
     buttonIcon: {
       color: "sd.system.color.component.onSurface",
@@ -80,21 +79,26 @@ export type DropdownMenuProps = {
   disabled?: boolean;
 };
 
-export const DropdownMenu: React.FC<DropdownMenuProps> = ({
+export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
   isIconMenu,
   title,
   items,
   disabled,
-  ...props
+  ...restProps
 }) => {
-  const [cssProps, componentProps] = splitCssProps(props);
-  const styles = DropdownMenuStyle(cssProps);
+  /* variant なし */
+  const styles = DropdownMenuStyle();
 
   return (
-    <ArkMenu.Root {...componentProps}>
+    <ArkMenu.Root {...restProps}>
       <ArkMenu.Trigger asChild>
         {isIconMenu ? (
-          <IconButton icon="menu" shape="rectangle" disabled={disabled} styleType="outlined"/>
+          <IconButton
+            icon="menu"
+            shape="rectangle"
+            disabled={disabled}
+            styleType="outlined"
+          />
         ) : (
           <Button
             styleType="rectangle"

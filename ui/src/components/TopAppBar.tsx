@@ -1,4 +1,5 @@
-import { RecipeVariantProps, css, cx, sva } from "../../styled-system/css";
+import { ComponentProps } from "react";
+import { RecipeVariantProps, cx, sva } from "../../styled-system/css";
 
 const topAppBarStyle = sva({
   slots: ["root", "container", "left", "buttonContainer", "title"],
@@ -60,7 +61,8 @@ type BaseProps = {
   headingIconButton?: React.ReactNode;
   trailingIconButtons?: React.ReactNode;
   title?: string;
-} & VariantProps;
+} & VariantProps &
+  ComponentProps<"nav">;
 
 type NavbarProps = BaseProps & { type: "navbar"; title?: string };
 type TitleBarProps = BaseProps & { type: "titleBar"; title: string };
@@ -73,18 +75,18 @@ export const TopAppBar: Props = ({
   title,
   ...props
 }) => {
-  const [variantProps, cssProps] = topAppBarStyle.splitVariantProps(props);
-
-  const classes = topAppBarStyle(variantProps);
+  const [variantProps, { className, ...elementProps }] =
+    topAppBarStyle.splitVariantProps(props);
+  const styles = topAppBarStyle(variantProps);
 
   return (
-    <nav className={cx(classes.root, css(cssProps))}>
-      <div className={classes.container}>
-        <div className={classes.left}>
-          <div className={classes.buttonContainer}>{headingIconButton}</div>
-          <h1 className={classes.title}>{title}</h1>
+    <nav className={cx(styles.root, className)} {...elementProps}>
+      <div className={styles.container}>
+        <div className={styles.left}>
+          <div className={styles.buttonContainer}>{headingIconButton}</div>
+          <h1 className={styles.title}>{title}</h1>
         </div>
-        <div className={classes.buttonContainer}>{trailingIconButtons}</div>
+        <div className={styles.buttonContainer}>{trailingIconButtons}</div>
       </div>
     </nav>
   );

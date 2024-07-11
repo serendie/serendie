@@ -50,17 +50,18 @@ export type ChoiceboxProps = ChoiceboxBaseProps &
 export const Choicebox: React.FC<ChoiceboxProps> = ({
   type,
   value,
+  className,
   ...props
 }) => {
-  const [cssProps, componentProps] = ChoiceboxStyle.splitVariantProps(props);
-  const styles = ChoiceboxStyle(cssProps);
+  const [variantProps, elementProps] = ChoiceboxStyle.splitVariantProps(props);
+  const styles = ChoiceboxStyle(variantProps);
 
   if (type === "radio") {
     return (
       <RadioGroup.Item
         value={value}
-        className={cx("group", styles.root)}
-        {...componentProps}
+        className={cx("group", styles.root, className)}
+        {...elementProps}
       >
         <RadioGroup.ItemContext>
           {(radio) => (
@@ -82,8 +83,8 @@ export const Choicebox: React.FC<ChoiceboxProps> = ({
     return (
       <ArkCheckbox.Root
         value={value}
-        className={cx("group", styles.root)}
-        {...componentProps}
+        className={cx("group", styles.root, className)}
+        {...elementProps}
       >
         <ArkCheckbox.Context>
           {(checkbox) => (

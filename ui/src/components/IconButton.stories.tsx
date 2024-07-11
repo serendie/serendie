@@ -7,7 +7,7 @@ const meta: Meta<typeof IconButton> = {
   parameters: {
     controls: {
       expanded: true,
-      include: ["shape", "styleType", "size", "disabled", "mt"],
+      include: ["shape", "styleType", "size", "disabled"],
     },
   },
   argTypes: {

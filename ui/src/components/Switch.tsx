@@ -1,6 +1,6 @@
 import { Switch as ArkSwitch, SwitchRootProps } from "@ark-ui/react";
-import { CSSProperties, forwardRef } from "react";
-import { RecipeVariantProps, cx, sva } from "../../styled-system/css";
+import { forwardRef } from "react";
+import { RecipeVariantProps, css, cx, sva } from "../../styled-system/css";
 
 export const SwitchStyle = sva({
   slots: ["root", "control", "thumb", "label", "textGroup", "helperText"],
@@ -99,19 +99,20 @@ export type SwitchProps = SwitchRootProps &
   SwitchItemProps;
 
 export const Switch = forwardRef<HTMLLabelElement, SwitchProps>(
-  ({ label, helperText, ...props }, ref) => {
-    const [cssProps, switchProps] = SwitchStyle.splitVariantProps(props);
-    const styles = SwitchStyle(cssProps);
-    const rootStyle: CSSProperties = helperText
-      ? { alignItems: "flex-start" }
-      : {};
+  ({ label, helperText, className, ...props }, ref) => {
+    const [variantProps, elementProps] = SwitchStyle.splitVariantProps(props);
+    const styles = SwitchStyle(variantProps);
 
     return (
       <ArkSwitch.Root
         ref={ref}
-        className={cx("group", styles.root)}
-        style={rootStyle}
-        {...switchProps}
+        className={cx(
+          "group",
+          styles.root,
+          helperText && css({ alignItems: "flex-start" }),
+          className
+        )}
+        {...elementProps}
       >
         <div className={styles.textGroup}>
           <ArkSwitch.Label className={styles.label}>{label}</ArkSwitch.Label>

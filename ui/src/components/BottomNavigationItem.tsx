@@ -1,4 +1,5 @@
-import { RecipeVariantProps, sva } from "../../styled-system/css";
+import { ComponentProps } from "react";
+import { RecipeVariantProps, cx, sva } from "../../styled-system/css";
 import { NotificationBadge } from "./NotificationBadge";
 import { SvgIcon, SvgIconName } from "./SvgIcon";
 
@@ -42,7 +43,7 @@ export const BottomNavigationItemStyle = sva({
         },
         icon: {
           color: "sd.system.color.impression.primary",
-        }
+        },
       },
     },
     dot: {
@@ -66,26 +67,31 @@ type Props = {
 };
 
 export type BottomNavigationItemProps = Props &
+  ComponentProps<"button"> &
   RecipeVariantProps<typeof BottomNavigationItemStyle>;
 
 export const BottomNavigationItem: React.FC<BottomNavigationItemProps> = ({
   icon,
   label,
   count,
+  className,
   ...props
 }) => {
-  const [cssProps, componentProps] =
+  const [variantProps, elementProps] =
     BottomNavigationItemStyle.splitVariantProps(props);
-  const styles = BottomNavigationItemStyle(cssProps);
-  const dot = cssProps.dot;
+  const styles = BottomNavigationItemStyle(variantProps);
 
   return (
-    <button className={styles.root} {...componentProps}>
+    <button className={cx(styles.root, className)} {...elementProps}>
       <div className={styles.iconGroup}>
         <div className={styles.badge}>
-          <NotificationBadge count={count || 0} noNumber={dot} size="small" />
+          <NotificationBadge
+            count={count || 0}
+            noNumber={variantProps.dot}
+            size="small"
+          />
         </div>
-        <SvgIcon icon={icon} size="24px" className={styles.icon}/>
+        <SvgIcon icon={icon} size="24px" className={styles.icon} />
       </div>
       <span className={styles.label}>{label}</span>
     </button>

@@ -1,5 +1,5 @@
-import { Tabs as ArkTabs, TabsRootProps } from "@ark-ui/react";
-import { sva } from "../../styled-system/css";
+import { Tabs as ArkTabs } from "@ark-ui/react";
+import { cx, sva } from "../../styled-system/css";
 
 export const TabsStyle = sva({
   slots: ["root", "list"],
@@ -17,22 +17,13 @@ export const TabsStyle = sva({
   },
 });
 
-type TabsBaseProps = {
-  children: React.ReactNode;
-};
-
-export type TabsProps = TabsBaseProps & TabsRootProps;
-
-export const Tabs: React.FC<TabsProps> = ({ children, ...props }) => {
-  const [cssProps, componentProps] =
-  TabsStyle.splitVariantProps(props);
-  const styles = TabsStyle(cssProps);
+export const Tabs = ({ children, className, ...props }: ArkTabs.RootProps) => {
+  const [variantProps, elementProps] = TabsStyle.splitVariantProps(props);
+  const styles = TabsStyle(variantProps);
 
   return (
-    <ArkTabs.Root className={styles.root} {...componentProps} >
-      <ArkTabs.List className={styles.list}>
-        {children}
-      </ArkTabs.List>
+    <ArkTabs.Root className={cx(styles.root, className)} {...elementProps}>
+      <ArkTabs.List className={styles.list}>{children}</ArkTabs.List>
     </ArkTabs.Root>
   );
 };

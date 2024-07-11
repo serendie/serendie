@@ -1,10 +1,6 @@
-import { css, cva, cx } from "../../styled-system/css";
-import {
-  HTMLStyledProps,
-  splitCssProps,
-  styled,
-} from "../../styled-system/jsx";
-import { StyledVariantProps } from "../../styled-system/types";
+import { ComponentProps } from "react";
+import { cva, cx } from "../../styled-system/css";
+import { RecipeVariantProps } from "../../styled-system/types";
 
 export const BadgeStyle = cva({
   base: {
@@ -100,21 +96,17 @@ export const BadgeStyle = cva({
   },
 });
 
-const StyledBadge = styled("span", BadgeStyle);
-
-type BadgeProps = HTMLStyledProps<"span"> &
-  StyledVariantProps<typeof StyledBadge>;
+type BadgeProps = ComponentProps<"span"> &
+  RecipeVariantProps<typeof BadgeStyle>;
 
 export const Badge: React.FC<BadgeProps> = ({ children, ...props }) => {
-  const [cssProps, componentProps] = splitCssProps(props);
-  const { css: cssPropsCss, ...cssPropsRest } = cssProps;
+  const [variantProps, { className, ...restProps }] =
+    BadgeStyle.splitVariantProps(props);
+  const styles = BadgeStyle(variantProps);
 
   return (
-    <StyledBadge
-      className={cx(BadgeStyle(componentProps), css(cssPropsRest, cssPropsCss))}
-      {...props}
-    >
+    <span className={cx(styles, className)} {...restProps}>
       {children}
-    </StyledBadge>
+    </span>
   );
 };

@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { DashboardWidget } from "./DashboardWidget";
-import { cva } from "../../styled-system/css";
+import { css } from "../../styled-system/css";
 
 const meta: Meta<typeof DashboardWidget> = {
   component: DashboardWidget,
@@ -50,20 +50,19 @@ export const DoubleValue: Story = {
   render: Template,
 };
 
-const DashboardPlaceholderStyle = cva({
-  base: {
-    width: "100%",
-    height: "100%",
-    minHeight: "160px",
-    bgColor: "sd.reference.color.scale.gray.200",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: "sd.system.dimension.radius.medium",
-  },
-});
-
-const DashboardPlaceholder: React.FC = () => {
-  const style = DashboardPlaceholderStyle();
-  return <div className={style}>GraphArea</div>;
-};
+const DashboardPlaceholder: React.FC = () => (
+  <div
+    className={css({
+      width: "100%",
+      height: "100%",
+      minHeight: "160px",
+      bgColor: "sd.reference.color.scale.gray.200",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      borderRadius: "sd.system.dimension.radius.medium",
+    })}
+  >
+    GraphArea
+  </div>
+);

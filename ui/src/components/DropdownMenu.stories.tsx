@@ -17,10 +17,9 @@ const meta: Meta<typeof DropdownMenu> = {
     isIconMenu: {
       control: { type: "boolean" },
       defaultValue: false,
-    }
+    },
   },
 };
-
 
 export default meta;
 type Story = StoryObj<typeof DropdownMenu>;
@@ -31,10 +30,10 @@ const sampleItems: MenuItemProps[] = [
   { label: "リストタイトル", value: "value3", icon: "texture" },
   { label: "リストタイトル", value: "value4", icon: "texture" },
   { label: "リストタイトル", value: "value5", icon: "texture" },
-]
+];
 
 const Template = (args: DropdownMenuProps) => (
-  <DropdownMenu {...args} items={sampleItems}/>
+  <DropdownMenu {...args} items={sampleItems} />
 );
 
 export const Default: Story = {

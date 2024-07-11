@@ -1,9 +1,5 @@
-import { HTMLAttributes } from 'react';
+import { ComponentProps } from "react";
 
-type ListProps = {
-  children: React.ReactNode;
-} & HTMLAttributes<HTMLUListElement>;
-
-export const List: React.FC<ListProps> = ({ children, ...props }) => {
+export const List = ({ children, ...props }: ComponentProps<"ul">) => {
   return <ul {...props}>{children}</ul>;
 };

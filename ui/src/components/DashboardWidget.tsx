@@ -1,4 +1,5 @@
-import { sva } from "../../styled-system/css";
+import { ComponentProps } from "react";
+import { cx, sva } from "../../styled-system/css";
 import { SvgIcon } from "./SvgIcon";
 
 const DashboardWidgetStyle = sva({
@@ -130,12 +131,14 @@ type DashboardWidgetProps = {
   values?: [AreaValueProps, AreaValueProps] | [AreaValueProps] | undefined;
   linkTo?: string;
   children?: React.ReactNode;
-};
+} & ComponentProps<"div">;
 
 export const DashboardWidget: React.FC<DashboardWidgetProps> = ({
   values,
   children,
   linkTo,
+  className,
+  ...restProps
 }) => {
   // Variantはコンポーネント内部でのみ使用
   const style = DashboardWidgetStyle({
@@ -160,7 +163,7 @@ export const DashboardWidget: React.FC<DashboardWidgetProps> = ({
   };
 
   return (
-    <div className={style.root}>
+    <div className={cx(style.root, className)} {...restProps}>
       <a href={linkTo} className={style.labelContainer}>
         <div className={style.label}>
           <h2 className={style.labelTitle}>title</h2>

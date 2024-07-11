@@ -78,11 +78,11 @@ export const Drawer: React.FC<DrawerProps> = ({
   children,
   ...props
 }) => {
-  const [variantProps, rest] = DrawerStyle.splitVariantProps(props);
+  const [variantProps, elementProps] = DrawerStyle.splitVariantProps(props);
   const styles = DrawerStyle(variantProps);
 
   return (
-    <Dialog.Root open={isOpen} {...rest}>
+    <Dialog.Root open={isOpen} {...elementProps}>
       <Portal>
         <Dialog.Backdrop className={styles.backdrop} />
         <Dialog.Positioner>

@@ -1,4 +1,5 @@
-import { RecipeVariantProps, css, cx, sva } from "../../styled-system/css";
+import { ComponentProps } from "react";
+import { RecipeVariantProps, cx, sva } from "../../styled-system/css";
 import { SvgIcon, SvgIconName } from "./SvgIcon";
 
 const BannerStyle = sva({
@@ -69,15 +70,16 @@ type BannerProps = {
   title: string;
   description: string;
   icon?: SvgIconName;
-};
+} & ComponentProps<"div">;
 
 export const Banner: React.FC<
   BannerProps & RecipeVariantProps<typeof BannerStyle>
-> = ({ icon, title, description, ...props }) => {
-  const [bannerProps, cssProps] = BannerStyle.splitVariantProps(props);
-  const classes = BannerStyle(bannerProps);
+> = (props) => {
+  const [variantProps, { title, icon, description, className, ...restProps }] =
+    BannerStyle.splitVariantProps(props);
+  const styles = BannerStyle(variantProps);
 
-  const variantType = bannerProps.type || "information";
+  const variantType = variantProps.type || "information";
   const defaultIcon: SvgIconName =
     variantType === "error"
       ? "error_fill"
@@ -86,12 +88,12 @@ export const Banner: React.FC<
       : "info";
 
   return (
-    <div className={cx(classes.container, css(cssProps))} {...props}>
-      <div className={classes.icon}>
+    <div className={cx(styles.container, className)} {...restProps}>
+      <div className={styles.icon}>
         <SvgIcon icon={icon || defaultIcon} size={"24px"} />
       </div>
-      <h2 className={classes.title}>{title}</h2>
-      <p className={classes.description}>{description}</p>
+      <h2 className={styles.title}>{title}</h2>
+      <p className={styles.description}>{description}</p>
     </div>
   );
 };

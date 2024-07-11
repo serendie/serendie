@@ -1,5 +1,5 @@
 import { Tabs as ArkTabs } from "@ark-ui/react";
-import { RecipeVariantProps, sva } from "../../styled-system/css";
+import { cx, RecipeVariantProps, sva } from "../../styled-system/css";
 import { NotificationBadge } from "./NotificationBadge";
 
 export const TabItemStyle = sva({
@@ -74,26 +74,28 @@ type ExclusiveBadgeProps =
 
 export type TabItemProps = TabItemBaseProps &
   RecipeVariantProps<typeof TabItemStyle> &
+  ArkTabs.TriggerProps &
   ExclusiveBadgeProps;
 
-export const TabItem: React.FC<TabItemProps> = ({
+export const TabItem = ({
   title,
   value,
   disabled,
   dot,
   badge,
+  className,
   ...props
-}) => {
-  const [cssProps, componentProps] = TabItemStyle.splitVariantProps(props);
-  const styles = TabItemStyle(cssProps);
+}: TabItemProps) => {
+  const [variantProps, elementProps] = TabItemStyle.splitVariantProps(props);
+  const styles = TabItemStyle(variantProps);
   const badgeStyle = disabled ? styles.badge : "";
 
   return (
     <ArkTabs.Trigger
       value={value}
-      className={styles.trigger}
+      className={cx(styles.trigger, className)}
       disabled={disabled}
-      {...componentProps}
+      {...elementProps}
     >
       <span>{title}</span>
       {dot && (

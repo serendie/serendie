@@ -45,7 +45,7 @@ export const Default: Story = {
   },
 };
 
-export const isLeftIcon: Story = {
+export const IsLeftIcon: Story = {
   render: Template,
   args: {
     description:

@@ -1,5 +1,5 @@
-import { cva } from "../../styled-system/css";
-import { styled } from "../../styled-system/jsx";
+import { ComponentProps } from "react";
+import { cva, cx, RecipeVariantProps } from "../../styled-system/css";
 
 export const DividerStyle = cva({
   base: {
@@ -39,4 +39,13 @@ export const DividerStyle = cva({
   },
 });
 
-export const Divider = styled("hr", DividerStyle);
+type DividerProps = ComponentProps<"hr"> &
+  RecipeVariantProps<typeof DividerStyle>;
+
+export const Divider = (props: DividerProps) => {
+  const [variantProps, elementProps] = DividerStyle.splitVariantProps(props);
+  const { className, ...restProps } = elementProps;
+  return (
+    <hr className={cx(DividerStyle(variantProps), className)} {...restProps} />
+  );
+};

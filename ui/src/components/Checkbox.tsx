@@ -1,6 +1,5 @@
 import { Checkbox as ArkCheckbox, CheckboxRootProps } from "@ark-ui/react";
-import { RecipeVariantProps, cx, sva } from "../../styled-system/css";
-import { CSSProperties } from "react";
+import { RecipeVariantProps, css, cx, sva } from "../../styled-system/css";
 import CheckboxCheckedIcon from "../assets/checkboxChecked.svg?react";
 import CheckboxUncheckedIcon from "../assets/checkboxUnchecked.svg?react";
 
@@ -106,20 +105,21 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   value,
   label,
   helperText,
+  className,
   ...props
 }) => {
-  const [cssProps, checkboxProps] = CheckboxStyle.splitVariantProps(props);
-  const styles = CheckboxStyle(cssProps);
-  const rootStyle: CSSProperties = helperText
-    ? { alignItems: "flex-start" }
-    : {};
+  const [variantProps, elementProps] = CheckboxStyle.splitVariantProps(props);
+  const styles = CheckboxStyle(variantProps);
+  const rootStyle = cx(
+    styles.root,
+    helperText && css({ alignItems: "flex-start" })
+  );
 
   return (
     <ArkCheckbox.Root
       value={value}
-      className={cx("group", styles.root)}
-      style={rootStyle}
-      {...checkboxProps}
+      className={cx("group", rootStyle, className)}
+      {...elementProps}
     >
       <ArkCheckbox.Context>
         {(checkbox) => (

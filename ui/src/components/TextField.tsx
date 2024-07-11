@@ -1,7 +1,7 @@
 import React from "react";
 import mergeRefs from "merge-refs";
 import { forwardRef } from "react";
-import { css, sva } from "../../styled-system/css";
+import { css, cx, sva } from "../../styled-system/css";
 import { SvgIcon } from "./SvgIcon";
 
 const TextFieldStyle = sva({
@@ -92,7 +92,7 @@ type Props = {
   description?: string;
   invalid?: boolean;
   invalidMessage?: string;
-} & React.InputHTMLAttributes<HTMLInputElement>;
+} & React.ComponentPropsWithoutRef<"input">;
 
 export const TextField = forwardRef<HTMLInputElement, Props>(
   (
@@ -107,14 +107,16 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
       disabled,
       onChange,
       value,
+      className,
       ...props
     },
     ref
   ) => {
     const inputRef = React.useRef<HTMLInputElement>(null);
     const mergedRef = mergeRefs(inputRef, ref);
-    const [styleProps, selectProps] = TextFieldStyle.splitVariantProps(props);
-    const styles = TextFieldStyle(styleProps);
+    const [variantProps, elementProps] =
+      TextFieldStyle.splitVariantProps(props);
+    const styles = TextFieldStyle(variantProps);
     const showMessageField = description || (invalid && invalidMessage);
     const [_value, setValue] = React.useState(props.defaultValue || value);
 
@@ -138,7 +140,7 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
     };
 
     return (
-      <div className={styles.root}>
+      <div className={cx(styles.root, className)}>
         <label className={styles.label}>
           {label}
           {required && (
@@ -149,7 +151,8 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
         <div
           className={styles.inputWrapper}
           data-invalid={invalid ? true : undefined}
-          data-disabled={disabled ? true : undefined}>
+          data-disabled={disabled ? true : undefined}
+        >
           <input
             ref={mergedRef}
             placeholder={placeholder}
@@ -159,7 +162,7 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
             type={type}
             className={styles.input}
             onChange={onValueChange}
-            {...selectProps}
+            {...elementProps}
           />
           <div className={styles.icon}>
             {!disabled &&
@@ -168,14 +171,16 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
                 <span
                   className={css({
                     color: "sd.system.color.impression.negative",
-                  })}>
+                  })}
+                >
                   <SvgIcon icon="error" size="20" />
                 </span>
               ) : _value ? (
                 <button
                   className={css({ cursor: "pointer" })}
                   onClick={resetValue}
-                  aria-label="値をクリア">
+                  aria-label="値をクリア"
+                >
                   <SvgIcon icon="close" size="20" />
                 </button>
               ) : null)}

@@ -1,10 +1,8 @@
-import { CSSProperties } from "react";
+import { ComponentProps } from "react";
 import { SvgIcon } from "..";
-import { sva } from "../../styled-system/css";
+import { css, cx, sva } from "../../styled-system/css";
 import { SvgIconName } from "./SvgIcon";
 import { NotificationBadge } from "./NotificationBadge";
-import { HTMLStyledProps } from "../../styled-system/types";
-import { splitCssProps } from "../../styled-system/jsx";
 
 export const ListItemStyle = sva({
   slots: [
@@ -123,7 +121,7 @@ type ExclusiveRightItemProps =
   | ({ badge?: number } & { rightIcon?: never })
   | ({ badge?: never } & { rightIcon?: SvgIconName });
 
-type ListItemProps = HTMLStyledProps<"li"> &
+type ListItemProps = ComponentProps<"li"> &
   ListItemBaseProps &
   ExclusiveRightItemProps;
 
@@ -138,24 +136,22 @@ export const ListItem: React.FC<ListItemProps> = ({
   disabled,
   selected,
   focusVisible,
+  className,
   ...props
 }) => {
-  const [cssProps, componentProps] = splitCssProps(props);
-  const styles = ListItemStyle(cssProps);
-  const itemStyle: CSSProperties = description
-    ? { alignItems: "flex-start" }
-    : {};
-  const textGroupStyle: CSSProperties =
-    description || children ? { alignItems: "flex-start" } : { gap: 0 };
+  const [variantProps, elementProps] = ListItemStyle.splitVariantProps(props);
+  const styles = ListItemStyle(variantProps);
   const iconSize = isLargeLeftIcon ? "40px" : "24px";
 
   return (
-    <li className={styles.root} {...componentProps}>
+    <li className={cx(styles.root, className)} {...elementProps}>
       <div
         tabIndex={1}
         /* TODO: tabIndexでfocusableにしてるけど、そもそもリンクやボタンとして扱うための仕組みが必要 */
-        className={styles.wrapper}
-        style={itemStyle}
+        className={cx(
+          styles.wrapper,
+          description && css({ alignItems: "flex-start" })
+        )}
         data-disabled={disabled ? true : undefined}
         data-selected={selected ? true : undefined}
         data-focus-visible={focusVisible ? true : undefined}
@@ -172,7 +168,12 @@ export const ListItem: React.FC<ListItemProps> = ({
             <SvgIcon icon={leftIcon} size={iconSize} />
           </div>
         )}
-        <div className={styles.textGroup} style={textGroupStyle}>
+        <div
+          className={cx(
+            styles.textGroup,
+            (!!description || !!children) && css({ alignItems: "flex-start" })
+          )}
+        >
           <span className={styles.title}>{title}</span>
           <div className={styles.description}>
             {description}

@@ -1,5 +1,5 @@
 import { Select as ArkSelect, Portal, SelectRootProps } from "@ark-ui/react";
-import { RecipeVariantProps, css, sva } from "../../styled-system/css";
+import { RecipeVariantProps, css, cx, sva } from "../../styled-system/css";
 import { useId } from "react";
 import { SvgIcon } from "./SvgIcon";
 
@@ -164,19 +164,21 @@ export const Select: React.FC<SelectStyleProps> = ({
   required,
   invalid,
   invalidMessage,
+  className,
   ...props
 }) => {
-  const [styleProps, selectProps] = SelectStyle.splitVariantProps(props);
-  const styles = SelectStyle(styleProps);
+  const [variantProps, elementProps] = SelectStyle.splitVariantProps(props);
+  const styles = SelectStyle(variantProps);
   const id = useId(); // TODO: Ark UI 3.0.0 からIDの指定いらなくなる
 
   return (
     <ArkSelect.Root
-      {...selectProps}
+      {...elementProps}
       invalid={invalid}
-      className={styles.root}
-      positioning={{ sameWidth: true }}>
-      {label && styleProps.size != "small" && (
+      className={cx(styles.root, className)}
+      positioning={{ sameWidth: true }}
+    >
+      {label && variantProps.size != "small" && (
         // smallの場合はラベルを表示しない
         <ArkSelect.Label
           className={css({
@@ -184,7 +186,8 @@ export const Select: React.FC<SelectStyleProps> = ({
               base: "sd.system.typography.label.medium_compact",
               expanded: "sd.system.typography.label.medium_expanded",
             },
-          })}>
+          })}
+        >
           {label}
           {required && (
             // とりあえず必須メッセージはハードコード
@@ -192,7 +195,8 @@ export const Select: React.FC<SelectStyleProps> = ({
               className={css({
                 pl: "sd.system.dimension.spacing.extraSmall",
                 color: "sd.system.color.impression.negative",
-              })}>
+              })}
+            >
               必須
             </span>
           )}
@@ -215,7 +219,8 @@ export const Select: React.FC<SelectStyleProps> = ({
               expanded: "sd.system.typography.body.extraSmall_expanded",
             },
             color: "sd.system.color.impression.negative",
-          })}>
+          })}
+        >
           {invalidMessage}
         </div>
       )}

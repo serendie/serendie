@@ -1,7 +1,7 @@
-import React from "react";
+import React, { ComponentProps } from "react";
 import { css, cva, cx } from "../../styled-system/css";
-import { styled, splitCssProps } from "../../styled-system/jsx";
-import { HTMLStyledProps, StyledVariantProps } from "../../styled-system/types";
+import { styled } from "../../styled-system/jsx";
+import { RecipeVariantProps } from "../../styled-system/types";
 import { ProgressIndicator } from "..";
 
 //Note:  Filledがデフォルト
@@ -125,8 +125,6 @@ export const ButtonStyle = cva({
   },
 });
 
-const StyledButton = styled("button", ButtonStyle);
-
 // leftIconとrightIconを両方指定できないようにする
 type ExclusiveIconProps =
   | ({ leftIcon?: React.ReactNode } & { rightIcon?: never })
@@ -135,8 +133,8 @@ type ExclusiveIconProps =
 type ButtonLoadingProps = {
   isLoading?: boolean;
 };
-type ButtonProps = HTMLStyledProps<"button"> &
-  StyledVariantProps<typeof StyledButton> &
+type ButtonProps = ComponentProps<"button"> &
+  RecipeVariantProps<typeof ButtonStyle> &
   ExclusiveIconProps &
   ButtonLoadingProps;
 
@@ -148,11 +146,14 @@ const Span = styled("span", {
 });
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, leftIcon, rightIcon, isLoading, ...props }, ref) => {
-    const [cssProps, componentProps] = splitCssProps(props);
-    const { css: cssPropsCss, ...cssPropsRest } = cssProps;
+  (props, ref) => {
+    const [
+      variantProps,
+      { children, leftIcon, rightIcon, isLoading, className, ...restProps },
+    ] = ButtonStyle.splitVariantProps(props);
+    const style = ButtonStyle(variantProps);
 
-    const iconPaddingCss =
+    const iconPaddingCss = css(
       leftIcon || rightIcon
         ? props.size === "medium"
           ? {
@@ -173,20 +174,18 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                 ? "sd.system.dimension.spacing.extraSmall"
                 : "sd.system.dimension.spacing.medium",
             }
-        : {};
+        : {}
+    );
 
     return (
-      <StyledButton
+      <button
         ref={ref}
-        className={cx(
-          ButtonStyle(componentProps),
-          css(cssPropsRest, cssPropsCss, iconPaddingCss)
-        )}
-        {...props}
+        className={cx(style, iconPaddingCss, className)}
+        {...restProps}
       >
         {isLoading && (
           <ProgressIndicator
-            size={componentProps.size}
+            size={variantProps.size}
             color={
               props.styleType === undefined || props.styleType === "filled"
                 ? "white"
@@ -197,7 +196,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {!isLoading && leftIcon && <Span p={"2px"}>{leftIcon}</Span>}
         <Span>{children}</Span>
         {!isLoading && rightIcon && <Span p={"2px"}>{rightIcon}</Span>}
-      </StyledButton>
+      </button>
     );
   }
 );

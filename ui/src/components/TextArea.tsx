@@ -1,7 +1,7 @@
-import React from "react";
+import React, { ComponentPropsWithoutRef } from "react";
 import mergeRefs from "merge-refs";
 import { forwardRef } from "react";
-import { sva } from "../../styled-system/css";
+import { cx, sva } from "../../styled-system/css";
 
 const TextAreaStyle = sva({
   slots: [
@@ -83,7 +83,7 @@ type Props = {
   description?: string;
   invalid?: boolean;
   invalidMessage?: string;
-} & React.TextareaHTMLAttributes<HTMLTextAreaElement>;
+} & ComponentPropsWithoutRef<"textarea">;
 
 export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
   (
@@ -95,19 +95,19 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
       invalidMessage,
       invalid,
       disabled,
+      className,
       ...props
     },
     ref
   ) => {
     const inputRef = React.useRef<HTMLTextAreaElement>(null);
     const mergedRef = mergeRefs(inputRef, ref);
-    const [styleProps, selectProps] = TextAreaStyle.splitVariantProps(props);
-    const styles = TextAreaStyle(styleProps);
+    const [variantProps, elementProps] = TextAreaStyle.splitVariantProps(props);
+    const styles = TextAreaStyle(variantProps);
     const showMessageField = description || (invalid && invalidMessage);
 
     return (
-      // NOTE: rootのサイズやマージンなどをプロパティとして渡したくなる気がする
-      <div className={styles.root}>
+      <div className={cx(styles.root, className)}>
         <label className={styles.label}>
           {label}
           {required && (
@@ -118,14 +118,15 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
         <div
           className={styles.wrapper}
           data-invalid={invalid ? true : undefined}
-          data-disabled={disabled ? true : undefined}>
+          data-disabled={disabled ? true : undefined}
+        >
           <textarea
             ref={mergedRef}
             placeholder={placeholder}
             required={required}
             disabled={disabled}
             className={styles.textarea}
-            {...selectProps}
+            {...elementProps}
           />
         </div>
         {showMessageField && (

@@ -1,6 +1,5 @@
 import { RadioGroup, RadioGroupItemProps } from "@ark-ui/react";
-import { RecipeVariantProps, cx, sva } from "../../styled-system/css";
-import { CSSProperties } from "react";
+import { RecipeVariantProps, css, cx, sva } from "../../styled-system/css";
 import RadioChecked from "../assets/radioChecked.svg?react";
 import RadioUnChecked from "../assets/radioUnchecked.svg?react";
 
@@ -92,20 +91,22 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
   value,
   label,
   helperText,
+  className,
   ...props
 }) => {
-  const [cssProps, radioProps] = RadioButtonStyle.splitVariantProps(props);
-  const styles = RadioButtonStyle(cssProps);
-  const itemStyle: CSSProperties = helperText
-    ? { alignItems: "flex-start" }
-    : {};
+  const [variantProps, elementProps] =
+    RadioButtonStyle.splitVariantProps(props);
+  const styles = RadioButtonStyle(variantProps);
+  const itemStyle = cx(
+    styles.item,
+    helperText && css({ alignItems: "flex-start" })
+  );
 
   return (
     <RadioGroup.Item
       value={value}
-      className={cx("group", styles.item)}
-      style={itemStyle}
-      {...radioProps}
+      className={cx("group", itemStyle, className)}
+      {...elementProps}
     >
       <RadioGroup.ItemContext>
         {(radio) => (

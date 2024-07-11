@@ -1,7 +1,7 @@
 // https://ark-ui.com/docs/react/components/dialog
 
 import { Dialog, DialogRootProps, Portal } from "@ark-ui/react";
-import { RecipeVariantProps, sva } from "../../styled-system/css";
+import { cx, RecipeVariantProps, sva } from "../../styled-system/css";
 import { Button } from "./Button";
 
 const ModalDialogStyle = sva({
@@ -74,6 +74,7 @@ type Props = {
   isOpen: boolean;
   title: string;
   children: React.ReactNode;
+  className?: string;
   cancelButtonLabel?: string;
   submitButtonLabel: string;
   onButtonClick: () => void;
@@ -90,6 +91,7 @@ export const ModalDialog: React.FC<ModalDialogProps> = ({
   submitButtonLabel,
   onButtonClick,
   children,
+  className,
   ...rest
 }) => {
   const styles = ModalDialogStyle(rest);
@@ -98,7 +100,7 @@ export const ModalDialog: React.FC<ModalDialogProps> = ({
       <Portal>
         <Dialog.Backdrop className={styles.backdrop} />
         <Dialog.Positioner>
-          <Dialog.Content className={styles.content}>
+          <Dialog.Content className={cx(styles.content, className)}>
             <div className={styles.contentInner}>
               <Dialog.Title className={styles.title}>{title}</Dialog.Title>
               <Dialog.Description className={styles.description}>

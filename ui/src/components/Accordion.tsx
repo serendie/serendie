@@ -1,6 +1,6 @@
 import { SvgIcon } from "..";
 import { sva } from "../../styled-system/css";
-import { Accordion as ArkAccordion } from "@ark-ui/react";
+import { AccordionItemProps, Accordion as ArkAccordion } from "@ark-ui/react";
 import { RecipeVariantProps } from "../../styled-system/types";
 
 const AccordionStyle = sva({
@@ -65,24 +65,23 @@ const AccordionStyle = sva({
   },
 });
 
-export type AccordionBaseProps = {
+export type AccordionProps = {
   title: string;
   description: string;
-};
-
-export type AccordionProps = AccordionBaseProps &
-  RecipeVariantProps<typeof AccordionStyle>;
+} & RecipeVariantProps<typeof AccordionStyle> &
+  AccordionItemProps;
 
 export const Accordion: React.FC<AccordionProps> = ({
   title,
+  value,
   description,
   ...props
 }) => {
-  const [cssProps, componentProps] = AccordionStyle.splitVariantProps(props);
-  const styles = AccordionStyle(cssProps);
+  const [variantProps, elementProps] = AccordionStyle.splitVariantProps(props);
+  const styles = AccordionStyle(variantProps);
 
   return (
-    <ArkAccordion.Item key={title} value={title} {...componentProps}>
+    <ArkAccordion.Item key={title} value={title || value} {...elementProps}>
       <ArkAccordion.ItemTrigger className={styles.item}>
         <span className={styles.title}>{title}</span>
         <ArkAccordion.ItemIndicator className={styles.itemIndicator}>

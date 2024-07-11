@@ -1,13 +1,8 @@
-import React from "react";
-import { css, cva, cx } from "../../styled-system/css";
-import {
-  HTMLStyledProps,
-  splitCssProps,
-  styled,
-} from "../../styled-system/jsx";
+import React, { ComponentProps } from "react";
+import { cva, cx } from "../../styled-system/css";
 import { SvgIcon, SvgIconName } from "./SvgIcon";
 import { getToken } from "../tokens/getToken";
-import { StyledVariantProps } from "../../styled-system/types";
+import { RecipeVariantProps } from "../../styled-system/types";
 
 export const IconButtonStyle = cva({
   base: {
@@ -114,35 +109,24 @@ export const IconButtonStyle = cva({
   },
 });
 
-const StyledIconButton = styled("button", IconButtonStyle);
-
 /**
  * TODO: できれば
  * shapeがrectangleの時はsizeにlargeを取れず、
  * shapeがcircleの時にはtypeにoutlinedを取れないようにしたい
  */
-type ButtonProps = StyledVariantProps<typeof StyledIconButton> &
-  Omit<HTMLStyledProps<"button">, "children"> & {
+type ButtonProps = RecipeVariantProps<typeof IconButtonStyle> &
+  ComponentProps<"button"> & {
     icon: SvgIconName;
   };
 
 export const IconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ icon, ...props }, ref) => {
-    /* NOTE: 自前でstyled componentsを作る場合はちょっとややこしい手順が必要
-     https://panda-css.com/docs/concepts/style-props#making-your-own-styled-components
-    */
-    const [cssProps, componentProps] = splitCssProps(props);
-    const { css: cssPropsCss, ...cssPropsRest } = cssProps;
+    const [variantProps, elementProps] =
+      IconButtonStyle.splitVariantProps(props);
+    const style = IconButtonStyle(variantProps);
     const token = getToken();
     return (
-      <StyledIconButton
-        ref={ref}
-        className={cx(
-          IconButtonStyle(componentProps),
-          css(cssPropsRest, cssPropsCss)
-        )}
-        {...props}
-      >
+      <button ref={ref} className={cx(style)} {...elementProps}>
         <SvgIcon
           size={
             props.size === "large"
@@ -151,7 +135,7 @@ export const IconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
           }
           icon={icon}
         />
-      </StyledIconButton>
+      </button>
     );
   }
 );

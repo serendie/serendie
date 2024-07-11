@@ -1,6 +1,6 @@
-import { Avatar as ArkAvatar } from "@ark-ui/react";
+import { Avatar as ArkAvatar, AvatarRootProps } from "@ark-ui/react";
 import { SvgIcon } from "..";
-import { RecipeVariantProps, sva } from "../../styled-system/css";
+import { RecipeVariantProps, cx, sva } from "../../styled-system/css";
 import PlaceholderImage from "../assets/avatarPlaceholder.png";
 
 export const AvatarStyle = sva({
@@ -62,31 +62,30 @@ export const AvatarStyle = sva({
   },
 });
 
-type AvatarBaseProps = {
+export type AvatarProps = {
   src?: string;
   alt?: string;
   text?: string;
   placeholder?: "filled" | "outlined";
-};
-
-export type AvatarProps = RecipeVariantProps<typeof AvatarStyle> &
-  AvatarBaseProps;
+} & RecipeVariantProps<typeof AvatarStyle> &
+  AvatarRootProps;
 
 export const Avatar: React.FC<AvatarProps> = ({
   src,
   alt,
   text,
   placeholder = "filled",
-  size,
+  className,
   ...props
 }) => {
-  const [cssProps, componentProps] = AvatarStyle.splitVariantProps(props);
-  const styles = AvatarStyle({ size, ...cssProps });
+  const [variantProps, elementProps] = AvatarStyle.splitVariantProps(props);
+  const { size } = variantProps;
+  const styles = AvatarStyle({ size, ...variantProps });
   const iconSize =
     size === "small" ? "24px" : size === "medium" ? "40px" : "80px";
 
   return (
-    <ArkAvatar.Root className={styles.root} {...componentProps}>
+    <ArkAvatar.Root className={cx(styles.root, className)} {...elementProps}>
       {src ? (
         <ArkAvatar.Image className={styles.image} src={src} alt={alt} />
       ) : text ? (

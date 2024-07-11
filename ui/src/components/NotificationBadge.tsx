@@ -1,3 +1,4 @@
+import { ComponentProps } from "react";
 import { RecipeVariantProps, cx, sva } from "../../styled-system/css";
 
 const NotificationBadgeStyle = sva({
@@ -70,10 +71,10 @@ const NotificationBadgeStyle = sva({
 
 type BadgeProps = {
   count?: number;
-  className?: string;
 };
 
 export type NotificationBadgeProps = BadgeProps &
+  ComponentProps<"div"> &
   RecipeVariantProps<typeof NotificationBadgeStyle>;
 
 export const NotificationBadge: React.FC<NotificationBadgeProps> = ({
@@ -82,12 +83,12 @@ export const NotificationBadge: React.FC<NotificationBadgeProps> = ({
   className,
   ...props
 }) => {
-  const [cssProps, componentProps] =
+  const [variantProps, elementProps] =
     NotificationBadgeStyle.splitVariantProps(props);
-  const styles = NotificationBadgeStyle({ noNumber, ...cssProps });
+  const styles = NotificationBadgeStyle({ noNumber, ...variantProps });
 
   if (noNumber) {
-    return <div className={cx(styles.root, className)} {...componentProps}></div>;
+    return <div className={cx(styles.root, className)} {...elementProps}></div>;
   }
 
   if (!count || count < 1) {
@@ -95,7 +96,7 @@ export const NotificationBadge: React.FC<NotificationBadgeProps> = ({
   }
 
   return (
-    <div className={cx(styles.root, className)} {...componentProps}>
+    <div className={cx(styles.root, className)} {...elementProps}>
       <span className={styles.text}>{count > 99 ? "99+" : count}</span>
     </div>
   );

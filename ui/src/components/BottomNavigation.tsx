@@ -1,34 +1,27 @@
-import { sva } from "../../styled-system/css";
+import { ComponentProps } from "react";
+import { css, cx } from "../../styled-system/css";
 
-export const BottomNavigationStyle = sva({
-  slots: ["root"],
-  base: {
-    root: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-around",
-      height: 64,
-      paddingX: "sd.system.dimension.spacing.medium",
-      borderTop: "1px solid",
-      borderTopColor: "sd.system.color.component.outline",
-    },
-  },
-});
-
-type BottomNavigationProps = {
-  children: React.ReactNode;
-};
-
-export const BottomNavigation: React.FC<BottomNavigationProps> = ({
+export const BottomNavigation = ({
   children,
+  className,
   ...props
-}) => {
-  const [cssProps, componentProps] =
-    BottomNavigationStyle.splitVariantProps(props);
-  const styles = BottomNavigationStyle(cssProps);
-
+}: ComponentProps<"nav">) => {
   return (
-    <nav className={styles.root} {...componentProps}>
+    <nav
+      className={cx(
+        css({
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-around",
+          height: 64,
+          paddingX: "sd.system.dimension.spacing.medium",
+          borderTop: "1px solid",
+          borderTopColor: "sd.system.color.component.outline",
+        }),
+        className
+      )}
+      {...props}
+    >
       {children}
     </nav>
   );
