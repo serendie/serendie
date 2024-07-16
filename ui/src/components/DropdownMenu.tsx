@@ -23,9 +23,9 @@ export const DropdownMenuStyle = sva({
       paddingX: "sd.system.dimension.spacing.medium",
       paddingY: "sd.system.dimension.spacing.extraSmall",
       cursor: "pointer",
-      textStyle: "sd.system.typography.label.extraLarge_compact",
-      _expanded: {
-        textStyle: "sd.system.typography.label.extraLarge_expanded",
+      textStyle: "sd.system.typography.body.medium_compact",
+      expanded: {
+        textStyle: "sd.system.typography.body.medium_expanded",
       },
       _hover: {
         bgColor: "sd.system.color.interaction.hoveredVariant",
@@ -40,18 +40,21 @@ export const DropdownMenuStyle = sva({
       paddingRight: "sd.system.dimension.spacing.small",
       color: "sd.system.color.component.onSurfaceVariant",
       gap: "sd.system.dimension.spacing.extraSmall",
-      _enabled: {
-        textStyle: "sd.system.typography.body.medium_compact",
+      textStyle: "sd.system.typography.body.medium_compact",
+      expanded: {
+        textStyle: "sd.system.typography.body.medium_expanded",
       },
       _disabled: {
-        textStyle: "sd.system.typography.body.medium_compact",
         outline: "solid",
         outlineOffset: "0px",
         outlineColor: "sd.system.color.component.outline",
         outlineWidth: "sd.system.dimension.border.medium",
       },
-      _open: {
+      _expanded: {
         textStyle: "sd.system.typography.body.medium_compact",
+        expanded: {
+          textStyle: "sd.system.typography.body.medium_expanded",
+        },
         // Note: leftIcon が _open を受け取れないため button 側で制御
         "& svg": {
           transform: "rotate(180deg)",
