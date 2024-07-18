@@ -1,7 +1,7 @@
 import { css } from "@serendie/ui/css";
 import type { ReactNode } from "react";
 
-type state = "enabled" | "hover" | "focus-visible" | "disabled";
+type state = "enabled" | "hover" | "focus-visible" | "disabled" | "loading";
 
 interface StateMatrixProps<ComponentProps> {
   component: React.ElementType;
@@ -37,6 +37,10 @@ export const StateMatrix = <ComponentProps,>({
     disabled: {
       label: "Disabled",
       dataProps: "data-disabled",
+    },
+    loading: {
+      label: "Loading",
+      dataProps: "isLoading",
     },
   };
 

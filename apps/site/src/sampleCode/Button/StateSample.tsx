@@ -8,7 +8,7 @@ export const StateSample: React.FC = () => {
       component={Button}
       children="Button"
       propsName="styleType"
-      states={["enabled", "hover", "focus-visible", "disabled"]}
+      states={["enabled", "hover", "focus-visible", "disabled", "loading"]}
       props={["filled", "ghost", "outlined", "rectangle"]}
     />
   );
