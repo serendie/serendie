@@ -37,23 +37,16 @@ export const IconButtonStyle = cva({
         bgColor: "sd.system.color.impression.primaryContainer",
         _enabled: {
           _hover: {
-            _after: {
-              content: "''",
-              position: "absolute",
-              inset: "0",
-              bg: "sd.system.color.interaction.hovered",
-            },
+            backgroundImage:
+              "linear-gradient(0deg, {colors.sd.system.color.interaction.hovered} 0%, {colors.sd.system.color.interaction.hovered} 100%)",
           },
           _focusVisible: {
             outlineWidth: "sd.system.dimension.border.medium",
             outlineStyle: "solid",
             outlineColor: "sd.system.color.interaction.hovered",
-            _after: {
-              content: "''",
-              position: "absolute",
-              inset: "0",
-              bg: "sd.system.color.interaction.hovered",
-            },
+            outlineOffset: "-1px",
+            backgroundImage:
+              "linear-gradient(0deg, {colors.sd.system.color.interaction.hovered} 0%, {colors.sd.system.color.interaction.hovered} 100%)",
           },
         },
       },
