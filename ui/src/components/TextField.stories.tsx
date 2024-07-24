@@ -1,9 +1,23 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { TextField } from "./TextField";
+import figma from "@figma/code-connect";
 
 const meta: Meta<typeof TextField> = {
   component: TextField,
   parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=5113-4273",
+      props: {
+        label: figma.string("Label"),
+        disabled: figma.enum("State", { Disabled: true }),
+        invalid: figma.enum("State", { Error: true }),
+        invalidMessage: figma.string("InvalidMessage"),
+        description: figma.string("Description"),
+        placeholder: figma.string("Placeholder"),
+      },
+      examples: [FigmaExample],
+    },
     controls: {
       expanded: true,
     },
@@ -21,6 +35,10 @@ const meta: Meta<typeof TextField> = {
     },
   },
 };
+
+function FigmaExample(props: React.ComponentProps<typeof TextField>) {
+  return <TextField {...props} />;
+}
 
 export default meta;
 type Story = StoryObj<typeof TextField>;
