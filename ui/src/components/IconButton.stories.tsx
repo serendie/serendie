@@ -1,10 +1,33 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import { IconButton, IconButtonStyle } from "./IconButton";
+import figma from "@figma/code-connect";
 
 const meta: Meta<typeof IconButton> = {
   component: IconButton,
   parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3107-13402",
+      props: {
+        shape: figma.enum("Shape", {
+          Circle: "circle",
+          Rectangle: "rectangle",
+        }),
+        size: figma.enum("Size", {
+          Large: "large",
+          Medium: "medium",
+          Small: "small",
+        }),
+        styleType: figma.enum("Type", {
+          Filled: "filled",
+          Outlined: "outlined",
+          Ghost: "ghost",
+        }),
+        disabled: figma.enum("State", { Disabled: true }),
+        // icon: figma.instance("IconInstance"),
+      },
+      examples: [FigmaExample],
+    },
     controls: {
       expanded: true,
       include: ["shape", "styleType", "size", "disabled"],
@@ -32,6 +55,10 @@ const meta: Meta<typeof IconButton> = {
     },
   },
 };
+
+function FigmaExample(props: React.ComponentProps<typeof IconButton>) {
+  return <IconButton {...props} />;
+}
 
 export default meta;
 type Story = StoryObj<typeof IconButton>;
