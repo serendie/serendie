@@ -1,11 +1,35 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import { Button, ButtonStyle } from "./Button";
 import { SvgIcon } from "./SvgIcon";
+import figma from "@figma/code-connect";
 
 const meta: Meta<typeof Button> = {
   component: Button,
   parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3066-14086",
+      props: {
+        styleType: figma.enum("Type", {
+          Filled: "filled",
+          Outlined: "outlined",
+          Ghost: "ghost",
+          Rectangle: "rectangle",
+        }),
+        size: figma.enum("Size", {
+          Medium: "medium",
+          Small: "small",
+        }),
+        disabled: figma.enum("State", { Disabled: true }),
+        isLoading: figma.enum("State", { Loading: true }),
+        children: figma.string("Label"),
+        leftIcon: figma.enum("Icon", { Left: figma.instance("IconInstance") }),
+        rightIcon: figma.enum("Icon", {
+          Right: figma.instance("IconInstance"),
+        }),
+      },
+      examples: [FigmaExample],
+    },
     controls: {
       expanded: true,
       include: ["children", "styleType", "size", "disabled", "isLoading"],
@@ -29,9 +53,13 @@ const meta: Meta<typeof Button> = {
     isLoading: {
       control: { type: "boolean" },
       defaultValue: false,
-    }
+    },
   },
 };
+
+function FigmaExample(props: React.ComponentProps<typeof Button>) {
+  return <Button {...props} />;
+}
 
 export default meta;
 type Story = StoryObj<typeof Button>;
