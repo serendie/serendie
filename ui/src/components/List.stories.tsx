@@ -1,10 +1,39 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ListItem } from "./ListItem";
 import { List } from "./List";
+import figma from "@figma/code-connect";
 
 const meta: Meta<typeof ListItem> = {
   component: ListItem,
   parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3442-9387",
+      props: {
+        disabled: figma.enum("State", { Disabled: true }),
+        selected: figma.enum("State", { Selected: true }),
+        focusVisible: figma.enum("State", { Focused: true }),
+        title: figma.string("Title"),
+        description: figma.enum("Lines", {
+          "Multiple Lines": figma.string("Description"),
+        }),
+        children: figma.enum("Lines", {
+          "Multiple Lines": figma.string("SubDescription"),
+        }),
+        leftIcon: figma.enum("Heading Elements", {
+          IconMedium: figma.instance("HeadingComponent"),
+          IconLarge: figma.instance("HeadingComponentLarge"),
+        }),
+        isLargeLeftIcon: figma.enum("Heading Elements", { IconLarge: true }),
+        rightIcon: figma.enum("Trailing Elements", {
+          Icon: figma.instance("TrailingComponent"),
+        }),
+        badge: figma.enum("Trailing Elements", {
+          Badge: figma.children("NotificationBadge"),
+        }),
+      },
+      examples: [FigmaExample],
+    },
     controls: {
       expanded: true,
       include: [
@@ -20,11 +49,11 @@ const meta: Meta<typeof ListItem> = {
     },
   },
   decorators: [
-    (Story) => (
+    (ListItem) => (
       <List style={{ width: 375 }}>
-        <Story />
-        <Story />
-        <Story />
+        <ListItem />
+        <ListItem />
+        <ListItem />
       </List>
     ),
   ],
@@ -55,6 +84,14 @@ const meta: Meta<typeof ListItem> = {
     },
   },
 };
+
+function FigmaExample(props: React.ComponentProps<typeof ListItem>) {
+  return (
+    <List>
+      <ListItem {...props} />
+    </List>
+  );
+}
 
 export default meta;
 type Story = StoryObj<typeof ListItem>;
