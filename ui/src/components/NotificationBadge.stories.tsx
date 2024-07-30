@@ -1,9 +1,28 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import { NotificationBadge } from "./NotificationBadge";
+import figma from "@figma/code-connect";
 
 const meta: Meta<typeof NotificationBadge> = {
   component: NotificationBadge,
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=1262-28909",
+      props: {
+        variant: figma.enum("Color", {
+          Primary: "primary",
+          Secondary: "secondary",
+        }),
+        size: figma.enum("Size", {
+          Small: "small",
+          Medium: "medium",
+        }),
+        noNumber: figma.enum("Type", { "Non-number": true }),
+        count: figma.enum("Type", { "With-number": figma.string("Count") }),
+      },
+      examples: [FigmaExample],
+    },
+  },
   decorators: [(Story) => <Story />],
   argTypes: {
     variant: {
@@ -21,6 +40,10 @@ const meta: Meta<typeof NotificationBadge> = {
     },
   },
 };
+
+function FigmaExample(props: React.ComponentProps<typeof NotificationBadge>) {
+  return <NotificationBadge {...props} />;
+}
 
 export default meta;
 type Story = StoryObj<typeof meta>;
