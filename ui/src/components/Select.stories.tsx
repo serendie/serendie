@@ -1,5 +1,6 @@
 import { Select } from "./Select";
 import type { Meta, StoryObj } from "@storybook/react";
+import figma from "@figma/code-connect";
 
 const items = [
   { label: "React", value: "React" },
@@ -12,6 +13,19 @@ const items = [
 const meta: Meta<typeof Select> = {
   component: Select,
   parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3154-26212",
+      props: {
+        label: figma.string("Label"),
+        placeholder: figma.string("Placeholder"),
+        disabled: figma.enum("State", { Disabled: true }),
+        invalid: figma.enum("State", { Error: true }),
+        invalidMessage: figma.string("InvalidMessage"),
+        size: figma.enum("Type", { Small: "small", Medium: "medium" }),
+      },
+      examples: [FigmaExample],
+    },
     controls: {
       expanded: true,
     },
@@ -27,6 +41,15 @@ const meta: Meta<typeof Select> = {
     items,
   },
 };
+
+function FigmaExample(props: React.ComponentProps<typeof Select>) {
+  return (
+    <Select
+      {...props}
+      items={[{ label: "SelectItem", value: "select-item" }]}
+    />
+  );
+}
 
 export default meta;
 type Story = StoryObj<typeof Select>;
