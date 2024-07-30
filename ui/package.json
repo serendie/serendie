@@ -1,7 +1,7 @@
 {
   "name": "@serendie/ui",
-  "private": true,
-  "version": "0.0.0",
+  "description": "UI components for Serendie",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,16 +12,9 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "test-storybook",
-    "panda": "panda",
-    "postinstall": "npm run build"
+    "panda": "panda"
   },
   "peerDependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "dependencies": {
-    "@material-design-icons/svg": "^0.14.13",
-    "merge-refs": "^1.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -29,6 +22,7 @@
     "@ark-ui/react": "^3.5.0",
     "@chromatic-com/storybook": "^1.6.1",
     "@figma/code-connect": "^1.0.3",
+    "@material-design-icons/svg": "^0.14.13",
     "@pandacss/dev": "^0.42.0",
     "@serendie/design-token": "^0.0.0",
     "@storybook/addon-designs": "^8.0.3",
@@ -50,6 +44,9 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.8",
     "eslint-plugin-storybook": "^0.8.0",
+    "merge-refs": "^1.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "storybook": "^8.2.4",
     "typescript": "^5.5.3",
     "vite": "^5.3.3",
@@ -88,5 +85,8 @@
       "import": "./styled-system/jsx/index.js"
     },
     "./styles.css": "./dist/styles.css"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
