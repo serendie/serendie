@@ -1,10 +1,27 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import { RadioButton, RadioButtonProps } from "./RadioButton";
 import { RadioGroup } from "./RadioGroup";
+import figma from "@figma/code-connect";
 
 const meta: Meta<typeof RadioButton> = {
   component: RadioButton,
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3354-7943",
+      props: {
+        label: figma.string("Label"),
+        helperText: figma.enum("Lines", {
+          "Multiple Lines": figma.string("HelperText"),
+        }),
+        disabled: figma.enum("State", {
+          "Disabled-Enabled": true,
+          "Disabled-Selected": true,
+        }),
+      },
+      examples: [FigmaExample],
+    },
+  },
   decorators: [(Story) => <Story />],
   argTypes: {
     helperText: {
@@ -13,6 +30,14 @@ const meta: Meta<typeof RadioButton> = {
     },
   },
 };
+
+function FigmaExample(props: React.ComponentProps<typeof RadioButton>) {
+  return (
+    <RadioGroup>
+      <RadioButton {...props} value="item" />
+    </RadioGroup>
+  );
+}
 
 export default meta;
 type Story = StoryObj<typeof RadioButton>;
