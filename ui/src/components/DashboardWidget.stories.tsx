@@ -1,14 +1,36 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { DashboardWidget } from "./DashboardWidget";
 import { css } from "../../styled-system/css";
+import figma from "@figma/code-connect";
 
 const meta: Meta<typeof DashboardWidget> = {
   component: DashboardWidget,
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3359-9200",
+      props: {
+        title: figma.string("Title"),
+        label: figma.string("SubTitle"),
+      },
+      examples: [FigmaExample],
+    },
+  },
 };
+
+function FigmaExample(props: React.ComponentProps<typeof DashboardWidget>) {
+  return (
+    <DashboardWidget
+      {...props}
+      values={[{ label: "Label", value: 100, unit: "unit" }]}
+    />
+  );
+}
 
 export default meta;
 type Story = StoryObj<typeof DashboardWidget>;
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Template = (args: any) => (
   <DashboardWidget {...args}>
     <DashboardPlaceholder />
