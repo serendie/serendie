@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Search } from "./Search";
+import figma from "@figma/code-connect";
 
 const items = [
   "React",
@@ -14,6 +15,16 @@ const items = [
 const meta: Meta<typeof Search> = {
   component: Search,
   parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3311-28188",
+      props: {
+        placeholder: figma.string("Placeholder"),
+        size: figma.enum("Size", { Small: "small", Medium: "medium" }),
+        disabled: figma.enum("State", { Disabled: true }),
+      },
+      examples: [FigmaExample],
+    },
     controls: {
       expanded: true,
     },
@@ -25,6 +36,10 @@ const meta: Meta<typeof Search> = {
     },
   },
 };
+
+function FigmaExample(props: React.ComponentProps<typeof Search>) {
+  return <Search {...props} items={["ItemLabel"]} />;
+}
 
 export default meta;
 type Story = StoryObj<typeof Search>;

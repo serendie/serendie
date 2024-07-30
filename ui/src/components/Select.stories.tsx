@@ -22,7 +22,7 @@ const meta: Meta<typeof Select> = {
         disabled: figma.enum("State", { Disabled: true }),
         invalid: figma.enum("State", { Error: true }),
         invalidMessage: figma.string("InvalidMessage"),
-        size: figma.enum("Type", { Small: "small", Medium: "medium" }),
+        size: figma.enum("Size", { Small: "small", Medium: "medium" }),
       },
       examples: [FigmaExample],
     },
