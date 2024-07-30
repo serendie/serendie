@@ -2,10 +2,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Switch, SwitchProps } from "./Switch";
 import figma from "@figma/code-connect";
 
-const Template = (args: SwitchProps) => (
-  <Switch {...args} label="タイトルタイトル1" helperText={args.helperText} />
-);
-
 const meta: Meta<typeof Switch> = {
   component: Switch,
   parameters: {
@@ -44,6 +40,10 @@ function FigmaExample(props: React.ComponentProps<typeof Switch>) {
 
 export default meta;
 type Story = StoryObj<typeof Switch>;
+
+const Template = (args: SwitchProps) => (
+  <Switch {...args} label="タイトルタイトル1" helperText={args.helperText} />
+);
 
 export const Default: Story = {
   render: Template,

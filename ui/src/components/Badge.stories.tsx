@@ -1,9 +1,37 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Badge, BadgeStyle } from "./Badge";
+import figma from "@figma/code-connect";
 
 const meta: Meta<typeof Badge> = {
   component: Badge,
   parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3285-27625",
+      props: {
+        label: figma.string("Label"),
+        size: figma.enum("Size", {
+          Small: "small",
+          Medium: "medium",
+          Large: "large",
+        }),
+        styleColor: figma.enum("Color", {
+          Gray: "gray",
+          "Gray-subtle": "gray-subtle",
+          Blue: "blue",
+          "Blue-subtle": "blue-subtle",
+          Green: "green",
+          "Green-subtle": "green-subtle",
+          Yellow: "yellow",
+          "Yellow-subtle": "yellow-subtle",
+          Orange: "orange",
+          "Orange-subtle": "orange-subtle",
+          Red: "red",
+          "Red-subtle": "red-subtle",
+        }),
+      },
+      examples: [FigmaExample],
+    },
     controls: { expanded: true },
   },
   argTypes: {
@@ -23,6 +51,10 @@ const meta: Meta<typeof Badge> = {
     styleColor: "gray",
   },
 };
+
+function FigmaExample(props: React.ComponentProps<typeof Badge>) {
+  return <Badge {...props} />;
+}
 
 export default meta;
 type Story = StoryObj<typeof Badge>;
