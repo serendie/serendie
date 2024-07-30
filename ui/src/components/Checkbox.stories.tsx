@@ -1,9 +1,22 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import { Checkbox, CheckboxProps } from "./Checkbox";
+import figma from "@figma/code-connect";
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=5129-40889",
+      props: {
+        label: figma.string("Label"),
+        helperText: figma.enum("Lines", {
+          "Multiple Lines": figma.string("HelperText"),
+        }),
+      },
+      examples: [FigmaExample],
+    },
+  },
   decorators: [(Story) => <Story />],
   argTypes: {
     helperText: {
@@ -12,6 +25,10 @@ const meta: Meta<typeof Checkbox> = {
     },
   },
 };
+
+function FigmaExample(props: React.ComponentProps<typeof Checkbox>) {
+  return <Checkbox {...props} value="item" />;
+}
 
 export default meta;
 type Story = StoryObj<typeof Checkbox>;
@@ -68,12 +85,7 @@ export const Disabled: Story = {
         defaultChecked
         disabled
       />
-      <Checkbox
-        {...args}
-        label="タイトルタイトル3"
-        value="itemC"
-        disabled
-      />
+      <Checkbox {...args} label="タイトルタイトル3" value="itemC" disabled />
     </>
   ),
   args: {
