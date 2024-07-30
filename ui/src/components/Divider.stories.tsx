@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Divider, DividerStyle } from "./Divider";
+import figma from "@figma/code-connect";
 
 const meta: Meta<typeof Divider> = {
   component: Divider,
@@ -24,7 +25,6 @@ const meta: Meta<typeof Divider> = {
 };
 
 export default meta;
-
 type Story = StoryObj<typeof Divider>;
 
 export const Horizontal: Story = {
@@ -38,3 +38,33 @@ export const Vertical: Story = {
     type: "vertical",
   },
 };
+
+// Horizontal/VerticalがFigma上では別コンポーネント、Reactでは共通コンポーネントのため、例外的にfigma.connect()を利用
+figma.connect(
+  Divider,
+  "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3122-30116",
+  {
+    props: {
+      color: figma.enum("Color", {
+        Light: "light",
+        Normal: "normal",
+        Dark: "dark",
+      }),
+    },
+    example: ({ color }) => <Divider color={color} type="horizontal" />,
+  }
+);
+figma.connect(
+  Divider,
+  "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3122-30141",
+  {
+    props: {
+      color: figma.enum("Color", {
+        Light: "light",
+        Normal: "normal",
+        Dark: "dark",
+      }),
+    },
+    example: ({ color }) => <Divider color={color} type="vertical" />,
+  }
+);
