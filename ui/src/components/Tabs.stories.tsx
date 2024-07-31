@@ -12,9 +12,9 @@ const meta: Meta<typeof TabItem> = {
       props: {
         title: figma.string("Title"),
         disabled: figma.enum("State", { Disabled: true }),
-        dot: figma.enum("Notification", { "Non-number": true }),
+        dot: figma.enum("Notification", { Dot: true }),
         badge: figma.enum("Notification", {
-          Number: figma.children("NotificationBadge"),
+          Number: 5,
         }),
       },
       examples: [FigmaExample],
