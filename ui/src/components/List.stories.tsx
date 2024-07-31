@@ -29,7 +29,7 @@ const meta: Meta<typeof ListItem> = {
           Icon: figma.instance("TrailingComponent"),
         }),
         badge: figma.enum("Trailing Elements", {
-          Badge: figma.children("NotificationBadge"),
+          Badge: 5,
         }),
       },
       examples: [FigmaExample],
