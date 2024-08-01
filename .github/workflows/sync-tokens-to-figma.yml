@@ -10,7 +10,7 @@ on:
       - ".github/workflows/sync-tokens-to-figma.yml"
 
 jobs:
-  sync:
+  sync-figma-variables:
     runs-on: ubuntu-latest
     steps:
       - name: Install Node.js

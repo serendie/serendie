@@ -9,7 +9,7 @@ on:
       - "ui/src/**/*.stories.tsx"
 
 jobs:
-  publish:
+  publish-code-connect:
     runs-on: ubuntu-latest
     steps:
       - name: Install Node.js
