@@ -1,16 +1,25 @@
 name: Figma Code Connect
 
 on:
-  pull_request:
-    types: [opened, synchronize]
+  pull_request_review:
+    types: [submitted]
     branches:
       - main
     paths:
       - "ui/src/**/*.stories.tsx"
+      - ".github/workflows/publish-code-connect.yml"
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+    paths:
+      - "ui/src/**/*.stories.tsx"
+      - ".github/workflows/publish-code-connect.yml"
 
 jobs:
   publish-code-connect:
     runs-on: ubuntu-latest
+    if: (github.event.review.state == 'approved') || (github.event.pull_request.merged == true)
     steps:
       - name: Install Node.js
         uses: actions/setup-node@v4
