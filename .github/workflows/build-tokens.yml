@@ -1,15 +1,19 @@
-name: Build Design Tokens by Style Dictionary
+name: Build Design Tokens
 
 on:
-  push:
+  pull_request:
+    types: [opened, synchronize]
     branches:
       - main
     paths:
       - "design-tokens/tokens/**"
 
 jobs:
-  build-tokens-and-create-pr:
+  run-style-dictonary:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Install Node.js
         uses: actions/setup-node@v4
@@ -38,15 +42,22 @@ jobs:
       - name: Run Style Dictionary
         run: npm run build -w design-tokens
 
-      - name: Create Pull Request
-        id: cpr
-        uses: peter-evans/create-pull-request@v6
+      - name: Check for changes
+          id: git-check
+          run: |
+            git diff --exit-code || echo "changes=true" >> $GITHUB_OUTPUT
+
+      - name: Commit changes
+        if: steps.git-check.outputs.changes == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Execute Style Dictionary"
+
+      - name: Push changes
+        if: steps.git-check.outputs.changes == 'true'
+        uses: ad-m/github-push-action@master
         with:
-          commit-message: Build design tokens
-          branch: update-design-token-dist
-          delete-branch: true
-          title: "Build design tokens by Style Dictionary"
-          body: |
-            This PR updates the build artifacts of design tokens.
-            Please review!👨🏻‍🔧
-          reviewers: ${{ github.actor }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.head_ref }}
