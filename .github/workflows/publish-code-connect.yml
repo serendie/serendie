@@ -1,4 +1,4 @@
-name: Publish Code Connect
+name: Figma Code Connect
 
 on:
   pull_request:
@@ -9,7 +9,7 @@ on:
       - "ui/src/**/*.stories.tsx"
 
 jobs:
-  publish-code-connect:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - name: Install Node.js
