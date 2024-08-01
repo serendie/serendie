@@ -1,15 +1,51 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import { Toast, toaster } from "./Toast";
 import { Button } from "./Button";
 import { Stack } from "../../styled-system/jsx";
+import figma from "@figma/code-connect";
 
 const meta: Meta<typeof Toast> = {
   component: Toast,
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3256-16094",
+      props: {
+        title: figma.string("Title"),
+        type: figma.enum("Type", {
+          Default: "default",
+          Success: "success",
+          Error: "error",
+        }),
+      },
+      examples: [FigmaExample],
+      import: "import { Toast, toaster } from 'path/to/Toast';",
+    },
+  },
   decorators: [(Story) => <Story />],
 };
-type Story = StoryObj<typeof Toast>;
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function FigmaExample(props: any) {
+  return (
+    <>
+      <Button
+        onClick={() =>
+          toaster.create({
+            duration: 3000,
+            type: props.type,
+            title: props.title,
+          })
+        }
+      >
+        Show Toast
+      </Button>
+      <Toast toaster={toaster} />
+    </>
+  );
+}
+
+type Story = StoryObj<typeof Toast>;
 export default meta;
 
 export const Default: Story = {

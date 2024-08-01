@@ -1,16 +1,33 @@
 import { Meta, StoryObj } from "@storybook/react";
-
 import { Drawer, DrawerProps } from "./Drawer";
 import { useState } from "react";
 import { IconButton } from "./IconButton";
+import figma from "@figma/code-connect";
 
 const meta: Meta<typeof Drawer> = {
   component: Drawer,
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3223-28928",
+      props: {
+        type: figma.enum("Type", {
+          Full: "full",
+          Right: "right",
+          Left: "left",
+        }),
+      },
+      examples: [FigmaExample],
+    },
+  },
 };
 
 export default meta;
-
 type Story = StoryObj<typeof Drawer>;
+
+function FigmaExample(props: React.ComponentProps<typeof Drawer>) {
+  return <Drawer {...props} />;
+}
 
 const DrawerOpenTemplate = (args: DrawerProps) => {
   const [isOpen, setIsOpen] = useState(false);

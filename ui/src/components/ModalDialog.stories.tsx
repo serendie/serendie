@@ -2,10 +2,26 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ModalDialog, ModalDialogProps } from "./ModalDialog";
 import { useState } from "react";
 import { Button } from "./Button";
+import figma from "@figma/code-connect";
 
 const meta: Meta<typeof ModalDialog> = {
   component: ModalDialog,
   parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3311-28000",
+      props: {
+        title: figma.string("Title"),
+        description: figma.string("Description"),
+        submitButtonProps: figma.nestedProps("PrimaryButton", {
+          label: figma.string("Label"),
+        }),
+        cancelButtonProps: figma.nestedProps("SecondaryButton", {
+          label: figma.string("Label"),
+        }),
+      },
+      examples: [FigmaExample],
+    },
     controls: {
       expanded: true,
     },
@@ -17,6 +33,17 @@ const meta: Meta<typeof ModalDialog> = {
     children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam",
   },
 };
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function FigmaExample({ cancelButtonProps, submitButtonProps, ...props }: any) {
+  return (
+    <ModalDialog
+      {...props}
+      submitButtonLabel={submitButtonProps.label}
+      cancelButtonLabel={cancelButtonProps.label}
+    />
+  );
+}
 
 export default meta;
 type Story = StoryObj<typeof ModalDialog>;

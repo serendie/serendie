@@ -15,6 +15,7 @@ const meta: Meta<typeof TextField> = {
         invalidMessage: figma.string("InvalidMessage"),
         description: figma.string("Description"),
         placeholder: figma.string("Placeholder"),
+        required: figma.boolean("Required"),
       },
       examples: [FigmaExample],
     },

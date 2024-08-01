@@ -1,0 +1,42 @@
+name: Figma Code Connect
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - main
+    paths:
+      - "ui/src/**/*.stories.tsx"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Set NPM version
+        run: npm install -g npm@latest
+
+      - name: Clone repo
+        uses: actions/checkout@v4
+
+      - name: Cache Dependency
+        uses: actions/cache@v4
+        id: cache_dependency
+        env:
+          cache-name: cache-dependency
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies
+        if: ${{ steps.cache_dependency.outputs.cache-hit != 'true' }}
+        run: npm install
+
+      - name: Publish Code Connect
+        run: npm run connect:publish -w ui
+        env:
+          FIGMA_ACCESS_TOKEN: ${{ secrets.SYNC_FIGMA_PERSONAL_ACCESS_TOKEN }}
