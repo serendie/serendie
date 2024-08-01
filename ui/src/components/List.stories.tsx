@@ -8,7 +8,7 @@ const meta: Meta<typeof ListItem> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3442-9387",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3442-9387_",
       props: {
         disabled: figma.enum("State", { Disabled: true }),
         selected: figma.enum("State", { Selected: true }),

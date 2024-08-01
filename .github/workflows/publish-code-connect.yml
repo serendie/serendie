@@ -62,7 +62,7 @@ jobs:
             ```bash
             ${{ steps.get-comment-body.outputs.body }}
             ```
-        if: steps.sync.outcome == 'success'
+        if: steps.publish.outcome == 'success'
 
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v4
@@ -73,4 +73,4 @@ jobs:
             ```bash
             ${{ steps.get-comment-body.outputs.body }}
             ```
-        if: steps.sync.outcome == 'failure'
+        if: steps.publish.outcome == 'failure'
