@@ -1,17 +1,25 @@
 name: Design Tokens to Figma
 
 on:
-  pull_request:
+  pull_request_review:
+    types: [submitted]
     branches:
       - main
+    paths:
+      - "design-tokens/tokens/**"
+      - ".github/workflows/sync-tokens-to-figma.yml"
+  pull_request:
     types: [closed]
+    branches:
+      - main
     paths:
       - "design-tokens/tokens/**"
       - ".github/workflows/sync-tokens-to-figma.yml"
 
 jobs:
-  sync:
+  sync-figma-variables:
     runs-on: ubuntu-latest
+    if: (github.event.review.state == 'approved') || (github.event.pull_request.merged == true)
     steps:
       - name: Install Node.js
         uses: actions/setup-node@v4
