@@ -7,6 +7,7 @@ on:
       - main
     paths:
       - "design-tokens/tokens/**"
+      - ".github/workflows/build-tokens.yml"
 
 jobs:
   run-style-dictonary:
