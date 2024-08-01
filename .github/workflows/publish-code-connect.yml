@@ -1,4 +1,4 @@
-name: Publish Code Connect to Figma
+name: Publish Code Connect
 
 on:
   pull_request:
