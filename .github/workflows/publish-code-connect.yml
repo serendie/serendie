@@ -2,7 +2,7 @@ name: Figma Code Connect
 
 on:
   pull_request:
-    types: [closed]
+    types: [opened, synchronize]
     branches:
       - main
     paths:
