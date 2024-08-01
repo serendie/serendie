@@ -1,17 +1,19 @@
 /**
  * Do not edit directly
- * Generated on Thu, 13 Jun 2024 06:18:54 GMT
+ * Generated on Thu, 01 Aug 2024 21:54:29 GMT
  */
 
 
 export default tokens;
 
+type value = string | number | Record<string, string | number>;
+
 interface Token {
     path: string[];
     key: string;
     type: string;
-    value: number | string | Record<string, string | number>;
-    originalValue: number | string | Record<string, string | number>;
+    value: value;
+    originalValue: value;
 }
 
 declare const tokens: Token[];
