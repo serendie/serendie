@@ -1,9 +1,21 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import { DropdownMenu, DropdownMenuProps, MenuItemProps } from "./DropdownMenu";
+import figma from "@figma/code-connect";
 
 const meta: Meta<typeof DropdownMenu> = {
   component: DropdownMenu,
+  parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=6375-6010",
+      props: {
+        title: figma.string("Title"),
+        disabled: figma.enum("State", { Disabled: true }),
+        isIconMenu: figma.enum("Type", { IconButton: true }),
+      },
+      examples: [FigmaExample],
+    },
+  },
   decorators: [(Story) => <Story />],
   argTypes: {
     title: {
@@ -20,6 +32,15 @@ const meta: Meta<typeof DropdownMenu> = {
     },
   },
 };
+
+function FigmaExample(props: DropdownMenuProps) {
+  return (
+    <DropdownMenu
+      {...props}
+      items={[{ label: "list title", value: "value1", icon: "texture" }]}
+    />
+  );
+}
 
 export default meta;
 type Story = StoryObj<typeof DropdownMenu>;
