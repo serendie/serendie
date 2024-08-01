@@ -1,9 +1,28 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Avatar } from "./Avatar";
+import figma from "@figma/code-connect";
 
 const meta: Meta<typeof Avatar> = {
   component: Avatar,
   parameters: {
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3661-24552",
+      props: {
+        size: figma.enum("Size", {
+          Small: "small",
+          Medium: "medium",
+          Large: "large",
+        }),
+        src: figma.enum("Type", { Image: "https://i.pravatar.cc/300" }),
+        placeholder: figma.enum("Type", {
+          Image: "filled",
+          Icon: "outlined",
+        }),
+        text: figma.enum("Type", { Text: figma.string("Text") }),
+      },
+      examples: [FigmaExample],
+    },
     controls: {
       expanded: true,
     },
@@ -21,8 +40,11 @@ const meta: Meta<typeof Avatar> = {
   },
 };
 
-export default meta;
+function FigmaExample(props: React.ComponentProps<typeof Avatar>) {
+  return <Avatar {...props} />;
+}
 
+export default meta;
 type Story = StoryObj<typeof Avatar>;
 
 export const Image: Story = {
