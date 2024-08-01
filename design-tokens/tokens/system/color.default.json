@@ -324,7 +324,7 @@
                 "codeSyntax": {
                   "WEB": "'sd.system.color.interaction.disabledOnSurface'"
                 },
-                "scopes": ["ALL_FILLS", "STROKE_COLOR", "STROKE_COLOR"]
+                "scopes": ["ALL_FILLS", "STROKE_COLOR"]
               }
             }
           },
