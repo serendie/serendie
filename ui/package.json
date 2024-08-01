@@ -12,7 +12,10 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "test-storybook",
-    "panda": "panda"
+    "panda": "panda",
+    "postinstall": "npm run build",
+    "connect:publish": "npx figma connect publish",
+    "connect:unpublish": "npx figma connect unpublish"
   },
   "peerDependencies": {
     "react": "^18.3.1",
