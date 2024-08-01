@@ -1,0 +1,67 @@
+name: Build Design Tokens
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - main
+    paths:
+      - "design-tokens/tokens/**"
+      - ".github/workflows/build-tokens.yml"
+
+jobs:
+  run-style-dictonary:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Set NPM version
+        run: npm install -g npm@latest
+
+      - name: Clone repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.head_ref }}
+
+      - name: Cache Dependency
+        uses: actions/cache@v4
+        id: cache_dependency
+        env:
+          cache-name: cache-dependency
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install dependencies
+        if: ${{ steps.cache_dependency.outputs.cache-hit != 'true' }}
+        run: npm install
+
+      - name: Run Style Dictionary
+        run: npm run build -w design-tokens
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code || echo "changes=true" >> $GITHUB_OUTPUT
+
+      - name: Commit changes
+        if: steps.git-check.outputs.changes == 'true'
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Action"
+          git add design-tokens/dist
+          git commit -m "Build tokens by StyleDictionary"
+
+      - name: Push changes
+        if: steps.git-check.outputs.changes == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.head_ref }}

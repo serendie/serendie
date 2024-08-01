@@ -1,18 +1,16 @@
-name: Sync Design Tokens to Figma
+name: Design Tokens to Figma
 
 on:
   pull_request:
     branches:
       - main
-    types:
-      - closed
+    types: [closed]
     paths:
       - "design-tokens/tokens/**"
-      # - ".github/workflows/sync-json-to-figma.yml"
+      - ".github/workflows/sync-tokens-to-figma.yml"
 
 jobs:
-  sync-tokens-to-figma:
-    if: github.event.pull_request.merged == true
+  sync:
     runs-on: ubuntu-latest
     steps:
       - name: Install Node.js
@@ -40,43 +38,7 @@ jobs:
         run: npm install
 
       - name: Sync json to Figma file
-        id: sync
-        run: |
-          npm run ci:sync-json-to-figma -w design-tokens  &> output.txt # 
-          less output.txt
+        run: npm run ci:sync-json-to-figma -w design-tokens
         env:
           FILE_KEY: ${{ secrets.SYNC_FIGMA_FILE_KEY }}
           PERSONAL_ACCESS_TOKEN: ${{ secrets.SYNC_FIGMA_PERSONAL_ACCESS_TOKEN }}
-        continue-on-error: true
-
-      - id: get-comment-body
-        run: |
-          body="$(cat output.txt)"
-          body="${body//'%'/'%25'}"
-          body="${body//$'\n'/'%0A'}"
-          body="${body//$'\r'/'%0D'}" 
-          echo "::set-output name=body::$body"
-
-      - name: Create comment
-        uses: peter-evans/create-or-update-comment@v4
-        with:
-          issue-number: ${{ github.event.pull_request.number }}
-          body: |
-            ## 📡 Sync Design Tokens to Figma
-            ```bash
-            ${{ steps.get-comment-body.outputs.body }}
-            ```
-          reactions: rocket
-        if: steps.sync.outcome == 'success'
-
-      - name: Create comment
-        uses: peter-evans/create-or-update-comment@v4
-        with:
-          issue-number: ${{ github.event.pull_request.number }}
-          body: |
-            ## 🔥 Failed to sync desigkn tokens
-            ```bash
-            ${{ steps.get-comment-body.outputs.body }}
-            ```
-          reactions: rocket
-        if: steps.sync.outcome == 'failure'
