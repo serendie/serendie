@@ -113,13 +113,13 @@ type ButtonProps = RecipeVariantProps<typeof IconButtonStyle> &
   };
 
 export const IconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ icon, ...props }, ref) => {
+  ({ icon, className, ...props }, ref) => {
     const [variantProps, elementProps] =
       IconButtonStyle.splitVariantProps(props);
     const style = IconButtonStyle(variantProps);
     const token = getToken();
     return (
-      <button ref={ref} className={cx(style)} {...elementProps}>
+      <button ref={ref} className={cx(style, className)} {...elementProps}>
         <SvgIcon
           size={
             props.size === "large"
