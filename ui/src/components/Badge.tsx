@@ -6,6 +6,7 @@ export const BadgeStyle = cva({
   base: {
     display: "inline-flex",
     alignItems: "center",
+    gap: "2px",
     borderRadius: "sd.system.dimension.radius.extraLarge",
     bg: "sd.system.color.interaction.hoveredVariant",
   },
@@ -97,9 +98,13 @@ export const BadgeStyle = cva({
 });
 
 type BadgeProps = ComponentProps<"span"> &
-  RecipeVariantProps<typeof BadgeStyle>;
+  RecipeVariantProps<typeof BadgeStyle> & { chipIcon: React.ReactNode };
 
-export const Badge: React.FC<BadgeProps> = ({ children, ...props }) => {
+export const Badge: React.FC<BadgeProps> = ({
+  children,
+  chipIcon,
+  ...props
+}) => {
   const [variantProps, { className, ...restProps }] =
     BadgeStyle.splitVariantProps(props);
   const styles = BadgeStyle(variantProps);
@@ -107,6 +112,7 @@ export const Badge: React.FC<BadgeProps> = ({ children, ...props }) => {
   return (
     <span className={cx(styles, className)} {...restProps}>
       {children}
+      {chipIcon}
     </span>
   );
 };

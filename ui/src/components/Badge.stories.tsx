@@ -1,6 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Badge, BadgeStyle } from "./Badge";
 import figma from "@figma/code-connect";
+import { IconButton } from "./IconButton";
+import { SvgIcon } from "./SvgIcon";
 
 const meta: Meta<typeof Badge> = {
   component: Badge,
@@ -74,5 +76,16 @@ export const Medium: Story = {
 export const Large: Story = {
   args: {
     size: "large",
+  },
+};
+
+export const Chip: Story = {
+  args: {
+    size: "medium",
+    chipIcon: (
+      <button>
+        <SvgIcon icon="close" />
+      </button>
+    ),
   },
 };
