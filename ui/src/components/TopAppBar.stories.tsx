@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { TopAppBar } from "./TopAppBar";
 import { IconButton } from "./IconButton";
+import { NotificationBadge } from "./NotificationBadge";
 import figma from "@figma/code-connect";
 import React from "react";
 
@@ -151,6 +152,23 @@ export const Title: Story = {
     trailingIconButtons: (
       <IconButton shape="rectangle" styleType="ghost" icon="add" />
     ),
+  },
+  render: (args) => {
+    return <TopAppBar {...args} />;
+  },
+};
+
+export const NotificationBadgeExample: Story = {
+  args: {
+    type: "titleBar",
+    title: "Title Bar",
+    headingIconButton: (
+      <IconButton shape="rectangle" styleType="ghost" icon="chevron_left" />
+    ),
+    trailingIconButtons: (
+      <IconButton shape="rectangle" styleType="ghost" icon="add" />
+    ),
+    notificationBadge: <NotificationBadge count={3} position={"relative"} />,
   },
   render: (args) => {
     return <TopAppBar {...args} />;

@@ -28,7 +28,7 @@ const topAppBarStyle = sva({
     },
     title: {
       textStyle: "sd.system.typography.title.medium_compact",
-      width: "100%",
+      maxW: "100%",
       _expanded: {
         textStyle: "sd.system.typography.title.medium_expanded",
       },
@@ -60,6 +60,7 @@ type VariantProps = Omit<RecipeVariantProps<typeof topAppBarStyle>, "type">;
 type BaseProps = {
   headingIconButton?: React.ReactNode;
   trailingIconButtons?: React.ReactNode;
+  notificationBadge?: React.ReactNode;
   title?: string;
 } & VariantProps &
   ComponentProps<"nav">;
@@ -72,6 +73,7 @@ type Props = React.FC<NavbarProps | TitleBarProps>;
 export const TopAppBar: Props = ({
   headingIconButton,
   trailingIconButtons,
+  notificationBadge,
   title,
   ...props
 }) => {
@@ -85,6 +87,7 @@ export const TopAppBar: Props = ({
         <div className={styles.left}>
           <div className={styles.buttonContainer}>{headingIconButton}</div>
           <h1 className={styles.title}>{title}</h1>
+          {notificationBadge}
         </div>
         <div className={styles.buttonContainer}>{trailingIconButtons}</div>
       </div>
