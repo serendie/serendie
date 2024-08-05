@@ -2,8 +2,9 @@
   "private": true,
   "name": "serendie",
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
-    "prepare": "npm run build:ui",
+    "prepare": "husky",
     "storybook": "npm run storybook -w @serendie/ui",
     "build": "npm run build:site",
     "build:ui": "npm run build --workspace @serendie/ui",
@@ -21,6 +22,29 @@
     "design-tokens"
   ],
   "devDependencies": {
-    "@pandacss/eslint-plugin": "^0.1.1"
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.8.0",
+    "@pandacss/eslint-plugin": "^0.1.1",
+    "@types/eslint__js": "^8.42.3",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.8",
+    "eslint-plugin-storybook": "^0.8.0",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.8",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.0.0"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.14.3"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }

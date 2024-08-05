@@ -84,8 +84,8 @@ export const Banner: React.FC<
     variantType === "error"
       ? "error_fill"
       : variantType === "warning"
-      ? "error"
-      : "info";
+        ? "error"
+        : "info";
 
   return (
     <div className={cx(styles.container, className)} {...restProps}>

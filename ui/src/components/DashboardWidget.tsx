@@ -146,8 +146,8 @@ export const DashboardWidget: React.FC<DashboardWidgetProps> = ({
       values === undefined
         ? "noValue"
         : values.length === 1
-        ? "singleValue"
-        : "doubleValue",
+          ? "singleValue"
+          : "doubleValue",
   });
 
   const AreaValue: React.FC<AreaValueProps> = ({ label, value, unit }) => {
@@ -173,9 +173,7 @@ export const DashboardWidget: React.FC<DashboardWidgetProps> = ({
       </a>
 
       <div className={style.area}>
-        {values?.map((value, index) => (
-          <AreaValue key={index} {...value} />
-        ))}
+        {values?.map((value, index) => <AreaValue key={index} {...value} />)}
         <div className={style.areaContainer}>{children}</div>
       </div>
     </div>
