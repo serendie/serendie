@@ -4,12 +4,24 @@
       "typography": {
         "fontFamily": {
           "primary": {
+            "$value": "Roboto",
+            "$type": "fontFamily",
+            "$extensions": {
+              "com.figma": {
+                "hiddenFromPublishing": true,
+                "scopes": ["FONT_FAMILY"],
+                "description": "Figmaは和欧混植に正式対応していません。Figma上では欧文書体Robotoを指定することで、和文はFont Fallbackの仕様によりNoto Sans JPが自動適用されます。これにより実質的な混植を行っています。"
+              }
+            }
+          },
+          "primaryJa": {
             "$value": "Noto Sans JP",
             "$type": "fontFamily",
             "$extensions": {
               "com.figma": {
                 "hiddenFromPublishing": true,
-                "scopes": ["FONT_FAMILY"]
+                "scopes": ["FONT_FAMILY"],
+                "description": "Figmaは和欧混植に正式対応していません。Figma上では欧文書体Robotoを指定することで、和文はFont Fallbackの仕様によりNoto Sans JPが自動適用されます。primaryJaはCSSで使用します。"
               }
             }
           },
