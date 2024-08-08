@@ -36,7 +36,7 @@ function replaceFontFamily(obj) {
   if (typeof obj === "object") {
     if (obj.$type === "fontFamily" && obj.value) {
       // これ以上探索する必要がないので$valueのみ置換してobjを返却
-      if (obj.value === "Noto Sans JP") {
+      if (obj.value === "Noto Sans JP" || obj.value === "Roboto") {
         // ui側でhtmlのfont-familyを指定しているので、ここではinheritに置換
         obj.value = `inherit`;
       }
