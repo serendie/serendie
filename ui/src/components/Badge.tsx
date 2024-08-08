@@ -1,11 +1,13 @@
 import { ComponentProps } from "react";
 import { cva, cx } from "../../styled-system/css";
 import { RecipeVariantProps } from "../../styled-system/types";
+import { SvgIcon } from "./SvgIcon";
 
 export const BadgeStyle = cva({
   base: {
     display: "inline-flex",
     alignItems: "center",
+    gap: "2px",
     borderRadius: "sd.system.dimension.radius.extraLarge",
     bg: "sd.system.color.interaction.hoveredVariant",
   },
@@ -97,9 +99,15 @@ export const BadgeStyle = cva({
 });
 
 type BadgeProps = ComponentProps<"span"> &
-  RecipeVariantProps<typeof BadgeStyle>;
+  RecipeVariantProps<typeof BadgeStyle> & {
+    closeButton?: React.ReactElement<BadgeCloseButtonProps>;
+  };
 
-export const Badge: React.FC<BadgeProps> = ({ children, ...props }) => {
+export const Badge: React.FC<BadgeProps> = ({
+  children,
+  closeButton,
+  ...props
+}) => {
   const [variantProps, { className, ...restProps }] =
     BadgeStyle.splitVariantProps(props);
   const styles = BadgeStyle(variantProps);
@@ -107,6 +115,24 @@ export const Badge: React.FC<BadgeProps> = ({ children, ...props }) => {
   return (
     <span className={cx(styles, className)} {...restProps}>
       {children}
+      {closeButton}
     </span>
+  );
+};
+
+type BadgeCloseButtonProps = React.FC<ComponentProps<"button">>;
+
+const BadgeCloseButtonStyle = cva({
+  base: {
+    cursor: "pointer",
+  },
+});
+
+export const BadgeCloseButton: React.FC<ComponentProps<"button">> = (props) => {
+  const styles = BadgeCloseButtonStyle();
+  return (
+    <button {...props} className={styles}>
+      <SvgIcon icon="close" />
+    </button>
   );
 };

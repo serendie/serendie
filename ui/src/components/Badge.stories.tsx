@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Badge, BadgeStyle } from "./Badge";
+import { Badge, BadgeCloseButton, BadgeStyle } from "./Badge";
 import figma from "@figma/code-connect";
 
 const meta: Meta<typeof Badge> = {
@@ -28,6 +28,10 @@ const meta: Meta<typeof Badge> = {
           "Orange-subtle": "orange-subtle",
           Red: "red",
           "Red-subtle": "red-subtle",
+        }),
+        closeButton: figma.boolean("ShowCloseButton", {
+          true: figma.children("_icon"),
+          false: undefined,
         }),
       },
       examples: [FigmaExample],
@@ -74,5 +78,12 @@ export const Medium: Story = {
 export const Large: Story = {
   args: {
     size: "large",
+  },
+};
+
+export const Chip: Story = {
+  args: {
+    size: "medium",
+    closeButton: <BadgeCloseButton />,
   },
 };
