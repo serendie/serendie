@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { TopAppBar } from "./TopAppBar";
 import { IconButton } from "./IconButton";
+import { NotificationBadge } from "./NotificationBadge";
 import figma from "@figma/code-connect";
 import React from "react";
 
@@ -13,6 +14,10 @@ const meta: Meta<typeof TopAppBar> = {
       props: {
         title: figma.string("Title"),
         type: figma.enum("Navbar", { True: "navbar", False: "titleBar" }),
+        badge: figma.boolean("ShowNotificationBadge", {
+          true: 5,
+          false: undefined,
+        }),
         headingIconButton: figma.children("HeadingIconButton"),
         trailingIconButtons: figma.children("TrailingIconButton"),
       },
@@ -151,6 +156,23 @@ export const Title: Story = {
     trailingIconButtons: (
       <IconButton shape="rectangle" styleType="ghost" icon="add" />
     ),
+  },
+  render: (args) => {
+    return <TopAppBar {...args} />;
+  },
+};
+
+export const NotificationBadgeExample: Story = {
+  args: {
+    type: "titleBar",
+    title: "Title Bar",
+    headingIconButton: (
+      <IconButton shape="rectangle" styleType="ghost" icon="chevron_left" />
+    ),
+    trailingIconButtons: (
+      <IconButton shape="rectangle" styleType="ghost" icon="add" />
+    ),
+    badge: 3,
   },
   render: (args) => {
     return <TopAppBar {...args} />;

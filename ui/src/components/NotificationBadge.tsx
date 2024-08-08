@@ -62,6 +62,13 @@ const NotificationBadgeStyle = sva({
         },
       },
     },
+    position: {
+      relative: {
+        root: {
+          position: "relative",
+        },
+      },
+    },
   },
   defaultVariants: {
     variant: "primary",
