@@ -147,10 +147,12 @@ const traverseCollection = ({
           object.$value.lineHeight
         );
       }
-      tokens[`${key}/letterSpacing`] = {
-        $value: object.$value.letterSpacing,
-        $type: "dimension",
-      };
+      // W3C Spec的にはLetter Spacingは必要だが、現状Figma側では使っておらず、
+      // 0px指定するとCSS側でGlobalなLetter Spacingを上書きしてしまうためコメントアウト
+      // tokens[`${key}/letterSpacing`] = {
+      //   $value: object.$value.letterSpacing,
+      //   $type: "dimension",
+      // };
     } else {
       tokens[key] = object;
     }
