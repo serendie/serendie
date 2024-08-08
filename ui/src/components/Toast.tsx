@@ -66,10 +66,9 @@ type ToastProps = {
 };
 
 const Toast: React.FC<ToastProps> = ({ toaster }) => {
-  type ToastType = "success" | "custom" | "error";
+  type ToastType = "success" | "error";
   const iconMap: { [key in ToastType]?: SvgIconName } = {
     success: "checkCircle",
-    custom: "check",
     error: "errorCircle",
   };
 

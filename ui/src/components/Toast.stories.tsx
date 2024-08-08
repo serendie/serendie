@@ -56,7 +56,7 @@ export const Default: Story = {
           size="medium"
           onClick={() =>
             toaster.create({
-              title: "テキストテキストテキスト",
+              title: "通知メッセージ",
               duration: 3000,
             })
           }
@@ -69,7 +69,7 @@ export const Default: Story = {
   },
 };
 
-export const WithIcon: Story = {
+export const Success: Story = {
   render: () => {
     return (
       <div>
@@ -78,25 +78,13 @@ export const WithIcon: Story = {
             size="medium"
             onClick={() =>
               toaster.create({
-                title: "テキストテキストテキスト",
+                title: "成功メッセージ",
                 duration: 3000,
                 type: "success",
               })
             }
           >
-            Success Toast
-          </Button>
-          <Button
-            size="medium"
-            onClick={() =>
-              toaster.create({
-                title: "テキストテキストテキスト",
-                duration: 3000,
-                type: "custom",
-              })
-            }
-          >
-            Check Toast
+            Show Toast
           </Button>
         </Stack>
 
@@ -114,7 +102,7 @@ export const Error: Story = {
           size="medium"
           onClick={() =>
             toaster.create({
-              title: "テキストテキストテキスト",
+              title: "エラーメッセージ",
               duration: 3000,
               type: "error",
             })
