@@ -14,6 +14,11 @@ const meta: Meta<typeof TopAppBar> = {
       props: {
         title: figma.string("Title"),
         type: figma.enum("Navbar", { True: "navbar", False: "titleBar" }),
+        badge: figma.nestedProps("NotificationBadge", {
+          count: figma.enum("Count", {
+            Number: 5,
+          }),
+        }),
         headingIconButton: figma.children("HeadingIconButton"),
         trailingIconButtons: figma.children("TrailingIconButton"),
       },
