@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 01 Aug 2024 22:00:35 GMT
+ * Generated on Thu, 08 Aug 2024 03:31:58 GMT
  */
 
 export default tokens;
@@ -17,7 +17,6 @@ declare const tokens: {
           },
           "transparency": {
             "5": string,
-            "10": string,
             "20": string,
             "60": string
           },

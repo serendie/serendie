@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 01 Aug 2024 22:00:35 GMT
+ * Generated on Thu, 08 Aug 2024 03:31:58 GMT
  */
 
 export default {
@@ -16,7 +16,6 @@ export default {
           },
           "transparency": {
             "5": "#0000000D",
-            "10": "#0000001A",
             "20": "#00000033",
             "60": "#FFFFFF99"
           },
@@ -213,7 +212,7 @@ export default {
           "inverseOnSurface": "#FFFFFF",
           "outline": "#CED5D9",
           "outlineVariant": "#8C959C",
-          "scrim": "#0000001A"
+          "scrim": "#00000033"
         },
         "interaction": {
           "disabled": "#EBEEEF",
