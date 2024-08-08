@@ -6,5 +6,8 @@
     --global-font-body: "Roboto Flex", "Noto Sans JP", sans-serif;
     --global-font-mono: "Noto Sans Mono", monospace;
     font-optical-sizing: auto;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "palt";
+    letter-spacing: 0.08em;
   }
 }
