@@ -30,7 +30,7 @@ const meta: Meta<typeof Badge> = {
           "Red-subtle": "red-subtle",
         }),
         closeButton: figma.boolean("ShowCloseButton", {
-          true: <BadgeCloseButton />,
+          true: figma.children("_icon"),
           false: undefined,
         }),
       },
