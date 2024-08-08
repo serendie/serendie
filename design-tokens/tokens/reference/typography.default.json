@@ -6,18 +6,7 @@
           "primary": {
             "$value": "Roboto",
             "$type": "fontFamily",
-            "$description": "Figmaは和欧混植に正式対応していないため、Figma上では欧文書体Robotoを指定することで、和文はフォントフォールバックの仕様でNoto Sans JPが自動適用されることを意図しています。これにより実質的な混植を行います。",
-            "$extensions": {
-              "com.figma": {
-                "hiddenFromPublishing": true,
-                "scopes": ["FONT_FAMILY"]
-              }
-            }
-          },
-          "primaryJa": {
-            "$value": "Noto Sans JP",
-            "$type": "fontFamily",
-            "$description": "primaryJaはCSSでfont-family指定時に和文に適用します。Figma上ではFont Fallbackにより混植するためprimaryJaは使いません",
+            "$description": "Serendieは和文Noto Sans JP、欧文Robotoを採用しています。Figmaは和欧混植に対応していないため、Robotoのみ指定することで、和文はFigmaのフォントフォールバックによりNoto Sans JPが自動適用されることを意図しています。これにより実質的な混植を行います。CSSでは一般的なfont-family指定により混植します。",
             "$extensions": {
               "com.figma": {
                 "hiddenFromPublishing": true,
