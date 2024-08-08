@@ -82,7 +82,7 @@ export const Avatar: React.FC<AvatarProps> = ({
   const { size } = variantProps;
   const styles = AvatarStyle({ size, ...variantProps });
   const iconSize =
-    size === "small" ? "24px" : size === "medium" ? "40px" : "80px";
+    size === "small" ? "24px" : size === "large" ? "80px" : "40px";
 
   return (
     <ArkAvatar.Root className={cx(styles.root, className)} {...elementProps}>
