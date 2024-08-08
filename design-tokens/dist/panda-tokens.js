@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 08 Aug 2024 03:31:58 GMT
+ * Generated on Thu, 08 Aug 2024 21:19:17 GMT
  */
 
 export default {
@@ -752,8 +752,7 @@ export default {
                 "fontSize": "37px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             },
             "medium_compact": {
@@ -761,8 +760,7 @@ export default {
                 "fontSize": "56px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             },
             "small_expanded": {
@@ -770,8 +768,7 @@ export default {
                 "fontSize": "43px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             },
             "medium_expanded": {
@@ -779,8 +776,7 @@ export default {
                 "fontSize": "64px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             }
           },
@@ -790,8 +786,7 @@ export default {
                 "fontSize": "28px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             },
             "medium_compact": {
@@ -799,8 +794,7 @@ export default {
                 "fontSize": "37px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             },
             "large_compact": {
@@ -808,8 +802,7 @@ export default {
                 "fontSize": "56px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             },
             "small_expanded": {
@@ -817,8 +810,7 @@ export default {
                 "fontSize": "21px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             },
             "medium_expanded": {
@@ -826,8 +818,7 @@ export default {
                 "fontSize": "26px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             },
             "large_expanded": {
@@ -835,8 +826,7 @@ export default {
                 "fontSize": "32px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             }
           },
@@ -846,8 +836,7 @@ export default {
                 "fontSize": "16px",
                 "fontWeight": 700,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             },
             "medium_compact": {
@@ -855,8 +844,7 @@ export default {
                 "fontSize": "19px",
                 "fontWeight": 700,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             },
             "large_compact": {
@@ -864,8 +852,7 @@ export default {
                 "fontSize": "22px",
                 "fontWeight": 700,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             },
             "small_expanded": {
@@ -873,8 +860,7 @@ export default {
                 "fontSize": "14px",
                 "fontWeight": 700,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             },
             "medium_expanded": {
@@ -882,8 +868,7 @@ export default {
                 "fontSize": "16px",
                 "fontWeight": 700,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             },
             "large_expanded": {
@@ -891,8 +876,7 @@ export default {
                 "fontSize": "18px",
                 "fontWeight": 700,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             }
           },
@@ -902,8 +886,7 @@ export default {
                 "fontSize": "12px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1.4,
-                "letterSpacing": "0px"
+                "lineHeight": 1.4
               }
             },
             "small_compact": {
@@ -911,8 +894,7 @@ export default {
                 "fontSize": "14px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             },
             "medium_compact": {
@@ -920,8 +902,7 @@ export default {
                 "fontSize": "16px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             },
             "large_compact": {
@@ -929,8 +910,7 @@ export default {
                 "fontSize": "19px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             },
             "extraSmall_expanded": {
@@ -938,8 +918,7 @@ export default {
                 "fontSize": "12px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1.4,
-                "letterSpacing": "0px"
+                "lineHeight": 1.4
               }
             },
             "small_expanded": {
@@ -947,8 +926,7 @@ export default {
                 "fontSize": "13px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             },
             "medium_expanded": {
@@ -956,8 +934,7 @@ export default {
                 "fontSize": "14px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             },
             "large_expanded": {
@@ -965,8 +942,7 @@ export default {
                 "fontSize": "16px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1.6,
-                "letterSpacing": "0px"
+                "lineHeight": 1.6
               }
             }
           },
@@ -976,8 +952,7 @@ export default {
                 "fontSize": "11px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1,
-                "letterSpacing": "0px"
+                "lineHeight": 1
               }
             },
             "medium_compact": {
@@ -985,8 +960,7 @@ export default {
                 "fontSize": "12px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1,
-                "letterSpacing": "0px"
+                "lineHeight": 1
               }
             },
             "large_compact": {
@@ -994,8 +968,7 @@ export default {
                 "fontSize": "14px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1,
-                "letterSpacing": "0px"
+                "lineHeight": 1
               }
             },
             "extraLarge_compact": {
@@ -1003,8 +976,7 @@ export default {
                 "fontSize": "16px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1,
-                "letterSpacing": "0px"
+                "lineHeight": 1
               }
             },
             "small_expanded": {
@@ -1012,8 +984,7 @@ export default {
                 "fontSize": "11px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1,
-                "letterSpacing": "0px"
+                "lineHeight": 1
               }
             },
             "medium_expanded": {
@@ -1021,8 +992,7 @@ export default {
                 "fontSize": "12px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1,
-                "letterSpacing": "0px"
+                "lineHeight": 1
               }
             },
             "large_expanded": {
@@ -1030,8 +1000,7 @@ export default {
                 "fontSize": "13px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1,
-                "letterSpacing": "0px"
+                "lineHeight": 1
               }
             },
             "extraLarge_expanded": {
@@ -1039,8 +1008,7 @@ export default {
                 "fontSize": "14px",
                 "fontWeight": 400,
                 "fontFamily": "inherit",
-                "lineHeight": 1,
-                "letterSpacing": "0px"
+                "lineHeight": 1
               }
             }
           }

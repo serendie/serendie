@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 08 Aug 2024 03:31:58 GMT
+ * Generated on Thu, 08 Aug 2024 21:19:17 GMT
  */
 
 export default {
@@ -308,29 +308,25 @@ export default {
             "fontSize": "37px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           },
           "medium_compact": {
             "fontSize": "56px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           },
           "small_expanded": {
             "fontSize": "43px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           },
           "medium_expanded": {
             "fontSize": "64px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           }
         },
         "headline": {
@@ -338,43 +334,37 @@ export default {
             "fontSize": "28px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           },
           "medium_compact": {
             "fontSize": "37px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           },
           "large_compact": {
             "fontSize": "56px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           },
           "small_expanded": {
             "fontSize": "21px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           },
           "medium_expanded": {
             "fontSize": "26px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           },
           "large_expanded": {
             "fontSize": "32px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           }
         },
         "title": {
@@ -382,43 +372,37 @@ export default {
             "fontSize": "16px",
             "fontWeight": 700,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           },
           "medium_compact": {
             "fontSize": "19px",
             "fontWeight": 700,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           },
           "large_compact": {
             "fontSize": "22px",
             "fontWeight": 700,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           },
           "small_expanded": {
             "fontSize": "14px",
             "fontWeight": 700,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           },
           "medium_expanded": {
             "fontSize": "16px",
             "fontWeight": 700,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           },
           "large_expanded": {
             "fontSize": "18px",
             "fontWeight": 700,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           }
         },
         "body": {
@@ -426,57 +410,49 @@ export default {
             "fontSize": "12px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1.4,
-            "letterSpacing": "0px"
+            "lineHeight": 1.4
           },
           "small_compact": {
             "fontSize": "14px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           },
           "medium_compact": {
             "fontSize": "16px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           },
           "large_compact": {
             "fontSize": "19px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           },
           "extraSmall_expanded": {
             "fontSize": "12px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1.4,
-            "letterSpacing": "0px"
+            "lineHeight": 1.4
           },
           "small_expanded": {
             "fontSize": "13px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           },
           "medium_expanded": {
             "fontSize": "14px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           },
           "large_expanded": {
             "fontSize": "16px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1.6,
-            "letterSpacing": "0px"
+            "lineHeight": 1.6
           }
         },
         "label": {
@@ -484,57 +460,49 @@ export default {
             "fontSize": "11px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1,
-            "letterSpacing": "0px"
+            "lineHeight": 1
           },
           "medium_compact": {
             "fontSize": "12px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1,
-            "letterSpacing": "0px"
+            "lineHeight": 1
           },
           "large_compact": {
             "fontSize": "14px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1,
-            "letterSpacing": "0px"
+            "lineHeight": 1
           },
           "extraLarge_compact": {
             "fontSize": "16px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1,
-            "letterSpacing": "0px"
+            "lineHeight": 1
           },
           "small_expanded": {
             "fontSize": "11px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1,
-            "letterSpacing": "0px"
+            "lineHeight": 1
           },
           "medium_expanded": {
             "fontSize": "12px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1,
-            "letterSpacing": "0px"
+            "lineHeight": 1
           },
           "large_expanded": {
             "fontSize": "13px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1,
-            "letterSpacing": "0px"
+            "lineHeight": 1
           },
           "extraLarge_expanded": {
             "fontSize": "14px",
             "fontWeight": 400,
             "fontFamily": "inherit",
-            "lineHeight": 1,
-            "letterSpacing": "0px"
+            "lineHeight": 1
           }
         }
       }
