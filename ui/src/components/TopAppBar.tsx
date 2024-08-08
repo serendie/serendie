@@ -1,5 +1,6 @@
 import { ComponentProps } from "react";
 import { RecipeVariantProps, cx, sva } from "../../styled-system/css";
+import { NotificationBadge, NotificationBadgeProps } from "./NotificationBadge";
 
 const topAppBarStyle = sva({
   slots: ["root", "container", "left", "buttonContainer", "title"],
@@ -60,7 +61,7 @@ type VariantProps = Omit<RecipeVariantProps<typeof topAppBarStyle>, "type">;
 type BaseProps = {
   headingIconButton?: React.ReactNode;
   trailingIconButtons?: React.ReactNode;
-  notificationBadge?: React.ReactNode;
+  badge?: NotificationBadgeProps["count"];
   title?: string;
 } & VariantProps &
   ComponentProps<"nav">;
@@ -73,7 +74,7 @@ type Props = React.FC<NavbarProps | TitleBarProps>;
 export const TopAppBar: Props = ({
   headingIconButton,
   trailingIconButtons,
-  notificationBadge,
+  badge,
   title,
   ...props
 }) => {
@@ -87,7 +88,7 @@ export const TopAppBar: Props = ({
         <div className={styles.left}>
           <div className={styles.buttonContainer}>{headingIconButton}</div>
           <h1 className={styles.title}>{title}</h1>
-          {notificationBadge}
+          {badge && <NotificationBadge count={badge} position="relative" />}
         </div>
         <div className={styles.buttonContainer}>{trailingIconButtons}</div>
       </div>

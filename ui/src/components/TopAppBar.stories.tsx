@@ -168,7 +168,7 @@ export const NotificationBadgeExample: Story = {
     trailingIconButtons: (
       <IconButton shape="rectangle" styleType="ghost" icon="add" />
     ),
-    notificationBadge: <NotificationBadge count={3} position={"relative"} />,
+    badge: 3,
   },
   render: (args) => {
     return <TopAppBar {...args} />;
