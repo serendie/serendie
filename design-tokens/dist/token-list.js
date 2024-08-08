@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 01 Aug 2024 22:00:36 GMT
+ * Generated on Thu, 08 Aug 2024 03:31:59 GMT
  */
 
 export default [
@@ -45,20 +45,6 @@ export default [
     "type": "color",
     "value": "#0000000D",
     "originalValue": "#0000000D"
-  },
-  {
-    "path": [
-      "sd",
-      "reference",
-      "color",
-      "scale",
-      "transparency",
-      "10"
-    ],
-    "key": "sd.reference.color.scale.transparency.10",
-    "type": "color",
-    "value": "#0000001A",
-    "originalValue": "#0000001A"
   },
   {
     "path": [
@@ -2102,8 +2088,8 @@ export default [
     ],
     "key": "sd.system.color.component.scrim",
     "type": "color",
-    "value": "#0000001A",
-    "originalValue": "{sd.reference.color.scale.transparency.10}"
+    "value": "#00000033",
+    "originalValue": "{sd.reference.color.scale.transparency.20}"
   },
   {
     "path": [

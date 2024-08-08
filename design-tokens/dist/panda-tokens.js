@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 01 Aug 2024 22:00:35 GMT
+ * Generated on Thu, 08 Aug 2024 03:31:58 GMT
  */
 
 export default {
@@ -22,9 +22,6 @@ export default {
             "transparency": {
               "5": {
                 "value": "#0000000D"
-              },
-              "10": {
-                "value": "#0000001A"
               },
               "20": {
                 "value": "#00000033"
@@ -303,7 +300,7 @@ export default {
               "value": "#8C959C"
             },
             "scrim": {
-              "value": "#0000001A"
+              "value": "#00000033"
             }
           },
           "interaction": {

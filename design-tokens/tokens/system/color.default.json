@@ -289,7 +289,7 @@
           },
           "scrim": {
             "$type": "color",
-            "$value": "{sd.reference.color.scale.transparency.10}",
+            "$value": "{sd.reference.color.scale.transparency.20}",
             "$description": "modalやdrawerの背景色として使用する色",
             "$extensions": {
               "com.figma": {
