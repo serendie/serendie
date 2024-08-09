@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 08 Aug 2024 03:31:58 GMT
+ * Generated on Thu, 08 Aug 2024 21:19:17 GMT
  */
 
 export default tokens;
@@ -309,29 +309,25 @@ declare const tokens: {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "medium_compact": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "small_expanded": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "medium_expanded": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           }
         },
         "headline": {
@@ -339,43 +335,37 @@ declare const tokens: {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "medium_compact": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "large_compact": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "small_expanded": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "medium_expanded": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "large_expanded": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           }
         },
         "title": {
@@ -383,43 +373,37 @@ declare const tokens: {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "medium_compact": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "large_compact": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "small_expanded": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "medium_expanded": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "large_expanded": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           }
         },
         "body": {
@@ -427,57 +411,49 @@ declare const tokens: {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "small_compact": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "medium_compact": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "large_compact": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "extraSmall_expanded": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "small_expanded": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "medium_expanded": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "large_expanded": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           }
         },
         "label": {
@@ -485,57 +461,49 @@ declare const tokens: {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "medium_compact": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "large_compact": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "extraLarge_compact": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "small_expanded": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "medium_expanded": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "large_expanded": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           },
           "extraLarge_expanded": {
             "fontSize": string,
             "fontWeight": number,
             "fontFamily": string,
-            "lineHeight": number,
-            "letterSpacing": string
+            "lineHeight": number
           }
         }
       }

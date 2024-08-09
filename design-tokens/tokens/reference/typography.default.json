@@ -4,8 +4,9 @@
       "typography": {
         "fontFamily": {
           "primary": {
-            "$value": "Noto Sans JP",
+            "$value": "Roboto",
             "$type": "fontFamily",
+            "$description": "Serendieは和文Noto Sans JP、欧文Robotoを採用しています。Figmaは和欧混植に対応していないため、Robotoのみ指定することで、和文はFigmaのフォントフォールバックによりNoto Sans JPが自動適用されることを意図しています。これにより実質的な混植を行います。CSSでは一般的なfont-family指定により混植します。",
             "$extensions": {
               "com.figma": {
                 "hiddenFromPublishing": true,

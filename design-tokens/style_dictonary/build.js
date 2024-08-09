@@ -34,11 +34,11 @@ const myStyleDictionary = StyleDictionary.extend({
         },
         {
           destination: "dist/token-list.js",
-          format: "spread-token-list",
+          format: "serendie-token-list",
         },
         {
           destination: "dist/token-list.d.ts",
-          format: "spread-token-list-declarations",
+          format: "serendie-token-list-declarations",
         },
       ],
     },

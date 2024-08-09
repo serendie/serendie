@@ -3,7 +3,7 @@ import StyleDictionary from "style-dictionary";
 const { fileHeader } = StyleDictionary.formatHelpers;
 
 StyleDictionary.registerFormat({
-  name: "spread-token-list",
+  name: "serendie-token-list",
   formatter: ({ dictionary, file }) => {
     const walker = (obj) => {
       if (typeof obj !== "object") return obj;
@@ -34,7 +34,7 @@ StyleDictionary.registerFormat({
 });
 
 StyleDictionary.registerFormat({
-  name: "spread-token-list-declarations",
+  name: "serendie-token-list-declarations",
   formatter: ({ file }) => {
     const output =
       fileHeader({ file }) +

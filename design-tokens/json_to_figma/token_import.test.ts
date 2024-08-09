@@ -169,7 +169,7 @@ describe("readJsonFiles", () => {
                     fontWeight: "{sd.reference.typography.fontWeight.regular}",
                     fontFamily: "{sd.reference.typography.fontFamily.primary}",
                     lineHeight: "{sd.reference.typography.lineHeight.none}",
-                    letterSpacing: "0px",
+                    // letterSpacing: "0px",
                   },
                 },
               },
@@ -190,7 +190,7 @@ describe("readJsonFiles", () => {
                     fontWeight: "{sd.reference.typography.fontWeight.regular}",
                     fontFamily: "{sd.reference.typography.fontFamily.primary}",
                     lineHeight: "{sd.reference.typography.lineHeight.none}",
-                    letterSpacing: "0px",
+                    // letterSpacing: "0px",
                   },
                 },
               },
@@ -304,10 +304,10 @@ describe("readJsonFiles", () => {
           $type: "fontWeight",
           $description: "Regular font weight",
         },
-        "sd/system/typography/display/small/letterSpacing": {
-          $value: "0px",
-          $type: "dimension",
-        },
+        // "sd/system/typography/display/small/letterSpacing": {
+        //   $value: "0px",
+        //   $type: "dimension",
+        // },
         "sd/system/typography/display/small/lineHeight": {
           $value: "{sd.reference.typography.lineHeight.none}",
           $type: "number",
@@ -330,10 +330,10 @@ describe("readJsonFiles", () => {
           $type: "fontWeight",
           $description: "Regular font weight",
         },
-        "sd/system/typography/display/small/letterSpacing": {
-          $value: "0px",
-          $type: "dimension",
-        },
+        // "sd/system/typography/display/small/letterSpacing": {
+        //   $value: "0px",
+        //   $type: "dimension",
+        // },
         "sd/system/typography/display/small/lineHeight": {
           $value: "{sd.reference.typography.lineHeight.none}",
           $type: "number",
@@ -435,10 +435,10 @@ describe("generatePostVariablesPayload", () => {
           $type: "fontWeight",
           $description: "Regular font weight",
         },
-        "sd/system/typography/display/small/letterSpacing": {
-          $value: "0px",
-          $type: "dimension",
-        },
+        // "sd/system/typography/display/small/letterSpacing": {
+        //   $value: "0px",
+        //   $type: "dimension",
+        // },
         "sd/system/typography/display/small/lineHeight": {
           $value: "{sd.reference.typography.lineHeight.none}",
           $type: "number",
@@ -461,10 +461,10 @@ describe("generatePostVariablesPayload", () => {
           $type: "fontWeight",
           $description: "Regular font weight",
         },
-        "sd/system/typography/display/small/letterSpacing": {
-          $value: "0px",
-          $type: "dimension",
-        },
+        // "sd/system/typography/display/small/letterSpacing": {
+        //   $value: "0px",
+        //   $type: "dimension",
+        // },
         "sd/system/typography/display/small/lineHeight": {
           $value: "{sd.reference.typography.lineHeight.none}",
           $type: "number",
@@ -659,13 +659,13 @@ describe("generatePostVariablesPayload", () => {
         resolvedType: "FLOAT",
         variableCollectionId: "typography-system",
       },
-      {
-        action: "CREATE",
-        id: "sd/system/typography/display/small/letterSpacing",
-        name: "sd/system/typography/display/small/letterSpacing",
-        resolvedType: "FLOAT",
-        variableCollectionId: "typography-system",
-      },
+      // {
+      //   action: "CREATE",
+      //   id: "sd/system/typography/display/small/letterSpacing",
+      //   name: "sd/system/typography/display/small/letterSpacing",
+      //   resolvedType: "FLOAT",
+      //   variableCollectionId: "typography-system",
+      // },
       {
         action: "CREATE",
         description: "None line height",
@@ -752,11 +752,11 @@ describe("generatePostVariablesPayload", () => {
         },
         variableId: "sd/system/typography/display/small/fontWeight",
       },
-      {
-        modeId: "typography-system.compact",
-        value: 0,
-        variableId: "sd/system/typography/display/small/letterSpacing",
-      },
+      // {
+      //   modeId: "typography-system.compact",
+      //   value: 0,
+      //   variableId: "sd/system/typography/display/small/letterSpacing",
+      // },
       {
         modeId: "typography-system.compact",
         value: {
@@ -789,11 +789,11 @@ describe("generatePostVariablesPayload", () => {
         },
         variableId: "sd/system/typography/display/small/fontWeight",
       },
-      {
-        modeId: "typography-system.expanded",
-        value: 0,
-        variableId: "sd/system/typography/display/small/letterSpacing",
-      },
+      // {
+      //   modeId: "typography-system.expanded",
+      //   value: 0,
+      //   variableId: "sd/system/typography/display/small/letterSpacing",
+      // },
       {
         modeId: "typography-system.expanded",
         value: {
