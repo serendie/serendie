@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 15 Aug 2024 15:02:19 GMT
+ * Generated on Thu, 15 Aug 2024 15:18:58 GMT
  */
 
 export default tokens;
@@ -277,52 +277,52 @@ declare const tokens: {
             "onPositiveContainer_hisui": {
               "value": string
             },
-            "primary_konjo": {
+            "primary": {
               "value": string
             },
-            "onPrimary_konjo": {
+            "onPrimary": {
               "value": string
             },
-            "primaryContainer_konjo": {
+            "primaryContainer": {
               "value": string
             },
-            "onPrimaryContainer_konjo": {
+            "onPrimaryContainer": {
               "value": string
             },
-            "notice_konjo": {
+            "notice": {
               "value": string
             },
-            "onNotice_konjo": {
+            "onNotice": {
               "value": string
             },
-            "noticeContainer_konjo": {
+            "noticeContainer": {
               "value": string
             },
-            "onNoticeContainer_konjo": {
+            "onNoticeContainer": {
               "value": string
             },
-            "negative_konjo": {
+            "negative": {
               "value": string
             },
-            "onNegative_konjo": {
+            "onNegative": {
               "value": string
             },
-            "negativeContainer_konjo": {
+            "negativeContainer": {
               "value": string
             },
-            "onNegativeContainer_konjo": {
+            "onNegativeContainer": {
               "value": string
             },
-            "positive_konjo": {
+            "positive": {
               "value": string
             },
-            "onPositive_konjo": {
+            "onPositive": {
               "value": string
             },
-            "positiveContainer_konjo": {
+            "positiveContainer": {
               "value": string
             },
-            "onPositiveContainer_konjo": {
+            "onPositiveContainer": {
               "value": string
             },
             "primary_kurikawa": {
@@ -495,28 +495,28 @@ declare const tokens: {
             "scrim_hisui": {
               "value": string
             },
-            "surface_konjo": {
+            "surface": {
               "value": string
             },
-            "onSurface_konjo": {
+            "onSurface": {
               "value": string
             },
-            "onSurfaceVariant_konjo": {
+            "onSurfaceVariant": {
               "value": string
             },
-            "inverseSurface_konjo": {
+            "inverseSurface": {
               "value": string
             },
-            "inverseOnSurface_konjo": {
+            "inverseOnSurface": {
               "value": string
             },
-            "outline_konjo": {
+            "outline": {
               "value": string
             },
-            "outlineVariant_konjo": {
+            "outlineVariant": {
               "value": string
             },
-            "scrim_konjo": {
+            "scrim": {
               "value": string
             },
             "surface_kurikawa": {
@@ -611,22 +611,22 @@ declare const tokens: {
             "hoveredOnPrimary_hisui": {
               "value": string
             },
-            "disabled_konjo": {
+            "disabled": {
               "value": string
             },
-            "disabledOnSurface_konjo": {
+            "disabledOnSurface": {
               "value": string
             },
-            "selectedSurface_konjo": {
+            "selectedSurface": {
               "value": string
             },
-            "hovered_konjo": {
+            "hovered": {
               "value": string
             },
-            "hoveredVariant_konjo": {
+            "hoveredVariant": {
               "value": string
             },
-            "hoveredOnPrimary_konjo": {
+            "hoveredOnPrimary": {
               "value": string
             },
             "disabled_kurikawa": {
