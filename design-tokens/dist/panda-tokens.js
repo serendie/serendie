@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 15 Aug 2024 15:02:19 GMT
+ * Generated on Thu, 15 Aug 2024 15:18:58 GMT
  */
 
 export default {
@@ -276,52 +276,52 @@ export default {
             "onPositiveContainer_hisui": {
               "value": "#FFFFFF"
             },
-            "primary_konjo": {
+            "primary": {
               "value": "#0066DF"
             },
-            "onPrimary_konjo": {
+            "onPrimary": {
               "value": "#FFFFFF"
             },
-            "primaryContainer_konjo": {
+            "primaryContainer": {
               "value": "#0066DF"
             },
-            "onPrimaryContainer_konjo": {
+            "onPrimaryContainer": {
               "value": "#FFFFFF"
             },
-            "notice_konjo": {
+            "notice": {
               "value": "#EDA608"
             },
-            "onNotice_konjo": {
+            "onNotice": {
               "value": "#FFFFFF"
             },
-            "noticeContainer_konjo": {
+            "noticeContainer": {
               "value": "#FFE265"
             },
-            "onNoticeContainer_konjo": {
+            "onNoticeContainer": {
               "value": "#000000"
             },
-            "negative_konjo": {
+            "negative": {
               "value": "#D61930"
             },
-            "onNegative_konjo": {
+            "onNegative": {
               "value": "#FFFFFF"
             },
-            "negativeContainer_konjo": {
+            "negativeContainer": {
               "value": "#FFD2D1"
             },
-            "onNegativeContainer_konjo": {
+            "onNegativeContainer": {
               "value": "#000000"
             },
-            "positive_konjo": {
+            "positive": {
               "value": "#279B20"
             },
-            "onPositive_konjo": {
+            "onPositive": {
               "value": "#FFFFFF"
             },
-            "positiveContainer_konjo": {
+            "positiveContainer": {
               "value": "#279B20"
             },
-            "onPositiveContainer_konjo": {
+            "onPositiveContainer": {
               "value": "#FFFFFF"
             },
             "primary_kurikawa": {
@@ -494,28 +494,28 @@ export default {
             "scrim_hisui": {
               "value": "#00000033"
             },
-            "surface_konjo": {
+            "surface": {
               "value": "#FFFFFF"
             },
-            "onSurface_konjo": {
+            "onSurface": {
               "value": "#000000"
             },
-            "onSurfaceVariant_konjo": {
+            "onSurfaceVariant": {
               "value": "#8C959C"
             },
-            "inverseSurface_konjo": {
+            "inverseSurface": {
               "value": "#23292D"
             },
-            "inverseOnSurface_konjo": {
+            "inverseOnSurface": {
               "value": "#FFFFFF"
             },
-            "outline_konjo": {
+            "outline": {
               "value": "#CED5D9"
             },
-            "outlineVariant_konjo": {
+            "outlineVariant": {
               "value": "#8C959C"
             },
-            "scrim_konjo": {
+            "scrim": {
               "value": "#00000033"
             },
             "surface_kurikawa": {
@@ -610,22 +610,22 @@ export default {
             "hoveredOnPrimary_hisui": {
               "value": "#FFFFFF99"
             },
-            "disabled_konjo": {
+            "disabled": {
               "value": "#EBEEEF"
             },
-            "disabledOnSurface_konjo": {
+            "disabledOnSurface": {
               "value": "#AEB8C0"
             },
-            "selectedSurface_konjo": {
+            "selectedSurface": {
               "value": "#DBF3FF"
             },
-            "hovered_konjo": {
+            "hovered": {
               "value": "#00000033"
             },
-            "hoveredVariant_konjo": {
+            "hoveredVariant": {
               "value": "#0000000D"
             },
-            "hoveredOnPrimary_konjo": {
+            "hoveredOnPrimary": {
               "value": "#FFFFFF99"
             },
             "disabled_kurikawa": {
