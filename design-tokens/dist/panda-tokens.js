@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 08 Aug 2024 21:19:17 GMT
+ * Generated on Thu, 15 Aug 2024 15:02:19 GMT
  */
 
 export default {
@@ -228,98 +228,458 @@ export default {
       "system": {
         "color": {
           "impression": {
-            "primary": {
-              "value": "#0066DF"
+            "primary_hisui": {
+              "value": "#279B20"
             },
-            "onPrimary": {
+            "onPrimary_hisui": {
               "value": "#FFFFFF"
             },
-            "primaryContainer": {
-              "value": "#0066DF"
+            "primaryContainer_hisui": {
+              "value": "#279B20"
             },
-            "onPrimaryContainer": {
+            "onPrimaryContainer_hisui": {
               "value": "#FFFFFF"
             },
-            "notice": {
+            "notice_hisui": {
               "value": "#EDA608"
             },
-            "onNotice": {
+            "onNotice_hisui": {
               "value": "#FFFFFF"
             },
-            "noticeContainer": {
+            "noticeContainer_hisui": {
               "value": "#FFE265"
             },
-            "onNoticeContainer": {
+            "onNoticeContainer_hisui": {
               "value": "#000000"
             },
-            "negative": {
+            "negative_hisui": {
               "value": "#D61930"
             },
-            "onNegative": {
+            "onNegative_hisui": {
               "value": "#FFFFFF"
             },
-            "negativeContainer": {
+            "negativeContainer_hisui": {
               "value": "#FFD2D1"
             },
-            "onNegativeContainer": {
+            "onNegativeContainer_hisui": {
               "value": "#000000"
             },
-            "positive": {
+            "positive_hisui": {
               "value": "#279B20"
             },
-            "onPositive": {
+            "onPositive_hisui": {
               "value": "#FFFFFF"
             },
-            "positiveContainer": {
+            "positiveContainer_hisui": {
               "value": "#279B20"
             },
-            "onPositiveContainer": {
+            "onPositiveContainer_hisui": {
+              "value": "#FFFFFF"
+            },
+            "primary_konjo": {
+              "value": "#0066DF"
+            },
+            "onPrimary_konjo": {
+              "value": "#FFFFFF"
+            },
+            "primaryContainer_konjo": {
+              "value": "#0066DF"
+            },
+            "onPrimaryContainer_konjo": {
+              "value": "#FFFFFF"
+            },
+            "notice_konjo": {
+              "value": "#EDA608"
+            },
+            "onNotice_konjo": {
+              "value": "#FFFFFF"
+            },
+            "noticeContainer_konjo": {
+              "value": "#FFE265"
+            },
+            "onNoticeContainer_konjo": {
+              "value": "#000000"
+            },
+            "negative_konjo": {
+              "value": "#D61930"
+            },
+            "onNegative_konjo": {
+              "value": "#FFFFFF"
+            },
+            "negativeContainer_konjo": {
+              "value": "#FFD2D1"
+            },
+            "onNegativeContainer_konjo": {
+              "value": "#000000"
+            },
+            "positive_konjo": {
+              "value": "#279B20"
+            },
+            "onPositive_konjo": {
+              "value": "#FFFFFF"
+            },
+            "positiveContainer_konjo": {
+              "value": "#279B20"
+            },
+            "onPositiveContainer_konjo": {
+              "value": "#FFFFFF"
+            },
+            "primary_kurikawa": {
+              "value": "#C84D00"
+            },
+            "onPrimary_kurikawa": {
+              "value": "#FFFFFF"
+            },
+            "primaryContainer_kurikawa": {
+              "value": "#C84D00"
+            },
+            "onPrimaryContainer_kurikawa": {
+              "value": "#FFFFFF"
+            },
+            "notice_kurikawa": {
+              "value": "#EDA608"
+            },
+            "onNotice_kurikawa": {
+              "value": "#FFFFFF"
+            },
+            "noticeContainer_kurikawa": {
+              "value": "#FFE265"
+            },
+            "onNoticeContainer_kurikawa": {
+              "value": "#000000"
+            },
+            "negative_kurikawa": {
+              "value": "#D61930"
+            },
+            "onNegative_kurikawa": {
+              "value": "#FFFFFF"
+            },
+            "negativeContainer_kurikawa": {
+              "value": "#FFD2D1"
+            },
+            "onNegativeContainer_kurikawa": {
+              "value": "#000000"
+            },
+            "positive_kurikawa": {
+              "value": "#279B20"
+            },
+            "onPositive_kurikawa": {
+              "value": "#FFFFFF"
+            },
+            "positiveContainer_kurikawa": {
+              "value": "#279B20"
+            },
+            "onPositiveContainer_kurikawa": {
+              "value": "#FFFFFF"
+            },
+            "primary_tokusa": {
+              "value": "#054704"
+            },
+            "onPrimary_tokusa": {
+              "value": "#FFFFFF"
+            },
+            "primaryContainer_tokusa": {
+              "value": "#054704"
+            },
+            "onPrimaryContainer_tokusa": {
+              "value": "#FFFFFF"
+            },
+            "notice_tokusa": {
+              "value": "#EDA608"
+            },
+            "onNotice_tokusa": {
+              "value": "#FFFFFF"
+            },
+            "noticeContainer_tokusa": {
+              "value": "#FFE265"
+            },
+            "onNoticeContainer_tokusa": {
+              "value": "#000000"
+            },
+            "negative_tokusa": {
+              "value": "#D61930"
+            },
+            "onNegative_tokusa": {
+              "value": "#FFFFFF"
+            },
+            "negativeContainer_tokusa": {
+              "value": "#FFD2D1"
+            },
+            "onNegativeContainer_tokusa": {
+              "value": "#000000"
+            },
+            "positive_tokusa": {
+              "value": "#279B20"
+            },
+            "onPositive_tokusa": {
+              "value": "#FFFFFF"
+            },
+            "positiveContainer_tokusa": {
+              "value": "#279B20"
+            },
+            "onPositiveContainer_tokusa": {
+              "value": "#FFFFFF"
+            },
+            "primary_usuake": {
+              "value": "#FE8482"
+            },
+            "onPrimary_usuake": {
+              "value": "#FFFFFF"
+            },
+            "primaryContainer_usuake": {
+              "value": "#FE8482"
+            },
+            "onPrimaryContainer_usuake": {
+              "value": "#FFFFFF"
+            },
+            "notice_usuake": {
+              "value": "#EDA608"
+            },
+            "onNotice_usuake": {
+              "value": "#FFFFFF"
+            },
+            "noticeContainer_usuake": {
+              "value": "#FFE265"
+            },
+            "onNoticeContainer_usuake": {
+              "value": "#000000"
+            },
+            "negative_usuake": {
+              "value": "#D61930"
+            },
+            "onNegative_usuake": {
+              "value": "#FFFFFF"
+            },
+            "negativeContainer_usuake": {
+              "value": "#FFD2D1"
+            },
+            "onNegativeContainer_usuake": {
+              "value": "#000000"
+            },
+            "positive_usuake": {
+              "value": "#279B20"
+            },
+            "onPositive_usuake": {
+              "value": "#FFFFFF"
+            },
+            "positiveContainer_usuake": {
+              "value": "#279B20"
+            },
+            "onPositiveContainer_usuake": {
               "value": "#FFFFFF"
             }
           },
           "component": {
-            "surface": {
+            "surface_hisui": {
               "value": "#FFFFFF"
             },
-            "onSurface": {
+            "onSurface_hisui": {
               "value": "#000000"
             },
-            "onSurfaceVariant": {
+            "onSurfaceVariant_hisui": {
               "value": "#8C959C"
             },
-            "inverseSurface": {
+            "inverseSurface_hisui": {
               "value": "#23292D"
             },
-            "inverseOnSurface": {
+            "inverseOnSurface_hisui": {
               "value": "#FFFFFF"
             },
-            "outline": {
+            "outline_hisui": {
               "value": "#CED5D9"
             },
-            "outlineVariant": {
+            "outlineVariant_hisui": {
               "value": "#8C959C"
             },
-            "scrim": {
+            "scrim_hisui": {
+              "value": "#00000033"
+            },
+            "surface_konjo": {
+              "value": "#FFFFFF"
+            },
+            "onSurface_konjo": {
+              "value": "#000000"
+            },
+            "onSurfaceVariant_konjo": {
+              "value": "#8C959C"
+            },
+            "inverseSurface_konjo": {
+              "value": "#23292D"
+            },
+            "inverseOnSurface_konjo": {
+              "value": "#FFFFFF"
+            },
+            "outline_konjo": {
+              "value": "#CED5D9"
+            },
+            "outlineVariant_konjo": {
+              "value": "#8C959C"
+            },
+            "scrim_konjo": {
+              "value": "#00000033"
+            },
+            "surface_kurikawa": {
+              "value": "#FFFFFF"
+            },
+            "onSurface_kurikawa": {
+              "value": "#000000"
+            },
+            "onSurfaceVariant_kurikawa": {
+              "value": "#8C959C"
+            },
+            "inverseSurface_kurikawa": {
+              "value": "#23292D"
+            },
+            "inverseOnSurface_kurikawa": {
+              "value": "#FFFFFF"
+            },
+            "outline_kurikawa": {
+              "value": "#CED5D9"
+            },
+            "outlineVariant_kurikawa": {
+              "value": "#8C959C"
+            },
+            "scrim_kurikawa": {
+              "value": "#00000033"
+            },
+            "surface_tokusa": {
+              "value": "#FFFFFF"
+            },
+            "onSurface_tokusa": {
+              "value": "#000000"
+            },
+            "onSurfaceVariant_tokusa": {
+              "value": "#8C959C"
+            },
+            "inverseSurface_tokusa": {
+              "value": "#23292D"
+            },
+            "inverseOnSurface_tokusa": {
+              "value": "#FFFFFF"
+            },
+            "outline_tokusa": {
+              "value": "#CED5D9"
+            },
+            "outlineVariant_tokusa": {
+              "value": "#8C959C"
+            },
+            "scrim_tokusa": {
+              "value": "#00000033"
+            },
+            "surface_usuake": {
+              "value": "#FFFFFF"
+            },
+            "onSurface_usuake": {
+              "value": "#000000"
+            },
+            "onSurfaceVariant_usuake": {
+              "value": "#8C959C"
+            },
+            "inverseSurface_usuake": {
+              "value": "#23292D"
+            },
+            "inverseOnSurface_usuake": {
+              "value": "#FFFFFF"
+            },
+            "outline_usuake": {
+              "value": "#CED5D9"
+            },
+            "outlineVariant_usuake": {
+              "value": "#8C959C"
+            },
+            "scrim_usuake": {
               "value": "#00000033"
             }
           },
           "interaction": {
-            "disabled": {
+            "disabled_hisui": {
               "value": "#EBEEEF"
             },
-            "disabledOnSurface": {
+            "disabledOnSurface_hisui": {
               "value": "#AEB8C0"
             },
-            "selectedSurface": {
-              "value": "#DBF3FF"
+            "selectedSurface_hisui": {
+              "value": "#CCF7CE"
             },
-            "hovered": {
+            "hovered_hisui": {
               "value": "#00000033"
             },
-            "hoveredVariant": {
+            "hoveredVariant_hisui": {
               "value": "#0000000D"
             },
-            "hoveredOnPrimary": {
+            "hoveredOnPrimary_hisui": {
+              "value": "#FFFFFF99"
+            },
+            "disabled_konjo": {
+              "value": "#EBEEEF"
+            },
+            "disabledOnSurface_konjo": {
+              "value": "#AEB8C0"
+            },
+            "selectedSurface_konjo": {
+              "value": "#DBF3FF"
+            },
+            "hovered_konjo": {
+              "value": "#00000033"
+            },
+            "hoveredVariant_konjo": {
+              "value": "#0000000D"
+            },
+            "hoveredOnPrimary_konjo": {
+              "value": "#FFFFFF99"
+            },
+            "disabled_kurikawa": {
+              "value": "#EBEEEF"
+            },
+            "disabledOnSurface_kurikawa": {
+              "value": "#AEB8C0"
+            },
+            "selectedSurface_kurikawa": {
+              "value": "#FFEDDE"
+            },
+            "hovered_kurikawa": {
+              "value": "#00000033"
+            },
+            "hoveredVariant_kurikawa": {
+              "value": "#0000000D"
+            },
+            "hoveredOnPrimary_kurikawa": {
+              "value": "#FFFFFF99"
+            },
+            "disabled_tokusa": {
+              "value": "#EBEEEF"
+            },
+            "disabledOnSurface_tokusa": {
+              "value": "#AEB8C0"
+            },
+            "selectedSurface_tokusa": {
+              "value": "#CCF7CE"
+            },
+            "hovered_tokusa": {
+              "value": "#00000033"
+            },
+            "hoveredVariant_tokusa": {
+              "value": "#0000000D"
+            },
+            "hoveredOnPrimary_tokusa": {
+              "value": "#FFFFFF99"
+            },
+            "disabled_usuake": {
+              "value": "#EBEEEF"
+            },
+            "disabledOnSurface_usuake": {
+              "value": "#AEB8C0"
+            },
+            "selectedSurface_usuake": {
+              "value": "#FFEBE9"
+            },
+            "hovered_usuake": {
+              "value": "#00000033"
+            },
+            "hoveredVariant_usuake": {
+              "value": "#0000000D"
+            },
+            "hoveredOnPrimary_usuake": {
               "value": "#FFFFFF99"
             }
           }
