@@ -1,0 +1,25 @@
+---
+import "@/index.css";
+import { styled } from "@serendie/ui/jsx";
+
+const Container = styled('html', {
+  base: {
+    position: "relative",
+    minH: "200vh",
+    background: "#0066DF",
+    overflowX: "hidden",
+  }
+})
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <Container>
+      <slot />
+    </Container>
+  </body>
+</html>

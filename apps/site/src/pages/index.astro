@@ -1,11 +1,15 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { TokenList } from 'src/components/TokenList';
-import tokens from "@serendie/design-token/token-list";
+import { BackgroundShape1 } from "@/components/toppage/BackgroundShape1";
+import { Header } from "@/components/toppage/Header";
+import { Navbar } from "@/components/toppage/Navbar";
+import { Shapes1 } from "@/components/toppage/Shapes";
+import TopLayout from "@/layouts/TopLayout.astro";
 
-const systemTokens = tokens.filter(token => token.key.includes("sd.system"));
+
 ---
+<TopLayout>
 
-<Layout title="Welcome to Serendie.">
-	<a href="/storybook">Storybook</a>
-</Layout>
+	<Navbar />
+	<Header client:load/>
+
+</TopLayout>
