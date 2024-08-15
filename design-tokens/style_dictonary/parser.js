@@ -8,7 +8,9 @@ export const SerendieParser = {
     if (match) {
       const postfix = match[1];
       // defaultの場合はpostfixを付与しない
-      if (postfix !== "default") return appendPostfixToValueWalk(obj, postfix);
+      // カラーテーマKONJOもデフォルト扱い
+      if (postfix !== "default" && postfix !== "konjo")
+        return appendPostfixToValueWalk(obj, postfix);
     }
     replaceFontFamily(obj);
     return obj;
