@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 08 Aug 2024 21:19:17 GMT
+ * Generated on Thu, 15 Aug 2024 15:02:19 GMT
  */
 
 export default tokens;
@@ -229,98 +229,458 @@ declare const tokens: {
       "system": {
         "color": {
           "impression": {
-            "primary": {
+            "primary_hisui": {
               "value": string
             },
-            "onPrimary": {
+            "onPrimary_hisui": {
               "value": string
             },
-            "primaryContainer": {
+            "primaryContainer_hisui": {
               "value": string
             },
-            "onPrimaryContainer": {
+            "onPrimaryContainer_hisui": {
               "value": string
             },
-            "notice": {
+            "notice_hisui": {
               "value": string
             },
-            "onNotice": {
+            "onNotice_hisui": {
               "value": string
             },
-            "noticeContainer": {
+            "noticeContainer_hisui": {
               "value": string
             },
-            "onNoticeContainer": {
+            "onNoticeContainer_hisui": {
               "value": string
             },
-            "negative": {
+            "negative_hisui": {
               "value": string
             },
-            "onNegative": {
+            "onNegative_hisui": {
               "value": string
             },
-            "negativeContainer": {
+            "negativeContainer_hisui": {
               "value": string
             },
-            "onNegativeContainer": {
+            "onNegativeContainer_hisui": {
               "value": string
             },
-            "positive": {
+            "positive_hisui": {
               "value": string
             },
-            "onPositive": {
+            "onPositive_hisui": {
               "value": string
             },
-            "positiveContainer": {
+            "positiveContainer_hisui": {
               "value": string
             },
-            "onPositiveContainer": {
+            "onPositiveContainer_hisui": {
+              "value": string
+            },
+            "primary_konjo": {
+              "value": string
+            },
+            "onPrimary_konjo": {
+              "value": string
+            },
+            "primaryContainer_konjo": {
+              "value": string
+            },
+            "onPrimaryContainer_konjo": {
+              "value": string
+            },
+            "notice_konjo": {
+              "value": string
+            },
+            "onNotice_konjo": {
+              "value": string
+            },
+            "noticeContainer_konjo": {
+              "value": string
+            },
+            "onNoticeContainer_konjo": {
+              "value": string
+            },
+            "negative_konjo": {
+              "value": string
+            },
+            "onNegative_konjo": {
+              "value": string
+            },
+            "negativeContainer_konjo": {
+              "value": string
+            },
+            "onNegativeContainer_konjo": {
+              "value": string
+            },
+            "positive_konjo": {
+              "value": string
+            },
+            "onPositive_konjo": {
+              "value": string
+            },
+            "positiveContainer_konjo": {
+              "value": string
+            },
+            "onPositiveContainer_konjo": {
+              "value": string
+            },
+            "primary_kurikawa": {
+              "value": string
+            },
+            "onPrimary_kurikawa": {
+              "value": string
+            },
+            "primaryContainer_kurikawa": {
+              "value": string
+            },
+            "onPrimaryContainer_kurikawa": {
+              "value": string
+            },
+            "notice_kurikawa": {
+              "value": string
+            },
+            "onNotice_kurikawa": {
+              "value": string
+            },
+            "noticeContainer_kurikawa": {
+              "value": string
+            },
+            "onNoticeContainer_kurikawa": {
+              "value": string
+            },
+            "negative_kurikawa": {
+              "value": string
+            },
+            "onNegative_kurikawa": {
+              "value": string
+            },
+            "negativeContainer_kurikawa": {
+              "value": string
+            },
+            "onNegativeContainer_kurikawa": {
+              "value": string
+            },
+            "positive_kurikawa": {
+              "value": string
+            },
+            "onPositive_kurikawa": {
+              "value": string
+            },
+            "positiveContainer_kurikawa": {
+              "value": string
+            },
+            "onPositiveContainer_kurikawa": {
+              "value": string
+            },
+            "primary_tokusa": {
+              "value": string
+            },
+            "onPrimary_tokusa": {
+              "value": string
+            },
+            "primaryContainer_tokusa": {
+              "value": string
+            },
+            "onPrimaryContainer_tokusa": {
+              "value": string
+            },
+            "notice_tokusa": {
+              "value": string
+            },
+            "onNotice_tokusa": {
+              "value": string
+            },
+            "noticeContainer_tokusa": {
+              "value": string
+            },
+            "onNoticeContainer_tokusa": {
+              "value": string
+            },
+            "negative_tokusa": {
+              "value": string
+            },
+            "onNegative_tokusa": {
+              "value": string
+            },
+            "negativeContainer_tokusa": {
+              "value": string
+            },
+            "onNegativeContainer_tokusa": {
+              "value": string
+            },
+            "positive_tokusa": {
+              "value": string
+            },
+            "onPositive_tokusa": {
+              "value": string
+            },
+            "positiveContainer_tokusa": {
+              "value": string
+            },
+            "onPositiveContainer_tokusa": {
+              "value": string
+            },
+            "primary_usuake": {
+              "value": string
+            },
+            "onPrimary_usuake": {
+              "value": string
+            },
+            "primaryContainer_usuake": {
+              "value": string
+            },
+            "onPrimaryContainer_usuake": {
+              "value": string
+            },
+            "notice_usuake": {
+              "value": string
+            },
+            "onNotice_usuake": {
+              "value": string
+            },
+            "noticeContainer_usuake": {
+              "value": string
+            },
+            "onNoticeContainer_usuake": {
+              "value": string
+            },
+            "negative_usuake": {
+              "value": string
+            },
+            "onNegative_usuake": {
+              "value": string
+            },
+            "negativeContainer_usuake": {
+              "value": string
+            },
+            "onNegativeContainer_usuake": {
+              "value": string
+            },
+            "positive_usuake": {
+              "value": string
+            },
+            "onPositive_usuake": {
+              "value": string
+            },
+            "positiveContainer_usuake": {
+              "value": string
+            },
+            "onPositiveContainer_usuake": {
               "value": string
             }
           },
           "component": {
-            "surface": {
+            "surface_hisui": {
               "value": string
             },
-            "onSurface": {
+            "onSurface_hisui": {
               "value": string
             },
-            "onSurfaceVariant": {
+            "onSurfaceVariant_hisui": {
               "value": string
             },
-            "inverseSurface": {
+            "inverseSurface_hisui": {
               "value": string
             },
-            "inverseOnSurface": {
+            "inverseOnSurface_hisui": {
               "value": string
             },
-            "outline": {
+            "outline_hisui": {
               "value": string
             },
-            "outlineVariant": {
+            "outlineVariant_hisui": {
               "value": string
             },
-            "scrim": {
+            "scrim_hisui": {
+              "value": string
+            },
+            "surface_konjo": {
+              "value": string
+            },
+            "onSurface_konjo": {
+              "value": string
+            },
+            "onSurfaceVariant_konjo": {
+              "value": string
+            },
+            "inverseSurface_konjo": {
+              "value": string
+            },
+            "inverseOnSurface_konjo": {
+              "value": string
+            },
+            "outline_konjo": {
+              "value": string
+            },
+            "outlineVariant_konjo": {
+              "value": string
+            },
+            "scrim_konjo": {
+              "value": string
+            },
+            "surface_kurikawa": {
+              "value": string
+            },
+            "onSurface_kurikawa": {
+              "value": string
+            },
+            "onSurfaceVariant_kurikawa": {
+              "value": string
+            },
+            "inverseSurface_kurikawa": {
+              "value": string
+            },
+            "inverseOnSurface_kurikawa": {
+              "value": string
+            },
+            "outline_kurikawa": {
+              "value": string
+            },
+            "outlineVariant_kurikawa": {
+              "value": string
+            },
+            "scrim_kurikawa": {
+              "value": string
+            },
+            "surface_tokusa": {
+              "value": string
+            },
+            "onSurface_tokusa": {
+              "value": string
+            },
+            "onSurfaceVariant_tokusa": {
+              "value": string
+            },
+            "inverseSurface_tokusa": {
+              "value": string
+            },
+            "inverseOnSurface_tokusa": {
+              "value": string
+            },
+            "outline_tokusa": {
+              "value": string
+            },
+            "outlineVariant_tokusa": {
+              "value": string
+            },
+            "scrim_tokusa": {
+              "value": string
+            },
+            "surface_usuake": {
+              "value": string
+            },
+            "onSurface_usuake": {
+              "value": string
+            },
+            "onSurfaceVariant_usuake": {
+              "value": string
+            },
+            "inverseSurface_usuake": {
+              "value": string
+            },
+            "inverseOnSurface_usuake": {
+              "value": string
+            },
+            "outline_usuake": {
+              "value": string
+            },
+            "outlineVariant_usuake": {
+              "value": string
+            },
+            "scrim_usuake": {
               "value": string
             }
           },
           "interaction": {
-            "disabled": {
+            "disabled_hisui": {
               "value": string
             },
-            "disabledOnSurface": {
+            "disabledOnSurface_hisui": {
               "value": string
             },
-            "selectedSurface": {
+            "selectedSurface_hisui": {
               "value": string
             },
-            "hovered": {
+            "hovered_hisui": {
               "value": string
             },
-            "hoveredVariant": {
+            "hoveredVariant_hisui": {
               "value": string
             },
-            "hoveredOnPrimary": {
+            "hoveredOnPrimary_hisui": {
+              "value": string
+            },
+            "disabled_konjo": {
+              "value": string
+            },
+            "disabledOnSurface_konjo": {
+              "value": string
+            },
+            "selectedSurface_konjo": {
+              "value": string
+            },
+            "hovered_konjo": {
+              "value": string
+            },
+            "hoveredVariant_konjo": {
+              "value": string
+            },
+            "hoveredOnPrimary_konjo": {
+              "value": string
+            },
+            "disabled_kurikawa": {
+              "value": string
+            },
+            "disabledOnSurface_kurikawa": {
+              "value": string
+            },
+            "selectedSurface_kurikawa": {
+              "value": string
+            },
+            "hovered_kurikawa": {
+              "value": string
+            },
+            "hoveredVariant_kurikawa": {
+              "value": string
+            },
+            "hoveredOnPrimary_kurikawa": {
+              "value": string
+            },
+            "disabled_tokusa": {
+              "value": string
+            },
+            "disabledOnSurface_tokusa": {
+              "value": string
+            },
+            "selectedSurface_tokusa": {
+              "value": string
+            },
+            "hovered_tokusa": {
+              "value": string
+            },
+            "hoveredVariant_tokusa": {
+              "value": string
+            },
+            "hoveredOnPrimary_tokusa": {
+              "value": string
+            },
+            "disabled_usuake": {
+              "value": string
+            },
+            "disabledOnSurface_usuake": {
+              "value": string
+            },
+            "selectedSurface_usuake": {
+              "value": string
+            },
+            "hovered_usuake": {
+              "value": string
+            },
+            "hoveredVariant_usuake": {
+              "value": string
+            },
+            "hoveredOnPrimary_usuake": {
               "value": string
             }
           }
