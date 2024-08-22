@@ -1,4 +1,4 @@
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { cubicBezier } from "framer-motion/dom";
 import { useEffect, useState } from "react";
 
@@ -35,18 +35,14 @@ const shapeMotionProps = () => ({
 
 export const Shapes = () => {
   const [state, setState] = useState<"in" | "animate">("in");
-  const { scrollYProgress } = useScroll();
 
   useEffect(() => {
-    const unsubscribe = scrollYProgress.onChange((v) => {
-      if (v > 0.1) {
-        setState("animate");
-      } else {
-        setState("in");
-      }
-    });
+    // 1秒後にアニメーションを開始
+    const timer = setTimeout(() => {
+      setState("animate");
+    }, 5000);
 
-    return unsubscribe;
+    return () => clearTimeout(timer);
   }, []);
 
   return (
