@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { cubicBezier } from "framer-motion/dom";
+import { useEffect, useState } from "react";
 
 const transition = () => ({
   duration: 1,
@@ -33,18 +34,33 @@ const shapeMotionProps = () => ({
 });
 
 export const Shapes = () => {
+  const [state, setState] = useState<"in" | "animate">("in");
+  const { scrollYProgress } = useScroll();
+
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.onChange((v) => {
+      if (v > 0.1) {
+        setState("animate");
+      } else {
+        setState("in");
+      }
+    });
+
+    return unsubscribe;
+  }, []);
+
   return (
     <div>
       {[Shapes1, Shapes2, Shapes3, Shapes4, Shapes5, Shapes6].map(
         (Shape, index) => (
-          <Shape key={index} />
+          <Shape key={index} state={state} />
         )
       )}
     </div>
   );
 };
 
-export const Shapes1: React.FC = () => {
+export const Shapes1: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
   return (
     <motion.div
       style={{
@@ -58,10 +74,37 @@ export const Shapes1: React.FC = () => {
         left: "50%",
         rotate: "100deg",
       }}
-      animate={{
-        top: "calc(50vh - 67.5px)",
-        left: "70%",
-        rotate: "0deg",
+      animate={state}
+      variants={{
+        in: {
+          x: ["-20px", "20px", "20px", "-20px"],
+          y: ["-20px", "20px", "20px", "-20px"],
+          rotate: [0, 360],
+          transition: {
+            x: {
+              duration: 5,
+              delay: shapeMotionPropsRepeatDelay(),
+              ease: cubicBezier(0.84, 0, 0.16, 1),
+              repeat: Infinity,
+            },
+            y: {
+              duration: 5,
+              delay: shapeMotionPropsRepeatDelay(),
+              ease: cubicBezier(0.84, 0, 0.16, 1),
+              repeat: Infinity,
+            },
+            rotate: {
+              duration: 10,
+              ease: "linear",
+              repeat: Infinity,
+            },
+          },
+        },
+        animate: {
+          top: "calc(50vh - 67.5px)",
+          left: "70%",
+          rotate: 0,
+        },
       }}
       transition={transition()}
     >
@@ -85,7 +128,7 @@ export const Shapes1: React.FC = () => {
   );
 };
 
-export const Shapes2: React.FC = () => {
+export const Shapes2: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
   return (
     <motion.div
       style={{
@@ -101,10 +144,37 @@ export const Shapes2: React.FC = () => {
         left: "90%",
         rotate: "100deg",
       }}
-      animate={{
-        top: "calc(35vh - 67.5px)",
-        left: "65%",
-        rotate: "0deg",
+      animate={state}
+      variants={{
+        in: {
+          rotate: [0, 30, 0],
+          x: ["-12px", "12px", "12px", "-12px"],
+          y: ["-12px", "12px", "12px", "-12px"],
+          transition: {
+            x: {
+              duration: 7,
+              delay: 0.5,
+              ease: cubicBezier(0.84, 0, 0.16, 1),
+              repeat: Infinity,
+            },
+            y: {
+              duration: 7,
+              delay: 0.5,
+              ease: cubicBezier(0.84, 0, 0.16, 1),
+              repeat: Infinity,
+            },
+            rotate: {
+              duration: 10,
+              ease: "linear",
+              repeat: Infinity,
+            },
+          },
+        },
+        animate: {
+          top: "calc(35vh - 67.5px)",
+          left: "65%",
+          rotate: 0,
+        },
       }}
       transition={transition()}
     >
@@ -126,7 +196,7 @@ export const Shapes2: React.FC = () => {
   );
 };
 
-export const Shapes3: React.FC = () => {
+export const Shapes3: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
   return (
     <motion.div
       style={{
@@ -141,10 +211,37 @@ export const Shapes3: React.FC = () => {
         left: "95%",
         rotate: "100deg",
       }}
-      animate={{
-        top: "55vh",
-        left: "80%",
-        rotate: "-34.6deg",
+      animate={state}
+      variants={{
+        in: {
+          rotate: [0, 30, 0],
+          x: ["-12px", "12px", "12px", "-12px"],
+          y: ["-12px", "12px", "12px", "-12px"],
+          transition: {
+            x: {
+              duration: 7,
+              delay: shapeMotionPropsRotate() * 0.1,
+              ease: cubicBezier(0.84, 0, 0.16, 1),
+              repeat: Infinity,
+            },
+            y: {
+              duration: 7,
+              delay: shapeMotionPropsRotate() * 0.1,
+              ease: cubicBezier(0.84, 0, 0.16, 1),
+              repeat: Infinity,
+            },
+            rotate: {
+              duration: 10,
+              ease: "linear",
+              repeat: Infinity,
+            },
+          },
+        },
+        animate: {
+          top: "55vh",
+          left: "80%",
+          rotate: -34.6,
+        },
       }}
       transition={transition()}
     >
@@ -162,7 +259,7 @@ export const Shapes3: React.FC = () => {
   );
 };
 
-export const Shapes4: React.FC = () => {
+export const Shapes4: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
   return (
     <motion.div
       style={{
@@ -175,10 +272,30 @@ export const Shapes4: React.FC = () => {
         left: "50%",
         rotate: "100deg",
       }}
-      animate={{
-        top: "50vh",
-        left: "70%",
-        rotate: "0deg",
+      animate={state}
+      variants={{
+        in: {
+          rotate: [0, 60, 0],
+          y: ["-12px", "12px", "12px", "-12px"],
+          transition: {
+            rotate: {
+              duration: 10,
+              ease: cubicBezier(0.84, 0, 0.16, 1),
+              repeat: Infinity,
+            },
+            y: {
+              duration: 7,
+              delay: shapeMotionPropsRotate() * 0.1,
+              ease: cubicBezier(0.84, 0, 0.16, 1),
+              repeat: Infinity,
+            },
+          },
+        },
+        animate: {
+          top: "50vh",
+          left: "70%",
+          rotate: 0,
+        },
       }}
       transition={transition()}
     >
@@ -200,7 +317,7 @@ export const Shapes4: React.FC = () => {
   );
 };
 
-export const Shapes5: React.FC = () => {
+export const Shapes5: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
   return (
     <motion.div
       style={{
@@ -213,10 +330,37 @@ export const Shapes5: React.FC = () => {
         left: "90%",
         rotate: "23.2deg",
       }}
-      animate={{
-        top: "55vh",
-        left: "80%",
-        rotate: "0deg",
+      animate={state}
+      variants={{
+        in: {
+          x: ["-12px", "12px", "12px", "-12px"],
+          y: ["12px", "-12px", "-12px", "12px"],
+          rotate: [0, 20, 0],
+          transition: {
+            x: {
+              duration: 7,
+              delay: shapeMotionPropsRotate() * 0.5,
+              ease: cubicBezier(0.84, 0, 0.16, 1),
+              repeat: Infinity,
+            },
+            y: {
+              duration: 7,
+              delay: shapeMotionPropsRotate() * 0.5,
+              ease: cubicBezier(0.84, 0, 0.16, 1),
+              repeat: Infinity,
+            },
+            rotate: {
+              duration: 10,
+              ease: "linear",
+              repeat: Infinity,
+            },
+          },
+        },
+        animate: {
+          top: "55vh",
+          left: "80%",
+          rotate: 0,
+        },
       }}
       transition={transition()}
     >
@@ -238,7 +382,7 @@ export const Shapes5: React.FC = () => {
   );
 };
 
-export const Shapes6: React.FC = () => {
+export const Shapes6: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
   return (
     <motion.div
       style={{
@@ -251,10 +395,37 @@ export const Shapes6: React.FC = () => {
         left: "35%",
         rotate: "23.2deg",
       }}
-      animate={{
-        top: "75vh",
-        left: "60%",
-        rotate: "0deg",
+      animate={state}
+      variants={{
+        in: {
+          x: ["-12px", "12px", "12px", "-12px"],
+          y: ["12px", "-12px", "-12px", "12px"],
+          rotate: [0, 20, 0],
+          transition: {
+            x: {
+              duration: 7,
+              delay: shapeMotionPropsRotate() * 0.5,
+              ease: cubicBezier(0.84, 0, 0.16, 1),
+              repeat: Infinity,
+            },
+            y: {
+              duration: 7,
+              delay: shapeMotionPropsRotate() * 0.5,
+              ease: cubicBezier(0.84, 0, 0.16, 1),
+              repeat: Infinity,
+            },
+            rotate: {
+              duration: 10,
+              ease: "linear",
+              repeat: Infinity,
+            },
+          },
+        },
+        animate: {
+          top: "75vh",
+          left: "60%",
+          rotate: 0,
+        },
       }}
       transition={transition()}
     >

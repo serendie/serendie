@@ -3,6 +3,10 @@ import { styled } from "@serendie/ui/jsx";
 export const Navbar: React.FC = () => {
   const Navbar = styled("nav", {
     base: {
+      position: "fixed",
+      top: 0,
+      width: "100%",
+      zIndex: 100,
       paddingTop: "24px",
       paddingBottom: "24px",
       paddingLeft: "40px",

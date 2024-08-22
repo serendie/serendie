@@ -8,10 +8,11 @@ export const Header: React.FC = () => {
   const Header = styled("header", {
     base: {
       color: "sd.system.color.impression.onPrimary",
-      position: "relative",
+      position: "fixed",
+      width: "100%",
       overflow: "hidden",
       height: "100vh",
-      mt: "-76.8px",
+      zIndex: "0",
     },
   });
 
