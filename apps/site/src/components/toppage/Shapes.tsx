@@ -68,7 +68,7 @@ export const Shapes1: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
       initial={{
         top: "0",
         left: "50%",
-        rotate: "100deg",
+        rotate: 100,
       }}
       animate={state}
       variants={{
@@ -138,7 +138,7 @@ export const Shapes2: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
       initial={{
         top: "40vh",
         left: "90%",
-        rotate: "100deg",
+        rotate: 100,
       }}
       animate={state}
       variants={{
@@ -205,7 +205,7 @@ export const Shapes3: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
       initial={{
         top: "10%",
         left: "95%",
-        rotate: "100deg",
+        rotate: 100,
       }}
       animate={state}
       variants={{
@@ -266,7 +266,7 @@ export const Shapes4: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
       initial={{
         top: "70vh",
         left: "50%",
-        rotate: "100deg",
+        rotate: 100,
       }}
       animate={state}
       variants={{
@@ -324,7 +324,7 @@ export const Shapes5: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
       initial={{
         top: "30vh",
         left: "90%",
-        rotate: "23.2deg",
+        rotate: 23.2,
       }}
       animate={state}
       variants={{
@@ -389,7 +389,7 @@ export const Shapes6: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
       initial={{
         top: "70vh",
         left: "35%",
-        rotate: "23.2deg",
+        rotate: 23.2,
       }}
       animate={state}
       variants={{
