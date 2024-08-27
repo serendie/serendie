@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 22 Aug 2024 13:02:01 GMT
+ * Generated on Tue, 27 Aug 2024 01:50:00 GMT
  */
 
 export default tokens;
@@ -222,6 +222,106 @@ declare const tokens: {
               "1000": {
                 "value": string
               }
+            }
+          }
+        }
+      },
+      "system": {
+        "color": {
+          "impression": {
+            "primary": {
+              "value": string
+            },
+            "onPrimary": {
+              "value": string
+            },
+            "primaryContainer": {
+              "value": string
+            },
+            "onPrimaryContainer": {
+              "value": string
+            },
+            "notice": {
+              "value": string
+            },
+            "onNotice": {
+              "value": string
+            },
+            "noticeContainer": {
+              "value": string
+            },
+            "onNoticeContainer": {
+              "value": string
+            },
+            "negative": {
+              "value": string
+            },
+            "onNegative": {
+              "value": string
+            },
+            "negativeContainer": {
+              "value": string
+            },
+            "onNegativeContainer": {
+              "value": string
+            },
+            "positive": {
+              "value": string
+            },
+            "onPositive": {
+              "value": string
+            },
+            "positiveContainer": {
+              "value": string
+            },
+            "onPositiveContainer": {
+              "value": string
+            }
+          },
+          "component": {
+            "surface": {
+              "value": string
+            },
+            "onSurface": {
+              "value": string
+            },
+            "onSurfaceVariant": {
+              "value": string
+            },
+            "inverseSurface": {
+              "value": string
+            },
+            "inverseOnSurface": {
+              "value": string
+            },
+            "outline": {
+              "value": string
+            },
+            "outlineVariant": {
+              "value": string
+            },
+            "scrim": {
+              "value": string
+            }
+          },
+          "interaction": {
+            "disabled": {
+              "value": string
+            },
+            "disabledOnSurface": {
+              "value": string
+            },
+            "selectedSurface": {
+              "value": string
+            },
+            "hovered": {
+              "value": string
+            },
+            "hoveredVariant": {
+              "value": string
+            },
+            "hoveredOnPrimary": {
+              "value": string
             }
           }
         }
@@ -919,114 +1019,6 @@ declare const tokens: {
   },
   "themes": {
     "hisui": {
-      "tokens": {
-        "colors": {
-          "sd": {
-            "system": {
-              "color": {
-                "impression": {
-                  "primary": {
-                    "value": string
-                  },
-                  "onPrimary": {
-                    "value": string
-                  },
-                  "primaryContainer": {
-                    "value": string
-                  },
-                  "onPrimaryContainer": {
-                    "value": string
-                  },
-                  "notice": {
-                    "value": string
-                  },
-                  "onNotice": {
-                    "value": string
-                  },
-                  "noticeContainer": {
-                    "value": string
-                  },
-                  "onNoticeContainer": {
-                    "value": string
-                  },
-                  "negative": {
-                    "value": string
-                  },
-                  "onNegative": {
-                    "value": string
-                  },
-                  "negativeContainer": {
-                    "value": string
-                  },
-                  "onNegativeContainer": {
-                    "value": string
-                  },
-                  "positive": {
-                    "value": string
-                  },
-                  "onPositive": {
-                    "value": string
-                  },
-                  "positiveContainer": {
-                    "value": string
-                  },
-                  "onPositiveContainer": {
-                    "value": string
-                  }
-                },
-                "component": {
-                  "surface": {
-                    "value": string
-                  },
-                  "onSurface": {
-                    "value": string
-                  },
-                  "onSurfaceVariant": {
-                    "value": string
-                  },
-                  "inverseSurface": {
-                    "value": string
-                  },
-                  "inverseOnSurface": {
-                    "value": string
-                  },
-                  "outline": {
-                    "value": string
-                  },
-                  "outlineVariant": {
-                    "value": string
-                  },
-                  "scrim": {
-                    "value": string
-                  }
-                },
-                "interaction": {
-                  "disabled": {
-                    "value": string
-                  },
-                  "disabledOnSurface": {
-                    "value": string
-                  },
-                  "selectedSurface": {
-                    "value": string
-                  },
-                  "hovered": {
-                    "value": string
-                  },
-                  "hoveredVariant": {
-                    "value": string
-                  },
-                  "hoveredOnPrimary": {
-                    "value": string
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "konjo": {
       "tokens": {
         "colors": {
           "sd": {

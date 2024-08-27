@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 22 Aug 2024 13:02:01 GMT
+ * Generated on Tue, 27 Aug 2024 01:50:00 GMT
  */
 
 export default {
@@ -185,6 +185,44 @@ export default {
       }
     },
     "system": {
+      "color": {
+        "impression": {
+          "primary": "#0066DF",
+          "onPrimary": "#FFFFFF",
+          "primaryContainer": "#0066DF",
+          "onPrimaryContainer": "#FFFFFF",
+          "notice": "#EDA608",
+          "onNotice": "#FFFFFF",
+          "noticeContainer": "#FFE265",
+          "onNoticeContainer": "#000000",
+          "negative": "#D61930",
+          "onNegative": "#FFFFFF",
+          "negativeContainer": "#FFD2D1",
+          "onNegativeContainer": "#000000",
+          "positive": "#279B20",
+          "onPositive": "#FFFFFF",
+          "positiveContainer": "#279B20",
+          "onPositiveContainer": "#FFFFFF"
+        },
+        "component": {
+          "surface": "#FFFFFF",
+          "onSurface": "#000000",
+          "onSurfaceVariant": "#8C959C",
+          "inverseSurface": "#23292D",
+          "inverseOnSurface": "#FFFFFF",
+          "outline": "#CED5D9",
+          "outlineVariant": "#8C959C",
+          "scrim": "#00000033"
+        },
+        "interaction": {
+          "disabled": "#EBEEEF",
+          "disabledOnSurface": "#AEB8C0",
+          "selectedSurface": "#DBF3FF",
+          "hovered": "#00000033",
+          "hoveredVariant": "#0000000D",
+          "hoveredOnPrimary": "#FFFFFF99"
+        }
+      },
       "dimension": {
         "spacing": {
           "twoExtraSmall": "4px",
@@ -509,54 +547,6 @@ export default {
                   "disabled": "#EBEEEF",
                   "disabledOnSurface": "#AEB8C0",
                   "selectedSurface": "#CCF7CE",
-                  "hovered": "#00000033",
-                  "hoveredVariant": "#0000000D",
-                  "hoveredOnPrimary": "#FFFFFF99"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "konjo": {
-      "tokens": {
-        "colors": {
-          "sd": {
-            "system": {
-              "color": {
-                "impression": {
-                  "primary": "#0066DF",
-                  "onPrimary": "#FFFFFF",
-                  "primaryContainer": "#0066DF",
-                  "onPrimaryContainer": "#FFFFFF",
-                  "notice": "#EDA608",
-                  "onNotice": "#FFFFFF",
-                  "noticeContainer": "#FFE265",
-                  "onNoticeContainer": "#000000",
-                  "negative": "#D61930",
-                  "onNegative": "#FFFFFF",
-                  "negativeContainer": "#FFD2D1",
-                  "onNegativeContainer": "#000000",
-                  "positive": "#279B20",
-                  "onPositive": "#FFFFFF",
-                  "positiveContainer": "#279B20",
-                  "onPositiveContainer": "#FFFFFF"
-                },
-                "component": {
-                  "surface": "#FFFFFF",
-                  "onSurface": "#000000",
-                  "onSurfaceVariant": "#8C959C",
-                  "inverseSurface": "#23292D",
-                  "inverseOnSurface": "#FFFFFF",
-                  "outline": "#CED5D9",
-                  "outlineVariant": "#8C959C",
-                  "scrim": "#00000033"
-                },
-                "interaction": {
-                  "disabled": "#EBEEEF",
-                  "disabledOnSurface": "#AEB8C0",
-                  "selectedSurface": "#DBF3FF",
                   "hovered": "#00000033",
                   "hoveredVariant": "#0000000D",
                   "hoveredOnPrimary": "#FFFFFF99"

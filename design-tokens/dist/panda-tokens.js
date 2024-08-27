@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 22 Aug 2024 13:02:01 GMT
+ * Generated on Tue, 27 Aug 2024 01:50:00 GMT
  */
 
 export default {
@@ -221,6 +221,106 @@ export default {
               "1000": {
                 "value": "#002155"
               }
+            }
+          }
+        }
+      },
+      "system": {
+        "color": {
+          "impression": {
+            "primary": {
+              "value": "#0066DF"
+            },
+            "onPrimary": {
+              "value": "#FFFFFF"
+            },
+            "primaryContainer": {
+              "value": "#0066DF"
+            },
+            "onPrimaryContainer": {
+              "value": "#FFFFFF"
+            },
+            "notice": {
+              "value": "#EDA608"
+            },
+            "onNotice": {
+              "value": "#FFFFFF"
+            },
+            "noticeContainer": {
+              "value": "#FFE265"
+            },
+            "onNoticeContainer": {
+              "value": "#000000"
+            },
+            "negative": {
+              "value": "#D61930"
+            },
+            "onNegative": {
+              "value": "#FFFFFF"
+            },
+            "negativeContainer": {
+              "value": "#FFD2D1"
+            },
+            "onNegativeContainer": {
+              "value": "#000000"
+            },
+            "positive": {
+              "value": "#279B20"
+            },
+            "onPositive": {
+              "value": "#FFFFFF"
+            },
+            "positiveContainer": {
+              "value": "#279B20"
+            },
+            "onPositiveContainer": {
+              "value": "#FFFFFF"
+            }
+          },
+          "component": {
+            "surface": {
+              "value": "#FFFFFF"
+            },
+            "onSurface": {
+              "value": "#000000"
+            },
+            "onSurfaceVariant": {
+              "value": "#8C959C"
+            },
+            "inverseSurface": {
+              "value": "#23292D"
+            },
+            "inverseOnSurface": {
+              "value": "#FFFFFF"
+            },
+            "outline": {
+              "value": "#CED5D9"
+            },
+            "outlineVariant": {
+              "value": "#8C959C"
+            },
+            "scrim": {
+              "value": "#00000033"
+            }
+          },
+          "interaction": {
+            "disabled": {
+              "value": "#EBEEEF"
+            },
+            "disabledOnSurface": {
+              "value": "#AEB8C0"
+            },
+            "selectedSurface": {
+              "value": "#DBF3FF"
+            },
+            "hovered": {
+              "value": "#00000033"
+            },
+            "hoveredVariant": {
+              "value": "#0000000D"
+            },
+            "hoveredOnPrimary": {
+              "value": "#FFFFFF99"
             }
           }
         }
@@ -1008,114 +1108,6 @@ export default {
                   },
                   "selectedSurface": {
                     "value": "#CCF7CE"
-                  },
-                  "hovered": {
-                    "value": "#00000033"
-                  },
-                  "hoveredVariant": {
-                    "value": "#0000000D"
-                  },
-                  "hoveredOnPrimary": {
-                    "value": "#FFFFFF99"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "konjo": {
-      "tokens": {
-        "colors": {
-          "sd": {
-            "system": {
-              "color": {
-                "impression": {
-                  "primary": {
-                    "value": "#0066DF"
-                  },
-                  "onPrimary": {
-                    "value": "#FFFFFF"
-                  },
-                  "primaryContainer": {
-                    "value": "#0066DF"
-                  },
-                  "onPrimaryContainer": {
-                    "value": "#FFFFFF"
-                  },
-                  "notice": {
-                    "value": "#EDA608"
-                  },
-                  "onNotice": {
-                    "value": "#FFFFFF"
-                  },
-                  "noticeContainer": {
-                    "value": "#FFE265"
-                  },
-                  "onNoticeContainer": {
-                    "value": "#000000"
-                  },
-                  "negative": {
-                    "value": "#D61930"
-                  },
-                  "onNegative": {
-                    "value": "#FFFFFF"
-                  },
-                  "negativeContainer": {
-                    "value": "#FFD2D1"
-                  },
-                  "onNegativeContainer": {
-                    "value": "#000000"
-                  },
-                  "positive": {
-                    "value": "#279B20"
-                  },
-                  "onPositive": {
-                    "value": "#FFFFFF"
-                  },
-                  "positiveContainer": {
-                    "value": "#279B20"
-                  },
-                  "onPositiveContainer": {
-                    "value": "#FFFFFF"
-                  }
-                },
-                "component": {
-                  "surface": {
-                    "value": "#FFFFFF"
-                  },
-                  "onSurface": {
-                    "value": "#000000"
-                  },
-                  "onSurfaceVariant": {
-                    "value": "#8C959C"
-                  },
-                  "inverseSurface": {
-                    "value": "#23292D"
-                  },
-                  "inverseOnSurface": {
-                    "value": "#FFFFFF"
-                  },
-                  "outline": {
-                    "value": "#CED5D9"
-                  },
-                  "outlineVariant": {
-                    "value": "#8C959C"
-                  },
-                  "scrim": {
-                    "value": "#00000033"
-                  }
-                },
-                "interaction": {
-                  "disabled": {
-                    "value": "#EBEEEF"
-                  },
-                  "disabledOnSurface": {
-                    "value": "#AEB8C0"
-                  },
-                  "selectedSurface": {
-                    "value": "#DBF3FF"
                   },
                   "hovered": {
                     "value": "#00000033"

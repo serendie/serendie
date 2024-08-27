@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 22 Aug 2024 13:02:01 GMT
+ * Generated on Tue, 27 Aug 2024 01:50:00 GMT
  */
 
 export default tokens;
@@ -186,6 +186,44 @@ declare const tokens: {
       }
     },
     "system": {
+      "color": {
+        "impression": {
+          "primary": string,
+          "onPrimary": string,
+          "primaryContainer": string,
+          "onPrimaryContainer": string,
+          "notice": string,
+          "onNotice": string,
+          "noticeContainer": string,
+          "onNoticeContainer": string,
+          "negative": string,
+          "onNegative": string,
+          "negativeContainer": string,
+          "onNegativeContainer": string,
+          "positive": string,
+          "onPositive": string,
+          "positiveContainer": string,
+          "onPositiveContainer": string
+        },
+        "component": {
+          "surface": string,
+          "onSurface": string,
+          "onSurfaceVariant": string,
+          "inverseSurface": string,
+          "inverseOnSurface": string,
+          "outline": string,
+          "outlineVariant": string,
+          "scrim": string
+        },
+        "interaction": {
+          "disabled": string,
+          "disabledOnSurface": string,
+          "selectedSurface": string,
+          "hovered": string,
+          "hoveredVariant": string,
+          "hoveredOnPrimary": string
+        }
+      },
       "dimension": {
         "spacing": {
           "twoExtraSmall": string,
@@ -473,54 +511,6 @@ declare const tokens: {
   },
   "themes": {
     "hisui": {
-      "tokens": {
-        "colors": {
-          "sd": {
-            "system": {
-              "color": {
-                "impression": {
-                  "primary": string,
-                  "onPrimary": string,
-                  "primaryContainer": string,
-                  "onPrimaryContainer": string,
-                  "notice": string,
-                  "onNotice": string,
-                  "noticeContainer": string,
-                  "onNoticeContainer": string,
-                  "negative": string,
-                  "onNegative": string,
-                  "negativeContainer": string,
-                  "onNegativeContainer": string,
-                  "positive": string,
-                  "onPositive": string,
-                  "positiveContainer": string,
-                  "onPositiveContainer": string
-                },
-                "component": {
-                  "surface": string,
-                  "onSurface": string,
-                  "onSurfaceVariant": string,
-                  "inverseSurface": string,
-                  "inverseOnSurface": string,
-                  "outline": string,
-                  "outlineVariant": string,
-                  "scrim": string
-                },
-                "interaction": {
-                  "disabled": string,
-                  "disabledOnSurface": string,
-                  "selectedSurface": string,
-                  "hovered": string,
-                  "hoveredVariant": string,
-                  "hoveredOnPrimary": string
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "konjo": {
       "tokens": {
         "colors": {
           "sd": {

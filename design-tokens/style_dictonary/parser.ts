@@ -19,15 +19,20 @@ export const SerendieParser: StyleDictionary.Parser = {
       if (filePath.includes("color") && !filePath.includes("color.default")) {
         // theme名を取得
         const themeName = match[1];
-        const themedObj = {
-          themes: {
-            [themeName]: {
-              tokens: {
-                colors: obj,
-              },
-            },
-          },
-        };
+        const themedObj =
+          themeName === "konjo"
+            ? obj
+            : {
+                themes: {
+                  [themeName]: {
+                    tokens: {
+                      colors: obj,
+                    },
+                  },
+                },
+              };
+
+        console.log("themedObj", themedObj);
         return themedObj;
       }
 
