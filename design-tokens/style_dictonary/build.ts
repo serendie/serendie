@@ -1,13 +1,13 @@
 import StyleDictionary from "style-dictionary-utils";
-import { SerendieParser } from "./parser.js";
-import "./formatter.js";
+import { SerendieParser } from "./parser";
+import "./formatter";
 
 StyleDictionary.registerParser(SerendieParser);
 
 const myStyleDictionary = StyleDictionary.extend({
   source: ["tokens/**/*.json"],
   platforms: {
-    ts: {
+    serendie: {
       transforms: [
         "attribute/cti",
         "name/cti/camel",

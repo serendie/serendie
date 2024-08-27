@@ -1,4 +1,4 @@
-import { SerendiePreset } from "./src/preset";
+import { SerendiePreset, themeNames, themes } from "./src/preset";
 
 import { defineConfig } from "@pandacss/dev";
 
@@ -16,5 +16,14 @@ export default defineConfig({
   outdir: "styled-system",
   outExtension: "js",
   jsxFramework: "react",
-  presets: [SerendiePreset],
+  presets: [
+    SerendiePreset,
+    {
+      themes,
+    },
+  ],
+  staticCss: {
+    // theme needs static css
+    themes: themeNames,
+  },
 });

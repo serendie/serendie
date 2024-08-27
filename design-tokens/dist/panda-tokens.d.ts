@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 15 Aug 2024 15:18:58 GMT
+ * Generated on Thu, 22 Aug 2024 13:02:01 GMT
  */
 
 export default tokens;
@@ -222,466 +222,6 @@ declare const tokens: {
               "1000": {
                 "value": string
               }
-            }
-          }
-        }
-      },
-      "system": {
-        "color": {
-          "impression": {
-            "primary_hisui": {
-              "value": string
-            },
-            "onPrimary_hisui": {
-              "value": string
-            },
-            "primaryContainer_hisui": {
-              "value": string
-            },
-            "onPrimaryContainer_hisui": {
-              "value": string
-            },
-            "notice_hisui": {
-              "value": string
-            },
-            "onNotice_hisui": {
-              "value": string
-            },
-            "noticeContainer_hisui": {
-              "value": string
-            },
-            "onNoticeContainer_hisui": {
-              "value": string
-            },
-            "negative_hisui": {
-              "value": string
-            },
-            "onNegative_hisui": {
-              "value": string
-            },
-            "negativeContainer_hisui": {
-              "value": string
-            },
-            "onNegativeContainer_hisui": {
-              "value": string
-            },
-            "positive_hisui": {
-              "value": string
-            },
-            "onPositive_hisui": {
-              "value": string
-            },
-            "positiveContainer_hisui": {
-              "value": string
-            },
-            "onPositiveContainer_hisui": {
-              "value": string
-            },
-            "primary": {
-              "value": string
-            },
-            "onPrimary": {
-              "value": string
-            },
-            "primaryContainer": {
-              "value": string
-            },
-            "onPrimaryContainer": {
-              "value": string
-            },
-            "notice": {
-              "value": string
-            },
-            "onNotice": {
-              "value": string
-            },
-            "noticeContainer": {
-              "value": string
-            },
-            "onNoticeContainer": {
-              "value": string
-            },
-            "negative": {
-              "value": string
-            },
-            "onNegative": {
-              "value": string
-            },
-            "negativeContainer": {
-              "value": string
-            },
-            "onNegativeContainer": {
-              "value": string
-            },
-            "positive": {
-              "value": string
-            },
-            "onPositive": {
-              "value": string
-            },
-            "positiveContainer": {
-              "value": string
-            },
-            "onPositiveContainer": {
-              "value": string
-            },
-            "primary_kurikawa": {
-              "value": string
-            },
-            "onPrimary_kurikawa": {
-              "value": string
-            },
-            "primaryContainer_kurikawa": {
-              "value": string
-            },
-            "onPrimaryContainer_kurikawa": {
-              "value": string
-            },
-            "notice_kurikawa": {
-              "value": string
-            },
-            "onNotice_kurikawa": {
-              "value": string
-            },
-            "noticeContainer_kurikawa": {
-              "value": string
-            },
-            "onNoticeContainer_kurikawa": {
-              "value": string
-            },
-            "negative_kurikawa": {
-              "value": string
-            },
-            "onNegative_kurikawa": {
-              "value": string
-            },
-            "negativeContainer_kurikawa": {
-              "value": string
-            },
-            "onNegativeContainer_kurikawa": {
-              "value": string
-            },
-            "positive_kurikawa": {
-              "value": string
-            },
-            "onPositive_kurikawa": {
-              "value": string
-            },
-            "positiveContainer_kurikawa": {
-              "value": string
-            },
-            "onPositiveContainer_kurikawa": {
-              "value": string
-            },
-            "primary_tokusa": {
-              "value": string
-            },
-            "onPrimary_tokusa": {
-              "value": string
-            },
-            "primaryContainer_tokusa": {
-              "value": string
-            },
-            "onPrimaryContainer_tokusa": {
-              "value": string
-            },
-            "notice_tokusa": {
-              "value": string
-            },
-            "onNotice_tokusa": {
-              "value": string
-            },
-            "noticeContainer_tokusa": {
-              "value": string
-            },
-            "onNoticeContainer_tokusa": {
-              "value": string
-            },
-            "negative_tokusa": {
-              "value": string
-            },
-            "onNegative_tokusa": {
-              "value": string
-            },
-            "negativeContainer_tokusa": {
-              "value": string
-            },
-            "onNegativeContainer_tokusa": {
-              "value": string
-            },
-            "positive_tokusa": {
-              "value": string
-            },
-            "onPositive_tokusa": {
-              "value": string
-            },
-            "positiveContainer_tokusa": {
-              "value": string
-            },
-            "onPositiveContainer_tokusa": {
-              "value": string
-            },
-            "primary_usuake": {
-              "value": string
-            },
-            "onPrimary_usuake": {
-              "value": string
-            },
-            "primaryContainer_usuake": {
-              "value": string
-            },
-            "onPrimaryContainer_usuake": {
-              "value": string
-            },
-            "notice_usuake": {
-              "value": string
-            },
-            "onNotice_usuake": {
-              "value": string
-            },
-            "noticeContainer_usuake": {
-              "value": string
-            },
-            "onNoticeContainer_usuake": {
-              "value": string
-            },
-            "negative_usuake": {
-              "value": string
-            },
-            "onNegative_usuake": {
-              "value": string
-            },
-            "negativeContainer_usuake": {
-              "value": string
-            },
-            "onNegativeContainer_usuake": {
-              "value": string
-            },
-            "positive_usuake": {
-              "value": string
-            },
-            "onPositive_usuake": {
-              "value": string
-            },
-            "positiveContainer_usuake": {
-              "value": string
-            },
-            "onPositiveContainer_usuake": {
-              "value": string
-            }
-          },
-          "component": {
-            "surface_hisui": {
-              "value": string
-            },
-            "onSurface_hisui": {
-              "value": string
-            },
-            "onSurfaceVariant_hisui": {
-              "value": string
-            },
-            "inverseSurface_hisui": {
-              "value": string
-            },
-            "inverseOnSurface_hisui": {
-              "value": string
-            },
-            "outline_hisui": {
-              "value": string
-            },
-            "outlineVariant_hisui": {
-              "value": string
-            },
-            "scrim_hisui": {
-              "value": string
-            },
-            "surface": {
-              "value": string
-            },
-            "onSurface": {
-              "value": string
-            },
-            "onSurfaceVariant": {
-              "value": string
-            },
-            "inverseSurface": {
-              "value": string
-            },
-            "inverseOnSurface": {
-              "value": string
-            },
-            "outline": {
-              "value": string
-            },
-            "outlineVariant": {
-              "value": string
-            },
-            "scrim": {
-              "value": string
-            },
-            "surface_kurikawa": {
-              "value": string
-            },
-            "onSurface_kurikawa": {
-              "value": string
-            },
-            "onSurfaceVariant_kurikawa": {
-              "value": string
-            },
-            "inverseSurface_kurikawa": {
-              "value": string
-            },
-            "inverseOnSurface_kurikawa": {
-              "value": string
-            },
-            "outline_kurikawa": {
-              "value": string
-            },
-            "outlineVariant_kurikawa": {
-              "value": string
-            },
-            "scrim_kurikawa": {
-              "value": string
-            },
-            "surface_tokusa": {
-              "value": string
-            },
-            "onSurface_tokusa": {
-              "value": string
-            },
-            "onSurfaceVariant_tokusa": {
-              "value": string
-            },
-            "inverseSurface_tokusa": {
-              "value": string
-            },
-            "inverseOnSurface_tokusa": {
-              "value": string
-            },
-            "outline_tokusa": {
-              "value": string
-            },
-            "outlineVariant_tokusa": {
-              "value": string
-            },
-            "scrim_tokusa": {
-              "value": string
-            },
-            "surface_usuake": {
-              "value": string
-            },
-            "onSurface_usuake": {
-              "value": string
-            },
-            "onSurfaceVariant_usuake": {
-              "value": string
-            },
-            "inverseSurface_usuake": {
-              "value": string
-            },
-            "inverseOnSurface_usuake": {
-              "value": string
-            },
-            "outline_usuake": {
-              "value": string
-            },
-            "outlineVariant_usuake": {
-              "value": string
-            },
-            "scrim_usuake": {
-              "value": string
-            }
-          },
-          "interaction": {
-            "disabled_hisui": {
-              "value": string
-            },
-            "disabledOnSurface_hisui": {
-              "value": string
-            },
-            "selectedSurface_hisui": {
-              "value": string
-            },
-            "hovered_hisui": {
-              "value": string
-            },
-            "hoveredVariant_hisui": {
-              "value": string
-            },
-            "hoveredOnPrimary_hisui": {
-              "value": string
-            },
-            "disabled": {
-              "value": string
-            },
-            "disabledOnSurface": {
-              "value": string
-            },
-            "selectedSurface": {
-              "value": string
-            },
-            "hovered": {
-              "value": string
-            },
-            "hoveredVariant": {
-              "value": string
-            },
-            "hoveredOnPrimary": {
-              "value": string
-            },
-            "disabled_kurikawa": {
-              "value": string
-            },
-            "disabledOnSurface_kurikawa": {
-              "value": string
-            },
-            "selectedSurface_kurikawa": {
-              "value": string
-            },
-            "hovered_kurikawa": {
-              "value": string
-            },
-            "hoveredVariant_kurikawa": {
-              "value": string
-            },
-            "hoveredOnPrimary_kurikawa": {
-              "value": string
-            },
-            "disabled_tokusa": {
-              "value": string
-            },
-            "disabledOnSurface_tokusa": {
-              "value": string
-            },
-            "selectedSurface_tokusa": {
-              "value": string
-            },
-            "hovered_tokusa": {
-              "value": string
-            },
-            "hoveredVariant_tokusa": {
-              "value": string
-            },
-            "hoveredOnPrimary_tokusa": {
-              "value": string
-            },
-            "disabled_usuake": {
-              "value": string
-            },
-            "disabledOnSurface_usuake": {
-              "value": string
-            },
-            "selectedSurface_usuake": {
-              "value": string
-            },
-            "hovered_usuake": {
-              "value": string
-            },
-            "hoveredVariant_usuake": {
-              "value": string
-            },
-            "hoveredOnPrimary_usuake": {
-              "value": string
             }
           }
         }
@@ -1370,6 +910,548 @@ declare const tokens: {
                 "fontWeight": number,
                 "fontFamily": string,
                 "lineHeight": number
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "themes": {
+    "hisui": {
+      "tokens": {
+        "colors": {
+          "sd": {
+            "system": {
+              "color": {
+                "impression": {
+                  "primary": {
+                    "value": string
+                  },
+                  "onPrimary": {
+                    "value": string
+                  },
+                  "primaryContainer": {
+                    "value": string
+                  },
+                  "onPrimaryContainer": {
+                    "value": string
+                  },
+                  "notice": {
+                    "value": string
+                  },
+                  "onNotice": {
+                    "value": string
+                  },
+                  "noticeContainer": {
+                    "value": string
+                  },
+                  "onNoticeContainer": {
+                    "value": string
+                  },
+                  "negative": {
+                    "value": string
+                  },
+                  "onNegative": {
+                    "value": string
+                  },
+                  "negativeContainer": {
+                    "value": string
+                  },
+                  "onNegativeContainer": {
+                    "value": string
+                  },
+                  "positive": {
+                    "value": string
+                  },
+                  "onPositive": {
+                    "value": string
+                  },
+                  "positiveContainer": {
+                    "value": string
+                  },
+                  "onPositiveContainer": {
+                    "value": string
+                  }
+                },
+                "component": {
+                  "surface": {
+                    "value": string
+                  },
+                  "onSurface": {
+                    "value": string
+                  },
+                  "onSurfaceVariant": {
+                    "value": string
+                  },
+                  "inverseSurface": {
+                    "value": string
+                  },
+                  "inverseOnSurface": {
+                    "value": string
+                  },
+                  "outline": {
+                    "value": string
+                  },
+                  "outlineVariant": {
+                    "value": string
+                  },
+                  "scrim": {
+                    "value": string
+                  }
+                },
+                "interaction": {
+                  "disabled": {
+                    "value": string
+                  },
+                  "disabledOnSurface": {
+                    "value": string
+                  },
+                  "selectedSurface": {
+                    "value": string
+                  },
+                  "hovered": {
+                    "value": string
+                  },
+                  "hoveredVariant": {
+                    "value": string
+                  },
+                  "hoveredOnPrimary": {
+                    "value": string
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "konjo": {
+      "tokens": {
+        "colors": {
+          "sd": {
+            "system": {
+              "color": {
+                "impression": {
+                  "primary": {
+                    "value": string
+                  },
+                  "onPrimary": {
+                    "value": string
+                  },
+                  "primaryContainer": {
+                    "value": string
+                  },
+                  "onPrimaryContainer": {
+                    "value": string
+                  },
+                  "notice": {
+                    "value": string
+                  },
+                  "onNotice": {
+                    "value": string
+                  },
+                  "noticeContainer": {
+                    "value": string
+                  },
+                  "onNoticeContainer": {
+                    "value": string
+                  },
+                  "negative": {
+                    "value": string
+                  },
+                  "onNegative": {
+                    "value": string
+                  },
+                  "negativeContainer": {
+                    "value": string
+                  },
+                  "onNegativeContainer": {
+                    "value": string
+                  },
+                  "positive": {
+                    "value": string
+                  },
+                  "onPositive": {
+                    "value": string
+                  },
+                  "positiveContainer": {
+                    "value": string
+                  },
+                  "onPositiveContainer": {
+                    "value": string
+                  }
+                },
+                "component": {
+                  "surface": {
+                    "value": string
+                  },
+                  "onSurface": {
+                    "value": string
+                  },
+                  "onSurfaceVariant": {
+                    "value": string
+                  },
+                  "inverseSurface": {
+                    "value": string
+                  },
+                  "inverseOnSurface": {
+                    "value": string
+                  },
+                  "outline": {
+                    "value": string
+                  },
+                  "outlineVariant": {
+                    "value": string
+                  },
+                  "scrim": {
+                    "value": string
+                  }
+                },
+                "interaction": {
+                  "disabled": {
+                    "value": string
+                  },
+                  "disabledOnSurface": {
+                    "value": string
+                  },
+                  "selectedSurface": {
+                    "value": string
+                  },
+                  "hovered": {
+                    "value": string
+                  },
+                  "hoveredVariant": {
+                    "value": string
+                  },
+                  "hoveredOnPrimary": {
+                    "value": string
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "kurikawa": {
+      "tokens": {
+        "colors": {
+          "sd": {
+            "system": {
+              "color": {
+                "impression": {
+                  "primary": {
+                    "value": string
+                  },
+                  "onPrimary": {
+                    "value": string
+                  },
+                  "primaryContainer": {
+                    "value": string
+                  },
+                  "onPrimaryContainer": {
+                    "value": string
+                  },
+                  "notice": {
+                    "value": string
+                  },
+                  "onNotice": {
+                    "value": string
+                  },
+                  "noticeContainer": {
+                    "value": string
+                  },
+                  "onNoticeContainer": {
+                    "value": string
+                  },
+                  "negative": {
+                    "value": string
+                  },
+                  "onNegative": {
+                    "value": string
+                  },
+                  "negativeContainer": {
+                    "value": string
+                  },
+                  "onNegativeContainer": {
+                    "value": string
+                  },
+                  "positive": {
+                    "value": string
+                  },
+                  "onPositive": {
+                    "value": string
+                  },
+                  "positiveContainer": {
+                    "value": string
+                  },
+                  "onPositiveContainer": {
+                    "value": string
+                  }
+                },
+                "component": {
+                  "surface": {
+                    "value": string
+                  },
+                  "onSurface": {
+                    "value": string
+                  },
+                  "onSurfaceVariant": {
+                    "value": string
+                  },
+                  "inverseSurface": {
+                    "value": string
+                  },
+                  "inverseOnSurface": {
+                    "value": string
+                  },
+                  "outline": {
+                    "value": string
+                  },
+                  "outlineVariant": {
+                    "value": string
+                  },
+                  "scrim": {
+                    "value": string
+                  }
+                },
+                "interaction": {
+                  "disabled": {
+                    "value": string
+                  },
+                  "disabledOnSurface": {
+                    "value": string
+                  },
+                  "selectedSurface": {
+                    "value": string
+                  },
+                  "hovered": {
+                    "value": string
+                  },
+                  "hoveredVariant": {
+                    "value": string
+                  },
+                  "hoveredOnPrimary": {
+                    "value": string
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "tokusa": {
+      "tokens": {
+        "colors": {
+          "sd": {
+            "system": {
+              "color": {
+                "impression": {
+                  "primary": {
+                    "value": string
+                  },
+                  "onPrimary": {
+                    "value": string
+                  },
+                  "primaryContainer": {
+                    "value": string
+                  },
+                  "onPrimaryContainer": {
+                    "value": string
+                  },
+                  "notice": {
+                    "value": string
+                  },
+                  "onNotice": {
+                    "value": string
+                  },
+                  "noticeContainer": {
+                    "value": string
+                  },
+                  "onNoticeContainer": {
+                    "value": string
+                  },
+                  "negative": {
+                    "value": string
+                  },
+                  "onNegative": {
+                    "value": string
+                  },
+                  "negativeContainer": {
+                    "value": string
+                  },
+                  "onNegativeContainer": {
+                    "value": string
+                  },
+                  "positive": {
+                    "value": string
+                  },
+                  "onPositive": {
+                    "value": string
+                  },
+                  "positiveContainer": {
+                    "value": string
+                  },
+                  "onPositiveContainer": {
+                    "value": string
+                  }
+                },
+                "component": {
+                  "surface": {
+                    "value": string
+                  },
+                  "onSurface": {
+                    "value": string
+                  },
+                  "onSurfaceVariant": {
+                    "value": string
+                  },
+                  "inverseSurface": {
+                    "value": string
+                  },
+                  "inverseOnSurface": {
+                    "value": string
+                  },
+                  "outline": {
+                    "value": string
+                  },
+                  "outlineVariant": {
+                    "value": string
+                  },
+                  "scrim": {
+                    "value": string
+                  }
+                },
+                "interaction": {
+                  "disabled": {
+                    "value": string
+                  },
+                  "disabledOnSurface": {
+                    "value": string
+                  },
+                  "selectedSurface": {
+                    "value": string
+                  },
+                  "hovered": {
+                    "value": string
+                  },
+                  "hoveredVariant": {
+                    "value": string
+                  },
+                  "hoveredOnPrimary": {
+                    "value": string
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "usuake": {
+      "tokens": {
+        "colors": {
+          "sd": {
+            "system": {
+              "color": {
+                "impression": {
+                  "primary": {
+                    "value": string
+                  },
+                  "onPrimary": {
+                    "value": string
+                  },
+                  "primaryContainer": {
+                    "value": string
+                  },
+                  "onPrimaryContainer": {
+                    "value": string
+                  },
+                  "notice": {
+                    "value": string
+                  },
+                  "onNotice": {
+                    "value": string
+                  },
+                  "noticeContainer": {
+                    "value": string
+                  },
+                  "onNoticeContainer": {
+                    "value": string
+                  },
+                  "negative": {
+                    "value": string
+                  },
+                  "onNegative": {
+                    "value": string
+                  },
+                  "negativeContainer": {
+                    "value": string
+                  },
+                  "onNegativeContainer": {
+                    "value": string
+                  },
+                  "positive": {
+                    "value": string
+                  },
+                  "onPositive": {
+                    "value": string
+                  },
+                  "positiveContainer": {
+                    "value": string
+                  },
+                  "onPositiveContainer": {
+                    "value": string
+                  }
+                },
+                "component": {
+                  "surface": {
+                    "value": string
+                  },
+                  "onSurface": {
+                    "value": string
+                  },
+                  "onSurfaceVariant": {
+                    "value": string
+                  },
+                  "inverseSurface": {
+                    "value": string
+                  },
+                  "inverseOnSurface": {
+                    "value": string
+                  },
+                  "outline": {
+                    "value": string
+                  },
+                  "outlineVariant": {
+                    "value": string
+                  },
+                  "scrim": {
+                    "value": string
+                  }
+                },
+                "interaction": {
+                  "disabled": {
+                    "value": string
+                  },
+                  "disabledOnSurface": {
+                    "value": string
+                  },
+                  "selectedSurface": {
+                    "value": string
+                  },
+                  "hovered": {
+                    "value": string
+                  },
+                  "hoveredVariant": {
+                    "value": string
+                  },
+                  "hoveredOnPrimary": {
+                    "value": string
+                  }
+                }
               }
             }
           }
