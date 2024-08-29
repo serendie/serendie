@@ -1,6 +1,6 @@
 {
   "name": "@serendie/design-token",
-  "private": true,
+  "description": "the design tokens of Serendie",
   "version": "0.0.0",
   "type": "module",
   "exports": {
