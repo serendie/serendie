@@ -14,7 +14,7 @@ function useParallax(value: MotionValue<number>, distance: number) {
 export const BackgroundShape1: React.FC = () => {
   const { scrollYProgress } = useScroll();
   const rotate = useSpring(
-    useTransform(scrollYProgress, [0, 1], [230, 190], {
+    useTransform(scrollYProgress, [0, 1], [140, 140], {
       clamp: false,
     }),
     { stiffness: 20, damping: 10 }
@@ -32,9 +32,21 @@ export const BackgroundShape1: React.FC = () => {
           width: "2251px",
           height: "2251px",
           scale: "1.2",
-          zIndex: "-1",
+          zIndex: "-2",
           transformOrigin: "center center",
+          pointerEvents: "none",
         })}
+        initial={{ opacity: 0, rotate: 0, scale: 1.2 }}
+        animate={{ opacity: 1, scale: 1, rotate: 140 }}
+        transition={{
+          duration: 1.5,
+          delay: 2.6,
+          rotate: {
+            duration: 0.6,
+            delay: 2.2,
+            ease: "easeInOut",
+          },
+        }}
         style={{
           rotate: rotate,
           y: y,

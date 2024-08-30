@@ -2,6 +2,7 @@
 import { BackgroundShape1 } from "@/components/toppage/BackgroundShape1";
 import { Header } from "@/components/toppage/Header";
 import { Navbar } from "@/components/toppage/Navbar";
+import { IndexContent } from "@/components/toppage/IndexContent";
 import { Shapes1 } from "@/components/toppage/Shapes";
 import TopLayout from "@/layouts/TopLayout.astro";
 
@@ -11,5 +12,11 @@ import TopLayout from "@/layouts/TopLayout.astro";
 
 	<Navbar />
 	<Header client:only/>
+
+	<IndexContent client:load />
+	<IndexContent client:load />
+	<IndexContent client:load />
+	<IndexContent client:load />
+	<IndexContent client:load />
 
 </TopLayout>

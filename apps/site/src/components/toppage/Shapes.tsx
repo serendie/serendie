@@ -1,4 +1,4 @@
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { cubicBezier } from "framer-motion/dom";
 import { useEffect, useState } from "react";
 
@@ -10,12 +10,12 @@ const transition = () => ({
 
 const shapeMotionPropsRepeatDelay = () => {
   // 3.0-5.9秒のランダムな値
-  return Math.floor(Math.random() * 3) + 3;
+  return Math.floor(Math.random() * 3) + 5;
 };
 
 const shapeMotionPropsRotate = () => {
   // 5-10度のランダムな値
-  return Math.floor(Math.random() * 5) + 5;
+  return Math.floor(Math.random() * 5) + 1;
 };
 
 const shapeMotionProps = () => ({
@@ -35,25 +35,44 @@ const shapeMotionProps = () => ({
 
 export const Shapes = () => {
   const [state, setState] = useState<"in" | "animate">("in");
-  const { scrollYProgress } = useScroll();
 
   useEffect(() => {
-    const unsubscribe = scrollYProgress.onChange((v) => {
-      if (v > 0.1) {
-        setState("animate");
-      } else {
-        setState("in");
-      }
-    });
+    // 2s後にアニメーションを開始
+    const timeoutId = setTimeout(() => {
+      setState("animate");
+    }, 2300);
 
-    return unsubscribe;
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (
     <div>
       {[Shapes1, Shapes2, Shapes3, Shapes4, Shapes5, Shapes6].map(
         (Shape, index) => (
-          <Shape key={index} state={state} />
+          <motion.div
+            key={index}
+            initial={{
+              opacity: 0,
+              y: 40,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.6,
+              delay: 0.7 + 0.15 * index,
+              ease: cubicBezier(0.84, 0, 0.16, 1),
+              y: {
+                duration: 0.8,
+                delay: 0.7 + 0.15 * index,
+              },
+            }}
+          >
+            <Shape state={state} />
+          </motion.div>
         )
       )}
     </div>
@@ -140,7 +159,7 @@ export const Shapes2: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
         transformOrigin: "center center",
       }}
       initial={{
-        top: "40vh",
+        top: "80vh",
         left: "90%",
         rotate: 100,
       }}
@@ -268,8 +287,8 @@ export const Shapes4: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
         transformOrigin: "center center",
       }}
       initial={{
-        top: "70vh",
-        left: "50%",
+        top: "80vh",
+        left: "30%",
         rotate: 100,
       }}
       animate={state}
@@ -392,7 +411,7 @@ export const Shapes6: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
       }}
       initial={{
         top: "70vh",
-        left: "35%",
+        left: "5%",
         rotate: 23.2,
       }}
       animate={state}
