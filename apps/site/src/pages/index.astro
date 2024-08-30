@@ -1,16 +1,17 @@
 ---
-import { BackgroundShape1 } from "@/components/toppage/BackgroundShape1";
 import { Header } from "@/components/toppage/Header";
 import { Navbar } from "@/components/toppage/Navbar";
 import { IndexContent } from "@/components/toppage/IndexContent";
-import { Shapes1 } from "@/components/toppage/Shapes";
 import TopLayout from "@/layouts/TopLayout.astro";
+import { NavbarWrapper } from "@/components/toppage/NavbarWrapper";
 
 
 ---
 <TopLayout>
 
-	<Navbar />
+	<NavbarWrapper client:load>
+		<Navbar />
+	</NavbarWrapper>
 	<Header client:only/>
 
 	<IndexContent client:load />
