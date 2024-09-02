@@ -29,8 +29,8 @@ export const BackgroundShape1: React.FC = () => {
           position: "absolute",
           top: "0",
           left: "0",
-          width: "2251px",
-          height: "2251px",
+          width: "100vw",
+          height: "100vw",
           scale: "1.2",
           zIndex: "-2",
           transformOrigin: "center center",
@@ -53,8 +53,6 @@ export const BackgroundShape1: React.FC = () => {
         }}
       >
         <svg
-          width="2251"
-          height="2251"
           viewBox="0 0 2251 2251"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

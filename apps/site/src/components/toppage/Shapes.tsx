@@ -223,10 +223,9 @@ export const Shapes3: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
         width: "123px",
         height: "144px",
         zIndex: "-1",
-        transformOrigin: "center center",
       }}
       initial={{
-        top: "10%",
+        // top: "10%",
         left: "95%",
         rotate: 100,
       }}
@@ -234,18 +233,18 @@ export const Shapes3: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
       variants={{
         in: {
           rotate: [0, 30, 0],
-          x: ["-12px", "12px", "12px", "-12px"],
-          y: ["-12px", "12px", "12px", "-12px"],
+          x: [-12, 12, 12, -12],
+          y: [-12, 12, 12, -12],
           transition: {
             x: {
               duration: 7,
-              delay: shapeMotionPropsRotate() * 0.1,
+              delay: 1,
               ease: cubicBezier(0.84, 0, 0.16, 1),
               repeat: Infinity,
             },
             y: {
               duration: 7,
-              delay: shapeMotionPropsRotate() * 0.1,
+              delay: 1,
               ease: cubicBezier(0.84, 0, 0.16, 1),
               repeat: Infinity,
             },
@@ -257,7 +256,7 @@ export const Shapes3: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
           },
         },
         animate: {
-          top: "55vh",
+          top: "55%",
           left: "80%",
           rotate: -34.6,
         },
