@@ -1,0 +1,13 @@
+---
+const fileName = Astro.url.pathname.split("/").pop();
+
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+const basePath = `/components/${Astro.params.slug}`;
+const currentPath = basePath + (name === "index" ? "" : `/${fileName}`);
+---
+
+{currentPath === Astro.url.pathname ? <slot /> : null}

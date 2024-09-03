@@ -7,12 +7,17 @@ description: 説明テキストがはいります説明テキストがはいり�
 import Code from "@/layouts/Code.astro";
 import { TypeSample } from "@/sampleCode/Accordion/TypeSample";
 import typeSampleRaw from "@/sampleCode/Accordion/TypeSample.tsx?raw";
+import SectionPage from "@/components/SectionPage.astro";
 
-<Code
-  title="Types"
-  description="説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります"
-  code={typeSampleRaw}
-  storyPath="/story/components-accordion--default"
->
-  <TypeSample client:load />
-</Code>
+<SectionPage name="index">
+  <Code
+    title="Types"
+    description="説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります"
+    code={typeSampleRaw}
+    storyPath="/story/components-accordion--default"
+  >
+    <TypeSample client:load />
+  </Code>
+</SectionPage>
+
+<SectionPage name="guideline">ガイドラインページです</SectionPage>
