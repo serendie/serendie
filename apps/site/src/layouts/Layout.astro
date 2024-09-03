@@ -10,7 +10,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
-const docs = await getCollection("docs");
+const components = await getCollection("components");
 
 const Body = styled("body", {
   base: {
@@ -157,10 +157,10 @@ const ListItemLink = styled("a", {
         <SidebarLabel>Components</SidebarLabel>
         <List>
           {
-            docs.map((item) => (
+            components.map((item) => (
               <li>
                 <ListItemLink
-                  href={`/docs/${item.slug}`}
+                  href={`/components/${item.slug}`}
                   active={item.data.title === title}
                 >
                   {item.data.title}
