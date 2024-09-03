@@ -1,0 +1,52 @@
+---
+import { styled } from "@serendie/ui/jsx";
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const docs = await getCollection("docs");
+  return docs.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const ComponentName = styled("h2", {
+  base: {
+    textStyle: "sd.system.typography.title.medium_expanded",
+    mb: "sd.system.dimension.spacing.medium",
+  },
+});
+
+const Description = styled("p", {
+  base: {
+    textStyle: "sd.system.typography.body.small_expanded",
+    mb: "sd.system.dimension.spacing.threeExtraLarge",
+  },
+});
+
+const Container = styled("div", {
+  base: {
+    maxW: "769px",
+  },
+});
+---
+
+<Layout title={entry.data.title}>
+  <Container>
+    {
+      entry.data.componentName && (
+        <ComponentName>{entry.data.componentName}</ComponentName>
+      )
+    }
+    {
+      entry.data.description && (
+        <Description>{entry.data.description}</Description>
+      )
+    }
+    <Content />
+  </Container>
+</Layout>
