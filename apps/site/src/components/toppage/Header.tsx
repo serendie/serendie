@@ -12,7 +12,7 @@ export const Header: React.FC = () => {
       color: "sd.system.color.impression.onPrimary",
       position: "relative",
       width: "100%",
-      height: "150vh",
+      height: "100vh",
       zIndex: "0",
     },
   });
