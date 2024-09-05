@@ -132,7 +132,7 @@ export const Header: React.FC = () => {
             <Button
               className={css({
                 bg: "white",
-                color: "sd.system.color.component.onSurface",
+                color: "sd.system.color.component.onSurface !important",
               })}
             >
               スターターガイド

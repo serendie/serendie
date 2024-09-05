@@ -20,6 +20,12 @@ const contactCardStyle = sva({
       textAlign: "center",
       alignItems: "center",
       justifyContent: "center",
+
+      "&:hover": {
+        "& svg": {
+          rotate: "45deg",
+        },
+      },
     },
     img: {
       width: "64px",
@@ -49,7 +55,9 @@ export const ContactCard: React.FC = () => {
           width: "140%",
           height: "140%",
           rotate: "225deg",
+          zIndex: -1,
           aspectRatio: "1 / 1",
+          transition: "rotate 0.3s",
         })}
       />
       <img
