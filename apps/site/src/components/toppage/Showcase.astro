@@ -1,0 +1,24 @@
+---
+import { styled } from "@serendie/ui/jsx"
+import { ShowcaseCarousel } from "./ShowcaseCarousel"
+
+const ShowcaseContainer = styled("div", {
+  base: {
+    pb: '160px'
+  },
+})
+
+const Title = styled("h2", {
+  base: {
+    textStyle: "sd.system.typography.headline.small_expanded",
+    color: 'sd.system.color.impression.onPrimary',
+    fontWeight: 'bold',
+  },
+})
+---
+
+<ShowcaseContainer>
+  <Title>Serendie Design Systemが使われている事例</Title>
+
+  <ShowcaseCarousel />
+</ShowcaseContainer>

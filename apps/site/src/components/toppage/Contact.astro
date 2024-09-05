@@ -1,0 +1,51 @@
+---
+import { styled } from "@serendie/ui/jsx";
+import { ContactCard } from "./ContactCard";
+
+const ContactContainer = styled('div', {
+  base: {
+    pb: '160px',
+  }
+})
+
+const Title = styled("h2", {
+  base: {
+    textStyle: "sd.system.typography.headline.small_expanded",
+    color: 'sd.system.color.impression.onPrimary',
+    fontWeight: 'bold',
+    width: '100%',
+    mb: '24px',
+  },
+})
+const Description = styled("p", {
+  base: {
+    textStyle: "sd.system.typography.body.small_expanded",
+    color: 'sd.system.color.impression.onPrimary',
+  },
+})
+
+const ContactCardGrid = styled('div', {
+  base: {
+    mt: '140px',
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 200px)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    
+    gap: '92px',
+  },
+})
+---
+
+<ContactContainer>
+  <Title>
+    問い合わせ窓口
+  </Title>
+  <Description>疑問点や改善点などのお問い合わせはこちらまでご連絡ください。社内の方はSlack、社外の方はGitHubかメールをご利用ください。</Description>
+
+  <ContactCardGrid>
+    <ContactCard />
+    <ContactCard />
+    <ContactCard />
+  </ContactCardGrid>
+</ContactContainer>
