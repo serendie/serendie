@@ -23,7 +23,7 @@ const contactCardStyle = sva({
 
       "&:hover": {
         "& svg": {
-          rotate: "45deg",
+          rotate: "405deg",
         },
       },
     },
