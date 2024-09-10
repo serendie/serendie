@@ -1,23 +1,8 @@
 {
   "name": "@serendie/design-token",
   "description": "the design tokens of Serendie",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
-  "exports": {
-    ".": {
-      "import": "./dist/tokens.js",
-      "types": "./dist/tokens.d.ts"
-    },
-    "./panda": {
-      "import": "./dist/panda-tokens.js",
-      "types": "./dist/panda-tokens.d.ts"
-    },
-    "./token-list": {
-      "import": "./dist/token-list.js",
-      "types": "./dist/token-list.d.ts"
-    },
-    "./tokens.css": "./dist/tokens.css"
-  },
   "scripts": {
     "build": "tsx style_dictonary/build.ts",
     "test": "vitest",
@@ -37,5 +22,23 @@
     "dotenv": "^16.4.5",
     "tsx": "^4.7.2",
     "typescript": "^5.5.3"
-  }
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/tokens.js",
+      "types": "./dist/tokens.d.ts"
+    },
+    "./panda": {
+      "import": "./dist/panda-tokens.js",
+      "types": "./dist/panda-tokens.d.ts"
+    },
+    "./token-list": {
+      "import": "./dist/token-list.js",
+      "types": "./dist/token-list.d.ts"
+    },
+    "./tokens.css": "./dist/tokens.css"
+  },
+  "files": [
+    "dist"
+  ]
 }
