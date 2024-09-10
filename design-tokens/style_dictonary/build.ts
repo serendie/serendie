@@ -1,6 +1,8 @@
 import StyleDictionary from "style-dictionary-utils";
 import { SerendieParser } from "./parser";
 import "./formatter";
+import "./transformer/cssShadow";
+import "./transformer/cssTypography";
 
 StyleDictionary.registerParser(SerendieParser);
 
@@ -12,6 +14,26 @@ const myStyleDictionary = StyleDictionary.extend({
     },
   },
   platforms: {
+    css: {
+      transformGroup: "css",
+      transforms: [
+        "attribute/cti",
+        "name/cti/kebab",
+        "color/css",
+        "cssShadow",
+        "cssTypography",
+      ],
+      buildPath: "dist/",
+      options: {
+        fileHeader: `myFileHeader`,
+      },
+      files: [
+        {
+          destination: "tokens.css",
+          format: "css/variables",
+        },
+      ],
+    },
     serendie: {
       options: {
         fileHeader: `myFileHeader`,

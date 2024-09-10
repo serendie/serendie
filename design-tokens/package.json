@@ -15,7 +15,8 @@
     "./token-list": {
       "import": "./dist/token-list.js",
       "types": "./dist/token-list.d.ts"
-    }
+    },
+    "./tokens.css": "./dist/tokens.css"
   },
   "scripts": {
     "build": "tsx style_dictonary/build.ts",
