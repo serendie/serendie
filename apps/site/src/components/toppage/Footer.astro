@@ -4,109 +4,183 @@ import { styled } from "@serendie/ui/jsx"
 
 const FooterWrapper = styled("footer",{
   base: {
-    pt: 120,
-    pb: 40,
+    pt: 32,
+    pb: 32,
+    px: 24,
     bg: 'sd.reference.color.scale.blue.800',
     borderTopRadius: 'sd.system.dimension.radius.extraLarge',
+    expanded: {
+      pt: 120,
+      pb: 40,
+    }
   }
 })
 const FooterContainer = styled("div",{
   base: {
-    maxWidth: "calc(100vw - 24.44%)",
+    maxWidth: "1640px",
     margin: "0 auto",
     display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
+    gridTemplateColumns: "repeat(2, 1fr)",
     gridTemplateRows: "auto auto",
-    rowGap: '100px',
+    rowGap: '40px',
     color: "sd.system.color.impression.onPrimaryContainer",
+    expanded: {
+      gridTemplateColumns: "repeat(3, 1fr)",
+      rowGap: '100px',
+    }
   }
 })
 const FooterTitle = styled("div",{
   base: {
     textStyle: "sd.system.typography.headline.large_expanded",
+    fontSize: "24px",
+    fontWeight: "bold",
+    gridColumn: "1 / 3",
+    expanded: {
+      gridColumn: "1 / 2",
+      textStyle: "sd.system.typography.headline.large_expanded",
+    }
   }
 })
 const FooterLinks = styled("div",{
   base: {
-    gridColumn: "3 / 4",
     display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
+    gridColumn: "1 / 3",
+    gridTemplateColumns: "repeat(2, 1fr)",
     gap: 16,
     textStyle: "sd.system.typography.body.extraSmall_expanded",
     '& h2': {
       textStyle: "sd.system.typography.title.small_expanded",
-      mb: '24px',
+      mb: '16px',
+      expanded: {
+        mb: '24px',
+      }
     },
     '& ul': {
       listStyle: "none",
       padding: 0,
-      '& li': {
-        mb: '16px',
-      }
     },
+    expanded: {
+      gridColumn: "2 / 4",
+      gridTemplateColumns: "repeat(5, 1fr)",
+    }
   }
 })
+
+const FooterLinksLi = styled("li",{
+  base: {
+    display: "none",
+    mb: '16px',
+    expanded: {
+      display: "block",
+      mb: '16px',
+    }
+  }
+})
+
 const FooterCopyright = styled("div",{
   base: {
     gridColumn: "1 / 4",
-    textAlign: "right",
+    textAlign: "left",
+    mt: 120,
+    expanded: {
+      textAlign: "right",
+      mt: 0,
+    }
   }
 })
 
 const footerLink = [
   {
-    title: "基本情報",
-    links: [
+    "title": "About",
+    "links": [
       {
-        title : "目指す地点",
-        url : "#"
+        "title": "Serendie Design Systemとは",
+        "url": "#"
       },
       {
-        title : "スターターガイド",
-        url : "#"
+        "title": "ニュース・イベント",
+        "url": "#"
       },
       {
-        title : "運用と組織",
-        url : "#"
+        "title": "ミートアップ",
+        "url": "#"
+      },
+      {
+        "title": "適用事例",
+        "url": "#"
       }
     ]
   },
   {
-    title: "基本情報",
-    links: [
+    "title": "Get Started",
+    "links": [
       {
-        title : "目指す地点",
-        url : "#"
-      },
-      {
-        title : "スターターガイド",
-        url : "#"
-      },
-      {
-        title : "運用と組織",
-        url : "#"
+        "title": "スターターガイド",
+        "url": "#"
       }
     ]
   },
   {
-    title: "基本情報",
-    links: [
+    "title": "Foundation",
+    "links": [
       {
-        title : "目指す地点",
-        url : "#"
+        "title": "Design Token",
+        "url": "#"
       },
       {
-        title : "スターターガイド",
-        url : "#"
+        "title": "Color",
+        "url": "#"
       },
       {
-        title : "運用と組織",
-        url : "#"
+        "title": "Design Token",
+        "url": "#"
+      },
+      {
+        "title": "Theming",
+        "url": "#"
+      },
+      {
+        "title": "Typography",
+        "url": "#"
+      },
+      {
+        "title": "Dimension",
+        "url": "#"
+      },
+      {
+        "title": "Elevation",
+        "url": "#"
+      }
+    ]
+  },
+  {
+    "title": "Components",
+    "links": [
+      {
+        "title": "コンポーネントとは",
+        "url": "#"
+      }
+    ]
+  },
+  {
+    "title": "Contribution",
+    "links": [
+      {
+        "title": "Figma",
+        "url": "#"
+      },
+      {
+        "title": "React",
+        "url": "#"
+      },
+      {
+        "title": "ドキュメント",
+        "url": "#"
       }
     ]
   }
 ]
-
 ---
 
 <FooterWrapper>
@@ -118,9 +192,9 @@ const footerLink = [
           <h2>{link.title}</h2>
           <ul>
             {link.links.map((item, index) => (
-              <li>
+              <FooterLinksLi>
                 <a href={item.url}>{item.title}</a> 
-              </li>
+              </FooterLinksLi>
             ))}
           </ul>
         </div>

@@ -16,14 +16,17 @@ const TitleContainer = styled('div', {
     gridTemplateColumns: '1fr auto',
     gap: '16px',
     alignItems: 'center',
-    mb: '24px',
+    mb: '40px',
+    _expanded: {
+      mb: '24px',
+    }
   },
 })
 
 const Title = styled("h2", {
   base: {
     textStyle: "sd.system.typography.headline.small_expanded",
-    color: 'sd.system.color.impression.onPrimary',
+    color: "sd.reference.color.scale.blue.900",
     fontWeight: 'bold',
     width: '100%',
   },
@@ -32,8 +35,11 @@ const Title = styled("h2", {
 const ReleasenoteGrid = styled('div', {
   base: {
     display: 'grid',
-    gridTemplateColumns: '1fr 9fr auto auto',
     gap: 'sd.system.dimension.spacing.medium',
+    gridTemplateColumns: '1fr 9fr auto',
+    _expanded: {
+      gridTemplateColumns: '1fr 9fr auto auto',
+    }
   },
 })
 
@@ -42,40 +48,59 @@ const Note = styled('div', {
     display: 'grid',
     gridColumn: '1 / 5',
     gridTemplateColumns: "subgrid",
-    gap: '0',
+    gap: '12px',
     background: 'sd.system.color.component.surface',
-    py: 'sd.system.dimension.spacing.extraSmall',
-    px: 'sd.system.dimension.spacing.large',
-    borderRadius: '130px'
+    py: '16px',
+    px: '20px',
+    borderRadius: '130px',
+    _expanded: {
+      gap: '0',
+      py: 'sd.system.dimension.spacing.extraSmall',
+      px: 'sd.system.dimension.spacing.large',
+    }
   },
 })
 
 const NoteTime = styled('time', {
   base: {
-    p: 'sd.system.dimension.spacing.small',
+    p: '0',
     textStyle: 'sd.system.typography.body.small_expanded',
     alignContent: 'center',
+    _expanded: {
+      p: 'sd.system.dimension.spacing.small',
+    }
   },
 })
 
 const NoteTitle = styled('h2', {
   base: {
-    p: 'sd.system.dimension.spacing.small',
+    p: '0',
     textStyle: 'sd.system.typography.body.small_expanded',
     alignContent: 'center',
+    _expanded: {
+      p: 'sd.system.dimension.spacing.small',
+    }
   },
 })
 
 const NoteBadge = styled('div', {
   base: {
-    p: 'sd.system.dimension.spacing.small',
+    p: '0',
+    alignContent: 'center',
+    _expanded: {
+      p: 'sd.system.dimension.spacing.small',
+    }
   },
 })
 
 const NoteIcon = styled('div', {
   base: {
-    p: '12px',
-    width: '48px',
+    display: 'none',
+    _expanded: {
+      display: 'block',
+      p: '12px',
+      width: '48px',
+    }
   },
 })
 ---
@@ -85,7 +110,7 @@ const NoteIcon = styled('div', {
     <Button
       styleType="ghost"
       className={css({
-        color: 'sd.system.color.impression.onPrimary',
+        color: 'sd.reference.color.scale.blue.900',
       })}
     >
       すべて見る

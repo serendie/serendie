@@ -2,24 +2,30 @@ import { css, sva } from "@serendie/ui/css";
 import { TitleShape } from "./LinkContent";
 
 const contactCardStyle = sva({
-  slots: ["container", "img", "title", "link"],
+  slots: ["container", "img", "title", "link", "grid"],
   base: {
     container: {
       position: "relative",
       bg: "sd.system.color.component.surface",
       borderRadius: "50%",
       aspectRatio: "1 / 1",
-      maxWidth: "200px",
+      maxWidth: "300px",
+      width: "110px",
 
-      display: "grid",
-      gridTemplateRows: "64px auto auto",
-      gap: "4px",
       height: "fit-content",
-      px: "24px",
-      py: "24px",
       textAlign: "center",
+      display: "flex",
       alignItems: "center",
       justifyContent: "center",
+      zIndex: 1,
+      cursor: "pointer",
+
+      mx: "auto",
+
+      expanded: {
+        width: "100%",
+        maxWidth: "160px",
+      },
 
       "&:hover": {
         "& svg": {
@@ -28,22 +34,46 @@ const contactCardStyle = sva({
       },
     },
     img: {
-      width: "64px",
-      height: "64px",
-      p: "10px",
+      width: "32px",
+      height: "32px",
       m: "auto",
+      expanded: {
+        width: "64px",
+        height: "64px",
+      },
     },
     title: {
-      textStyle: "sd.system.typography.title.small_expanded",
+      textStyle: "sd.system.typography.body.extraSmall_expanded",
       fontWeight: "bold",
+      whiteSpace: "pre-wrap",
+      expanded: {
+        textStyle: "sd.system.typography.body.small_expanded",
+      },
     },
     link: {
       textStyle: "sd.system.typography.body.extraSmall_expanded",
     },
+    grid: {
+      display: "grid",
+      gridTemplateRows: "32px auto",
+      gap: "4px",
+      expanded: {
+        gridTemplateRows: "64px auto",
+        gap: "8px",
+      },
+    },
   },
 });
 
-export const ContactCard: React.FC = () => {
+export const ContactCard: React.FC<{
+  icon: string;
+  title: string;
+  link: string;
+}> = ({
+  icon,
+  title,
+  // link
+}) => {
   const styles = contactCardStyle();
   return (
     <div className={styles.container}>
@@ -60,12 +90,10 @@ export const ContactCard: React.FC = () => {
           transition: "rotate 0.3s",
         })}
       />
-      <img
-        className={styles.img}
-        src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg"
-      />
-      <h2 className={styles.title}>お問い合わせ</h2>
-      <p className={styles.link}>お問い合わせフォーム</p>
+      <div className={styles.grid}>
+        <img className={styles.img} src={icon} />
+        <h2 className={styles.title}>{title}</h2>
+      </div>
     </div>
   );
 };

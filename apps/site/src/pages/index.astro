@@ -8,10 +8,16 @@ import Showcase from "@/components/toppage/Showcase.astro";
 import { styled } from "@serendie/ui/jsx";
 import ReleaseNote from "@/components/toppage/ReleaseNote.astro";
 import Contact from "@/components/toppage/Contact.astro";
+import { BackgroundShape } from "@/components/toppage/BackgroundShape";
 
 const Container = styled('div', {
 	base: {
-		px: "120px",
+		px: "24px",
+    maxWidth: "calc(1640px + 240px)",
+		mx: "auto",
+		expanded: {
+			px: "120px",
+		},
 	}
 })
 
@@ -84,7 +90,7 @@ const content = [
 	<NavbarWrapper client:load>
 		<Navbar />
 	</NavbarWrapper>
-	<Header client:only/>
+	<Header client:load/>
 
 	<Container>
 		<LinkContent content={content} client:only/>
@@ -95,5 +101,7 @@ const content = [
 
 		<Contact />
 	</Container>
+
+	<BackgroundShape client:load />
 
 </TopLayout>

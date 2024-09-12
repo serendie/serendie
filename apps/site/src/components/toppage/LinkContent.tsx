@@ -1,8 +1,17 @@
-import { css, sva } from "@serendie/ui/css";
+import { css, cx, sva } from "@serendie/ui/css";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useRef, useState } from "react";
 
-const linkContentStyle = sva({
+type LinkContentProps = {
+  content: {
+    titleEn: string;
+    titleJa: string;
+    description: string;
+    links: { title: string; href: string }[];
+  }[];
+};
+
+const linkContentExpandedStyle = sva({
   slots: [
     "wrapper",
     "container",
@@ -18,27 +27,41 @@ const linkContentStyle = sva({
     "main",
   ],
   base: {
-    wrapper: {},
+    wrapper: {
+      display: "none",
+      mt: "-25vh",
+      expanded: {
+        display: "block",
+      },
+    },
     container: {
       position: "relative",
-      height: "300vh",
       display: "grid",
-      gridTemplateColumns: "320px 1fr",
       gap: "10%",
-      color: "sd.system.color.impression.onPrimaryContainer",
+      color: "sd.reference.color.scale.blue.900",
+      height: "300vh",
+      gridTemplateColumns: "320px 1fr",
+      gridTemplateRows: "1fr",
     },
     sidebar: {
-      height: "100vh",
       position: "sticky",
       top: 0,
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
+      height: "50vh",
+      expanded: {
+        height: "100vh",
+      },
     },
     titleWrapper: { my: "auto" },
     title: {
       position: "relative",
       aspectRatio: "1 / 1",
+      maxWidth: "240px",
+      expanded: {
+        maxWidth: "inherit",
+      },
     },
     titleDescription: {
       fontSize: "20px",
@@ -46,6 +69,9 @@ const linkContentStyle = sva({
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)",
+      fontWeight: "bold",
+      letterSpacing: "0.1em",
+      textTransform: "uppercase",
     },
     titleShape: {
       position: "absolute",
@@ -65,35 +91,110 @@ const linkContentStyle = sva({
     mainWrapper: {
       position: "sticky",
       top: 0,
-      height: "100vh",
+      height: "50vh",
+      expanded: {
+        height: "100vh",
+      },
     },
     mainContainer: {
       position: "relative",
-      height: "100vh",
+      height: "50vh",
+      expanded: {
+        height: "100vh",
+      },
     },
     main: {
       position: "absolute",
-      height: "100vh",
       width: "100%",
       display: "flex",
       gap: "10%",
-      justifyContent: "center",
+      justifyContent: "flex-start",
       alignItems: "center",
       flexWrap: "wrap",
       alignContent: "center",
+      height: "50vh",
+      expanded: {
+        height: "100vh",
+      },
     },
   },
 });
 
-export const LinkContent: React.FC<{
-  content: {
-    titleEn: string;
-    titleJa: string;
-    description: string;
-    links: { title: string; href: string }[];
-  }[];
-}> = ({ content }) => {
-  const styles = linkContentStyle();
+export const LinkContent: React.FC<LinkContentProps> = ({ content }) => {
+  return (
+    <>
+      <LinkContentExpanded content={content} />
+      <LinkContentCompact content={content} />
+    </>
+  );
+};
+
+const linkContentCompactStyle = sva({
+  slots: ["wrapper", "container", "titleWrapper"],
+  base: {
+    wrapper: {
+      position: "relative",
+      display: "grid",
+      height: "fit-content",
+      gap: "128px",
+      py: "7vw",
+      mb: "160px",
+      expanded: {
+        display: "none",
+      },
+    },
+    container: {
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr",
+      gap: "64px 36px",
+    },
+    titleWrapper: {
+      alignItems: "center",
+      mb: "64px",
+      "& > div": {
+        margin: "auto",
+      },
+    },
+  },
+});
+
+const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
+  const stylesExpanded = linkContentExpandedStyle();
+  const styles = linkContentCompactStyle();
+
+  return (
+    <div className={styles.wrapper}>
+      {content.map((c, index) => (
+        <div>
+          <div className={styles.titleWrapper}>
+            <div className={stylesExpanded.title}>
+              <div className={stylesExpanded.titleDescription}>
+                <h2>0{index + 1}</h2>
+                <p>{content[index].titleEn}</p>
+              </div>
+              <div className={stylesExpanded.titleShape}>
+                <TitleShape
+                  style={{
+                    transition: "rotate 0.3s",
+                    rotate: `${index * 90 - 45}deg`,
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+          <div className={styles.container}>
+            {c.links.map((link) => (
+              <ContentCard title={link.title} />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const LinkContentExpanded: React.FC<LinkContentProps> = ({ content }) => {
+  const styles = linkContentExpandedStyle();
   const [index, setIndex] = useState(0);
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -104,7 +205,6 @@ export const LinkContent: React.FC<{
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     //content.lengthで割り、indexの値を0, 1, 2にする
     const index = Math.floor(latest * content.length);
-    console.log(index);
     if (index < 0 || index >= content.length) return;
     setIndex(index);
   });
@@ -187,21 +287,23 @@ export const TitleShape: React.FC<
       viewBox="0 0 302 302"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      className={cx(
+        className,
+        css({
+          fill: "sd.reference.color.scale.blue.400",
+        })
+      )}
       {...props}
     >
       <g
-        style={
-          {
-            // mixBlendMode: "multiply",
-          }
-        }
+        style={{
+          mixBlendMode: "multiply",
+        }}
       >
         <path
           fillRule="evenodd"
           clipRule="evenodd"
           d="M44.2269 44.2269C72.5449 15.9089 110.952 -2.87138e-06 151 0C191.048 2.87139e-06 229.455 15.9089 257.773 44.2269C286.091 72.5449 302 110.952 302 151H285.942C285.942 115.211 271.725 80.8881 246.418 55.5816C221.112 30.275 186.789 16.058 151 16.0579C115.211 16.0579 80.8881 30.275 55.5816 55.5815C30.275 80.8881 16.058 115.211 16.0579 151L0 151C6.22133e-06 110.952 15.9089 72.5448 44.2269 44.2269Z"
-          fill="#0050AF"
         />
       </g>
     </svg>
@@ -217,10 +319,13 @@ const ContentCard: React.FC<{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gap: "48px",
-        color: "white",
+        color: "sd.reference.color.scale.blue.900",
         cursor: "pointer",
         height: "fit-content",
+        gap: "14px",
+        expanded: {
+          gap: "48px",
+        },
       })}
     >
       <h2
@@ -234,8 +339,12 @@ const ContentCard: React.FC<{
       <div
         className={css({
           position: "relative",
-          width: 172,
-          height: 172,
+          width: "80%",
+          aspectRatio: "1 / 1",
+          expanded: {
+            width: 172,
+            height: 172,
+          },
         })}
       >
         <TitleShape
@@ -255,8 +364,6 @@ const ContentCard: React.FC<{
           })}
         />
         <svg
-          width="172"
-          height="172"
           viewBox="0 0 172 172"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

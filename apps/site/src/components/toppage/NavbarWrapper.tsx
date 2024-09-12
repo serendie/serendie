@@ -15,6 +15,9 @@ export const NavbarWrapper: React.FC<{
         delay: 2.6,
         duration: 0.6,
       }}
+      style={{
+        z: 2,
+      }}
     >
       {children}
     </motion.div>

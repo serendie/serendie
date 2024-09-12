@@ -3,12 +3,19 @@ import Footer from "@/components/toppage/Footer.astro";
 import "@/index.css";
 import { styled } from "@serendie/ui/jsx";
 
-const Container = styled('html', {
+const Container = styled('div', {
   base: {
     position: "relative",
     minH: "200vh",
-    background: "#0066DF",
-    overflowX: "hidden",
+    background: "#EFF2FC",
+    zIndex: 1,
+    overflow: "clip",
+  }
+})
+const Wrapper = styled('div', {
+  base: {
+    // overflowX: "hidden",
+    maxWidth: "100vw",
   }
 })
 ---
@@ -16,12 +23,15 @@ const Container = styled('html', {
 <!doctype html>
 <html lang="ja">
   <head>
+    <meta name="viewport" content="width=device-width" />
     <meta charset="UTF-8" />
   </head>
   <body>
-    <Container>
-      <slot />
-    </Container>
+    <Wrapper>
+      <Container>
+        <slot />
+      </Container>
+    </Wrapper>
 
     <Footer />
   </body>

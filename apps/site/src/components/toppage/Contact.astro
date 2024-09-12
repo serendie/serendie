@@ -11,41 +11,85 @@ const ContactContainer = styled('div', {
 const Title = styled("h2", {
   base: {
     textStyle: "sd.system.typography.headline.small_expanded",
-    color: 'sd.system.color.impression.onPrimary',
+    color: "sd.reference.color.scale.blue.900",
+    fontWeight: 'bold',
+    width: '100%',
+    mb: '60px',
+  },
+})
+
+const Subtitle = styled("h2", {
+  base: {
+    textStyle: "sd.system.typography.title.medium_compact",
+    color: "sd.reference.color.scale.blue.900",
     fontWeight: 'bold',
     width: '100%',
     mb: '24px',
-  },
-})
-const Description = styled("p", {
-  base: {
-    textStyle: "sd.system.typography.body.small_expanded",
-    color: 'sd.system.color.impression.onPrimary',
+    
+    expanded: {
+      textStyle: "sd.system.typography.title.large_expanded",
+    },
   },
 })
 
 const ContactCardGrid = styled('div', {
   base: {
-    mt: '140px',
+    mt: '40px',
     display: 'grid',
-    gridTemplateColumns: 'repeat(3, 200px)',
     alignItems: 'center',
     justifyContent: 'center',
     
-    gap: '92px',
+    gap: '64px 36px',
+    gridTemplateColumns: '1fr 1fr',
+    expanded: {
+      gap: '92px',
+      mt: '0',
+      gridColumn: '2 / 4',
+      gridTemplateColumns: 'repeat(3, 1fr)',
+    },
+  },
+})
+
+const ContactSection = styled('div', {
+  base: {
+    display: 'grid',
+    gridTemplateColumns: '1fr',
+    '& + &': {
+      mt: '92px',
+    },
+    expanded: {
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      '& + &': {
+        mt: '128px',
+      },
+    },
   },
 })
 ---
 
 <ContactContainer>
   <Title>
-    問い合わせ窓口
+    Design Systemを一緒につくる
   </Title>
-  <Description>疑問点や改善点などのお問い合わせはこちらまでご連絡ください。社内の方はSlack、社外の方はGitHubかメールをご利用ください。</Description>
 
-  <ContactCardGrid>
-    <ContactCard />
-    <ContactCard />
-    <ContactCard />
-  </ContactCardGrid>
+  <ContactSection>
+    <Subtitle>
+      メディア・コミュニティ
+    </Subtitle>
+    <ContactCardGrid>
+      <ContactCard icon="/assets/logo/note.svg" title="note" link="https://note.com" />
+      <ContactCard icon="/assets/logo/github.svg" title={`GitHub\nレポジトリ`} link="https://github.com" />
+      <ContactCard icon="/assets/logo/x.svg" title="X アカウント" link="https://x.com" />
+    </ContactCardGrid>
+  </ContactSection>
+
+  <ContactSection>
+    <Subtitle>
+      社内用の窓口
+    </Subtitle>
+    <ContactCardGrid>
+      <ContactCard icon="/assets/logo/teams.svg" title="Teams チーム" link="https://teams.microsoft.com" />
+      <ContactCard icon="/assets/logo/sharepoint.svg" title="SharePoint" link="https://teams.microsoft.com" />
+    </ContactCardGrid>
+  </ContactSection>
 </ContactContainer>
