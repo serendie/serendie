@@ -23,11 +23,15 @@ export const ThemeSelector = () => {
 
   useEffect(() => {
     if (!theme) {
-      const storedTheme = localStorage.getItem("panda-theme");
-      setTheme(storedTheme || defaultTheme);
+      const htmlTheme =
+        document.documentElement.getAttribute("data-panda-theme") ||
+        defaultTheme;
+      setTheme(htmlTheme);
+      localStorage.setItem("panda-theme", htmlTheme);
+    } else {
+      document.documentElement.setAttribute("data-panda-theme", theme);
+      localStorage.setItem("panda-theme", theme);
     }
-    localStorage.setItem("panda-theme", theme);
-    document.documentElement.setAttribute("data-panda-theme", theme);
   }, [theme]);
 
   return (

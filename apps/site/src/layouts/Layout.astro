@@ -127,6 +127,13 @@ const ListItemLink = styled("a", {
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}{title && " | "}{siteConfig.siteName}</title>
+
+    <script>
+      const storedTheme = localStorage.getItem("panda-theme");
+      if (storedTheme) {
+        document.documentElement.setAttribute("data-panda-theme", storedTheme);
+      }
+    </script>
   </head>
   <Body>
     <Header>
@@ -176,6 +183,4 @@ const ListItemLink = styled("a", {
       </Main>
     </MainGrid>
   </Body>
-
-
 </html>
