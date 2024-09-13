@@ -1,5 +1,5 @@
 import { css, sva } from "@serendie/ui/css";
-import { TitleShape } from "./LinkContent";
+import { TitleShape } from "./TitleShape";
 
 const contactCardStyle = sva({
   slots: ["container", "img", "title", "link", "grid"],

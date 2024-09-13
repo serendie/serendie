@@ -28,13 +28,16 @@ const content = [
 		description: 'コンポーネントの一覧です。',
 		links: [{
 			title: 'ボタン',
-			href: '/components/button'
+			href: '/components/button',
+			illustration: '/assets/illustration/sample/illustration-0.svg'
 		}, {
 			title: 'アイコン',
-			href: '/components/icon'
+			href: '/components/icon',
+			illustration: '/assets/illustration/sample/illustration-1.svg'
 		}, {
 			title: 'テキスト',
-			href: '/components/text'
+			href: '/components/text',
+			illustration: '/assets/illustration/sample/illustration-2.svg'
 		}]
 	},
 	{
@@ -43,19 +46,24 @@ const content = [
 		description: 'アイコンの一覧です。',
 		links: [{
 			title: 'アイコン',
-			href: '/icons'
+			href: '/icons',
+			illustration: '/assets/illustration/sample/illustration-0.svg'
 		}, {
 			title: 'アイコン',
-			href: '/icons'
+			href: '/icons',
+			illustration: '/assets/illustration/sample/illustration-1.svg'
 		}, {
 			title: 'アイコン',
-			href: '/icons'
+			href: '/icons',
+			illustration: '/assets/illustration/sample/illustration-2.svg'
 		}, {
 			title: 'アイコン',
-			href: '/icons'
+			href: '/icons',
+			illustration: '/assets/illustration/sample/illustration-3.svg'
 		}, {
 			title: 'アイコン',
-			href: '/icons'
+			href: '/icons',
+			illustration: '/assets/illustration/sample/illustration-4.svg'
 		}]
 	},
 	{
@@ -64,22 +72,28 @@ const content = [
 		description: 'トークンの一覧です。',
 		links: [{
 			title: 'システム',
-			href: '/tokens/system'
+			href: '/tokens/system',
+			illustration: '/assets/illustration/sample/illustration-0.svg'
 		}, {
 			title: 'リファレンス',
-			href: '/tokens/reference'
+			href: '/tokens/reference',
+			illustration: '/assets/illustration/sample/illustration-1.svg'
 		}, {
 			title: 'カラー',
-			href: '/tokens/color'
+			href: '/tokens/color',
+			illustration: '/assets/illustration/sample/illustration-2.svg'
 		},{
 			title: 'システム',
-			href: '/tokens/system'
+			href: '/tokens/system',
+			illustration: '/assets/illustration/sample/illustration-0.svg'
 		}, {
 			title: 'リファレンス',
-			href: '/tokens/reference'
+			href: '/tokens/reference',
+			illustration: '/assets/illustration/sample/illustration-1.svg'
 		}, {
 			title: 'カラー',
-			href: '/tokens/color'
+			href: '/tokens/color',
+			illustration: '/assets/illustration/sample/illustration-2.svg'
 		}]
 	}
 ]
@@ -90,15 +104,13 @@ const content = [
 	<NavbarWrapper client:load>
 		<Navbar />
 	</NavbarWrapper>
+
 	<Header client:load/>
 
 	<Container>
 		<LinkContent content={content} client:only/>
-
 		<Showcase />
-
 		<ReleaseNote />
-
 		<Contact />
 	</Container>
 

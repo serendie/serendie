@@ -38,13 +38,16 @@ export const Navbar: React.FC = () => {
   const NavbarLinkContainer = styled("ul", {
     base: {
       height: "100%",
-      display: "flex",
+      display: "none",
       alignItems: "center",
       justifyContent: "center",
       listStyle: "none",
       padding: 0,
       gap: "24px",
       margin: 0,
+      expanded: {
+        display: "flex",
+      },
     },
   });
 

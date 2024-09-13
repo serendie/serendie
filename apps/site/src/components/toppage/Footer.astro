@@ -12,12 +12,13 @@ const FooterWrapper = styled("footer",{
     expanded: {
       pt: 120,
       pb: 40,
+      px: 0,
     }
   }
 })
 const FooterContainer = styled("div",{
   base: {
-    maxWidth: "1640px",
+    maxWidth: "calc(1640px + 240px)",
     margin: "0 auto",
     display: "grid",
     gridTemplateColumns: "repeat(2, 1fr)",
@@ -26,6 +27,7 @@ const FooterContainer = styled("div",{
     color: "sd.system.color.impression.onPrimaryContainer",
     expanded: {
       gridTemplateColumns: "repeat(3, 1fr)",
+      px: 120,
       rowGap: '100px',
     }
   }
