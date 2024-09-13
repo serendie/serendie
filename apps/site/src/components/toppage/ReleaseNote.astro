@@ -60,6 +60,14 @@ const Note = styled('div', {
       gap: '0',
       py: 'sd.system.dimension.spacing.extraSmall',
       px: 'sd.system.dimension.spacing.large',
+      '& > *': {
+        transition: 'opacity 0.3s',
+      },
+      _hover: {
+        '& > *': {
+          opacity: 0.4,
+        }
+      }
     }
   },
 })
