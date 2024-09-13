@@ -1,77 +1,213 @@
-import { motion } from "framer-motion";
-import { cubicBezier } from "framer-motion/dom";
-import { useEffect, useState } from "react";
+import { css, cx, sva } from "@serendie/ui/css";
+import { cubicBezier, motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
-const transition = () => ({
-  duration: 1,
-  delay: Math.floor(Math.random() * 6) / 10 + -0.3,
-  ease: cubicBezier(0.84, 0, 0.16, 1),
-});
-
-const shapeMotionPropsRepeatDelay = () => {
-  // 3.0-5.9秒のランダムな値
-  return Math.floor(Math.random() * 3) + 5;
-};
-
-const shapeMotionPropsRotate = () => {
-  // 5-10度のランダムな値
-  return Math.floor(Math.random() * 5) + 1;
-};
-
-const shapeMotionProps = () => ({
-  initial: {
-    rotate: 0,
-  },
-  animate: {
-    rotate: [0, shapeMotionPropsRotate(), -shapeMotionPropsRotate(), 0],
-  },
+const shapePositions: {
+  size: {
+    width: string;
+    height: string;
+  };
+  initial: { top: string; left: string; rotate: string };
+  initial_compact: { top: string; left: string; rotate: string };
+  animate: { top: string; left: string; rotate: string };
   transition: {
-    repeat: Infinity,
-    repeatDelay: shapeMotionPropsRepeatDelay(),
-    ease: cubicBezier(0.84, 0, 0.16, 1),
-    duration: 1,
+    delay: number;
+  };
+}[] = [
+  {
+    size: {
+      width: "26.045%",
+      height: "26.045%",
+    },
+    initial: {
+      top: "30%",
+      left: "90%",
+      rotate: "120deg",
+    },
+    initial_compact: {
+      top: "100%",
+      left: "0%",
+      rotate: "120deg",
+    },
+    animate: {
+      top: "-13.662%",
+      left: "19.131%",
+      rotate: "0deg",
+    },
+    transition: {
+      delay: 0.29,
+    },
   },
-});
+  {
+    size: {
+      width: "22.743%",
+      height: "24.979%",
+    },
+    initial: {
+      top: "-25%",
+      left: "-25%",
+      rotate: "-140deg",
+    },
+    initial_compact: {
+      top: "-100%",
+      left: "70%",
+      rotate: "-140deg",
+    },
+    animate: {
+      top: "22.188%",
+      left: "31.849%",
+      rotate: "0deg",
+    },
+    transition: {
+      delay: 0.25,
+    },
+  },
+  {
+    size: {
+      width: "69.44%",
+      height: "69.44%",
+    },
+    initial: {
+      top: "70%",
+      left: "-80%",
+      rotate: "30deg",
+    },
+    initial_compact: {
+      top: "50%",
+      left: "40%",
+      rotate: "30deg",
+    },
+    animate: {
+      top: "13.433%",
+      left: "11.94%",
+      rotate: "0deg",
+    },
+    transition: {
+      delay: 0.12,
+    },
+  },
+  {
+    size: {
+      width: "45.52%",
+      height: "45.52%",
+    },
+    initial: {
+      top: "0%",
+      left: "85%",
+      rotate: "60deg",
+    },
+    initial_compact: {
+      top: "0%",
+      left: "10%",
+      rotate: "60deg",
+    },
+    animate: {
+      top: "44.035%",
+      left: "62.369%",
+      rotate: "0deg",
+    },
+    transition: {
+      delay: 0.15,
+    },
+  },
+  {
+    size: {
+      width: "13.06%",
+      height: "13.06%",
+    },
+    initial: {
+      top: "100%",
+      left: "-130%",
+      rotate: "-90deg",
+    },
+    initial_compact: {
+      top: "60%",
+      left: "0%",
+      rotate: "-90deg",
+    },
+    animate: {
+      top: "86.94%",
+      left: "0",
+      rotate: "0deg",
+    },
+    transition: {
+      delay: 0.1,
+    },
+  },
+  {
+    size: {
+      width: "24.81%",
+      height: "26.87%",
+    },
+    initial: {
+      top: "90%",
+      left: "90%",
+      rotate: "-80deg",
+    },
+    initial_compact: {
+      top: "0%",
+      left: "80%",
+      rotate: "-80deg",
+    },
+    animate: {
+      top: "50.776%",
+      left: "76.597%",
+      rotate: "0deg",
+    },
+    transition: {
+      delay: 0.4,
+    },
+  },
+];
 
 export const Shapes = () => {
-  const [state, setState] = useState<"in" | "animate">("in");
-
-  useEffect(() => {
-    // 2s後にアニメーションを開始
-    const timeoutId = setTimeout(() => {
-      setState("animate");
-    }, 2300);
-
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, []);
+  const styles = shapeDefaultStyles();
+  const isExpanded = useMediaQuery({ query: "(min-width: 48rem)" });
 
   return (
-    <div>
-      {[Shapes1, Shapes2, Shapes3, Shapes4, Shapes5, Shapes6].map(
-        (Shape, index) => (
+    <div
+      className={css({
+        position: "relative",
+        height: "calc(100vw - 48px)",
+        width: "calc(100vw - 48px)",
+        expanded: {
+          height: "37.222vw",
+          width: "37.222vw",
+        },
+      })}
+    >
+      {[Shape1, Shape2, Shape3, Shape4, Shape5, Shape6].map(
+        (Component, index) => (
           <motion.div
             key={index}
-            initial={{
-              opacity: 0,
-              y: 40,
+            className={cx("shape-" + index, styles.shape)}
+            style={{
+              width: shapePositions[index].size.width,
+              height: shapePositions[index].size.height,
             }}
+            initial={
+              isExpanded
+                ? {
+                    top: shapePositions[index].initial.top,
+                    left: shapePositions[index].initial.left,
+                    rotate: shapePositions[index].initial.rotate,
+                  }
+                : {
+                    top: shapePositions[index].initial_compact.top,
+                    left: shapePositions[index].initial_compact.left,
+                    rotate: shapePositions[index].initial_compact.rotate,
+                  }
+            }
             animate={{
-              opacity: 1,
-              y: 0,
+              top: shapePositions[index].animate.top,
+              left: shapePositions[index].animate.left,
+              rotate: shapePositions[index].animate.rotate,
             }}
-            transition={{
-              duration: 0.6,
-              delay: 0.7 + 0.15 * index,
-              ease: cubicBezier(0.84, 0, 0.16, 1),
-              y: {
-                duration: 0.8,
-                delay: 0.7 + 0.15 * index,
-              },
-            }}
+            transition={transition({
+              delay: shapePositions[index].transition.delay,
+            })}
           >
-            <Shape state={state} />
+            <Component />
           </motion.div>
         )
       )}
@@ -79,392 +215,174 @@ export const Shapes = () => {
   );
 };
 
-export const Shapes1: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
+const shapeIntroAnimationProperties = ({ delay = 0 }) => ({
+  initial: {
+    opacity: 0,
+    y: 20,
+    rotate: 70,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    rotate: 0,
+  },
+  transition: {
+    duration: 0.6,
+    delay: 1 + delay * 2,
+    rotate: {
+      duration: 1 + delay * 2 + 0.6 + 1.6,
+    },
+  },
+});
+
+const shapeDefaultStyles = sva({
+  slots: ["shape"],
+  base: {
+    shape: {
+      position: "absolute",
+      zIndex: "1",
+      transformOrigin: "center center",
+      pointerEvents: "none",
+      mixBlendMode: "multiply",
+      width: "100%",
+      height: "100%",
+    },
+  },
+});
+
+const transition = ({ delay = 0 }) => {
+  return {
+    duration: 0.8,
+    delay: 2.6 + delay,
+    // delay: 99999999,
+    ease: cubicBezier(0.84, 0, 0.16, 1),
+  };
+};
+
+const Shape1 = () => {
+  const styles = shapeDefaultStyles();
   return (
-    <motion.div
-      style={{
-        position: "absolute",
-        scale: "1.2",
-        zIndex: "-1",
-        transformOrigin: "center center",
-      }}
-      initial={{
-        top: "0",
-        left: "50%",
-        rotate: 100,
-      }}
-      animate={state}
-      variants={{
-        in: {
-          x: ["-20px", "20px", "20px", "-20px"],
-          y: ["-20px", "20px", "20px", "-20px"],
-          rotate: [0, 360],
-          transition: {
-            x: {
-              duration: 5,
-              delay: shapeMotionPropsRepeatDelay(),
-              ease: cubicBezier(0.84, 0, 0.16, 1),
-              repeat: Infinity,
-            },
-            y: {
-              duration: 5,
-              delay: shapeMotionPropsRepeatDelay(),
-              ease: cubicBezier(0.84, 0, 0.16, 1),
-              repeat: Infinity,
-            },
-            rotate: {
-              duration: 10,
-              ease: "linear",
-              repeat: Infinity,
-            },
-          },
-        },
-        animate: {
-          top: "calc(50vh - 67.5px)",
-          left: "70%",
-          rotate: 0,
-        },
-      }}
-      transition={transition()}
+    <motion.svg
+      viewBox="0 0 160 160"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.shape}
+      {...shapeIntroAnimationProperties({
+        delay: shapePositions[0].transition.delay,
+      })}
     >
-      <motion.svg
-        width="123"
-        height="135"
-        viewBox="0 0 123 135"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        style={{
-          transformOrigin: "center center",
-        }}
-        {...shapeMotionProps()}
-      >
-        <path
-          d="M113.923 103.434C108.463 112.847 101.058 120.314 91.7378 125.818C82.4019 131.322 72.1957 134.066 61.1191 134.066C50.0426 134.066 39.8364 131.306 30.5005 125.818C21.1645 120.314 13.7591 112.847 8.29995 103.434C2.8408 94.0212 0.119141 83.7307 0.119141 72.5627H14.8351C14.8351 81.0184 16.9238 88.836 21.1329 96.0155C25.3261 103.195 30.9752 108.859 38.0958 113.007C45.2164 117.155 52.8909 119.229 61.1191 119.229C69.3474 119.229 77.2592 117.107 84.3799 112.879C91.5005 108.651 97.1179 102.987 101.232 95.8878C105.346 88.7882 107.403 81.0184 107.403 72.5627H122.119C122.119 83.7307 119.397 94.0212 113.938 103.434H113.923ZM43.6815 64.075C41.3871 58.5708 40.232 52.6358 40.232 46.2541C40.232 37.7983 42.2891 30.0605 46.4032 23.0406C50.5173 16.0207 56.0556 10.4367 63.018 6.28858C69.9804 2.14046 77.6548 0.0664062 86.0413 0.0664062C92.3708 0.0664062 98.273 1.23107 103.716 3.52849C109.175 5.84186 114.049 9.16035 118.321 13.468L107.878 23.9978C104.871 20.9665 101.596 18.701 98.0356 17.1854C94.4753 15.6697 90.5669 14.9039 86.2945 14.9039C80.598 14.9039 75.3287 16.3079 70.5025 19.0839C65.6763 21.8759 61.8787 25.7049 59.1095 30.571C56.3404 35.437 54.9638 40.6701 54.9638 46.2541C54.9638 54.7098 57.9703 62.0488 63.9832 68.271L53.5396 78.8008C49.2673 74.4931 45.976 69.5952 43.6974 64.0909L43.6815 64.075Z"
-          fill="#EB3D1C"
-        />
-      </motion.svg>
-    </motion.div>
+      <path
+        opacity="0.6"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M63.8694 147.941C72.7484 150.072 81.96 150.432 90.9784 149.003C99.9968 147.574 108.645 144.382 116.43 139.61C124.215 134.839 130.984 128.58 136.35 121.193C141.717 113.805 145.575 105.433 147.706 96.5536C149.836 87.6747 150.197 78.4631 148.768 69.4447L99.3845 77.2716C99.786 79.8049 99.6846 82.3924 99.0861 84.8865C98.4876 87.3806 97.4037 89.7324 95.8964 91.8076C94.389 93.8828 92.4876 95.6407 90.3008 96.9811C88.1141 98.3215 85.6847 99.218 83.1514 99.6195C80.6182 100.021 78.0306 99.9196 75.5365 99.3211C73.0425 98.7227 70.6907 97.6388 68.6155 96.1314C66.5403 94.624 64.7823 92.7227 63.442 90.5359C62.1016 88.3491 61.205 85.9197 60.8035 83.3865L11.42 91.2134C12.8493 100.232 16.041 108.88 20.8127 116.665C25.5845 124.45 31.8429 131.219 39.2305 136.585C46.6182 141.952 54.9905 145.81 63.8694 147.941Z"
+        fill="#BFCEFC"
+      />
+    </motion.svg>
   );
 };
 
-export const Shapes2: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
+const Shape2 = () => {
+  const styles = shapeDefaultStyles();
   return (
-    <motion.div
-      style={{
-        position: "absolute",
-        width: "123px",
-        height: "135px",
-        scale: "1.2",
-        zIndex: "-1",
-        transformOrigin: "center center",
-      }}
-      initial={{
-        top: "80vh",
-        left: "90%",
-        rotate: 100,
-      }}
-      animate={state}
-      variants={{
-        in: {
-          rotate: [0, 30, 0],
-          x: ["-12px", "12px", "12px", "-12px"],
-          y: ["-12px", "12px", "12px", "-12px"],
-          transition: {
-            x: {
-              duration: 7,
-              delay: 0.5,
-              ease: cubicBezier(0.84, 0, 0.16, 1),
-              repeat: Infinity,
-            },
-            y: {
-              duration: 7,
-              delay: 0.5,
-              ease: cubicBezier(0.84, 0, 0.16, 1),
-              repeat: Infinity,
-            },
-            rotate: {
-              duration: 10,
-              ease: "linear",
-              repeat: Infinity,
-            },
-          },
-        },
-        animate: {
-          top: "calc(35vh - 67.5px)",
-          left: "65%",
-          rotate: 0,
-        },
-      }}
-      transition={transition()}
+    <motion.svg
+      viewBox="0 0 123 135"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.shape}
+      {...shapeIntroAnimationProperties({
+        delay: shapePositions[1].transition.delay,
+      })}
     >
-      <motion.svg
-        width="139"
-        height="81"
-        viewBox="0 0 139 81"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        {...shapeMotionProps()}
-      >
-        <path
-          d="M25.0733 18.1831C26.0046 23.9613 28.0648 29.4995 31.1365 34.4815C34.2081 39.4635 38.2309 43.7916 42.9752 47.2189C47.7196 50.6462 53.0925 53.1054 58.7872 54.4563C64.482 55.8071 70.387 56.023 76.1652 55.0917C81.9434 54.1604 87.4816 52.1001 92.4636 49.0285C97.4456 45.9569 101.774 41.9341 105.201 37.1897C108.628 32.4454 111.088 27.0725 112.438 21.3777C113.789 15.683 114.005 9.77791 113.074 3.99971"
-          stroke="#0E5651"
-          strokeWidth="50"
-        />
-      </motion.svg>
-    </motion.div>
+      <path
+        d="M114.421 104.216C108.966 113.621 101.567 121.081 92.2547 126.581C82.9265 132.081 72.7287 134.823 61.6614 134.823C50.594 134.823 40.3962 132.065 31.068 126.581C21.7398 121.081 14.3405 113.621 8.88586 104.216C3.43123 94.8105 0.711823 84.5285 0.711823 73.3697H15.4156C15.4156 81.8185 17.5026 89.6296 21.7082 96.8031C25.898 103.977 31.5423 109.636 38.6571 113.78C45.7718 117.925 53.4399 119.997 61.6614 119.997C69.8828 119.997 77.7881 117.877 84.9028 113.653C92.0176 109.428 97.6303 103.769 101.741 96.6756C105.852 89.5818 107.907 81.8185 107.907 73.3697H122.611C122.611 84.5285 119.892 94.8105 114.437 104.216H114.421ZM44.2382 64.8891C41.9457 59.3894 40.7915 53.4593 40.7915 47.0829C40.7915 38.6341 42.8469 30.9027 46.9576 23.8886C51.0683 16.8745 56.602 11.2951 63.5586 7.15045C70.5153 3.00577 78.1834 0.933426 86.5629 0.933426C92.8872 0.933426 98.7845 2.09713 104.223 4.39264C109.678 6.7041 114.548 10.0198 118.816 14.3239L108.381 24.8451C105.377 21.8162 102.105 19.5526 98.5473 18.0382C94.99 16.5238 91.0848 15.7586 86.8159 15.7586C81.1241 15.7586 75.8592 17.1614 71.037 19.9352C66.2148 22.7249 62.4203 26.5507 59.6534 31.4128C56.8866 36.2748 55.5111 41.5035 55.5111 47.0829C55.5111 55.5316 58.5151 62.8645 64.5231 69.0816L54.0881 79.6027C49.8193 75.2986 46.5307 70.4047 44.254 64.905L44.2382 64.8891Z"
+        fill="#F84258"
+      />
+    </motion.svg>
   );
 };
 
-export const Shapes3: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
+const Shape3 = () => {
+  const styles = shapeDefaultStyles();
   return (
-    <motion.div
-      style={{
-        position: "absolute",
-        width: "123px",
-        height: "144px",
-        zIndex: "-1",
-      }}
-      initial={{
-        // top: "10%",
-        left: "95%",
-        rotate: 100,
-      }}
-      animate={state}
-      variants={{
-        in: {
-          rotate: [0, 30, 0],
-          x: [-12, 12, 12, -12],
-          y: [-12, 12, 12, -12],
-          transition: {
-            x: {
-              duration: 7,
-              delay: 1,
-              ease: cubicBezier(0.84, 0, 0.16, 1),
-              repeat: Infinity,
-            },
-            y: {
-              duration: 7,
-              delay: 1,
-              ease: cubicBezier(0.84, 0, 0.16, 1),
-              repeat: Infinity,
-            },
-            rotate: {
-              duration: 10,
-              ease: "linear",
-              repeat: Infinity,
-            },
-          },
-        },
-        animate: {
-          top: "55%",
-          left: "80%",
-          rotate: -34.6,
-        },
-      }}
-      transition={transition()}
+    <motion.svg
+      viewBox="0 0 373 373"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.shape}
+      {...shapeIntroAnimationProperties({
+        delay: shapePositions[2].transition.delay,
+      })}
     >
-      <motion.svg
-        width="123"
-        height="144"
-        viewBox="0 0 123 144"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        {...shapeMotionProps()}
-      >
-        <rect opacity="0.5" y="44.2969" width="78" height="120" fill="white" />
-      </motion.svg>
-    </motion.div>
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M257.327 358.136C279.907 348.783 300.423 335.074 317.705 317.793C334.986 300.511 348.695 279.995 358.047 257.415C367.4 234.836 372.214 210.635 372.214 186.195C372.214 161.755 367.4 137.555 358.048 114.975C348.695 92.3955 334.986 71.8792 317.705 54.5976L282.349 89.9529C294.988 102.592 305.014 117.596 311.854 134.109C318.694 150.622 322.214 168.321 322.214 186.195C322.214 204.069 318.694 221.768 311.854 238.281C305.013 254.794 294.988 269.799 282.349 282.437C269.711 295.076 254.706 305.102 238.193 311.942C221.68 318.782 203.981 322.302 186.107 322.302C168.233 322.302 150.534 318.782 134.021 311.942C117.508 305.102 102.504 295.076 89.8648 282.437L54.5095 317.793C71.7911 335.074 92.3074 348.783 114.887 358.136C137.466 367.488 161.667 372.302 186.107 372.302C210.547 372.302 234.748 367.488 257.327 358.136Z"
+        fill="#0650A0"
+      />
+    </motion.svg>
   );
 };
 
-export const Shapes4: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
+const Shape4 = () => {
+  const styles = shapeDefaultStyles();
   return (
-    <motion.div
-      style={{
-        position: "absolute",
-        zIndex: "-1",
-        transformOrigin: "center center",
-      }}
-      initial={{
-        top: "80vh",
-        left: "30%",
-        rotate: 100,
-      }}
-      animate={state}
-      variants={{
-        in: {
-          rotate: [0, 60, 0],
-          y: ["-12px", "12px", "12px", "-12px"],
-          transition: {
-            rotate: {
-              duration: 10,
-              ease: cubicBezier(0.84, 0, 0.16, 1),
-              repeat: Infinity,
-            },
-            y: {
-              duration: 7,
-              delay: shapeMotionPropsRotate() * 0.1,
-              ease: cubicBezier(0.84, 0, 0.16, 1),
-              repeat: Infinity,
-            },
-          },
-        },
-        animate: {
-          top: "50vh",
-          left: "70%",
-          rotate: 0,
-        },
-      }}
-      transition={transition()}
+    <motion.svg
+      viewBox="0 0 248 248"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.shape}
+      {...shapeIntroAnimationProperties({
+        delay: shapePositions[3].transition.delay,
+      })}
     >
-      <motion.svg
-        width="319"
-        height="319"
-        viewBox="0 0 319 319"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        {...shapeMotionProps()}
-      >
-        <path
-          d="M17.9995 246.651C32.9721 261.623 50.7471 273.5 70.3097 281.603C89.8722 289.706 110.839 293.877 132.014 293.877C153.188 293.877 174.155 289.706 193.718 281.603C213.28 273.5 231.055 261.623 246.028 246.651C261 231.678 272.877 213.903 280.98 194.341C289.083 174.778 293.254 153.811 293.254 132.637C293.254 111.462 289.083 90.4953 280.98 70.9327C272.877 51.3701 261 33.5951 246.028 18.6226"
-          stroke="#ECB100"
-          strokeWidth="50"
-        />
-      </motion.svg>
-    </motion.div>
+      <path
+        d="M211.558 38.7592C188.679 15.8804 157.649 3.02731 125.293 3.02731C92.9381 3.0273 61.9079 15.8804 39.0292 38.7591C16.1505 61.6379 3.29734 92.668 3.29733 125.023C3.29733 157.379 16.1505 188.409 39.0292 211.288"
+        stroke="#FED232"
+        stroke-width="5"
+      />
+    </motion.svg>
   );
 };
 
-export const Shapes5: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
+const Shape5 = () => {
+  const styles = shapeDefaultStyles();
   return (
-    <motion.div
-      style={{
-        position: "absolute",
-        zIndex: "-1",
-        transformOrigin: "center center",
-      }}
-      initial={{
-        top: "30vh",
-        left: "90%",
-        rotate: 23.2,
-      }}
-      animate={state}
-      variants={{
-        in: {
-          x: ["-12px", "12px", "12px", "-12px"],
-          y: ["12px", "-12px", "-12px", "12px"],
-          rotate: [0, 20, 0],
-          transition: {
-            x: {
-              duration: 7,
-              delay: shapeMotionPropsRotate() * 0.5,
-              ease: cubicBezier(0.84, 0, 0.16, 1),
-              repeat: Infinity,
-            },
-            y: {
-              duration: 7,
-              delay: shapeMotionPropsRotate() * 0.5,
-              ease: cubicBezier(0.84, 0, 0.16, 1),
-              repeat: Infinity,
-            },
-            rotate: {
-              duration: 10,
-              ease: "linear",
-              repeat: Infinity,
-            },
-          },
-        },
-        animate: {
-          top: "55vh",
-          left: "80%",
-          rotate: 0,
-        },
-      }}
-      transition={transition()}
+    <motion.svg
+      viewBox="0 0 70 70"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.shape}
+      {...shapeIntroAnimationProperties({
+        delay: shapePositions[4].transition.delay,
+      })}
     >
-      <motion.svg
-        width="213"
-        height="213"
-        viewBox="0 0 213 213"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        {...shapeMotionProps()}
-      >
-        <path
-          d="M211.007 37.9885C188.109 15.0909 157.054 2.22712 124.671 2.22712C92.2892 2.22712 61.2333 15.0909 38.3357 37.9885C15.438 60.8862 2.57428 91.942 2.57427 124.324C2.57427 156.706 15.438 187.762 38.3357 210.66"
-          stroke="white"
-          strokeWidth="4"
-        />
-      </motion.svg>
-    </motion.div>
+      <path
+        opacity="0.6"
+        d="M69.7323 29.4484L29.1845 0.263702L-0.00012076 40.8115L40.5477 69.9961L69.7323 29.4484Z"
+        fill="#FED232"
+      />
+    </motion.svg>
   );
 };
 
-export const Shapes6: React.FC<{ state: "in" | "animate" }> = ({ state }) => {
+const Shape6 = () => {
+  const styles = shapeDefaultStyles();
   return (
-    <motion.div
-      style={{
-        position: "absolute",
-        zIndex: "-1",
-        transformOrigin: "center center",
-      }}
-      initial={{
-        top: "70vh",
-        left: "5%",
-        rotate: 23.2,
-      }}
-      animate={state}
-      variants={{
-        in: {
-          x: ["-12px", "12px", "12px", "-12px"],
-          y: ["12px", "-12px", "-12px", "12px"],
-          rotate: [0, 20, 0],
-          transition: {
-            x: {
-              duration: 7,
-              delay: shapeMotionPropsRotate() * 0.5,
-              ease: cubicBezier(0.84, 0, 0.16, 1),
-              repeat: Infinity,
-            },
-            y: {
-              duration: 7,
-              delay: shapeMotionPropsRotate() * 0.5,
-              ease: cubicBezier(0.84, 0, 0.16, 1),
-              repeat: Infinity,
-            },
-            rotate: {
-              duration: 10,
-              ease: "linear",
-              repeat: Infinity,
-            },
-          },
-        },
-        animate: {
-          top: "75vh",
-          left: "60%",
-          rotate: 0,
-        },
-      }}
-      transition={transition()}
+    <motion.svg
+      viewBox="0 0 134 145"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.shape}
+      {...shapeIntroAnimationProperties({
+        delay: shapePositions[5].transition.delay,
+      })}
     >
-      <motion.svg
-        width="70"
-        height="71"
-        viewBox="0 0 70 71"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        {...shapeMotionProps()}
-      >
-        <rect
-          opacity="0.4"
-          x="29.209"
-          y="0.652344"
-          width="50"
-          height="50"
-          transform="rotate(35.7448 29.209 0.652344)"
-          fill="#D1EDDE"
-        />
-      </motion.svg>
-    </motion.div>
+      <path
+        opacity="0.6"
+        d="M65.3658 0.584552L1.2179 44.845L69.311 143.534L133.459 99.2738L65.3658 0.584552Z"
+        fill="#FCEBEA"
+      />
+    </motion.svg>
   );
 };

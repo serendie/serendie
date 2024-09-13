@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { LinkContentCard } from "./LinkContentCard";
 import { TitleShape } from "./TitleShape";
 import useEmblaCarousel from "embla-carousel-react";
-import { useDotButton, usePrevNextButtons } from "../carouselUtils";
+import { useDotButton, usePrevNextButtons } from "../utils/carouselUtils";
 import { IconButton } from "@serendie/ui";
 
 type LinkContentProps = {
@@ -207,6 +207,8 @@ const linkContentCompactStyle = sva({
       ml: "-24px",
     },
     carouselDotsContainer: {
+      position: "sticky",
+      bottom: "24px",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -265,7 +267,7 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
             <TitleShape
               style={{
                 transition: "rotate 0.3s",
-                rotate: `${0 * 90 - 45}deg`,
+                rotate: `${selectedIndex * 90 - 45}deg`,
               }}
             />
           </div>

@@ -148,7 +148,7 @@ export const BackgroundShape2: React.FC = () => {
 
 export const BackgroundShape3: React.FC = () => {
   const { scrollYProgress } = useScroll();
-  const y = useParallax(scrollYProgress, 10);
+  const y = useParallax(scrollYProgress, 300);
 
   return (
     <>
@@ -198,7 +198,7 @@ export const BackgroundShape3: React.FC = () => {
 export const BackgroundShape4: React.FC = () => {
   const { scrollYProgress } = useScroll();
 
-  const y = useParallax(scrollYProgress, 300);
+  const y = useParallax(scrollYProgress, 500);
 
   return (
     <>

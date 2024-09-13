@@ -1,5 +1,4 @@
 ---
-import { Header } from "@/components/toppage/Header";
 import { Navbar } from "@/components/toppage/Navbar";
 import TopLayout from "@/layouts/TopLayout.astro";
 import { NavbarWrapper } from "@/components/toppage/NavbarWrapper";
@@ -9,6 +8,7 @@ import { styled } from "@serendie/ui/jsx";
 import ReleaseNote from "@/components/toppage/ReleaseNote.astro";
 import Contact from "@/components/toppage/Contact.astro";
 import { BackgroundShape } from "@/components/toppage/BackgroundShape";
+import Header from "@/components/toppage/Header.astro";
 
 const Container = styled('div', {
 	base: {
@@ -105,7 +105,7 @@ const content = [
 		<Navbar />
 	</NavbarWrapper>
 
-	<Header client:load/>
+	<Header/>
 
 	<Container>
 		<LinkContent content={content} client:only/>

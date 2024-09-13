@@ -1,7 +1,7 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { sva } from "@serendie/ui/css";
 import { IconButton } from "@serendie/ui";
-import { usePrevNextButtons } from "../carouselUtils";
+import { usePrevNextButtons } from "../utils/carouselUtils";
 
 const showcaseCarouselStyles = sva({
   slots: [
