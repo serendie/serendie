@@ -35,6 +35,10 @@ const showcaseCarouselStyles = sva({
       top: "50%",
       transform: "translateY(calc(-50% + 12px))",
       zIndex: 1,
+      display: "none",
+      expanded: {
+        display: "block",
+      },
     },
     buttonRight: {
       position: "absolute",
@@ -42,6 +46,10 @@ const showcaseCarouselStyles = sva({
       top: "50%",
       transform: "translateY(calc(-50% + 12px))",
       zIndex: 1,
+      display: "none",
+      expanded: {
+        display: "block",
+      },
     },
   },
 });

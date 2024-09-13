@@ -46,6 +46,7 @@ const contactCardStyle = sva({
       textStyle: "sd.system.typography.body.extraSmall_expanded",
       fontWeight: "bold",
       whiteSpace: "pre-wrap",
+      color: "sd.reference.color.scale.blue.900",
       expanded: {
         textStyle: "sd.system.typography.body.small_expanded",
       },

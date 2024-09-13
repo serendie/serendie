@@ -4,10 +4,13 @@ import { styled } from "@serendie/ui/jsx"
 
 const FooterWrapper = styled("footer",{
   base: {
+    position: "relative",
     pt: 32,
     pb: 32,
     px: 24,
     bg: 'sd.reference.color.scale.blue.800',
+    mt: 'calc(var(--radii-sd-system-dimension-radius-extra-large) * -1)',
+    zIndex: 1,
     borderTopRadius: 'sd.system.dimension.radius.extraLarge',
     expanded: {
       pt: 120,
