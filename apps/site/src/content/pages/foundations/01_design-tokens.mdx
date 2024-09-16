@@ -1,0 +1,20 @@
+---
+title: Design Tokens
+slug: foundations/design-tokens
+---
+
+import { TokenList } from "src/components/TokenList";
+import tokens from "@serendie/design-token/token-list";
+
+export const referenceTokens = tokens.filter((token) =>
+  token.key.includes("sd.reference")
+);
+export const systemTokens = tokens.filter((token) =>
+  token.key.includes("sd.system")
+);
+
+TODO: システムトークンとリファレンストークンを2つのページに分ける
+
+<TokenList tokens={systemTokens} client:load />
+
+<TokenList tokens={referenceTokens} client:load />

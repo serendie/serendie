@@ -1,0 +1,174 @@
+---
+import "@/index.css";
+import { siteConfig } from "@/../siteConfig";
+import { ThemeSelector } from "@/components/ThemeSelector";
+import { styled, Box } from "@serendie/ui/jsx";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+
+const Body = styled("body", {
+  base: {
+    display: "grid",
+    gridTemplateRows: "auto 1fr",
+    alignItems: "start",
+  },
+});
+
+const Header = styled("header", {
+  base: {
+    pt: "sd.system.dimension.spacing.extraLarge",
+    pr: "sd.system.dimension.spacing.threeExtraLarge",
+    pb: "sd.system.dimension.spacing.extraLarge",
+    pl: "sd.system.dimension.spacing.threeExtraLarge",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    borderBottom: "solid",
+    borderColor: "sd.system.color.component.outline",
+    borderBottomWidth: "sd.system.dimension.border.medium",
+  },
+});
+
+const H1 = styled("h1", {
+  base: {
+    textStyle: "sd.system.typography.title.large_expanded",
+  },
+});
+
+const Menu = styled("div", {
+  base: {
+    display: "flex",
+    alignItems: "center",
+    fontWeight: "sd.reference.typography.fontWeight.bold",
+    gap: "sd.system.dimension.spacing.extraLarge",
+  },
+});
+
+const Link = styled("a", {
+  base: {},
+  variants: {
+    active: {
+      true: {
+        borderBottom: "solid",
+      },
+    },
+  },
+});
+
+const Footer = styled("footer", {
+  base: {
+    borderTopLeftRadius: "sd.system.dimension.radius.extraLarge",
+    borderTopRightRadius: "sd.system.dimension.radius.extraLarge",
+    background: "sd.reference.color.scale.blue.800",
+    color: "white",
+    display: "flex",
+    padding:
+      "120px 10px {spacing.sd.system.dimension.spacing.threeExtraLarge} 10px",
+    flexDirection: "column",
+    justifyContent: "flex-end",
+    alignItems: "center",
+    gap: "100px",
+    flexShrink: 0,
+  },
+});
+
+const FooterInner = styled("div", {
+  base: {
+    width: "100%",
+    maxWidth: "1200px",
+    display: "flex",
+    margin: "0 auto",
+    justifyContent: "space-between",
+  },
+});
+
+const menuItems = [
+  { href: "/about", text: "About" },
+  { href: "/get-started", text: "Get Started" },
+  { href: "/foundations/", text: "Foundations" },
+  { href: "/components/", text: "Components" },
+  { href: "/contribution/", text: "Contribution" },
+];
+---
+
+<!doctype html>
+<html lang="ja" style="height: 100%">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={siteConfig.siteDescription} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}{title && " | "}{siteConfig.siteName}</title>
+
+    <script>
+      const storedTheme = localStorage.getItem("panda-theme");
+      if (storedTheme) {
+        document.documentElement.setAttribute("data-panda-theme", storedTheme);
+      }
+    </script>
+  </head>
+  <Body>
+    <Header>
+      <H1><a href="/">{siteConfig.siteName}</a></H1>
+      <Menu>
+        {
+          menuItems.map((item) => (
+            <Link
+              active={
+                // 前方一致で判定
+                Astro.url.pathname.match(new RegExp(`^${item.href}`))
+                  ? true
+                  : false
+              }
+              href={item.href}
+            >
+              {item.text}
+            </Link>
+          ))
+        }
+        <ThemeSelector client:load />
+      </Menu>
+    </Header>
+    <slot />
+    <Footer>
+      <FooterInner>
+        <h2>Serendie Design System</h2>
+        <Box
+          css={{
+            display: "flex",
+            gap: "60px",
+          }}
+        >
+          <div>
+            <h3>基本情報</h3>
+            <ul>
+              <li><a>目指す地点</a></li>
+              <li><a>目指す地点</a></li>
+              <li><a>目指す地点</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>スタイル</h3>
+            <ul>
+              <li><a>目指す地点</a></li>
+              <li><a>目指す地点</a></li>
+              <li><a>目指す地点</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>デザインシステム</h3>
+            <ul>
+              <li><a>目指す地点</a></li>
+              <li><a>目指す地点</a></li>
+              <li><a>目指す地点</a></li>
+            </ul>
+          </div>
+        </Box>
+      </FooterInner>
+    </Footer>
+  </Body>
+</html>

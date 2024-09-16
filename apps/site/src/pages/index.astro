@@ -1,11 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { TokenList } from 'src/components/TokenList';
-import tokens from "@serendie/design-token/token-list";
-
-const systemTokens = tokens.filter(token => token.key.includes("sd.system"));
+import Global from "@/layouts/Global.astro";
 ---
 
-<Layout title="Welcome to Serendie.">
-	<a href="/storybook">Storybook</a>
-</Layout>
+<Global title="Welcome to Serendie."> Hello, Serendie. </Global>

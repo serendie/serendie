@@ -1,15 +1,39 @@
 ---
-import "@/index.css";
+import { getEntry } from "astro:content";
 import { getCollection } from "astro:content";
+import "@/index.css";
 import { styled } from "@serendie/ui/jsx";
-import Global from "./Global.astro";
+import Global from "@/layouts/Global.astro";
 
-interface Props {
-  title: string;
+export async function getStaticPaths() {
+  const pages = await getCollection("pages");
+
+  return pages.map((page) => {
+    return {
+      params: {
+        slug: page.slug,
+      },
+      props: { page },
+    };
+  });
 }
 
-const { title } = Astro.props;
-const components = await getCollection("components");
+const page = await getEntry("pages", Astro.params.slug);
+
+if (!page) {
+  return {
+    status: 404,
+    error: new Error("Page not found"),
+  };
+}
+
+const currentDir = page.id.split("/").slice(0, -1).join("/");
+const siblings = await getCollection(
+  "pages",
+  (page) =>
+    // Filter out pages that in the same directory
+    page.id.split("/").slice(0, -1).join("/") === currentDir
+);
 
 const MainGrid = styled("div", {
   base: {
@@ -42,23 +66,6 @@ const Main = styled("main", {
   },
 });
 
-const MainTitle = styled("h1", {
-  base: {
-    textStyle: "sd.system.typography.headline.large_expanded",
-    mb: "sd.system.dimension.spacing.medium",
-  },
-});
-
-const SidebarLabel = styled("h2", {
-  base: {
-    textStyle: "sd.system.typography.label.medium_expanded",
-    pt: "sd.system.dimension.spacing.extraSmall",
-    pr: "sd.system.dimension.spacing.extraLarge",
-    pb: "sd.system.dimension.spacing.extraSmall",
-    pl: "sd.system.dimension.spacing.extraLarge",
-  },
-});
-
 const List = styled("ul", {
   base: {
     listStyle: "none",
@@ -87,19 +94,20 @@ const ListItemLink = styled("a", {
     },
   },
 });
+
+const { Content } = await page.render();
 ---
 
-<Global title={title}>
+<Global title={page.data.title}>
   <MainGrid>
     <Sidebar>
-      <SidebarLabel>Components</SidebarLabel>
       <List>
         {
-          components.map((item) => (
+          siblings.map((item) => (
             <li>
               <ListItemLink
-                href={`/components/${item.slug}`}
-                active={item.data.title === title}
+                href={`/${item.slug}`}
+                active={item.slug === page.slug}
               >
                 {item.data.title}
               </ListItemLink>
@@ -109,8 +117,7 @@ const ListItemLink = styled("a", {
       </List>
     </Sidebar>
     <Main>
-      <MainTitle>{title}</MainTitle>
-      <slot />
+      <Content />
     </Main>
   </MainGrid>
 </Global>
