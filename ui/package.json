@@ -1,7 +1,7 @@
 {
   "name": "@serendie/ui",
   "description": "UI components for Serendie",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "type": "module",
   "types": "./dist/index.d.ts",
   "scripts": {
