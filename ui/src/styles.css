@@ -2,8 +2,8 @@
 
 @layer base {
   :root {
-    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+Mono:wght@100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
-    --global-font-body: "Roboto Flex", "Noto Sans JP", sans-serif;
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+Mono:wght@100..900&family=Roboto:wght@100;400;700&display=swap");
+    --global-font-body: "Roboto", "Noto Sans JP", sans-serif;
     --global-font-mono: "Noto Sans Mono", monospace;
     font-optical-sizing: auto;
     text-rendering: optimizeLegibility;
