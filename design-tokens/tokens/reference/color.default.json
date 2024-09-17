@@ -155,6 +155,48 @@
               "$type": "color"
             }
           },
+          "beige": {
+            "100": {
+              "$value": "#F7EDE2",
+              "$type": "color"
+            },
+            "200": {
+              "$value": "#F2DBC0",
+              "$type": "color"
+            },
+            "300": {
+              "$value": "#EDC18A",
+              "$type": "color"
+            },
+            "400": {
+              "$value": "#DAA358",
+              "$type": "color"
+            },
+            "500": {
+              "$value": "#AF8245",
+              "$type": "color"
+            },
+            "600": {
+              "$value": "#846132",
+              "$type": "color"
+            },
+            "700": {
+              "$value": "#684C26",
+              "$type": "color"
+            },
+            "800": {
+              "$value": "#503A1C",
+              "$type": "color"
+            },
+            "900": {
+              "$value": "#3E2D17",
+              "$type": "color"
+            },
+            "1000": {
+              "$value": "#2B2013",
+              "$type": "color"
+            }
+          },
           "yellow": {
             "100": {
               "$value": "#FFF5A7",
