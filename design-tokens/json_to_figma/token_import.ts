@@ -100,8 +100,9 @@ const flattenTokensFile = (
   return flattenedTokens;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const getReferenceToken = (originalTokens: any, aliasToken: string): Token => {
-  const { $value, $type, ...others } =
+  const { _$value, $type, ...others } =
     aliasToken
       .replace(/[{}]/g, "")
       .split(".")
