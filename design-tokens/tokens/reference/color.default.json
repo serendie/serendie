@@ -113,45 +113,45 @@
               "$type": "color"
             }
           },
-          "orange": {
+          "chestnut": {
             "100": {
-              "$value": "#FFEDDE",
+              "$value": "#FAECE6",
               "$type": "color"
             },
             "200": {
-              "$value": "#FFD8B7",
+              "$value": "#F7D8C9",
               "$type": "color"
             },
             "300": {
-              "$value": "#FFB781",
+              "$value": "#F7C6B0",
               "$type": "color"
             },
             "400": {
-              "$value": "#FB8F4E",
+              "$value": "#F49567",
               "$type": "color"
             },
             "500": {
-              "$value": "#E46C24",
+              "$value": "#E26324",
               "$type": "color"
             },
             "600": {
-              "$value": "#C84D00",
+              "$value": "#AB4919",
               "$type": "color"
             },
             "700": {
-              "$value": "#A33900",
+              "$value": "#803510",
               "$type": "color"
             },
             "800": {
-              "$value": "#7D2C00",
+              "$value": "#692C0D",
               "$type": "color"
             },
             "900": {
-              "$value": "#602100",
+              "$value": "#50230D",
               "$type": "color"
             },
             "1000": {
-              "$value": "#4D1700",
+              "$value": "#371B0B",
               "$type": "color"
             }
           },
