@@ -5,7 +5,7 @@
         "impression": {
           "primary": {
             "$type": "color",
-            "$value": "{sd.reference.color.scale.blue.600}",
+            "$value": "{sd.reference.color.scale.blue.700}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
@@ -29,7 +29,7 @@
           },
           "primaryContainer": {
             "$type": "color",
-            "$value": "{sd.reference.color.scale.blue.600}",
+            "$value": "{sd.reference.color.scale.blue.700}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
@@ -51,9 +51,105 @@
               }
             }
           },
+          "secondary": {
+            "$type": "color",
+            "$value": "{sd.reference.color.scale.blue.300}",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {
+                  "WEB": "'sd.system.color.impression.secondary'"
+                },
+                "scopes": ["ALL_FILLS", "STROKE_COLOR"]
+              }
+            }
+          },
+          "onSecondary": {
+            "$type": "color",
+            "$value": "{sd.reference.color.scale.black.1000}",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {
+                  "WEB": "'sd.system.color.impression.onSecondary'"
+                },
+                "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
+              }
+            }
+          },
+          "secondaryContainer": {
+            "$type": "color",
+            "$value": "{sd.reference.color.scale.blue.300}",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {
+                  "WEB": "'sd.system.color.impression.secondaryContainer'"
+                },
+                "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+              }
+            }
+          },
+          "onSecondaryContainer": {
+            "$type": "color",
+            "$value": "{sd.reference.color.scale.black.1000}",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {
+                  "WEB": "'sd.system.color.impression.onSecondaryContainer'"
+                },
+                "scopes": ["ALL_FILLS", "STROKE_COLOR"]
+              }
+            }
+          },
+          "tertiary": {
+            "$type": "color",
+            "$value": "{sd.reference.color.scale.blue.100}",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {
+                  "WEB": "'sd.system.color.impression.tertiary'"
+                },
+                "scopes": ["ALL_FILLS", "STROKE_COLOR"]
+              }
+            }
+          },
+          "onTertiary": {
+            "$type": "color",
+            "$value": "{sd.reference.color.scale.black.1000}",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {
+                  "WEB": "'sd.system.color.impression.onTertiary'"
+                },
+                "scopes": ["SHAPE_FILL", "TEXT_FILL", "STROKE_COLOR"]
+              }
+            }
+          },
+          "tertiaryContainer": {
+            "$type": "color",
+            "$value": "{sd.reference.color.scale.blue.100}",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {
+                  "WEB": "'sd.system.color.impression.tertiaryContainer'"
+                },
+                "scopes": ["FRAME_FILL", "SHAPE_FILL"]
+              }
+            }
+          },
+          "onTertiaryContainer": {
+            "$type": "color",
+            "$value": "{sd.reference.color.scale.black.1000}",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {
+                  "WEB": "'sd.system.color.impression.onTertiaryContainer'"
+                },
+                "scopes": ["ALL_FILLS", "STROKE_COLOR"]
+              }
+            }
+          },
           "notice": {
             "$type": "color",
-            "$value": "{sd.reference.color.scale.yellow.600}",
+            "$value": "{sd.reference.color.scale.yellow.300}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
@@ -65,7 +161,7 @@
           },
           "onNotice": {
             "$type": "color",
-            "$value": "{sd.reference.color.scale.white.1000}",
+            "$value": "{sd.reference.color.scale.black.1000}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
@@ -77,7 +173,7 @@
           },
           "noticeContainer": {
             "$type": "color",
-            "$value": "{sd.reference.color.scale.yellow.200}",
+            "$value": "{sd.reference.color.scale.yellow.300}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
@@ -149,7 +245,7 @@
           },
           "positive": {
             "$type": "color",
-            "$value": "{sd.reference.color.scale.green.600}",
+            "$value": "{sd.reference.color.scale.green.500}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
@@ -173,7 +269,7 @@
           },
           "positiveContainer": {
             "$type": "color",
-            "$value": "{sd.reference.color.scale.green.600}",
+            "$value": "{sd.reference.color.scale.green.500}",
             "$extensions": {
               "com.figma": {
                 "codeSyntax": {
@@ -304,7 +400,7 @@
         "interaction": {
           "disabled": {
             "$type": "color",
-            "$value": "{sd.reference.color.scale.gray.200}",
+            "$value": "{sd.reference.color.scale.gray.100}",
             "$description": "disabled状態のオブジェクト色",
             "$extensions": {
               "com.figma": {
@@ -330,7 +426,7 @@
           },
           "selectedSurface": {
             "$type": "color",
-            "$value": "{sd.reference.color.scale.blue.100}",
+            "$value": "{sd.reference.color.scale.blue.300}",
             "$description": "surface色をselected状態にするときに使用 (ListItemなど)",
             "$extensions": {
               "com.figma": {

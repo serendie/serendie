@@ -9,66 +9,106 @@
   --sd-reference-color-scale-transparency-5: #0000000D;
   --sd-reference-color-scale-transparency-20: #00000033;
   --sd-reference-color-scale-transparency-60: #FFFFFF99;
-  --sd-reference-color-scale-gray-100: #F7F8F9;
-  --sd-reference-color-scale-gray-200: #EBEEEF;
-  --sd-reference-color-scale-gray-300: #CED5D9;
-  --sd-reference-color-scale-gray-400: #AEB8C0;
-  --sd-reference-color-scale-gray-500: #8C959C;
-  --sd-reference-color-scale-gray-600: #6F787E;
-  --sd-reference-color-scale-gray-700: #576066;
-  --sd-reference-color-scale-gray-800: #424A50;
-  --sd-reference-color-scale-gray-900: #31383D;
-  --sd-reference-color-scale-gray-1000: #23292D;
-  --sd-reference-color-scale-red-100: #FFEBE9;
-  --sd-reference-color-scale-red-200: #FFD2D1;
-  --sd-reference-color-scale-red-300: #FFB3B1;
-  --sd-reference-color-scale-red-400: #FE8482;
-  --sd-reference-color-scale-red-500: #FB514D;
-  --sd-reference-color-scale-red-600: #D61930;
-  --sd-reference-color-scale-red-700: #A01026;
-  --sd-reference-color-scale-red-800: #84061C;
-  --sd-reference-color-scale-red-900: #5F0219;
-  --sd-reference-color-scale-red-1000: #400013;
-  --sd-reference-color-scale-orange-100: #FFEDDE;
-  --sd-reference-color-scale-orange-200: #FFD8B7;
-  --sd-reference-color-scale-orange-300: #FFB781;
-  --sd-reference-color-scale-orange-400: #FB8F4E;
-  --sd-reference-color-scale-orange-500: #E46C24;
-  --sd-reference-color-scale-orange-600: #C84D00;
-  --sd-reference-color-scale-orange-700: #A33900;
-  --sd-reference-color-scale-orange-800: #7D2C00;
-  --sd-reference-color-scale-orange-900: #602100;
-  --sd-reference-color-scale-orange-1000: #4D1700;
-  --sd-reference-color-scale-yellow-100: #FFF5A7;
-  --sd-reference-color-scale-yellow-200: #FFE265;
-  --sd-reference-color-scale-yellow-300: #FED232;
-  --sd-reference-color-scale-yellow-400: #FAC525;
-  --sd-reference-color-scale-yellow-500: #F4B72B;
-  --sd-reference-color-scale-yellow-600: #EDA608;
-  --sd-reference-color-scale-yellow-700: #DD9307;
-  --sd-reference-color-scale-yellow-800: #B37206;
-  --sd-reference-color-scale-yellow-900: #814E00;
-  --sd-reference-color-scale-yellow-1000: #5D3400;
-  --sd-reference-color-scale-green-100: #CCF7CE;
-  --sd-reference-color-scale-green-200: #BBF4BF;
-  --sd-reference-color-scale-green-300: #69DF73;
-  --sd-reference-color-scale-green-400: #4ECA53;
-  --sd-reference-color-scale-green-500: #39B637;
-  --sd-reference-color-scale-green-600: #279B20;
-  --sd-reference-color-scale-green-700: #1F8711;
-  --sd-reference-color-scale-green-800: #136508;
-  --sd-reference-color-scale-green-900: #054704;
-  --sd-reference-color-scale-green-1000: #022D02;
-  --sd-reference-color-scale-blue-100: #DBF3FF;
-  --sd-reference-color-scale-blue-200: #BDE5FF;
-  --sd-reference-color-scale-blue-300: #94CEFF;
-  --sd-reference-color-scale-blue-400: #6CB5FF;
-  --sd-reference-color-scale-blue-500: #248EFF;
-  --sd-reference-color-scale-blue-600: #0066DF;
-  --sd-reference-color-scale-blue-700: #0050AF;
-  --sd-reference-color-scale-blue-800: #003D8C;
-  --sd-reference-color-scale-blue-900: #00306D;
-  --sd-reference-color-scale-blue-1000: #002155;
+  --sd-reference-color-scale-gray-100: #EFEEEB;
+  --sd-reference-color-scale-gray-200: #D9D8D3;
+  --sd-reference-color-scale-gray-300: #C8C7C2;
+  --sd-reference-color-scale-gray-400: #AFAEAA;
+  --sd-reference-color-scale-gray-500: #8C8B87;
+  --sd-reference-color-scale-gray-600: #696966;
+  --sd-reference-color-scale-gray-700: #525250;
+  --sd-reference-color-scale-gray-800: #3F3F3D;
+  --sd-reference-color-scale-gray-900: #31312F;
+  --sd-reference-color-scale-gray-1000: #232322;
+  --sd-reference-color-scale-red-100: #FCEBEA;
+  --sd-reference-color-scale-red-200: #FCD6D3;
+  --sd-reference-color-scale-red-300: #FDB9B4;
+  --sd-reference-color-scale-red-400: #FF8F8F;
+  --sd-reference-color-scale-red-500: #F84258;
+  --sd-reference-color-scale-red-600: #CE0037;
+  --sd-reference-color-scale-red-700: #A4002A;
+  --sd-reference-color-scale-red-800: #81001F;
+  --sd-reference-color-scale-red-900: #650417;
+  --sd-reference-color-scale-red-1000: #49060E;
+  --sd-reference-color-scale-chestnut-100: #FAECE6;
+  --sd-reference-color-scale-chestnut-200: #F7D8C9;
+  --sd-reference-color-scale-chestnut-300: #F7C6B0;
+  --sd-reference-color-scale-chestnut-400: #F49567;
+  --sd-reference-color-scale-chestnut-500: #E26324;
+  --sd-reference-color-scale-chestnut-600: #AB4919;
+  --sd-reference-color-scale-chestnut-700: #803510;
+  --sd-reference-color-scale-chestnut-800: #692C0D;
+  --sd-reference-color-scale-chestnut-900: #50230D;
+  --sd-reference-color-scale-chestnut-1000: #371B0B;
+  --sd-reference-color-scale-beige-100: #F7EDE2;
+  --sd-reference-color-scale-beige-200: #F2DBC0;
+  --sd-reference-color-scale-beige-300: #EDC18A;
+  --sd-reference-color-scale-beige-400: #DAA358;
+  --sd-reference-color-scale-beige-500: #AF8245;
+  --sd-reference-color-scale-beige-600: #846132;
+  --sd-reference-color-scale-beige-700: #684C26;
+  --sd-reference-color-scale-beige-800: #503A1C;
+  --sd-reference-color-scale-beige-900: #3E2D17;
+  --sd-reference-color-scale-beige-1000: #2B2013;
+  --sd-reference-color-scale-yellow-100: #FEEDBE;
+  --sd-reference-color-scale-yellow-200: #FFE885;
+  --sd-reference-color-scale-yellow-300: #FFE600;
+  --sd-reference-color-scale-yellow-400: #EDD202;
+  --sd-reference-color-scale-yellow-500: #AC9301;
+  --sd-reference-color-scale-yellow-600: #857100;
+  --sd-reference-color-scale-yellow-700: #5F5100;
+  --sd-reference-color-scale-yellow-800: #4A3E00;
+  --sd-reference-color-scale-yellow-900: #3A3000;
+  --sd-reference-color-scale-yellow-1000: #292200;
+  --sd-reference-color-scale-green-100: #CAF9E6;
+  --sd-reference-color-scale-green-200: #AEEAD5;
+  --sd-reference-color-scale-green-300: #98E1C8;
+  --sd-reference-color-scale-green-400: #6ED0AE;
+  --sd-reference-color-scale-green-500: #40A683;
+  --sd-reference-color-scale-green-600: #2C755C;
+  --sd-reference-color-scale-green-700: #266751;
+  --sd-reference-color-scale-green-800: #184737;
+  --sd-reference-color-scale-green-900: #12372B;
+  --sd-reference-color-scale-green-1000: #0D271E;
+  --sd-reference-color-scale-sky-blue-100: #CCF7FC;
+  --sd-reference-color-scale-sky-blue-200: #99F1FA;
+  --sd-reference-color-scale-sky-blue-300: #63E3EE;
+  --sd-reference-color-scale-sky-blue-400: #03C5D3;
+  --sd-reference-color-scale-sky-blue-500: #00A3AF;
+  --sd-reference-color-scale-sky-blue-600: #00757E;
+  --sd-reference-color-scale-sky-blue-700: #015C63;
+  --sd-reference-color-scale-sky-blue-800: #01474C;
+  --sd-reference-color-scale-sky-blue-900: #02373C;
+  --sd-reference-color-scale-sky-blue-1000: #04272A;
+  --sd-reference-color-scale-blue-100: #EFF2FC;
+  --sd-reference-color-scale-blue-200: #D7DEFB;
+  --sd-reference-color-scale-blue-300: #BFCEFC;
+  --sd-reference-color-scale-blue-400: #8FAEFE;
+  --sd-reference-color-scale-blue-500: #428CFE;
+  --sd-reference-color-scale-blue-600: #0A69CF;
+  --sd-reference-color-scale-blue-700: #0650A0;
+  --sd-reference-color-scale-blue-800: #043F81;
+  --sd-reference-color-scale-blue-900: #073165;
+  --sd-reference-color-scale-blue-1000: #081E3F;
+  --sd-reference-color-scale-purple-100: #F4ECF6;
+  --sd-reference-color-scale-purple-200: #EADAEE;
+  --sd-reference-color-scale-purple-300: #DCBDE4;
+  --sd-reference-color-scale-purple-400: #CC9FD9;
+  --sd-reference-color-scale-purple-500: #AA61C2;
+  --sd-reference-color-scale-purple-600: #914DA9;
+  --sd-reference-color-scale-purple-700: #733B85;
+  --sd-reference-color-scale-purple-800: #592D68;
+  --sd-reference-color-scale-purple-900: #462352;
+  --sd-reference-color-scale-purple-1000: #32183A;
+  --sd-reference-color-scale-pink-100: #F9EBF0;
+  --sd-reference-color-scale-pink-200: #F6D7E0;
+  --sd-reference-color-scale-pink-300: #F5C1D1;
+  --sd-reference-color-scale-pink-400: #F190B4;
+  --sd-reference-color-scale-pink-500: #EB4F8E;
+  --sd-reference-color-scale-pink-600: #B9336B;
+  --sd-reference-color-scale-pink-700: #932653;
+  --sd-reference-color-scale-pink-800: #711D41;
+  --sd-reference-color-scale-pink-900: #591734;
+  --sd-reference-color-scale-pink-1000: #401026;
   --sd-reference-dimension-scale-0: 0px;
   --sd-reference-dimension-scale-1: 1px;
   --sd-reference-dimension-scale-2: 2px;
@@ -133,33 +173,41 @@
   --sd-reference-typography-scale-compact-three-extra-large: 28px;
   --sd-reference-typography-scale-compact-four-extra-large: 37px;
   --sd-reference-typography-scale-compact-five-extra-large: 56px;
-  --sd-system-color-impression-primary: #0066DF;
+  --sd-system-color-impression-primary: #0650A0;
   --sd-system-color-impression-on-primary: #FFFFFF;
-  --sd-system-color-impression-primary-container: #0066DF;
+  --sd-system-color-impression-primary-container: #0650A0;
   --sd-system-color-impression-on-primary-container: #FFFFFF;
-  --sd-system-color-impression-notice: #EDA608;
-  --sd-system-color-impression-on-notice: #FFFFFF;
-  --sd-system-color-impression-notice-container: #FFE265;
+  --sd-system-color-impression-secondary: #BFCEFC;
+  --sd-system-color-impression-on-secondary: #000000;
+  --sd-system-color-impression-secondary-container: #BFCEFC;
+  --sd-system-color-impression-on-secondary-container: #000000;
+  --sd-system-color-impression-tertiary: #EFF2FC;
+  --sd-system-color-impression-on-tertiary: #000000;
+  --sd-system-color-impression-tertiary-container: #EFF2FC;
+  --sd-system-color-impression-on-tertiary-container: #000000;
+  --sd-system-color-impression-notice: #FFE600;
+  --sd-system-color-impression-on-notice: #000000;
+  --sd-system-color-impression-notice-container: #FFE600;
   --sd-system-color-impression-on-notice-container: #000000;
-  --sd-system-color-impression-negative: #D61930;
+  --sd-system-color-impression-negative: #CE0037;
   --sd-system-color-impression-on-negative: #FFFFFF;
-  --sd-system-color-impression-negative-container: #FFD2D1;
+  --sd-system-color-impression-negative-container: #FCD6D3;
   --sd-system-color-impression-on-negative-container: #000000;
-  --sd-system-color-impression-positive: #279B20;
+  --sd-system-color-impression-positive: #40A683;
   --sd-system-color-impression-on-positive: #FFFFFF;
-  --sd-system-color-impression-positive-container: #279B20;
+  --sd-system-color-impression-positive-container: #40A683;
   --sd-system-color-impression-on-positive-container: #FFFFFF;
   --sd-system-color-component-surface: #FFFFFF; /* bodyの背景色などサイトのベースカラー */
   --sd-system-color-component-on-surface: #000000; /* surface色を地にしたオブジェクト色 */
-  --sd-system-color-component-on-surface-variant: #8C959C; /* プレイスホルダーやサブテキストなどonSurfaceに強弱をつける際に利用 */
-  --sd-system-color-component-inverse-surface: #23292D; /* toastやtooltipなどに使用するsurfaceの反対色 */
+  --sd-system-color-component-on-surface-variant: #8C8B87; /* プレイスホルダーやサブテキストなどonSurfaceに強弱をつける際に利用 */
+  --sd-system-color-component-inverse-surface: #232322; /* toastやtooltipなどに使用するsurfaceの反対色 */
   --sd-system-color-component-inverse-on-surface: #FFFFFF; /* surfaceの反対色を地にしたオブジェクト色 */
-  --sd-system-color-component-outline: #CED5D9; /* ボタンやフォームなどのアウトライン色 */
-  --sd-system-color-component-outline-variant: #8C959C;
+  --sd-system-color-component-outline: #C8C7C2; /* ボタンやフォームなどのアウトライン色 */
+  --sd-system-color-component-outline-variant: #8C8B87;
   --sd-system-color-component-scrim: #00000033; /* modalやdrawerの背景色として使用する色 */
-  --sd-system-color-interaction-disabled: #EBEEEF; /* disabled状態のオブジェクト色 */
-  --sd-system-color-interaction-disabled-on-surface: #AEB8C0; /* onSurface色をdisabled状態にするときに使用 */
-  --sd-system-color-interaction-selected-surface: #DBF3FF; /* surface色をselected状態にするときに使用 (ListItemなど) */
+  --sd-system-color-interaction-disabled: #EFEEEB; /* disabled状態のオブジェクト色 */
+  --sd-system-color-interaction-disabled-on-surface: #AFAEAA; /* onSurface色をdisabled状態にするときに使用 */
+  --sd-system-color-interaction-selected-surface: #BFCEFC; /* surface色をselected状態にするときに使用 (ListItemなど) */
   --sd-system-color-interaction-hovered: #00000033; /* hover状態のオブジェクトに重ねわせる半透明色 */
   --sd-system-color-interaction-hovered-variant: #0000000D;
   --sd-system-color-interaction-hovered-on-primary: #FFFFFF99; /* primaryなど有彩色を使用したhover状態のオブジェクトに重ね合わせる半透明色 */
@@ -228,124 +276,156 @@
   --sd-system-typography-label-medium-expanded: 400 12px/1;
   --sd-system-typography-label-large-expanded: 400 13px/1;
   --sd-system-typography-label-extra-large-expanded: 400 14px/1;
-  --themes-hisui-tokens-colors-sd-system-color-impression-primary: #279B20;
-  --themes-hisui-tokens-colors-sd-system-color-impression-on-primary: #FFFFFF;
-  --themes-hisui-tokens-colors-sd-system-color-impression-primary-container: #279B20;
-  --themes-hisui-tokens-colors-sd-system-color-impression-on-primary-container: #FFFFFF;
-  --themes-hisui-tokens-colors-sd-system-color-impression-notice: #EDA608;
-  --themes-hisui-tokens-colors-sd-system-color-impression-on-notice: #FFFFFF;
-  --themes-hisui-tokens-colors-sd-system-color-impression-notice-container: #FFE265;
-  --themes-hisui-tokens-colors-sd-system-color-impression-on-notice-container: #000000;
-  --themes-hisui-tokens-colors-sd-system-color-impression-negative: #D61930;
-  --themes-hisui-tokens-colors-sd-system-color-impression-on-negative: #FFFFFF;
-  --themes-hisui-tokens-colors-sd-system-color-impression-negative-container: #FFD2D1;
-  --themes-hisui-tokens-colors-sd-system-color-impression-on-negative-container: #000000;
-  --themes-hisui-tokens-colors-sd-system-color-impression-positive: #279B20;
-  --themes-hisui-tokens-colors-sd-system-color-impression-on-positive: #FFFFFF;
-  --themes-hisui-tokens-colors-sd-system-color-impression-positive-container: #279B20;
-  --themes-hisui-tokens-colors-sd-system-color-impression-on-positive-container: #FFFFFF;
-  --themes-hisui-tokens-colors-sd-system-color-component-surface: #FFFFFF; /* bodyの背景色などサイトのベースカラー */
-  --themes-hisui-tokens-colors-sd-system-color-component-on-surface: #000000; /* surface色を地にしたオブジェクト色 */
-  --themes-hisui-tokens-colors-sd-system-color-component-on-surface-variant: #8C959C; /* プレイスホルダーやサブテキストなどonSurfaceに強弱をつける際に利用 */
-  --themes-hisui-tokens-colors-sd-system-color-component-inverse-surface: #23292D; /* toastやtooltipなどに使用するsurfaceの反対色 */
-  --themes-hisui-tokens-colors-sd-system-color-component-inverse-on-surface: #FFFFFF; /* surfaceの反対色を地にしたオブジェクト色 */
-  --themes-hisui-tokens-colors-sd-system-color-component-outline: #CED5D9; /* ボタンやフォームなどのアウトライン色 */
-  --themes-hisui-tokens-colors-sd-system-color-component-outline-variant: #8C959C;
-  --themes-hisui-tokens-colors-sd-system-color-component-scrim: #00000033; /* modalやdrawerの背景色として使用する色 */
-  --themes-hisui-tokens-colors-sd-system-color-interaction-disabled: #EBEEEF; /* disabled状態のオブジェクト色 */
-  --themes-hisui-tokens-colors-sd-system-color-interaction-disabled-on-surface: #AEB8C0; /* onSurface色をdisabled状態にするときに使用 */
-  --themes-hisui-tokens-colors-sd-system-color-interaction-selected-surface: #CCF7CE; /* surface色をselected状態にするときに使用 (ListItemなど) */
-  --themes-hisui-tokens-colors-sd-system-color-interaction-hovered: #00000033; /* hover状態のオブジェクトに重ねわせる半透明色 */
-  --themes-hisui-tokens-colors-sd-system-color-interaction-hovered-variant: #0000000D;
-  --themes-hisui-tokens-colors-sd-system-color-interaction-hovered-on-primary: #FFFFFF99; /* primaryなど有彩色を使用したhover状態のオブジェクトに重ね合わせる半透明色 */
-  --themes-kurikawa-tokens-colors-sd-system-color-impression-primary: #C84D00;
+  --themes-asagi-tokens-colors-sd-system-color-impression-primary: #00757E;
+  --themes-asagi-tokens-colors-sd-system-color-impression-on-primary: #FFFFFF;
+  --themes-asagi-tokens-colors-sd-system-color-impression-primary-container: #00757E;
+  --themes-asagi-tokens-colors-sd-system-color-impression-on-primary-container: #FFFFFF;
+  --themes-asagi-tokens-colors-sd-system-color-impression-secondary: #AEEAD5;
+  --themes-asagi-tokens-colors-sd-system-color-impression-on-secondary: #000000;
+  --themes-asagi-tokens-colors-sd-system-color-impression-secondary-container: #AEEAD5;
+  --themes-asagi-tokens-colors-sd-system-color-impression-on-secondary-container: #000000;
+  --themes-asagi-tokens-colors-sd-system-color-impression-tertiary: #EFEEEB;
+  --themes-asagi-tokens-colors-sd-system-color-impression-on-tertiary: #000000;
+  --themes-asagi-tokens-colors-sd-system-color-impression-tertiary-container: #EFEEEB;
+  --themes-asagi-tokens-colors-sd-system-color-impression-on-tertiary-container: #000000;
+  --themes-asagi-tokens-colors-sd-system-color-impression-notice: #FFE600;
+  --themes-asagi-tokens-colors-sd-system-color-impression-on-notice: #000000;
+  --themes-asagi-tokens-colors-sd-system-color-impression-notice-container: #FFE600;
+  --themes-asagi-tokens-colors-sd-system-color-impression-on-notice-container: #000000;
+  --themes-asagi-tokens-colors-sd-system-color-impression-negative: #CE0037;
+  --themes-asagi-tokens-colors-sd-system-color-impression-on-negative: #FFFFFF;
+  --themes-asagi-tokens-colors-sd-system-color-impression-negative-container: #FCD6D3;
+  --themes-asagi-tokens-colors-sd-system-color-impression-on-negative-container: #000000;
+  --themes-asagi-tokens-colors-sd-system-color-impression-positive: #40A683;
+  --themes-asagi-tokens-colors-sd-system-color-impression-on-positive: #FFFFFF;
+  --themes-asagi-tokens-colors-sd-system-color-impression-positive-container: #40A683;
+  --themes-asagi-tokens-colors-sd-system-color-impression-on-positive-container: #FFFFFF;
+  --themes-asagi-tokens-colors-sd-system-color-component-surface: #FFFFFF; /* bodyの背景色などサイトのベースカラー */
+  --themes-asagi-tokens-colors-sd-system-color-component-on-surface: #000000; /* surface色を地にしたオブジェクト色 */
+  --themes-asagi-tokens-colors-sd-system-color-component-on-surface-variant: #8C8B87; /* プレイスホルダーやサブテキストなどonSurfaceに強弱をつける際に利用 */
+  --themes-asagi-tokens-colors-sd-system-color-component-inverse-surface: #232322; /* toastやtooltipなどに使用するsurfaceの反対色 */
+  --themes-asagi-tokens-colors-sd-system-color-component-inverse-on-surface: #FFFFFF; /* surfaceの反対色を地にしたオブジェクト色 */
+  --themes-asagi-tokens-colors-sd-system-color-component-outline: #C8C7C2; /* ボタンやフォームなどのアウトライン色 */
+  --themes-asagi-tokens-colors-sd-system-color-component-outline-variant: #8C8B87;
+  --themes-asagi-tokens-colors-sd-system-color-component-scrim: #00000033; /* modalやdrawerの背景色として使用する色 */
+  --themes-asagi-tokens-colors-sd-system-color-interaction-disabled: #EFEEEB; /* disabled状態のオブジェクト色 */
+  --themes-asagi-tokens-colors-sd-system-color-interaction-disabled-on-surface: #AFAEAA; /* onSurface色をdisabled状態にするときに使用 */
+  --themes-asagi-tokens-colors-sd-system-color-interaction-selected-surface: #AEEAD5; /* surface色をselected状態にするときに使用 (ListItemなど) */
+  --themes-asagi-tokens-colors-sd-system-color-interaction-hovered: #00000033; /* hover状態のオブジェクトに重ねわせる半透明色 */
+  --themes-asagi-tokens-colors-sd-system-color-interaction-hovered-variant: #0000000D;
+  --themes-asagi-tokens-colors-sd-system-color-interaction-hovered-on-primary: #FFFFFF99; /* primaryなど有彩色を使用したhover状態のオブジェクトに重ね合わせる半透明色 */
+  --themes-kurikawa-tokens-colors-sd-system-color-impression-primary: #803510;
   --themes-kurikawa-tokens-colors-sd-system-color-impression-on-primary: #FFFFFF;
-  --themes-kurikawa-tokens-colors-sd-system-color-impression-primary-container: #C84D00;
+  --themes-kurikawa-tokens-colors-sd-system-color-impression-primary-container: #803510;
   --themes-kurikawa-tokens-colors-sd-system-color-impression-on-primary-container: #FFFFFF;
-  --themes-kurikawa-tokens-colors-sd-system-color-impression-notice: #EDA608;
-  --themes-kurikawa-tokens-colors-sd-system-color-impression-on-notice: #FFFFFF;
-  --themes-kurikawa-tokens-colors-sd-system-color-impression-notice-container: #FFE265;
+  --themes-kurikawa-tokens-colors-sd-system-color-impression-secondary: #F7C6B0;
+  --themes-kurikawa-tokens-colors-sd-system-color-impression-on-secondary: #000000;
+  --themes-kurikawa-tokens-colors-sd-system-color-impression-secondary-container: #F7C6B0;
+  --themes-kurikawa-tokens-colors-sd-system-color-impression-on-secondary-container: #000000;
+  --themes-kurikawa-tokens-colors-sd-system-color-impression-tertiary: #F7EDE2;
+  --themes-kurikawa-tokens-colors-sd-system-color-impression-on-tertiary: #000000;
+  --themes-kurikawa-tokens-colors-sd-system-color-impression-tertiary-container: #F7EDE2;
+  --themes-kurikawa-tokens-colors-sd-system-color-impression-on-tertiary-container: #000000;
+  --themes-kurikawa-tokens-colors-sd-system-color-impression-notice: #FFE600;
+  --themes-kurikawa-tokens-colors-sd-system-color-impression-on-notice: #000000;
+  --themes-kurikawa-tokens-colors-sd-system-color-impression-notice-container: #FFE600;
   --themes-kurikawa-tokens-colors-sd-system-color-impression-on-notice-container: #000000;
-  --themes-kurikawa-tokens-colors-sd-system-color-impression-negative: #D61930;
+  --themes-kurikawa-tokens-colors-sd-system-color-impression-negative: #CE0037;
   --themes-kurikawa-tokens-colors-sd-system-color-impression-on-negative: #FFFFFF;
-  --themes-kurikawa-tokens-colors-sd-system-color-impression-negative-container: #FFD2D1;
+  --themes-kurikawa-tokens-colors-sd-system-color-impression-negative-container: #FCD6D3;
   --themes-kurikawa-tokens-colors-sd-system-color-impression-on-negative-container: #000000;
-  --themes-kurikawa-tokens-colors-sd-system-color-impression-positive: #279B20;
+  --themes-kurikawa-tokens-colors-sd-system-color-impression-positive: #40A683;
   --themes-kurikawa-tokens-colors-sd-system-color-impression-on-positive: #FFFFFF;
-  --themes-kurikawa-tokens-colors-sd-system-color-impression-positive-container: #279B20;
+  --themes-kurikawa-tokens-colors-sd-system-color-impression-positive-container: #40A683;
   --themes-kurikawa-tokens-colors-sd-system-color-impression-on-positive-container: #FFFFFF;
   --themes-kurikawa-tokens-colors-sd-system-color-component-surface: #FFFFFF; /* bodyの背景色などサイトのベースカラー */
   --themes-kurikawa-tokens-colors-sd-system-color-component-on-surface: #000000; /* surface色を地にしたオブジェクト色 */
-  --themes-kurikawa-tokens-colors-sd-system-color-component-on-surface-variant: #8C959C; /* プレイスホルダーやサブテキストなどonSurfaceに強弱をつける際に利用 */
-  --themes-kurikawa-tokens-colors-sd-system-color-component-inverse-surface: #23292D; /* toastやtooltipなどに使用するsurfaceの反対色 */
+  --themes-kurikawa-tokens-colors-sd-system-color-component-on-surface-variant: #8C8B87; /* プレイスホルダーやサブテキストなどonSurfaceに強弱をつける際に利用 */
+  --themes-kurikawa-tokens-colors-sd-system-color-component-inverse-surface: #232322; /* toastやtooltipなどに使用するsurfaceの反対色 */
   --themes-kurikawa-tokens-colors-sd-system-color-component-inverse-on-surface: #FFFFFF; /* surfaceの反対色を地にしたオブジェクト色 */
-  --themes-kurikawa-tokens-colors-sd-system-color-component-outline: #CED5D9; /* ボタンやフォームなどのアウトライン色 */
-  --themes-kurikawa-tokens-colors-sd-system-color-component-outline-variant: #8C959C;
+  --themes-kurikawa-tokens-colors-sd-system-color-component-outline: #C8C7C2; /* ボタンやフォームなどのアウトライン色 */
+  --themes-kurikawa-tokens-colors-sd-system-color-component-outline-variant: #8C8B87;
   --themes-kurikawa-tokens-colors-sd-system-color-component-scrim: #00000033; /* modalやdrawerの背景色として使用する色 */
-  --themes-kurikawa-tokens-colors-sd-system-color-interaction-disabled: #EBEEEF; /* disabled状態のオブジェクト色 */
-  --themes-kurikawa-tokens-colors-sd-system-color-interaction-disabled-on-surface: #AEB8C0; /* onSurface色をdisabled状態にするときに使用 */
-  --themes-kurikawa-tokens-colors-sd-system-color-interaction-selected-surface: #FFEDDE; /* surface色をselected状態にするときに使用 (ListItemなど) */
+  --themes-kurikawa-tokens-colors-sd-system-color-interaction-disabled: #EFEEEB; /* disabled状態のオブジェクト色 */
+  --themes-kurikawa-tokens-colors-sd-system-color-interaction-disabled-on-surface: #AFAEAA; /* onSurface色をdisabled状態にするときに使用 */
+  --themes-kurikawa-tokens-colors-sd-system-color-interaction-selected-surface: #F7C6B0; /* surface色をselected状態にするときに使用 (ListItemなど) */
   --themes-kurikawa-tokens-colors-sd-system-color-interaction-hovered: #00000033; /* hover状態のオブジェクトに重ねわせる半透明色 */
   --themes-kurikawa-tokens-colors-sd-system-color-interaction-hovered-variant: #0000000D;
   --themes-kurikawa-tokens-colors-sd-system-color-interaction-hovered-on-primary: #FFFFFF99; /* primaryなど有彩色を使用したhover状態のオブジェクトに重ね合わせる半透明色 */
-  --themes-tokusa-tokens-colors-sd-system-color-impression-primary: #054704;
-  --themes-tokusa-tokens-colors-sd-system-color-impression-on-primary: #FFFFFF;
-  --themes-tokusa-tokens-colors-sd-system-color-impression-primary-container: #054704;
-  --themes-tokusa-tokens-colors-sd-system-color-impression-on-primary-container: #FFFFFF;
-  --themes-tokusa-tokens-colors-sd-system-color-impression-notice: #EDA608;
-  --themes-tokusa-tokens-colors-sd-system-color-impression-on-notice: #FFFFFF;
-  --themes-tokusa-tokens-colors-sd-system-color-impression-notice-container: #FFE265;
-  --themes-tokusa-tokens-colors-sd-system-color-impression-on-notice-container: #000000;
-  --themes-tokusa-tokens-colors-sd-system-color-impression-negative: #D61930;
-  --themes-tokusa-tokens-colors-sd-system-color-impression-on-negative: #FFFFFF;
-  --themes-tokusa-tokens-colors-sd-system-color-impression-negative-container: #FFD2D1;
-  --themes-tokusa-tokens-colors-sd-system-color-impression-on-negative-container: #000000;
-  --themes-tokusa-tokens-colors-sd-system-color-impression-positive: #279B20;
-  --themes-tokusa-tokens-colors-sd-system-color-impression-on-positive: #FFFFFF;
-  --themes-tokusa-tokens-colors-sd-system-color-impression-positive-container: #279B20;
-  --themes-tokusa-tokens-colors-sd-system-color-impression-on-positive-container: #FFFFFF;
-  --themes-tokusa-tokens-colors-sd-system-color-component-surface: #FFFFFF; /* bodyの背景色などサイトのベースカラー */
-  --themes-tokusa-tokens-colors-sd-system-color-component-on-surface: #000000; /* surface色を地にしたオブジェクト色 */
-  --themes-tokusa-tokens-colors-sd-system-color-component-on-surface-variant: #8C959C; /* プレイスホルダーやサブテキストなどonSurfaceに強弱をつける際に利用 */
-  --themes-tokusa-tokens-colors-sd-system-color-component-inverse-surface: #23292D; /* toastやtooltipなどに使用するsurfaceの反対色 */
-  --themes-tokusa-tokens-colors-sd-system-color-component-inverse-on-surface: #FFFFFF; /* surfaceの反対色を地にしたオブジェクト色 */
-  --themes-tokusa-tokens-colors-sd-system-color-component-outline: #CED5D9; /* ボタンやフォームなどのアウトライン色 */
-  --themes-tokusa-tokens-colors-sd-system-color-component-outline-variant: #8C959C;
-  --themes-tokusa-tokens-colors-sd-system-color-component-scrim: #00000033; /* modalやdrawerの背景色として使用する色 */
-  --themes-tokusa-tokens-colors-sd-system-color-interaction-disabled: #EBEEEF; /* disabled状態のオブジェクト色 */
-  --themes-tokusa-tokens-colors-sd-system-color-interaction-disabled-on-surface: #AEB8C0; /* onSurface色をdisabled状態にするときに使用 */
-  --themes-tokusa-tokens-colors-sd-system-color-interaction-selected-surface: #CCF7CE; /* surface色をselected状態にするときに使用 (ListItemなど) */
-  --themes-tokusa-tokens-colors-sd-system-color-interaction-hovered: #00000033; /* hover状態のオブジェクトに重ねわせる半透明色 */
-  --themes-tokusa-tokens-colors-sd-system-color-interaction-hovered-variant: #0000000D;
-  --themes-tokusa-tokens-colors-sd-system-color-interaction-hovered-on-primary: #FFFFFF99; /* primaryなど有彩色を使用したhover状態のオブジェクトに重ね合わせる半透明色 */
-  --themes-usuake-tokens-colors-sd-system-color-impression-primary: #FE8482;
-  --themes-usuake-tokens-colors-sd-system-color-impression-on-primary: #FFFFFF;
-  --themes-usuake-tokens-colors-sd-system-color-impression-primary-container: #FE8482;
-  --themes-usuake-tokens-colors-sd-system-color-impression-on-primary-container: #FFFFFF;
-  --themes-usuake-tokens-colors-sd-system-color-impression-notice: #EDA608;
-  --themes-usuake-tokens-colors-sd-system-color-impression-on-notice: #FFFFFF;
-  --themes-usuake-tokens-colors-sd-system-color-impression-notice-container: #FFE265;
-  --themes-usuake-tokens-colors-sd-system-color-impression-on-notice-container: #000000;
-  --themes-usuake-tokens-colors-sd-system-color-impression-negative: #D61930;
-  --themes-usuake-tokens-colors-sd-system-color-impression-on-negative: #FFFFFF;
-  --themes-usuake-tokens-colors-sd-system-color-impression-negative-container: #FFD2D1;
-  --themes-usuake-tokens-colors-sd-system-color-impression-on-negative-container: #000000;
-  --themes-usuake-tokens-colors-sd-system-color-impression-positive: #279B20;
-  --themes-usuake-tokens-colors-sd-system-color-impression-on-positive: #FFFFFF;
-  --themes-usuake-tokens-colors-sd-system-color-impression-positive-container: #279B20;
-  --themes-usuake-tokens-colors-sd-system-color-impression-on-positive-container: #FFFFFF;
-  --themes-usuake-tokens-colors-sd-system-color-component-surface: #FFFFFF; /* bodyの背景色などサイトのベースカラー */
-  --themes-usuake-tokens-colors-sd-system-color-component-on-surface: #000000; /* surface色を地にしたオブジェクト色 */
-  --themes-usuake-tokens-colors-sd-system-color-component-on-surface-variant: #8C959C; /* プレイスホルダーやサブテキストなどonSurfaceに強弱をつける際に利用 */
-  --themes-usuake-tokens-colors-sd-system-color-component-inverse-surface: #23292D; /* toastやtooltipなどに使用するsurfaceの反対色 */
-  --themes-usuake-tokens-colors-sd-system-color-component-inverse-on-surface: #FFFFFF; /* surfaceの反対色を地にしたオブジェクト色 */
-  --themes-usuake-tokens-colors-sd-system-color-component-outline: #CED5D9; /* ボタンやフォームなどのアウトライン色 */
-  --themes-usuake-tokens-colors-sd-system-color-component-outline-variant: #8C959C;
-  --themes-usuake-tokens-colors-sd-system-color-component-scrim: #00000033; /* modalやdrawerの背景色として使用する色 */
-  --themes-usuake-tokens-colors-sd-system-color-interaction-disabled: #EBEEEF; /* disabled状態のオブジェクト色 */
-  --themes-usuake-tokens-colors-sd-system-color-interaction-disabled-on-surface: #AEB8C0; /* onSurface色をdisabled状態にするときに使用 */
-  --themes-usuake-tokens-colors-sd-system-color-interaction-selected-surface: #FFEBE9; /* surface色をselected状態にするときに使用 (ListItemなど) */
-  --themes-usuake-tokens-colors-sd-system-color-interaction-hovered: #00000033; /* hover状態のオブジェクトに重ねわせる半透明色 */
-  --themes-usuake-tokens-colors-sd-system-color-interaction-hovered-variant: #0000000D;
-  --themes-usuake-tokens-colors-sd-system-color-interaction-hovered-on-primary: #FFFFFF99; /* primaryなど有彩色を使用したhover状態のオブジェクトに重ね合わせる半透明色 */
+  --themes-sumire-tokens-colors-sd-system-color-impression-primary: #733B85;
+  --themes-sumire-tokens-colors-sd-system-color-impression-on-primary: #FFFFFF;
+  --themes-sumire-tokens-colors-sd-system-color-impression-primary-container: #733B85;
+  --themes-sumire-tokens-colors-sd-system-color-impression-on-primary-container: #FFFFFF;
+  --themes-sumire-tokens-colors-sd-system-color-impression-secondary: #DCBDE4;
+  --themes-sumire-tokens-colors-sd-system-color-impression-on-secondary: #000000;
+  --themes-sumire-tokens-colors-sd-system-color-impression-secondary-container: #DCBDE4;
+  --themes-sumire-tokens-colors-sd-system-color-impression-on-secondary-container: #000000;
+  --themes-sumire-tokens-colors-sd-system-color-impression-tertiary: #073165;
+  --themes-sumire-tokens-colors-sd-system-color-impression-on-tertiary: #FFFFFF;
+  --themes-sumire-tokens-colors-sd-system-color-impression-tertiary-container: #073165;
+  --themes-sumire-tokens-colors-sd-system-color-impression-on-tertiary-container: #FFFFFF;
+  --themes-sumire-tokens-colors-sd-system-color-impression-notice: #FFE600;
+  --themes-sumire-tokens-colors-sd-system-color-impression-on-notice: #000000;
+  --themes-sumire-tokens-colors-sd-system-color-impression-notice-container: #FFE600;
+  --themes-sumire-tokens-colors-sd-system-color-impression-on-notice-container: #000000;
+  --themes-sumire-tokens-colors-sd-system-color-impression-negative: #CE0037;
+  --themes-sumire-tokens-colors-sd-system-color-impression-on-negative: #FFFFFF;
+  --themes-sumire-tokens-colors-sd-system-color-impression-negative-container: #FCD6D3;
+  --themes-sumire-tokens-colors-sd-system-color-impression-on-negative-container: #000000;
+  --themes-sumire-tokens-colors-sd-system-color-impression-positive: #40A683;
+  --themes-sumire-tokens-colors-sd-system-color-impression-on-positive: #FFFFFF;
+  --themes-sumire-tokens-colors-sd-system-color-impression-positive-container: #40A683;
+  --themes-sumire-tokens-colors-sd-system-color-impression-on-positive-container: #FFFFFF;
+  --themes-sumire-tokens-colors-sd-system-color-component-surface: #FFFFFF; /* bodyの背景色などサイトのベースカラー */
+  --themes-sumire-tokens-colors-sd-system-color-component-on-surface: #000000; /* surface色を地にしたオブジェクト色 */
+  --themes-sumire-tokens-colors-sd-system-color-component-on-surface-variant: #8C8B87; /* プレイスホルダーやサブテキストなどonSurfaceに強弱をつける際に利用 */
+  --themes-sumire-tokens-colors-sd-system-color-component-inverse-surface: #232322; /* toastやtooltipなどに使用するsurfaceの反対色 */
+  --themes-sumire-tokens-colors-sd-system-color-component-inverse-on-surface: #FFFFFF; /* surfaceの反対色を地にしたオブジェクト色 */
+  --themes-sumire-tokens-colors-sd-system-color-component-outline: #C8C7C2; /* ボタンやフォームなどのアウトライン色 */
+  --themes-sumire-tokens-colors-sd-system-color-component-outline-variant: #8C8B87;
+  --themes-sumire-tokens-colors-sd-system-color-component-scrim: #00000033; /* modalやdrawerの背景色として使用する色 */
+  --themes-sumire-tokens-colors-sd-system-color-interaction-disabled: #EFEEEB; /* disabled状態のオブジェクト色 */
+  --themes-sumire-tokens-colors-sd-system-color-interaction-disabled-on-surface: #AFAEAA; /* onSurface色をdisabled状態にするときに使用 */
+  --themes-sumire-tokens-colors-sd-system-color-interaction-selected-surface: #DCBDE4; /* surface色をselected状態にするときに使用 (ListItemなど) */
+  --themes-sumire-tokens-colors-sd-system-color-interaction-hovered: #00000033; /* hover状態のオブジェクトに重ねわせる半透明色 */
+  --themes-sumire-tokens-colors-sd-system-color-interaction-hovered-variant: #0000000D;
+  --themes-sumire-tokens-colors-sd-system-color-interaction-hovered-on-primary: #FFFFFF99; /* primaryなど有彩色を使用したhover状態のオブジェクトに重ね合わせる半透明色 */
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-primary: #B9336B;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-on-primary: #FFFFFF;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-primary-container: #F5C1D1;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-on-primary-container: #000000;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-secondary: #F6D7E0;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-on-secondary: #000000;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-secondary-container: #F6D7E0;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-on-secondary-container: #000000;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-tertiary: #401026;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-on-tertiary: #FFFFFF;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-tertiary-container: #401026;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-on-tertiary-container: #FFFFFF;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-notice: #FFE600;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-on-notice: #000000;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-notice-container: #FFE600;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-on-notice-container: #000000;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-negative: #CE0037;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-on-negative: #FFFFFF;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-negative-container: #FCD6D3;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-on-negative-container: #000000;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-positive: #40A683;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-on-positive: #FFFFFF;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-positive-container: #40A683;
+  --themes-tsutsuji-tokens-colors-sd-system-color-impression-on-positive-container: #FFFFFF;
+  --themes-tsutsuji-tokens-colors-sd-system-color-component-surface: #FFFFFF; /* bodyの背景色などサイトのベースカラー */
+  --themes-tsutsuji-tokens-colors-sd-system-color-component-on-surface: #000000; /* surface色を地にしたオブジェクト色 */
+  --themes-tsutsuji-tokens-colors-sd-system-color-component-on-surface-variant: #8C8B87; /* プレイスホルダーやサブテキストなどonSurfaceに強弱をつける際に利用 */
+  --themes-tsutsuji-tokens-colors-sd-system-color-component-inverse-surface: #232322; /* toastやtooltipなどに使用するsurfaceの反対色 */
+  --themes-tsutsuji-tokens-colors-sd-system-color-component-inverse-on-surface: #FFFFFF; /* surfaceの反対色を地にしたオブジェクト色 */
+  --themes-tsutsuji-tokens-colors-sd-system-color-component-outline: #C8C7C2; /* ボタンやフォームなどのアウトライン色 */
+  --themes-tsutsuji-tokens-colors-sd-system-color-component-outline-variant: #8C8B87;
+  --themes-tsutsuji-tokens-colors-sd-system-color-component-scrim: #00000033; /* modalやdrawerの背景色として使用する色 */
+  --themes-tsutsuji-tokens-colors-sd-system-color-interaction-disabled: #EFEEEB; /* disabled状態のオブジェクト色 */
+  --themes-tsutsuji-tokens-colors-sd-system-color-interaction-disabled-on-surface: #AFAEAA; /* onSurface色をdisabled状態にするときに使用 */
+  --themes-tsutsuji-tokens-colors-sd-system-color-interaction-selected-surface: #F6D7E0; /* surface色をselected状態にするときに使用 (ListItemなど) */
+  --themes-tsutsuji-tokens-colors-sd-system-color-interaction-hovered: #00000033; /* hover状態のオブジェクトに重ねわせる半透明色 */
+  --themes-tsutsuji-tokens-colors-sd-system-color-interaction-hovered-variant: #0000000D;
+  --themes-tsutsuji-tokens-colors-sd-system-color-interaction-hovered-on-primary: #FFFFFF99; /* primaryなど有彩色を使用したhover状態のオブジェクトに重ね合わせる半透明色 */
 }

@@ -85,8 +85,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.gray.100",
     "type": "color",
-    "value": "#F7F8F9",
-    "originalValue": "#F7F8F9"
+    "value": "#EFEEEB",
+    "originalValue": "#EFEEEB"
   },
   {
     "path": [
@@ -99,8 +99,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.gray.200",
     "type": "color",
-    "value": "#EBEEEF",
-    "originalValue": "#EBEEEF"
+    "value": "#D9D8D3",
+    "originalValue": "#D9D8D3"
   },
   {
     "path": [
@@ -113,8 +113,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.gray.300",
     "type": "color",
-    "value": "#CED5D9",
-    "originalValue": "#CED5D9"
+    "value": "#C8C7C2",
+    "originalValue": "#C8C7C2"
   },
   {
     "path": [
@@ -127,8 +127,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.gray.400",
     "type": "color",
-    "value": "#AEB8C0",
-    "originalValue": "#AEB8C0"
+    "value": "#AFAEAA",
+    "originalValue": "#AFAEAA"
   },
   {
     "path": [
@@ -141,8 +141,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.gray.500",
     "type": "color",
-    "value": "#8C959C",
-    "originalValue": "#8C959C"
+    "value": "#8C8B87",
+    "originalValue": "#8C8B87"
   },
   {
     "path": [
@@ -155,8 +155,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.gray.600",
     "type": "color",
-    "value": "#6F787E",
-    "originalValue": "#6F787E"
+    "value": "#696966",
+    "originalValue": "#696966"
   },
   {
     "path": [
@@ -169,8 +169,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.gray.700",
     "type": "color",
-    "value": "#576066",
-    "originalValue": "#576066"
+    "value": "#525250",
+    "originalValue": "#525250"
   },
   {
     "path": [
@@ -183,8 +183,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.gray.800",
     "type": "color",
-    "value": "#424A50",
-    "originalValue": "#424A50"
+    "value": "#3F3F3D",
+    "originalValue": "#3F3F3D"
   },
   {
     "path": [
@@ -197,8 +197,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.gray.900",
     "type": "color",
-    "value": "#31383D",
-    "originalValue": "#31383D"
+    "value": "#31312F",
+    "originalValue": "#31312F"
   },
   {
     "path": [
@@ -211,8 +211,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.gray.1000",
     "type": "color",
-    "value": "#23292D",
-    "originalValue": "#23292D"
+    "value": "#232322",
+    "originalValue": "#232322"
   },
   {
     "path": [
@@ -225,8 +225,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.red.100",
     "type": "color",
-    "value": "#FFEBE9",
-    "originalValue": "#FFEBE9"
+    "value": "#FCEBEA",
+    "originalValue": "#FCEBEA"
   },
   {
     "path": [
@@ -239,8 +239,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.red.200",
     "type": "color",
-    "value": "#FFD2D1",
-    "originalValue": "#FFD2D1"
+    "value": "#FCD6D3",
+    "originalValue": "#FCD6D3"
   },
   {
     "path": [
@@ -253,8 +253,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.red.300",
     "type": "color",
-    "value": "#FFB3B1",
-    "originalValue": "#FFB3B1"
+    "value": "#FDB9B4",
+    "originalValue": "#FDB9B4"
   },
   {
     "path": [
@@ -267,8 +267,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.red.400",
     "type": "color",
-    "value": "#FE8482",
-    "originalValue": "#FE8482"
+    "value": "#FF8F8F",
+    "originalValue": "#FF8F8F"
   },
   {
     "path": [
@@ -281,8 +281,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.red.500",
     "type": "color",
-    "value": "#FB514D",
-    "originalValue": "#FB514D"
+    "value": "#F84258",
+    "originalValue": "#F84258"
   },
   {
     "path": [
@@ -295,8 +295,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.red.600",
     "type": "color",
-    "value": "#D61930",
-    "originalValue": "#D61930"
+    "value": "#CE0037",
+    "originalValue": "#CE0037"
   },
   {
     "path": [
@@ -309,8 +309,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.red.700",
     "type": "color",
-    "value": "#A01026",
-    "originalValue": "#A01026"
+    "value": "#A4002A",
+    "originalValue": "#A4002A"
   },
   {
     "path": [
@@ -323,8 +323,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.red.800",
     "type": "color",
-    "value": "#84061C",
-    "originalValue": "#84061C"
+    "value": "#81001F",
+    "originalValue": "#81001F"
   },
   {
     "path": [
@@ -337,8 +337,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.red.900",
     "type": "color",
-    "value": "#5F0219",
-    "originalValue": "#5F0219"
+    "value": "#650417",
+    "originalValue": "#650417"
   },
   {
     "path": [
@@ -351,8 +351,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.red.1000",
     "type": "color",
-    "value": "#400013",
-    "originalValue": "#400013"
+    "value": "#49060E",
+    "originalValue": "#49060E"
   },
   {
     "path": [
@@ -360,13 +360,13 @@ export default [
       "reference",
       "color",
       "scale",
-      "orange",
+      "chestnut",
       "100"
     ],
-    "key": "sd.reference.color.scale.orange.100",
+    "key": "sd.reference.color.scale.chestnut.100",
     "type": "color",
-    "value": "#FFEDDE",
-    "originalValue": "#FFEDDE"
+    "value": "#FAECE6",
+    "originalValue": "#FAECE6"
   },
   {
     "path": [
@@ -374,13 +374,13 @@ export default [
       "reference",
       "color",
       "scale",
-      "orange",
+      "chestnut",
       "200"
     ],
-    "key": "sd.reference.color.scale.orange.200",
+    "key": "sd.reference.color.scale.chestnut.200",
     "type": "color",
-    "value": "#FFD8B7",
-    "originalValue": "#FFD8B7"
+    "value": "#F7D8C9",
+    "originalValue": "#F7D8C9"
   },
   {
     "path": [
@@ -388,13 +388,13 @@ export default [
       "reference",
       "color",
       "scale",
-      "orange",
+      "chestnut",
       "300"
     ],
-    "key": "sd.reference.color.scale.orange.300",
+    "key": "sd.reference.color.scale.chestnut.300",
     "type": "color",
-    "value": "#FFB781",
-    "originalValue": "#FFB781"
+    "value": "#F7C6B0",
+    "originalValue": "#F7C6B0"
   },
   {
     "path": [
@@ -402,13 +402,13 @@ export default [
       "reference",
       "color",
       "scale",
-      "orange",
+      "chestnut",
       "400"
     ],
-    "key": "sd.reference.color.scale.orange.400",
+    "key": "sd.reference.color.scale.chestnut.400",
     "type": "color",
-    "value": "#FB8F4E",
-    "originalValue": "#FB8F4E"
+    "value": "#F49567",
+    "originalValue": "#F49567"
   },
   {
     "path": [
@@ -416,13 +416,13 @@ export default [
       "reference",
       "color",
       "scale",
-      "orange",
+      "chestnut",
       "500"
     ],
-    "key": "sd.reference.color.scale.orange.500",
+    "key": "sd.reference.color.scale.chestnut.500",
     "type": "color",
-    "value": "#E46C24",
-    "originalValue": "#E46C24"
+    "value": "#E26324",
+    "originalValue": "#E26324"
   },
   {
     "path": [
@@ -430,13 +430,13 @@ export default [
       "reference",
       "color",
       "scale",
-      "orange",
+      "chestnut",
       "600"
     ],
-    "key": "sd.reference.color.scale.orange.600",
+    "key": "sd.reference.color.scale.chestnut.600",
     "type": "color",
-    "value": "#C84D00",
-    "originalValue": "#C84D00"
+    "value": "#AB4919",
+    "originalValue": "#AB4919"
   },
   {
     "path": [
@@ -444,13 +444,13 @@ export default [
       "reference",
       "color",
       "scale",
-      "orange",
+      "chestnut",
       "700"
     ],
-    "key": "sd.reference.color.scale.orange.700",
+    "key": "sd.reference.color.scale.chestnut.700",
     "type": "color",
-    "value": "#A33900",
-    "originalValue": "#A33900"
+    "value": "#803510",
+    "originalValue": "#803510"
   },
   {
     "path": [
@@ -458,13 +458,13 @@ export default [
       "reference",
       "color",
       "scale",
-      "orange",
+      "chestnut",
       "800"
     ],
-    "key": "sd.reference.color.scale.orange.800",
+    "key": "sd.reference.color.scale.chestnut.800",
     "type": "color",
-    "value": "#7D2C00",
-    "originalValue": "#7D2C00"
+    "value": "#692C0D",
+    "originalValue": "#692C0D"
   },
   {
     "path": [
@@ -472,13 +472,13 @@ export default [
       "reference",
       "color",
       "scale",
-      "orange",
+      "chestnut",
       "900"
     ],
-    "key": "sd.reference.color.scale.orange.900",
+    "key": "sd.reference.color.scale.chestnut.900",
     "type": "color",
-    "value": "#602100",
-    "originalValue": "#602100"
+    "value": "#50230D",
+    "originalValue": "#50230D"
   },
   {
     "path": [
@@ -486,13 +486,153 @@ export default [
       "reference",
       "color",
       "scale",
-      "orange",
+      "chestnut",
       "1000"
     ],
-    "key": "sd.reference.color.scale.orange.1000",
+    "key": "sd.reference.color.scale.chestnut.1000",
     "type": "color",
-    "value": "#4D1700",
-    "originalValue": "#4D1700"
+    "value": "#371B0B",
+    "originalValue": "#371B0B"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "beige",
+      "100"
+    ],
+    "key": "sd.reference.color.scale.beige.100",
+    "type": "color",
+    "value": "#F7EDE2",
+    "originalValue": "#F7EDE2"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "beige",
+      "200"
+    ],
+    "key": "sd.reference.color.scale.beige.200",
+    "type": "color",
+    "value": "#F2DBC0",
+    "originalValue": "#F2DBC0"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "beige",
+      "300"
+    ],
+    "key": "sd.reference.color.scale.beige.300",
+    "type": "color",
+    "value": "#EDC18A",
+    "originalValue": "#EDC18A"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "beige",
+      "400"
+    ],
+    "key": "sd.reference.color.scale.beige.400",
+    "type": "color",
+    "value": "#DAA358",
+    "originalValue": "#DAA358"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "beige",
+      "500"
+    ],
+    "key": "sd.reference.color.scale.beige.500",
+    "type": "color",
+    "value": "#AF8245",
+    "originalValue": "#AF8245"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "beige",
+      "600"
+    ],
+    "key": "sd.reference.color.scale.beige.600",
+    "type": "color",
+    "value": "#846132",
+    "originalValue": "#846132"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "beige",
+      "700"
+    ],
+    "key": "sd.reference.color.scale.beige.700",
+    "type": "color",
+    "value": "#684C26",
+    "originalValue": "#684C26"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "beige",
+      "800"
+    ],
+    "key": "sd.reference.color.scale.beige.800",
+    "type": "color",
+    "value": "#503A1C",
+    "originalValue": "#503A1C"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "beige",
+      "900"
+    ],
+    "key": "sd.reference.color.scale.beige.900",
+    "type": "color",
+    "value": "#3E2D17",
+    "originalValue": "#3E2D17"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "beige",
+      "1000"
+    ],
+    "key": "sd.reference.color.scale.beige.1000",
+    "type": "color",
+    "value": "#2B2013",
+    "originalValue": "#2B2013"
   },
   {
     "path": [
@@ -505,8 +645,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.yellow.100",
     "type": "color",
-    "value": "#FFF5A7",
-    "originalValue": "#FFF5A7"
+    "value": "#FEEDBE",
+    "originalValue": "#FEEDBE"
   },
   {
     "path": [
@@ -519,8 +659,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.yellow.200",
     "type": "color",
-    "value": "#FFE265",
-    "originalValue": "#FFE265"
+    "value": "#FFE885",
+    "originalValue": "#FFE885"
   },
   {
     "path": [
@@ -533,8 +673,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.yellow.300",
     "type": "color",
-    "value": "#FED232",
-    "originalValue": "#FED232"
+    "value": "#FFE600",
+    "originalValue": "#FFE600"
   },
   {
     "path": [
@@ -547,8 +687,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.yellow.400",
     "type": "color",
-    "value": "#FAC525",
-    "originalValue": "#FAC525"
+    "value": "#EDD202",
+    "originalValue": "#EDD202"
   },
   {
     "path": [
@@ -561,8 +701,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.yellow.500",
     "type": "color",
-    "value": "#F4B72B",
-    "originalValue": "#F4B72B"
+    "value": "#AC9301",
+    "originalValue": "#AC9301"
   },
   {
     "path": [
@@ -575,8 +715,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.yellow.600",
     "type": "color",
-    "value": "#EDA608",
-    "originalValue": "#EDA608"
+    "value": "#857100",
+    "originalValue": "#857100"
   },
   {
     "path": [
@@ -589,8 +729,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.yellow.700",
     "type": "color",
-    "value": "#DD9307",
-    "originalValue": "#DD9307"
+    "value": "#5F5100",
+    "originalValue": "#5F5100"
   },
   {
     "path": [
@@ -603,8 +743,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.yellow.800",
     "type": "color",
-    "value": "#B37206",
-    "originalValue": "#B37206"
+    "value": "#4A3E00",
+    "originalValue": "#4A3E00"
   },
   {
     "path": [
@@ -617,8 +757,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.yellow.900",
     "type": "color",
-    "value": "#814E00",
-    "originalValue": "#814E00"
+    "value": "#3A3000",
+    "originalValue": "#3A3000"
   },
   {
     "path": [
@@ -631,8 +771,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.yellow.1000",
     "type": "color",
-    "value": "#5D3400",
-    "originalValue": "#5D3400"
+    "value": "#292200",
+    "originalValue": "#292200"
   },
   {
     "path": [
@@ -645,8 +785,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.green.100",
     "type": "color",
-    "value": "#CCF7CE",
-    "originalValue": "#CCF7CE"
+    "value": "#CAF9E6",
+    "originalValue": "#CAF9E6"
   },
   {
     "path": [
@@ -659,8 +799,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.green.200",
     "type": "color",
-    "value": "#BBF4BF",
-    "originalValue": "#BBF4BF"
+    "value": "#AEEAD5",
+    "originalValue": "#AEEAD5"
   },
   {
     "path": [
@@ -673,8 +813,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.green.300",
     "type": "color",
-    "value": "#69DF73",
-    "originalValue": "#69DF73"
+    "value": "#98E1C8",
+    "originalValue": "#98E1C8"
   },
   {
     "path": [
@@ -687,8 +827,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.green.400",
     "type": "color",
-    "value": "#4ECA53",
-    "originalValue": "#4ECA53"
+    "value": "#6ED0AE",
+    "originalValue": "#6ED0AE"
   },
   {
     "path": [
@@ -701,8 +841,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.green.500",
     "type": "color",
-    "value": "#39B637",
-    "originalValue": "#39B637"
+    "value": "#40A683",
+    "originalValue": "#40A683"
   },
   {
     "path": [
@@ -715,8 +855,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.green.600",
     "type": "color",
-    "value": "#279B20",
-    "originalValue": "#279B20"
+    "value": "#2C755C",
+    "originalValue": "#2C755C"
   },
   {
     "path": [
@@ -729,8 +869,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.green.700",
     "type": "color",
-    "value": "#1F8711",
-    "originalValue": "#1F8711"
+    "value": "#266751",
+    "originalValue": "#266751"
   },
   {
     "path": [
@@ -743,8 +883,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.green.800",
     "type": "color",
-    "value": "#136508",
-    "originalValue": "#136508"
+    "value": "#184737",
+    "originalValue": "#184737"
   },
   {
     "path": [
@@ -757,8 +897,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.green.900",
     "type": "color",
-    "value": "#054704",
-    "originalValue": "#054704"
+    "value": "#12372B",
+    "originalValue": "#12372B"
   },
   {
     "path": [
@@ -771,8 +911,148 @@ export default [
     ],
     "key": "sd.reference.color.scale.green.1000",
     "type": "color",
-    "value": "#022D02",
-    "originalValue": "#022D02"
+    "value": "#0D271E",
+    "originalValue": "#0D271E"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "skyBlue",
+      "100"
+    ],
+    "key": "sd.reference.color.scale.skyBlue.100",
+    "type": "color",
+    "value": "#CCF7FC",
+    "originalValue": "#CCF7FC"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "skyBlue",
+      "200"
+    ],
+    "key": "sd.reference.color.scale.skyBlue.200",
+    "type": "color",
+    "value": "#99F1FA",
+    "originalValue": "#99F1FA"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "skyBlue",
+      "300"
+    ],
+    "key": "sd.reference.color.scale.skyBlue.300",
+    "type": "color",
+    "value": "#63E3EE",
+    "originalValue": "#63E3EE"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "skyBlue",
+      "400"
+    ],
+    "key": "sd.reference.color.scale.skyBlue.400",
+    "type": "color",
+    "value": "#03C5D3",
+    "originalValue": "#03C5D3"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "skyBlue",
+      "500"
+    ],
+    "key": "sd.reference.color.scale.skyBlue.500",
+    "type": "color",
+    "value": "#00A3AF",
+    "originalValue": "#00A3AF"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "skyBlue",
+      "600"
+    ],
+    "key": "sd.reference.color.scale.skyBlue.600",
+    "type": "color",
+    "value": "#00757E",
+    "originalValue": "#00757E"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "skyBlue",
+      "700"
+    ],
+    "key": "sd.reference.color.scale.skyBlue.700",
+    "type": "color",
+    "value": "#015C63",
+    "originalValue": "#015C63"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "skyBlue",
+      "800"
+    ],
+    "key": "sd.reference.color.scale.skyBlue.800",
+    "type": "color",
+    "value": "#01474C",
+    "originalValue": "#01474C"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "skyBlue",
+      "900"
+    ],
+    "key": "sd.reference.color.scale.skyBlue.900",
+    "type": "color",
+    "value": "#02373C",
+    "originalValue": "#02373C"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "skyBlue",
+      "1000"
+    ],
+    "key": "sd.reference.color.scale.skyBlue.1000",
+    "type": "color",
+    "value": "#04272A",
+    "originalValue": "#04272A"
   },
   {
     "path": [
@@ -785,8 +1065,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.blue.100",
     "type": "color",
-    "value": "#DBF3FF",
-    "originalValue": "#DBF3FF"
+    "value": "#EFF2FC",
+    "originalValue": "#EFF2FC"
   },
   {
     "path": [
@@ -799,8 +1079,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.blue.200",
     "type": "color",
-    "value": "#BDE5FF",
-    "originalValue": "#BDE5FF"
+    "value": "#D7DEFB",
+    "originalValue": "#D7DEFB"
   },
   {
     "path": [
@@ -813,8 +1093,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.blue.300",
     "type": "color",
-    "value": "#94CEFF",
-    "originalValue": "#94CEFF"
+    "value": "#BFCEFC",
+    "originalValue": "#BFCEFC"
   },
   {
     "path": [
@@ -827,8 +1107,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.blue.400",
     "type": "color",
-    "value": "#6CB5FF",
-    "originalValue": "#6CB5FF"
+    "value": "#8FAEFE",
+    "originalValue": "#8FAEFE"
   },
   {
     "path": [
@@ -841,8 +1121,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.blue.500",
     "type": "color",
-    "value": "#248EFF",
-    "originalValue": "#248EFF"
+    "value": "#428CFE",
+    "originalValue": "#428CFE"
   },
   {
     "path": [
@@ -855,8 +1135,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.blue.600",
     "type": "color",
-    "value": "#0066DF",
-    "originalValue": "#0066DF"
+    "value": "#0A69CF",
+    "originalValue": "#0A69CF"
   },
   {
     "path": [
@@ -869,8 +1149,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.blue.700",
     "type": "color",
-    "value": "#0050AF",
-    "originalValue": "#0050AF"
+    "value": "#0650A0",
+    "originalValue": "#0650A0"
   },
   {
     "path": [
@@ -883,8 +1163,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.blue.800",
     "type": "color",
-    "value": "#003D8C",
-    "originalValue": "#003D8C"
+    "value": "#043F81",
+    "originalValue": "#043F81"
   },
   {
     "path": [
@@ -897,8 +1177,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.blue.900",
     "type": "color",
-    "value": "#00306D",
-    "originalValue": "#00306D"
+    "value": "#073165",
+    "originalValue": "#073165"
   },
   {
     "path": [
@@ -911,8 +1191,288 @@ export default [
     ],
     "key": "sd.reference.color.scale.blue.1000",
     "type": "color",
-    "value": "#002155",
-    "originalValue": "#002155"
+    "value": "#081E3F",
+    "originalValue": "#081E3F"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "purple",
+      "100"
+    ],
+    "key": "sd.reference.color.scale.purple.100",
+    "type": "color",
+    "value": "#F4ECF6",
+    "originalValue": "#F4ECF6"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "purple",
+      "200"
+    ],
+    "key": "sd.reference.color.scale.purple.200",
+    "type": "color",
+    "value": "#EADAEE",
+    "originalValue": "#EADAEE"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "purple",
+      "300"
+    ],
+    "key": "sd.reference.color.scale.purple.300",
+    "type": "color",
+    "value": "#DCBDE4",
+    "originalValue": "#DCBDE4"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "purple",
+      "400"
+    ],
+    "key": "sd.reference.color.scale.purple.400",
+    "type": "color",
+    "value": "#CC9FD9",
+    "originalValue": "#CC9FD9"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "purple",
+      "500"
+    ],
+    "key": "sd.reference.color.scale.purple.500",
+    "type": "color",
+    "value": "#AA61C2",
+    "originalValue": "#AA61C2"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "purple",
+      "600"
+    ],
+    "key": "sd.reference.color.scale.purple.600",
+    "type": "color",
+    "value": "#914DA9",
+    "originalValue": "#914DA9"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "purple",
+      "700"
+    ],
+    "key": "sd.reference.color.scale.purple.700",
+    "type": "color",
+    "value": "#733B85",
+    "originalValue": "#733B85"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "purple",
+      "800"
+    ],
+    "key": "sd.reference.color.scale.purple.800",
+    "type": "color",
+    "value": "#592D68",
+    "originalValue": "#592D68"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "purple",
+      "900"
+    ],
+    "key": "sd.reference.color.scale.purple.900",
+    "type": "color",
+    "value": "#462352",
+    "originalValue": "#462352"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "purple",
+      "1000"
+    ],
+    "key": "sd.reference.color.scale.purple.1000",
+    "type": "color",
+    "value": "#32183A",
+    "originalValue": "#32183A"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "pink",
+      "100"
+    ],
+    "key": "sd.reference.color.scale.pink.100",
+    "type": "color",
+    "value": "#F9EBF0",
+    "originalValue": "#F9EBF0"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "pink",
+      "200"
+    ],
+    "key": "sd.reference.color.scale.pink.200",
+    "type": "color",
+    "value": "#F6D7E0",
+    "originalValue": "#F6D7E0"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "pink",
+      "300"
+    ],
+    "key": "sd.reference.color.scale.pink.300",
+    "type": "color",
+    "value": "#F5C1D1",
+    "originalValue": "#F5C1D1"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "pink",
+      "400"
+    ],
+    "key": "sd.reference.color.scale.pink.400",
+    "type": "color",
+    "value": "#F190B4",
+    "originalValue": "#F190B4"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "pink",
+      "500"
+    ],
+    "key": "sd.reference.color.scale.pink.500",
+    "type": "color",
+    "value": "#EB4F8E",
+    "originalValue": "#EB4F8E"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "pink",
+      "600"
+    ],
+    "key": "sd.reference.color.scale.pink.600",
+    "type": "color",
+    "value": "#B9336B",
+    "originalValue": "#B9336B"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "pink",
+      "700"
+    ],
+    "key": "sd.reference.color.scale.pink.700",
+    "type": "color",
+    "value": "#932653",
+    "originalValue": "#932653"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "pink",
+      "800"
+    ],
+    "key": "sd.reference.color.scale.pink.800",
+    "type": "color",
+    "value": "#711D41",
+    "originalValue": "#711D41"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "pink",
+      "900"
+    ],
+    "key": "sd.reference.color.scale.pink.900",
+    "type": "color",
+    "value": "#591734",
+    "originalValue": "#591734"
+  },
+  {
+    "path": [
+      "sd",
+      "reference",
+      "color",
+      "scale",
+      "pink",
+      "1000"
+    ],
+    "key": "sd.reference.color.scale.pink.1000",
+    "type": "color",
+    "value": "#401026",
+    "originalValue": "#401026"
   },
   {
     "path": [
@@ -1789,8 +2349,8 @@ export default [
     ],
     "key": "sd.system.color.impression.primary",
     "type": "color",
-    "value": "#0066DF",
-    "originalValue": "{sd.reference.color.scale.blue.600}"
+    "value": "#0650A0",
+    "originalValue": "{sd.reference.color.scale.blue.700}"
   },
   {
     "path": [
@@ -1815,8 +2375,8 @@ export default [
     ],
     "key": "sd.system.color.impression.primaryContainer",
     "type": "color",
-    "value": "#0066DF",
-    "originalValue": "{sd.reference.color.scale.blue.600}"
+    "value": "#0650A0",
+    "originalValue": "{sd.reference.color.scale.blue.700}"
   },
   {
     "path": [
@@ -1837,12 +2397,116 @@ export default [
       "system",
       "color",
       "impression",
+      "secondary"
+    ],
+    "key": "sd.system.color.impression.secondary",
+    "type": "color",
+    "value": "#BFCEFC",
+    "originalValue": "{sd.reference.color.scale.blue.300}"
+  },
+  {
+    "path": [
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onSecondary"
+    ],
+    "key": "sd.system.color.impression.onSecondary",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "secondaryContainer"
+    ],
+    "key": "sd.system.color.impression.secondaryContainer",
+    "type": "color",
+    "value": "#BFCEFC",
+    "originalValue": "{sd.reference.color.scale.blue.300}"
+  },
+  {
+    "path": [
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onSecondaryContainer"
+    ],
+    "key": "sd.system.color.impression.onSecondaryContainer",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "tertiary"
+    ],
+    "key": "sd.system.color.impression.tertiary",
+    "type": "color",
+    "value": "#EFF2FC",
+    "originalValue": "{sd.reference.color.scale.blue.100}"
+  },
+  {
+    "path": [
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onTertiary"
+    ],
+    "key": "sd.system.color.impression.onTertiary",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "tertiaryContainer"
+    ],
+    "key": "sd.system.color.impression.tertiaryContainer",
+    "type": "color",
+    "value": "#EFF2FC",
+    "originalValue": "{sd.reference.color.scale.blue.100}"
+  },
+  {
+    "path": [
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onTertiaryContainer"
+    ],
+    "key": "sd.system.color.impression.onTertiaryContainer",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "sd",
+      "system",
+      "color",
+      "impression",
       "notice"
     ],
     "key": "sd.system.color.impression.notice",
     "type": "color",
-    "value": "#EDA608",
-    "originalValue": "{sd.reference.color.scale.yellow.600}"
+    "value": "#FFE600",
+    "originalValue": "{sd.reference.color.scale.yellow.300}"
   },
   {
     "path": [
@@ -1854,8 +2518,8 @@ export default [
     ],
     "key": "sd.system.color.impression.onNotice",
     "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
   },
   {
     "path": [
@@ -1867,8 +2531,8 @@ export default [
     ],
     "key": "sd.system.color.impression.noticeContainer",
     "type": "color",
-    "value": "#FFE265",
-    "originalValue": "{sd.reference.color.scale.yellow.200}"
+    "value": "#FFE600",
+    "originalValue": "{sd.reference.color.scale.yellow.300}"
   },
   {
     "path": [
@@ -1893,7 +2557,7 @@ export default [
     ],
     "key": "sd.system.color.impression.negative",
     "type": "color",
-    "value": "#D61930",
+    "value": "#CE0037",
     "originalValue": "{sd.reference.color.scale.red.600}"
   },
   {
@@ -1919,7 +2583,7 @@ export default [
     ],
     "key": "sd.system.color.impression.negativeContainer",
     "type": "color",
-    "value": "#FFD2D1",
+    "value": "#FCD6D3",
     "originalValue": "{sd.reference.color.scale.red.200}"
   },
   {
@@ -1945,8 +2609,8 @@ export default [
     ],
     "key": "sd.system.color.impression.positive",
     "type": "color",
-    "value": "#279B20",
-    "originalValue": "{sd.reference.color.scale.green.600}"
+    "value": "#40A683",
+    "originalValue": "{sd.reference.color.scale.green.500}"
   },
   {
     "path": [
@@ -1971,8 +2635,8 @@ export default [
     ],
     "key": "sd.system.color.impression.positiveContainer",
     "type": "color",
-    "value": "#279B20",
-    "originalValue": "{sd.reference.color.scale.green.600}"
+    "value": "#40A683",
+    "originalValue": "{sd.reference.color.scale.green.500}"
   },
   {
     "path": [
@@ -2023,7 +2687,7 @@ export default [
     ],
     "key": "sd.system.color.component.onSurfaceVariant",
     "type": "color",
-    "value": "#8C959C",
+    "value": "#8C8B87",
     "originalValue": "{sd.reference.color.scale.gray.500}"
   },
   {
@@ -2036,7 +2700,7 @@ export default [
     ],
     "key": "sd.system.color.component.inverseSurface",
     "type": "color",
-    "value": "#23292D",
+    "value": "#232322",
     "originalValue": "{sd.reference.color.scale.gray.1000}"
   },
   {
@@ -2062,7 +2726,7 @@ export default [
     ],
     "key": "sd.system.color.component.outline",
     "type": "color",
-    "value": "#CED5D9",
+    "value": "#C8C7C2",
     "originalValue": "{sd.reference.color.scale.gray.300}"
   },
   {
@@ -2075,7 +2739,7 @@ export default [
     ],
     "key": "sd.system.color.component.outlineVariant",
     "type": "color",
-    "value": "#8C959C",
+    "value": "#8C8B87",
     "originalValue": "{sd.reference.color.scale.gray.500}"
   },
   {
@@ -2101,8 +2765,8 @@ export default [
     ],
     "key": "sd.system.color.interaction.disabled",
     "type": "color",
-    "value": "#EBEEEF",
-    "originalValue": "{sd.reference.color.scale.gray.200}"
+    "value": "#EFEEEB",
+    "originalValue": "{sd.reference.color.scale.gray.100}"
   },
   {
     "path": [
@@ -2114,7 +2778,7 @@ export default [
     ],
     "key": "sd.system.color.interaction.disabledOnSurface",
     "type": "color",
-    "value": "#AEB8C0",
+    "value": "#AFAEAA",
     "originalValue": "{sd.reference.color.scale.gray.400}"
   },
   {
@@ -2127,8 +2791,8 @@ export default [
     ],
     "key": "sd.system.color.interaction.selectedSurface",
     "type": "color",
-    "value": "#DBF3FF",
-    "originalValue": "{sd.reference.color.scale.blue.100}"
+    "value": "#BFCEFC",
+    "originalValue": "{sd.reference.color.scale.blue.300}"
   },
   {
     "path": [
@@ -3397,7 +4061,7 @@ export default [
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3406,15 +4070,15 @@ export default [
       "impression",
       "primary"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.impression.primary",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.primary",
     "type": "color",
-    "value": "#279B20",
-    "originalValue": "{sd.reference.color.scale.green.600}"
+    "value": "#00757E",
+    "originalValue": "{sd.reference.color.scale.skyBlue.600}"
   },
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3423,7 +4087,7 @@ export default [
       "impression",
       "onPrimary"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.impression.onPrimary",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onPrimary",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -3431,7 +4095,7 @@ export default [
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3440,15 +4104,15 @@ export default [
       "impression",
       "primaryContainer"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.impression.primaryContainer",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.primaryContainer",
     "type": "color",
-    "value": "#279B20",
-    "originalValue": "{sd.reference.color.scale.green.600}"
+    "value": "#00757E",
+    "originalValue": "{sd.reference.color.scale.skyBlue.600}"
   },
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3457,7 +4121,7 @@ export default [
       "impression",
       "onPrimaryContainer"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.impression.onPrimaryContainer",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onPrimaryContainer",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -3465,7 +4129,143 @@ export default [
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "secondary"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.secondary",
+    "type": "color",
+    "value": "#AEEAD5",
+    "originalValue": "{sd.reference.color.scale.green.200}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onSecondary"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onSecondary",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "secondaryContainer"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.secondaryContainer",
+    "type": "color",
+    "value": "#AEEAD5",
+    "originalValue": "{sd.reference.color.scale.green.200}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onSecondaryContainer"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onSecondaryContainer",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "tertiary"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.tertiary",
+    "type": "color",
+    "value": "#EFEEEB",
+    "originalValue": "{sd.reference.color.scale.gray.100}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onTertiary"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onTertiary",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "tertiaryContainer"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.tertiaryContainer",
+    "type": "color",
+    "value": "#EFEEEB",
+    "originalValue": "{sd.reference.color.scale.gray.100}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onTertiaryContainer"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onTertiaryContainer",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3474,15 +4274,15 @@ export default [
       "impression",
       "notice"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.impression.notice",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.notice",
     "type": "color",
-    "value": "#EDA608",
-    "originalValue": "{sd.reference.color.scale.yellow.600}"
+    "value": "#FFE600",
+    "originalValue": "{sd.reference.color.scale.yellow.300}"
   },
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3491,15 +4291,15 @@ export default [
       "impression",
       "onNotice"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.impression.onNotice",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onNotice",
     "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
   },
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3508,15 +4308,15 @@ export default [
       "impression",
       "noticeContainer"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.impression.noticeContainer",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.noticeContainer",
     "type": "color",
-    "value": "#FFE265",
-    "originalValue": "{sd.reference.color.scale.yellow.200}"
+    "value": "#FFE600",
+    "originalValue": "{sd.reference.color.scale.yellow.300}"
   },
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3525,7 +4325,7 @@ export default [
       "impression",
       "onNoticeContainer"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.impression.onNoticeContainer",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onNoticeContainer",
     "type": "color",
     "value": "#000000",
     "originalValue": "{sd.reference.color.scale.black.1000}"
@@ -3533,7 +4333,7 @@ export default [
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3542,15 +4342,15 @@ export default [
       "impression",
       "negative"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.impression.negative",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.negative",
     "type": "color",
-    "value": "#D61930",
+    "value": "#CE0037",
     "originalValue": "{sd.reference.color.scale.red.600}"
   },
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3559,7 +4359,7 @@ export default [
       "impression",
       "onNegative"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.impression.onNegative",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onNegative",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -3567,7 +4367,7 @@ export default [
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3576,15 +4376,15 @@ export default [
       "impression",
       "negativeContainer"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.impression.negativeContainer",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.negativeContainer",
     "type": "color",
-    "value": "#FFD2D1",
+    "value": "#FCD6D3",
     "originalValue": "{sd.reference.color.scale.red.200}"
   },
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3593,7 +4393,7 @@ export default [
       "impression",
       "onNegativeContainer"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.impression.onNegativeContainer",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onNegativeContainer",
     "type": "color",
     "value": "#000000",
     "originalValue": "{sd.reference.color.scale.black.1000}"
@@ -3601,7 +4401,7 @@ export default [
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3610,15 +4410,15 @@ export default [
       "impression",
       "positive"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.impression.positive",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.positive",
     "type": "color",
-    "value": "#279B20",
-    "originalValue": "{sd.reference.color.scale.green.600}"
+    "value": "#40A683",
+    "originalValue": "{sd.reference.color.scale.green.500}"
   },
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3627,7 +4427,7 @@ export default [
       "impression",
       "onPositive"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.impression.onPositive",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onPositive",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -3635,7 +4435,7 @@ export default [
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3644,15 +4444,15 @@ export default [
       "impression",
       "positiveContainer"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.impression.positiveContainer",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.positiveContainer",
     "type": "color",
-    "value": "#279B20",
-    "originalValue": "{sd.reference.color.scale.green.600}"
+    "value": "#40A683",
+    "originalValue": "{sd.reference.color.scale.green.500}"
   },
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3661,7 +4461,7 @@ export default [
       "impression",
       "onPositiveContainer"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.impression.onPositiveContainer",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onPositiveContainer",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -3669,7 +4469,7 @@ export default [
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3678,7 +4478,7 @@ export default [
       "component",
       "surface"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.component.surface",
+    "key": "themes.asagi.tokens.colors.sd.system.color.component.surface",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -3686,7 +4486,7 @@ export default [
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3695,7 +4495,7 @@ export default [
       "component",
       "onSurface"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.component.onSurface",
+    "key": "themes.asagi.tokens.colors.sd.system.color.component.onSurface",
     "type": "color",
     "value": "#000000",
     "originalValue": "{sd.reference.color.scale.black.1000}"
@@ -3703,7 +4503,7 @@ export default [
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3712,15 +4512,15 @@ export default [
       "component",
       "onSurfaceVariant"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.component.onSurfaceVariant",
+    "key": "themes.asagi.tokens.colors.sd.system.color.component.onSurfaceVariant",
     "type": "color",
-    "value": "#8C959C",
+    "value": "#8C8B87",
     "originalValue": "{sd.reference.color.scale.gray.500}"
   },
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3729,15 +4529,15 @@ export default [
       "component",
       "inverseSurface"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.component.inverseSurface",
+    "key": "themes.asagi.tokens.colors.sd.system.color.component.inverseSurface",
     "type": "color",
-    "value": "#23292D",
+    "value": "#232322",
     "originalValue": "{sd.reference.color.scale.gray.1000}"
   },
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3746,7 +4546,7 @@ export default [
       "component",
       "inverseOnSurface"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.component.inverseOnSurface",
+    "key": "themes.asagi.tokens.colors.sd.system.color.component.inverseOnSurface",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -3754,7 +4554,7 @@ export default [
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3763,15 +4563,15 @@ export default [
       "component",
       "outline"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.component.outline",
+    "key": "themes.asagi.tokens.colors.sd.system.color.component.outline",
     "type": "color",
-    "value": "#CED5D9",
+    "value": "#C8C7C2",
     "originalValue": "{sd.reference.color.scale.gray.300}"
   },
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3780,15 +4580,15 @@ export default [
       "component",
       "outlineVariant"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.component.outlineVariant",
+    "key": "themes.asagi.tokens.colors.sd.system.color.component.outlineVariant",
     "type": "color",
-    "value": "#8C959C",
+    "value": "#8C8B87",
     "originalValue": "{sd.reference.color.scale.gray.500}"
   },
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3797,7 +4597,7 @@ export default [
       "component",
       "scrim"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.component.scrim",
+    "key": "themes.asagi.tokens.colors.sd.system.color.component.scrim",
     "type": "color",
     "value": "#00000033",
     "originalValue": "{sd.reference.color.scale.transparency.20}"
@@ -3805,7 +4605,7 @@ export default [
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3814,15 +4614,15 @@ export default [
       "interaction",
       "disabled"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.interaction.disabled",
+    "key": "themes.asagi.tokens.colors.sd.system.color.interaction.disabled",
     "type": "color",
-    "value": "#EBEEEF",
-    "originalValue": "{sd.reference.color.scale.gray.200}"
+    "value": "#EFEEEB",
+    "originalValue": "{sd.reference.color.scale.gray.100}"
   },
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3831,15 +4631,15 @@ export default [
       "interaction",
       "disabledOnSurface"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.interaction.disabledOnSurface",
+    "key": "themes.asagi.tokens.colors.sd.system.color.interaction.disabledOnSurface",
     "type": "color",
-    "value": "#AEB8C0",
+    "value": "#AFAEAA",
     "originalValue": "{sd.reference.color.scale.gray.400}"
   },
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3848,15 +4648,15 @@ export default [
       "interaction",
       "selectedSurface"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.interaction.selectedSurface",
+    "key": "themes.asagi.tokens.colors.sd.system.color.interaction.selectedSurface",
     "type": "color",
-    "value": "#CCF7CE",
-    "originalValue": "{sd.reference.color.scale.green.100}"
+    "value": "#AEEAD5",
+    "originalValue": "{sd.reference.color.scale.green.200}"
   },
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3865,7 +4665,7 @@ export default [
       "interaction",
       "hovered"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.interaction.hovered",
+    "key": "themes.asagi.tokens.colors.sd.system.color.interaction.hovered",
     "type": "color",
     "value": "#00000033",
     "originalValue": "{sd.reference.color.scale.transparency.20}"
@@ -3873,7 +4673,7 @@ export default [
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3882,7 +4682,7 @@ export default [
       "interaction",
       "hoveredVariant"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.interaction.hoveredVariant",
+    "key": "themes.asagi.tokens.colors.sd.system.color.interaction.hoveredVariant",
     "type": "color",
     "value": "#0000000D",
     "originalValue": "{sd.reference.color.scale.transparency.5}"
@@ -3890,7 +4690,7 @@ export default [
   {
     "path": [
       "themes",
-      "hisui",
+      "asagi",
       "tokens",
       "colors",
       "sd",
@@ -3899,7 +4699,7 @@ export default [
       "interaction",
       "hoveredOnPrimary"
     ],
-    "key": "themes.hisui.tokens.colors.sd.system.color.interaction.hoveredOnPrimary",
+    "key": "themes.asagi.tokens.colors.sd.system.color.interaction.hoveredOnPrimary",
     "type": "color",
     "value": "#FFFFFF99",
     "originalValue": "{sd.reference.color.scale.transparency.60}"
@@ -3918,8 +4718,8 @@ export default [
     ],
     "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.primary",
     "type": "color",
-    "value": "#C84D00",
-    "originalValue": "{sd.reference.color.scale.orange.600}"
+    "value": "#803510",
+    "originalValue": "{sd.reference.color.scale.chestnut.700}"
   },
   {
     "path": [
@@ -3952,8 +4752,8 @@ export default [
     ],
     "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.primaryContainer",
     "type": "color",
-    "value": "#C84D00",
-    "originalValue": "{sd.reference.color.scale.orange.600}"
+    "value": "#803510",
+    "originalValue": "{sd.reference.color.scale.chestnut.700}"
   },
   {
     "path": [
@@ -3982,12 +4782,148 @@ export default [
       "system",
       "color",
       "impression",
+      "secondary"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.secondary",
+    "type": "color",
+    "value": "#F7C6B0",
+    "originalValue": "{sd.reference.color.scale.chestnut.300}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onSecondary"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onSecondary",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "secondaryContainer"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.secondaryContainer",
+    "type": "color",
+    "value": "#F7C6B0",
+    "originalValue": "{sd.reference.color.scale.chestnut.300}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onSecondaryContainer"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onSecondaryContainer",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "tertiary"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.tertiary",
+    "type": "color",
+    "value": "#F7EDE2",
+    "originalValue": "{sd.reference.color.scale.beige.100}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onTertiary"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onTertiary",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "tertiaryContainer"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.tertiaryContainer",
+    "type": "color",
+    "value": "#F7EDE2",
+    "originalValue": "{sd.reference.color.scale.beige.100}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onTertiaryContainer"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onTertiaryContainer",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
       "notice"
     ],
     "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.notice",
     "type": "color",
-    "value": "#EDA608",
-    "originalValue": "{sd.reference.color.scale.yellow.600}"
+    "value": "#FFE600",
+    "originalValue": "{sd.reference.color.scale.yellow.300}"
   },
   {
     "path": [
@@ -4003,8 +4939,8 @@ export default [
     ],
     "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onNotice",
     "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
   },
   {
     "path": [
@@ -4020,8 +4956,8 @@ export default [
     ],
     "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.noticeContainer",
     "type": "color",
-    "value": "#FFE265",
-    "originalValue": "{sd.reference.color.scale.yellow.200}"
+    "value": "#FFE600",
+    "originalValue": "{sd.reference.color.scale.yellow.300}"
   },
   {
     "path": [
@@ -4054,7 +4990,7 @@ export default [
     ],
     "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.negative",
     "type": "color",
-    "value": "#D61930",
+    "value": "#CE0037",
     "originalValue": "{sd.reference.color.scale.red.600}"
   },
   {
@@ -4088,7 +5024,7 @@ export default [
     ],
     "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.negativeContainer",
     "type": "color",
-    "value": "#FFD2D1",
+    "value": "#FCD6D3",
     "originalValue": "{sd.reference.color.scale.red.200}"
   },
   {
@@ -4122,8 +5058,8 @@ export default [
     ],
     "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.positive",
     "type": "color",
-    "value": "#279B20",
-    "originalValue": "{sd.reference.color.scale.green.600}"
+    "value": "#40A683",
+    "originalValue": "{sd.reference.color.scale.green.500}"
   },
   {
     "path": [
@@ -4156,8 +5092,8 @@ export default [
     ],
     "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.positiveContainer",
     "type": "color",
-    "value": "#279B20",
-    "originalValue": "{sd.reference.color.scale.green.600}"
+    "value": "#40A683",
+    "originalValue": "{sd.reference.color.scale.green.500}"
   },
   {
     "path": [
@@ -4224,7 +5160,7 @@ export default [
     ],
     "key": "themes.kurikawa.tokens.colors.sd.system.color.component.onSurfaceVariant",
     "type": "color",
-    "value": "#8C959C",
+    "value": "#8C8B87",
     "originalValue": "{sd.reference.color.scale.gray.500}"
   },
   {
@@ -4241,7 +5177,7 @@ export default [
     ],
     "key": "themes.kurikawa.tokens.colors.sd.system.color.component.inverseSurface",
     "type": "color",
-    "value": "#23292D",
+    "value": "#232322",
     "originalValue": "{sd.reference.color.scale.gray.1000}"
   },
   {
@@ -4275,7 +5211,7 @@ export default [
     ],
     "key": "themes.kurikawa.tokens.colors.sd.system.color.component.outline",
     "type": "color",
-    "value": "#CED5D9",
+    "value": "#C8C7C2",
     "originalValue": "{sd.reference.color.scale.gray.300}"
   },
   {
@@ -4292,7 +5228,7 @@ export default [
     ],
     "key": "themes.kurikawa.tokens.colors.sd.system.color.component.outlineVariant",
     "type": "color",
-    "value": "#8C959C",
+    "value": "#8C8B87",
     "originalValue": "{sd.reference.color.scale.gray.500}"
   },
   {
@@ -4326,8 +5262,8 @@ export default [
     ],
     "key": "themes.kurikawa.tokens.colors.sd.system.color.interaction.disabled",
     "type": "color",
-    "value": "#EBEEEF",
-    "originalValue": "{sd.reference.color.scale.gray.200}"
+    "value": "#EFEEEB",
+    "originalValue": "{sd.reference.color.scale.gray.100}"
   },
   {
     "path": [
@@ -4343,7 +5279,7 @@ export default [
     ],
     "key": "themes.kurikawa.tokens.colors.sd.system.color.interaction.disabledOnSurface",
     "type": "color",
-    "value": "#AEB8C0",
+    "value": "#AFAEAA",
     "originalValue": "{sd.reference.color.scale.gray.400}"
   },
   {
@@ -4360,8 +5296,8 @@ export default [
     ],
     "key": "themes.kurikawa.tokens.colors.sd.system.color.interaction.selectedSurface",
     "type": "color",
-    "value": "#FFEDDE",
-    "originalValue": "{sd.reference.color.scale.orange.100}"
+    "value": "#F7C6B0",
+    "originalValue": "{sd.reference.color.scale.chestnut.300}"
   },
   {
     "path": [
@@ -4417,7 +5353,7 @@ export default [
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4426,15 +5362,15 @@ export default [
       "impression",
       "primary"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.impression.primary",
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.primary",
     "type": "color",
-    "value": "#054704",
-    "originalValue": "{sd.reference.color.scale.green.900}"
+    "value": "#733B85",
+    "originalValue": "{sd.reference.color.scale.purple.700}"
   },
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4443,7 +5379,7 @@ export default [
       "impression",
       "onPrimary"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.impression.onPrimary",
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onPrimary",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -4451,7 +5387,7 @@ export default [
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4460,15 +5396,15 @@ export default [
       "impression",
       "primaryContainer"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.impression.primaryContainer",
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.primaryContainer",
     "type": "color",
-    "value": "#054704",
-    "originalValue": "{sd.reference.color.scale.green.900}"
+    "value": "#733B85",
+    "originalValue": "{sd.reference.color.scale.purple.700}"
   },
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4477,7 +5413,7 @@ export default [
       "impression",
       "onPrimaryContainer"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.impression.onPrimaryContainer",
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onPrimaryContainer",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -4485,7 +5421,143 @@ export default [
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "secondary"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.secondary",
+    "type": "color",
+    "value": "#DCBDE4",
+    "originalValue": "{sd.reference.color.scale.purple.300}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onSecondary"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onSecondary",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "secondaryContainer"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.secondaryContainer",
+    "type": "color",
+    "value": "#DCBDE4",
+    "originalValue": "{sd.reference.color.scale.purple.300}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onSecondaryContainer"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onSecondaryContainer",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "tertiary"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.tertiary",
+    "type": "color",
+    "value": "#073165",
+    "originalValue": "{sd.reference.color.scale.blue.900}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onTertiary"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onTertiary",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "tertiaryContainer"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.tertiaryContainer",
+    "type": "color",
+    "value": "#073165",
+    "originalValue": "{sd.reference.color.scale.blue.900}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onTertiaryContainer"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onTertiaryContainer",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4494,15 +5566,15 @@ export default [
       "impression",
       "notice"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.impression.notice",
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.notice",
     "type": "color",
-    "value": "#EDA608",
-    "originalValue": "{sd.reference.color.scale.yellow.600}"
+    "value": "#FFE600",
+    "originalValue": "{sd.reference.color.scale.yellow.300}"
   },
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4511,15 +5583,15 @@ export default [
       "impression",
       "onNotice"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.impression.onNotice",
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onNotice",
     "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
   },
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4528,15 +5600,15 @@ export default [
       "impression",
       "noticeContainer"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.impression.noticeContainer",
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.noticeContainer",
     "type": "color",
-    "value": "#FFE265",
-    "originalValue": "{sd.reference.color.scale.yellow.200}"
+    "value": "#FFE600",
+    "originalValue": "{sd.reference.color.scale.yellow.300}"
   },
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4545,7 +5617,7 @@ export default [
       "impression",
       "onNoticeContainer"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.impression.onNoticeContainer",
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onNoticeContainer",
     "type": "color",
     "value": "#000000",
     "originalValue": "{sd.reference.color.scale.black.1000}"
@@ -4553,7 +5625,7 @@ export default [
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4562,15 +5634,15 @@ export default [
       "impression",
       "negative"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.impression.negative",
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.negative",
     "type": "color",
-    "value": "#D61930",
+    "value": "#CE0037",
     "originalValue": "{sd.reference.color.scale.red.600}"
   },
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4579,7 +5651,7 @@ export default [
       "impression",
       "onNegative"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.impression.onNegative",
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onNegative",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -4587,7 +5659,7 @@ export default [
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4596,15 +5668,15 @@ export default [
       "impression",
       "negativeContainer"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.impression.negativeContainer",
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.negativeContainer",
     "type": "color",
-    "value": "#FFD2D1",
+    "value": "#FCD6D3",
     "originalValue": "{sd.reference.color.scale.red.200}"
   },
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4613,7 +5685,7 @@ export default [
       "impression",
       "onNegativeContainer"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.impression.onNegativeContainer",
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onNegativeContainer",
     "type": "color",
     "value": "#000000",
     "originalValue": "{sd.reference.color.scale.black.1000}"
@@ -4621,7 +5693,7 @@ export default [
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4630,15 +5702,15 @@ export default [
       "impression",
       "positive"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.impression.positive",
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.positive",
     "type": "color",
-    "value": "#279B20",
-    "originalValue": "{sd.reference.color.scale.green.600}"
+    "value": "#40A683",
+    "originalValue": "{sd.reference.color.scale.green.500}"
   },
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4647,7 +5719,7 @@ export default [
       "impression",
       "onPositive"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.impression.onPositive",
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onPositive",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -4655,7 +5727,7 @@ export default [
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4664,15 +5736,15 @@ export default [
       "impression",
       "positiveContainer"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.impression.positiveContainer",
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.positiveContainer",
     "type": "color",
-    "value": "#279B20",
-    "originalValue": "{sd.reference.color.scale.green.600}"
+    "value": "#40A683",
+    "originalValue": "{sd.reference.color.scale.green.500}"
   },
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4681,7 +5753,7 @@ export default [
       "impression",
       "onPositiveContainer"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.impression.onPositiveContainer",
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onPositiveContainer",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -4689,7 +5761,7 @@ export default [
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4698,7 +5770,7 @@ export default [
       "component",
       "surface"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.component.surface",
+    "key": "themes.sumire.tokens.colors.sd.system.color.component.surface",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -4706,7 +5778,7 @@ export default [
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4715,7 +5787,7 @@ export default [
       "component",
       "onSurface"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.component.onSurface",
+    "key": "themes.sumire.tokens.colors.sd.system.color.component.onSurface",
     "type": "color",
     "value": "#000000",
     "originalValue": "{sd.reference.color.scale.black.1000}"
@@ -4723,7 +5795,7 @@ export default [
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4732,15 +5804,15 @@ export default [
       "component",
       "onSurfaceVariant"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.component.onSurfaceVariant",
+    "key": "themes.sumire.tokens.colors.sd.system.color.component.onSurfaceVariant",
     "type": "color",
-    "value": "#8C959C",
+    "value": "#8C8B87",
     "originalValue": "{sd.reference.color.scale.gray.500}"
   },
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4749,15 +5821,15 @@ export default [
       "component",
       "inverseSurface"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.component.inverseSurface",
+    "key": "themes.sumire.tokens.colors.sd.system.color.component.inverseSurface",
     "type": "color",
-    "value": "#23292D",
+    "value": "#232322",
     "originalValue": "{sd.reference.color.scale.gray.1000}"
   },
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4766,7 +5838,7 @@ export default [
       "component",
       "inverseOnSurface"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.component.inverseOnSurface",
+    "key": "themes.sumire.tokens.colors.sd.system.color.component.inverseOnSurface",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -4774,7 +5846,7 @@ export default [
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4783,15 +5855,15 @@ export default [
       "component",
       "outline"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.component.outline",
+    "key": "themes.sumire.tokens.colors.sd.system.color.component.outline",
     "type": "color",
-    "value": "#CED5D9",
+    "value": "#C8C7C2",
     "originalValue": "{sd.reference.color.scale.gray.300}"
   },
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4800,15 +5872,15 @@ export default [
       "component",
       "outlineVariant"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.component.outlineVariant",
+    "key": "themes.sumire.tokens.colors.sd.system.color.component.outlineVariant",
     "type": "color",
-    "value": "#8C959C",
+    "value": "#8C8B87",
     "originalValue": "{sd.reference.color.scale.gray.500}"
   },
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4817,7 +5889,7 @@ export default [
       "component",
       "scrim"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.component.scrim",
+    "key": "themes.sumire.tokens.colors.sd.system.color.component.scrim",
     "type": "color",
     "value": "#00000033",
     "originalValue": "{sd.reference.color.scale.transparency.20}"
@@ -4825,7 +5897,7 @@ export default [
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4834,15 +5906,15 @@ export default [
       "interaction",
       "disabled"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.interaction.disabled",
+    "key": "themes.sumire.tokens.colors.sd.system.color.interaction.disabled",
     "type": "color",
-    "value": "#EBEEEF",
-    "originalValue": "{sd.reference.color.scale.gray.200}"
+    "value": "#EFEEEB",
+    "originalValue": "{sd.reference.color.scale.gray.100}"
   },
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4851,15 +5923,15 @@ export default [
       "interaction",
       "disabledOnSurface"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.interaction.disabledOnSurface",
+    "key": "themes.sumire.tokens.colors.sd.system.color.interaction.disabledOnSurface",
     "type": "color",
-    "value": "#AEB8C0",
+    "value": "#AFAEAA",
     "originalValue": "{sd.reference.color.scale.gray.400}"
   },
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4868,15 +5940,15 @@ export default [
       "interaction",
       "selectedSurface"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.interaction.selectedSurface",
+    "key": "themes.sumire.tokens.colors.sd.system.color.interaction.selectedSurface",
     "type": "color",
-    "value": "#CCF7CE",
-    "originalValue": "{sd.reference.color.scale.green.100}"
+    "value": "#DCBDE4",
+    "originalValue": "{sd.reference.color.scale.purple.300}"
   },
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4885,7 +5957,7 @@ export default [
       "interaction",
       "hovered"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.interaction.hovered",
+    "key": "themes.sumire.tokens.colors.sd.system.color.interaction.hovered",
     "type": "color",
     "value": "#00000033",
     "originalValue": "{sd.reference.color.scale.transparency.20}"
@@ -4893,7 +5965,7 @@ export default [
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4902,7 +5974,7 @@ export default [
       "interaction",
       "hoveredVariant"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.interaction.hoveredVariant",
+    "key": "themes.sumire.tokens.colors.sd.system.color.interaction.hoveredVariant",
     "type": "color",
     "value": "#0000000D",
     "originalValue": "{sd.reference.color.scale.transparency.5}"
@@ -4910,7 +5982,7 @@ export default [
   {
     "path": [
       "themes",
-      "tokusa",
+      "sumire",
       "tokens",
       "colors",
       "sd",
@@ -4919,7 +5991,7 @@ export default [
       "interaction",
       "hoveredOnPrimary"
     ],
-    "key": "themes.tokusa.tokens.colors.sd.system.color.interaction.hoveredOnPrimary",
+    "key": "themes.sumire.tokens.colors.sd.system.color.interaction.hoveredOnPrimary",
     "type": "color",
     "value": "#FFFFFF99",
     "originalValue": "{sd.reference.color.scale.transparency.60}"
@@ -4927,7 +5999,7 @@ export default [
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -4936,15 +6008,15 @@ export default [
       "impression",
       "primary"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.impression.primary",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.primary",
     "type": "color",
-    "value": "#FE8482",
-    "originalValue": "{sd.reference.color.scale.red.400}"
+    "value": "#B9336B",
+    "originalValue": "{sd.reference.color.scale.pink.600}"
   },
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -4953,7 +6025,7 @@ export default [
       "impression",
       "onPrimary"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.impression.onPrimary",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onPrimary",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -4961,7 +6033,7 @@ export default [
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -4970,15 +6042,15 @@ export default [
       "impression",
       "primaryContainer"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.impression.primaryContainer",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.primaryContainer",
     "type": "color",
-    "value": "#FE8482",
-    "originalValue": "{sd.reference.color.scale.red.400}"
+    "value": "#F5C1D1",
+    "originalValue": "{sd.reference.color.scale.pink.300}"
   },
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -4987,7 +6059,109 @@ export default [
       "impression",
       "onPrimaryContainer"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.impression.onPrimaryContainer",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onPrimaryContainer",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "secondary"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.secondary",
+    "type": "color",
+    "value": "#F6D7E0",
+    "originalValue": "{sd.reference.color.scale.pink.200}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onSecondary"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onSecondary",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "secondaryContainer"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.secondaryContainer",
+    "type": "color",
+    "value": "#F6D7E0",
+    "originalValue": "{sd.reference.color.scale.pink.200}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onSecondaryContainer"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onSecondaryContainer",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "tertiary"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.tertiary",
+    "type": "color",
+    "value": "#401026",
+    "originalValue": "{sd.reference.color.scale.pink.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onTertiary"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onTertiary",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -4995,7 +6169,41 @@ export default [
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "tertiaryContainer"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.tertiaryContainer",
+    "type": "color",
+    "value": "#401026",
+    "originalValue": "{sd.reference.color.scale.pink.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onTertiaryContainer"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onTertiaryContainer",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5004,15 +6212,15 @@ export default [
       "impression",
       "notice"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.impression.notice",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.notice",
     "type": "color",
-    "value": "#EDA608",
-    "originalValue": "{sd.reference.color.scale.yellow.600}"
+    "value": "#FFE600",
+    "originalValue": "{sd.reference.color.scale.yellow.300}"
   },
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5021,15 +6229,15 @@ export default [
       "impression",
       "onNotice"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.impression.onNotice",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onNotice",
     "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
   },
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5038,15 +6246,15 @@ export default [
       "impression",
       "noticeContainer"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.impression.noticeContainer",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.noticeContainer",
     "type": "color",
-    "value": "#FFE265",
-    "originalValue": "{sd.reference.color.scale.yellow.200}"
+    "value": "#FFE600",
+    "originalValue": "{sd.reference.color.scale.yellow.300}"
   },
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5055,7 +6263,7 @@ export default [
       "impression",
       "onNoticeContainer"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.impression.onNoticeContainer",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onNoticeContainer",
     "type": "color",
     "value": "#000000",
     "originalValue": "{sd.reference.color.scale.black.1000}"
@@ -5063,7 +6271,7 @@ export default [
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5072,15 +6280,15 @@ export default [
       "impression",
       "negative"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.impression.negative",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.negative",
     "type": "color",
-    "value": "#D61930",
+    "value": "#CE0037",
     "originalValue": "{sd.reference.color.scale.red.600}"
   },
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5089,7 +6297,7 @@ export default [
       "impression",
       "onNegative"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.impression.onNegative",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onNegative",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -5097,7 +6305,7 @@ export default [
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5106,15 +6314,15 @@ export default [
       "impression",
       "negativeContainer"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.impression.negativeContainer",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.negativeContainer",
     "type": "color",
-    "value": "#FFD2D1",
+    "value": "#FCD6D3",
     "originalValue": "{sd.reference.color.scale.red.200}"
   },
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5123,7 +6331,7 @@ export default [
       "impression",
       "onNegativeContainer"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.impression.onNegativeContainer",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onNegativeContainer",
     "type": "color",
     "value": "#000000",
     "originalValue": "{sd.reference.color.scale.black.1000}"
@@ -5131,7 +6339,7 @@ export default [
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5140,15 +6348,15 @@ export default [
       "impression",
       "positive"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.impression.positive",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.positive",
     "type": "color",
-    "value": "#279B20",
-    "originalValue": "{sd.reference.color.scale.green.600}"
+    "value": "#40A683",
+    "originalValue": "{sd.reference.color.scale.green.500}"
   },
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5157,7 +6365,7 @@ export default [
       "impression",
       "onPositive"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.impression.onPositive",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onPositive",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -5165,7 +6373,7 @@ export default [
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5174,15 +6382,15 @@ export default [
       "impression",
       "positiveContainer"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.impression.positiveContainer",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.positiveContainer",
     "type": "color",
-    "value": "#279B20",
-    "originalValue": "{sd.reference.color.scale.green.600}"
+    "value": "#40A683",
+    "originalValue": "{sd.reference.color.scale.green.500}"
   },
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5191,7 +6399,7 @@ export default [
       "impression",
       "onPositiveContainer"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.impression.onPositiveContainer",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onPositiveContainer",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -5199,7 +6407,7 @@ export default [
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5208,7 +6416,7 @@ export default [
       "component",
       "surface"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.component.surface",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.surface",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -5216,7 +6424,7 @@ export default [
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5225,7 +6433,7 @@ export default [
       "component",
       "onSurface"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.component.onSurface",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.onSurface",
     "type": "color",
     "value": "#000000",
     "originalValue": "{sd.reference.color.scale.black.1000}"
@@ -5233,7 +6441,7 @@ export default [
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5242,15 +6450,15 @@ export default [
       "component",
       "onSurfaceVariant"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.component.onSurfaceVariant",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.onSurfaceVariant",
     "type": "color",
-    "value": "#8C959C",
+    "value": "#8C8B87",
     "originalValue": "{sd.reference.color.scale.gray.500}"
   },
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5259,15 +6467,15 @@ export default [
       "component",
       "inverseSurface"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.component.inverseSurface",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.inverseSurface",
     "type": "color",
-    "value": "#23292D",
+    "value": "#232322",
     "originalValue": "{sd.reference.color.scale.gray.1000}"
   },
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5276,7 +6484,7 @@ export default [
       "component",
       "inverseOnSurface"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.component.inverseOnSurface",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.inverseOnSurface",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
@@ -5284,7 +6492,7 @@ export default [
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5293,15 +6501,15 @@ export default [
       "component",
       "outline"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.component.outline",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.outline",
     "type": "color",
-    "value": "#CED5D9",
+    "value": "#C8C7C2",
     "originalValue": "{sd.reference.color.scale.gray.300}"
   },
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5310,15 +6518,15 @@ export default [
       "component",
       "outlineVariant"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.component.outlineVariant",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.outlineVariant",
     "type": "color",
-    "value": "#8C959C",
+    "value": "#8C8B87",
     "originalValue": "{sd.reference.color.scale.gray.500}"
   },
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5327,7 +6535,7 @@ export default [
       "component",
       "scrim"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.component.scrim",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.scrim",
     "type": "color",
     "value": "#00000033",
     "originalValue": "{sd.reference.color.scale.transparency.20}"
@@ -5335,7 +6543,7 @@ export default [
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5344,15 +6552,15 @@ export default [
       "interaction",
       "disabled"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.interaction.disabled",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.interaction.disabled",
     "type": "color",
-    "value": "#EBEEEF",
-    "originalValue": "{sd.reference.color.scale.gray.200}"
+    "value": "#EFEEEB",
+    "originalValue": "{sd.reference.color.scale.gray.100}"
   },
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5361,15 +6569,15 @@ export default [
       "interaction",
       "disabledOnSurface"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.interaction.disabledOnSurface",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.interaction.disabledOnSurface",
     "type": "color",
-    "value": "#AEB8C0",
+    "value": "#AFAEAA",
     "originalValue": "{sd.reference.color.scale.gray.400}"
   },
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5378,15 +6586,15 @@ export default [
       "interaction",
       "selectedSurface"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.interaction.selectedSurface",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.interaction.selectedSurface",
     "type": "color",
-    "value": "#FFEBE9",
-    "originalValue": "{sd.reference.color.scale.red.100}"
+    "value": "#F6D7E0",
+    "originalValue": "{sd.reference.color.scale.pink.200}"
   },
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5395,7 +6603,7 @@ export default [
       "interaction",
       "hovered"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.interaction.hovered",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.interaction.hovered",
     "type": "color",
     "value": "#00000033",
     "originalValue": "{sd.reference.color.scale.transparency.20}"
@@ -5403,7 +6611,7 @@ export default [
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5412,7 +6620,7 @@ export default [
       "interaction",
       "hoveredVariant"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.interaction.hoveredVariant",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.interaction.hoveredVariant",
     "type": "color",
     "value": "#0000000D",
     "originalValue": "{sd.reference.color.scale.transparency.5}"
@@ -5420,7 +6628,7 @@ export default [
   {
     "path": [
       "themes",
-      "usuake",
+      "tsutsuji",
       "tokens",
       "colors",
       "sd",
@@ -5429,7 +6637,7 @@ export default [
       "interaction",
       "hoveredOnPrimary"
     ],
-    "key": "themes.usuake.tokens.colors.sd.system.color.interaction.hoveredOnPrimary",
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.interaction.hoveredOnPrimary",
     "type": "color",
     "value": "#FFFFFF99",
     "originalValue": "{sd.reference.color.scale.transparency.60}"
