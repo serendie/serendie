@@ -44,7 +44,19 @@ declare const tokens: {
             "900": string,
             "1000": string
           },
-          "orange": {
+          "chestnut": {
+            "100": string,
+            "200": string,
+            "300": string,
+            "400": string,
+            "500": string,
+            "600": string,
+            "700": string,
+            "800": string,
+            "900": string,
+            "1000": string
+          },
+          "beige": {
             "100": string,
             "200": string,
             "300": string,
@@ -80,7 +92,43 @@ declare const tokens: {
             "900": string,
             "1000": string
           },
+          "skyBlue": {
+            "100": string,
+            "200": string,
+            "300": string,
+            "400": string,
+            "500": string,
+            "600": string,
+            "700": string,
+            "800": string,
+            "900": string,
+            "1000": string
+          },
           "blue": {
+            "100": string,
+            "200": string,
+            "300": string,
+            "400": string,
+            "500": string,
+            "600": string,
+            "700": string,
+            "800": string,
+            "900": string,
+            "1000": string
+          },
+          "purple": {
+            "100": string,
+            "200": string,
+            "300": string,
+            "400": string,
+            "500": string,
+            "600": string,
+            "700": string,
+            "800": string,
+            "900": string,
+            "1000": string
+          },
+          "pink": {
             "100": string,
             "200": string,
             "300": string,
@@ -192,6 +240,14 @@ declare const tokens: {
           "onPrimary": string,
           "primaryContainer": string,
           "onPrimaryContainer": string,
+          "secondary": string,
+          "onSecondary": string,
+          "secondaryContainer": string,
+          "onSecondaryContainer": string,
+          "tertiary": string,
+          "onTertiary": string,
+          "tertiaryContainer": string,
+          "onTertiaryContainer": string,
           "notice": string,
           "onNotice": string,
           "noticeContainer": string,
@@ -510,7 +566,7 @@ declare const tokens: {
     }
   },
   "themes": {
-    "hisui": {
+    "asagi": {
       "tokens": {
         "colors": {
           "sd": {
@@ -521,6 +577,14 @@ declare const tokens: {
                   "onPrimary": string,
                   "primaryContainer": string,
                   "onPrimaryContainer": string,
+                  "secondary": string,
+                  "onSecondary": string,
+                  "secondaryContainer": string,
+                  "onSecondaryContainer": string,
+                  "tertiary": string,
+                  "onTertiary": string,
+                  "tertiaryContainer": string,
+                  "onTertiaryContainer": string,
                   "notice": string,
                   "onNotice": string,
                   "noticeContainer": string,
@@ -569,6 +633,14 @@ declare const tokens: {
                   "onPrimary": string,
                   "primaryContainer": string,
                   "onPrimaryContainer": string,
+                  "secondary": string,
+                  "onSecondary": string,
+                  "secondaryContainer": string,
+                  "onSecondaryContainer": string,
+                  "tertiary": string,
+                  "onTertiary": string,
+                  "tertiaryContainer": string,
+                  "onTertiaryContainer": string,
                   "notice": string,
                   "onNotice": string,
                   "noticeContainer": string,
@@ -606,7 +678,7 @@ declare const tokens: {
         }
       }
     },
-    "tokusa": {
+    "sumire": {
       "tokens": {
         "colors": {
           "sd": {
@@ -617,6 +689,14 @@ declare const tokens: {
                   "onPrimary": string,
                   "primaryContainer": string,
                   "onPrimaryContainer": string,
+                  "secondary": string,
+                  "onSecondary": string,
+                  "secondaryContainer": string,
+                  "onSecondaryContainer": string,
+                  "tertiary": string,
+                  "onTertiary": string,
+                  "tertiaryContainer": string,
+                  "onTertiaryContainer": string,
                   "notice": string,
                   "onNotice": string,
                   "noticeContainer": string,
@@ -654,7 +734,7 @@ declare const tokens: {
         }
       }
     },
-    "usuake": {
+    "tsutsuji": {
       "tokens": {
         "colors": {
           "sd": {
@@ -665,6 +745,14 @@ declare const tokens: {
                   "onPrimary": string,
                   "primaryContainer": string,
                   "onPrimaryContainer": string,
+                  "secondary": string,
+                  "onSecondary": string,
+                  "secondaryContainer": string,
+                  "onSecondaryContainer": string,
+                  "tertiary": string,
+                  "onTertiary": string,
+                  "tertiaryContainer": string,
+                  "onTertiaryContainer": string,
                   "notice": string,
                   "onNotice": string,
                   "noticeContainer": string,

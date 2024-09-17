@@ -95,7 +95,39 @@ declare const tokens: {
                 "value": string
               }
             },
-            "orange": {
+            "chestnut": {
+              "100": {
+                "value": string
+              },
+              "200": {
+                "value": string
+              },
+              "300": {
+                "value": string
+              },
+              "400": {
+                "value": string
+              },
+              "500": {
+                "value": string
+              },
+              "600": {
+                "value": string
+              },
+              "700": {
+                "value": string
+              },
+              "800": {
+                "value": string
+              },
+              "900": {
+                "value": string
+              },
+              "1000": {
+                "value": string
+              }
+            },
+            "beige": {
               "100": {
                 "value": string
               },
@@ -191,7 +223,103 @@ declare const tokens: {
                 "value": string
               }
             },
+            "skyBlue": {
+              "100": {
+                "value": string
+              },
+              "200": {
+                "value": string
+              },
+              "300": {
+                "value": string
+              },
+              "400": {
+                "value": string
+              },
+              "500": {
+                "value": string
+              },
+              "600": {
+                "value": string
+              },
+              "700": {
+                "value": string
+              },
+              "800": {
+                "value": string
+              },
+              "900": {
+                "value": string
+              },
+              "1000": {
+                "value": string
+              }
+            },
             "blue": {
+              "100": {
+                "value": string
+              },
+              "200": {
+                "value": string
+              },
+              "300": {
+                "value": string
+              },
+              "400": {
+                "value": string
+              },
+              "500": {
+                "value": string
+              },
+              "600": {
+                "value": string
+              },
+              "700": {
+                "value": string
+              },
+              "800": {
+                "value": string
+              },
+              "900": {
+                "value": string
+              },
+              "1000": {
+                "value": string
+              }
+            },
+            "purple": {
+              "100": {
+                "value": string
+              },
+              "200": {
+                "value": string
+              },
+              "300": {
+                "value": string
+              },
+              "400": {
+                "value": string
+              },
+              "500": {
+                "value": string
+              },
+              "600": {
+                "value": string
+              },
+              "700": {
+                "value": string
+              },
+              "800": {
+                "value": string
+              },
+              "900": {
+                "value": string
+              },
+              "1000": {
+                "value": string
+              }
+            },
+            "pink": {
               "100": {
                 "value": string
               },
@@ -239,6 +367,30 @@ declare const tokens: {
               "value": string
             },
             "onPrimaryContainer": {
+              "value": string
+            },
+            "secondary": {
+              "value": string
+            },
+            "onSecondary": {
+              "value": string
+            },
+            "secondaryContainer": {
+              "value": string
+            },
+            "onSecondaryContainer": {
+              "value": string
+            },
+            "tertiary": {
+              "value": string
+            },
+            "onTertiary": {
+              "value": string
+            },
+            "tertiaryContainer": {
+              "value": string
+            },
+            "onTertiaryContainer": {
               "value": string
             },
             "notice": {
@@ -1018,7 +1170,7 @@ declare const tokens: {
     }
   },
   "themes": {
-    "hisui": {
+    "asagi": {
       "tokens": {
         "colors": {
           "sd": {
@@ -1035,6 +1187,30 @@ declare const tokens: {
                     "value": string
                   },
                   "onPrimaryContainer": {
+                    "value": string
+                  },
+                  "secondary": {
+                    "value": string
+                  },
+                  "onSecondary": {
+                    "value": string
+                  },
+                  "secondaryContainer": {
+                    "value": string
+                  },
+                  "onSecondaryContainer": {
+                    "value": string
+                  },
+                  "tertiary": {
+                    "value": string
+                  },
+                  "onTertiary": {
+                    "value": string
+                  },
+                  "tertiaryContainer": {
+                    "value": string
+                  },
+                  "onTertiaryContainer": {
                     "value": string
                   },
                   "notice": {
@@ -1145,112 +1321,28 @@ declare const tokens: {
                   "onPrimaryContainer": {
                     "value": string
                   },
-                  "notice": {
+                  "secondary": {
                     "value": string
                   },
-                  "onNotice": {
+                  "onSecondary": {
                     "value": string
                   },
-                  "noticeContainer": {
+                  "secondaryContainer": {
                     "value": string
                   },
-                  "onNoticeContainer": {
+                  "onSecondaryContainer": {
                     "value": string
                   },
-                  "negative": {
+                  "tertiary": {
                     "value": string
                   },
-                  "onNegative": {
+                  "onTertiary": {
                     "value": string
                   },
-                  "negativeContainer": {
+                  "tertiaryContainer": {
                     "value": string
                   },
-                  "onNegativeContainer": {
-                    "value": string
-                  },
-                  "positive": {
-                    "value": string
-                  },
-                  "onPositive": {
-                    "value": string
-                  },
-                  "positiveContainer": {
-                    "value": string
-                  },
-                  "onPositiveContainer": {
-                    "value": string
-                  }
-                },
-                "component": {
-                  "surface": {
-                    "value": string
-                  },
-                  "onSurface": {
-                    "value": string
-                  },
-                  "onSurfaceVariant": {
-                    "value": string
-                  },
-                  "inverseSurface": {
-                    "value": string
-                  },
-                  "inverseOnSurface": {
-                    "value": string
-                  },
-                  "outline": {
-                    "value": string
-                  },
-                  "outlineVariant": {
-                    "value": string
-                  },
-                  "scrim": {
-                    "value": string
-                  }
-                },
-                "interaction": {
-                  "disabled": {
-                    "value": string
-                  },
-                  "disabledOnSurface": {
-                    "value": string
-                  },
-                  "selectedSurface": {
-                    "value": string
-                  },
-                  "hovered": {
-                    "value": string
-                  },
-                  "hoveredVariant": {
-                    "value": string
-                  },
-                  "hoveredOnPrimary": {
-                    "value": string
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "tokusa": {
-      "tokens": {
-        "colors": {
-          "sd": {
-            "system": {
-              "color": {
-                "impression": {
-                  "primary": {
-                    "value": string
-                  },
-                  "onPrimary": {
-                    "value": string
-                  },
-                  "primaryContainer": {
-                    "value": string
-                  },
-                  "onPrimaryContainer": {
+                  "onTertiaryContainer": {
                     "value": string
                   },
                   "notice": {
@@ -1342,7 +1434,7 @@ declare const tokens: {
         }
       }
     },
-    "usuake": {
+    "sumire": {
       "tokens": {
         "colors": {
           "sd": {
@@ -1359,6 +1451,162 @@ declare const tokens: {
                     "value": string
                   },
                   "onPrimaryContainer": {
+                    "value": string
+                  },
+                  "secondary": {
+                    "value": string
+                  },
+                  "onSecondary": {
+                    "value": string
+                  },
+                  "secondaryContainer": {
+                    "value": string
+                  },
+                  "onSecondaryContainer": {
+                    "value": string
+                  },
+                  "tertiary": {
+                    "value": string
+                  },
+                  "onTertiary": {
+                    "value": string
+                  },
+                  "tertiaryContainer": {
+                    "value": string
+                  },
+                  "onTertiaryContainer": {
+                    "value": string
+                  },
+                  "notice": {
+                    "value": string
+                  },
+                  "onNotice": {
+                    "value": string
+                  },
+                  "noticeContainer": {
+                    "value": string
+                  },
+                  "onNoticeContainer": {
+                    "value": string
+                  },
+                  "negative": {
+                    "value": string
+                  },
+                  "onNegative": {
+                    "value": string
+                  },
+                  "negativeContainer": {
+                    "value": string
+                  },
+                  "onNegativeContainer": {
+                    "value": string
+                  },
+                  "positive": {
+                    "value": string
+                  },
+                  "onPositive": {
+                    "value": string
+                  },
+                  "positiveContainer": {
+                    "value": string
+                  },
+                  "onPositiveContainer": {
+                    "value": string
+                  }
+                },
+                "component": {
+                  "surface": {
+                    "value": string
+                  },
+                  "onSurface": {
+                    "value": string
+                  },
+                  "onSurfaceVariant": {
+                    "value": string
+                  },
+                  "inverseSurface": {
+                    "value": string
+                  },
+                  "inverseOnSurface": {
+                    "value": string
+                  },
+                  "outline": {
+                    "value": string
+                  },
+                  "outlineVariant": {
+                    "value": string
+                  },
+                  "scrim": {
+                    "value": string
+                  }
+                },
+                "interaction": {
+                  "disabled": {
+                    "value": string
+                  },
+                  "disabledOnSurface": {
+                    "value": string
+                  },
+                  "selectedSurface": {
+                    "value": string
+                  },
+                  "hovered": {
+                    "value": string
+                  },
+                  "hoveredVariant": {
+                    "value": string
+                  },
+                  "hoveredOnPrimary": {
+                    "value": string
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "tsutsuji": {
+      "tokens": {
+        "colors": {
+          "sd": {
+            "system": {
+              "color": {
+                "impression": {
+                  "primary": {
+                    "value": string
+                  },
+                  "onPrimary": {
+                    "value": string
+                  },
+                  "primaryContainer": {
+                    "value": string
+                  },
+                  "onPrimaryContainer": {
+                    "value": string
+                  },
+                  "secondary": {
+                    "value": string
+                  },
+                  "onSecondary": {
+                    "value": string
+                  },
+                  "secondaryContainer": {
+                    "value": string
+                  },
+                  "onSecondaryContainer": {
+                    "value": string
+                  },
+                  "tertiary": {
+                    "value": string
+                  },
+                  "onTertiary": {
+                    "value": string
+                  },
+                  "tertiaryContainer": {
+                    "value": string
+                  },
+                  "onTertiaryContainer": {
                     "value": string
                   },
                   "notice": {
