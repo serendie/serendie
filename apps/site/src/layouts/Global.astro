@@ -3,6 +3,7 @@ import "@/index.css";
 import { siteConfig } from "@/../siteConfig";
 import { ThemeSelector } from "@/components/ThemeSelector";
 import { styled, Box } from "@serendie/ui/jsx";
+import Footer from "@/components/toppage/Footer.astro";
 
 interface Props {
   title: string;
@@ -12,6 +13,7 @@ const { title } = Astro.props;
 
 const Body = styled("body", {
   base: {
+    maxWidth: "100vw",
     display: "grid",
     gridTemplateRows: "auto 1fr",
     alignItems: "start",
@@ -24,6 +26,7 @@ const Header = styled("header", {
     pr: "sd.system.dimension.spacing.threeExtraLarge",
     pb: "sd.system.dimension.spacing.extraLarge",
     pl: "sd.system.dimension.spacing.threeExtraLarge",
+    color: "sd.reference.color.scale.blue.900",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
@@ -56,33 +59,6 @@ const Link = styled("a", {
         borderBottom: "solid",
       },
     },
-  },
-});
-
-const Footer = styled("footer", {
-  base: {
-    borderTopLeftRadius: "sd.system.dimension.radius.extraLarge",
-    borderTopRightRadius: "sd.system.dimension.radius.extraLarge",
-    background: "sd.reference.color.scale.blue.800",
-    color: "white",
-    display: "flex",
-    padding:
-      "120px 10px {spacing.sd.system.dimension.spacing.threeExtraLarge} 10px",
-    flexDirection: "column",
-    justifyContent: "flex-end",
-    alignItems: "center",
-    gap: "100px",
-    flexShrink: 0,
-  },
-});
-
-const FooterInner = styled("div", {
-  base: {
-    width: "100%",
-    maxWidth: "1200px",
-    display: "flex",
-    margin: "0 auto",
-    justifyContent: "space-between",
   },
 });
 
@@ -134,41 +110,6 @@ const menuItems = [
       </Menu>
     </Header>
     <slot />
-    <Footer>
-      <FooterInner>
-        <h2>Serendie Design System</h2>
-        <Box
-          css={{
-            display: "flex",
-            gap: "60px",
-          }}
-        >
-          <div>
-            <h3>基本情報</h3>
-            <ul>
-              <li><a>目指す地点</a></li>
-              <li><a>目指す地点</a></li>
-              <li><a>目指す地点</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3>スタイル</h3>
-            <ul>
-              <li><a>目指す地点</a></li>
-              <li><a>目指す地点</a></li>
-              <li><a>目指す地点</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3>デザインシステム</h3>
-            <ul>
-              <li><a>目指す地点</a></li>
-              <li><a>目指す地点</a></li>
-              <li><a>目指す地点</a></li>
-            </ul>
-          </div>
-        </Box>
-      </FooterInner>
-    </Footer>
+    <Footer />
   </Body>
 </html>
