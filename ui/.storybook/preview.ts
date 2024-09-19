@@ -1,6 +1,8 @@
 import "../src/styles.css";
 
-import type { Preview } from "@storybook/react";
+import type { Preview, ReactRenderer } from "@storybook/react";
+import { withThemeByDataAttribute } from "@storybook/addon-themes";
+import { themeNames } from "../src/preset";
 
 const preview: Preview = {
   parameters: {
@@ -11,7 +13,18 @@ const preview: Preview = {
       },
     },
   },
-
+  decorators: [
+    withThemeByDataAttribute<ReactRenderer>({
+      themes: {
+        ...themeNames.reduce((acc, name) => {
+          acc[name] = name;
+          return acc;
+        }, {}),
+      },
+      defaultTheme: "konjo",
+      attributeName: "data-panda-theme",
+    }),
+  ],
   tags: ["autodocs"],
 };
 

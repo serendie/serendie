@@ -1,54 +1,25 @@
 ---
 import "@/index.css";
 import { getCollection } from "astro:content";
-import { siteConfig } from "@/../siteConfig";
 import { styled } from "@serendie/ui/jsx";
+import Global from "./Global.astro";
 
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
-const docs = await getCollection("docs");
+const components = await getCollection("components");
 
-const Body = styled("body",{
-  base: {
-    display: "grid",
-    gridTemplateRows: "auto 1fr",
-    alignItems: "start",
-  }
-});
-
-const Header = styled("header",{
-  base: {
-    pt: "sd.system.dimension.spacing.extraLarge",
-    pr: "sd.system.dimension.spacing.threeExtraLarge",
-    pb: "sd.system.dimension.spacing.extraLarge",
-    pl: "sd.system.dimension.spacing.threeExtraLarge",
-    display: "flex",
-    justifyContent: "start",
-    alignItems: "center",
-    borderBottom: "solid",
-    borderColor: "sd.system.color.component.outline",
-    borderBottomWidth: "sd.system.dimension.border.medium"
-  }
-});
-
-const H1 = styled("h1",{
-  base: {
-    textStyle: "sd.system.typography.title.large_expanded",
-  }
-});
-
-const MainGrid = styled("div",{
+const MainGrid = styled("div", {
   base: {
     h: "100%",
     display: "grid",
     gridTemplateColumns: "240px 1fr",
-  }
+  },
 });
 
-const Sidebar = styled("aside",{
+const Sidebar = styled("aside", {
   base: {
     w: "240px",
     h: "100%",
@@ -58,112 +29,88 @@ const Sidebar = styled("aside",{
     borderRight: "solid",
     borderColor: "sd.system.color.component.outline",
     borderRightWidth: "sd.system.dimension.border.medium",
-    backgroundColor:  "#FBFCFD"
-  }
+    backgroundColor: "#FBFCFD",
+  },
 });
 
-const Main = styled("main",{
+const Main = styled("main", {
   base: {
-    pt:'sd.system.dimension.spacing.threeExtraLarge',
-    pr:'sd.system.dimension.spacing.fiveExtraLarge',
-    pb:'sd.system.dimension.spacing.threeExtraLarge',
-    pl:'sd.system.dimension.spacing.fiveExtraLarge',
-  }
+    pt: "sd.system.dimension.spacing.threeExtraLarge",
+    pr: "sd.system.dimension.spacing.fiveExtraLarge",
+    pb: "sd.system.dimension.spacing.threeExtraLarge",
+    pl: "sd.system.dimension.spacing.fiveExtraLarge",
+  },
 });
 
-const MainTitle = styled("h1",{
+const MainTitle = styled("h1", {
   base: {
     textStyle: "sd.system.typography.headline.large_expanded",
     mb: "sd.system.dimension.spacing.medium",
-  }
+  },
 });
 
-const SidebarLabel = styled("h2",{
+const SidebarLabel = styled("h2", {
   base: {
     textStyle: "sd.system.typography.label.medium_expanded",
-    pt:'sd.system.dimension.spacing.extraSmall',
-    pr: 'sd.system.dimension.spacing.extraLarge',
-    pb:'sd.system.dimension.spacing.extraSmall',
-    pl: 'sd.system.dimension.spacing.extraLarge',
-  }
+    pt: "sd.system.dimension.spacing.extraSmall",
+    pr: "sd.system.dimension.spacing.extraLarge",
+    pb: "sd.system.dimension.spacing.extraSmall",
+    pl: "sd.system.dimension.spacing.extraLarge",
+  },
 });
 
-const List = styled("ul",{
+const List = styled("ul", {
   base: {
     listStyle: "none",
     p: 0,
-    m: 0
-  }
+    m: 0,
+  },
 });
 
-const ListItemLink = styled("a",{
+const ListItemLink = styled("a", {
   base: {
     display: "block",
     textStyle: "sd.system.typography.label.extraLarge_expanded",
-    pt:'sd.system.dimension.spacing.extraSmall',
-    pr: 'sd.system.dimension.spacing.extraLarge',
-    pb:'sd.system.dimension.spacing.extraSmall',
-    pl: 'sd.system.dimension.spacing.extraLarge',
+    pt: "sd.system.dimension.spacing.extraSmall",
+    pr: "sd.system.dimension.spacing.extraLarge",
+    pb: "sd.system.dimension.spacing.extraSmall",
+    pl: "sd.system.dimension.spacing.extraLarge",
     _hover: {
       backgroundColor: "sd.system.color.interaction.hoverSurface",
-    }
+    },
   },
   variants: {
     active: {
       true: {
         backgroundColor: "sd.system.color.interaction.selectedSurface",
-      }
-    }
-  }
+      },
+    },
+  },
 });
-
 ---
 
-<!doctype html>
-<html lang="ja" style="height: 100%">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content={siteConfig.siteDescription} />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}{title && " | "}{siteConfig.siteName}</title>
-  </head>
-  <Body>
-    <Header>
-      <H1><a href="/">{siteConfig.siteName}</a></H1>
-    </Header>
-    <MainGrid>
-      <Sidebar>
-        <SidebarLabel>Tokens</SidebarLabel>
-        <List>
-              <li>
-                <ListItemLink  href={`/tokens/system`} active={title === "System tokens"}>
-                  System Tokens
-                </ListItemLink>
-              </li>
-              <li>
-                <ListItemLink  href={`/tokens/reference`} active={title === "Reference tokens"}>
-                  Reference Tokens
-                </ListItemLink>
-              </li>
-        </List>
-        <SidebarLabel>Components</SidebarLabel>
-        <List>
-          {
-            docs.map((item) => (
-              <li>
-                <ListItemLink  href={`/docs/${item.slug}`} active={item.data.title === title}>
-                  {item.data.title}
-                </ListItemLink>
-              </li>
-            ))
-          }
-        </List>
-      </Sidebar>
-      <Main>
-        <MainTitle>{title}</MainTitle>
-        <slot />
-      </Main>
-    </MainGrid>
-  </Body>
-</html>
+<Global title={title}>
+  <MainGrid>
+    <Sidebar>
+      <SidebarLabel>Components</SidebarLabel>
+      <List>
+        {
+          components.map((item) => (
+            <li>
+              <ListItemLink
+                href={`/components/${item.slug}`}
+                active={item.data.title === title}
+              >
+                {item.data.title}
+              </ListItemLink>
+            </li>
+          ))
+        }
+      </List>
+    </Sidebar>
+    <Main>
+      <MainTitle>{title}</MainTitle>
+      <slot />
+    </Main>
+  </MainGrid>
+</Global>

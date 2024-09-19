@@ -9,6 +9,7 @@ import ReleaseNote from "@/components/toppage/ReleaseNote.astro";
 import Contact from "@/components/toppage/Contact.astro";
 import { BackgroundShape } from "@/components/toppage/BackgroundShape";
 import Header from "@/components/toppage/Header.astro";
+import Global from "@/layouts/Global.astro";
 
 const Container = styled('div', {
 	base: {
@@ -97,10 +98,8 @@ const content = [
 		}]
 	}
 ]
-
 ---
 <TopLayout>
-
 	<NavbarWrapper>
 		<Navbar />
 	</NavbarWrapper>

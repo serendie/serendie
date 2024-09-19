@@ -6,6 +6,12 @@ import { SerendieKeyframes } from "./tokens/keyframes";
 
 const { sd } = getToken();
 
+const { themes, ...defaultTokens } = SerendieTokens;
+
+export { themes };
+
+export const themeNames = Object.keys(themes);
+
 export const SerendiePreset: Preset = {
   theme: {
     extend: {
@@ -14,10 +20,7 @@ export const SerendiePreset: Preset = {
       },
       recipes: SerendieRecipes,
       tokens: {
-        ...SerendieTokens,
-        sizes: {
-          ...SerendieTokens["spacing"],
-        },
+        ...defaultTokens,
       },
       textStyles: {
         ...SerendieTypography,

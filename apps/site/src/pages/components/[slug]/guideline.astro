@@ -1,0 +1,20 @@
+---
+import Layout from "./_layout.astro";
+import { getComponentsCollection } from "./_utils";
+
+export async function getStaticPaths() {
+  return await getComponentsCollection();
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await entry.render();
+---
+
+<Layout
+  title={data.title}
+  description={data.description}
+  componentName={data.componentName}
+>
+  <Content />
+</Layout>

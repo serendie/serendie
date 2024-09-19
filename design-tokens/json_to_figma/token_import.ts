@@ -100,8 +100,9 @@ const flattenTokensFile = (
   return flattenedTokens;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const getReferenceToken = (originalTokens: any, aliasToken: string): Token => {
-  const { $value, $type, ...others } =
+  const { _$value, $type, ...others } =
     aliasToken
       .replace(/[{}]/g, "")
       .split(".")
@@ -365,10 +366,13 @@ export const generatePostVariablesPayload = (
   for (const collection of Object.values(
     localVariables.meta.variableCollections
   )) {
-    // TODO: For some reason, remote is now always true, so it is temporarily commented out.
-    // if (collection.remote) {
-    //   throw new Error("Remote collection is included in local variables.");
-    // }
+    if (collection.remote) {
+      // Remote Collection (ゴーストコレクション) を取り除きたいが、ファイルが膨大なため手動で取り除くのが難しく、
+      // 現状は一括で取り除く方法が無いため、remoteはエラーを投げるのではなく無視する
+      // https://forum.figma.com/t/how-to-clear-used-variables-that-don-t-exist-in-the-file-anymore/51694/48
+      // throw new Error("Remote collection is included in local variables.");
+      continue;
+    }
 
     if (localVariableCollectionsByName[collection.name]) {
       throw new Error(
@@ -380,10 +384,13 @@ export const generatePostVariablesPayload = (
   }
 
   for (const variable of Object.values(localVariables.meta.variables)) {
-    // TODO: For some reason, remote is now always true, so it is temporarily commented out.
-    // if (variable.remote) {
-    //   throw new Error("Remote collection is included in local variables.");
-    // }
+    if (variable.remote) {
+      // Remote Collection (ゴーストコレクション) を取り除きたいが、ファイルが膨大なため手動で取り除くのが難しく、
+      // 現状は一括で取り除く方法が無いため、remoteはエラーを投げるのではなく無視する
+      // https://forum.figma.com/t/how-to-clear-used-variables-that-don-t-exist-in-the-file-anymore/51694/48
+      // throw new Error("Remote collection is included in local variables.");
+      continue;
+    }
 
     if (!localVariablesByCollectionAndName[variable.variableCollectionId]) {
       localVariablesByCollectionAndName[variable.variableCollectionId] = {};
