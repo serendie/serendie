@@ -37,7 +37,7 @@ const showcaseCarouselStyles = sva({
       zIndex: 1,
       display: "none",
       expanded: {
-        display: "block",
+        display: "flex",
       },
     },
     buttonRight: {
@@ -48,7 +48,7 @@ const showcaseCarouselStyles = sva({
       zIndex: 1,
       display: "none",
       expanded: {
-        display: "block",
+        display: "flex",
       },
     },
   },

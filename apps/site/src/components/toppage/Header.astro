@@ -83,10 +83,10 @@ const ShapesWrapper = styled("div", {
 
 <HeaderOver>
   <HeaderWrapper>
-    <AnimationFadeIn client:load />
+    <AnimationFadeIn />
 
     <ShapesWrapper>
-      <Shapes client:load/>
+      <Shapes client:idle/>
     </ShapesWrapper>
 
     <motion.div
@@ -134,7 +134,7 @@ const ShapesWrapper = styled("div", {
           誰も想像しなかった “巡り合い” から世界を変える
         </HeaderDescription>
 
-        <Button className={css({})}>スターターガイド</Button>
+        <Button>スターターガイド</Button>
       </HeaderContainer>
     </motion.div>
   </HeaderWrapper>

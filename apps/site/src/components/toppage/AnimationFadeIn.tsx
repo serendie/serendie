@@ -1,12 +1,9 @@
-import { motion } from "framer-motion";
+import { css } from "@serendie/ui/css";
 
 export const AnimationFadeIn: React.FC = () => {
   return (
-    <motion.div
-      initial={{ opacity: 1 }}
-      animate={{ opacity: 0 }}
-      transition={{ duration: 1 }}
-      style={{
+    <div
+      className={css({
         position: "fixed",
         top: "0",
         left: "0",
@@ -16,8 +13,9 @@ export const AnimationFadeIn: React.FC = () => {
         zIndex: "1",
         transformOrigin: "center center",
         pointerEvents: "none",
-        backgroundColor: "black",
-      }}
-    ></motion.div>
+        backgroundColor: "#000",
+        animation: `fadeout 1s forwards`,
+      })}
+    />
   );
 };

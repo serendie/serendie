@@ -1,25 +1,19 @@
-import { motion } from "framer-motion";
+import { css } from "@serendie/ui/css";
 
 export const NavbarWrapper: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => {
   return (
-    <motion.div
-      initial={{
+    <div
+      className={css({
+        position: "fixed",
+        animation: `fadein 0.6s forwards`,
+        animationDelay: "3s",
+        zIndex: "2",
         opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      transition={{
-        delay: 2.6,
-        duration: 0.6,
-      }}
-      style={{
-        z: 2,
-      }}
+      })}
     >
       {children}
-    </motion.div>
+    </div>
   );
 };

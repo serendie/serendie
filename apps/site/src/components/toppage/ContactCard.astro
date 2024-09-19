@@ -1,3 +1,4 @@
+---
 import { css, sva } from "@serendie/ui/css";
 import { TitleShape } from "./TitleShape";
 
@@ -66,35 +67,27 @@ const contactCardStyle = sva({
   },
 });
 
-export const ContactCard: React.FC<{
-  icon: string;
-  title: string;
-  link: string;
-}> = ({
-  icon,
-  title,
-  // link
-}) => {
-  const styles = contactCardStyle();
-  return (
-    <div className={styles.container}>
-      <TitleShape
-        className={css({
-          position: "absolute",
-          top: "-20%",
-          left: "-20%",
-          width: "140%",
-          height: "140%",
-          rotate: "225deg",
-          zIndex: -1,
-          aspectRatio: "1 / 1",
-          transition: "rotate 0.3s",
-        })}
-      />
-      <div className={styles.grid}>
-        <img className={styles.img} src={icon} />
-        <h2 className={styles.title}>{title}</h2>
-      </div>
-    </div>
-  );
-};
+const styles = contactCardStyle();
+
+const { icon, title, link } = Astro.props;
+---
+
+<div class={styles.container}>
+  <TitleShape
+    className={css({
+      position: "absolute",
+      top: "-20%",
+      left: "-20%",
+      width: "140%",
+      height: "140%",
+      rotate: "225deg",
+      zIndex: -1,
+      aspectRatio: "1 / 1",
+      transition: "rotate 0.3s",
+    })}
+  />
+  <div class={styles.grid}>
+    <img class={styles.img} src={icon} />
+    <h2 class={styles.title}>{title}</h2>
+  </div>
+</div>

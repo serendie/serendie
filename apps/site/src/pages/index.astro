@@ -101,19 +101,19 @@ const content = [
 ---
 <TopLayout>
 
-	<NavbarWrapper client:load>
+	<NavbarWrapper>
 		<Navbar />
 	</NavbarWrapper>
 
 	<Header/>
 
 	<Container>
-		<LinkContent content={content} client:only/>
+		<LinkContent content={content} client:idle/>
 		<Showcase />
 		<ReleaseNote />
 		<Contact />
 	</Container>
 
-	<BackgroundShape client:load />
+	<BackgroundShape client:idle />
 
 </TopLayout>
