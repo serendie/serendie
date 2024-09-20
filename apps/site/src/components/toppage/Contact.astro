@@ -1,0 +1,98 @@
+---
+import { styled } from "@serendie/ui/jsx";
+import ContactCard from "./ContactCard.astro";
+
+const ContactContainer = styled('div', {
+  base: {
+    pb: '220px',
+  }
+})
+
+const Title = styled("h2", {
+  base: {
+    color: "sd.reference.color.scale.blue.900",
+    fontWeight: 'bold',
+    width: '100%',
+    mb: '60px',
+    textStyle: 'sd.system.typography.title.large_compact',
+    expanded: {
+      textStyle: "sd.system.typography.headline.medium_expanded",
+    }
+  },
+})
+
+const Subtitle = styled("h2", {
+  base: {
+    textStyle: "sd.system.typography.title.medium_compact",
+    color: "sd.reference.color.scale.blue.900",
+    fontWeight: 'bold',
+    width: '100%',
+    mb: '24px',
+    
+    expanded: {
+      textStyle: "sd.system.typography.title.large_expanded",
+    },
+  },
+})
+
+const ContactCardGrid = styled('div', {
+  base: {
+    mt: '40px',
+    display: 'grid',
+    alignItems: 'center',
+    justifyContent: 'center',
+    
+    gap: '64px 36px',
+    gridTemplateColumns: '1fr 1fr',
+    expanded: {
+      gap: '92px',
+      mt: '0',
+      gridColumn: '2 / 4',
+      gridTemplateColumns: 'repeat(3, 1fr)',
+    },
+  },
+})
+
+const ContactSection = styled('div', {
+  base: {
+    display: 'grid',
+    gridTemplateColumns: '1fr',
+    '& + &': {
+      mt: '92px',
+    },
+    expanded: {
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      '& + &': {
+        mt: '128px',
+      },
+    },
+  },
+})
+---
+
+<ContactContainer>
+  <Title>
+    コミュニティに参加し、共につくる
+  </Title>
+
+  <ContactSection>
+    <Subtitle>
+      メディア・コミュニティ
+    </Subtitle>
+    <ContactCardGrid>
+      <ContactCard icon="/assets/logo/note.svg" title="活動を読む" link="https://note.com" />
+      <ContactCard icon="/assets/logo/x.svg" title="最新情報を見る" link="https://x.com" />
+      <ContactCard icon="/assets/logo/github.svg" title={`意見・要望を送る`} link="https://github.com" />
+    </ContactCardGrid>
+  </ContactSection>
+
+  <ContactSection>
+    <Subtitle>
+      社内用の窓口
+    </Subtitle>
+    <ContactCardGrid>
+      <ContactCard icon="/assets/logo/teams.svg" title="社内コミュニティ" link="https://teams.microsoft.com" />
+      <ContactCard icon="/assets/logo/sharepoint.svg" title="社内ポータル" link="https://teams.microsoft.com" />
+    </ContactCardGrid>
+  </ContactSection>
+</ContactContainer>

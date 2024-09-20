@@ -1,27 +1,31 @@
 ---
+import Footer from "@/components/toppage/Footer.astro";
 import "@/index.css";
+import { styled } from "@serendie/ui/jsx";
 import { siteConfig } from "@/../siteConfig";
 import { ThemeSelector } from "@/components/ThemeSelector";
-import { styled, Box } from "@serendie/ui/jsx";
-import Footer from "@/components/toppage/Footer.astro";
 
-interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
-
-const Body = styled("body", {
+const Container = styled('div', {
   base: {
+    position: "relative",
+    minH: "200vh",
+    background: "#EFF2FC",
+    zIndex: 1,
+    overflow: "clip",
+  }
+})
+const Wrapper = styled('div', {
+  base: {
+    // overflowX: "hidden",
     maxWidth: "100vw",
-    display: "grid",
-    gridTemplateRows: "auto 1fr",
-    alignItems: "start",
-  },
-});
-
+  }
+})
 const Header = styled("header", {
   base: {
+    position: "fixed",
+    top: 0,
+    zIndex: 100,
+    w: "100%",
     pt: "sd.system.dimension.spacing.extraLarge",
     pr: "sd.system.dimension.spacing.threeExtraLarge",
     pb: "sd.system.dimension.spacing.extraLarge",
@@ -30,9 +34,9 @@ const Header = styled("header", {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    borderBottom: "solid",
-    borderColor: "sd.system.color.component.outline",
-    borderBottomWidth: "sd.system.dimension.border.medium",
+    animation: `fadein 0.6s forwards`,
+    animationDelay: "3s",
+    opacity: 0,
   },
 });
 
@@ -72,13 +76,13 @@ const menuItems = [
 ---
 
 <!doctype html>
-<html lang="ja" style="height: 100%">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={siteConfig.siteDescription} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}{title && " | "}{siteConfig.siteName}</title>
+    <title>{siteConfig.siteName}</title>
 
     <script>
       const storedTheme = localStorage.getItem("panda-theme");
@@ -87,7 +91,7 @@ const menuItems = [
       }
     </script>
   </head>
-  <Body>
+  <body>
     <Header>
       <H1><a href="/">{siteConfig.siteName}</a></H1>
       <Menu>
@@ -109,7 +113,13 @@ const menuItems = [
         <ThemeSelector client:load />
       </Menu>
     </Header>
-    <slot />
+
+    <Wrapper>
+      <Container>
+        <slot />
+      </Container>
+    </Wrapper>
+
     <Footer />
-  </Body>
+  </body>
 </html>

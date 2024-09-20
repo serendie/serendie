@@ -1,0 +1,148 @@
+---
+import { Badge, Button, SvgIcon } from "@serendie/ui";
+import { css } from "@serendie/ui/css";
+import { styled } from "@serendie/ui/jsx";
+
+const ReleasenoteContainer = styled('div', {
+  base: {
+    pb: '160px',
+  }
+})
+
+const TitleContainer = styled('div', {
+  base: {
+    width: '100%',
+    display: 'grid',
+    gridTemplateColumns: '1fr auto',
+    gap: '16px',
+    alignItems: 'center',
+    mb: '40px',
+    expanded: {
+      mb: '24px',
+    }
+  },
+})
+
+const Title = styled("h2", {
+  base: {
+    color: "sd.reference.color.scale.blue.900",
+    fontWeight: 'bold',
+    width: '100%',
+    textStyle: 'sd.system.typography.title.large_compact',
+    expanded: {
+      textStyle: "sd.system.typography.headline.medium_expanded",
+    }
+  },
+})
+
+const ReleasenoteGrid = styled('div', {
+  base: {
+    display: 'grid',
+    gap: 'sd.system.dimension.spacing.medium',
+    gridTemplateColumns: '1fr 9fr auto',
+    expanded: {
+      gridTemplateColumns: '1fr 9fr auto auto',
+    }
+  },
+})
+
+const Note = styled('div', {
+  base: {
+    display: 'grid',
+    gridColumn: '1 / 5',
+    gridTemplateColumns: "subgrid",
+    gap: '12px',
+    background: 'sd.system.color.component.surface',
+    py: '16px',
+    px: '20px',
+    borderRadius: '130px',
+    expanded: {
+      gap: '0',
+      py: 'sd.system.dimension.spacing.extraSmall',
+      px: 'sd.system.dimension.spacing.large',
+      '& > *': {
+        transition: 'opacity 0.3s',
+      },
+      _hover: {
+        '& > *': {
+          opacity: 0.4,
+        }
+      }
+    }
+  },
+})
+
+const NoteTime = styled('time', {
+  base: {
+    p: '0',
+    textStyle: 'sd.system.typography.body.small_expanded',
+    alignContent: 'center',
+    expanded: {
+      p: 'sd.system.dimension.spacing.small',
+    }
+  },
+})
+
+const NoteTitle = styled('h2', {
+  base: {
+    p: '0',
+    textStyle: 'sd.system.typography.body.small_expanded',
+    alignContent: 'center',
+    expanded: {
+      p: 'sd.system.dimension.spacing.small',
+    }
+  },
+})
+
+const NoteBadge = styled('div', {
+  base: {
+    p: '0',
+    alignContent: 'center',
+    expanded: {
+      p: 'sd.system.dimension.spacing.small',
+    }
+  },
+})
+
+const NoteIcon = styled('div', {
+  base: {
+    display: 'none',
+    expanded: {
+      display: 'block',
+      p: '12px',
+      width: '48px',
+    }
+  },
+})
+---
+<ReleasenoteContainer>
+  <TitleContainer>
+    <Title>ニュース・イベントを見る</Title>
+    <Button
+      styleType="ghost"
+      className={css({
+        color: 'sd.reference.color.scale.blue.900',
+      })}
+    >
+      すべて見る
+    </Button>
+  </TitleContainer>
+
+  <ReleasenoteGrid>
+    {Array.from({ length: 5 }).map((_, i) => (
+      <Note>
+        <NoteTime>2024/09/21</NoteTime>
+        <NoteTitle>ブランドアセットにロゴのaiデータを追加しました。</NoteTitle>
+        <NoteBadge>
+          <Badge className={
+            css({
+              background: 'sd.reference.color.scale.blue.800',
+            })
+          }>NEW</Badge>
+        </NoteBadge>
+        <NoteIcon><SvgIcon icon="chevron_right" size='24px' /></NoteIcon>
+      </Note>
+    ))}
+  </ReleasenoteGrid>
+
+</ReleasenoteContainer>

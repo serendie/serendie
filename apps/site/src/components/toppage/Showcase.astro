@@ -1,0 +1,30 @@
+---
+import { styled } from "@serendie/ui/jsx"
+import { ShowcaseCarousel } from "./ShowcaseCarousel"
+import { ShowcaseCarouselWrapper } from "./ShowcaseCarouselWrapper"
+
+const ShowcaseContainer = styled("div", {
+  base: {
+    pb: '160px'
+  },
+})
+
+const Title = styled("h2", {
+  base: {
+    color: "sd.reference.color.scale.blue.900",
+    fontWeight: 'bold',
+    mb: '40px',
+    textStyle: 'sd.system.typography.title.large_compact',
+    expanded: {
+      textStyle: "sd.system.typography.headline.medium_expanded",
+    }
+  },
+})
+
+---
+
+<ShowcaseContainer>
+  <Title>使われている事例を見る</Title>
+  
+  <ShowcaseCarouselWrapper client:load/>
+</ShowcaseContainer>
