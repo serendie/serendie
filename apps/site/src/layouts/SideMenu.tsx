@@ -8,7 +8,8 @@ export type Links = {
 
 const Sidebar = styled("aside", {
   base: {
-    w: "280px",
+    position: "relative",
+    w: "240px",
     h: "100%",
     py: "sd.system.dimension.spacing.extraLarge",
     display: "flex",
@@ -17,6 +18,17 @@ const Sidebar = styled("aside", {
     borderColor: "sd.system.color.component.outline",
     borderRightWidth: "sd.system.dimension.border.medium",
     bg: "sd.reference.color.scale.blue.600",
+    _before: {
+      content: '""',
+      position: "absolute",
+      top: 0,
+      left: "min(0px, calc(((100vw - 1440px) / 2 )* -1))",
+      w: "calc((100vw - 1440px) / 2)",
+      minW: "80px",
+      h: "100%",
+      bg: "sd.reference.color.scale.blue.600",
+      zIndex: -1,
+    },
   },
 });
 

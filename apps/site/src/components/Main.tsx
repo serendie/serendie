@@ -4,15 +4,20 @@ export const MainGrid = styled("div", {
   base: {
     h: "100%",
     display: "grid",
-    gridTemplateColumns: "max-content 1fr",
+    gridTemplateColumns: "max-content minmax(auto, 1120px)",
+    gap: "80px",
+    pr: "40px",
+    justifyContent: "center",
+    expandedDown: {
+      gridTemplateColumns: "minmax(auto, 1120px)",
+    },
   },
 });
 
 export const Main = styled("main", {
   base: {
-    maxW: "calc(1000px + 80px * 2)",
+    maxW: "calc(1200px + 80px * 2)",
     py: "56px",
-    px: "80px",
     "& p": {
       my: "sd.system.dimension.spacing.extraLarge",
       textStyle: "sd.system.typography.body.small_compact",
