@@ -2,17 +2,11 @@ import StyleDictionary from "style-dictionary";
 
 StyleDictionary.registerTransform({
   name: "cssTypography",
+  transitive: true,
   type: "value",
-  matcher: (token) => {
-    if (token.$type === "typography") {
-      //TODO: 本来matcherの中で変換してはいけないのだけど、matchしてもtransformerが呼ばれないのでここで変換している
-      const { fontSize, fontWeight, lineHeight } = token.value;
-      token.value = `${fontWeight} ${fontSize}/${lineHeight}`;
-      return true;
-    }
-    return false;
-  },
+  matcher: (token) => token.$type === "typography",
   transformer: (token) => {
-    return token.value;
+    const { fontSize, fontWeight, lineHeight } = token.value;
+    return `${fontWeight} ${fontSize}/${lineHeight}`;
   },
 });
