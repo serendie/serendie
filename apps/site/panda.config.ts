@@ -1,3 +1,4 @@
+//import { extendedTokens } from "./src/tokens";
 import { SerendiePreset } from "@serendie/ui";
 import { defineConfig } from "@pandacss/dev";
 
@@ -24,6 +25,7 @@ export default defineConfig({
           "100%": { opacity: "0" },
         },
       },
+      //tokens: extendedTokens,
     },
   },
 

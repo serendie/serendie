@@ -2,8 +2,9 @@
 import { getEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import "@/index.css";
-import { styled } from "@serendie/ui/jsx";
 import Global from "@/layouts/Global.astro";
+import { SideMenu } from "@/layouts/SideMenu";
+import { Main, MainGrid } from "@/components/Main";
 
 export async function getStaticPaths() {
   const pages = await getCollection("pages");
@@ -35,89 +36,25 @@ const siblings = await getCollection(
     page.id.split("/").slice(0, -1).join("/") === currentDir
 );
 
-const MainGrid = styled("div", {
-  base: {
-    h: "100%",
-    display: "grid",
-    gridTemplateColumns: "240px 1fr",
-  },
-});
-
-const Sidebar = styled("aside", {
-  base: {
-    w: "240px",
-    h: "100%",
-    py: "sd.system.dimension.spacing.extraLarge",
-    display: "flex",
-    flexDirection: "column",
-    borderRight: "solid",
-    borderColor: "sd.system.color.component.outline",
-    borderRightWidth: "sd.system.dimension.border.medium",
-    backgroundColor: "#FBFCFD",
-  },
-});
-
-const Main = styled("main", {
-  base: {
-    pt: "sd.system.dimension.spacing.threeExtraLarge",
-    pr: "sd.system.dimension.spacing.fiveExtraLarge",
-    pb: "sd.system.dimension.spacing.threeExtraLarge",
-    pl: "sd.system.dimension.spacing.fiveExtraLarge",
-  },
-});
-
-const List = styled("ul", {
-  base: {
-    listStyle: "none",
-    p: 0,
-    m: 0,
-  },
-});
-
-const ListItemLink = styled("a", {
-  base: {
-    display: "block",
-    textStyle: "sd.system.typography.label.extraLarge_expanded",
-    pt: "sd.system.dimension.spacing.extraSmall",
-    pr: "sd.system.dimension.spacing.extraLarge",
-    pb: "sd.system.dimension.spacing.extraSmall",
-    pl: "sd.system.dimension.spacing.extraLarge",
-    _hover: {
-      backgroundColor: "sd.system.color.interaction.hoverSurface",
-    },
-  },
-  variants: {
-    active: {
-      true: {
-        backgroundColor: "sd.system.color.interaction.selectedSurface",
-      },
-    },
-  },
-});
+const propsForMdx = {
+  siblings,
+};
 
 const { Content } = await page.render();
 ---
 
 <Global title={page.data.title}>
   <MainGrid>
-    <Sidebar>
-      <List>
-        {
-          siblings.map((item) => (
-            <li>
-              <ListItemLink
-                href={`/${item.slug}`}
-                active={item.slug === page.slug}
-              >
-                {item.data.title}
-              </ListItemLink>
-            </li>
-          ))
-        }
-      </List>
-    </Sidebar>
-    <Main>
-      <Content />
+    <SideMenu
+      links={siblings.map((link) => ({
+        href: `/${link.slug}`,
+        title: link.data.title,
+        isActive: link.slug === page.slug,
+      }))}
+    />
+
+    <Main display="grid" gridTemplateColumns="repeat(8, 1fr)" columnGap="40px">
+      <Content {...propsForMdx} />
     </Main>
   </MainGrid>
 </Global>

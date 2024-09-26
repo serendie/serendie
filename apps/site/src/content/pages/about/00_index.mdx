@@ -1,4 +1,92 @@
 ---
-title: about
+title: About
 slug: about
 ---
+
+import Illustration from "../../../assets/hearderImages/about.svg";
+import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
+import PageHeadLine from "../../../components/PageHeadLine.astro";
+import {
+  PageMain,
+  PageSection,
+  PageAside,
+  PageHeader,
+  PageLinks,
+} from "../../../components/PageLayout.tsx";
+import StickySideNav from "../../../components/StickySideNav.astro";
+import { css } from "@serendie/ui/css";
+
+export const conceptGrid = css({
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+  columnGap: "sd.system.dimension.spacing.extraLarge",
+});
+
+export const conceptGridTitle = css({
+  fontSize: "24px", // TODO: テーマに追加
+  my: 0,
+});
+
+export const conceptGridImage = css({
+  mb: "sd.system.dimension.spacing.twoExtraLarge",
+});
+
+<PageHeader>
+	<IndexPageHeader title={frontmatter.title} image={Illustration} />
+</PageHeader>
+<PageMain>
+	<PageSection>
+		<PageHeadLine number={1}>Serendieデザインシステムとは</PageHeadLine>
+
+    		Serendieデザインシステムは、三菱電機株式会社DXイノベーションセンターが提供するデザインシステムです。
+
+    		デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。
+
+    		Serendieデザインシステムは、三菱電機のモノづくり文化に寄り添いつつ、実験的で新しいサービスをスピーディーに生み出す基盤となることを目指しています。そのため、提供するアセットはデジタルプロダクト開発に即効性のあるものが中心です。完璧さや堅牢性のみを追求するのではなく、軽やかで柔軟なプロダクトづくりを実現するためのデザインシステムです。
+
+    </PageSection>
+
+    <PageSection>
+    	<PageHeadLine number={2}>コンセプト</PageHeadLine>
+
+    	デザインシステムの形は組織によって多様ですが、根底に流れる共通の思想・原則があります。「最新のデザインファイルがどこにあるかわからない」「再利用可能なアイコン集の存在を知らない」などを避け、Single Source of Truth (SSOT: 信頼できる唯一の情報源) を目指すことはその一つです。これはSerendieデザインシステムにおいても同様です。三菱電機の文化や目指す姿を背景に、Serendieデザインシステムでは次の３つの原則を特に重視しています。
+
+    		<div class={conceptGrid}>
+    			<div>
+    				<h4 class={conceptGridTitle}>Adaptive</h4>
+    				<p>家庭から宇宙まで三菱電機の多様な事業領域や、価値検証から製品化まであらゆる事業フェーズに適応します。Serendieデザインシステムは汎用性と普遍性を重視したベーシックなアセットを提供し、これを下敷きとして事業領域ごとにプロダクトの独自性やアイデンティティを柔軟に表現できます。</p>
+    			</div>
+    			<img class={conceptGridImage} src="https://placehold.jp/366x200.png" alt="" />
+    			<div>
+    				<h4 class={conceptGridTitle}>Borderless</h4>
+    				<p>Serendieデザインシステムは三菱電機に関わるすべての人々の共有資産です。社内・社外を問わず、誰もが許可や承認なしに自由に利用できる環境を目指します。Serendieデザインシステムは、デジタルプロダクトの作り手をつなぎ、組織の垣根を超えたコラボレーションの触媒となります。</p>
+    			</div>
+    			<img class={conceptGridImage} src="https://placehold.jp/366x200.png" alt="" />
+    			<div>
+    				<h4 class={conceptGridTitle}>Circulative</h4>
+    				<p>Serendieデザインシステムに完成はありません。利用動向の分析と継続的な改善を循環させることで、求められる変化に柔軟に対応します。その活動は特定のチームに閉じず、組織全体で協力して育てていくことを大切にします。Serendieエコシステムの環を広げ、組織全体に相乗効果をもたらします。</p>
+    			</div>
+    			<img class={conceptGridImage} src="https://placehold.jp/366x200.png" alt="" />
+    		</div>
+
+    </PageSection>
+
+    <PageSection>
+    		<PageHeadLine number={3}>マルチブランド・マルチプロダクト</PageHeadLine>
+
+    		Adaptiveの原則に基づき、Serendieデザインシステムは三菱電機内の多様なブランド・多様なプロダクトに適応できるようアーキテクチャを設計しています。最上段に位置するSerendie Primitivesを抽象デザインシステム、各事業領域に紐づくデザインシステムを事業デザインシステムと呼び、これら2つのデザインシステムは継承関係にあります。事業デザインシステムはその事業に特化したアセットを各プロダクトに提供することが役割です。
+
+    		### 小見出しのテキストが入る
+
+    		マルチブランド・マルチプロダクトな環境では、事業やブランドごとにビジュアルアイデンティティ (VI) が定義され、それぞれに特化したUIコンポーネントが求められ、アクセシビリティ基準など満たすべき品質も異なります。ここで完全に独立した事業デザインシステムを各々が作ってしまうと、サイロ化が進み、BorderlessやCirculativeの原則が満たせなくなります。
+
+    		そこで重要となるのがSerendie Primitivesです。Serendie Primitivesは、デザインシステムの骨格であり下敷きとして機能します。Serendie Primitivesをベースに事業デザインシステムを構築することで、効率的であるだけでなく、デザインシステムの設計を共通化できます。また、固有プロダクトに特化したUIコンポーネントは、事業デザインシステム内での提供に留めることで、横串連携の負荷が下がりガバナンスしやすくなります。
+
+    </PageSection>
+
+    	<PageLinks siblings={props.siblings} currentSlug={frontmatter.slug} />
+
+</PageMain>
+<PageAside>
+	<StickySideNav />
+</PageAside>

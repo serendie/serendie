@@ -1,8 +1,9 @@
 ---
 import "@/index.css";
 import { getCollection } from "astro:content";
-import { styled } from "@serendie/ui/jsx";
 import Global from "./Global.astro";
+import { SideMenu } from "./SideMenu";
+import { Main, MainGrid, MainTitle } from "@/components/Main";
 
 interface Props {
   title: string;
@@ -10,104 +11,17 @@ interface Props {
 
 const { title } = Astro.props;
 const components = await getCollection("components");
-
-const MainGrid = styled("div", {
-  base: {
-    h: "100%",
-    display: "grid",
-    gridTemplateColumns: "240px 1fr",
-  },
-});
-
-const Sidebar = styled("aside", {
-  base: {
-    w: "240px",
-    h: "100%",
-    py: "sd.system.dimension.spacing.extraLarge",
-    display: "flex",
-    flexDirection: "column",
-    borderRight: "solid",
-    borderColor: "sd.system.color.component.outline",
-    borderRightWidth: "sd.system.dimension.border.medium",
-    backgroundColor: "#FBFCFD",
-  },
-});
-
-const Main = styled("main", {
-  base: {
-    pt: "sd.system.dimension.spacing.threeExtraLarge",
-    pr: "sd.system.dimension.spacing.fiveExtraLarge",
-    pb: "sd.system.dimension.spacing.threeExtraLarge",
-    pl: "sd.system.dimension.spacing.fiveExtraLarge",
-  },
-});
-
-const MainTitle = styled("h1", {
-  base: {
-    textStyle: "sd.system.typography.headline.large_expanded",
-    mb: "sd.system.dimension.spacing.medium",
-  },
-});
-
-const SidebarLabel = styled("h2", {
-  base: {
-    textStyle: "sd.system.typography.label.medium_expanded",
-    pt: "sd.system.dimension.spacing.extraSmall",
-    pr: "sd.system.dimension.spacing.extraLarge",
-    pb: "sd.system.dimension.spacing.extraSmall",
-    pl: "sd.system.dimension.spacing.extraLarge",
-  },
-});
-
-const List = styled("ul", {
-  base: {
-    listStyle: "none",
-    p: 0,
-    m: 0,
-  },
-});
-
-const ListItemLink = styled("a", {
-  base: {
-    display: "block",
-    textStyle: "sd.system.typography.label.extraLarge_expanded",
-    pt: "sd.system.dimension.spacing.extraSmall",
-    pr: "sd.system.dimension.spacing.extraLarge",
-    pb: "sd.system.dimension.spacing.extraSmall",
-    pl: "sd.system.dimension.spacing.extraLarge",
-    _hover: {
-      backgroundColor: "sd.system.color.interaction.hoverSurface",
-    },
-  },
-  variants: {
-    active: {
-      true: {
-        backgroundColor: "sd.system.color.interaction.selectedSurface",
-      },
-    },
-  },
-});
 ---
 
 <Global title={title}>
   <MainGrid>
-    <Sidebar>
-      <SidebarLabel>Components</SidebarLabel>
-      <List>
-        {
-          components.map((item) => (
-            <li>
-              <ListItemLink
-                href={`/components/${item.slug}`}
-                active={item.data.title === title}
-              >
-                {item.data.title}
-              </ListItemLink>
-            </li>
-          ))
-        }
-      </List>
-    </Sidebar>
+    <SideMenu
+      links={components.map((component) => ({
+        href: `/components/${component.slug}`,
+        title: component.data.title,
+        isActive: component.data.title === title,
+      }))}
+    />
     <Main>
       <MainTitle>{title}</MainTitle>
       <slot />
