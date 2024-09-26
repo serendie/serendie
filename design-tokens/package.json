@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "build": "tsx style_dictonary/build.ts",
+    "build": "tsx style_dictionary/build.ts",
     "test": "vitest",
     "sync-json-to-figma": "tsx json_to_figma/sync_tokens_to_figma.ts",
     "ci:sync-json-to-figma": "tsx json_to_figma/sync_tokens_to_figma.ts --silent"
