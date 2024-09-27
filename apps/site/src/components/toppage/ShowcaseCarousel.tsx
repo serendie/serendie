@@ -1,5 +1,5 @@
 import useEmblaCarousel from "embla-carousel-react";
-import { sva } from "@serendie/ui/css";
+import { sva } from "styled-system/css";
 import { IconButton } from "@serendie/ui";
 import { usePrevNextButtons } from "../utils/carouselUtils";
 

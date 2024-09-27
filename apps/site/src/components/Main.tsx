@@ -1,4 +1,4 @@
-import { styled } from "@serendie/ui/jsx";
+import { styled } from "styled-system/jsx";
 
 export const MainGrid = styled("div", {
   base: {
@@ -10,6 +10,10 @@ export const MainGrid = styled("div", {
     justifyContent: "center",
     expandedDown: {
       gridTemplateColumns: "minmax(auto, 1120px)",
+    },
+    mdDown: {
+      gap: "24px",
+      pr: "0px",
     },
   },
 });

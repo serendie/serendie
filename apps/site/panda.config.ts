@@ -25,7 +25,11 @@ export default defineConfig({
           "100%": { opacity: "0" },
         },
       },
-      //tokens: extendedTokens,
+      breakpoints: {
+        sm: "768px",
+        md: "1280px",
+        lg: "1440px",
+      },
     },
   },
 
@@ -33,6 +37,6 @@ export default defineConfig({
   outdir: "styled-system",
   outExtension: "js",
   jsxFramework: "react",
-  importMap: "@serendie/ui",
+  // importMap: "@serendie/ui",
   presets: [SerendiePreset],
 });

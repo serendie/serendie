@@ -1,4 +1,4 @@
-import { styled } from "@serendie/ui/jsx";
+import { styled } from "styled-system/jsx";
 
 export type Links = {
   title: string;
@@ -28,6 +28,9 @@ const Sidebar = styled("aside", {
       h: "100%",
       bg: "sd.reference.color.scale.blue.600",
       zIndex: -1,
+    },
+    mdDown: {
+      w: "100%",
     },
   },
 });

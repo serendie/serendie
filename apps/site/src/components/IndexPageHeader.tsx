@@ -1,5 +1,5 @@
-import { css } from "@serendie/ui/css";
-import { styled } from "@serendie/ui/jsx";
+import { css } from "styled-system/css";
+import { styled } from "styled-system/jsx";
 
 type IndexPageHeaderProps = {
   image: ImageMetadata;
@@ -14,6 +14,10 @@ const IndexPageHeader_ = ({ image, title }: IndexPageHeaderProps) => (
       alignItems: "center",
       gap: "sd.reference.dimension.scale.12",
       mb: "sd.reference.dimension.scale.18",
+      mdDown: {
+        gridTemplateColumns: "1fr",
+        gap: "sd.reference.dimension.scale.threeExtraLarge",
+      },
     })}
   >
     <h2
@@ -24,7 +28,16 @@ const IndexPageHeader_ = ({ image, title }: IndexPageHeaderProps) => (
     >
       {title}
     </h2>
-    <img src={image.src} alt={""} width={image.width} height={image.height} />
+    <img
+      src={image.src}
+      alt={""}
+      width={image.width}
+      height={image.height}
+      className={css({
+        maxWidth: "100%",
+        height: "auto",
+      })}
+    />
   </div>
 );
 

@@ -1,15 +1,21 @@
-import { css } from "@serendie/ui/css";
-import { styled } from "@serendie/ui/jsx";
+import { css } from "styled-system/css";
+import { styled } from "styled-system/jsx";
 
 export const PageHeader = styled("header", {
   base: {
     gridColumn: "span 8",
+    mdDown: {
+      gridColumn: "span 1",
+    },
   },
 });
 
 export const PageMain = styled("div", {
   base: {
     gridColumn: "span 6",
+    mdDown: {
+      gridColumn: "span 1",
+    },
   },
 });
 
@@ -20,6 +26,9 @@ export const PageSection = styled("section", {
 export const PageAside = styled("aside", {
   base: {
     gridColumn: "span 2",
+    mdDown: {
+      display: "none",
+    },
   },
 });
 

@@ -1,4 +1,4 @@
-import { css } from "@serendie/ui/css";
+import { css } from "styled-system/css";
 
 export const NavbarWrapper: React.FC<{
   children: React.ReactNode;

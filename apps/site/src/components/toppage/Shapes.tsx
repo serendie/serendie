@@ -1,4 +1,4 @@
-import { css, cx, sva } from "@serendie/ui/css";
+import { css, cx, sva } from "styled-system/css";
 import { cubicBezier, motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 

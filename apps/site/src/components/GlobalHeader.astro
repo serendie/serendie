@@ -1,7 +1,8 @@
 ---
-import { styled } from "@serendie/ui/jsx";
+import { styled } from "styled-system/jsx";
 import { siteConfig } from "@/../siteConfig";
 import { ThemeSelector } from "./ThemeSelector";
+import { IconButton, SvgIcon } from "@serendie/ui";
 
 const Header = styled("header", {
   base: {
@@ -17,6 +18,9 @@ const Header = styled("header", {
     borderColor: "sd.system.color.component.outline",
     borderBottomWidth: "sd.system.dimension.border.medium",
     color: "globalMenu",
+    mdDown: {
+      px: '24px'
+    }
   },
 });
 
@@ -42,8 +46,20 @@ const Menu = styled("div", {
     alignItems: "center",
     fontWeight: "sd.reference.typography.fontWeight.bold",
     gap: "sd.system.dimension.spacing.extraLarge",
+    mdDown: {
+      display: "none",
+    }
   },
 });
+
+const MenuButton = styled("div", {
+  base: {
+    display: "none",
+    mdDown: {
+      display: "block",
+    }
+  },
+}); 
 
 const Link = styled("a", {
   base: {},
@@ -87,5 +103,10 @@ const menuItems = [
       ))}
       <ThemeSelector client:load />
     </Menu>
+
+    <MenuButton>
+      <IconButton styleType="ghost" icon="menu">
+      </IconButton>
+    </MenuButton>
   </HeaderContainer>
 </Header>

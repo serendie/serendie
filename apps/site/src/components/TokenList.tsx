@@ -1,7 +1,7 @@
 import type tokens from "@serendie/design-token/token-list";
 import { IconButton, Search } from "@serendie/ui";
-import { css } from "@serendie/ui/css";
-import { Box, Circle, Flex, styled } from "@serendie/ui/jsx";
+import { css } from "styled-system/css";
+import { Box, Circle, Flex, styled } from "styled-system/jsx";
 import React, { useCallback, useState } from "react";
 
 interface TokenList {

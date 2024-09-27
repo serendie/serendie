@@ -1,5 +1,5 @@
 import { Divider } from "@serendie/ui";
-import { css } from "@serendie/ui/css";
+import { css } from "styled-system/css";
 import { HBox, VBox } from "src/components/LayoutUtils";
 
 export function TypeSample() {

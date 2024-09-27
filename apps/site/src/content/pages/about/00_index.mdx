@@ -14,12 +14,15 @@ import {
   PageLinks,
 } from "../../../components/PageLayout.tsx";
 import StickySideNav from "../../../components/StickySideNav.astro";
-import { css } from "@serendie/ui/css";
+import { css } from "styled-system/css";
 
 export const conceptGrid = css({
   display: "grid",
   gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
   columnGap: "sd.system.dimension.spacing.extraLarge",
+  mdDown: {
+    gridTemplateColumns: "1fr",
+  },
 });
 
 export const conceptGridTitle = css({
