@@ -1,4 +1,6 @@
 import { styled } from "styled-system/jsx";
+import { SideMenuDrawer } from "./SideMenuDrawer";
+import { css } from "styled-system/css";
 
 export type Links = {
   title: string;
@@ -29,13 +31,17 @@ const Sidebar = styled("aside", {
       bg: "sd.reference.color.scale.blue.600",
       zIndex: -1,
     },
-    mdDown: {
+    smDown: {
       w: "100%",
+      height: "40px",
+      py: "0",
+      px: "24px",
+      justifyContent: "center",
     },
   },
 });
 
-const List = styled("ul", {
+export const SideMenuList = styled("ul", {
   base: {
     listStyle: "none",
     p: 0,
@@ -43,9 +49,9 @@ const List = styled("ul", {
   },
 });
 
-const ListItemLink = styled("a", {
+export const SideMenuListItemLink = styled("a", {
   base: {
-    color: "sd.system.color.impression.onNotice",
+    color: "white",
     display: "block",
     textStyle: "sd.system.typography.label.extraLarge_compact",
     lineHeight: 1.5,
@@ -72,15 +78,22 @@ const ListItemLink = styled("a", {
 export const SideMenu = ({ links }: { links: Links[] }) => {
   return (
     <Sidebar>
-      <List>
+      <SideMenuList
+        className={css({
+          smDown: {
+            display: "none",
+          },
+        })}
+      >
         {links.map((link, i) => (
           <li key={i}>
-            <ListItemLink href={link.href} active={link.isActive}>
+            <SideMenuListItemLink href={link.href} active={link.isActive}>
               {link.title}
-            </ListItemLink>
+            </SideMenuListItemLink>
           </li>
         ))}
-      </List>
+      </SideMenuList>
+      <SideMenuDrawer links={links} />
     </Sidebar>
   );
 };

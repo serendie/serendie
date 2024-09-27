@@ -2,7 +2,7 @@
 import { styled } from "styled-system/jsx";
 import { siteConfig } from "@/../siteConfig";
 import { ThemeSelector } from "./ThemeSelector";
-import { IconButton, SvgIcon } from "@serendie/ui";
+import { GlobalHeaderMenu } from "./GlobalHeaderMenu";
 
 const Header = styled("header", {
   base: {
@@ -105,8 +105,7 @@ const menuItems = [
     </Menu>
 
     <MenuButton>
-      <IconButton styleType="ghost" icon="menu">
-      </IconButton>
+      <GlobalHeaderMenu client:idle menuItems={menuItems} />
     </MenuButton>
   </HeaderContainer>
 </Header>

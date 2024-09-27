@@ -52,6 +52,7 @@ const { Content } = await page.render();
         title: link.data.title,
         isActive: link.slug === page.slug,
       }))}
+      client:idle
     />
 
     <Main className={css({
