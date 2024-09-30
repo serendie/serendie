@@ -224,16 +224,16 @@ export default {
             },
             "skyBlue": {
               "100": {
-                "value": "#CCF7FC"
+                "value": "#D9F6FC"
               },
               "200": {
-                "value": "#99F1FA"
+                "value": "#C3EFF4"
               },
               "300": {
-                "value": "#63E3EE"
+                "value": "#9CE6EC"
               },
               "400": {
-                "value": "#03C5D3"
+                "value": "#64CCD3"
               },
               "500": {
                 "value": "#00A3AF"

@@ -925,8 +925,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.skyBlue.100",
     "type": "color",
-    "value": "#CCF7FC",
-    "originalValue": "#CCF7FC"
+    "value": "#D9F6FC",
+    "originalValue": "#D9F6FC"
   },
   {
     "path": [
@@ -939,8 +939,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.skyBlue.200",
     "type": "color",
-    "value": "#99F1FA",
-    "originalValue": "#99F1FA"
+    "value": "#C3EFF4",
+    "originalValue": "#C3EFF4"
   },
   {
     "path": [
@@ -953,8 +953,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.skyBlue.300",
     "type": "color",
-    "value": "#63E3EE",
-    "originalValue": "#63E3EE"
+    "value": "#9CE6EC",
+    "originalValue": "#9CE6EC"
   },
   {
     "path": [
@@ -967,8 +967,8 @@ export default [
     ],
     "key": "sd.reference.color.scale.skyBlue.400",
     "type": "color",
-    "value": "#03C5D3",
-    "originalValue": "#03C5D3"
+    "value": "#64CCD3",
+    "originalValue": "#64CCD3"
   },
   {
     "path": [

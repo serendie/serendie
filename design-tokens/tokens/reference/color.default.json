@@ -283,19 +283,19 @@
           },
           "skyBlue": {
             "100": {
-              "$value": "#CCF7FC",
+              "$value": "#D9F6FC",
               "$type": "color"
             },
             "200": {
-              "$value": "#99F1FA",
+              "$value": "#C3EFF4",
               "$type": "color"
             },
             "300": {
-              "$value": "#63E3EE",
+              "$value": "#9CE6EC",
               "$type": "color"
             },
             "400": {
-              "$value": "#03C5D3",
+              "$value": "#64CCD3",
               "$type": "color"
             },
             "500": {
