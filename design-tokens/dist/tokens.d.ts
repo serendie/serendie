@@ -5,6 +5,174 @@
 
 export default tokens;
 declare const tokens: {
+  "web": {
+    "system": {
+      "color": {
+        "impression": {
+          "primary_asagi": string,
+          "onPrimary_asagi": string,
+          "secondary_asagi": string,
+          "onSecondary_asagi": string,
+          "tertiary_asagi": string,
+          "onTertiary_asagi": string,
+          "primary_konjo": string,
+          "onPrimary_konjo": string,
+          "secondary_konjo": string,
+          "onSecondary_konjo": string,
+          "tertiary_konjo": string,
+          "onTertiary_konjo": string,
+          "primary_kurikawa": string,
+          "onPrimary_kurikawa": string,
+          "secondary_kurikawa": string,
+          "onSecondary_kurikawa": string,
+          "tertiary_kurikawa": string,
+          "onTertiary_kurikawa": string,
+          "primary_sumire": string,
+          "onPrimary_sumire": string,
+          "secondary_sumire": string,
+          "onSecondary_sumire": string,
+          "tertiary_sumire": string,
+          "onTertiary_sumire": string,
+          "primary_tsutsuji": string,
+          "onPrimary_tsutsuji": string,
+          "secondary_tsutsuji": string,
+          "onSecondary_tsutsuji": string,
+          "tertiary_tsutsuji": string,
+          "onTertiary_tsutsuji": string
+        },
+        "component": {
+          "background": {
+            "surface_asagi": string,
+            "onSurface_asagi": string,
+            "surfaceDim_asagi": string,
+            "surfaceDimmest_asagi": string,
+            "surface_konjo": string,
+            "onSurface_konjo": string,
+            "surfaceDim_konjo": string,
+            "surfaceDimmest_konjo": string,
+            "surface_kurikawa": string,
+            "onSurface_kurikawa": string,
+            "surfaceDim_kurikawa": string,
+            "surfaceDimmest_kurikawa": string,
+            "surface_sumire": string,
+            "onSurface_sumire": string,
+            "surfaceDim_sumire": string,
+            "surfaceDimmest_sumire": string,
+            "surface_tsutsuji": string,
+            "onSurface_tsutsuji": string,
+            "surfaceDim_tsutsuji": string,
+            "surfaceDimmest_tsutsuji": string
+          }
+        },
+        "mvShape": {
+          "foreground": {
+            "arc": {
+              "index_asagi": string,
+              "extraBold_asagi": string,
+              "bold_asagi": string,
+              "normal_asagi": string,
+              "thin_asagi": string,
+              "index_konjo": string,
+              "extraBold_konjo": string,
+              "bold_konjo": string,
+              "normal_konjo": string,
+              "thin_konjo": string,
+              "index_kurikawa": string,
+              "extraBold_kurikawa": string,
+              "bold_kurikawa": string,
+              "normal_kurikawa": string,
+              "thin_kurikawa": string,
+              "index_sumire": string,
+              "extraBold_sumire": string,
+              "bold_sumire": string,
+              "normal_sumire": string,
+              "thin_sumire": string,
+              "index_tsutsuji": string,
+              "extraBold_tsutsuji": string,
+              "bold_tsutsuji": string,
+              "normal_tsutsuji": string,
+              "thin_tsutsuji": string
+            },
+            "rectangle": {
+              "oblong_asagi": string,
+              "square_asagi": string,
+              "oblong_konjo": string,
+              "square_konjo": string,
+              "oblong_kurikawa": string,
+              "square_kurikawa": string,
+              "oblong_sumire": string,
+              "square_sumire": string,
+              "oblong_tsutsuji": string,
+              "square_tsutsuji": string
+            }
+          },
+          "background": {
+            "arc": {
+              "first_asagi": string,
+              "second_asagi": string,
+              "third_asagi": string,
+              "fourth_asagi": string,
+              "fifth_asagi": string,
+              "first_konjo": string,
+              "second_konjo": string,
+              "third_konjo": string,
+              "fourth_konjo": string,
+              "fifth_konjo": string,
+              "first_kurikawa": string,
+              "second_kurikawa": string,
+              "third_kurikawa": string,
+              "fourth_kurikawa": string,
+              "fifth_kurikawa": string,
+              "first_sumire": string,
+              "second_sumire": string,
+              "third_sumire": string,
+              "fourth_sumire": string,
+              "fifth_sumire": string,
+              "first_tsutsuji": string,
+              "second_tsutsuji": string,
+              "third_tsutsuji": string,
+              "fourth_tsutsuji": string,
+              "fifth_tsutsuji": string
+            }
+          }
+        },
+        "articleFigure": {
+          "foreground": {
+            "primary_asagi": string,
+            "secondary_asagi": string,
+            "tertiary_asagi": string,
+            "surface_asagi": string,
+            "onSurface_asagi": string,
+            "primary_konjo": string,
+            "secondary_konjo": string,
+            "tertiary_konjo": string,
+            "surface_konjo": string,
+            "onSurface_konjo": string,
+            "primary_kurikawa": string,
+            "secondary_kurikawa": string,
+            "tertiary_kurikawa": string,
+            "surface_kurikawa": string,
+            "onSurface_kurikawa": string,
+            "primary_sumire": string,
+            "secondary_sumire": string,
+            "tertiary_sumire": string,
+            "surface_sumire": string,
+            "onSurface_sumire": string,
+            "primary_tsutsuji": string,
+            "secondary_tsutsuji": string,
+            "tertiary_tsutsuji": string,
+            "surface_tsutsuji": string,
+            "onSurface_tsutsuji": string
+          },
+          "background_asagi": string,
+          "background_konjo": string,
+          "background_kurikawa": string,
+          "background_sumire": string,
+          "background_tsutsuji": string
+        }
+      }
+    }
+  },
   "sd": {
     "reference": {
       "color": {
