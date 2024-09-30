@@ -1,0 +1,142 @@
+{
+  "web": {
+    "system": {
+      "color": {
+        "impression": {
+          "primary": {
+            "$type": "color",
+            "$value": "{sd.reference.color.scale.pink.600}"
+          },
+          "onPrimary": {
+            "$type": "color",
+            "$value": "{sd.reference.color.scale.white.1000}"
+          },
+          "secondary": {
+            "$type": "color",
+            "$value": "{sd.reference.color.scale.pink.700}"
+          },
+          "onSecondary": {
+            "$type": "color",
+            "$value": "{sd.reference.color.scale.white.1000}"
+          },
+          "tertiary": {
+            "$type": "color",
+            "$value": "{sd.reference.color.scale.pink.100}"
+          },
+          "onTertiary": {
+            "$type": "color",
+            "$value": "{sd.reference.color.scale.pink.900}"
+          }
+        },
+        "component": {
+          "background": {
+            "surface": {
+              "$type": "color",
+              "$value": "{sd.reference.color.scale.white.1000}"
+            },
+            "onSurface": {
+              "$type": "color",
+              "$value": "{sd.reference.color.scale.pink.900}"
+            },
+            "surfaceDim": {
+              "$type": "color",
+              "$value": "{sd.reference.color.scale.gray.100}"
+            },
+            "surfaceDimmest": {
+              "$type": "color",
+              "$value": "{sd.reference.color.scale.gray.400}"
+            }
+          }
+        },
+        "mvShape": {
+          "foreground": {
+            "arc": {
+              "index": {
+                "$type": "color",
+                "$value": "{sd.reference.color.scale.pink.500}"
+              },
+              "extraBold": {
+                "$type": "color",
+                "$value": "{sd.reference.color.scale.pink.300}"
+              },
+              "bold": {
+                "$type": "color",
+                "$value": "{sd.reference.color.scale.pink.600}"
+              },
+              "normal": {
+                "$type": "color",
+                "$value": "{sd.reference.color.scale.red.500}"
+              },
+              "thin": {
+                "$type": "color",
+                "$value": "{sd.reference.color.scale.yellow.300}"
+              }
+            },
+            "rectangle": {
+              "oblong": {
+                "$type": "color",
+                "$value": "{sd.reference.color.scale.red.100}"
+              },
+              "square": {
+                "$type": "color",
+                "$value": "{sd.reference.color.scale.yellow.300}"
+              }
+            }
+          },
+          "background": {
+            "arc": {
+              "first": {
+                "$type": "color",
+                "$value": "{sd.reference.color.scale.pink.400}"
+              },
+              "second": {
+                "$type": "color",
+                "$value": "{sd.reference.color.scale.red.200}"
+              },
+              "third": {
+                "$type": "color",
+                "$value": "{sd.reference.color.scale.pink.300}"
+              },
+              "fourth": {
+                "$type": "color",
+                "$value": "{sd.reference.color.scale.red.200}"
+              },
+              "fifth": {
+                "$type": "color",
+                "$value": "{sd.reference.color.scale.pink.400}"
+              }
+            }
+          }
+        },
+        "articleFigure": {
+          "foreground": {
+            "primary": {
+              "$type": "color",
+              "$value": "{sd.reference.color.scale.pink.400}"
+            },
+            "secondary": {
+              "$type": "color",
+              "$value": "{sd.reference.color.scale.purple.400}"
+            },
+            "tertiary": {
+              "$type": "color",
+              "$value": "{sd.reference.color.scale.pink.100}"
+            },
+            "surface": {
+              "$type": "color",
+              "$value": "{sd.reference.color.scale.white.1000}"
+            },
+            "onSurface": {
+              "$type": "color",
+              "$value": "{sd.reference.color.scale.black.1000}"
+            }
+          },
+          "background": {
+            "$type": "color",
+            "$value": "#f5f5f5"
+          }
+        }
+      }
+    }
+  }
+}
