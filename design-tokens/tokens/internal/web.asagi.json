@@ -5,7 +5,7 @@
         "impression": {
           "primary": {
             "$type": "color",
-            "$value": "{sd.reference.color.scale.blue.600}"
+            "$value": "{sd.reference.color.scale.skyBlue.600}"
           },
           "onPrimary": {
             "$type": "color",
@@ -13,7 +13,7 @@
           },
           "secondary": {
             "$type": "color",
-            "$value": "{sd.reference.color.scale.blue.700}"
+            "$value": "{sd.reference.color.scale.skyBlue.700}"
           },
           "onSecondary": {
             "$type": "color",
@@ -21,11 +21,11 @@
           },
           "tertiary": {
             "$type": "color",
-            "$value": "{sd.reference.color.scale.blue.100}"
+            "$value": "{sd.reference.color.scale.gray.100}"
           },
           "onTertiary": {
             "$type": "color",
-            "$value": "{sd.reference.color.scale.blue.900}"
+            "$value": "{sd.reference.color.scale.skyBlue.900}"
           }
         },
         "component": {
@@ -36,7 +36,7 @@
             },
             "onSurface": {
               "$type": "color",
-              "$value": "{sd.reference.color.scale.blue.900}"
+              "$value": "{sd.reference.color.scale.skyBlue.900}"
             },
             "surfaceDim": {
               "$type": "color",
@@ -53,15 +53,15 @@
             "arc": {
               "index": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.blue.500}"
+                "$value": "{sd.reference.color.scale.skyBlue.500}"
               },
               "extraBold": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.blue.300}"
+                "$value": "{sd.reference.color.scale.skyBlue.300}"
               },
               "bold": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.blue.700}"
+                "$value": "{sd.reference.color.scale.skyBlue.600}"
               },
               "normal": {
                 "$type": "color",
@@ -87,23 +87,23 @@
             "arc": {
               "first": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.blue.400}"
+                "$value": "{sd.reference.color.scale.skyBlue.300}"
               },
               "second": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.skyBlue.100}"
+                "$value": "{sd.reference.color.scale.blue.200}"
               },
               "third": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.blue.300}"
+                "$value": "{sd.reference.color.scale.green.300}"
               },
               "fourth": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.blue.200}"
+                "$value": "{sd.reference.color.scale.gray.100}"
               },
               "fifth": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.blue.400}"
+                "$value": "{sd.reference.color.scale.skyBlue.400}"
               }
             }
           }
@@ -112,15 +112,15 @@
           "foreground": {
             "primary": {
               "$type": "color",
-              "$value": "{sd.reference.color.scale.blue.400}"
+              "$value": "{sd.reference.color.scale.skyBlue.400}"
             },
             "secondary": {
               "$type": "color",
-              "$value": "{sd.reference.color.scale.skyBlue.400}"
+              "$value": "{sd.reference.color.scale.purple.400}"
             },
             "tertiary": {
               "$type": "color",
-              "$value": "{sd.reference.color.scale.blue.100}"
+              "$value": "{sd.reference.color.scale.skyBlue.100}"
             },
             "surface": {
               "$type": "color",
