@@ -1,5 +1,5 @@
-import { css } from "@serendie/ui/css";
-import { styled } from "@serendie/ui/jsx";
+import { css } from "styled-system/css";
+import { styled } from "styled-system/jsx";
 
 type IndexPageHeaderProps = {
   image: ImageMetadata;

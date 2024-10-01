@@ -1,4 +1,4 @@
-import { styled } from "@serendie/ui/jsx";
+import { styled } from "styled-system/jsx";
 
 export const Navbar: React.FC = () => {
   const Navbar = styled("nav", {

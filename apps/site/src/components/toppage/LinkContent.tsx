@@ -1,4 +1,4 @@
-import { css, cx, sva } from "@serendie/ui/css";
+import { css, cx, sva } from "styled-system/css";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { useRef, useState } from "react";
 import { LinkContentCard } from "./LinkContentCard";

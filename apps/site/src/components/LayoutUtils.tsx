@@ -1,4 +1,4 @@
-import { Box, styled } from "@serendie/ui/jsx";
+import { Box, styled } from "styled-system/jsx";
 
 export const HBox = styled(Box, {
   base: {
