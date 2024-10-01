@@ -135,12 +135,12 @@ StyleDictionary.registerFormat({
     const output = Object.entries(themes)
       .map(([theme, values]) =>
         theme === "default"
-          ? values.join("\n")
-          : `[data-panda-theme="${theme}"] {\n${values.join("\n")}\n}`
+          ? `:where(:root,:host) {\n${values.join("\n")}\n}`
+          : `[data-panda-theme=${theme}] {\n${values.join("\n")}\n}`
       )
       .join("\n");
 
-    return fileHeader({ file }) + `:root {\n${output}\n}`;
+    return fileHeader({ file }) + output;
   },
 });
 

@@ -1,2 +1,3 @@
 @layer reset, base, tokens, recipes, utilities;
 @import "@serendie/ui/styles.css";
+@import "@serendie/design-token/internal/web/tokens.css";

@@ -1,6 +1,10 @@
 //import { extendedTokens } from "./src/tokens";
 import { SerendiePreset } from "@serendie/ui";
 import { defineConfig } from "@pandacss/dev";
+import webTokens from "@serendie/design-token/internal/web";
+
+const { themes, ...tokens } = webTokens;
+const themeNames = Object.keys(themes);
 
 export default defineConfig({
   // Whether to use css reset
@@ -13,8 +17,10 @@ export default defineConfig({
   exclude: [],
 
   // Useful for theme customization
+  themes,
   theme: {
     extend: {
+      tokens,
       keyframes: {
         fadein: {
           "0%": { opacity: "0" },
@@ -25,7 +31,6 @@ export default defineConfig({
           "100%": { opacity: "0" },
         },
       },
-      //tokens: extendedTokens,
     },
   },
 
@@ -35,4 +40,8 @@ export default defineConfig({
   jsxFramework: "react",
   importMap: "@serendie/ui",
   presets: [SerendiePreset],
+  staticCss: {
+    // theme needs static css
+    themes: themeNames,
+  },
 });

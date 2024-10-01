@@ -37,6 +37,11 @@
       "import": "./dist/token-list.js",
       "types": "./dist/token-list.d.ts"
     },
+    "./internal/web": {
+      "import": "./dist/internal/panda-tokens.js",
+      "types": "./dist/internal/panda-tokens.d.ts"
+    },
+    "./internal/web/tokens.css": "./dist/internal/tokens.css",
     "./tokens.css": "./dist/tokens.css"
   },
   "files": [
