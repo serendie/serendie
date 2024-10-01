@@ -20,7 +20,6 @@ export default defineConfig({
   themes,
   theme: {
     extend: {
-      tokens,
       keyframes: {
         fadein: {
           "0%": { opacity: "0" },
@@ -38,8 +37,7 @@ export default defineConfig({
   outdir: "styled-system",
   outExtension: "js",
   jsxFramework: "react",
-  importMap: "@serendie/ui",
-  presets: [SerendiePreset],
+  presets: [SerendiePreset, { theme: { tokens } }],
   staticCss: {
     // theme needs static css
     themes: themeNames,

@@ -1,4 +1,4 @@
-import { styled } from "@serendie/ui/jsx";
+import { styled } from "styled-system/jsx";
 
 export type Links = {
   title: string;
@@ -16,7 +16,7 @@ const Sidebar = styled("aside", {
     borderRight: "solid",
     borderColor: "sd.system.color.component.outline",
     borderRightWidth: "sd.system.dimension.border.medium",
-    bg: "sd.reference.color.scale.blue.600",
+    bg: "web.system.color.impression.primary",
   },
 });
 
@@ -44,10 +44,10 @@ const ListItemLink = styled("a", {
     active: {
       true: {
         color: "sd.reference.color.scale.blue.100",
-        background: "sd.reference.color.scale.blue.700",
+        background: "web.system.color.impression.secondary",
         _hover: {
           background:
-            "color-mix(in srgb, {colors.sd.reference.color.scale.blue.700}, {colors.sd.system.color.interaction.hoveredVariant});",
+            "color-mix(in srgb, {colors.web.system.color.impression.secondary}, {colors.sd.system.color.interaction.hoveredVariant});",
         },
       },
     },
