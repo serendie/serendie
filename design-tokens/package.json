@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "tsx style_dictionary/build.ts",
+    "build:internal": "tsx style_dictionary/build-internal.ts",
     "test": "vitest",
     "sync-json-to-figma": "tsx json_to_figma/sync_tokens_to_figma.ts",
     "ci:sync-json-to-figma": "tsx json_to_figma/sync_tokens_to_figma.ts --silent"
