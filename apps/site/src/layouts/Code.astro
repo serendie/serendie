@@ -1,10 +1,10 @@
 ---
 import { Button, SvgIcon } from "@serendie/ui";
-import { Box, Flex, styled } from "@serendie/ui/jsx";
+import { Box, Flex, styled } from "styled-system/jsx";
 import { Code as AstroCode } from "astro:components";
 import type { BundledLanguage } from "shiki";
 import { StorybookButton } from "../components/StorybookButton.tsx";
-import { css } from "@serendie/ui/css";
+import { css } from "styled-system/css";
 
 interface Props {
   title: string;
@@ -14,120 +14,154 @@ interface Props {
   language?: BundledLanguage;
 }
 
-const {
-  title, 
-  description,
-  code,
-  storyPath,
-  language
-} = Astro.props
+const { title, description, code, storyPath, language } = Astro.props;
 
-const Container = styled('div',{
+const Container = styled("div", {
   base: {
     textStyle: "sd.system.typography.body.small_expanded",
-    mb:"sd.system.dimension.spacing.threeExtraLarge",
-  }
-})
+    mb: "sd.system.dimension.spacing.threeExtraLarge",
+  },
+});
 
-const SubTitle = styled('h2',{
+const SubTitle = styled("h2", {
   base: {
     textStyle: "sd.system.typography.title.large_expanded",
-  }
-})
+  },
+});
 
-const Description = styled('p',{
+const Description = styled("p", {
   base: {
     mb: "sd.system.dimension.spacing.medium",
-  }
-})
+  },
+});
 
-const StyledButton = styled('button', {
+const StyledButton = styled("button", {
   base: {
     cursor: "pointer",
-  }
-})
-
+  },
+});
 ---
 
 <Container data-code-container>
   <Flex justifyContent={"space-between"} mb="sd.system.dimension.spacing.small">
     <SubTitle>{title}</SubTitle>
-    {
-      storyPath && <StorybookButton storyPath={storyPath} client:load/>
-    }
+    {storyPath && <StorybookButton storyPath={storyPath} client:load />}
   </Flex>
-  <Description mb="sd.system.dimension.spacing.twoExtraLarge" fontSize="sd.reference.typography.scale.expanded.extraSmall">{description}</Description>
-  <Box
-         border={"solid"} borderColor="sd.system.color.component.outline"
-         borderWidth="sd.system.dimension.border.medium"
-         borderRadius='sd.system.dimension.radius.large'
-         overflow='hidden'
+  <Description
+    mb="sd.system.dimension.spacing.twoExtraLarge"
+    fontSize="sd.reference.typography.scale.expanded.extraSmall"
+    >{description}</Description
   >
-    <Box p='sd.system.dimension.spacing.threeExtraLarge' borderBottomColor="sd.system.color.component.outline" borderBottomWidth={code ? 'sd.system.dimension.border.medium' : 'none'}> 
+  <Box
+    border={"solid"}
+    borderColor="sd.system.color.component.outline"
+    borderWidth="sd.system.dimension.border.medium"
+    borderRadius="sd.system.dimension.radius.large"
+    overflow="hidden"
+  >
+    <Box
+      p="sd.system.dimension.spacing.threeExtraLarge"
+      borderBottomColor="sd.system.color.component.outline"
+      borderBottomWidth={code ? "sd.system.dimension.border.medium" : "none"}
+    >
       <slot />
     </Box>
     {
-      code && <Box
-    py='sd.system.dimension.spacing.extraLarge'
-    px='sd.system.dimension.spacing.twoExtraLarge'
-    bg="sd.reference.color.scale.gray.100"
-    >
-      <Flex justifyContent={"space-between"}
-      py='sd.system.dimension.spacing.small' px='sd.system.dimension.spacing.extraSmall'
-      >
-        <StyledButton data-toggle-code display="inline-flex" alignItems={"center"} textStyle="sd.system.typography.body.medium_expanded">
-          <SvgIcon icon={"chevron_right"} size={"20px"} className={css({mr:"sd.system.dimension.spacing.extraSmall"})} />
-          Code
-        </StyledButton>
-        <StyledButton data-copy-button aria-label="Copy" display="flex"><span class={css({
-          mr: "sd.system.dimension.spacing.extraSmall",
-          display: "none",
-          [`.copied &`]: {
-            display: "inline-block",
-          },
-        })}>Copied</span><SvgIcon size={"20px"} icon={"clipboard_copy"}/></StyledButton>
-      </Flex>
-      <Box data-code-section style={{"display": "none"}} pt="sd.system.dimension.spacing.medium" px="sd.system.dimension.spacing.medium" fontSize="sd.reference.typography.scale.compact.small" >
-      <AstroCode code={code} lang={language??"tsx"} theme={"github-light"} style="background: transparent" />
-      </Box>
-    </Box>
+      code && (
+        <Box
+          py="sd.system.dimension.spacing.extraLarge"
+          px="sd.system.dimension.spacing.twoExtraLarge"
+          bg="sd.reference.color.scale.gray.100"
+        >
+          <Flex
+            justifyContent={"space-between"}
+            py="sd.system.dimension.spacing.small"
+            px="sd.system.dimension.spacing.extraSmall"
+          >
+            <StyledButton
+              data-toggle-code
+              display="inline-flex"
+              alignItems={"center"}
+              textStyle="sd.system.typography.body.medium_expanded"
+            >
+              <SvgIcon
+                icon={"chevron_right"}
+                size={"20px"}
+                className={css({
+                  mr: "sd.system.dimension.spacing.extraSmall",
+                })}
+              />
+              Code
+            </StyledButton>
+            <StyledButton data-copy-button aria-label="Copy" display="flex">
+              <>
+                <span
+                  class={css({
+                    mr: "sd.system.dimension.spacing.extraSmall",
+                    display: "none",
+                    [`.copied &`]: {
+                      display: "inline-block",
+                    },
+                  })}
+                >
+                  Copied
+                </span>
+                <SvgIcon size={"20px"} icon={"clipboard_copy"} />
+              </>
+            </StyledButton>
+          </Flex>
+          <Box
+            data-code-section
+            style={{ display: "none" }}
+            pt="sd.system.dimension.spacing.medium"
+            px="sd.system.dimension.spacing.medium"
+            fontSize="sd.reference.typography.scale.compact.small"
+          >
+            <AstroCode
+              code={code}
+              lang={language ?? "tsx"}
+              theme={"github-light"}
+              style="background: transparent"
+            />
+          </Box>
+        </Box>
+      )
     }
   </Box>
 </Container>
 
 <script>
-  const containers = document.querySelectorAll('[data-code-container]');
+  const containers = document.querySelectorAll("[data-code-container]");
 
   containers.forEach((container) => {
-    const codeSection = container.querySelector('[data-code-section]');
-    const toggleCode = container.querySelector('[data-toggle-code]');
-    const copyButton = container.querySelector('[data-copy-button]');
+    const codeSection = container.querySelector("[data-code-section]");
+    const toggleCode = container.querySelector("[data-toggle-code]");
+    const copyButton = container.querySelector("[data-copy-button]");
 
     // コードセクションの表示切り替え
-    toggleCode?.addEventListener('click', () => {
-      if(codeSection) {
+    toggleCode?.addEventListener("click", () => {
+      if (codeSection) {
         const codeElement = codeSection as HTMLElement;
-        codeElement.style.display = codeElement.style.display === 'none' ? 'block' : 'none';
+        codeElement.style.display =
+          codeElement.style.display === "none" ? "block" : "none";
       }
     });
 
     // コードのコピー
-    copyButton?.addEventListener('click', () => {
-      if(codeSection) {
+    copyButton?.addEventListener("click", () => {
+      if (codeSection) {
         const codeElement = codeSection as HTMLElement;
         navigator.clipboard.writeText(codeElement.innerText).then(() => {
-          copyButton.setAttribute('aria-label', 'Copied');
-          copyButton.classList.add('copied');
+          copyButton.setAttribute("aria-label", "Copied");
+          copyButton.classList.add("copied");
 
           // 5秒後にコピー完了の表示を元に戻す
           setTimeout(() => {
-            copyButton.setAttribute('aria-label', 'Copy');
-            copyButton.classList.remove('copied');
+            copyButton.setAttribute("aria-label", "Copy");
+            copyButton.classList.remove("copied");
           }, 5000);
-
-        })
+        });
       }
     });
-  })
-
+  });
 </script>

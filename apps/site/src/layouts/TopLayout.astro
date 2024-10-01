@@ -1,25 +1,25 @@
 ---
 import Footer from "@/components/toppage/Footer.astro";
 import "@/index.css";
-import { styled } from "@serendie/ui/jsx";
+import { styled } from "styled-system/jsx";
 import { siteConfig } from "@/../siteConfig";
 import { ThemeSelector } from "@/components/ThemeSelector";
 
-const Container = styled('div', {
+const Container = styled("div", {
   base: {
     position: "relative",
     minH: "200vh",
     background: "#EFF2FC",
     zIndex: 1,
     overflow: "clip",
-  }
-})
-const Wrapper = styled('div', {
+  },
+});
+const Wrapper = styled("div", {
   base: {
     // overflowX: "hidden",
     maxWidth: "100vw",
-  }
-})
+  },
+});
 const Header = styled("header", {
   base: {
     position: "fixed",

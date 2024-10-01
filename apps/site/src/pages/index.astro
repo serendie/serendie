@@ -2,111 +2,128 @@
 import TopLayout from "@/layouts/TopLayout.astro";
 import { LinkContent } from "@/components/toppage/LinkContent";
 import Showcase from "@/components/toppage/Showcase.astro";
-import { styled } from "@serendie/ui/jsx";
+import { styled } from "styled-system/jsx";
 import ReleaseNote from "@/components/toppage/ReleaseNote.astro";
 import Contact from "@/components/toppage/Contact.astro";
 import { BackgroundShape } from "@/components/toppage/BackgroundShape";
 import Header from "@/components/toppage/Header.astro";
 import Global from "@/layouts/Global.astro";
 
-const Container = styled('div', {
-	base: {
-		px: "24px",
+const Container = styled("div", {
+  base: {
+    px: "24px",
     maxWidth: "calc(1640px + 240px)",
-		mx: "auto",
-		expanded: {
-			px: "120px",
-		},
-	}
-})
+    mx: "auto",
+    expanded: {
+      px: "120px",
+    },
+  },
+});
 
 const content = [
-	{
-		titleEn: 'Components',
-		titleJa: 'コンポーネント',
-		description: 'コンポーネントの一覧です。',
-		links: [{
-			title: 'ボタン',
-			href: '/components/button',
-			illustration: '/assets/illustration/sample/illustration-0.svg'
-		}, {
-			title: 'アイコン',
-			href: '/components/icon',
-			illustration: '/assets/illustration/sample/illustration-1.svg'
-		}, {
-			title: 'テキスト',
-			href: '/components/text',
-			illustration: '/assets/illustration/sample/illustration-2.svg'
-		}]
-	},
-	{
-		titleEn: 'Icons',
-		titleJa: 'アイコン',
-		description: 'アイコンの一覧です。',
-		links: [{
-			title: 'アイコン',
-			href: '/icons',
-			illustration: '/assets/illustration/sample/illustration-0.svg'
-		}, {
-			title: 'アイコン',
-			href: '/icons',
-			illustration: '/assets/illustration/sample/illustration-1.svg'
-		}, {
-			title: 'アイコン',
-			href: '/icons',
-			illustration: '/assets/illustration/sample/illustration-2.svg'
-		}, {
-			title: 'アイコン',
-			href: '/icons',
-			illustration: '/assets/illustration/sample/illustration-3.svg'
-		}, {
-			title: 'アイコン',
-			href: '/icons',
-			illustration: '/assets/illustration/sample/illustration-4.svg'
-		}]
-	},
-	{
-		titleEn: 'Tokens',
-		titleJa: 'トークン',
-		description: 'トークンの一覧です。',
-		links: [{
-			title: 'システム',
-			href: '/tokens/system',
-			illustration: '/assets/illustration/sample/illustration-0.svg'
-		}, {
-			title: 'リファレンス',
-			href: '/tokens/reference',
-			illustration: '/assets/illustration/sample/illustration-1.svg'
-		}, {
-			title: 'カラー',
-			href: '/tokens/color',
-			illustration: '/assets/illustration/sample/illustration-2.svg'
-		},{
-			title: 'システム',
-			href: '/tokens/system',
-			illustration: '/assets/illustration/sample/illustration-0.svg'
-		}, {
-			title: 'リファレンス',
-			href: '/tokens/reference',
-			illustration: '/assets/illustration/sample/illustration-1.svg'
-		}, {
-			title: 'カラー',
-			href: '/tokens/color',
-			illustration: '/assets/illustration/sample/illustration-2.svg'
-		}]
-	}
-]
+  {
+    titleEn: "Components",
+    titleJa: "コンポーネント",
+    description: "コンポーネントの一覧です。",
+    links: [
+      {
+        title: "ボタン",
+        href: "/components/button",
+        illustration: "/assets/illustration/sample/illustration-0.svg",
+      },
+      {
+        title: "アイコン",
+        href: "/components/icon",
+        illustration: "/assets/illustration/sample/illustration-1.svg",
+      },
+      {
+        title: "テキスト",
+        href: "/components/text",
+        illustration: "/assets/illustration/sample/illustration-2.svg",
+      },
+    ],
+  },
+  {
+    titleEn: "Icons",
+    titleJa: "アイコン",
+    description: "アイコンの一覧です。",
+    links: [
+      {
+        title: "アイコン",
+        href: "/icons",
+        illustration: "/assets/illustration/sample/illustration-0.svg",
+      },
+      {
+        title: "アイコン",
+        href: "/icons",
+        illustration: "/assets/illustration/sample/illustration-1.svg",
+      },
+      {
+        title: "アイコン",
+        href: "/icons",
+        illustration: "/assets/illustration/sample/illustration-2.svg",
+      },
+      {
+        title: "アイコン",
+        href: "/icons",
+        illustration: "/assets/illustration/sample/illustration-3.svg",
+      },
+      {
+        title: "アイコン",
+        href: "/icons",
+        illustration: "/assets/illustration/sample/illustration-4.svg",
+      },
+    ],
+  },
+  {
+    titleEn: "Tokens",
+    titleJa: "トークン",
+    description: "トークンの一覧です。",
+    links: [
+      {
+        title: "システム",
+        href: "/tokens/system",
+        illustration: "/assets/illustration/sample/illustration-0.svg",
+      },
+      {
+        title: "リファレンス",
+        href: "/tokens/reference",
+        illustration: "/assets/illustration/sample/illustration-1.svg",
+      },
+      {
+        title: "カラー",
+        href: "/tokens/color",
+        illustration: "/assets/illustration/sample/illustration-2.svg",
+      },
+      {
+        title: "システム",
+        href: "/tokens/system",
+        illustration: "/assets/illustration/sample/illustration-0.svg",
+      },
+      {
+        title: "リファレンス",
+        href: "/tokens/reference",
+        illustration: "/assets/illustration/sample/illustration-1.svg",
+      },
+      {
+        title: "カラー",
+        href: "/tokens/color",
+        illustration: "/assets/illustration/sample/illustration-2.svg",
+      },
+    ],
+  },
+];
 ---
+
 <TopLayout>
-	<Header/>
+  <Header />
 
-	<Container>
-		<LinkContent content={content} client:idle/>
-		<Showcase />
-		<ReleaseNote />
-		<Contact />
-	</Container>
+  <Container>
+    <LinkContent content={content} client:idle />
+    <Showcase />
+    <ReleaseNote />
+    <Contact />
+  </Container>
 
-	<BackgroundShape client:idle />
-
+  <BackgroundShape client:idle />
 </TopLayout>

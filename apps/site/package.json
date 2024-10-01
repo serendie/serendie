@@ -7,7 +7,7 @@
     "start": "astro dev",
     "build": "npm run build:panda && npm run build-storybook && astro build",
     "build:astro": "astro check && astro build",
-    "build:panda": "panda codegen",
+    "build:panda": "panda cssgen -m --clean && panda codegen",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",

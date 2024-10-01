@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "build": "tsx style_dictonary/build.ts",
+    "build": "tsx style_dictionary/build.ts",
+    "build:internal": "tsx style_dictionary/build-internal.ts",
     "test": "vitest",
     "sync-json-to-figma": "tsx json_to_figma/sync_tokens_to_figma.ts",
     "ci:sync-json-to-figma": "tsx json_to_figma/sync_tokens_to_figma.ts --silent"
@@ -36,6 +37,11 @@
       "import": "./dist/token-list.js",
       "types": "./dist/token-list.d.ts"
     },
+    "./internal/web": {
+      "import": "./dist/internal/panda-tokens.js",
+      "types": "./dist/internal/panda-tokens.d.ts"
+    },
+    "./internal/web/tokens.css": "./dist/internal/tokens.css",
     "./tokens.css": "./dist/tokens.css"
   },
   "files": [

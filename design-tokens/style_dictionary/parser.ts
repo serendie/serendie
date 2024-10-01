@@ -16,7 +16,10 @@ export const SerendieParser: StyleDictionary.Parser = {
     if (match) {
       // filePathにcolorが含まれている場合
       // これらはカラーテーマとして扱う
-      if (filePath.includes("color") && !filePath.includes("color.default")) {
+      if (
+        (filePath.includes("color") || filePath.includes("internal/web")) &&
+        !filePath.includes("color.default")
+      ) {
         // theme名を取得
         const themeName = match[1];
         const themedObj =
@@ -32,7 +35,6 @@ export const SerendieParser: StyleDictionary.Parser = {
                 },
               };
 
-        console.log("themedObj", themedObj);
         return themedObj;
       }
 

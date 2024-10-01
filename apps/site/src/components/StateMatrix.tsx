@@ -1,4 +1,4 @@
-import { css } from "@serendie/ui/css";
+import { css } from "styled-system/css";
 import type { ReactNode } from "react";
 
 type state = "enabled" | "hover" | "focus-visible" | "disabled" | "loading";

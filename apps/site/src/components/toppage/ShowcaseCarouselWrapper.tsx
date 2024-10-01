@@ -1,4 +1,4 @@
-import { styled } from "@serendie/ui/jsx";
+import { styled } from "styled-system/jsx";
 import { ShowcaseCarousel } from "./ShowcaseCarousel";
 
 const ShowcaseImageWrapper = styled("div", {

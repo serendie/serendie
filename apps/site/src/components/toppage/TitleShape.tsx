@@ -1,4 +1,4 @@
-import { css, cx } from "@serendie/ui/css";
+import { css, cx } from "styled-system/css";
 
 export const TitleShape: React.FC<
   | {

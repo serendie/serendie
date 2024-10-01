@@ -6,1988 +6,2587 @@
 export default [
   {
     "path": [
-      "web",
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
       "impression",
-      "primary_asagi"
+      "primary"
     ],
-    "key": "web.system.color.impression.primary_asagi",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.primary",
     "type": "color",
     "value": "#00757E",
     "originalValue": "{sd.reference.color.scale.skyBlue.600}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
       "impression",
-      "onPrimary_asagi"
+      "onPrimary"
     ],
-    "key": "web.system.color.impression.onPrimary_asagi",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onPrimary",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
       "impression",
-      "secondary_asagi"
+      "primaryContainer"
     ],
-    "key": "web.system.color.impression.secondary_asagi",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.primaryContainer",
     "type": "color",
-    "value": "#015C63",
-    "originalValue": "{sd.reference.color.scale.skyBlue.700}"
+    "value": "#00757E",
+    "originalValue": "{sd.reference.color.scale.skyBlue.600}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
       "impression",
-      "onSecondary_asagi"
+      "onPrimaryContainer"
     ],
-    "key": "web.system.color.impression.onSecondary_asagi",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onPrimaryContainer",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
       "impression",
-      "tertiary_asagi"
+      "secondary"
     ],
-    "key": "web.system.color.impression.tertiary_asagi",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.secondary",
+    "type": "color",
+    "value": "#AEEAD5",
+    "originalValue": "{sd.reference.color.scale.green.200}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onSecondary"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onSecondary",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "secondaryContainer"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.secondaryContainer",
+    "type": "color",
+    "value": "#AEEAD5",
+    "originalValue": "{sd.reference.color.scale.green.200}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onSecondaryContainer"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onSecondaryContainer",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "tertiary"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.tertiary",
     "type": "color",
     "value": "#EFEEEB",
     "originalValue": "{sd.reference.color.scale.gray.100}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
       "impression",
-      "onTertiary_asagi"
+      "onTertiary"
     ],
-    "key": "web.system.color.impression.onTertiary_asagi",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onTertiary",
     "type": "color",
-    "value": "#02373C",
-    "originalValue": "{sd.reference.color.scale.skyBlue.900}"
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
       "impression",
-      "primary_konjo"
+      "tertiaryContainer"
     ],
-    "key": "web.system.color.impression.primary_konjo",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.tertiaryContainer",
     "type": "color",
-    "value": "#0A69CF",
-    "originalValue": "{sd.reference.color.scale.blue.600}"
+    "value": "#EFEEEB",
+    "originalValue": "{sd.reference.color.scale.gray.100}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
       "impression",
-      "onPrimary_konjo"
+      "onTertiaryContainer"
     ],
-    "key": "web.system.color.impression.onPrimary_konjo",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onTertiaryContainer",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "notice"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.notice",
+    "type": "color",
+    "value": "#FFE600",
+    "originalValue": "{sd.reference.color.scale.yellow.300}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onNotice"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onNotice",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "noticeContainer"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.noticeContainer",
+    "type": "color",
+    "value": "#FFE600",
+    "originalValue": "{sd.reference.color.scale.yellow.300}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onNoticeContainer"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onNoticeContainer",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "negative"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.negative",
+    "type": "color",
+    "value": "#CE0037",
+    "originalValue": "{sd.reference.color.scale.red.600}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onNegative"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onNegative",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
       "impression",
-      "secondary_konjo"
+      "negativeContainer"
     ],
-    "key": "web.system.color.impression.secondary_konjo",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.negativeContainer",
     "type": "color",
-    "value": "#0650A0",
-    "originalValue": "{sd.reference.color.scale.blue.700}"
+    "value": "#FCD6D3",
+    "originalValue": "{sd.reference.color.scale.red.200}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
       "impression",
-      "onSecondary_konjo"
+      "onNegativeContainer"
     ],
-    "key": "web.system.color.impression.onSecondary_konjo",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onNegativeContainer",
     "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
       "impression",
-      "tertiary_konjo"
+      "positive"
     ],
-    "key": "web.system.color.impression.tertiary_konjo",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.positive",
     "type": "color",
-    "value": "#EFF2FC",
-    "originalValue": "{sd.reference.color.scale.blue.100}"
+    "value": "#40A683",
+    "originalValue": "{sd.reference.color.scale.green.500}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
       "impression",
-      "onTertiary_konjo"
+      "onPositive"
     ],
-    "key": "web.system.color.impression.onTertiary_konjo",
-    "type": "color",
-    "value": "#073165",
-    "originalValue": "{sd.reference.color.scale.blue.900}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "impression",
-      "primary_kurikawa"
-    ],
-    "key": "web.system.color.impression.primary_kurikawa",
-    "type": "color",
-    "value": "#AB4919",
-    "originalValue": "{sd.reference.color.scale.chestnut.600}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "impression",
-      "onPrimary_kurikawa"
-    ],
-    "key": "web.system.color.impression.onPrimary_kurikawa",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onPositive",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
       "impression",
-      "secondary_kurikawa"
+      "positiveContainer"
     ],
-    "key": "web.system.color.impression.secondary_kurikawa",
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.positiveContainer",
+    "type": "color",
+    "value": "#40A683",
+    "originalValue": "{sd.reference.color.scale.green.500}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onPositiveContainer"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onPositiveContainer",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "surface"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.component.surface",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "onSurface"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.component.onSurface",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "onSurfaceVariant"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.component.onSurfaceVariant",
+    "type": "color",
+    "value": "#8C8B87",
+    "originalValue": "{sd.reference.color.scale.gray.500}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "inverseSurface"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.component.inverseSurface",
+    "type": "color",
+    "value": "#232322",
+    "originalValue": "{sd.reference.color.scale.gray.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "inverseOnSurface"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.component.inverseOnSurface",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "outline"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.component.outline",
+    "type": "color",
+    "value": "#C8C7C2",
+    "originalValue": "{sd.reference.color.scale.gray.300}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "outlineVariant"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.component.outlineVariant",
+    "type": "color",
+    "value": "#8C8B87",
+    "originalValue": "{sd.reference.color.scale.gray.500}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "scrim"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.component.scrim",
+    "type": "color",
+    "value": "#00000033",
+    "originalValue": "{sd.reference.color.scale.transparency.20}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "disabled"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.interaction.disabled",
+    "type": "color",
+    "value": "#EFEEEB",
+    "originalValue": "{sd.reference.color.scale.gray.100}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "disabledOnSurface"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.interaction.disabledOnSurface",
+    "type": "color",
+    "value": "#AFAEAA",
+    "originalValue": "{sd.reference.color.scale.gray.400}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "selectedSurface"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.interaction.selectedSurface",
+    "type": "color",
+    "value": "#AEEAD5",
+    "originalValue": "{sd.reference.color.scale.green.200}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "hovered"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.interaction.hovered",
+    "type": "color",
+    "value": "#00000033",
+    "originalValue": "{sd.reference.color.scale.transparency.20}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "hoveredVariant"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.interaction.hoveredVariant",
+    "type": "color",
+    "value": "#0000000D",
+    "originalValue": "{sd.reference.color.scale.transparency.5}"
+  },
+  {
+    "path": [
+      "themes",
+      "asagi",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "hoveredOnPrimary"
+    ],
+    "key": "themes.asagi.tokens.colors.sd.system.color.interaction.hoveredOnPrimary",
+    "type": "color",
+    "value": "#FFFFFF99",
+    "originalValue": "{sd.reference.color.scale.transparency.60}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "primary"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.primary",
     "type": "color",
     "value": "#803510",
     "originalValue": "{sd.reference.color.scale.chestnut.700}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
       "impression",
-      "onSecondary_kurikawa"
+      "onPrimary"
     ],
-    "key": "web.system.color.impression.onSecondary_kurikawa",
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onPrimary",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
       "impression",
-      "tertiary_kurikawa"
+      "primaryContainer"
     ],
-    "key": "web.system.color.impression.tertiary_kurikawa",
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.primaryContainer",
     "type": "color",
-    "value": "#AB4919",
-    "originalValue": "{sd.reference.color.scale.chestnut.600}"
+    "value": "#803510",
+    "originalValue": "{sd.reference.color.scale.chestnut.700}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
       "impression",
-      "onTertiary_kurikawa"
+      "onPrimaryContainer"
     ],
-    "key": "web.system.color.impression.onTertiary_kurikawa",
-    "type": "color",
-    "value": "#50230D",
-    "originalValue": "{sd.reference.color.scale.chestnut.900}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "impression",
-      "primary_sumire"
-    ],
-    "key": "web.system.color.impression.primary_sumire",
-    "type": "color",
-    "value": "#914DA9",
-    "originalValue": "{sd.reference.color.scale.purple.600}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "impression",
-      "onPrimary_sumire"
-    ],
-    "key": "web.system.color.impression.onPrimary_sumire",
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onPrimaryContainer",
     "type": "color",
     "value": "#FFFFFF",
     "originalValue": "{sd.reference.color.scale.white.1000}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
       "impression",
-      "secondary_sumire"
+      "secondary"
     ],
-    "key": "web.system.color.impression.secondary_sumire",
-    "type": "color",
-    "value": "#733B85",
-    "originalValue": "{sd.reference.color.scale.purple.700}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "impression",
-      "onSecondary_sumire"
-    ],
-    "key": "web.system.color.impression.onSecondary_sumire",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "impression",
-      "tertiary_sumire"
-    ],
-    "key": "web.system.color.impression.tertiary_sumire",
-    "type": "color",
-    "value": "#043F81",
-    "originalValue": "{sd.reference.color.scale.blue.800}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "impression",
-      "onTertiary_sumire"
-    ],
-    "key": "web.system.color.impression.onTertiary_sumire",
-    "type": "color",
-    "value": "#462352",
-    "originalValue": "{sd.reference.color.scale.purple.900}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "impression",
-      "primary_tsutsuji"
-    ],
-    "key": "web.system.color.impression.primary_tsutsuji",
-    "type": "color",
-    "value": "#B9336B",
-    "originalValue": "{sd.reference.color.scale.pink.600}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "impression",
-      "onPrimary_tsutsuji"
-    ],
-    "key": "web.system.color.impression.onPrimary_tsutsuji",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "impression",
-      "secondary_tsutsuji"
-    ],
-    "key": "web.system.color.impression.secondary_tsutsuji",
-    "type": "color",
-    "value": "#932653",
-    "originalValue": "{sd.reference.color.scale.pink.700}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "impression",
-      "onSecondary_tsutsuji"
-    ],
-    "key": "web.system.color.impression.onSecondary_tsutsuji",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "impression",
-      "tertiary_tsutsuji"
-    ],
-    "key": "web.system.color.impression.tertiary_tsutsuji",
-    "type": "color",
-    "value": "#F9EBF0",
-    "originalValue": "{sd.reference.color.scale.pink.100}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "impression",
-      "onTertiary_tsutsuji"
-    ],
-    "key": "web.system.color.impression.onTertiary_tsutsuji",
-    "type": "color",
-    "value": "#591734",
-    "originalValue": "{sd.reference.color.scale.pink.900}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "component",
-      "background",
-      "surface_asagi"
-    ],
-    "key": "web.system.color.component.background.surface_asagi",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "component",
-      "background",
-      "onSurface_asagi"
-    ],
-    "key": "web.system.color.component.background.onSurface_asagi",
-    "type": "color",
-    "value": "#02373C",
-    "originalValue": "{sd.reference.color.scale.skyBlue.900}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "component",
-      "background",
-      "surfaceDim_asagi"
-    ],
-    "key": "web.system.color.component.background.surfaceDim_asagi",
-    "type": "color",
-    "value": "#EFEEEB",
-    "originalValue": "{sd.reference.color.scale.gray.100}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "component",
-      "background",
-      "surfaceDimmest_asagi"
-    ],
-    "key": "web.system.color.component.background.surfaceDimmest_asagi",
-    "type": "color",
-    "value": "#AFAEAA",
-    "originalValue": "{sd.reference.color.scale.gray.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "component",
-      "background",
-      "surface_konjo"
-    ],
-    "key": "web.system.color.component.background.surface_konjo",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "component",
-      "background",
-      "onSurface_konjo"
-    ],
-    "key": "web.system.color.component.background.onSurface_konjo",
-    "type": "color",
-    "value": "#073165",
-    "originalValue": "{sd.reference.color.scale.blue.900}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "component",
-      "background",
-      "surfaceDim_konjo"
-    ],
-    "key": "web.system.color.component.background.surfaceDim_konjo",
-    "type": "color",
-    "value": "#EFEEEB",
-    "originalValue": "{sd.reference.color.scale.gray.100}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "component",
-      "background",
-      "surfaceDimmest_konjo"
-    ],
-    "key": "web.system.color.component.background.surfaceDimmest_konjo",
-    "type": "color",
-    "value": "#AFAEAA",
-    "originalValue": "{sd.reference.color.scale.gray.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "component",
-      "background",
-      "surface_kurikawa"
-    ],
-    "key": "web.system.color.component.background.surface_kurikawa",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "component",
-      "background",
-      "onSurface_kurikawa"
-    ],
-    "key": "web.system.color.component.background.onSurface_kurikawa",
-    "type": "color",
-    "value": "#50230D",
-    "originalValue": "{sd.reference.color.scale.chestnut.900}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "component",
-      "background",
-      "surfaceDim_kurikawa"
-    ],
-    "key": "web.system.color.component.background.surfaceDim_kurikawa",
-    "type": "color",
-    "value": "#EFEEEB",
-    "originalValue": "{sd.reference.color.scale.gray.100}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "component",
-      "background",
-      "surfaceDimmest_kurikawa"
-    ],
-    "key": "web.system.color.component.background.surfaceDimmest_kurikawa",
-    "type": "color",
-    "value": "#AFAEAA",
-    "originalValue": "{sd.reference.color.scale.gray.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "component",
-      "background",
-      "surface_sumire"
-    ],
-    "key": "web.system.color.component.background.surface_sumire",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "component",
-      "background",
-      "onSurface_sumire"
-    ],
-    "key": "web.system.color.component.background.onSurface_sumire",
-    "type": "color",
-    "value": "#462352",
-    "originalValue": "{sd.reference.color.scale.purple.900}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "component",
-      "background",
-      "surfaceDim_sumire"
-    ],
-    "key": "web.system.color.component.background.surfaceDim_sumire",
-    "type": "color",
-    "value": "#EFEEEB",
-    "originalValue": "{sd.reference.color.scale.gray.100}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "component",
-      "background",
-      "surfaceDimmest_sumire"
-    ],
-    "key": "web.system.color.component.background.surfaceDimmest_sumire",
-    "type": "color",
-    "value": "#AFAEAA",
-    "originalValue": "{sd.reference.color.scale.gray.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "component",
-      "background",
-      "surface_tsutsuji"
-    ],
-    "key": "web.system.color.component.background.surface_tsutsuji",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "component",
-      "background",
-      "onSurface_tsutsuji"
-    ],
-    "key": "web.system.color.component.background.onSurface_tsutsuji",
-    "type": "color",
-    "value": "#591734",
-    "originalValue": "{sd.reference.color.scale.pink.900}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "component",
-      "background",
-      "surfaceDim_tsutsuji"
-    ],
-    "key": "web.system.color.component.background.surfaceDim_tsutsuji",
-    "type": "color",
-    "value": "#EFEEEB",
-    "originalValue": "{sd.reference.color.scale.gray.100}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "component",
-      "background",
-      "surfaceDimmest_tsutsuji"
-    ],
-    "key": "web.system.color.component.background.surfaceDimmest_tsutsuji",
-    "type": "color",
-    "value": "#AFAEAA",
-    "originalValue": "{sd.reference.color.scale.gray.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "index_asagi"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.index_asagi",
-    "type": "color",
-    "value": "#00A3AF",
-    "originalValue": "{sd.reference.color.scale.skyBlue.500}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "extraBold_asagi"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.extraBold_asagi",
-    "type": "color",
-    "value": "#9CE6EC",
-    "originalValue": "{sd.reference.color.scale.skyBlue.300}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "bold_asagi"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.bold_asagi",
-    "type": "color",
-    "value": "#00757E",
-    "originalValue": "{sd.reference.color.scale.skyBlue.600}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "normal_asagi"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.normal_asagi",
-    "type": "color",
-    "value": "#F84258",
-    "originalValue": "{sd.reference.color.scale.red.500}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "thin_asagi"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.thin_asagi",
-    "type": "color",
-    "value": "#FFE600",
-    "originalValue": "{sd.reference.color.scale.yellow.300}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "index_konjo"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.index_konjo",
-    "type": "color",
-    "value": "#428CFE",
-    "originalValue": "{sd.reference.color.scale.blue.500}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "extraBold_konjo"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.extraBold_konjo",
-    "type": "color",
-    "value": "#BFCEFC",
-    "originalValue": "{sd.reference.color.scale.blue.300}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "bold_konjo"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.bold_konjo",
-    "type": "color",
-    "value": "#0650A0",
-    "originalValue": "{sd.reference.color.scale.blue.700}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "normal_konjo"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.normal_konjo",
-    "type": "color",
-    "value": "#F84258",
-    "originalValue": "{sd.reference.color.scale.red.500}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "thin_konjo"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.thin_konjo",
-    "type": "color",
-    "value": "#FFE600",
-    "originalValue": "{sd.reference.color.scale.yellow.300}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "index_kurikawa"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.index_kurikawa",
-    "type": "color",
-    "value": "#F49567",
-    "originalValue": "{sd.reference.color.scale.chestnut.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "extraBold_kurikawa"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.extraBold_kurikawa",
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.secondary",
     "type": "color",
     "value": "#F7C6B0",
     "originalValue": "{sd.reference.color.scale.chestnut.300}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "bold_kurikawa"
+      "impression",
+      "onSecondary"
     ],
-    "key": "web.system.color.mvShape.foreground.arc.bold_kurikawa",
-    "type": "color",
-    "value": "#803510",
-    "originalValue": "{sd.reference.color.scale.chestnut.700}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "normal_kurikawa"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.normal_kurikawa",
-    "type": "color",
-    "value": "#F84258",
-    "originalValue": "{sd.reference.color.scale.red.500}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "thin_kurikawa"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.thin_kurikawa",
-    "type": "color",
-    "value": "#FFE600",
-    "originalValue": "{sd.reference.color.scale.yellow.300}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "index_sumire"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.index_sumire",
-    "type": "color",
-    "value": "#CC9FD9",
-    "originalValue": "{sd.reference.color.scale.purple.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "extraBold_sumire"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.extraBold_sumire",
-    "type": "color",
-    "value": "#DCBDE4",
-    "originalValue": "{sd.reference.color.scale.purple.300}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "bold_sumire"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.bold_sumire",
-    "type": "color",
-    "value": "#462352",
-    "originalValue": "{sd.reference.color.scale.purple.900}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "normal_sumire"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.normal_sumire",
-    "type": "color",
-    "value": "#F84258",
-    "originalValue": "{sd.reference.color.scale.red.500}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "thin_sumire"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.thin_sumire",
-    "type": "color",
-    "value": "#FFE600",
-    "originalValue": "{sd.reference.color.scale.yellow.300}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "index_tsutsuji"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.index_tsutsuji",
-    "type": "color",
-    "value": "#EB4F8E",
-    "originalValue": "{sd.reference.color.scale.pink.500}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "extraBold_tsutsuji"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.extraBold_tsutsuji",
-    "type": "color",
-    "value": "#F5C1D1",
-    "originalValue": "{sd.reference.color.scale.pink.300}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "bold_tsutsuji"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.bold_tsutsuji",
-    "type": "color",
-    "value": "#B9336B",
-    "originalValue": "{sd.reference.color.scale.pink.600}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "normal_tsutsuji"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.normal_tsutsuji",
-    "type": "color",
-    "value": "#F84258",
-    "originalValue": "{sd.reference.color.scale.red.500}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "arc",
-      "thin_tsutsuji"
-    ],
-    "key": "web.system.color.mvShape.foreground.arc.thin_tsutsuji",
-    "type": "color",
-    "value": "#FFE600",
-    "originalValue": "{sd.reference.color.scale.yellow.300}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "rectangle",
-      "oblong_asagi"
-    ],
-    "key": "web.system.color.mvShape.foreground.rectangle.oblong_asagi",
-    "type": "color",
-    "value": "#FCEBEA",
-    "originalValue": "{sd.reference.color.scale.red.100}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "rectangle",
-      "square_asagi"
-    ],
-    "key": "web.system.color.mvShape.foreground.rectangle.square_asagi",
-    "type": "color",
-    "value": "#FFE600",
-    "originalValue": "{sd.reference.color.scale.yellow.300}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "rectangle",
-      "oblong_konjo"
-    ],
-    "key": "web.system.color.mvShape.foreground.rectangle.oblong_konjo",
-    "type": "color",
-    "value": "#FCEBEA",
-    "originalValue": "{sd.reference.color.scale.red.100}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "rectangle",
-      "square_konjo"
-    ],
-    "key": "web.system.color.mvShape.foreground.rectangle.square_konjo",
-    "type": "color",
-    "value": "#FFE600",
-    "originalValue": "{sd.reference.color.scale.yellow.300}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "rectangle",
-      "oblong_kurikawa"
-    ],
-    "key": "web.system.color.mvShape.foreground.rectangle.oblong_kurikawa",
-    "type": "color",
-    "value": "#FCEBEA",
-    "originalValue": "{sd.reference.color.scale.red.100}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "rectangle",
-      "square_kurikawa"
-    ],
-    "key": "web.system.color.mvShape.foreground.rectangle.square_kurikawa",
-    "type": "color",
-    "value": "#FFE600",
-    "originalValue": "{sd.reference.color.scale.yellow.300}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "rectangle",
-      "oblong_sumire"
-    ],
-    "key": "web.system.color.mvShape.foreground.rectangle.oblong_sumire",
-    "type": "color",
-    "value": "#FCEBEA",
-    "originalValue": "{sd.reference.color.scale.red.100}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "rectangle",
-      "square_sumire"
-    ],
-    "key": "web.system.color.mvShape.foreground.rectangle.square_sumire",
-    "type": "color",
-    "value": "#FFE600",
-    "originalValue": "{sd.reference.color.scale.yellow.300}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "rectangle",
-      "oblong_tsutsuji"
-    ],
-    "key": "web.system.color.mvShape.foreground.rectangle.oblong_tsutsuji",
-    "type": "color",
-    "value": "#FCEBEA",
-    "originalValue": "{sd.reference.color.scale.red.100}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "foreground",
-      "rectangle",
-      "square_tsutsuji"
-    ],
-    "key": "web.system.color.mvShape.foreground.rectangle.square_tsutsuji",
-    "type": "color",
-    "value": "#FFE600",
-    "originalValue": "{sd.reference.color.scale.yellow.300}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "first_asagi"
-    ],
-    "key": "web.system.color.mvShape.background.arc.first_asagi",
-    "type": "color",
-    "value": "#9CE6EC",
-    "originalValue": "{sd.reference.color.scale.skyBlue.300}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "second_asagi"
-    ],
-    "key": "web.system.color.mvShape.background.arc.second_asagi",
-    "type": "color",
-    "value": "#D7DEFB",
-    "originalValue": "{sd.reference.color.scale.blue.200}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "third_asagi"
-    ],
-    "key": "web.system.color.mvShape.background.arc.third_asagi",
-    "type": "color",
-    "value": "#98E1C8",
-    "originalValue": "{sd.reference.color.scale.green.300}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "fourth_asagi"
-    ],
-    "key": "web.system.color.mvShape.background.arc.fourth_asagi",
-    "type": "color",
-    "value": "#EFEEEB",
-    "originalValue": "{sd.reference.color.scale.gray.100}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "fifth_asagi"
-    ],
-    "key": "web.system.color.mvShape.background.arc.fifth_asagi",
-    "type": "color",
-    "value": "#64CCD3",
-    "originalValue": "{sd.reference.color.scale.skyBlue.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "first_konjo"
-    ],
-    "key": "web.system.color.mvShape.background.arc.first_konjo",
-    "type": "color",
-    "value": "#8FAEFE",
-    "originalValue": "{sd.reference.color.scale.blue.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "second_konjo"
-    ],
-    "key": "web.system.color.mvShape.background.arc.second_konjo",
-    "type": "color",
-    "value": "#D9F6FC",
-    "originalValue": "{sd.reference.color.scale.skyBlue.100}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "third_konjo"
-    ],
-    "key": "web.system.color.mvShape.background.arc.third_konjo",
-    "type": "color",
-    "value": "#BFCEFC",
-    "originalValue": "{sd.reference.color.scale.blue.300}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "fourth_konjo"
-    ],
-    "key": "web.system.color.mvShape.background.arc.fourth_konjo",
-    "type": "color",
-    "value": "#D7DEFB",
-    "originalValue": "{sd.reference.color.scale.blue.200}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "fifth_konjo"
-    ],
-    "key": "web.system.color.mvShape.background.arc.fifth_konjo",
-    "type": "color",
-    "value": "#8FAEFE",
-    "originalValue": "{sd.reference.color.scale.blue.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "first_kurikawa"
-    ],
-    "key": "web.system.color.mvShape.background.arc.first_kurikawa",
-    "type": "color",
-    "value": "#E26324",
-    "originalValue": "{sd.reference.color.scale.chestnut.500}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "second_kurikawa"
-    ],
-    "key": "web.system.color.mvShape.background.arc.second_kurikawa",
-    "type": "color",
-    "value": "#AF8245",
-    "originalValue": "{sd.reference.color.scale.beige.500}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "third_kurikawa"
-    ],
-    "key": "web.system.color.mvShape.background.arc.third_kurikawa",
-    "type": "color",
-    "value": "#F49567",
-    "originalValue": "{sd.reference.color.scale.chestnut.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "fourth_kurikawa"
-    ],
-    "key": "web.system.color.mvShape.background.arc.fourth_kurikawa",
-    "type": "color",
-    "value": "#846132",
-    "originalValue": "{sd.reference.color.scale.beige.600}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "fifth_kurikawa"
-    ],
-    "key": "web.system.color.mvShape.background.arc.fifth_kurikawa",
-    "type": "color",
-    "value": "#E26324",
-    "originalValue": "{sd.reference.color.scale.chestnut.500}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "first_sumire"
-    ],
-    "key": "web.system.color.mvShape.background.arc.first_sumire",
-    "type": "color",
-    "value": "#AA61C2",
-    "originalValue": "{sd.reference.color.scale.purple.500}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "second_sumire"
-    ],
-    "key": "web.system.color.mvShape.background.arc.second_sumire",
-    "type": "color",
-    "value": "#0A69CF",
-    "originalValue": "{sd.reference.color.scale.blue.600}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "third_sumire"
-    ],
-    "key": "web.system.color.mvShape.background.arc.third_sumire",
-    "type": "color",
-    "value": "#CC9FD9",
-    "originalValue": "{sd.reference.color.scale.purple.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "fourth_sumire"
-    ],
-    "key": "web.system.color.mvShape.background.arc.fourth_sumire",
-    "type": "color",
-    "value": "#073165",
-    "originalValue": "{sd.reference.color.scale.blue.900}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "fifth_sumire"
-    ],
-    "key": "web.system.color.mvShape.background.arc.fifth_sumire",
-    "type": "color",
-    "value": "#914DA9",
-    "originalValue": "{sd.reference.color.scale.purple.600}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "first_tsutsuji"
-    ],
-    "key": "web.system.color.mvShape.background.arc.first_tsutsuji",
-    "type": "color",
-    "value": "#F190B4",
-    "originalValue": "{sd.reference.color.scale.pink.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "second_tsutsuji"
-    ],
-    "key": "web.system.color.mvShape.background.arc.second_tsutsuji",
-    "type": "color",
-    "value": "#FCD6D3",
-    "originalValue": "{sd.reference.color.scale.red.200}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "third_tsutsuji"
-    ],
-    "key": "web.system.color.mvShape.background.arc.third_tsutsuji",
-    "type": "color",
-    "value": "#F5C1D1",
-    "originalValue": "{sd.reference.color.scale.pink.300}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "fourth_tsutsuji"
-    ],
-    "key": "web.system.color.mvShape.background.arc.fourth_tsutsuji",
-    "type": "color",
-    "value": "#FCD6D3",
-    "originalValue": "{sd.reference.color.scale.red.200}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "mvShape",
-      "background",
-      "arc",
-      "fifth_tsutsuji"
-    ],
-    "key": "web.system.color.mvShape.background.arc.fifth_tsutsuji",
-    "type": "color",
-    "value": "#F190B4",
-    "originalValue": "{sd.reference.color.scale.pink.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "articleFigure",
-      "foreground",
-      "primary_asagi"
-    ],
-    "key": "web.system.color.articleFigure.foreground.primary_asagi",
-    "type": "color",
-    "value": "#64CCD3",
-    "originalValue": "{sd.reference.color.scale.skyBlue.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "articleFigure",
-      "foreground",
-      "secondary_asagi"
-    ],
-    "key": "web.system.color.articleFigure.foreground.secondary_asagi",
-    "type": "color",
-    "value": "#CC9FD9",
-    "originalValue": "{sd.reference.color.scale.purple.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "articleFigure",
-      "foreground",
-      "tertiary_asagi"
-    ],
-    "key": "web.system.color.articleFigure.foreground.tertiary_asagi",
-    "type": "color",
-    "value": "#D9F6FC",
-    "originalValue": "{sd.reference.color.scale.skyBlue.100}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "articleFigure",
-      "foreground",
-      "surface_asagi"
-    ],
-    "key": "web.system.color.articleFigure.foreground.surface_asagi",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "articleFigure",
-      "foreground",
-      "onSurface_asagi"
-    ],
-    "key": "web.system.color.articleFigure.foreground.onSurface_asagi",
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onSecondary",
     "type": "color",
     "value": "#000000",
     "originalValue": "{sd.reference.color.scale.black.1000}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
-      "articleFigure",
-      "foreground",
-      "primary_konjo"
+      "impression",
+      "secondaryContainer"
     ],
-    "key": "web.system.color.articleFigure.foreground.primary_konjo",
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.secondaryContainer",
     "type": "color",
-    "value": "#8FAEFE",
-    "originalValue": "{sd.reference.color.scale.blue.400}"
+    "value": "#F7C6B0",
+    "originalValue": "{sd.reference.color.scale.chestnut.300}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
-      "articleFigure",
-      "foreground",
-      "secondary_konjo"
+      "impression",
+      "onSecondaryContainer"
     ],
-    "key": "web.system.color.articleFigure.foreground.secondary_konjo",
-    "type": "color",
-    "value": "#64CCD3",
-    "originalValue": "{sd.reference.color.scale.skyBlue.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "articleFigure",
-      "foreground",
-      "tertiary_konjo"
-    ],
-    "key": "web.system.color.articleFigure.foreground.tertiary_konjo",
-    "type": "color",
-    "value": "#EFF2FC",
-    "originalValue": "{sd.reference.color.scale.blue.100}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "articleFigure",
-      "foreground",
-      "surface_konjo"
-    ],
-    "key": "web.system.color.articleFigure.foreground.surface_konjo",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "articleFigure",
-      "foreground",
-      "onSurface_konjo"
-    ],
-    "key": "web.system.color.articleFigure.foreground.onSurface_konjo",
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onSecondaryContainer",
     "type": "color",
     "value": "#000000",
     "originalValue": "{sd.reference.color.scale.black.1000}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
-      "articleFigure",
-      "foreground",
-      "primary_kurikawa"
+      "impression",
+      "tertiary"
     ],
-    "key": "web.system.color.articleFigure.foreground.primary_kurikawa",
-    "type": "color",
-    "value": "#F49567",
-    "originalValue": "{sd.reference.color.scale.chestnut.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "articleFigure",
-      "foreground",
-      "secondary_kurikawa"
-    ],
-    "key": "web.system.color.articleFigure.foreground.secondary_kurikawa",
-    "type": "color",
-    "value": "#DAA358",
-    "originalValue": "{sd.reference.color.scale.beige.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "articleFigure",
-      "foreground",
-      "tertiary_kurikawa"
-    ],
-    "key": "web.system.color.articleFigure.foreground.tertiary_kurikawa",
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.tertiary",
     "type": "color",
     "value": "#F7EDE2",
     "originalValue": "{sd.reference.color.scale.beige.100}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
-      "articleFigure",
-      "foreground",
-      "surface_kurikawa"
+      "impression",
+      "onTertiary"
     ],
-    "key": "web.system.color.articleFigure.foreground.surface_kurikawa",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "articleFigure",
-      "foreground",
-      "onSurface_kurikawa"
-    ],
-    "key": "web.system.color.articleFigure.foreground.onSurface_kurikawa",
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onTertiary",
     "type": "color",
     "value": "#000000",
     "originalValue": "{sd.reference.color.scale.black.1000}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
-      "articleFigure",
-      "foreground",
-      "primary_sumire"
+      "impression",
+      "tertiaryContainer"
     ],
-    "key": "web.system.color.articleFigure.foreground.primary_sumire",
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.tertiaryContainer",
     "type": "color",
-    "value": "#CC9FD9",
-    "originalValue": "{sd.reference.color.scale.purple.400}"
+    "value": "#F7EDE2",
+    "originalValue": "{sd.reference.color.scale.beige.100}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
-      "articleFigure",
-      "foreground",
-      "secondary_sumire"
+      "impression",
+      "onTertiaryContainer"
     ],
-    "key": "web.system.color.articleFigure.foreground.secondary_sumire",
-    "type": "color",
-    "value": "#8FAEFE",
-    "originalValue": "{sd.reference.color.scale.blue.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "articleFigure",
-      "foreground",
-      "tertiary_sumire"
-    ],
-    "key": "web.system.color.articleFigure.foreground.tertiary_sumire",
-    "type": "color",
-    "value": "#F4ECF6",
-    "originalValue": "{sd.reference.color.scale.purple.100}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "articleFigure",
-      "foreground",
-      "surface_sumire"
-    ],
-    "key": "web.system.color.articleFigure.foreground.surface_sumire",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "articleFigure",
-      "foreground",
-      "onSurface_sumire"
-    ],
-    "key": "web.system.color.articleFigure.foreground.onSurface_sumire",
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onTertiaryContainer",
     "type": "color",
     "value": "#000000",
     "originalValue": "{sd.reference.color.scale.black.1000}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
-      "articleFigure",
-      "foreground",
-      "primary_tsutsuji"
+      "impression",
+      "notice"
     ],
-    "key": "web.system.color.articleFigure.foreground.primary_tsutsuji",
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.notice",
     "type": "color",
-    "value": "#F190B4",
-    "originalValue": "{sd.reference.color.scale.pink.400}"
+    "value": "#FFE600",
+    "originalValue": "{sd.reference.color.scale.yellow.300}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
-      "articleFigure",
-      "foreground",
-      "secondary_tsutsuji"
+      "impression",
+      "onNotice"
     ],
-    "key": "web.system.color.articleFigure.foreground.secondary_tsutsuji",
-    "type": "color",
-    "value": "#CC9FD9",
-    "originalValue": "{sd.reference.color.scale.purple.400}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "articleFigure",
-      "foreground",
-      "tertiary_tsutsuji"
-    ],
-    "key": "web.system.color.articleFigure.foreground.tertiary_tsutsuji",
-    "type": "color",
-    "value": "#F9EBF0",
-    "originalValue": "{sd.reference.color.scale.pink.100}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "articleFigure",
-      "foreground",
-      "surface_tsutsuji"
-    ],
-    "key": "web.system.color.articleFigure.foreground.surface_tsutsuji",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "web",
-      "system",
-      "color",
-      "articleFigure",
-      "foreground",
-      "onSurface_tsutsuji"
-    ],
-    "key": "web.system.color.articleFigure.foreground.onSurface_tsutsuji",
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onNotice",
     "type": "color",
     "value": "#000000",
     "originalValue": "{sd.reference.color.scale.black.1000}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
-      "articleFigure",
-      "background_asagi"
+      "impression",
+      "noticeContainer"
     ],
-    "key": "web.system.color.articleFigure.background_asagi",
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.noticeContainer",
     "type": "color",
-    "value": "#f5f5f5",
-    "originalValue": "#f5f5f5"
+    "value": "#FFE600",
+    "originalValue": "{sd.reference.color.scale.yellow.300}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
-      "articleFigure",
-      "background_konjo"
+      "impression",
+      "onNoticeContainer"
     ],
-    "key": "web.system.color.articleFigure.background_konjo",
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onNoticeContainer",
     "type": "color",
-    "value": "#f5f5f5",
-    "originalValue": "#f5f5f5"
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
-      "articleFigure",
-      "background_kurikawa"
+      "impression",
+      "negative"
     ],
-    "key": "web.system.color.articleFigure.background_kurikawa",
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.negative",
     "type": "color",
-    "value": "#f5f5f5",
-    "originalValue": "#f5f5f5"
+    "value": "#CE0037",
+    "originalValue": "{sd.reference.color.scale.red.600}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
-      "articleFigure",
-      "background_sumire"
+      "impression",
+      "onNegative"
     ],
-    "key": "web.system.color.articleFigure.background_sumire",
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onNegative",
     "type": "color",
-    "value": "#f5f5f5",
-    "originalValue": "#f5f5f5"
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
   },
   {
     "path": [
-      "web",
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
       "system",
       "color",
-      "articleFigure",
-      "background_tsutsuji"
+      "impression",
+      "negativeContainer"
     ],
-    "key": "web.system.color.articleFigure.background_tsutsuji",
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.negativeContainer",
     "type": "color",
-    "value": "#f5f5f5",
-    "originalValue": "#f5f5f5"
+    "value": "#FCD6D3",
+    "originalValue": "{sd.reference.color.scale.red.200}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onNegativeContainer"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onNegativeContainer",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "positive"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.positive",
+    "type": "color",
+    "value": "#40A683",
+    "originalValue": "{sd.reference.color.scale.green.500}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onPositive"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onPositive",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "positiveContainer"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.positiveContainer",
+    "type": "color",
+    "value": "#40A683",
+    "originalValue": "{sd.reference.color.scale.green.500}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onPositiveContainer"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onPositiveContainer",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "surface"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.component.surface",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "onSurface"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.component.onSurface",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "onSurfaceVariant"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.component.onSurfaceVariant",
+    "type": "color",
+    "value": "#8C8B87",
+    "originalValue": "{sd.reference.color.scale.gray.500}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "inverseSurface"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.component.inverseSurface",
+    "type": "color",
+    "value": "#232322",
+    "originalValue": "{sd.reference.color.scale.gray.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "inverseOnSurface"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.component.inverseOnSurface",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "outline"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.component.outline",
+    "type": "color",
+    "value": "#C8C7C2",
+    "originalValue": "{sd.reference.color.scale.gray.300}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "outlineVariant"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.component.outlineVariant",
+    "type": "color",
+    "value": "#8C8B87",
+    "originalValue": "{sd.reference.color.scale.gray.500}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "scrim"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.component.scrim",
+    "type": "color",
+    "value": "#00000033",
+    "originalValue": "{sd.reference.color.scale.transparency.20}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "disabled"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.interaction.disabled",
+    "type": "color",
+    "value": "#EFEEEB",
+    "originalValue": "{sd.reference.color.scale.gray.100}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "disabledOnSurface"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.interaction.disabledOnSurface",
+    "type": "color",
+    "value": "#AFAEAA",
+    "originalValue": "{sd.reference.color.scale.gray.400}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "selectedSurface"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.interaction.selectedSurface",
+    "type": "color",
+    "value": "#F7C6B0",
+    "originalValue": "{sd.reference.color.scale.chestnut.300}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "hovered"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.interaction.hovered",
+    "type": "color",
+    "value": "#00000033",
+    "originalValue": "{sd.reference.color.scale.transparency.20}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "hoveredVariant"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.interaction.hoveredVariant",
+    "type": "color",
+    "value": "#0000000D",
+    "originalValue": "{sd.reference.color.scale.transparency.5}"
+  },
+  {
+    "path": [
+      "themes",
+      "kurikawa",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "hoveredOnPrimary"
+    ],
+    "key": "themes.kurikawa.tokens.colors.sd.system.color.interaction.hoveredOnPrimary",
+    "type": "color",
+    "value": "#FFFFFF99",
+    "originalValue": "{sd.reference.color.scale.transparency.60}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "primary"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.primary",
+    "type": "color",
+    "value": "#733B85",
+    "originalValue": "{sd.reference.color.scale.purple.700}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onPrimary"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onPrimary",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "primaryContainer"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.primaryContainer",
+    "type": "color",
+    "value": "#733B85",
+    "originalValue": "{sd.reference.color.scale.purple.700}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onPrimaryContainer"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onPrimaryContainer",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "secondary"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.secondary",
+    "type": "color",
+    "value": "#DCBDE4",
+    "originalValue": "{sd.reference.color.scale.purple.300}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onSecondary"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onSecondary",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "secondaryContainer"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.secondaryContainer",
+    "type": "color",
+    "value": "#DCBDE4",
+    "originalValue": "{sd.reference.color.scale.purple.300}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onSecondaryContainer"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onSecondaryContainer",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "tertiary"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.tertiary",
+    "type": "color",
+    "value": "#073165",
+    "originalValue": "{sd.reference.color.scale.blue.900}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onTertiary"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onTertiary",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "tertiaryContainer"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.tertiaryContainer",
+    "type": "color",
+    "value": "#073165",
+    "originalValue": "{sd.reference.color.scale.blue.900}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onTertiaryContainer"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onTertiaryContainer",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "notice"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.notice",
+    "type": "color",
+    "value": "#FFE600",
+    "originalValue": "{sd.reference.color.scale.yellow.300}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onNotice"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onNotice",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "noticeContainer"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.noticeContainer",
+    "type": "color",
+    "value": "#FFE600",
+    "originalValue": "{sd.reference.color.scale.yellow.300}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onNoticeContainer"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onNoticeContainer",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "negative"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.negative",
+    "type": "color",
+    "value": "#CE0037",
+    "originalValue": "{sd.reference.color.scale.red.600}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onNegative"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onNegative",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "negativeContainer"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.negativeContainer",
+    "type": "color",
+    "value": "#FCD6D3",
+    "originalValue": "{sd.reference.color.scale.red.200}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onNegativeContainer"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onNegativeContainer",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "positive"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.positive",
+    "type": "color",
+    "value": "#40A683",
+    "originalValue": "{sd.reference.color.scale.green.500}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onPositive"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onPositive",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "positiveContainer"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.positiveContainer",
+    "type": "color",
+    "value": "#40A683",
+    "originalValue": "{sd.reference.color.scale.green.500}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onPositiveContainer"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onPositiveContainer",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "surface"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.component.surface",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "onSurface"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.component.onSurface",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "onSurfaceVariant"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.component.onSurfaceVariant",
+    "type": "color",
+    "value": "#8C8B87",
+    "originalValue": "{sd.reference.color.scale.gray.500}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "inverseSurface"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.component.inverseSurface",
+    "type": "color",
+    "value": "#232322",
+    "originalValue": "{sd.reference.color.scale.gray.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "inverseOnSurface"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.component.inverseOnSurface",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "outline"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.component.outline",
+    "type": "color",
+    "value": "#C8C7C2",
+    "originalValue": "{sd.reference.color.scale.gray.300}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "outlineVariant"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.component.outlineVariant",
+    "type": "color",
+    "value": "#8C8B87",
+    "originalValue": "{sd.reference.color.scale.gray.500}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "scrim"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.component.scrim",
+    "type": "color",
+    "value": "#00000033",
+    "originalValue": "{sd.reference.color.scale.transparency.20}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "disabled"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.interaction.disabled",
+    "type": "color",
+    "value": "#EFEEEB",
+    "originalValue": "{sd.reference.color.scale.gray.100}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "disabledOnSurface"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.interaction.disabledOnSurface",
+    "type": "color",
+    "value": "#AFAEAA",
+    "originalValue": "{sd.reference.color.scale.gray.400}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "selectedSurface"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.interaction.selectedSurface",
+    "type": "color",
+    "value": "#DCBDE4",
+    "originalValue": "{sd.reference.color.scale.purple.300}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "hovered"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.interaction.hovered",
+    "type": "color",
+    "value": "#00000033",
+    "originalValue": "{sd.reference.color.scale.transparency.20}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "hoveredVariant"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.interaction.hoveredVariant",
+    "type": "color",
+    "value": "#0000000D",
+    "originalValue": "{sd.reference.color.scale.transparency.5}"
+  },
+  {
+    "path": [
+      "themes",
+      "sumire",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "hoveredOnPrimary"
+    ],
+    "key": "themes.sumire.tokens.colors.sd.system.color.interaction.hoveredOnPrimary",
+    "type": "color",
+    "value": "#FFFFFF99",
+    "originalValue": "{sd.reference.color.scale.transparency.60}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "primary"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.primary",
+    "type": "color",
+    "value": "#B9336B",
+    "originalValue": "{sd.reference.color.scale.pink.600}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onPrimary"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onPrimary",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "primaryContainer"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.primaryContainer",
+    "type": "color",
+    "value": "#F5C1D1",
+    "originalValue": "{sd.reference.color.scale.pink.300}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onPrimaryContainer"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onPrimaryContainer",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "secondary"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.secondary",
+    "type": "color",
+    "value": "#F6D7E0",
+    "originalValue": "{sd.reference.color.scale.pink.200}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onSecondary"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onSecondary",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "secondaryContainer"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.secondaryContainer",
+    "type": "color",
+    "value": "#F6D7E0",
+    "originalValue": "{sd.reference.color.scale.pink.200}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onSecondaryContainer"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onSecondaryContainer",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "tertiary"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.tertiary",
+    "type": "color",
+    "value": "#401026",
+    "originalValue": "{sd.reference.color.scale.pink.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onTertiary"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onTertiary",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "tertiaryContainer"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.tertiaryContainer",
+    "type": "color",
+    "value": "#401026",
+    "originalValue": "{sd.reference.color.scale.pink.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onTertiaryContainer"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onTertiaryContainer",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "notice"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.notice",
+    "type": "color",
+    "value": "#FFE600",
+    "originalValue": "{sd.reference.color.scale.yellow.300}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onNotice"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onNotice",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "noticeContainer"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.noticeContainer",
+    "type": "color",
+    "value": "#FFE600",
+    "originalValue": "{sd.reference.color.scale.yellow.300}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onNoticeContainer"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onNoticeContainer",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "negative"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.negative",
+    "type": "color",
+    "value": "#CE0037",
+    "originalValue": "{sd.reference.color.scale.red.600}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onNegative"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onNegative",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "negativeContainer"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.negativeContainer",
+    "type": "color",
+    "value": "#FCD6D3",
+    "originalValue": "{sd.reference.color.scale.red.200}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onNegativeContainer"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onNegativeContainer",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "positive"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.positive",
+    "type": "color",
+    "value": "#40A683",
+    "originalValue": "{sd.reference.color.scale.green.500}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onPositive"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onPositive",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "positiveContainer"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.positiveContainer",
+    "type": "color",
+    "value": "#40A683",
+    "originalValue": "{sd.reference.color.scale.green.500}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "impression",
+      "onPositiveContainer"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onPositiveContainer",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "surface"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.surface",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "onSurface"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.onSurface",
+    "type": "color",
+    "value": "#000000",
+    "originalValue": "{sd.reference.color.scale.black.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "onSurfaceVariant"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.onSurfaceVariant",
+    "type": "color",
+    "value": "#8C8B87",
+    "originalValue": "{sd.reference.color.scale.gray.500}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "inverseSurface"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.inverseSurface",
+    "type": "color",
+    "value": "#232322",
+    "originalValue": "{sd.reference.color.scale.gray.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "inverseOnSurface"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.inverseOnSurface",
+    "type": "color",
+    "value": "#FFFFFF",
+    "originalValue": "{sd.reference.color.scale.white.1000}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "outline"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.outline",
+    "type": "color",
+    "value": "#C8C7C2",
+    "originalValue": "{sd.reference.color.scale.gray.300}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "outlineVariant"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.outlineVariant",
+    "type": "color",
+    "value": "#8C8B87",
+    "originalValue": "{sd.reference.color.scale.gray.500}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "component",
+      "scrim"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.scrim",
+    "type": "color",
+    "value": "#00000033",
+    "originalValue": "{sd.reference.color.scale.transparency.20}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "disabled"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.interaction.disabled",
+    "type": "color",
+    "value": "#EFEEEB",
+    "originalValue": "{sd.reference.color.scale.gray.100}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "disabledOnSurface"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.interaction.disabledOnSurface",
+    "type": "color",
+    "value": "#AFAEAA",
+    "originalValue": "{sd.reference.color.scale.gray.400}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "selectedSurface"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.interaction.selectedSurface",
+    "type": "color",
+    "value": "#F6D7E0",
+    "originalValue": "{sd.reference.color.scale.pink.200}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "hovered"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.interaction.hovered",
+    "type": "color",
+    "value": "#00000033",
+    "originalValue": "{sd.reference.color.scale.transparency.20}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "hoveredVariant"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.interaction.hoveredVariant",
+    "type": "color",
+    "value": "#0000000D",
+    "originalValue": "{sd.reference.color.scale.transparency.5}"
+  },
+  {
+    "path": [
+      "themes",
+      "tsutsuji",
+      "tokens",
+      "colors",
+      "sd",
+      "system",
+      "color",
+      "interaction",
+      "hoveredOnPrimary"
+    ],
+    "key": "themes.tsutsuji.tokens.colors.sd.system.color.interaction.hoveredOnPrimary",
+    "type": "color",
+    "value": "#FFFFFF99",
+    "originalValue": "{sd.reference.color.scale.transparency.60}"
   },
   {
     "path": [
@@ -6042,2589 +6641,5 @@ export default [
       "fontFamily": "{sd.reference.typography.fontFamily.primary}",
       "lineHeight": "{sd.reference.typography.lineHeight.none}"
     }
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "primary"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.primary",
-    "type": "color",
-    "value": "#00757E",
-    "originalValue": "{sd.reference.color.scale.skyBlue.600}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onPrimary"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onPrimary",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "primaryContainer"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.primaryContainer",
-    "type": "color",
-    "value": "#00757E",
-    "originalValue": "{sd.reference.color.scale.skyBlue.600}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onPrimaryContainer"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onPrimaryContainer",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "secondary"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.secondary",
-    "type": "color",
-    "value": "#AEEAD5",
-    "originalValue": "{sd.reference.color.scale.green.200}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onSecondary"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onSecondary",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "secondaryContainer"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.secondaryContainer",
-    "type": "color",
-    "value": "#AEEAD5",
-    "originalValue": "{sd.reference.color.scale.green.200}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onSecondaryContainer"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onSecondaryContainer",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "tertiary"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.tertiary",
-    "type": "color",
-    "value": "#EFEEEB",
-    "originalValue": "{sd.reference.color.scale.gray.100}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onTertiary"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onTertiary",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "tertiaryContainer"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.tertiaryContainer",
-    "type": "color",
-    "value": "#EFEEEB",
-    "originalValue": "{sd.reference.color.scale.gray.100}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onTertiaryContainer"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onTertiaryContainer",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "notice"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.notice",
-    "type": "color",
-    "value": "#FFE600",
-    "originalValue": "{sd.reference.color.scale.yellow.300}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onNotice"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onNotice",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "noticeContainer"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.noticeContainer",
-    "type": "color",
-    "value": "#FFE600",
-    "originalValue": "{sd.reference.color.scale.yellow.300}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onNoticeContainer"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onNoticeContainer",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "negative"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.negative",
-    "type": "color",
-    "value": "#CE0037",
-    "originalValue": "{sd.reference.color.scale.red.600}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onNegative"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onNegative",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "negativeContainer"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.negativeContainer",
-    "type": "color",
-    "value": "#FCD6D3",
-    "originalValue": "{sd.reference.color.scale.red.200}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onNegativeContainer"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onNegativeContainer",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "positive"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.positive",
-    "type": "color",
-    "value": "#40A683",
-    "originalValue": "{sd.reference.color.scale.green.500}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onPositive"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onPositive",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "positiveContainer"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.positiveContainer",
-    "type": "color",
-    "value": "#40A683",
-    "originalValue": "{sd.reference.color.scale.green.500}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onPositiveContainer"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.impression.onPositiveContainer",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "surface"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.component.surface",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "onSurface"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.component.onSurface",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "onSurfaceVariant"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.component.onSurfaceVariant",
-    "type": "color",
-    "value": "#8C8B87",
-    "originalValue": "{sd.reference.color.scale.gray.500}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "inverseSurface"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.component.inverseSurface",
-    "type": "color",
-    "value": "#232322",
-    "originalValue": "{sd.reference.color.scale.gray.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "inverseOnSurface"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.component.inverseOnSurface",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "outline"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.component.outline",
-    "type": "color",
-    "value": "#C8C7C2",
-    "originalValue": "{sd.reference.color.scale.gray.300}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "outlineVariant"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.component.outlineVariant",
-    "type": "color",
-    "value": "#8C8B87",
-    "originalValue": "{sd.reference.color.scale.gray.500}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "scrim"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.component.scrim",
-    "type": "color",
-    "value": "#00000033",
-    "originalValue": "{sd.reference.color.scale.transparency.20}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "disabled"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.interaction.disabled",
-    "type": "color",
-    "value": "#EFEEEB",
-    "originalValue": "{sd.reference.color.scale.gray.100}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "disabledOnSurface"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.interaction.disabledOnSurface",
-    "type": "color",
-    "value": "#AFAEAA",
-    "originalValue": "{sd.reference.color.scale.gray.400}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "selectedSurface"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.interaction.selectedSurface",
-    "type": "color",
-    "value": "#AEEAD5",
-    "originalValue": "{sd.reference.color.scale.green.200}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "hovered"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.interaction.hovered",
-    "type": "color",
-    "value": "#00000033",
-    "originalValue": "{sd.reference.color.scale.transparency.20}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "hoveredVariant"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.interaction.hoveredVariant",
-    "type": "color",
-    "value": "#0000000D",
-    "originalValue": "{sd.reference.color.scale.transparency.5}"
-  },
-  {
-    "path": [
-      "themes",
-      "asagi",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "hoveredOnPrimary"
-    ],
-    "key": "themes.asagi.tokens.colors.sd.system.color.interaction.hoveredOnPrimary",
-    "type": "color",
-    "value": "#FFFFFF99",
-    "originalValue": "{sd.reference.color.scale.transparency.60}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "primary"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.primary",
-    "type": "color",
-    "value": "#803510",
-    "originalValue": "{sd.reference.color.scale.chestnut.700}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onPrimary"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onPrimary",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "primaryContainer"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.primaryContainer",
-    "type": "color",
-    "value": "#803510",
-    "originalValue": "{sd.reference.color.scale.chestnut.700}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onPrimaryContainer"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onPrimaryContainer",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "secondary"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.secondary",
-    "type": "color",
-    "value": "#F7C6B0",
-    "originalValue": "{sd.reference.color.scale.chestnut.300}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onSecondary"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onSecondary",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "secondaryContainer"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.secondaryContainer",
-    "type": "color",
-    "value": "#F7C6B0",
-    "originalValue": "{sd.reference.color.scale.chestnut.300}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onSecondaryContainer"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onSecondaryContainer",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "tertiary"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.tertiary",
-    "type": "color",
-    "value": "#F7EDE2",
-    "originalValue": "{sd.reference.color.scale.beige.100}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onTertiary"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onTertiary",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "tertiaryContainer"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.tertiaryContainer",
-    "type": "color",
-    "value": "#F7EDE2",
-    "originalValue": "{sd.reference.color.scale.beige.100}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onTertiaryContainer"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onTertiaryContainer",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "notice"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.notice",
-    "type": "color",
-    "value": "#FFE600",
-    "originalValue": "{sd.reference.color.scale.yellow.300}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onNotice"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onNotice",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "noticeContainer"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.noticeContainer",
-    "type": "color",
-    "value": "#FFE600",
-    "originalValue": "{sd.reference.color.scale.yellow.300}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onNoticeContainer"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onNoticeContainer",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "negative"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.negative",
-    "type": "color",
-    "value": "#CE0037",
-    "originalValue": "{sd.reference.color.scale.red.600}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onNegative"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onNegative",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "negativeContainer"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.negativeContainer",
-    "type": "color",
-    "value": "#FCD6D3",
-    "originalValue": "{sd.reference.color.scale.red.200}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onNegativeContainer"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onNegativeContainer",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "positive"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.positive",
-    "type": "color",
-    "value": "#40A683",
-    "originalValue": "{sd.reference.color.scale.green.500}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onPositive"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onPositive",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "positiveContainer"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.positiveContainer",
-    "type": "color",
-    "value": "#40A683",
-    "originalValue": "{sd.reference.color.scale.green.500}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onPositiveContainer"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.impression.onPositiveContainer",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "surface"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.component.surface",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "onSurface"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.component.onSurface",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "onSurfaceVariant"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.component.onSurfaceVariant",
-    "type": "color",
-    "value": "#8C8B87",
-    "originalValue": "{sd.reference.color.scale.gray.500}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "inverseSurface"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.component.inverseSurface",
-    "type": "color",
-    "value": "#232322",
-    "originalValue": "{sd.reference.color.scale.gray.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "inverseOnSurface"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.component.inverseOnSurface",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "outline"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.component.outline",
-    "type": "color",
-    "value": "#C8C7C2",
-    "originalValue": "{sd.reference.color.scale.gray.300}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "outlineVariant"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.component.outlineVariant",
-    "type": "color",
-    "value": "#8C8B87",
-    "originalValue": "{sd.reference.color.scale.gray.500}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "scrim"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.component.scrim",
-    "type": "color",
-    "value": "#00000033",
-    "originalValue": "{sd.reference.color.scale.transparency.20}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "disabled"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.interaction.disabled",
-    "type": "color",
-    "value": "#EFEEEB",
-    "originalValue": "{sd.reference.color.scale.gray.100}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "disabledOnSurface"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.interaction.disabledOnSurface",
-    "type": "color",
-    "value": "#AFAEAA",
-    "originalValue": "{sd.reference.color.scale.gray.400}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "selectedSurface"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.interaction.selectedSurface",
-    "type": "color",
-    "value": "#F7C6B0",
-    "originalValue": "{sd.reference.color.scale.chestnut.300}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "hovered"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.interaction.hovered",
-    "type": "color",
-    "value": "#00000033",
-    "originalValue": "{sd.reference.color.scale.transparency.20}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "hoveredVariant"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.interaction.hoveredVariant",
-    "type": "color",
-    "value": "#0000000D",
-    "originalValue": "{sd.reference.color.scale.transparency.5}"
-  },
-  {
-    "path": [
-      "themes",
-      "kurikawa",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "hoveredOnPrimary"
-    ],
-    "key": "themes.kurikawa.tokens.colors.sd.system.color.interaction.hoveredOnPrimary",
-    "type": "color",
-    "value": "#FFFFFF99",
-    "originalValue": "{sd.reference.color.scale.transparency.60}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "primary"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.primary",
-    "type": "color",
-    "value": "#733B85",
-    "originalValue": "{sd.reference.color.scale.purple.700}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onPrimary"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onPrimary",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "primaryContainer"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.primaryContainer",
-    "type": "color",
-    "value": "#733B85",
-    "originalValue": "{sd.reference.color.scale.purple.700}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onPrimaryContainer"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onPrimaryContainer",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "secondary"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.secondary",
-    "type": "color",
-    "value": "#DCBDE4",
-    "originalValue": "{sd.reference.color.scale.purple.300}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onSecondary"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onSecondary",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "secondaryContainer"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.secondaryContainer",
-    "type": "color",
-    "value": "#DCBDE4",
-    "originalValue": "{sd.reference.color.scale.purple.300}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onSecondaryContainer"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onSecondaryContainer",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "tertiary"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.tertiary",
-    "type": "color",
-    "value": "#073165",
-    "originalValue": "{sd.reference.color.scale.blue.900}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onTertiary"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onTertiary",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "tertiaryContainer"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.tertiaryContainer",
-    "type": "color",
-    "value": "#073165",
-    "originalValue": "{sd.reference.color.scale.blue.900}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onTertiaryContainer"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onTertiaryContainer",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "notice"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.notice",
-    "type": "color",
-    "value": "#FFE600",
-    "originalValue": "{sd.reference.color.scale.yellow.300}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onNotice"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onNotice",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "noticeContainer"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.noticeContainer",
-    "type": "color",
-    "value": "#FFE600",
-    "originalValue": "{sd.reference.color.scale.yellow.300}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onNoticeContainer"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onNoticeContainer",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "negative"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.negative",
-    "type": "color",
-    "value": "#CE0037",
-    "originalValue": "{sd.reference.color.scale.red.600}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onNegative"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onNegative",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "negativeContainer"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.negativeContainer",
-    "type": "color",
-    "value": "#FCD6D3",
-    "originalValue": "{sd.reference.color.scale.red.200}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onNegativeContainer"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onNegativeContainer",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "positive"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.positive",
-    "type": "color",
-    "value": "#40A683",
-    "originalValue": "{sd.reference.color.scale.green.500}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onPositive"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onPositive",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "positiveContainer"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.positiveContainer",
-    "type": "color",
-    "value": "#40A683",
-    "originalValue": "{sd.reference.color.scale.green.500}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onPositiveContainer"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.impression.onPositiveContainer",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "surface"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.component.surface",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "onSurface"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.component.onSurface",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "onSurfaceVariant"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.component.onSurfaceVariant",
-    "type": "color",
-    "value": "#8C8B87",
-    "originalValue": "{sd.reference.color.scale.gray.500}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "inverseSurface"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.component.inverseSurface",
-    "type": "color",
-    "value": "#232322",
-    "originalValue": "{sd.reference.color.scale.gray.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "inverseOnSurface"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.component.inverseOnSurface",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "outline"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.component.outline",
-    "type": "color",
-    "value": "#C8C7C2",
-    "originalValue": "{sd.reference.color.scale.gray.300}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "outlineVariant"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.component.outlineVariant",
-    "type": "color",
-    "value": "#8C8B87",
-    "originalValue": "{sd.reference.color.scale.gray.500}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "scrim"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.component.scrim",
-    "type": "color",
-    "value": "#00000033",
-    "originalValue": "{sd.reference.color.scale.transparency.20}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "disabled"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.interaction.disabled",
-    "type": "color",
-    "value": "#EFEEEB",
-    "originalValue": "{sd.reference.color.scale.gray.100}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "disabledOnSurface"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.interaction.disabledOnSurface",
-    "type": "color",
-    "value": "#AFAEAA",
-    "originalValue": "{sd.reference.color.scale.gray.400}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "selectedSurface"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.interaction.selectedSurface",
-    "type": "color",
-    "value": "#DCBDE4",
-    "originalValue": "{sd.reference.color.scale.purple.300}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "hovered"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.interaction.hovered",
-    "type": "color",
-    "value": "#00000033",
-    "originalValue": "{sd.reference.color.scale.transparency.20}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "hoveredVariant"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.interaction.hoveredVariant",
-    "type": "color",
-    "value": "#0000000D",
-    "originalValue": "{sd.reference.color.scale.transparency.5}"
-  },
-  {
-    "path": [
-      "themes",
-      "sumire",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "hoveredOnPrimary"
-    ],
-    "key": "themes.sumire.tokens.colors.sd.system.color.interaction.hoveredOnPrimary",
-    "type": "color",
-    "value": "#FFFFFF99",
-    "originalValue": "{sd.reference.color.scale.transparency.60}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "primary"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.primary",
-    "type": "color",
-    "value": "#B9336B",
-    "originalValue": "{sd.reference.color.scale.pink.600}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onPrimary"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onPrimary",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "primaryContainer"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.primaryContainer",
-    "type": "color",
-    "value": "#F5C1D1",
-    "originalValue": "{sd.reference.color.scale.pink.300}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onPrimaryContainer"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onPrimaryContainer",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "secondary"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.secondary",
-    "type": "color",
-    "value": "#F6D7E0",
-    "originalValue": "{sd.reference.color.scale.pink.200}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onSecondary"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onSecondary",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "secondaryContainer"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.secondaryContainer",
-    "type": "color",
-    "value": "#F6D7E0",
-    "originalValue": "{sd.reference.color.scale.pink.200}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onSecondaryContainer"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onSecondaryContainer",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "tertiary"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.tertiary",
-    "type": "color",
-    "value": "#401026",
-    "originalValue": "{sd.reference.color.scale.pink.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onTertiary"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onTertiary",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "tertiaryContainer"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.tertiaryContainer",
-    "type": "color",
-    "value": "#401026",
-    "originalValue": "{sd.reference.color.scale.pink.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onTertiaryContainer"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onTertiaryContainer",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "notice"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.notice",
-    "type": "color",
-    "value": "#FFE600",
-    "originalValue": "{sd.reference.color.scale.yellow.300}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onNotice"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onNotice",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "noticeContainer"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.noticeContainer",
-    "type": "color",
-    "value": "#FFE600",
-    "originalValue": "{sd.reference.color.scale.yellow.300}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onNoticeContainer"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onNoticeContainer",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "negative"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.negative",
-    "type": "color",
-    "value": "#CE0037",
-    "originalValue": "{sd.reference.color.scale.red.600}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onNegative"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onNegative",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "negativeContainer"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.negativeContainer",
-    "type": "color",
-    "value": "#FCD6D3",
-    "originalValue": "{sd.reference.color.scale.red.200}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onNegativeContainer"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onNegativeContainer",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "positive"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.positive",
-    "type": "color",
-    "value": "#40A683",
-    "originalValue": "{sd.reference.color.scale.green.500}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onPositive"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onPositive",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "positiveContainer"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.positiveContainer",
-    "type": "color",
-    "value": "#40A683",
-    "originalValue": "{sd.reference.color.scale.green.500}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "impression",
-      "onPositiveContainer"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.impression.onPositiveContainer",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "surface"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.surface",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "onSurface"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.onSurface",
-    "type": "color",
-    "value": "#000000",
-    "originalValue": "{sd.reference.color.scale.black.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "onSurfaceVariant"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.onSurfaceVariant",
-    "type": "color",
-    "value": "#8C8B87",
-    "originalValue": "{sd.reference.color.scale.gray.500}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "inverseSurface"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.inverseSurface",
-    "type": "color",
-    "value": "#232322",
-    "originalValue": "{sd.reference.color.scale.gray.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "inverseOnSurface"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.inverseOnSurface",
-    "type": "color",
-    "value": "#FFFFFF",
-    "originalValue": "{sd.reference.color.scale.white.1000}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "outline"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.outline",
-    "type": "color",
-    "value": "#C8C7C2",
-    "originalValue": "{sd.reference.color.scale.gray.300}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "outlineVariant"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.outlineVariant",
-    "type": "color",
-    "value": "#8C8B87",
-    "originalValue": "{sd.reference.color.scale.gray.500}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "component",
-      "scrim"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.scrim",
-    "type": "color",
-    "value": "#00000033",
-    "originalValue": "{sd.reference.color.scale.transparency.20}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "disabled"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.interaction.disabled",
-    "type": "color",
-    "value": "#EFEEEB",
-    "originalValue": "{sd.reference.color.scale.gray.100}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "disabledOnSurface"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.interaction.disabledOnSurface",
-    "type": "color",
-    "value": "#AFAEAA",
-    "originalValue": "{sd.reference.color.scale.gray.400}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "selectedSurface"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.interaction.selectedSurface",
-    "type": "color",
-    "value": "#F6D7E0",
-    "originalValue": "{sd.reference.color.scale.pink.200}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "hovered"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.interaction.hovered",
-    "type": "color",
-    "value": "#00000033",
-    "originalValue": "{sd.reference.color.scale.transparency.20}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "hoveredVariant"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.interaction.hoveredVariant",
-    "type": "color",
-    "value": "#0000000D",
-    "originalValue": "{sd.reference.color.scale.transparency.5}"
-  },
-  {
-    "path": [
-      "themes",
-      "tsutsuji",
-      "tokens",
-      "colors",
-      "sd",
-      "system",
-      "color",
-      "interaction",
-      "hoveredOnPrimary"
-    ],
-    "key": "themes.tsutsuji.tokens.colors.sd.system.color.interaction.hoveredOnPrimary",
-    "type": "color",
-    "value": "#FFFFFF99",
-    "originalValue": "{sd.reference.color.scale.transparency.60}"
   }
 ]

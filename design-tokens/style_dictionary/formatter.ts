@@ -1,5 +1,5 @@
 import StyleDictionary from "style-dictionary";
-const { fileHeader } = StyleDictionary.formatHelpers;
+const { fileHeader, getTypeScriptType } = StyleDictionary.formatHelpers;
 
 interface Token {
   [key: string]: string | number | Token;
@@ -30,7 +30,7 @@ StyleDictionary.registerFormat({
       fileHeader({ file }) +
       `export default tokens;
 declare const tokens: ` +
-      value2type(token);
+      getTypeScriptType(token);
 
     return output;
   },
@@ -80,24 +80,27 @@ declare const tokens: Token[];
   },
 });
 
+function generatePandaTokens(dictionary: StyleDictionary.Dictionary): Token {
+  const token: Token = {};
+  dictionary.allTokens.forEach((t) => {
+    const path = pathConverter(t.path, t.$type);
+    const value = valueTypeConverter(t.value);
+    path2Token(token, path, value);
+  });
+
+  if (token["unclassified"]) {
+    console.warn("unclassified tokens");
+    console.dir(token["unclassified"], { depth: null });
+    delete token["unclassified"];
+  }
+
+  return token;
+}
+
 StyleDictionary.registerFormat({
   name: "panda-css-module",
   formatter: ({ dictionary, file }) => {
-    const token: Token = {};
-
-    dictionary.allTokens.forEach((t) => {
-      const path = pathConverter(t.path, t.$type);
-      const value = valueTypeConverter(t.value);
-      path2Token(token, path, value);
-    });
-
-    if (token["unclassified"]) {
-      // Token Typesに該当しないものを出力
-      console.warn("unclassified tokens");
-      console.dir(token["unclassified"], { depth: null });
-      delete token["unclassified"];
-    }
-
+    const token = generatePandaTokens(dictionary);
     return (
       fileHeader({ file }) + "export default " + JSON.stringify(token, null, 2)
     );
@@ -107,26 +110,37 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerFormat({
   name: "panda-css-module-declarations",
   formatter: ({ dictionary, file }) => {
-    const token: Token = {};
-    const { allTokens } = dictionary;
-
-    allTokens.forEach((t) => {
-      const path = pathConverter(t.path, t.$type);
-      const value = valueTypeConverter(t.value);
-      path2Token(token, path, value);
-    });
-
-    if (token["unclassified"]) {
-      delete token["unclassified"];
-    }
-
+    const token = generatePandaTokens(dictionary);
     const output =
       fileHeader({ file }) +
       `export default tokens;
-declare const tokens: ` +
-      value2type(token);
-
+declare const tokens: ${getTypeScriptType(token)};`;
     return output;
+  },
+});
+
+StyleDictionary.registerFormat({
+  name: "css-with-theme",
+  formatter: ({ dictionary, file }) => {
+    const themes: Record<string, string[]> = {};
+    dictionary.allProperties.forEach((p) => {
+      const [theme, key] =
+        p.path[0] === "themes"
+          ? [p.path[1], p.path.slice(4).join("-")]
+          : ["default", p.path.join("-")];
+
+      (themes[theme] ??= []).push(`--${key}: ${p.value};`);
+    });
+
+    const output = Object.entries(themes)
+      .map(([theme, values]) =>
+        theme === "default"
+          ? `:where(:root,:host) {\n${values.join("\n")}\n}`
+          : `[data-panda-theme=${theme}] {\n${values.join("\n")}\n}`
+      )
+      .join("\n");
+
+    return fileHeader({ file }) + output;
   },
 });
 
@@ -223,27 +237,3 @@ const valueTypeConverter = (obj: Token) => {
   }
   return ret;
 };
-
-/**
- * 与えられたトークンを型に変換する関数です。
- *
- * @param token - 変換するトークンオブジェクト
- * @returns 変換された型の文字列
- */
-function value2type(token: Token): string {
-  const walk = (token: Token): Token => {
-    const res: Token = {};
-    Object.keys(token).forEach((key) => {
-      if (typeof token[key] === "object") {
-        res[key] = walk(token[key]);
-      } else {
-        res[key] = "__" + typeof token[key] + "__";
-      }
-    });
-    return res;
-  };
-
-  return JSON.stringify(walk(token), null, 2)
-    .replace(/"__string__"/g, "string")
-    .replace(/"__number__"/g, "number");
-}
