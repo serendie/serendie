@@ -35,7 +35,6 @@ export const SerendieParser: StyleDictionary.Parser = {
                 },
               };
 
-        console.log("themedObj", themedObj);
         return themedObj;
       }
 

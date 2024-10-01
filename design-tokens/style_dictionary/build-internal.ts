@@ -30,7 +30,7 @@ const internalDictionary = StyleDictionary.extend({
       files: [
         {
           destination: "tokens.css",
-          format: "css/variables",
+          format: "css-with-theme",
           filter: "onlyInternal",
         },
       ],
