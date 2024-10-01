@@ -4,162 +4,516 @@
  */
 
 export default {
+  "themes": {
+    "asagi": {
+      "tokens": {
+        "colors": {
+          "web": {
+            "system": {
+              "color": {
+                "impression": {
+                  "primary": {
+                    "value": "#00757E"
+                  },
+                  "onPrimary": {
+                    "value": "#FFFFFF"
+                  },
+                  "secondary": {
+                    "value": "#015C63"
+                  },
+                  "onSecondary": {
+                    "value": "#FFFFFF"
+                  },
+                  "tertiary": {
+                    "value": "#EFEEEB"
+                  },
+                  "onTertiary": {
+                    "value": "#02373C"
+                  }
+                },
+                "component": {
+                  "background": {
+                    "surface": {
+                      "value": "#FFFFFF"
+                    },
+                    "onSurface": {
+                      "value": "#02373C"
+                    },
+                    "surfaceDim": {
+                      "value": "#EFEEEB"
+                    },
+                    "surfaceDimmest": {
+                      "value": "#AFAEAA"
+                    }
+                  }
+                },
+                "mvShape": {
+                  "foreground": {
+                    "arc": {
+                      "index": {
+                        "value": "#00A3AF"
+                      },
+                      "extraBold": {
+                        "value": "#9CE6EC"
+                      },
+                      "bold": {
+                        "value": "#00757E"
+                      },
+                      "normal": {
+                        "value": "#F84258"
+                      },
+                      "thin": {
+                        "value": "#FFE600"
+                      }
+                    },
+                    "rectangle": {
+                      "oblong": {
+                        "value": "#FCEBEA"
+                      },
+                      "square": {
+                        "value": "#FFE600"
+                      }
+                    }
+                  },
+                  "background": {
+                    "arc": {
+                      "first": {
+                        "value": "#9CE6EC"
+                      },
+                      "second": {
+                        "value": "#D7DEFB"
+                      },
+                      "third": {
+                        "value": "#98E1C8"
+                      },
+                      "fourth": {
+                        "value": "#EFEEEB"
+                      },
+                      "fifth": {
+                        "value": "#64CCD3"
+                      }
+                    }
+                  }
+                },
+                "articleFigure": {
+                  "foreground": {
+                    "primary": {
+                      "value": "#64CCD3"
+                    },
+                    "secondary": {
+                      "value": "#CC9FD9"
+                    },
+                    "tertiary": {
+                      "value": "#D9F6FC"
+                    },
+                    "surface": {
+                      "value": "#FFFFFF"
+                    },
+                    "onSurface": {
+                      "value": "#000000"
+                    }
+                  },
+                  "background": {
+                    "value": "#f5f5f5"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "kurikawa": {
+      "tokens": {
+        "colors": {
+          "web": {
+            "system": {
+              "color": {
+                "impression": {
+                  "primary": {
+                    "value": "#AB4919"
+                  },
+                  "onPrimary": {
+                    "value": "#FFFFFF"
+                  },
+                  "secondary": {
+                    "value": "#803510"
+                  },
+                  "onSecondary": {
+                    "value": "#FFFFFF"
+                  },
+                  "tertiary": {
+                    "value": "#AB4919"
+                  },
+                  "onTertiary": {
+                    "value": "#50230D"
+                  }
+                },
+                "component": {
+                  "background": {
+                    "surface": {
+                      "value": "#FFFFFF"
+                    },
+                    "onSurface": {
+                      "value": "#50230D"
+                    },
+                    "surfaceDim": {
+                      "value": "#EFEEEB"
+                    },
+                    "surfaceDimmest": {
+                      "value": "#AFAEAA"
+                    }
+                  }
+                },
+                "mvShape": {
+                  "foreground": {
+                    "arc": {
+                      "index": {
+                        "value": "#F49567"
+                      },
+                      "extraBold": {
+                        "value": "#F7C6B0"
+                      },
+                      "bold": {
+                        "value": "#803510"
+                      },
+                      "normal": {
+                        "value": "#F84258"
+                      },
+                      "thin": {
+                        "value": "#FFE600"
+                      }
+                    },
+                    "rectangle": {
+                      "oblong": {
+                        "value": "#FCEBEA"
+                      },
+                      "square": {
+                        "value": "#FFE600"
+                      }
+                    }
+                  },
+                  "background": {
+                    "arc": {
+                      "first": {
+                        "value": "#E26324"
+                      },
+                      "second": {
+                        "value": "#AF8245"
+                      },
+                      "third": {
+                        "value": "#F49567"
+                      },
+                      "fourth": {
+                        "value": "#846132"
+                      },
+                      "fifth": {
+                        "value": "#E26324"
+                      }
+                    }
+                  }
+                },
+                "articleFigure": {
+                  "foreground": {
+                    "primary": {
+                      "value": "#F49567"
+                    },
+                    "secondary": {
+                      "value": "#DAA358"
+                    },
+                    "tertiary": {
+                      "value": "#F7EDE2"
+                    },
+                    "surface": {
+                      "value": "#FFFFFF"
+                    },
+                    "onSurface": {
+                      "value": "#000000"
+                    }
+                  },
+                  "background": {
+                    "value": "#f5f5f5"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "sumire": {
+      "tokens": {
+        "colors": {
+          "web": {
+            "system": {
+              "color": {
+                "impression": {
+                  "primary": {
+                    "value": "#914DA9"
+                  },
+                  "onPrimary": {
+                    "value": "#FFFFFF"
+                  },
+                  "secondary": {
+                    "value": "#733B85"
+                  },
+                  "onSecondary": {
+                    "value": "#FFFFFF"
+                  },
+                  "tertiary": {
+                    "value": "#043F81"
+                  },
+                  "onTertiary": {
+                    "value": "#462352"
+                  }
+                },
+                "component": {
+                  "background": {
+                    "surface": {
+                      "value": "#FFFFFF"
+                    },
+                    "onSurface": {
+                      "value": "#462352"
+                    },
+                    "surfaceDim": {
+                      "value": "#EFEEEB"
+                    },
+                    "surfaceDimmest": {
+                      "value": "#AFAEAA"
+                    }
+                  }
+                },
+                "mvShape": {
+                  "foreground": {
+                    "arc": {
+                      "index": {
+                        "value": "#CC9FD9"
+                      },
+                      "extraBold": {
+                        "value": "#DCBDE4"
+                      },
+                      "bold": {
+                        "value": "#462352"
+                      },
+                      "normal": {
+                        "value": "#F84258"
+                      },
+                      "thin": {
+                        "value": "#FFE600"
+                      }
+                    },
+                    "rectangle": {
+                      "oblong": {
+                        "value": "#FCEBEA"
+                      },
+                      "square": {
+                        "value": "#FFE600"
+                      }
+                    }
+                  },
+                  "background": {
+                    "arc": {
+                      "first": {
+                        "value": "#AA61C2"
+                      },
+                      "second": {
+                        "value": "#0A69CF"
+                      },
+                      "third": {
+                        "value": "#CC9FD9"
+                      },
+                      "fourth": {
+                        "value": "#073165"
+                      },
+                      "fifth": {
+                        "value": "#914DA9"
+                      }
+                    }
+                  }
+                },
+                "articleFigure": {
+                  "foreground": {
+                    "primary": {
+                      "value": "#CC9FD9"
+                    },
+                    "secondary": {
+                      "value": "#8FAEFE"
+                    },
+                    "tertiary": {
+                      "value": "#F4ECF6"
+                    },
+                    "surface": {
+                      "value": "#FFFFFF"
+                    },
+                    "onSurface": {
+                      "value": "#000000"
+                    }
+                  },
+                  "background": {
+                    "value": "#f5f5f5"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "tsutsuji": {
+      "tokens": {
+        "colors": {
+          "web": {
+            "system": {
+              "color": {
+                "impression": {
+                  "primary": {
+                    "value": "#B9336B"
+                  },
+                  "onPrimary": {
+                    "value": "#FFFFFF"
+                  },
+                  "secondary": {
+                    "value": "#932653"
+                  },
+                  "onSecondary": {
+                    "value": "#FFFFFF"
+                  },
+                  "tertiary": {
+                    "value": "#F9EBF0"
+                  },
+                  "onTertiary": {
+                    "value": "#591734"
+                  }
+                },
+                "component": {
+                  "background": {
+                    "surface": {
+                      "value": "#FFFFFF"
+                    },
+                    "onSurface": {
+                      "value": "#591734"
+                    },
+                    "surfaceDim": {
+                      "value": "#EFEEEB"
+                    },
+                    "surfaceDimmest": {
+                      "value": "#AFAEAA"
+                    }
+                  }
+                },
+                "mvShape": {
+                  "foreground": {
+                    "arc": {
+                      "index": {
+                        "value": "#EB4F8E"
+                      },
+                      "extraBold": {
+                        "value": "#F5C1D1"
+                      },
+                      "bold": {
+                        "value": "#B9336B"
+                      },
+                      "normal": {
+                        "value": "#F84258"
+                      },
+                      "thin": {
+                        "value": "#FFE600"
+                      }
+                    },
+                    "rectangle": {
+                      "oblong": {
+                        "value": "#FCEBEA"
+                      },
+                      "square": {
+                        "value": "#FFE600"
+                      }
+                    }
+                  },
+                  "background": {
+                    "arc": {
+                      "first": {
+                        "value": "#F190B4"
+                      },
+                      "second": {
+                        "value": "#FCD6D3"
+                      },
+                      "third": {
+                        "value": "#F5C1D1"
+                      },
+                      "fourth": {
+                        "value": "#FCD6D3"
+                      },
+                      "fifth": {
+                        "value": "#F190B4"
+                      }
+                    }
+                  }
+                },
+                "articleFigure": {
+                  "foreground": {
+                    "primary": {
+                      "value": "#F190B4"
+                    },
+                    "secondary": {
+                      "value": "#CC9FD9"
+                    },
+                    "tertiary": {
+                      "value": "#F9EBF0"
+                    },
+                    "surface": {
+                      "value": "#FFFFFF"
+                    },
+                    "onSurface": {
+                      "value": "#000000"
+                    }
+                  },
+                  "background": {
+                    "value": "#f5f5f5"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
   "colors": {
     "web": {
       "system": {
         "color": {
           "impression": {
-            "primary_asagi": {
-              "value": "#00757E"
-            },
-            "onPrimary_asagi": {
-              "value": "#FFFFFF"
-            },
-            "secondary_asagi": {
-              "value": "#015C63"
-            },
-            "onSecondary_asagi": {
-              "value": "#FFFFFF"
-            },
-            "tertiary_asagi": {
-              "value": "#EFEEEB"
-            },
-            "onTertiary_asagi": {
-              "value": "#02373C"
-            },
-            "primary_konjo": {
+            "primary": {
               "value": "#0A69CF"
             },
-            "onPrimary_konjo": {
+            "onPrimary": {
               "value": "#FFFFFF"
             },
-            "secondary_konjo": {
+            "secondary": {
               "value": "#0650A0"
             },
-            "onSecondary_konjo": {
+            "onSecondary": {
               "value": "#FFFFFF"
             },
-            "tertiary_konjo": {
+            "tertiary": {
               "value": "#EFF2FC"
             },
-            "onTertiary_konjo": {
+            "onTertiary": {
               "value": "#073165"
-            },
-            "primary_kurikawa": {
-              "value": "#AB4919"
-            },
-            "onPrimary_kurikawa": {
-              "value": "#FFFFFF"
-            },
-            "secondary_kurikawa": {
-              "value": "#803510"
-            },
-            "onSecondary_kurikawa": {
-              "value": "#FFFFFF"
-            },
-            "tertiary_kurikawa": {
-              "value": "#AB4919"
-            },
-            "onTertiary_kurikawa": {
-              "value": "#50230D"
-            },
-            "primary_sumire": {
-              "value": "#914DA9"
-            },
-            "onPrimary_sumire": {
-              "value": "#FFFFFF"
-            },
-            "secondary_sumire": {
-              "value": "#733B85"
-            },
-            "onSecondary_sumire": {
-              "value": "#FFFFFF"
-            },
-            "tertiary_sumire": {
-              "value": "#043F81"
-            },
-            "onTertiary_sumire": {
-              "value": "#462352"
-            },
-            "primary_tsutsuji": {
-              "value": "#B9336B"
-            },
-            "onPrimary_tsutsuji": {
-              "value": "#FFFFFF"
-            },
-            "secondary_tsutsuji": {
-              "value": "#932653"
-            },
-            "onSecondary_tsutsuji": {
-              "value": "#FFFFFF"
-            },
-            "tertiary_tsutsuji": {
-              "value": "#F9EBF0"
-            },
-            "onTertiary_tsutsuji": {
-              "value": "#591734"
             }
           },
           "component": {
             "background": {
-              "surface_asagi": {
+              "surface": {
                 "value": "#FFFFFF"
               },
-              "onSurface_asagi": {
-                "value": "#02373C"
-              },
-              "surfaceDim_asagi": {
-                "value": "#EFEEEB"
-              },
-              "surfaceDimmest_asagi": {
-                "value": "#AFAEAA"
-              },
-              "surface_konjo": {
-                "value": "#FFFFFF"
-              },
-              "onSurface_konjo": {
+              "onSurface": {
                 "value": "#073165"
               },
-              "surfaceDim_konjo": {
+              "surfaceDim": {
                 "value": "#EFEEEB"
               },
-              "surfaceDimmest_konjo": {
-                "value": "#AFAEAA"
-              },
-              "surface_kurikawa": {
-                "value": "#FFFFFF"
-              },
-              "onSurface_kurikawa": {
-                "value": "#50230D"
-              },
-              "surfaceDim_kurikawa": {
-                "value": "#EFEEEB"
-              },
-              "surfaceDimmest_kurikawa": {
-                "value": "#AFAEAA"
-              },
-              "surface_sumire": {
-                "value": "#FFFFFF"
-              },
-              "onSurface_sumire": {
-                "value": "#462352"
-              },
-              "surfaceDim_sumire": {
-                "value": "#EFEEEB"
-              },
-              "surfaceDimmest_sumire": {
-                "value": "#AFAEAA"
-              },
-              "surface_tsutsuji": {
-                "value": "#FFFFFF"
-              },
-              "onSurface_tsutsuji": {
-                "value": "#591734"
-              },
-              "surfaceDim_tsutsuji": {
-                "value": "#EFEEEB"
-              },
-              "surfaceDimmest_tsutsuji": {
+              "surfaceDimmest": {
                 "value": "#AFAEAA"
               }
             }
@@ -167,286 +521,70 @@ export default {
           "mvShape": {
             "foreground": {
               "arc": {
-                "index_asagi": {
-                  "value": "#00A3AF"
-                },
-                "extraBold_asagi": {
-                  "value": "#9CE6EC"
-                },
-                "bold_asagi": {
-                  "value": "#00757E"
-                },
-                "normal_asagi": {
-                  "value": "#F84258"
-                },
-                "thin_asagi": {
-                  "value": "#FFE600"
-                },
-                "index_konjo": {
+                "index": {
                   "value": "#428CFE"
                 },
-                "extraBold_konjo": {
+                "extraBold": {
                   "value": "#BFCEFC"
                 },
-                "bold_konjo": {
+                "bold": {
                   "value": "#0650A0"
                 },
-                "normal_konjo": {
+                "normal": {
                   "value": "#F84258"
                 },
-                "thin_konjo": {
-                  "value": "#FFE600"
-                },
-                "index_kurikawa": {
-                  "value": "#F49567"
-                },
-                "extraBold_kurikawa": {
-                  "value": "#F7C6B0"
-                },
-                "bold_kurikawa": {
-                  "value": "#803510"
-                },
-                "normal_kurikawa": {
-                  "value": "#F84258"
-                },
-                "thin_kurikawa": {
-                  "value": "#FFE600"
-                },
-                "index_sumire": {
-                  "value": "#CC9FD9"
-                },
-                "extraBold_sumire": {
-                  "value": "#DCBDE4"
-                },
-                "bold_sumire": {
-                  "value": "#462352"
-                },
-                "normal_sumire": {
-                  "value": "#F84258"
-                },
-                "thin_sumire": {
-                  "value": "#FFE600"
-                },
-                "index_tsutsuji": {
-                  "value": "#EB4F8E"
-                },
-                "extraBold_tsutsuji": {
-                  "value": "#F5C1D1"
-                },
-                "bold_tsutsuji": {
-                  "value": "#B9336B"
-                },
-                "normal_tsutsuji": {
-                  "value": "#F84258"
-                },
-                "thin_tsutsuji": {
+                "thin": {
                   "value": "#FFE600"
                 }
               },
               "rectangle": {
-                "oblong_asagi": {
+                "oblong": {
                   "value": "#FCEBEA"
                 },
-                "square_asagi": {
-                  "value": "#FFE600"
-                },
-                "oblong_konjo": {
-                  "value": "#FCEBEA"
-                },
-                "square_konjo": {
-                  "value": "#FFE600"
-                },
-                "oblong_kurikawa": {
-                  "value": "#FCEBEA"
-                },
-                "square_kurikawa": {
-                  "value": "#FFE600"
-                },
-                "oblong_sumire": {
-                  "value": "#FCEBEA"
-                },
-                "square_sumire": {
-                  "value": "#FFE600"
-                },
-                "oblong_tsutsuji": {
-                  "value": "#FCEBEA"
-                },
-                "square_tsutsuji": {
+                "square": {
                   "value": "#FFE600"
                 }
               }
             },
             "background": {
               "arc": {
-                "first_asagi": {
-                  "value": "#9CE6EC"
-                },
-                "second_asagi": {
-                  "value": "#D7DEFB"
-                },
-                "third_asagi": {
-                  "value": "#98E1C8"
-                },
-                "fourth_asagi": {
-                  "value": "#EFEEEB"
-                },
-                "fifth_asagi": {
-                  "value": "#64CCD3"
-                },
-                "first_konjo": {
+                "first": {
                   "value": "#8FAEFE"
                 },
-                "second_konjo": {
+                "second": {
                   "value": "#D9F6FC"
                 },
-                "third_konjo": {
+                "third": {
                   "value": "#BFCEFC"
                 },
-                "fourth_konjo": {
+                "fourth": {
                   "value": "#D7DEFB"
                 },
-                "fifth_konjo": {
+                "fifth": {
                   "value": "#8FAEFE"
-                },
-                "first_kurikawa": {
-                  "value": "#E26324"
-                },
-                "second_kurikawa": {
-                  "value": "#AF8245"
-                },
-                "third_kurikawa": {
-                  "value": "#F49567"
-                },
-                "fourth_kurikawa": {
-                  "value": "#846132"
-                },
-                "fifth_kurikawa": {
-                  "value": "#E26324"
-                },
-                "first_sumire": {
-                  "value": "#AA61C2"
-                },
-                "second_sumire": {
-                  "value": "#0A69CF"
-                },
-                "third_sumire": {
-                  "value": "#CC9FD9"
-                },
-                "fourth_sumire": {
-                  "value": "#073165"
-                },
-                "fifth_sumire": {
-                  "value": "#914DA9"
-                },
-                "first_tsutsuji": {
-                  "value": "#F190B4"
-                },
-                "second_tsutsuji": {
-                  "value": "#FCD6D3"
-                },
-                "third_tsutsuji": {
-                  "value": "#F5C1D1"
-                },
-                "fourth_tsutsuji": {
-                  "value": "#FCD6D3"
-                },
-                "fifth_tsutsuji": {
-                  "value": "#F190B4"
                 }
               }
             }
           },
           "articleFigure": {
             "foreground": {
-              "primary_asagi": {
-                "value": "#64CCD3"
-              },
-              "secondary_asagi": {
-                "value": "#CC9FD9"
-              },
-              "tertiary_asagi": {
-                "value": "#D9F6FC"
-              },
-              "surface_asagi": {
-                "value": "#FFFFFF"
-              },
-              "onSurface_asagi": {
-                "value": "#000000"
-              },
-              "primary_konjo": {
+              "primary": {
                 "value": "#8FAEFE"
               },
-              "secondary_konjo": {
+              "secondary": {
                 "value": "#64CCD3"
               },
-              "tertiary_konjo": {
+              "tertiary": {
                 "value": "#EFF2FC"
               },
-              "surface_konjo": {
+              "surface": {
                 "value": "#FFFFFF"
               },
-              "onSurface_konjo": {
-                "value": "#000000"
-              },
-              "primary_kurikawa": {
-                "value": "#F49567"
-              },
-              "secondary_kurikawa": {
-                "value": "#DAA358"
-              },
-              "tertiary_kurikawa": {
-                "value": "#F7EDE2"
-              },
-              "surface_kurikawa": {
-                "value": "#FFFFFF"
-              },
-              "onSurface_kurikawa": {
-                "value": "#000000"
-              },
-              "primary_sumire": {
-                "value": "#CC9FD9"
-              },
-              "secondary_sumire": {
-                "value": "#8FAEFE"
-              },
-              "tertiary_sumire": {
-                "value": "#F4ECF6"
-              },
-              "surface_sumire": {
-                "value": "#FFFFFF"
-              },
-              "onSurface_sumire": {
-                "value": "#000000"
-              },
-              "primary_tsutsuji": {
-                "value": "#F190B4"
-              },
-              "secondary_tsutsuji": {
-                "value": "#CC9FD9"
-              },
-              "tertiary_tsutsuji": {
-                "value": "#F9EBF0"
-              },
-              "surface_tsutsuji": {
-                "value": "#FFFFFF"
-              },
-              "onSurface_tsutsuji": {
+              "onSurface": {
                 "value": "#000000"
               }
             },
-            "background_asagi": {
-              "value": "#f5f5f5"
-            },
-            "background_konjo": {
-              "value": "#f5f5f5"
-            },
-            "background_kurikawa": {
-              "value": "#f5f5f5"
-            },
-            "background_sumire": {
-              "value": "#f5f5f5"
-            },
-            "background_tsutsuji": {
+            "background": {
               "value": "#f5f5f5"
             }
           }
