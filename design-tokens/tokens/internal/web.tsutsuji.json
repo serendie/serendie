@@ -91,11 +91,11 @@
               },
               "second": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.red.200}"
+                "$value": "{sd.reference.color.scale.red.300}"
               },
               "third": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.pink.300}"
+                "$value": "{sd.reference.color.scale.pink.400}"
               },
               "fourth": {
                 "$type": "color",
