@@ -87,11 +87,11 @@
             "arc": {
               "first": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.skyBlue.300}"
+                "$value": "{sd.reference.color.scale.skyBlue.400}"
               },
               "second": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.blue.200}"
+                "$value": "{sd.reference.color.scale.blue.300}"
               },
               "third": {
                 "$type": "color",
@@ -99,7 +99,7 @@
               },
               "fourth": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.gray.100}"
+                "$value": "{sd.reference.color.scale.gray.200}"
               },
               "fifth": {
                 "$type": "color",

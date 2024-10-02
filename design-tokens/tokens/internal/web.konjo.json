@@ -91,15 +91,15 @@
               },
               "second": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.skyBlue.100}"
+                "$value": "{sd.reference.color.scale.skyBlue.300}"
               },
               "third": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.blue.300}"
+                "$value": "{sd.reference.color.scale.blue.400}"
               },
               "fourth": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.blue.200}"
+                "$value": "{sd.reference.color.scale.skyBlue.200}"
               },
               "fifth": {
                 "$type": "color",

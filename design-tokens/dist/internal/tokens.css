@@ -21,10 +21,10 @@
 --web-system-color-mvShape-foreground-arc-thin: #FFE600;
 --web-system-color-mvShape-foreground-rectangle-oblong: #FCEBEA;
 --web-system-color-mvShape-foreground-rectangle-square: #FFE600;
---web-system-color-mvShape-background-arc-first: #9CE6EC;
---web-system-color-mvShape-background-arc-second: #D7DEFB;
+--web-system-color-mvShape-background-arc-first: #64CCD3;
+--web-system-color-mvShape-background-arc-second: #BFCEFC;
 --web-system-color-mvShape-background-arc-third: #98E1C8;
---web-system-color-mvShape-background-arc-fourth: #EFEEEB;
+--web-system-color-mvShape-background-arc-fourth: #D9D8D3;
 --web-system-color-mvShape-background-arc-fifth: #64CCD3;
 --web-system-color-articleFigure-foreground-primary: #64CCD3;
 --web-system-color-articleFigure-foreground-secondary: #CC9FD9;
@@ -112,8 +112,8 @@
 --web-system-color-mvShape-foreground-rectangle-oblong: #FCEBEA;
 --web-system-color-mvShape-foreground-rectangle-square: #FFE600;
 --web-system-color-mvShape-background-arc-first: #F190B4;
---web-system-color-mvShape-background-arc-second: #FCD6D3;
---web-system-color-mvShape-background-arc-third: #F5C1D1;
+--web-system-color-mvShape-background-arc-second: #FDB9B4;
+--web-system-color-mvShape-background-arc-third: #F190B4;
 --web-system-color-mvShape-background-arc-fourth: #FCD6D3;
 --web-system-color-mvShape-background-arc-fifth: #F190B4;
 --web-system-color-articleFigure-foreground-primary: #F190B4;
@@ -142,9 +142,9 @@
 --web-system-color-mvShape-foreground-rectangle-oblong: #FCEBEA;
 --web-system-color-mvShape-foreground-rectangle-square: #FFE600;
 --web-system-color-mvShape-background-arc-first: #8FAEFE;
---web-system-color-mvShape-background-arc-second: #D9F6FC;
---web-system-color-mvShape-background-arc-third: #BFCEFC;
---web-system-color-mvShape-background-arc-fourth: #D7DEFB;
+--web-system-color-mvShape-background-arc-second: #9CE6EC;
+--web-system-color-mvShape-background-arc-third: #8FAEFE;
+--web-system-color-mvShape-background-arc-fourth: #C3EFF4;
 --web-system-color-mvShape-background-arc-fifth: #8FAEFE;
 --web-system-color-articleFigure-foreground-primary: #8FAEFE;
 --web-system-color-articleFigure-foreground-secondary: #64CCD3;
