@@ -78,16 +78,16 @@ export default {
                   "background": {
                     "arc": {
                       "first": {
-                        "value": "#9CE6EC"
+                        "value": "#64CCD3"
                       },
                       "second": {
-                        "value": "#D7DEFB"
+                        "value": "#BFCEFC"
                       },
                       "third": {
                         "value": "#98E1C8"
                       },
                       "fourth": {
-                        "value": "#EFEEEB"
+                        "value": "#D9D8D3"
                       },
                       "fifth": {
                         "value": "#64CCD3"
@@ -435,10 +435,10 @@ export default {
                         "value": "#F190B4"
                       },
                       "second": {
-                        "value": "#FCD6D3"
+                        "value": "#FDB9B4"
                       },
                       "third": {
-                        "value": "#F5C1D1"
+                        "value": "#F190B4"
                       },
                       "fourth": {
                         "value": "#FCD6D3"
@@ -552,13 +552,13 @@ export default {
                   "value": "#8FAEFE"
                 },
                 "second": {
-                  "value": "#D9F6FC"
+                  "value": "#9CE6EC"
                 },
                 "third": {
-                  "value": "#BFCEFC"
+                  "value": "#8FAEFE"
                 },
                 "fourth": {
-                  "value": "#D7DEFB"
+                  "value": "#C3EFF4"
                 },
                 "fifth": {
                   "value": "#8FAEFE"
