@@ -7,17 +7,12 @@ description: 関連するコンテンツを列挙し、ユーザーが展開・�
 import Code from "@/layouts/Code.astro";
 import { TypeSample } from "@/sampleCode/Accordion/TypeSample";
 import typeSampleRaw from "@/sampleCode/Accordion/TypeSample.tsx?raw";
-import SectionPage from "@/components/SectionPage.astro";
 
-<SectionPage name="index">
-  <Code
-    title="バリエーション"
-    description="アコーディオンの展開状態を示すアイコンの位置 (行末または行頭) を選ぶことができます。実装時にはAccordionGroupを併用してください。"
-    code={typeSampleRaw}
-    storyPath="/story/components-accordion--default"
-  >
-    <TypeSample client:load />
-  </Code>
-</SectionPage>
-
-<SectionPage name="guideline">ガイドラインページです</SectionPage>
+<Code
+  title="バリエーション"
+  description="アコーディオンの展開状態を示すアイコンの位置 (行末または行頭) を選ぶことができます。実装時にはAccordionGroupを併用してください。"
+  code={typeSampleRaw}
+  storyPath="/story/components-accordion--default"
+>
+  <TypeSample client:load />
+</Code>
