@@ -1,7 +1,7 @@
 ---
 title: Avatar
 componentName: アバター
-description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+description: ユーザーについて視覚的に表現するコンポーネントです。
 ---
 
 import Code from "@/layouts/Code.astro";
@@ -9,11 +9,10 @@ import { SizeSample } from "@/sampleCode/Avatar/SizeSample";
 import sizeSampleRaw from "@/sampleCode/Avatar/SizeSample.tsx?raw";
 import { TypeSample } from "@/sampleCode/Avatar/TypeSample";
 import typeSampleRaw from "@/sampleCode/Avatar/TypeSample.tsx?raw";
-import SectionPage from "@/components/SectionPage.astro";
 
 <Code
-  title="Size"
-  description="説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります"
+  title="サイズ"
+  description="3種類のサイズから選択できます。"
   code={sizeSampleRaw}
   storyPath="/story/components-avatar--text&args=size:small"
 >
@@ -21,8 +20,8 @@ import SectionPage from "@/components/SectionPage.astro";
 </Code>
 
 <Code
-  title="Types"
-  description="説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります"
+  title="バリエーション"
+  description="任意の画像やテキストをアバターとして使用できます。特に画像をアバターとする場合は、初期値としてプレースホルダーを適切に設定してください。"
   code={typeSampleRaw}
   storyPath="/docs/components-avatar--docs"
 >
