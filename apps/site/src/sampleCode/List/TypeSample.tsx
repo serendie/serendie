@@ -11,7 +11,7 @@ export function TypeSample() {
         </List>
       </Dd>
 
-      <Dt>Heading Icon</Dt>
+      <Dt>Left Icon</Dt>
       <Dd>
         <List>
           <ListItem title="リストタイトル" leftIcon="texture" />
@@ -31,7 +31,7 @@ export function TypeSample() {
         </List>
       </Dd>
 
-      <Dt>Large Heading Icon</Dt>
+      <Dt>Large Left Icon</Dt>
       <Dd>
         <List>
           <ListItem title="リストタイトル" leftIcon="texture" isLargeLeftIcon />
@@ -52,7 +52,7 @@ export function TypeSample() {
         </List>
       </Dd>
 
-      <Dt>Trailing Icon</Dt>
+      <Dt>Right Icon</Dt>
       <Dd>
         <List>
           <ListItem title="リストタイトル" rightIcon="chevron_right" />
