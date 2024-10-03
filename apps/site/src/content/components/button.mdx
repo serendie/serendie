@@ -1,7 +1,7 @@
 ---
 title: Button
 componentName: ボタン
-description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+description: アクションをトリガーするためのクリック可能なコンポーネントです。
 ---
 
 import Code from "@/layouts/Code.astro";
@@ -15,7 +15,7 @@ import { StateSample } from "@/sampleCode/Button/StateSample";
 
 <Code
   title="サイズ"
-  description="ButtonのサイズはSmallとMediumの2種類あります。SmallはPCなどの大きな画面でマウス操作をする前提で使用することを推奨しています。また、Mediumは画面サイズにかかわらず使用できますが、スマートフォンなどの画面では基本サイズになります。"
+  description="SmallとMediumの2種類があります。SmallはPCなどの大きな画面でマウス操作をする前提で使用することを推奨しており、モバイルなどタッチデバイスでは非推奨です。Mediumは画面サイズにかかわらず使用できます。"
   code={sizeSampleRaw}
   storyPath="/story/components-button--medium"
 >
@@ -24,7 +24,7 @@ import { StateSample } from "@/sampleCode/Button/StateSample";
 
 <Code
   title="バリエーション"
-  description="4種類から用途に合わせて使い分けをします。それぞれの用途はガイドラインを参照してください。"
+  description="4種類のバリエーションがあり、アクションの重要度に応じて使い分けてください。サブミットなど重要度が高いアクションにはFilledを使用し、キャンセルなどその他のアクションにはGhostやOutlinedを使用することが推奨されます。そのため、同一画面内に複数のFilledボタンを並べることは非推奨です。"
   code={typeSampleRaw}
   storyPath="/story/components-button--outlined"
 >
@@ -32,8 +32,8 @@ import { StateSample } from "@/sampleCode/Button/StateSample";
 </Code>
 
 <Code
-  title="With Icon"
-  description="ラベルの左右にアイコンを入れることができます。ボタンの意図をより明確にユーザーに伝えることができます。"
+  title="アイコン付きボタン"
+  description="ラベルの左右にアイコンを入れることができます。ボタンがトリガーするアクションを視覚的にユーザーに伝えることができます。"
   code={iconSampleRaw}
   storyPath="/story/components-button--with-left-icon"
 >
@@ -42,7 +42,7 @@ import { StateSample } from "@/sampleCode/Button/StateSample";
 
 <Code
   title="状態"
-  description="状態はEnabled、Hovered、Focus Visible、Disabledがあります。"
+  description="バリエーションごとに5種類の状態があります。DisabledはTextFieldなど他のコンポーネントの状態と連動して使用してください。ボタン押下後にアクションを即座に処理できない場合は、Loadingを使いユーザーに待ち状態を伝えてください。"
   storyPath="/docs/components-button--docs"
 >
   <StateSample client:load />
