@@ -4,9 +4,14 @@ import { styled } from "styled-system/jsx";
 type IndexPageHeaderProps = {
   image: ImageMetadata;
   title: string;
+  description?: string;
 };
 
-const IndexPageHeader_ = ({ image, title }: IndexPageHeaderProps) => (
+const IndexPageHeader_ = ({
+  image,
+  title,
+  description,
+}: IndexPageHeaderProps) => (
   <div
     className={css({
       display: "grid",
@@ -14,20 +19,23 @@ const IndexPageHeader_ = ({ image, title }: IndexPageHeaderProps) => (
       alignItems: "center",
       gap: "sd.reference.dimension.scale.12",
       mb: "sd.reference.dimension.scale.18",
+      color: "web.system.color.component.background.onSurface",
       mdDown: {
         gridTemplateColumns: "1fr",
         gap: "sd.reference.dimension.scale.threeExtraLarge",
       },
     })}
   >
-    <h2
-      className={css({
-        color: "sd.reference.color.scale.blue.900",
-        textStyle: "sd.system.typography.display.medium_compact",
-      })}
-    >
-      {title}
-    </h2>
+    <div>
+      <h2
+        className={css({
+          textStyle: "sd.system.typography.display.medium_compact",
+        })}
+      >
+        {title}
+      </h2>
+      {description && <p>{description}</p>}
+    </div>
     <img
       src={image.src}
       alt={""}

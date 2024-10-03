@@ -2,3 +2,255 @@
 title: Typography
 slug: foundations/typography
 ---
+
+import { styled } from "styled-system/jsx";
+import Illustration from "../../../assets/hearderImages/about.svg";
+import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
+import PageHeadLine from "../../../components/PageHeadLine.astro";
+import {
+  PageMain,
+  PageSection,
+  PageAside,
+  PageHeader,
+  PageLinks,
+  PageA,
+  PageARef,
+} from "../../../components/PageLayout.tsx";
+import StickySideNav from "../../../components/StickySideNav.astro";
+import { css } from "styled-system/css";
+
+export const FontFigureWrapper = styled("figure", {
+  base: {
+    px: "24px",
+    pt: "20px",
+    pb: "0px",
+    bg: "web.system.color.impression.tertiary",
+    overflow: "hidden",
+  },
+});
+
+export const FontFigureTitle = styled("h2", {
+  base: {
+    fontSize: "13px",
+    fontFamily: "var(--global-font-mono)",
+    color: "sd.system.color.impression.primary",
+    mt: "sd.system.dimension.spacing.extraSmall",
+    lineHeight: "1",
+  },
+});
+
+export const FontFigureDescription = styled("h2", {
+  base: {
+    color: "web.system.color.component.background.onSurface",
+    mt: "sd.system.dimension.spacing.extraSmall",
+    textWrap: "nowrap",
+    mb: "20px",
+  },
+  variants: {
+    isDefault: {
+      true: {
+        fontSize: "26px",
+      },
+    },
+    isMono: {
+      true: {
+        fontFamily: "var(--global-font-mono)",
+      },
+    },
+    isBold: {
+      true: {
+        fontWeight: "bold",
+      },
+    },
+  },
+});
+
+<PageHeader>
+	<IndexPageHeader title={frontmatter.title} image={Illustration} description={'デジタルプロダクトは文字を中心に構成されるため、適切にタイポグラフィを扱うことは重要です。Serendie Design Systemでは、フォントやフォントサイズなどをリファレンストークンとし、UI上の役割に合わせてグループ化したシステムトークンを定義しています。'} />
+</PageHeader>
+<PageMain>
+	<PageSection>
+		<PageHeadLine number={1}>フォント</PageHeadLine>
+
+      Serendieブランドでは、欧文フォント「Roboto」、和文フォント「Noto Sans JP」を採用しています。Serendie Design Systemにおいてもそれを踏襲しつつ、等幅フォント「Noto Sans Mono」を追加しています。いずれのフォントもオープンソースであり、無償で商用利用可能です。
+
+      <FontFigureWrapper>
+        <FontFigureTitle>Noto Sans JP</FontFigureTitle>
+        <FontFigureDescription isDefault>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
+        <FontFigureTitle>Roboto</FontFigureTitle>
+        <FontFigureDescription isDefault>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</FontFigureDescription>
+        <FontFigureTitle>Noto Sans Mono</FontFigureTitle>
+        <FontFigureDescription isMono isDefault>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</FontFigureDescription>
+      </FontFigureWrapper>
+
+      ### CSSで利用する
+
+      Webアプリケーションにおいては<PageA href="https://fonts.google.com/specimen/Roboto">Google Fonts</PageA>などでWebフォントとして利用してください。Serendie UIにはバンドルされており、個別設定は不要です。詳しくはGet Startedを参照してください。
+
+      個別設定を行う場合は、CSSのfont-familyを下記を参考に記述してください。システムフォントへのフォールバックを適切に設定してください。
+
+      ### Figmaで利用する
+
+      Figmaではいずれのフォントもデフォルトで利用可能です。ただしFigmaでは和欧混植設定 (和文/欧文フォントの自動使い分け) がサポートされていないことに注意が必要です。現在のところSerendie Design Systemは、Figma上では**常にRobotoを指定することを推奨**しています。
+
+      Robotoは欧文フォントのため和文はサポートされていません。ただし、<PageA href="https://help.figma.com/hc/ja/articles/360040449673-%E4%B8%AD%E5%9B%BD%E8%AA%9E-%E6%97%A5%E6%9C%AC%E8%AA%9E-%E9%9F%93%E5%9B%BD%E8%AA%9E%E3%81%A7%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%82%92%E8%BF%BD%E5%8A%A0#font-fallback">Figmaのフォントフォールバック</PageA>により、サポートされない箇所にはNoto Sansが自動適用されます。これにより、特別なプラグイン無しで、RobotoとNoto Sansの和欧混植が実現できます。混植のための細かな設定はできませんが、運用性の高さを優先しています。
+
+    </PageSection>
+
+    <PageSection>
+    	<PageHeadLine number={2}>フォントサイズ</PageHeadLine>
+
+        フォントサイズ (font-size) は、可読性や視認性に大きく影響します。また見出しや本文など役割に応じて、フォントサイズを一貫させることや、サイズを変化させることでリズムを生むことも大切です。
+
+        Serendie Design Systemでは調和数列をベースにフォントサイズスケールを設計し、リファレンストークンとしています。デザイン上の使い勝手を考慮し、16px (medium) を基準としつつ、使用頻度の高いmedium未満 (10px〜14px) はスケール間隔を小さくし、ジャンプ率が求められるmedium以上 (18px〜64px) はスケール間隔を大きくしています。
+
+        ### 参考文献
+
+        <PageARef href="https://ekrits.jp/2020/02/3309/">Modular Scale</PageARef>
+
+    </PageSection>
+
+    <PageSection>
+    	<PageHeadLine number={3}>ウェイト</PageHeadLine>
+
+        見出しや文章内の強調など、視覚的・意味的に強弱をつけたいときはウェイト (font-weight) を変化させます。通常 (regular) と太字 (bold) の2種類をリファレンストークンとして定義しています。数値はregularを400、boldを700としています。
+
+
+        <FontFigureWrapper>
+          <FontFigureTitle>regular</FontFigureTitle>
+          <FontFigureDescription isDefault>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
+          <FontFigureTitle>bold</FontFigureTitle>
+          <FontFigureDescription isBold isDefault>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
+        </FontFigureWrapper>
+
+    </PageSection>
+
+    <PageSection>
+    	<PageHeadLine number={4}>行の高さ</PageHeadLine>
+
+        行ボックスの高さ (line-height) は、文章の可読性や印象に影響します。normal (160%) を基準とし、ゆったりとした印象を与えるrelaxed (180%)、逆に情報量を優先させるtight (140%)、ボタンなどラベルテキストでの使用を想定した none (100%)の4パターンをリファレンストークンとして定義しています。
+
+        ### Figmaでの利用上の注意
+
+        他と同様にFigmaではVariablesとして定義されていますが、現在のFigmaの仕様では、相対値を含むVariablesを行の高さに設定することができません。今後のアップデートで対応されると考え、現在のところVariablesを使わず直値指定で運用しています。
+
+    </PageSection>
+
+    <PageSection>
+    	<PageHeadLine number={4}>Roles</PageHeadLine>
+
+        タイポグラフィは、フォント、ウェイト、サイズ、行の高さなどをグループ化し、グループごとに見出し、タイトル、本文、ラベルなど、UI上の役割を持つことが特徴です。これらをシステムトークンとして定義しています。
+
+        ### Display
+
+        最も大きなフォントサイズを使用し、視覚的に印象付ける役割を持ちます。表現を重視するプロダクトにおいて、PCなど比較的大きなブラウザ幅で用います。Displayロールは、smallとmediumの2つのサイズを持ちます。
+
+        <FontFigureWrapper>
+          <FontFigureTitle>display.small</FontFigureTitle>
+          <FontFigureDescription className={css({
+            textStyle: 'sd.system.typography.display.small_expanded'
+          })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
+          <FontFigureTitle>display.medium</FontFigureTitle>
+          <FontFigureDescription className={css({
+            textStyle: 'sd.system.typography.display.medium_expanded'
+          })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
+        </FontFigureWrapper>
+
+        ### Headline
+
+        ページや文章を端的に表す大見出しとして用います。ブラウザ幅に関わらず利用頻度の高いロールです。Headlineロールは、small/medium/largeの3つのサイズを持ちます。
+
+        <FontFigureWrapper>
+          <FontFigureTitle>headline.small</FontFigureTitle>
+          <FontFigureDescription className={css({
+            textStyle: 'sd.system.typography.headline.small_expanded'
+          })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
+          <FontFigureTitle>headline.medium</FontFigureTitle>
+          <FontFigureDescription className={css({
+            textStyle: 'sd.system.typography.headline.medium_expanded'
+          })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
+          <FontFigureTitle>headline.large</FontFigureTitle>
+          <FontFigureDescription className={css({
+            textStyle: 'sd.system.typography.headline.large_expanded'
+          })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
+        </FontFigureWrapper>
+
+        ### Title
+
+        Headlineよりも小さめの小見出しとして用います。HeadlineやBodyとセットで使われることが多いため、デフォルトのウェイトを太くすることで強弱をつけています。extraSmall/small/medium/largeの4つのサイズを持ちます。
+
+        <FontFigureWrapper>
+          <FontFigureTitle>title.extraSmall</FontFigureTitle>
+          <FontFigureDescription className={css({
+            textStyle: 'sd.system.typography.title.extraSmall_expanded'
+          })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
+          <FontFigureTitle>title.small</FontFigureTitle>
+          <FontFigureDescription className={css({
+            textStyle: 'sd.system.typography.title.small_expanded'
+          })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
+          <FontFigureTitle>title.medium</FontFigureTitle>
+          <FontFigureDescription className={css({
+            textStyle: 'sd.system.typography.title.medium_expanded'
+          })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
+          <FontFigureTitle>title.large</FontFigureTitle>
+          <FontFigureDescription className={css({
+            textStyle: 'sd.system.typography.title.large_expanded'
+          })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
+        </FontFigureWrapper>
+
+
+        ### Body
+
+        複数行からなる本文として用います。extraSmall/small/medium/largeの4つのサイズを持ち、特にmediumサイズは、サイト全体のテキストの基準サイズとなります。extraSmallサイズのみ、複数行からなる補足文に使うことを想定しており、行の高さを狭め (tight) にしています。
+
+        <FontFigureWrapper>
+          <FontFigureTitle>body.extraSmall</FontFigureTitle>
+          <FontFigureDescription className={css({
+            textStyle: 'sd.system.typography.body.extraSmall_expanded'
+          })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。</FontFigureDescription>
+          <FontFigureTitle>body.small</FontFigureTitle>
+          <FontFigureDescription className={css({
+            textStyle: 'sd.system.typography.body.small_expanded'
+          })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。</FontFigureDescription>
+          <FontFigureTitle>body.medium</FontFigureTitle>
+          <FontFigureDescription className={css({
+            textStyle: 'sd.system.typography.body.medium_expanded'
+          })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。</FontFigureDescription>
+          <FontFigureTitle>body.large</FontFigureTitle>
+          <FontFigureDescription className={css({
+            textStyle: 'sd.system.typography.body.large_expanded'
+          })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。</FontFigureDescription>
+        </FontFigureWrapper>
+
+
+        ### Label
+
+        Buttonなどコンポーネント内のテキストや、入力フォームのラベルに用います。Labelはsmall/medium/large/extraLargeの4つのサイズを持ちます。いずれも行の高さは100% (none) にしており、単行を想定しています。文章が折り返されたり、改行が入る場合は、Bodyを使ってください。
+
+        <FontFigureWrapper>
+          <FontFigureTitle>label.small</FontFigureTitle>
+          <FontFigureDescription className={css({
+            textStyle: 'sd.system.typography.label.small_expanded'
+          })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。</FontFigureDescription>
+          <FontFigureTitle>label.medium</FontFigureTitle>
+          <FontFigureDescription className={css({
+            textStyle: 'sd.system.typography.label.medium_expanded'
+          })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。</FontFigureDescription>
+          <FontFigureTitle>label.large</FontFigureTitle>
+          <FontFigureDescription className={css({
+            textStyle: 'sd.system.typography.label.large_expanded'
+          })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。</FontFigureDescription>
+          <FontFigureTitle>label.extraLarge</FontFigureTitle>
+          <FontFigureDescription className={css({
+            textStyle: 'sd.system.typography.label.extraLarge_expanded'
+          })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。</FontFigureDescription>
+        </FontFigureWrapper>
+
+
+        ### Figmaでの利用上の注意
+
+        Figma Variablesはグループ化されたトークン (<PageA href="https://tr.designtokens.org/format/#composite-design-token">Composit Token</PageA>と呼ばれます) に現在対応していません。そのため、タイポグラフィのシステムトークンは**VariablesではなくText Stylesとして定義**しており、他と適用方法が異なることに注意してください。
+
+    </PageSection>
+
+</PageMain>
