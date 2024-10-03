@@ -1,7 +1,7 @@
 ---
 title: Text Field
 componentName: テキストフィールド
-description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+description: 1行のテキストを入力するためのコンポーネントです。Buttonなどと合わせてフォームを構成します。複数行にはTextAreaを使用してください。
 ---
 
 import Code from "@/layouts/Code.astro";
@@ -10,7 +10,7 @@ import stateSampleRaw from "@/sampleCode/TextField/StateSample.tsx?raw";
 
 <Code
   title="状態"
-  description="説明テキストが入ります"
+  description="4種類の状態があります。入力必須とする際はrequired propsを使用し、非活性とする際はdisabled propsを使用してください。"
   code={stateSampleRaw}
   storyPath="/story/components-textfield--basic"
 >
