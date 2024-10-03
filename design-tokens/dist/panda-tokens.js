@@ -4,6 +4,536 @@
  */
 
 export default {
+  "themes": {
+    "asagi": {
+      "tokens": {
+        "colors": {
+          "sd": {
+            "system": {
+              "color": {
+                "impression": {
+                  "primary": {
+                    "value": "#00757E"
+                  },
+                  "onPrimary": {
+                    "value": "#FFFFFF"
+                  },
+                  "primaryContainer": {
+                    "value": "#00757E"
+                  },
+                  "onPrimaryContainer": {
+                    "value": "#FFFFFF"
+                  },
+                  "secondary": {
+                    "value": "#AEEAD5"
+                  },
+                  "onSecondary": {
+                    "value": "#000000"
+                  },
+                  "secondaryContainer": {
+                    "value": "#AEEAD5"
+                  },
+                  "onSecondaryContainer": {
+                    "value": "#000000"
+                  },
+                  "tertiary": {
+                    "value": "#EFEEEB"
+                  },
+                  "onTertiary": {
+                    "value": "#000000"
+                  },
+                  "tertiaryContainer": {
+                    "value": "#EFEEEB"
+                  },
+                  "onTertiaryContainer": {
+                    "value": "#000000"
+                  },
+                  "notice": {
+                    "value": "#FFE600"
+                  },
+                  "onNotice": {
+                    "value": "#000000"
+                  },
+                  "noticeContainer": {
+                    "value": "#FFE600"
+                  },
+                  "onNoticeContainer": {
+                    "value": "#000000"
+                  },
+                  "negative": {
+                    "value": "#CE0037"
+                  },
+                  "onNegative": {
+                    "value": "#FFFFFF"
+                  },
+                  "negativeContainer": {
+                    "value": "#FCD6D3"
+                  },
+                  "onNegativeContainer": {
+                    "value": "#000000"
+                  },
+                  "positive": {
+                    "value": "#40A683"
+                  },
+                  "onPositive": {
+                    "value": "#FFFFFF"
+                  },
+                  "positiveContainer": {
+                    "value": "#40A683"
+                  },
+                  "onPositiveContainer": {
+                    "value": "#FFFFFF"
+                  }
+                },
+                "component": {
+                  "surface": {
+                    "value": "#FFFFFF"
+                  },
+                  "onSurface": {
+                    "value": "#000000"
+                  },
+                  "onSurfaceVariant": {
+                    "value": "#8C8B87"
+                  },
+                  "inverseSurface": {
+                    "value": "#232322"
+                  },
+                  "inverseOnSurface": {
+                    "value": "#FFFFFF"
+                  },
+                  "outline": {
+                    "value": "#C8C7C2"
+                  },
+                  "outlineVariant": {
+                    "value": "#8C8B87"
+                  },
+                  "scrim": {
+                    "value": "#00000033"
+                  }
+                },
+                "interaction": {
+                  "disabled": {
+                    "value": "#EFEEEB"
+                  },
+                  "disabledOnSurface": {
+                    "value": "#AFAEAA"
+                  },
+                  "selectedSurface": {
+                    "value": "#AEEAD5"
+                  },
+                  "hovered": {
+                    "value": "#00000033"
+                  },
+                  "hoveredVariant": {
+                    "value": "#0000000D"
+                  },
+                  "hoveredOnPrimary": {
+                    "value": "#FFFFFF99"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "kurikawa": {
+      "tokens": {
+        "colors": {
+          "sd": {
+            "system": {
+              "color": {
+                "impression": {
+                  "primary": {
+                    "value": "#803510"
+                  },
+                  "onPrimary": {
+                    "value": "#FFFFFF"
+                  },
+                  "primaryContainer": {
+                    "value": "#803510"
+                  },
+                  "onPrimaryContainer": {
+                    "value": "#FFFFFF"
+                  },
+                  "secondary": {
+                    "value": "#F7C6B0"
+                  },
+                  "onSecondary": {
+                    "value": "#000000"
+                  },
+                  "secondaryContainer": {
+                    "value": "#F7C6B0"
+                  },
+                  "onSecondaryContainer": {
+                    "value": "#000000"
+                  },
+                  "tertiary": {
+                    "value": "#F7EDE2"
+                  },
+                  "onTertiary": {
+                    "value": "#000000"
+                  },
+                  "tertiaryContainer": {
+                    "value": "#F7EDE2"
+                  },
+                  "onTertiaryContainer": {
+                    "value": "#000000"
+                  },
+                  "notice": {
+                    "value": "#FFE600"
+                  },
+                  "onNotice": {
+                    "value": "#000000"
+                  },
+                  "noticeContainer": {
+                    "value": "#FFE600"
+                  },
+                  "onNoticeContainer": {
+                    "value": "#000000"
+                  },
+                  "negative": {
+                    "value": "#CE0037"
+                  },
+                  "onNegative": {
+                    "value": "#FFFFFF"
+                  },
+                  "negativeContainer": {
+                    "value": "#FCD6D3"
+                  },
+                  "onNegativeContainer": {
+                    "value": "#000000"
+                  },
+                  "positive": {
+                    "value": "#40A683"
+                  },
+                  "onPositive": {
+                    "value": "#FFFFFF"
+                  },
+                  "positiveContainer": {
+                    "value": "#40A683"
+                  },
+                  "onPositiveContainer": {
+                    "value": "#FFFFFF"
+                  }
+                },
+                "component": {
+                  "surface": {
+                    "value": "#FFFFFF"
+                  },
+                  "onSurface": {
+                    "value": "#000000"
+                  },
+                  "onSurfaceVariant": {
+                    "value": "#8C8B87"
+                  },
+                  "inverseSurface": {
+                    "value": "#232322"
+                  },
+                  "inverseOnSurface": {
+                    "value": "#FFFFFF"
+                  },
+                  "outline": {
+                    "value": "#C8C7C2"
+                  },
+                  "outlineVariant": {
+                    "value": "#8C8B87"
+                  },
+                  "scrim": {
+                    "value": "#00000033"
+                  }
+                },
+                "interaction": {
+                  "disabled": {
+                    "value": "#EFEEEB"
+                  },
+                  "disabledOnSurface": {
+                    "value": "#AFAEAA"
+                  },
+                  "selectedSurface": {
+                    "value": "#F7C6B0"
+                  },
+                  "hovered": {
+                    "value": "#00000033"
+                  },
+                  "hoveredVariant": {
+                    "value": "#0000000D"
+                  },
+                  "hoveredOnPrimary": {
+                    "value": "#FFFFFF99"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "sumire": {
+      "tokens": {
+        "colors": {
+          "sd": {
+            "system": {
+              "color": {
+                "impression": {
+                  "primary": {
+                    "value": "#733B85"
+                  },
+                  "onPrimary": {
+                    "value": "#FFFFFF"
+                  },
+                  "primaryContainer": {
+                    "value": "#733B85"
+                  },
+                  "onPrimaryContainer": {
+                    "value": "#FFFFFF"
+                  },
+                  "secondary": {
+                    "value": "#DCBDE4"
+                  },
+                  "onSecondary": {
+                    "value": "#000000"
+                  },
+                  "secondaryContainer": {
+                    "value": "#DCBDE4"
+                  },
+                  "onSecondaryContainer": {
+                    "value": "#000000"
+                  },
+                  "tertiary": {
+                    "value": "#073165"
+                  },
+                  "onTertiary": {
+                    "value": "#FFFFFF"
+                  },
+                  "tertiaryContainer": {
+                    "value": "#073165"
+                  },
+                  "onTertiaryContainer": {
+                    "value": "#FFFFFF"
+                  },
+                  "notice": {
+                    "value": "#FFE600"
+                  },
+                  "onNotice": {
+                    "value": "#000000"
+                  },
+                  "noticeContainer": {
+                    "value": "#FFE600"
+                  },
+                  "onNoticeContainer": {
+                    "value": "#000000"
+                  },
+                  "negative": {
+                    "value": "#CE0037"
+                  },
+                  "onNegative": {
+                    "value": "#FFFFFF"
+                  },
+                  "negativeContainer": {
+                    "value": "#FCD6D3"
+                  },
+                  "onNegativeContainer": {
+                    "value": "#000000"
+                  },
+                  "positive": {
+                    "value": "#40A683"
+                  },
+                  "onPositive": {
+                    "value": "#FFFFFF"
+                  },
+                  "positiveContainer": {
+                    "value": "#40A683"
+                  },
+                  "onPositiveContainer": {
+                    "value": "#FFFFFF"
+                  }
+                },
+                "component": {
+                  "surface": {
+                    "value": "#FFFFFF"
+                  },
+                  "onSurface": {
+                    "value": "#000000"
+                  },
+                  "onSurfaceVariant": {
+                    "value": "#8C8B87"
+                  },
+                  "inverseSurface": {
+                    "value": "#232322"
+                  },
+                  "inverseOnSurface": {
+                    "value": "#FFFFFF"
+                  },
+                  "outline": {
+                    "value": "#C8C7C2"
+                  },
+                  "outlineVariant": {
+                    "value": "#8C8B87"
+                  },
+                  "scrim": {
+                    "value": "#00000033"
+                  }
+                },
+                "interaction": {
+                  "disabled": {
+                    "value": "#EFEEEB"
+                  },
+                  "disabledOnSurface": {
+                    "value": "#AFAEAA"
+                  },
+                  "selectedSurface": {
+                    "value": "#DCBDE4"
+                  },
+                  "hovered": {
+                    "value": "#00000033"
+                  },
+                  "hoveredVariant": {
+                    "value": "#0000000D"
+                  },
+                  "hoveredOnPrimary": {
+                    "value": "#FFFFFF99"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "tsutsuji": {
+      "tokens": {
+        "colors": {
+          "sd": {
+            "system": {
+              "color": {
+                "impression": {
+                  "primary": {
+                    "value": "#B9336B"
+                  },
+                  "onPrimary": {
+                    "value": "#FFFFFF"
+                  },
+                  "primaryContainer": {
+                    "value": "#F5C1D1"
+                  },
+                  "onPrimaryContainer": {
+                    "value": "#000000"
+                  },
+                  "secondary": {
+                    "value": "#F6D7E0"
+                  },
+                  "onSecondary": {
+                    "value": "#000000"
+                  },
+                  "secondaryContainer": {
+                    "value": "#F6D7E0"
+                  },
+                  "onSecondaryContainer": {
+                    "value": "#000000"
+                  },
+                  "tertiary": {
+                    "value": "#401026"
+                  },
+                  "onTertiary": {
+                    "value": "#FFFFFF"
+                  },
+                  "tertiaryContainer": {
+                    "value": "#401026"
+                  },
+                  "onTertiaryContainer": {
+                    "value": "#FFFFFF"
+                  },
+                  "notice": {
+                    "value": "#FFE600"
+                  },
+                  "onNotice": {
+                    "value": "#000000"
+                  },
+                  "noticeContainer": {
+                    "value": "#FFE600"
+                  },
+                  "onNoticeContainer": {
+                    "value": "#000000"
+                  },
+                  "negative": {
+                    "value": "#CE0037"
+                  },
+                  "onNegative": {
+                    "value": "#FFFFFF"
+                  },
+                  "negativeContainer": {
+                    "value": "#FCD6D3"
+                  },
+                  "onNegativeContainer": {
+                    "value": "#000000"
+                  },
+                  "positive": {
+                    "value": "#40A683"
+                  },
+                  "onPositive": {
+                    "value": "#FFFFFF"
+                  },
+                  "positiveContainer": {
+                    "value": "#40A683"
+                  },
+                  "onPositiveContainer": {
+                    "value": "#FFFFFF"
+                  }
+                },
+                "component": {
+                  "surface": {
+                    "value": "#FFFFFF"
+                  },
+                  "onSurface": {
+                    "value": "#000000"
+                  },
+                  "onSurfaceVariant": {
+                    "value": "#8C8B87"
+                  },
+                  "inverseSurface": {
+                    "value": "#232322"
+                  },
+                  "inverseOnSurface": {
+                    "value": "#FFFFFF"
+                  },
+                  "outline": {
+                    "value": "#C8C7C2"
+                  },
+                  "outlineVariant": {
+                    "value": "#8C8B87"
+                  },
+                  "scrim": {
+                    "value": "#00000033"
+                  }
+                },
+                "interaction": {
+                  "disabled": {
+                    "value": "#EFEEEB"
+                  },
+                  "disabledOnSurface": {
+                    "value": "#AFAEAA"
+                  },
+                  "selectedSurface": {
+                    "value": "#F6D7E0"
+                  },
+                  "hovered": {
+                    "value": "#00000033"
+                  },
+                  "hoveredVariant": {
+                    "value": "#0000000D"
+                  },
+                  "hoveredOnPrimary": {
+                    "value": "#FFFFFF99"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
   "colors": {
     "sd": {
       "reference": {
@@ -224,16 +754,16 @@ export default {
             },
             "skyBlue": {
               "100": {
-                "value": "#CCF7FC"
+                "value": "#D9F6FC"
               },
               "200": {
-                "value": "#99F1FA"
+                "value": "#C3EFF4"
               },
               "300": {
-                "value": "#63E3EE"
+                "value": "#9CE6EC"
               },
               "400": {
-                "value": "#03C5D3"
+                "value": "#64CCD3"
               },
               "500": {
                 "value": "#00A3AF"
@@ -1161,536 +1691,6 @@ export default {
                 "fontWeight": 400,
                 "fontFamily": "inherit",
                 "lineHeight": 1
-              }
-            }
-          }
-        }
-      }
-    }
-  },
-  "themes": {
-    "asagi": {
-      "tokens": {
-        "colors": {
-          "sd": {
-            "system": {
-              "color": {
-                "impression": {
-                  "primary": {
-                    "value": "#00757E"
-                  },
-                  "onPrimary": {
-                    "value": "#FFFFFF"
-                  },
-                  "primaryContainer": {
-                    "value": "#00757E"
-                  },
-                  "onPrimaryContainer": {
-                    "value": "#FFFFFF"
-                  },
-                  "secondary": {
-                    "value": "#AEEAD5"
-                  },
-                  "onSecondary": {
-                    "value": "#000000"
-                  },
-                  "secondaryContainer": {
-                    "value": "#AEEAD5"
-                  },
-                  "onSecondaryContainer": {
-                    "value": "#000000"
-                  },
-                  "tertiary": {
-                    "value": "#EFEEEB"
-                  },
-                  "onTertiary": {
-                    "value": "#000000"
-                  },
-                  "tertiaryContainer": {
-                    "value": "#EFEEEB"
-                  },
-                  "onTertiaryContainer": {
-                    "value": "#000000"
-                  },
-                  "notice": {
-                    "value": "#FFE600"
-                  },
-                  "onNotice": {
-                    "value": "#000000"
-                  },
-                  "noticeContainer": {
-                    "value": "#FFE600"
-                  },
-                  "onNoticeContainer": {
-                    "value": "#000000"
-                  },
-                  "negative": {
-                    "value": "#CE0037"
-                  },
-                  "onNegative": {
-                    "value": "#FFFFFF"
-                  },
-                  "negativeContainer": {
-                    "value": "#FCD6D3"
-                  },
-                  "onNegativeContainer": {
-                    "value": "#000000"
-                  },
-                  "positive": {
-                    "value": "#40A683"
-                  },
-                  "onPositive": {
-                    "value": "#FFFFFF"
-                  },
-                  "positiveContainer": {
-                    "value": "#40A683"
-                  },
-                  "onPositiveContainer": {
-                    "value": "#FFFFFF"
-                  }
-                },
-                "component": {
-                  "surface": {
-                    "value": "#FFFFFF"
-                  },
-                  "onSurface": {
-                    "value": "#000000"
-                  },
-                  "onSurfaceVariant": {
-                    "value": "#8C8B87"
-                  },
-                  "inverseSurface": {
-                    "value": "#232322"
-                  },
-                  "inverseOnSurface": {
-                    "value": "#FFFFFF"
-                  },
-                  "outline": {
-                    "value": "#C8C7C2"
-                  },
-                  "outlineVariant": {
-                    "value": "#8C8B87"
-                  },
-                  "scrim": {
-                    "value": "#00000033"
-                  }
-                },
-                "interaction": {
-                  "disabled": {
-                    "value": "#EFEEEB"
-                  },
-                  "disabledOnSurface": {
-                    "value": "#AFAEAA"
-                  },
-                  "selectedSurface": {
-                    "value": "#AEEAD5"
-                  },
-                  "hovered": {
-                    "value": "#00000033"
-                  },
-                  "hoveredVariant": {
-                    "value": "#0000000D"
-                  },
-                  "hoveredOnPrimary": {
-                    "value": "#FFFFFF99"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "kurikawa": {
-      "tokens": {
-        "colors": {
-          "sd": {
-            "system": {
-              "color": {
-                "impression": {
-                  "primary": {
-                    "value": "#803510"
-                  },
-                  "onPrimary": {
-                    "value": "#FFFFFF"
-                  },
-                  "primaryContainer": {
-                    "value": "#803510"
-                  },
-                  "onPrimaryContainer": {
-                    "value": "#FFFFFF"
-                  },
-                  "secondary": {
-                    "value": "#F7C6B0"
-                  },
-                  "onSecondary": {
-                    "value": "#000000"
-                  },
-                  "secondaryContainer": {
-                    "value": "#F7C6B0"
-                  },
-                  "onSecondaryContainer": {
-                    "value": "#000000"
-                  },
-                  "tertiary": {
-                    "value": "#F7EDE2"
-                  },
-                  "onTertiary": {
-                    "value": "#000000"
-                  },
-                  "tertiaryContainer": {
-                    "value": "#F7EDE2"
-                  },
-                  "onTertiaryContainer": {
-                    "value": "#000000"
-                  },
-                  "notice": {
-                    "value": "#FFE600"
-                  },
-                  "onNotice": {
-                    "value": "#000000"
-                  },
-                  "noticeContainer": {
-                    "value": "#FFE600"
-                  },
-                  "onNoticeContainer": {
-                    "value": "#000000"
-                  },
-                  "negative": {
-                    "value": "#CE0037"
-                  },
-                  "onNegative": {
-                    "value": "#FFFFFF"
-                  },
-                  "negativeContainer": {
-                    "value": "#FCD6D3"
-                  },
-                  "onNegativeContainer": {
-                    "value": "#000000"
-                  },
-                  "positive": {
-                    "value": "#40A683"
-                  },
-                  "onPositive": {
-                    "value": "#FFFFFF"
-                  },
-                  "positiveContainer": {
-                    "value": "#40A683"
-                  },
-                  "onPositiveContainer": {
-                    "value": "#FFFFFF"
-                  }
-                },
-                "component": {
-                  "surface": {
-                    "value": "#FFFFFF"
-                  },
-                  "onSurface": {
-                    "value": "#000000"
-                  },
-                  "onSurfaceVariant": {
-                    "value": "#8C8B87"
-                  },
-                  "inverseSurface": {
-                    "value": "#232322"
-                  },
-                  "inverseOnSurface": {
-                    "value": "#FFFFFF"
-                  },
-                  "outline": {
-                    "value": "#C8C7C2"
-                  },
-                  "outlineVariant": {
-                    "value": "#8C8B87"
-                  },
-                  "scrim": {
-                    "value": "#00000033"
-                  }
-                },
-                "interaction": {
-                  "disabled": {
-                    "value": "#EFEEEB"
-                  },
-                  "disabledOnSurface": {
-                    "value": "#AFAEAA"
-                  },
-                  "selectedSurface": {
-                    "value": "#F7C6B0"
-                  },
-                  "hovered": {
-                    "value": "#00000033"
-                  },
-                  "hoveredVariant": {
-                    "value": "#0000000D"
-                  },
-                  "hoveredOnPrimary": {
-                    "value": "#FFFFFF99"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "sumire": {
-      "tokens": {
-        "colors": {
-          "sd": {
-            "system": {
-              "color": {
-                "impression": {
-                  "primary": {
-                    "value": "#733B85"
-                  },
-                  "onPrimary": {
-                    "value": "#FFFFFF"
-                  },
-                  "primaryContainer": {
-                    "value": "#733B85"
-                  },
-                  "onPrimaryContainer": {
-                    "value": "#FFFFFF"
-                  },
-                  "secondary": {
-                    "value": "#DCBDE4"
-                  },
-                  "onSecondary": {
-                    "value": "#000000"
-                  },
-                  "secondaryContainer": {
-                    "value": "#DCBDE4"
-                  },
-                  "onSecondaryContainer": {
-                    "value": "#000000"
-                  },
-                  "tertiary": {
-                    "value": "#073165"
-                  },
-                  "onTertiary": {
-                    "value": "#FFFFFF"
-                  },
-                  "tertiaryContainer": {
-                    "value": "#073165"
-                  },
-                  "onTertiaryContainer": {
-                    "value": "#FFFFFF"
-                  },
-                  "notice": {
-                    "value": "#FFE600"
-                  },
-                  "onNotice": {
-                    "value": "#000000"
-                  },
-                  "noticeContainer": {
-                    "value": "#FFE600"
-                  },
-                  "onNoticeContainer": {
-                    "value": "#000000"
-                  },
-                  "negative": {
-                    "value": "#CE0037"
-                  },
-                  "onNegative": {
-                    "value": "#FFFFFF"
-                  },
-                  "negativeContainer": {
-                    "value": "#FCD6D3"
-                  },
-                  "onNegativeContainer": {
-                    "value": "#000000"
-                  },
-                  "positive": {
-                    "value": "#40A683"
-                  },
-                  "onPositive": {
-                    "value": "#FFFFFF"
-                  },
-                  "positiveContainer": {
-                    "value": "#40A683"
-                  },
-                  "onPositiveContainer": {
-                    "value": "#FFFFFF"
-                  }
-                },
-                "component": {
-                  "surface": {
-                    "value": "#FFFFFF"
-                  },
-                  "onSurface": {
-                    "value": "#000000"
-                  },
-                  "onSurfaceVariant": {
-                    "value": "#8C8B87"
-                  },
-                  "inverseSurface": {
-                    "value": "#232322"
-                  },
-                  "inverseOnSurface": {
-                    "value": "#FFFFFF"
-                  },
-                  "outline": {
-                    "value": "#C8C7C2"
-                  },
-                  "outlineVariant": {
-                    "value": "#8C8B87"
-                  },
-                  "scrim": {
-                    "value": "#00000033"
-                  }
-                },
-                "interaction": {
-                  "disabled": {
-                    "value": "#EFEEEB"
-                  },
-                  "disabledOnSurface": {
-                    "value": "#AFAEAA"
-                  },
-                  "selectedSurface": {
-                    "value": "#DCBDE4"
-                  },
-                  "hovered": {
-                    "value": "#00000033"
-                  },
-                  "hoveredVariant": {
-                    "value": "#0000000D"
-                  },
-                  "hoveredOnPrimary": {
-                    "value": "#FFFFFF99"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "tsutsuji": {
-      "tokens": {
-        "colors": {
-          "sd": {
-            "system": {
-              "color": {
-                "impression": {
-                  "primary": {
-                    "value": "#B9336B"
-                  },
-                  "onPrimary": {
-                    "value": "#FFFFFF"
-                  },
-                  "primaryContainer": {
-                    "value": "#F5C1D1"
-                  },
-                  "onPrimaryContainer": {
-                    "value": "#000000"
-                  },
-                  "secondary": {
-                    "value": "#F6D7E0"
-                  },
-                  "onSecondary": {
-                    "value": "#000000"
-                  },
-                  "secondaryContainer": {
-                    "value": "#F6D7E0"
-                  },
-                  "onSecondaryContainer": {
-                    "value": "#000000"
-                  },
-                  "tertiary": {
-                    "value": "#401026"
-                  },
-                  "onTertiary": {
-                    "value": "#FFFFFF"
-                  },
-                  "tertiaryContainer": {
-                    "value": "#401026"
-                  },
-                  "onTertiaryContainer": {
-                    "value": "#FFFFFF"
-                  },
-                  "notice": {
-                    "value": "#FFE600"
-                  },
-                  "onNotice": {
-                    "value": "#000000"
-                  },
-                  "noticeContainer": {
-                    "value": "#FFE600"
-                  },
-                  "onNoticeContainer": {
-                    "value": "#000000"
-                  },
-                  "negative": {
-                    "value": "#CE0037"
-                  },
-                  "onNegative": {
-                    "value": "#FFFFFF"
-                  },
-                  "negativeContainer": {
-                    "value": "#FCD6D3"
-                  },
-                  "onNegativeContainer": {
-                    "value": "#000000"
-                  },
-                  "positive": {
-                    "value": "#40A683"
-                  },
-                  "onPositive": {
-                    "value": "#FFFFFF"
-                  },
-                  "positiveContainer": {
-                    "value": "#40A683"
-                  },
-                  "onPositiveContainer": {
-                    "value": "#FFFFFF"
-                  }
-                },
-                "component": {
-                  "surface": {
-                    "value": "#FFFFFF"
-                  },
-                  "onSurface": {
-                    "value": "#000000"
-                  },
-                  "onSurfaceVariant": {
-                    "value": "#8C8B87"
-                  },
-                  "inverseSurface": {
-                    "value": "#232322"
-                  },
-                  "inverseOnSurface": {
-                    "value": "#FFFFFF"
-                  },
-                  "outline": {
-                    "value": "#C8C7C2"
-                  },
-                  "outlineVariant": {
-                    "value": "#8C8B87"
-                  },
-                  "scrim": {
-                    "value": "#00000033"
-                  }
-                },
-                "interaction": {
-                  "disabled": {
-                    "value": "#EFEEEB"
-                  },
-                  "disabledOnSurface": {
-                    "value": "#AFAEAA"
-                  },
-                  "selectedSurface": {
-                    "value": "#F6D7E0"
-                  },
-                  "hovered": {
-                    "value": "#00000033"
-                  },
-                  "hoveredVariant": {
-                    "value": "#0000000D"
-                  },
-                  "hoveredOnPrimary": {
-                    "value": "#FFFFFF99"
-                  }
-                }
               }
             }
           }

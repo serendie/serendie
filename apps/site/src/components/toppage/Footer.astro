@@ -1,41 +1,40 @@
 ---
-import { styled } from "styled-system/jsx"
+import { styled } from "styled-system/jsx";
 
-
-const FooterWrapper = styled("footer",{
+const FooterWrapper = styled("footer", {
   base: {
     position: "relative",
     pt: 32,
     pb: 32,
     px: 24,
-    bg: 'sd.reference.color.scale.blue.800',
+    bg: "sd.reference.color.scale.blue.800",
     color: "white",
-    mt: 'calc(var(--radii-sd-system-dimension-radius-extra-large) * -1)',
+    mt: "calc(var(--radii-sd-system-dimension-radius-extra-large) * -1)",
     zIndex: 1,
-    borderTopRadius: 'sd.system.dimension.radius.extraLarge',
+    borderTopRadius: "sd.system.dimension.radius.extraLarge",
     expanded: {
       pt: 120,
       pb: 40,
       px: 0,
-    }
-  }
-})
-const FooterContainer = styled("div",{
+    },
+  },
+});
+const FooterContainer = styled("div", {
   base: {
     maxWidth: "calc(1640px + 240px)",
     margin: "0 auto",
     display: "grid",
     gridTemplateColumns: "repeat(2, 1fr)",
     gridTemplateRows: "auto auto",
-    rowGap: '40px',
+    rowGap: "40px",
     expanded: {
       gridTemplateColumns: "repeat(3, 1fr)",
       px: 120,
-      rowGap: '100px',
-    }
-  }
-})
-const FooterTitle = styled("div",{
+      rowGap: "100px",
+    },
+  },
+});
+const FooterTitle = styled("div", {
   base: {
     textStyle: "sd.system.typography.headline.large_expanded",
     fontSize: "24px",
@@ -44,46 +43,46 @@ const FooterTitle = styled("div",{
     expanded: {
       gridColumn: "1 / 2",
       textStyle: "sd.system.typography.headline.large_expanded",
-    }
-  }
-})
-const FooterLinks = styled("div",{
+    },
+  },
+});
+const FooterLinks = styled("div", {
   base: {
     display: "grid",
     gridColumn: "1 / 3",
     gridTemplateColumns: "repeat(2, 1fr)",
     gap: 16,
     textStyle: "sd.system.typography.body.extraSmall_expanded",
-    '& h2': {
+    "& h2": {
       textStyle: "sd.system.typography.title.small_expanded",
-      mb: '16px',
+      mb: "16px",
       expanded: {
-        mb: '24px',
-      }
+        mb: "24px",
+      },
     },
-    '& ul': {
+    "& ul": {
       listStyle: "none",
       padding: 0,
     },
     expanded: {
       gridColumn: "2 / 4",
       gridTemplateColumns: "repeat(5, 1fr)",
-    }
-  }
-})
+    },
+  },
+});
 
-const FooterLinksLi = styled("li",{
+const FooterLinksLi = styled("li", {
   base: {
     display: "none",
-    mb: '16px',
+    mb: "16px",
     expanded: {
       display: "block",
-      mb: '16px',
-    }
-  }
-})
+      mb: "16px",
+    },
+  },
+});
 
-const FooterCopyright = styled("div",{
+const FooterCopyright = styled("div", {
   base: {
     gridColumn: "1 / 4",
     textAlign: "left",
@@ -91,119 +90,121 @@ const FooterCopyright = styled("div",{
     expanded: {
       textAlign: "right",
       mt: 0,
-    }
-  }
-})
+    },
+  },
+});
 
 const footerLink = [
   {
-    "title": "About",
-    "links": [
+    title: "About",
+    links: [
       {
-        "title": "Serendie Design Systemとは",
-        "url": "#"
+        title: "Serendie Design Systemとは",
+        url: "#",
       },
       {
-        "title": "ニュース・イベント",
-        "url": "#"
+        title: "ニュース・イベント",
+        url: "#",
       },
       {
-        "title": "ミートアップ",
-        "url": "#"
+        title: "ミートアップ",
+        url: "#",
       },
       {
-        "title": "適用事例",
-        "url": "#"
-      }
-    ]
+        title: "適用事例",
+        url: "#",
+      },
+    ],
   },
   {
-    "title": "Get Started",
-    "links": [
+    title: "Get Started",
+    links: [
       {
-        "title": "スターターガイド",
-        "url": "#"
-      }
-    ]
+        title: "スターターガイド",
+        url: "#",
+      },
+    ],
   },
   {
-    "title": "Foundation",
-    "links": [
+    title: "Foundation",
+    links: [
       {
-        "title": "Design Token",
-        "url": "#"
+        title: "Design Token",
+        url: "#",
       },
       {
-        "title": "Color",
-        "url": "#"
+        title: "Color",
+        url: "#",
       },
       {
-        "title": "Design Token",
-        "url": "#"
+        title: "Design Token",
+        url: "#",
       },
       {
-        "title": "Theming",
-        "url": "#"
+        title: "Theming",
+        url: "#",
       },
       {
-        "title": "Typography",
-        "url": "#"
+        title: "Typography",
+        url: "#",
       },
       {
-        "title": "Dimension",
-        "url": "#"
+        title: "Dimension",
+        url: "#",
       },
       {
-        "title": "Elevation",
-        "url": "#"
-      }
-    ]
+        title: "Elevation",
+        url: "#",
+      },
+    ],
   },
   {
-    "title": "Components",
-    "links": [
+    title: "Components",
+    links: [
       {
-        "title": "コンポーネントとは",
-        "url": "#"
-      }
-    ]
+        title: "コンポーネントとは",
+        url: "#",
+      },
+    ],
   },
   {
-    "title": "Contribution",
-    "links": [
+    title: "Contribution",
+    links: [
       {
-        "title": "Figma",
-        "url": "#"
+        title: "Figma",
+        url: "#",
       },
       {
-        "title": "React",
-        "url": "#"
+        title: "React",
+        url: "#",
       },
       {
-        "title": "ドキュメント",
-        "url": "#"
-      }
-    ]
-  }
-]
+        title: "ドキュメント",
+        url: "#",
+      },
+    ],
+  },
+];
 ---
 
 <FooterWrapper>
   <FooterContainer>
     <FooterTitle><h1>Serendie Design System</h1></FooterTitle>
     <FooterLinks>
-      {footerLink.map((link) => (
-        <div>
-          <h2>{link.title}</h2>
-          <ul>
-            {link.links.map((item, index) => (
-              <FooterLinksLi>
-                <a href={item.url}>{item.title}</a> 
-              </FooterLinksLi>
-            ))}
-          </ul>
-        </div>
-      ))}
+      {
+        footerLink.map((link) => (
+          <div>
+            <h2>{link.title}</h2>
+            <ul>
+              {link.links.map((item, index) => (
+                <FooterLinksLi>
+                  <a href={item.url}>{item.title}</a>
+                </FooterLinksLi>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
     </FooterLinks>
     <FooterCopyright>© Mitsubishi Electric Corporation</FooterCopyright>
   </FooterContainer>

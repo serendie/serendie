@@ -1,0 +1,10 @@
+{
+  "api": "1.0.0",
+  "editorType": [
+    "figma"
+  ],
+  "id": "svg-export-with-design-tokens",
+  "name": "SVG Export with Design Tokens",
+  "main": "build/main.js",
+  "ui": "build/ui.js"
+}

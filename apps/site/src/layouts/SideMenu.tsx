@@ -19,7 +19,6 @@ const Sidebar = styled("aside", {
     borderRight: "solid",
     borderColor: "sd.system.color.component.outline",
     borderRightWidth: "sd.system.dimension.border.medium",
-    bg: "sd.reference.color.scale.blue.600",
     _before: {
       content: '""',
       position: "absolute",
@@ -28,7 +27,7 @@ const Sidebar = styled("aside", {
       w: "calc((100vw - 1440px) / 2)",
       minW: "80px",
       h: "100%",
-      bg: "sd.reference.color.scale.blue.600",
+      bg: "web.system.color.impression.primary",
       zIndex: -1,
     },
     smDown: {
@@ -38,6 +37,7 @@ const Sidebar = styled("aside", {
       px: "24px",
       justifyContent: "center",
     },
+    bg: "web.system.color.impression.primary",
   },
 });
 
@@ -65,10 +65,10 @@ export const SideMenuListItemLink = styled("a", {
     active: {
       true: {
         color: "sd.reference.color.scale.blue.100",
-        background: "sd.reference.color.scale.blue.700",
+        background: "web.system.color.impression.secondary",
         _hover: {
           background:
-            "color-mix(in srgb, {colors.sd.reference.color.scale.blue.700}, {colors.sd.system.color.interaction.hoveredVariant});",
+            "color-mix(in srgb, {colors.web.system.color.impression.secondary}, {colors.sd.system.color.interaction.hoveredVariant});",
         },
       },
     },

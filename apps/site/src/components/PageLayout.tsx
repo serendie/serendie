@@ -85,7 +85,7 @@ export const PageLinks = (props: PageFooterProps) => (
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g clip-path="url(#clip0_11335_3329)">
+              <g clipPath="url(#clip0_11335_3329)">
                 <path
                   d="M21.5 12.4989L14.827 19.1719L13.7827 18.1276L18.6462 13.2489L2.49048 13.2489L2.49048 11.7489L18.6365 11.7489L13.7577 6.87012L14.827 5.82587L21.5 12.4989Z"
                   fill="#073165" //TODO: use color token
