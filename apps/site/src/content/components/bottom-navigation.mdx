@@ -1,7 +1,7 @@
 ---
 title: Bottom Navigation
 componentName: ボトムナビゲーション
-description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+description: 画面下部に配置するモバイルやタブレット向けのグローバルなタブナビゲーションです。
 ---
 
 import Code from "@/layouts/Code.astro";
@@ -11,8 +11,8 @@ import { ItemSample } from "@/sampleCode/BottomNavigation/ItemSample";
 import itemSampleRaw from "@/sampleCode/BottomNavigation/ItemSample.tsx?raw";
 
 <Code
-  title="Sample"
-  description="説明テキストが入ります"
+  title="サンプル"
+  description="BottomNavigation内で、BottomNavigationItemを連ねて使用します。最大5タブ程度が目安です。それ以上になる場合は、Drawerなど別のナビゲーションを検討してください。"
   code={sampleRaw}
   storyPath="/story/components-bottomnavigation--default"
 >
@@ -20,8 +20,8 @@ import itemSampleRaw from "@/sampleCode/BottomNavigation/ItemSample.tsx?raw";
 </Code>
 
 <Code
-  title="Types"
-  description="説明テキストが入ります"
+  title="バリエーション"
+  description="BottomNavigationItemにはEnable状態とActive状態があります。またNotificationBadgeを組み合わせて使用できます。"
   code={itemSampleRaw}
   storyPath="/docs/components-bottomnavigation--docs"
 >

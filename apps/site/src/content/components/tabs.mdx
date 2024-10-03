@@ -1,7 +1,7 @@
 ---
 title: Tabs
 componentName: タブ
-description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+description: 複数のビューを切り替えるためのコンポーネントです。TopAppBarやBottomNavigationはグローバルなナビゲーションとして使用しますが、Tabsはローカルなナビゲーションであることに注意してください。
 ---
 
 import Code from "@/layouts/Code.astro";
@@ -12,8 +12,8 @@ import tabsNotificationSampleRaw from "@/sampleCode/Tabs/TabsNotificationSample.
 import { StateSample } from "@/sampleCode/Tabs/StateSample";
 
 <Code
-  title="Sample"
-  description="タブのサンプルコード"
+  title="サンプル"
+  description="Tabs内で、TabItemを連ねて使用します。"
   code={tabsSampleRaw}
   storyPath="/story/components-tabs--default"
 >
@@ -21,8 +21,8 @@ import { StateSample } from "@/sampleCode/Tabs/StateSample";
 </Code>
 
 <Code
-  title="With Notification Badge"
-  description="通知付きタブのサンプルコード"
+  title="バリエーション"
+  description="TabItemには通知バッジ付きのバリエーションがあります。"
   storyPath="/docs/components-tabs--docs"
   code={tabsNotificationSampleRaw}
 >
@@ -30,8 +30,8 @@ import { StateSample } from "@/sampleCode/Tabs/StateSample";
 </Code>
 
 <Code
-  title="States"
-  description="タブの状態一覧"
+  title="状態"
+  description="TabItemは計6種類の状態があります。非活性とする際はdisabled propsを使用してください。"
   storyPath="/docs/components-tabs--docs"
 >
   <StateSample client:load />

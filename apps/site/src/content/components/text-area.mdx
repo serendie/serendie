@@ -1,7 +1,7 @@
 ---
 title: Text Area
 componentName: テキストエリア
-description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+description: 複数行のテキストを入力するためのコンポーネントです。Buttonなどと合わせてフォームを構成します。
 ---
 
 import Code from "@/layouts/Code.astro";
@@ -9,8 +9,8 @@ import { StateSample } from "@/sampleCode/TextArea/StateSample";
 import stateSampleRaw from "@/sampleCode/TextArea/StateSample.tsx?raw";
 
 <Code
-  title="States"
-  description="説明テキストが入ります"
+  title="状態"
+  description="4種類の状態があります。入力必須とする際はrequired propsを使用し、非活性とする際はdisabled propsを使用してください。"
   code={stateSampleRaw}
   storyPath="/story/components-textarea--basic"
 >

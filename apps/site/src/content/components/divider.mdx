@@ -1,7 +1,7 @@
 ---
 title: Divider
 componentName: ディバイダー
-description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+description: 視覚的に区切るためのコンポーネントです。コンテナ内でコンテンツをグループ化する際にも使用します。
 ---
 
 import Code from "@/layouts/Code.astro";
@@ -11,8 +11,8 @@ import { TypeSample } from "@/sampleCode/Divider/TypeSample";
 import typeSampleRaw from "@/sampleCode/Divider/TypeSample.tsx?raw";
 
 <Code
-  title="Color"
-  description="ディバイダーの色を指定します。"
+  title="カラー"
+  description="視覚的な強弱に応じて使い分けてください。"
   code={colorSampleRaw}
   storyPath="/story/components-divider--horizontal"
 >
@@ -20,8 +20,8 @@ import typeSampleRaw from "@/sampleCode/Divider/TypeSample.tsx?raw";
 </Code>
 
 <Code
-  title="Types"
-  description="ディバイダーの種類を指定します。"
+  title="バリエーション"
+  description="水平と垂直の2種類があります。"
   storyPath="/story/components-divider--vertical"
 >
   <TypeSample client:load />

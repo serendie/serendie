@@ -1,7 +1,7 @@
 ---
 title: Select
 componentName: セレクト
-description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+description: 複数の選択肢を格納し、ユーザーは1つの選択肢を選ぶコンポーネントです。選択肢ではなくアクションを表示する場合は、DropdownMenuを使用してください。
 ---
 
 import Code from "@/layouts/Code.astro";
@@ -11,8 +11,8 @@ import { StateSample } from "@/sampleCode/Select/StateSample";
 import stateSampleRaw from "@/sampleCode/Select/StateSample.tsx?raw";
 
 <Code
-  title="Size"
-  description="サイズはSmall、Mediumの2種類あります。"
+  title="サイズ"
+  description="Small、Mediumの2種類があります。"
   code={sizeSampleRaw}
   storyPath="/story/components-select--basic"
 >
@@ -20,8 +20,8 @@ import stateSampleRaw from "@/sampleCode/Select/StateSample.tsx?raw";
 </Code>
 
 <Code
-  title="States"
-  description="状態はEnabled、Hovered、Focus、Disabled, Errorがあります。"
+  title="状態"
+  description="3種類の状態があります。エラー状態においては、エラーの詳細をメッセージ表示してください。"
   code={stateSampleRaw}
   storyPath="/docs/components-select--docs"
 >

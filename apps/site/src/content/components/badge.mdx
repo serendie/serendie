@@ -1,7 +1,7 @@
 ---
 title: Badge
 componentName: バッジ
-description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+description: ステータス、カテゴリなどを表すコンポーネントです。情報を簡潔に表示し、ユーザーの注意を引きつけます。
 ---
 
 import Code from "@/layouts/Code.astro";
@@ -13,8 +13,8 @@ import { CloseButtonSample } from "@/sampleCode/Badge/CloseButtonSample";
 import closeButtonSampleRaw from "@/sampleCode/Badge/CloseButtonSample.tsx?raw";
 
 <Code
-  title="Size"
-  description="サイズはSmall、Mediumの2種類あります。"
+  title="サイズ"
+  description="サイズはSmall, Medium, Largeの3種類があります。"
   code={sizeSampleRaw}
   storyPath="/story/components-badge--small"
 >
@@ -22,8 +22,8 @@ import closeButtonSampleRaw from "@/sampleCode/Badge/CloseButtonSample.tsx?raw";
 </Code>
 
 <Code
-  title="Color"
-  description="説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります"
+  title="カラー"
+  description="例外的にリファレンストークンを参照する形でカラーバリエーションを用意しています。"
   code={colorSampleRaw}
   storyPath="/docs/components-badge--docs"
 >
@@ -31,8 +31,8 @@ import closeButtonSampleRaw from "@/sampleCode/Badge/CloseButtonSample.tsx?raw";
 </Code>
 
 <Code
-  title="CloseButton"
-  description="説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります"
+  title="バリエーション"
+  description="BadgeCloseButtonを渡すことで、絞り込みUIなどでChipとして使用できます。"
   code={closeButtonSampleRaw}
   storyPath="/docs/components-badge--docs"
 >
