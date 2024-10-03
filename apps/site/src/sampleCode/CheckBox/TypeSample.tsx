@@ -6,13 +6,13 @@ export function TypeSample() {
     <Dl>
       <Dt>Single Line</Dt>
       <Dd>
-        <Checkbox label={"タイトルタイトル"} />
+        <Checkbox label={"タイトル"} />
       </Dd>
 
       <Dt>Multiple Line</Dt>
       <Dd>
         <Checkbox
-          label={"タイトルタイトル"}
+          label={"タイトル"}
           helperText="補足テキスト補足テキスト補足テキスト"
         />
       </Dd>
