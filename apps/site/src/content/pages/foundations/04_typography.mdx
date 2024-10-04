@@ -7,6 +7,7 @@ import { styled } from "styled-system/jsx";
 import Illustration from "../../../assets/hearderImages/about.svg";
 import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
 import PageHeadLine from "../../../components/PageHeadLine.astro";
+import CodeBox from "../../../layouts/CodeBox.astro";
 import {
   PageMain,
   PageSection,
@@ -24,7 +25,7 @@ export const FontFigureWrapper = styled("figure", {
     px: "24px",
     pt: "20px",
     pb: "0px",
-    bg: "web.system.color.impression.tertiary",
+    bg: "web.system.color.articleFigure.background",
     overflow: "hidden",
   },
 });
@@ -65,6 +66,10 @@ export const FontFigureDescription = styled("h2", {
   },
 });
 
+export const sampleCode = `body {
+  font-family: Roboto, "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
+}`;
+
 <PageHeader>
 	<IndexPageHeader title={frontmatter.title} image={Illustration} description={'デジタルプロダクトは文字を中心に構成されるため、適切にタイポグラフィを扱うことは重要です。Serendie Design Systemでは、フォントやフォントサイズなどをリファレンストークンとし、UI上の役割に合わせてグループ化したシステムトークンを定義しています。'} />
 </PageHeader>
@@ -88,6 +93,8 @@ export const FontFigureDescription = styled("h2", {
       Webアプリケーションにおいては<PageA href="https://fonts.google.com/specimen/Roboto">Google Fonts</PageA>などでWebフォントとして利用してください。Serendie UIにはバンドルされており、個別設定は不要です。詳しくはGet Startedを参照してください。
 
       個別設定を行う場合は、CSSのfont-familyを下記を参考に記述してください。システムフォントへのフォールバックを適切に設定してください。
+
+      <CodeBox code={sampleCode} language={'css'} client:idle />
 
       ### Figmaで利用する
 
@@ -148,11 +155,17 @@ export const FontFigureDescription = styled("h2", {
         <FontFigureWrapper>
           <FontFigureTitle>display.small</FontFigureTitle>
           <FontFigureDescription className={css({
-            textStyle: 'sd.system.typography.display.small_expanded'
+            textStyle: 'sd.system.typography.display.small_compact',
+            expanded: {
+              textStyle: 'sd.system.typography.display.small_expanded',
+            }
           })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
           <FontFigureTitle>display.medium</FontFigureTitle>
           <FontFigureDescription className={css({
-            textStyle: 'sd.system.typography.display.medium_expanded'
+            textStyle: 'sd.system.typography.display.medium_compact',
+            expanded: {
+              textStyle: 'sd.system.typography.display.medium_expanded',
+            }
           })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
         </FontFigureWrapper>
 
@@ -163,15 +176,24 @@ export const FontFigureDescription = styled("h2", {
         <FontFigureWrapper>
           <FontFigureTitle>headline.small</FontFigureTitle>
           <FontFigureDescription className={css({
-            textStyle: 'sd.system.typography.headline.small_expanded'
+            textStyle: 'sd.system.typography.headline.small_compact',
+            expanded: {
+              textStyle: 'sd.system.typography.headline.small_expanded',
+            }
           })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
           <FontFigureTitle>headline.medium</FontFigureTitle>
           <FontFigureDescription className={css({
-            textStyle: 'sd.system.typography.headline.medium_expanded'
+            textStyle: 'sd.system.typography.headline.medium_compact',
+            expanded: {
+              textStyle: 'sd.system.typography.headline.medium_expanded',
+            }
           })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
           <FontFigureTitle>headline.large</FontFigureTitle>
           <FontFigureDescription className={css({
-            textStyle: 'sd.system.typography.headline.large_expanded'
+            textStyle: 'sd.system.typography.headline.large_compact',
+            expanded: {
+              textStyle: 'sd.system.typography.headline.large_expanded',
+            }
           })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
         </FontFigureWrapper>
 
@@ -182,19 +204,31 @@ export const FontFigureDescription = styled("h2", {
         <FontFigureWrapper>
           <FontFigureTitle>title.extraSmall</FontFigureTitle>
           <FontFigureDescription className={css({
-            textStyle: 'sd.system.typography.title.extraSmall_expanded'
+            textStyle: 'sd.system.typography.title.extraSmall_compact',
+            expanded: {
+              textStyle: 'sd.system.typography.title.extraSmall_expanded',
+            }
           })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
           <FontFigureTitle>title.small</FontFigureTitle>
           <FontFigureDescription className={css({
-            textStyle: 'sd.system.typography.title.small_expanded'
+            textStyle: 'sd.system.typography.title.small_compact',
+            expanded: {
+              textStyle: 'sd.system.typography.title.small_expanded',
+            }
           })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
           <FontFigureTitle>title.medium</FontFigureTitle>
           <FontFigureDescription className={css({
-            textStyle: 'sd.system.typography.title.medium_expanded'
+            textStyle: 'sd.system.typography.title.medium_compact',
+            expanded: {
+              textStyle: 'sd.system.typography.title.medium_expanded',
+            }
           })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
           <FontFigureTitle>title.large</FontFigureTitle>
           <FontFigureDescription className={css({
-            textStyle: 'sd.system.typography.title.large_expanded'
+            textStyle: 'sd.system.typography.title.large_compact',
+            expanded: {
+              textStyle: 'sd.system.typography.title.large_expanded',
+            }
           })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。これらは代表例であり、デザインシステムの構成要素は組織や状況に応じて様々です。</FontFigureDescription>
         </FontFigureWrapper>
 
@@ -206,19 +240,31 @@ export const FontFigureDescription = styled("h2", {
         <FontFigureWrapper>
           <FontFigureTitle>body.extraSmall</FontFigureTitle>
           <FontFigureDescription className={css({
-            textStyle: 'sd.system.typography.body.extraSmall_expanded'
+            textStyle: 'sd.system.typography.body.extraSmall_compact',
+            expanded: {
+              textStyle: 'sd.system.typography.body.extraSmall_expanded',
+            }
           })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。</FontFigureDescription>
           <FontFigureTitle>body.small</FontFigureTitle>
           <FontFigureDescription className={css({
-            textStyle: 'sd.system.typography.body.small_expanded'
+            textStyle: 'sd.system.typography.body.small_compact',
+            expanded: {
+              textStyle: 'sd.system.typography.body.small_expanded',
+            }
           })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。</FontFigureDescription>
           <FontFigureTitle>body.medium</FontFigureTitle>
           <FontFigureDescription className={css({
-            textStyle: 'sd.system.typography.body.medium_expanded'
+            textStyle: 'sd.system.typography.body.medium_compact',
+            expanded: {
+              textStyle: 'sd.system.typography.body.medium_expanded',
+            }
           })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。</FontFigureDescription>
           <FontFigureTitle>body.large</FontFigureTitle>
           <FontFigureDescription className={css({
-            textStyle: 'sd.system.typography.body.large_expanded'
+            textStyle: 'sd.system.typography.body.large_compact',
+            expanded: {
+              textStyle: 'sd.system.typography.body.large_expanded',
+            }
           })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。そのために、ブランドやビジュアルに関するアイデンティティの定義、カラーやタイポグラフィなど視覚要素を定めたデザイントークン、再利用性の高いUIコンポーネント、アイコンやイラストなどのビジュアルアセットを提供します。</FontFigureDescription>
         </FontFigureWrapper>
 
@@ -230,19 +276,31 @@ export const FontFigureDescription = styled("h2", {
         <FontFigureWrapper>
           <FontFigureTitle>label.small</FontFigureTitle>
           <FontFigureDescription className={css({
-            textStyle: 'sd.system.typography.label.small_expanded'
+            textStyle: 'sd.system.typography.label.small_compact',
+            expanded: {
+              textStyle: 'sd.system.typography.label.small_expanded',
+            }
           })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。</FontFigureDescription>
           <FontFigureTitle>label.medium</FontFigureTitle>
           <FontFigureDescription className={css({
-            textStyle: 'sd.system.typography.label.medium_expanded'
+            textStyle: 'sd.system.typography.label.medium_compact',
+            expanded: {
+              textStyle: 'sd.system.typography.label.medium_expanded',
+            }
           })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。</FontFigureDescription>
           <FontFigureTitle>label.large</FontFigureTitle>
           <FontFigureDescription className={css({
-            textStyle: 'sd.system.typography.label.large_expanded'
+            textStyle: 'sd.system.typography.label.large_compact',
+            expanded: {
+              textStyle: 'sd.system.typography.label.large_expanded',
+            }
           })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。</FontFigureDescription>
           <FontFigureTitle>label.extraLarge</FontFigureTitle>
           <FontFigureDescription className={css({
-            textStyle: 'sd.system.typography.label.extraLarge_expanded'
+            textStyle: 'sd.system.typography.label.extraLarge_compact',
+            expanded: {
+              textStyle: 'sd.system.typography.label.extraLarge_expanded',
+            }
           })}>デザインシステムは、デザインと開発の効率化、アクセシブルで一貫したプロダクト品質の担保、ナレッジの蓄積とベストプラクティスの波及、コミュニケーションの円滑化などを目的とします。</FontFigureDescription>
         </FontFigureWrapper>
 
@@ -251,6 +309,14 @@ export const FontFigureDescription = styled("h2", {
 
         Figma Variablesはグループ化されたトークン (<PageA href="https://tr.designtokens.org/format/#composite-design-token">Composit Token</PageA>と呼ばれます) に現在対応していません。そのため、タイポグラフィのシステムトークンは**VariablesではなくText Stylesとして定義**しており、他と適用方法が異なることに注意してください。
 
+    </PageSection>
+
+    <PageSection>
+      <PageHeadLine number={5}>ブラウザ幅に応じた基準サイズの変更</PageHeadLine>
+
+      Bodyロールのmediumサイズは、ページ本文に用いることを想定しており、これをフォントサイズの基準として扱います。ただしこの基準サイズは、ブラウザ幅によって変化するのが一般的です。Serendie Design Systemでは、ブラウザ幅がCompact (モバイル) の場合は14px、Expanded (PC) の場合は16pxを基準としています。これを基準として、全ロールが相対的にフォントサイズが変わることに注意してください。
+
+      Serendie Design Systemでは、これを[バリアブルモード](https://help.figma.com/hc/ja/articles/15343816063383-%E3%83%90%E3%83%AA%E3%82%A2%E3%83%96%E3%83%AB%E3%83%A2%E3%83%BC%E3%83%89)として扱います。Themingと同様に、ページやセクション、フレームなどにモード (Expanded/Compact) を割り当てることで、基準サイズを変更できます。デフォルトはCompactモードです。PC画面をデザインするときには、ページ全体をExpandedモードに変更してください。
     </PageSection>
 
 </PageMain>

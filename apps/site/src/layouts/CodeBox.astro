@@ -1,0 +1,70 @@
+---
+import { SvgIcon } from "@serendie/ui";
+import { css } from "styled-system/css";
+import { Box, Flex, styled } from "styled-system/jsx";
+import { Code as AstroCode } from "astro:components";
+
+const StyledButton = styled("button", {
+  base: {
+    cursor: "pointer",
+  },
+});
+
+const { code, language } = Astro.props;
+
+---
+
+<Box
+  py="sd.system.dimension.spacing.extraLarge"
+  px="sd.system.dimension.spacing.twoExtraLarge"
+  bg="web.system.color.articleFigure.background"
+>
+  <Box
+    data-code-section
+    fontSize="sd.reference.typography.scale.compact.small"
+  >
+    <AstroCode
+      code={code}
+      lang={language ?? "tsx"}
+      theme={"github-light"}
+      style="background: transparent"
+    />
+  </Box>
+</Box>
+
+<script>
+  const containers = document.querySelectorAll("[data-code-container]");
+
+  containers.forEach((container) => {
+    const codeSection = container.querySelector("[data-code-section]");
+    const toggleCode = container.querySelector("[data-toggle-code]");
+    const copyButton = container.querySelector("[data-copy-button]");
+
+    // コードセクションの表示切り替え
+    toggleCode?.addEventListener("click", () => {
+      if (codeSection) {
+        const codeElement = codeSection as HTMLElement;
+        codeElement.style.display =
+          codeElement.style.display === "block" ? "block" : "none";
+      }
+    });
+
+    // コードのコピー
+    copyButton?.addEventListener("click", () => {
+      if (codeSection) {
+        const codeElement = codeSection as HTMLElement;
+        navigator.clipboard.writeText(codeElement.innerText).then(() => {
+          copyButton.setAttribute("aria-label", "Copied");
+          copyButton.classList.add("copied");
+
+          // 5秒後にコピー完了の表示を元に戻す
+          setTimeout(() => {
+            copyButton.setAttribute("aria-label", "Copy");
+            copyButton.classList.remove("copied");
+          }, 5000);
+        });
+      }
+    });
+  });
+</script>
+        

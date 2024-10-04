@@ -18,6 +18,10 @@ export const PageMain = styled("div", {
     mdDown: {
       gridColumn: "span 1",
     },
+    "& a": {
+      color: "sd.system.color.impression.primary",
+      textDecoration: "underline",
+    },
   },
 });
 
