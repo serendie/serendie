@@ -119,10 +119,6 @@ function hexToRgb(hex: string): { r: number; g: number; b: number } {
           {getShades(color).map((shade) => (
             <td
               class={css({
-                textAlign: "center",
-                position: "relative",
-                height: "48px",
-                boxSizing: "content-box",
                 pb: "sd.system.dimension.spacing.extraLarge",
               })}
             >
@@ -155,12 +151,88 @@ function hexToRgb(hex: string): { r: number; g: number; b: number } {
         </tr>
       ))
     }
+    <tr>
+      <th></th>
+      {
+        getShades("transparency").map((shade) => (
+          <th
+            class={css({
+              fontFamily: "sd.reference.typography.fontFamily.monospace",
+              textStyle: "sd.system.typography.label.small_compact",
+              pb: "sd.system.dimension.spacing.extraLarge",
+              color: "sd.system.color.component.onSurfaceVariant",
+            })}
+          >
+            {shade}
+          </th>
+        ))
+      }
+    </tr>
+    <tr>
+      <th
+        class={css({
+          textAlign: "left",
+          textStyle: "sd.system.typography.label.large_compact",
+        })}
+      >
+        Transparency
+      </th>
+      {
+        getShades("transparency").map((shade) => (
+          <td class="celadon">
+            <div
+              data-color={getColorValue("transparency", shade)}
+              class={`group ${css({ h: "48px", position: "relative", cursor: "pointer" })}`}
+              style={`background-color: ${getColorValue("transparency", shade)}`}
+            >
+              <span
+                class={css({
+                  position: "absolute",
+                  left: "50%",
+                  top: "50%",
+                  transform: "translate(-50%, -50%)",
+                  fontSize: "x-small",
+                  opacity: 0,
+                  _groupHover: {
+                    opacity: 1,
+                  },
+                })}
+                style={{
+                  color: "#000",
+                }}
+              >
+                {getColorValue("transparency", shade)}
+              </span>
+            </div>
+          </td>
+        ))
+      }
+    </tr>
   </tbody>
 </table>
 
 <style>
   th {
     font-weight: 400;
+  }
+  td {
+    text-align: center;
+    position: relative;
+    height: 48px;
+    box-sizing: content-box;
+    min-width: 48px;
+  }
+  .celadon {
+    background-image: linear-gradient(45deg, #ccc 25%, transparent 25%),
+      linear-gradient(-45deg, #ccc 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #ccc 75%),
+      linear-gradient(-45deg, transparent 75%, #ccc 75%);
+    background-size: 16px 16px;
+    background-position:
+      0 0,
+      0 8px,
+      8px -8px,
+      -8px 0px;
   }
 </style>
 
