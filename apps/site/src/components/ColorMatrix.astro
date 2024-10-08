@@ -1,0 +1,181 @@
+---
+import tokens from "@serendie/design-token/panda";
+import { css } from "../../../../ui/styled-system/css/css";
+
+const { colors } = tokens;
+const colorScale = colors.sd.reference.color.scale;
+
+const colorOrder: (keyof typeof colorScale)[] = [
+  "gray",
+  "blue",
+  "skyBlue",
+  "green",
+  "purple",
+  "pink",
+  "red",
+  "chestnut",
+  "beige",
+  "yellow",
+  "white",
+  "black",
+];
+
+const nameMap: Record<keyof typeof colorScale, string> = {
+  gray: "銀鼠",
+  blue: "紺青",
+  skyBlue: "浅葱",
+  green: "木賊",
+  purple: "すみれ",
+  pink: "つつじ",
+  red: "薄緋",
+  chestnut: "栗皮",
+  beige: "幣色",
+  yellow: "刈安",
+  white: "",
+  black: "",
+  transparency: "",
+};
+
+function getColorValue(color: keyof typeof colorScale, shade: string) {
+  return colorScale[color][shade].value;
+}
+
+function getJapaneseName(color: keyof typeof colorScale) {
+  return nameMap[color] || "";
+}
+
+function getShades(color: keyof typeof colorScale) {
+  return Object.keys(colorScale[color]).reverse();
+}
+
+function toCamelCase(color: string) {
+  return color.charAt(0).toUpperCase() + color.slice(1);
+}
+
+function getTextColor(bgColor: string): string {
+  const rgb = hexToRgb(bgColor);
+  const luminance = 0.299 * rgb.r + 0.587 * rgb.g + 0.114 * rgb.b;
+  const threshold = 169; // 明度のしきい値
+  return luminance > threshold ? "#000000" : "#FFFFFF";
+}
+
+function hexToRgb(hex: string): { r: number; g: number; b: number } {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result
+    ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
+    : { r: 0, g: 0, b: 0 };
+}
+---
+
+<table
+  class={css({
+    borderCollapse: "collapse",
+    width: "100%",
+  })}
+>
+  <thead>
+    <tr>
+      <th></th>
+      {
+        getShades("gray").map((shade) => (
+          <th
+            class={css({
+              fontFamily: "sd.reference.typography.fontFamily.monospace",
+              textStyle: "sd.system.typography.label.small_compact",
+              pb: "sd.system.dimension.spacing.extraLarge",
+              color: "sd.system.color.component.onSurfaceVariant",
+            })}
+          >
+            {shade}
+          </th>
+        ))
+      }
+    </tr>
+  </thead>
+  <tbody>
+    {
+      colorOrder.map((color) => (
+        <tr>
+          <th
+            class={css({
+              textAlign: "left",
+              textStyle: "sd.system.typography.label.large_compact",
+            })}
+          >
+            <div>{toCamelCase(color)}</div>
+            <div
+              class={css({
+                mt: "sd.system.dimension.spacing.extraSmall",
+                color: "sd.system.color.component.onSurfaceVariant",
+              })}
+            >
+              {getJapaneseName(color)}
+            </div>
+          </th>
+          {getShades(color).map((shade) => (
+            <td
+              class={css({
+                textAlign: "center",
+                position: "relative",
+                height: "48px",
+                boxSizing: "content-box",
+                pb: "sd.system.dimension.spacing.extraLarge",
+              })}
+            >
+              <div
+                data-color={getColorValue(color, shade)}
+                class={`group ${css({ h: "48px", position: "relative", cursor: "pointer", borderWidth: color === "white" ? 1 : 0 })}`}
+                style={`background-color: ${getColorValue(color, shade)}`}
+              >
+                <span
+                  class={css({
+                    position: "absolute",
+                    left: "50%",
+                    top: "50%",
+                    transform: "translate(-50%, -50%)",
+                    fontSize: "x-small",
+                    opacity: 0,
+                    _groupHover: {
+                      opacity: 1,
+                    },
+                  })}
+                  style={{
+                    color: getTextColor(getColorValue(color, shade)),
+                  }}
+                >
+                  {getColorValue(color, shade)}
+                </span>
+              </div>
+            </td>
+          ))}
+        </tr>
+      ))
+    }
+  </tbody>
+</table>
+
+<style>
+  th {
+    font-weight: 400;
+  }
+</style>
+
+<script>
+  const colors = document.querySelectorAll("[data-color]");
+  colors.forEach((color) => {
+    color.addEventListener("click", () => {
+      navigator.clipboard.writeText(color.getAttribute("data-color") || "");
+      const span = color.querySelector("span");
+      if (span) {
+        span.textContent = "Copied";
+        setTimeout(() => {
+          span.textContent = color.getAttribute("data-color") || "";
+        }, 1000);
+      }
+    });
+  });
+</script>

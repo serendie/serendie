@@ -1,0 +1,28 @@
+---
+title: Color
+slug: foundations/color/role
+parent: foundations/color
+---
+
+import Illustration from "../../../assets/hearderImages/about.svg";
+import PageTab from "@/components/PageTab.astro";
+import { paths } from "./02_00_color_palette.mdx";
+import {
+  PageMain,
+  PageSection,
+  PageAside,
+  PageHeader,
+  PageLinks,
+} from "../../../components/PageLayout";
+import { IndexPageHeader } from "../../../components/IndexPageHeader";
+import ColorMatrix from "@/components/ColorMatrix.astro";
+
+<PageHeader>
+  <IndexPageHeader title={frontmatter.title} image={Illustration} />
+</PageHeader>
+<PageMain>
+  <PageSection>
+    <PageTab paths={paths} />
+    TODO: カラーロール
+  </PageSection>
+</PageMain>
