@@ -126,8 +126,12 @@ export const PageARef = styled("a", {
     color: "sd.system.color.impression.primary",
     textDecoration: "underline",
     display: "inline-flex",
+    width: "100%",
     alignItems: "center",
     gap: "sd.system.dimension.spacing.twoExtraSmall",
+    "& + &": {
+      mt: "sd.system.dimension.spacing.large",
+    },
     _after: {
       content: '""',
       display: "block",
