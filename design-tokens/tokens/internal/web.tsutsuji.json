@@ -114,6 +114,10 @@
               "$type": "color",
               "$value": "{sd.reference.color.scale.pink.400}"
             },
+            "onPrimary": {
+              "$type": "color",
+              "$value": "{sd.reference.color.scale.pink.600}"
+            },
             "secondary": {
               "$type": "color",
               "$value": "{sd.reference.color.scale.purple.400}"

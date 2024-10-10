@@ -114,6 +114,10 @@
               "$type": "color",
               "$value": "{sd.reference.color.scale.chestnut.400}"
             },
+            "onPrimary": {
+              "$type": "color",
+              "$value": "{sd.reference.color.scale.chestnut.700}"
+            },
             "secondary": {
               "$type": "color",
               "$value": "{sd.reference.color.scale.beige.400}"
