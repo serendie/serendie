@@ -22,6 +22,13 @@ export const PageMain = styled("div", {
       color: "sd.system.color.impression.primary",
       textDecoration: "underline",
     },
+    "& ul": {
+      textStyle: "sd.system.typography.body.small_compact",
+      marginInlineStart: "1em",
+    },
+    "& li": {
+      listStyleType: "disc",
+    },
   },
 });
 
@@ -129,6 +136,7 @@ export const PageARef = styled("a", {
     width: "100%",
     alignItems: "center",
     gap: "sd.system.dimension.spacing.twoExtraSmall",
+    textStyle: "sd.system.typography.body.small_compact",
     "& + &": {
       mt: "sd.system.dimension.spacing.large",
     },
