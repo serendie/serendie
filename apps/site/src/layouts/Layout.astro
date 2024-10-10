@@ -21,6 +21,7 @@ const components = await getCollection("components");
         title: component.data.title,
         isActive: component.data.title === title,
       }))}
+      client:idle
     />
     <Main>
       <MainTitle>{title}</MainTitle>

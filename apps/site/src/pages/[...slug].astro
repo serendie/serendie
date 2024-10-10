@@ -5,6 +5,7 @@ import "@/index.css";
 import Global from "@/layouts/Global.astro";
 import { SideMenu } from "@/layouts/SideMenu";
 import { Main, MainGrid } from "@/components/Main";
+import { css } from "styled-system/css";
 
 export async function getStaticPaths() {
   const pages = await getCollection("pages");
@@ -51,9 +52,18 @@ const { Content } = await page.render();
         title: link.data.title,
         isActive: link.slug === page.slug,
       }))}
+      client:idle
     />
 
-    <Main display="grid" gridTemplateColumns="repeat(8, 1fr)" columnGap="40px">
+    <Main className={css({
+      display: "grid",
+      gridTemplateColumns: "repeat(8, 1fr)",
+      columnGap: "40px",
+      mdDown: {
+        gridTemplateColumns: "1fr",
+        px: '24px'
+      }
+    })}>
       <Content {...propsForMdx} />
     </Main>
   </MainGrid>
