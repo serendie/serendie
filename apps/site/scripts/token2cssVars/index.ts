@@ -30,7 +30,6 @@ function createCssVars(obj: any, prefix: string = "") {
 }
 
 function tokenValue2CssVar(value: string) {
-  // {}を削除
   const keys = value
     .replaceAll("{", "")
     .replaceAll("}", "")

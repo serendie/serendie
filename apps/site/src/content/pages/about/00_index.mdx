@@ -4,6 +4,7 @@ slug: about
 ---
 
 import Illustration from "../../../assets/hearderImages/about.svg";
+import svgRaw from "../../../assets/hearderImages/about.svg?raw";
 import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
 import PageHeadLine from "../../../components/PageHeadLine.astro";
 import {
@@ -39,26 +40,8 @@ export const conceptGridImage = css({
 </PageHeader>
 <PageMain>
 	<PageSection>
-	<svg width="414" height="260" viewBox="0 0 414 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="414" height="260" rx="16" fill="#EFF2FC"/>
-<g style="mix-blend-mode:multiply">
-<path d="M338 31L250 31V185L338 185L338 31Z" fill="var(--illust-Composition-Background, #00A3AF)"/>
-</g>
-<g style="mix-blend-mode:multiply">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M310.681 206.288L328.006 196.285H308L308 187.714H328.006L310.681 177.711L314.966 170.288L332.289 180.289L322.288 162.967L329.711 158.681L339.714 176.007V156H348.286V176.005L358.288 158.68L365.711 162.965L355.708 180.292L373.034 170.288L377.32 177.711L359.995 187.714H380V196.285H359.995L377.32 206.288L373.034 213.711L355.707 203.707L365.711 221.035L358.288 225.321L348.286 207.996V228H339.714V207.994L329.711 225.319L322.288 221.033L332.291 203.709L314.966 213.711L310.681 206.288Z" fill="var(--illust-Composition-Tertiary-2, #8FAEFE)"/>
-</g>
-<g style="mix-blend-mode:multiply">
-<circle cx="130" cy="152" r="77" fill="var(--illust-Composition-Tertiary-1, #0A69CF)"/>
-</g>
-<g style="mix-blend-mode:multiply">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M164.99 99.448C183.768 104.48 203.069 93.3358 208.101 74.5578L232.828 81.1836C224.138 113.618 190.799 132.867 158.364 124.176C125.929 115.485 106.681 82.1459 115.372 49.7112L140.099 56.337C135.068 75.115 146.212 94.4164 164.99 99.448Z" fill="var(--illust-Composition-Primary, #F84258)"/>
-</g>
-<g style="mix-blend-mode:multiply">
-<circle cx="36" cy="36" r="36" transform="matrix(-1 0 0 1 106 166)" fill="var(--illust-Composition-Accent, #428CFE)"/>
-</g>
-</svg>
-
-    	<PageHeadLine number={1}>Serendieデザインシステムとは</PageHeadLine>
+	  <Fragment set:html={svgRaw} />
+		<PageHeadLine number={1}>Serendieデザインシステムとは</PageHeadLine>
 
     		Serendieデザインシステムは、三菱電機株式会社DXイノベーションセンターが提供するデザインシステムです。
 
