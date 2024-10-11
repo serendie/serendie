@@ -4,6 +4,8 @@ import "@/index.css";
 import { styled } from "styled-system/jsx";
 import { siteConfig } from "@/../siteConfig";
 import { ThemeSelector } from "@/components/ThemeSelector";
+import GlobalHeader from "@/components/GlobalHeader.astro";
+import { css } from "styled-system/css";
 
 const Container = styled("div", {
   base: {
@@ -92,27 +94,28 @@ const menuItems = [
     </script>
   </head>
   <body>
-    <Header>
-      <H1><a href="/">{siteConfig.siteName}</a></H1>
-      <Menu>
-        {
-          menuItems.map((item) => (
-            <Link
-              active={
-                // 前方一致で判定
-                Astro.url.pathname.match(new RegExp(`^${item.href}`))
-                  ? true
-                  : false
-              }
-              href={item.href}
-            >
-              {item.text}
-            </Link>
-          ))
-        }
-        <ThemeSelector client:load />
-      </Menu>
-    </Header>
+    <GlobalHeader className={css({
+      position: "fixed",
+      top: 0,
+      zIndex: 100,
+      w: "100%",
+      pt: "sd.system.dimension.spacing.extraLarge",
+      pr: "sd.system.dimension.spacing.threeExtraLarge",
+      pb: "sd.system.dimension.spacing.extraLarge",
+      pl: "sd.system.dimension.spacing.threeExtraLarge",
+      borderBottom: "none",  
+      color: "sd.reference.color.scale.blue.900",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      animation: `fadein 0.6s forwards`,
+      animationDelay: "3s",
+      opacity: 0,
+      '& > div': {
+        'w': '100%',
+        'maxW': '100%',
+      }
+    })} />
 
     <Wrapper>
       <Container>

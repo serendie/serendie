@@ -6,6 +6,9 @@ import { TitleShape } from "./TitleShape";
 import useEmblaCarousel from "embla-carousel-react";
 import { useDotButton, usePrevNextButtons } from "../utils/carouselUtils";
 import { IconButton } from "@serendie/ui";
+import Title01 from "../../assets/toppage/title01.svg?raw";
+import Title02 from "../../assets/toppage/title02.svg?raw";
+import Title03 from "../../assets/toppage/title03.svg?raw";
 
 type LinkContentProps = {
   content: {
@@ -246,7 +249,7 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
         <div className={stylesExpanded.title}>
           <div className={stylesExpanded.titleDescription}>
             <h2>
-              <svg
+              {/* <svg
                 viewBox="0 0 104 66"
                 xmlns="http://www.w3.org/2000/svg"
                 className={css({
@@ -259,7 +262,12 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
                   clipRule="evenodd"
                   d="M29.3359 59.1947C16.541 57.4719 6.69484 46.5599 6.69484 33.3789C6.69484 20.198 16.541 9.28596 29.3359 7.56321L29.3359 1.72664C13.3521 3.48339 0.901365 16.9735 0.901366 33.3789C0.901367 49.7844 13.3521 63.2745 29.3359 65.0312L29.3359 59.1947ZM36.4298 59.1947L36.4298 65.0312C52.4135 63.2744 64.8642 49.7843 64.8642 33.3789C64.8642 16.9736 52.4135 3.48345 36.4298 1.72665L36.4298 7.56323C49.2247 9.28602 59.0708 20.198 59.0708 33.3789C59.0708 46.5598 49.2247 57.4719 36.4298 59.1947Z"
                 />
-              </svg>
+              </svg> */}
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: [Title01, Title02, Title03][selectedIndex],
+                }}
+              />
             </h2>
             <p>{content[selectedIndex].titleEn}</p>
           </div>
@@ -355,23 +363,11 @@ const LinkContentExpanded: React.FC<LinkContentProps> = ({ content }) => {
             <div className={styles.title}>
               <div className={styles.titleDescription}>
                 <h2>
-                  <svg
-                    width="104"
-                    height="66"
-                    viewBox="0 0 104 66"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className={css({
-                      fill: "currentcolor",
-                    })}
-                  >
-                    <path d="M99.7786 12.2555C97.562 8.4863 94.5566 5.50079 90.7622 3.29898C86.9678 1.09717 82.8127 0 78.3045 0V6.9413C81.5354 6.9413 84.5033 7.72499 87.2082 9.29238C89.9131 10.8598 92.077 12.9869 93.685 15.6739C95.3004 18.3608 96.1119 21.3464 96.1119 24.6304H103.1C103.1 20.1522 101.995 16.0322 99.7786 12.2555ZM103.1 65.8125V30.2282H96.1119V65.8125H103.1Z" />
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M29.3359 59.1947C16.541 57.4719 6.69484 46.5599 6.69484 33.3789C6.69484 20.198 16.541 9.28596 29.3359 7.56321L29.3359 1.72664C13.3521 3.48339 0.901365 16.9735 0.901366 33.3789C0.901367 49.7844 13.3521 63.2745 29.3359 65.0312L29.3359 59.1947ZM36.4298 59.1947L36.4298 65.0312C52.4135 63.2744 64.8642 49.7843 64.8642 33.3789C64.8642 16.9736 52.4135 3.48345 36.4298 1.72665L36.4298 7.56323C49.2247 9.28602 59.0708 20.198 59.0708 33.3789C59.0708 46.5598 49.2247 57.4719 36.4298 59.1947Z"
-                    />
-                  </svg>
-                  {/* 0{index + 1} */}
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: [Title01, Title02, Title03][index],
+                    }}
+                  />
                 </h2>
                 <p>{content[index].titleEn}</p>
               </div>
@@ -384,7 +380,7 @@ const LinkContentExpanded: React.FC<LinkContentProps> = ({ content }) => {
                 />
               </div>
             </div>
-            <div className={styles.description}>
+            {/* <div className={styles.description}>
               <h2
                 className={css({
                   textStyle: "sd.system.typography.headline.small_expanded",
@@ -402,7 +398,7 @@ const LinkContentExpanded: React.FC<LinkContentProps> = ({ content }) => {
               >
                 {content[index].description}
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
         <div ref={ref}>

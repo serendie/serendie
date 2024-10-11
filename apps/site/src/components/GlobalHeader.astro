@@ -4,6 +4,13 @@ import { siteConfig } from "@/../siteConfig";
 import { ThemeSelector } from "./ThemeSelector";
 import { GlobalHeaderMenu } from "./GlobalHeaderMenu";
 
+
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+
 const Header = styled("header", {
   base: {
     h: "64px",
@@ -82,7 +89,7 @@ const menuItems = [
 
 ---
 
-<Header>
+<Header className={className}>
   <HeaderContainer>
     <H1>
       <a href="/">{siteConfig.siteName}</a>
