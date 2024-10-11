@@ -60,6 +60,14 @@ export const PageLinks = (props: PageFooterProps) => (
     className={css({
       display: "grid",
       gap: "sd.system.dimension.spacing.extraLarge",
+      marginInlineStart: "0",
+      "& li": {
+        listStyleType: "none",
+      },
+      "& a": {
+        textDecoration: "none",
+        color: "inherit",
+      },
     })}
   >
     {props.siblings
