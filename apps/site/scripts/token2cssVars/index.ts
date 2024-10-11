@@ -20,7 +20,9 @@ function createCssVars(obj: any, prefix: string = "") {
     if (typeof value === "object") {
       if (value["$value"]) {
         console.log(
-          `--illust-${prefix}${key}: ${tokenValue2CssVar(value["$value"])};`
+          `--illust-${prefix.toLowerCase()}${key.toLowerCase()}: ${tokenValue2CssVar(
+            value["$value"]
+          )};`
         );
       } else {
         createCssVars(value, `${prefix}${key}-`);
