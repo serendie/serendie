@@ -3,7 +3,7 @@
 	"id": "com.yourcompany.svg-convert-export",
 	"api": "1.0.0",
 	"main": "main.js",
-	"ui": "ui.js",
+	"ui": "ui.html",
 	"editorType": [
 		"figma"
 	]

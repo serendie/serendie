@@ -5,22 +5,17 @@ async function convertSvg(node) {
   const regex = /stroke|fill="(#[0-9A-F]{6})"/g;
   const replacedSvgString = svgString.replace(regex, (match, color) => {
     const colorObj = colors.find((c) => c.color === color);
-    // 値をCSS変数に変換
     return match.replace(
       color,
       `var(--${colorObj.collectionName}-${colorObj.name.replaceAll("/", "-")}, ${color})`
     );
   });
-  saveFile(replacedSvgString, `${node.name}.svg`);
-}
 
-function saveFile(data, filename) {
-  const svgUrl = `data:image/svg+xml,${encodeURIComponent(data)}`;
-
-  const a = document.createElement("a");
-  a.href = svgUrl;
-  a.download = filename;
-  a.click();
+  figma.ui.postMessage({
+    type: "svg-data",
+    svg: replacedSvgString,
+    name: node.name,
+  });
 }
 
 function rgb2hex(r, g, b) {
@@ -78,6 +73,12 @@ figma.on("run", async () => {
     console.error(error);
     figma.notify("SVGの生成中にエラーが発生しました");
   }
-
-  figma.closePlugin();
 });
+
+figma.ui.on("message", (message) => {
+  if (message.type === "close-plugin") {
+    figma.closePlugin();
+  }
+});
+
+figma.showUI(__html__, { visible: false });
