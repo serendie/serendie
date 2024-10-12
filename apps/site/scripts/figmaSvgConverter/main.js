@@ -11,8 +11,16 @@ async function convertSvg(node) {
       `var(--${colorObj.collectionName}-${colorObj.name.replaceAll("/", "-")}, ${color})`
     );
   });
+  saveFile(replacedSvgString, `${node.name}.svg`);
+}
 
-  console.log(replacedSvgString);
+function saveFile(data, filename) {
+  const svgUrl = `data:image/svg+xml,${encodeURIComponent(data)}`;
+
+  const a = document.createElement("a");
+  a.href = svgUrl;
+  a.download = filename;
+  a.click();
 }
 
 function rgb2hex(r, g, b) {
@@ -67,6 +75,7 @@ figma.on("run", async () => {
       await convertSvg(node);
     }
   } catch (error) {
+    console.error(error);
     figma.notify("SVGの生成中にエラーが発生しました");
   }
 

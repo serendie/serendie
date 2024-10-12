@@ -2,14 +2,9 @@
 	"name": "SVG変換エクスポート",
 	"id": "com.yourcompany.svg-convert-export",
 	"api": "1.0.0",
-	"main": "code.js",
+	"main": "main.js",
+	"ui": "ui.js",
 	"editorType": [
 		"figma"
-	],
-	"menu": [
-		{
-			"name": "SVGを変換してエクスポート",
-			"command": "convert-export-svg"
-		}
 	]
 }
