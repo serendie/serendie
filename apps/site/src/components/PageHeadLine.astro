@@ -1,11 +1,11 @@
 ---
 import { css } from "styled-system/css";
-import icon01 from "../assets/headLineIcon/icon01.svg";
-import icon02 from "../assets/headLineIcon/icon02.svg";
-import icon03 from "../assets/headLineIcon/icon03.svg";
-import icon04 from "../assets/headLineIcon/icon04.svg";
-import icon05 from "../assets/headLineIcon/icon05.svg";
-import icon06 from "../assets/headLineIcon/icon06.svg";
+import icon01 from "../assets/headLineIcon/icon01.svg?raw";
+import icon02 from "../assets/headLineIcon/icon02.svg?raw";
+import icon03 from "../assets/headLineIcon/icon03.svg?raw";
+import icon04 from "../assets/headLineIcon/icon04.svg?raw";
+import icon05 from "../assets/headLineIcon/icon05.svg?raw";
+import icon06 from "../assets/headLineIcon/icon06.svg?raw";
 
 interface Props {
   number: number;
@@ -82,7 +82,7 @@ export const snackBarClassName = css({
         </defs>
       </svg>
     </a>
-    <img src={icon.src} alt="" />
+    <Fragment set:html={icon} />
     <slot />
   </h2>
 </astro-page-headline>

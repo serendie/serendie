@@ -1,7 +1,5 @@
-<svg width="48" height="36" viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="45" height="36" viewBox="0 0 45 36" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g style="mix-blend-mode:multiply">
-<g style="mix-blend-mode:multiply">
-<rect x="9" y="2" width="31" height="32" fill="#94CEFF"/>
-</g>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M24.6383 20.9648C20.7642 23.2016 15.8103 21.8742 13.5735 18L5.7793 22.5C10.5013 30.6788 20.9595 33.4811 29.1383 28.759C37.3171 24.037 40.1194 13.5788 35.3974 5.4L27.6031 9.9C29.8399 13.7742 28.5125 18.7281 24.6383 20.9648Z" fill="var(--_illustration-system-composition-accent, #F84258)"/>
 </g>
 </svg>
