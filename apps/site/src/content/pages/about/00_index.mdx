@@ -3,8 +3,6 @@ title: About
 slug: about
 ---
 
-import Illustration from "../../../assets/hearderImages/about.svg";
-import svgRaw from "../../../assets/hearderImages/about.svg?raw";
 import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
 import PageHeadLine from "../../../components/PageHeadLine.astro";
 import {
@@ -36,11 +34,10 @@ export const conceptGridImage = css({
 });
 
 <PageHeader>
-	<IndexPageHeader title={frontmatter.title} image={Illustration} />
+	<IndexPageHeader title={frontmatter.title} illustType="A" />
 </PageHeader>
 <PageMain>
 	<PageSection>
-	  <Fragment set:html={svgRaw} />
 		<PageHeadLine number={1}>Serendieデザインシステムとは</PageHeadLine>
 
     		Serendieデザインシステムは、三菱電機株式会社DXイノベーションセンターが提供するデザインシステムです。
