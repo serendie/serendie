@@ -1,10 +1,10 @@
 [
 	{
-		"_illust-color-system": {
+		"_illustration-system": {
 			"modes": {
 				"KONJO": {
-					"Composition": {
-						"Primary": {
+					"composition": {
+						"primary": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -13,7 +13,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.blue.600}"
 						},
-						"Secondary": {
+						"secondary": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -22,7 +22,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.blue.500}"
 						},
-						"Tertiary-1": {
+						"tertiary-1": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -31,7 +31,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.blue.400}"
 						},
-						"Tertiary-2": {
+						"tertiary-2": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -40,7 +40,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.skyBlue.500}"
 						},
-						"Accent": {
+						"accent": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -49,7 +49,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.red.500}"
 						},
-						"Background": {
+						"background": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -61,8 +61,8 @@
 					}
 				},
 				"ASAGI": {
-					"Composition": {
-						"Primary": {
+					"composition": {
+						"primary": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -71,7 +71,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.skyBlue.600}"
 						},
-						"Secondary": {
+						"secondary": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -80,7 +80,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.skyBlue.500}"
 						},
-						"Tertiary-1": {
+						"tertiary-1": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -89,7 +89,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.skyBlue.400}"
 						},
-						"Tertiary-2": {
+						"tertiary-2": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -98,7 +98,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.blue.500}"
 						},
-						"Accent": {
+						"accent": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -107,7 +107,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.purple.500}"
 						},
-						"Background": {
+						"background": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -119,8 +119,8 @@
 					}
 				},
 				"SUMIRE": {
-					"Composition": {
-						"Primary": {
+					"composition": {
+						"primary": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -129,7 +129,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.purple.600}"
 						},
-						"Secondary": {
+						"secondary": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -138,7 +138,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.purple.500}"
 						},
-						"Tertiary-1": {
+						"tertiary-1": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -147,7 +147,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.purple.400}"
 						},
-						"Tertiary-2": {
+						"tertiary-2": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -156,7 +156,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.blue.600}"
 						},
-						"Accent": {
+						"accent": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -165,7 +165,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.yellow.500}"
 						},
-						"Background": {
+						"background": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -177,8 +177,8 @@
 					}
 				},
 				"KURIKAWA": {
-					"Composition": {
-						"Primary": {
+					"composition": {
+						"primary": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -187,7 +187,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.chestnut.600}"
 						},
-						"Secondary": {
+						"secondary": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -196,7 +196,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.chestnut.500}"
 						},
-						"Tertiary-1": {
+						"tertiary-1": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -205,7 +205,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.chestnut.400}"
 						},
-						"Tertiary-2": {
+						"tertiary-2": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -214,7 +214,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.beige.500}"
 						},
-						"Accent": {
+						"accent": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -223,7 +223,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.green.500}"
 						},
-						"Background": {
+						"background": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -235,8 +235,8 @@
 					}
 				},
 				"TSUTSUJI": {
-					"Composition": {
-						"Primary": {
+					"composition": {
+						"primary": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -245,7 +245,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.pink.600}"
 						},
-						"Secondary": {
+						"secondary": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -254,7 +254,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.pink.500}"
 						},
-						"Tertiary-1": {
+						"tertiary-1": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -263,7 +263,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.pink.400}"
 						},
-						"Tertiary-2": {
+						"tertiary-2": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -272,7 +272,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.purple.500}"
 						},
-						"Accent": {
+						"accent": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
@@ -281,7 +281,7 @@
 							"$collectionName": "color-reference",
 							"$value": "{sd.reference.color.scale.skyBlue.500}"
 						},
-						"Background": {
+						"background": {
 							"$scopes": [
 								"ALL_SCOPES"
 							],
