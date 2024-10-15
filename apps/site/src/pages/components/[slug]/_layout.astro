@@ -34,17 +34,13 @@ const Container = styled("div", {
     },
   },
 });
-
-const basePath = `/components/${Astro.params.slug}`;
-
-const links = [];
 ---
 
 <SiteLayout title={title}>
   <Container>
     {componentName && <ComponentName>{componentName}</ComponentName>}
     {description && <Description>{description}</Description>}
-    <PageTab links={links} />
+    <PageTab />
     <slot />
   </Container>
 </SiteLayout>

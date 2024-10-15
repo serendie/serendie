@@ -33,10 +33,13 @@ export const VBox = styled(Box, {
 export const Dl = styled("dl", {
   base: {
     display: "grid",
-    gridTemplateColumns: "80px auto",
+    gridTemplateColumns: "1fr",
     alignItems: "center",
-    rowGap: "sd.system.dimension.spacing.threeExtraLarge",
     columnGap: "sd.system.dimension.spacing.medium",
+    sm: {
+      rowGap: "sd.system.dimension.spacing.threeExtraLarge",
+      gridTemplateColumns: "80px auto",
+    },
   },
   variants: {
     variant: {
@@ -54,6 +57,10 @@ export const Dl = styled("dl", {
 export const Dt = styled("dt", {
   base: {
     fontWeight: "bold",
+    my: "sd.system.dimension.spacing.small",
+    sm: {
+      my: 0,
+    },
   },
 });
 
