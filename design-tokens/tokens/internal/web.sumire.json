@@ -25,27 +25,25 @@
           },
           "onTertiary": {
             "$type": "color",
-            "$value": "{sd.reference.color.scale.purple.900}"
+            "$value": "{sd.reference.color.scale.white.1000}"
           }
         },
         "component": {
-          "background": {
-            "surface": {
-              "$type": "color",
-              "$value": "{sd.reference.color.scale.white.1000}"
-            },
-            "onSurface": {
-              "$type": "color",
-              "$value": "{sd.reference.color.scale.purple.900}"
-            },
-            "surfaceDim": {
-              "$type": "color",
-              "$value": "{sd.reference.color.scale.gray.100}"
-            },
-            "surfaceDimmest": {
-              "$type": "color",
-              "$value": "{sd.reference.color.scale.gray.400}"
-            }
+          "surface": {
+            "$type": "color",
+            "$value": "{sd.reference.color.scale.white.1000}"
+          },
+          "onSurface": {
+            "$type": "color",
+            "$value": "{sd.reference.color.scale.purple.900}"
+          },
+          "surfaceDim": {
+            "$type": "color",
+            "$value": "{sd.reference.color.scale.gray.100}"
+          },
+          "surfaceDimmest": {
+            "$type": "color",
+            "$value": "{sd.reference.color.scale.gray.400}"
           }
         },
         "mvShape": {
