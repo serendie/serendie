@@ -50,15 +50,27 @@ export const SideMenuDrawer: React.FC<{
           setIsOpen(newIsOpen.open);
         }}
       >
-        <SideMenuList>
-          {links.map((link) => (
-            <li key={link.href}>
-              <SideMenuListItemLink href={link.href} active={link.isActive}>
-                {link.title}
-              </SideMenuListItemLink>
-            </li>
-          ))}
-        </SideMenuList>
+        <div
+          className={css({
+            pt: "sd.system.dimension.spacing.extraLarge",
+            h: "100%",
+            w: "100%",
+            display: "flex",
+            alignItems: "start",
+            justifyContent: "start",
+            bg: "web.system.color.impression.primary",
+          })}
+        >
+          <SideMenuList w="100%">
+            {links.map((link) => (
+              <li key={link.href}>
+                <SideMenuListItemLink href={link.href} active={link.isActive}>
+                  {link.title}
+                </SideMenuListItemLink>
+              </li>
+            ))}
+          </SideMenuList>
+        </div>
       </Drawer>
     </div>
   );

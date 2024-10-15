@@ -56,15 +56,17 @@ const { Content } = await page.render();
       }))}
       client:idle
     />
-    <Main className={css({
-      display: "grid",
-      gridTemplateColumns: "repeat(8, 1fr)",
-      columnGap: "40px",
-      mdDown: {
-        gridTemplateColumns: "1fr",
-        px: '24px'
-      }
-    })}>
+    <Main
+      className={css({
+        display: "grid",
+        gridTemplateColumns: "repeat(8, 1fr)",
+        columnGap: "40px",
+        mdDown: {
+          gridTemplateColumns: "1fr",
+          px: "24px",
+        },
+      })}
+    >
       <Content {...propsForMdx} />
     </Main>
   </MainGrid>
