@@ -19,8 +19,8 @@ const Header = styled("header", {
     borderBottomWidth: "sd.system.dimension.border.medium",
     color: "globalMenu",
     mdDown: {
-      px: '24px'
-    }
+      px: "24px",
+    },
   },
 });
 
@@ -37,6 +37,7 @@ const HeaderContainer = styled("div", {
 const H1 = styled("h1", {
   base: {
     textStyle: "sd.system.typography.title.large_expanded",
+    color: "web.system.color.component.background.onSurface",
   },
 });
 
@@ -48,7 +49,7 @@ const Menu = styled("div", {
     gap: "sd.system.dimension.spacing.extraLarge",
     mdDown: {
       display: "none",
-    }
+    },
   },
 });
 
@@ -57,9 +58,9 @@ const MenuButton = styled("div", {
     display: "none",
     mdDown: {
       display: "block",
-    }
+    },
   },
-}); 
+});
 
 const Link = styled("a", {
   base: {},
@@ -79,7 +80,6 @@ const menuItems = [
   { href: "/components/", text: "Components" },
   { href: "/contribution/", text: "Contribution" },
 ];
-
 ---
 
 <Header>
@@ -88,19 +88,21 @@ const menuItems = [
       <a href="/">{siteConfig.siteName}</a>
     </H1>
     <Menu>
-      {menuItems.map((item) => (
-        <Link
-          active={
-            // 前方一致で判定
-            Astro.url.pathname.match(new RegExp(`^${item.href}`))
-              ? true
-              : false
-          }
-          href={item.href}
-        >
-          {item.text}
-        </Link>
-      ))}
+      {
+        menuItems.map((item) => (
+          <Link
+            active={
+              // 前方一致で判定
+              Astro.url.pathname.match(new RegExp(`^${item.href}`))
+                ? true
+                : false
+            }
+            href={item.href}
+          >
+            {item.text}
+          </Link>
+        ))
+      }
       <ThemeSelector client:load />
     </Menu>
 
