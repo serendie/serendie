@@ -12,6 +12,8 @@ import {
 import PageHeader from "@/components/PageHeader.astro";
 import { IndexPageHeader } from "../../../components/IndexPageHeader";
 import ColorMatrix from "@/components/ColorMatrix.astro";
+import { css } from "styled-system/css";
+
 export const links = [
   {
     name: "カラーパレット",
@@ -28,6 +30,12 @@ export const links = [
 </PageHeader>
 <PageMain>
   <PageSection>
-    <ColorMatrix />
+    <div
+      class={css({
+        overflowX: "auto",
+      })}
+    >
+      <ColorMatrix />
+    </div>
   </PageSection>
 </PageMain>
