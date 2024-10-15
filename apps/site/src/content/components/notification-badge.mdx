@@ -1,7 +1,7 @@
 ---
 title: Notification Badge
 componentName: バッジ
-description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+description: 未読の通知や新着情報をユーザーに知らせるためのコンポーネントです。
 ---
 
 import Code from "@/layouts/Code.astro";
@@ -13,8 +13,8 @@ import { NoNumberSample } from "@/sampleCode/NotificationBadge/NoNumberSample";
 import noNumberSampleRaw from "@/sampleCode/NotificationBadge/NoNumberSample.tsx?raw";
 
 <Code
-  title="Size"
-  description="NotificationBadgeのサイズはSmallとMediumの2種類あります。SmallはPCなどの大きな画面でマウス操作をする前提で使用することを推奨しています。また、Mediumは画面サイズにかかわらず使用できますが、スマートフォンなどの画面では基本サイズになります。"
+  title="サイズ"
+  description="SmallとMediumの2種類のサイズがあります。"
   code={sizeSampleRaw}
   storyPath="/story/components-notificationbadge--default&args=size:small"
 >
@@ -22,9 +22,9 @@ import noNumberSampleRaw from "@/sampleCode/NotificationBadge/NoNumberSample.tsx
 </Code>
 
 <Code
-  title="Types"
+  title="カラー"
   description={
-    "NotificationBadgeのvariantはPrimary、Secondaryの2種類あります。"
+    "PrimaryとSecondaryの2種類のカラーがあります。Secondaryはテーマカラーに準じます。"
   }
   code={variantSampleRaw}
   storyPath="/story/components-notificationbadge--default&args=variant:secondary;size:medium"
@@ -33,10 +33,8 @@ import noNumberSampleRaw from "@/sampleCode/NotificationBadge/NoNumberSample.tsx
 </Code>
 
 <Code
-  title={"No Number"}
-  description={
-    "NotificationBadgeには、数字を表示しないバリエーションもあります。"
-  }
+  title="バリエーション"
+  description="通知数が99以上の場合は省略表示されます。数字を表示せず、通知が存在することだけを示すことも可能です。重要度や表示領域に応じて使い分けてください。"
   code={noNumberSampleRaw}
   storyPath="/story/components-notificationbadge--no-number"
 >

@@ -1,0 +1,111 @@
+---
+import { styled } from "styled-system/jsx";
+import { siteConfig } from "@/../siteConfig";
+import { ThemeSelector } from "./ThemeSelector";
+import { GlobalHeaderMenu } from "./GlobalHeaderMenu";
+
+const Header = styled("header", {
+  base: {
+    h: "64px",
+    pt: "sd.system.dimension.spacing.extraLarge",
+    pr: "sd.system.dimension.spacing.threeExtraLarge",
+    pb: "sd.system.dimension.spacing.extraLarge",
+    pl: "sd.system.dimension.spacing.threeExtraLarge",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    borderBottom: "solid",
+    borderColor: "sd.system.color.component.outline",
+    borderBottomWidth: "sd.system.dimension.border.medium",
+    color: "globalMenu",
+    mdDown: {
+      px: '24px'
+    }
+  },
+});
+
+const HeaderContainer = styled("div", {
+  base: {
+    w: "100%",
+    maxW: "1440px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+});
+
+const H1 = styled("h1", {
+  base: {
+    textStyle: "sd.system.typography.title.large_expanded",
+  },
+});
+
+const Menu = styled("div", {
+  base: {
+    display: "flex",
+    alignItems: "center",
+    fontWeight: "sd.reference.typography.fontWeight.bold",
+    gap: "sd.system.dimension.spacing.extraLarge",
+    mdDown: {
+      display: "none",
+    }
+  },
+});
+
+const MenuButton = styled("div", {
+  base: {
+    display: "none",
+    mdDown: {
+      display: "block",
+    }
+  },
+}); 
+
+const Link = styled("a", {
+  base: {},
+  variants: {
+    active: {
+      true: {
+        borderBottom: "solid",
+      },
+    },
+  },
+});
+
+const menuItems = [
+  { href: "/about", text: "About" },
+  { href: "/get-started", text: "Get Started" },
+  { href: "/foundations/", text: "Foundations" },
+  { href: "/components/", text: "Components" },
+  { href: "/contribution/", text: "Contribution" },
+];
+
+---
+
+<Header>
+  <HeaderContainer>
+    <H1>
+      <a href="/">{siteConfig.siteName}</a>
+    </H1>
+    <Menu>
+      {menuItems.map((item) => (
+        <Link
+          active={
+            // 前方一致で判定
+            Astro.url.pathname.match(new RegExp(`^${item.href}`))
+              ? true
+              : false
+          }
+          href={item.href}
+        >
+          {item.text}
+        </Link>
+      ))}
+      <ThemeSelector client:load />
+    </Menu>
+
+    <MenuButton>
+      <GlobalHeaderMenu client:idle menuItems={menuItems} />
+    </MenuButton>
+  </HeaderContainer>
+</Header>

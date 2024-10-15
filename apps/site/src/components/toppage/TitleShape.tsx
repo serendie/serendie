@@ -16,7 +16,7 @@ export const TitleShape: React.FC<
       className={cx(
         className,
         css({
-          fill: "sd.reference.color.scale.blue.400",
+          fill: "web.system.color.mvShape.foreground.arc.index",
         })
       )}
       {...props}

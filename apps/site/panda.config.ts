@@ -29,6 +29,11 @@ export default defineConfig({
           "100%": { opacity: "0" },
         },
       },
+      breakpoints: {
+        sm: "768px",
+        md: "1280px",
+        lg: "1440px",
+      },
     },
   },
 

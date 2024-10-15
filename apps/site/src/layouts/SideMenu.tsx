@@ -1,4 +1,6 @@
 import { styled } from "styled-system/jsx";
+import { SideMenuDrawer } from "./SideMenuDrawer";
+import { css } from "styled-system/css";
 
 export type Links = {
   title: string;
@@ -8,7 +10,8 @@ export type Links = {
 
 const Sidebar = styled("aside", {
   base: {
-    w: "280px",
+    position: "relative",
+    w: "240px",
     h: "100%",
     py: "sd.system.dimension.spacing.extraLarge",
     display: "flex",
@@ -16,11 +19,29 @@ const Sidebar = styled("aside", {
     borderRight: "solid",
     borderColor: "sd.system.color.component.outline",
     borderRightWidth: "sd.system.dimension.border.medium",
+    _before: {
+      content: '""',
+      position: "absolute",
+      top: 0,
+      left: "min(0px, calc(((100vw - 1440px) / 2 )* -1))",
+      w: "calc((100vw - 1440px) / 2)",
+      minW: "80px",
+      h: "100%",
+      bg: "web.system.color.impression.primary",
+      zIndex: -1,
+    },
+    smDown: {
+      w: "100%",
+      height: "40px",
+      py: "0",
+      px: "24px",
+      justifyContent: "center",
+    },
     bg: "web.system.color.impression.primary",
   },
 });
 
-const List = styled("ul", {
+export const SideMenuList = styled("ul", {
   base: {
     listStyle: "none",
     p: 0,
@@ -28,9 +49,9 @@ const List = styled("ul", {
   },
 });
 
-const ListItemLink = styled("a", {
+export const SideMenuListItemLink = styled("a", {
   base: {
-    color: "sd.system.color.impression.onNotice",
+    color: "white",
     display: "block",
     textStyle: "sd.system.typography.label.extraLarge_compact",
     lineHeight: 1.5,
@@ -57,15 +78,22 @@ const ListItemLink = styled("a", {
 export const SideMenu = ({ links }: { links: Links[] }) => {
   return (
     <Sidebar>
-      <List>
+      <SideMenuList
+        className={css({
+          smDown: {
+            display: "none",
+          },
+        })}
+      >
         {links.map((link, i) => (
           <li key={i}>
-            <ListItemLink href={link.href} active={link.isActive}>
+            <SideMenuListItemLink href={link.href} active={link.isActive}>
               {link.title}
-            </ListItemLink>
+            </SideMenuListItemLink>
           </li>
         ))}
-      </List>
+      </SideMenuList>
+      <SideMenuDrawer links={links} />
     </Sidebar>
   );
 };

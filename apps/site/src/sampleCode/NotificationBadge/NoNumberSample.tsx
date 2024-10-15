@@ -6,16 +6,23 @@ export function NoNumberSample() {
     <HBox>
       <VBox>
         <VBox position="relative" h="24px" w="24px">
-          <NotificationBadge count={1} />
+          <NotificationBadge count={99} />
         </VBox>
-        <p>False</p>
+        <p>99以下</p>
+      </VBox>
+
+      <VBox>
+        <VBox position="relative" h="24px" w="24px">
+          <NotificationBadge count={100} />
+        </VBox>
+        <p>100以上</p>
       </VBox>
 
       <VBox>
         <VBox position="relative" h="8px" w="8px">
           <NotificationBadge noNumber />
         </VBox>
-        <p>True</p>
+        <p>数字なし</p>
       </VBox>
     </HBox>
   );

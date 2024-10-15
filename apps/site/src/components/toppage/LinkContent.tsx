@@ -52,7 +52,7 @@ const linkContentExpandedStyle = sva({
       position: "relative",
       display: "grid",
       gap: "10%",
-      color: "sd.reference.color.scale.blue.900",
+      color: "web.system.color.component.background.onSurface",
       height: "300vh",
       gridTemplateColumns: "320px 1fr",
       gridTemplateRows: "1fr",
@@ -87,7 +87,7 @@ const linkContentExpandedStyle = sva({
       letterSpacing: "0.1em",
       textTransform: "uppercase",
       textAlign: "center",
-      color: "sd.reference.color.scale.blue.900",
+      color: "web.system.color.component.background.onSurface",
       "& h2": {
         display: "flex",
         alignItems: "center",
@@ -250,7 +250,7 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
                 viewBox="0 0 104 66"
                 xmlns="http://www.w3.org/2000/svg"
                 className={css({
-                  fill: "sd.reference.color.scale.blue.900",
+                  fill: "currentcolor",
                 })}
               >
                 <path d="M99.7786 12.2555C97.562 8.4863 94.5566 5.50079 90.7622 3.29898C86.9678 1.09717 82.8127 0 78.3045 0V6.9413C81.5354 6.9413 84.5033 7.72499 87.2082 9.29238C89.9131 10.8598 92.077 12.9869 93.685 15.6739C95.3004 18.3608 96.1119 21.3464 96.1119 24.6304H103.1C103.1 20.1522 101.995 16.0322 99.7786 12.2555ZM103.1 65.8125V30.2282H96.1119V65.8125H103.1Z" />
@@ -361,7 +361,7 @@ const LinkContentExpanded: React.FC<LinkContentProps> = ({ content }) => {
                     viewBox="0 0 104 66"
                     xmlns="http://www.w3.org/2000/svg"
                     className={css({
-                      fill: "sd.reference.color.scale.blue.900",
+                      fill: "currentcolor",
                     })}
                   >
                     <path d="M99.7786 12.2555C97.562 8.4863 94.5566 5.50079 90.7622 3.29898C86.9678 1.09717 82.8127 0 78.3045 0V6.9413C81.5354 6.9413 84.5033 7.72499 87.2082 9.29238C89.9131 10.8598 92.077 12.9869 93.685 15.6739C95.3004 18.3608 96.1119 21.3464 96.1119 24.6304H103.1C103.1 20.1522 101.995 16.0322 99.7786 12.2555ZM103.1 65.8125V30.2282H96.1119V65.8125H103.1Z" />

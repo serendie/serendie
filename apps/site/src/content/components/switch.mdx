@@ -1,7 +1,7 @@
 ---
 title: Switch
 componentName: スイッチ
-description: 説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります
+description: オン/オフの2つの状態を切り替えるためのコンポーネントです。設定画面などでその状態を視覚的に伝えることができます。
 ---
 
 import Code from "@/layouts/Code.astro";
@@ -11,8 +11,8 @@ import { StateSample } from "@/sampleCode/Switch/StateSample";
 import stateSampleRaw from "@/sampleCode/Switch/StateSample.tsx?raw";
 
 <Code
-  title="Types"
-  description="説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります"
+  title="サンプル"
+  description="スイッチのオン/オフはイベントのトリガーとなります。onCheckedChangeハンドラで、イベント処理を実装してください。"
   code={typeSampleRaw}
   storyPath="/story/components-switch--default"
 >
@@ -20,8 +20,8 @@ import stateSampleRaw from "@/sampleCode/Switch/StateSample.tsx?raw";
 </Code>
 
 <Code
-  title="States"
-  description="説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります説明テキストがはいります"
+  title="状態"
+  description="5種類の状態があります。非活性とする際はdisabled propsを使用してください。"
   code={stateSampleRaw}
   storyPath="/docs/components-switch--docs"
 >

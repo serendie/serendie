@@ -100,6 +100,9 @@ export default {
                     "primary": {
                       "value": "#64CCD3"
                     },
+                    "onPrimary": {
+                      "value": "#00757E"
+                    },
                     "secondary": {
                       "value": "#CC9FD9"
                     },
@@ -217,6 +220,9 @@ export default {
                   "foreground": {
                     "primary": {
                       "value": "#F49567"
+                    },
+                    "onPrimary": {
+                      "value": "#803510"
                     },
                     "secondary": {
                       "value": "#DAA358"
@@ -336,6 +342,9 @@ export default {
                     "primary": {
                       "value": "#CC9FD9"
                     },
+                    "onPrimary": {
+                      "value": "#733B85"
+                    },
                     "secondary": {
                       "value": "#8FAEFE"
                     },
@@ -454,6 +463,9 @@ export default {
                     "primary": {
                       "value": "#F190B4"
                     },
+                    "onPrimary": {
+                      "value": "#B9336B"
+                    },
                     "secondary": {
                       "value": "#CC9FD9"
                     },
@@ -570,6 +582,9 @@ export default {
             "foreground": {
               "primary": {
                 "value": "#8FAEFE"
+              },
+              "onPrimary": {
+                "value": "#0A69CF"
               },
               "secondary": {
                 "value": "#64CCD3"
