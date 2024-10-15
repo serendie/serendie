@@ -3,9 +3,15 @@ import { Box, styled } from "styled-system/jsx";
 export const HBox = styled(Box, {
   base: {
     display: "flex",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "flex-end",
-    gap: "sd.system.dimension.spacing.extraLarge",
+    gap: "sd.system.dimension.spacing.small",
+    flexWrap: "wrap",
+    sm: {
+      gap: "sd.system.dimension.spacing.extraLarge",
+      flexWrap: "nowrap",
+      justifyContent: "flex-start",
+    },
   },
 });
 
@@ -14,7 +20,13 @@ export const VBox = styled(Box, {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    gap: "sd.system.dimension.spacing.medium",
+    gap: "sd.system.dimension.spacing.small",
+    sm: {
+      gap: "sd.system.dimension.spacing.extraLarge",
+    },
+    "& p": {
+      my: 0,
+    },
   },
 });
 

@@ -20,8 +20,13 @@ export const MainGrid = styled("div", {
 
 export const Main = styled("main", {
   base: {
-    maxW: "calc(1200px + 80px * 2)",
+    maxW: "100vw",
     py: "56px",
+    pt: "0px",
+    sm: {
+      maxW: "calc(1200px + 80px * 2)",
+      py: "56px",
+    },
     "& p": {
       my: "sd.system.dimension.spacing.extraLarge",
       textStyle: "sd.system.typography.body.small_compact",
