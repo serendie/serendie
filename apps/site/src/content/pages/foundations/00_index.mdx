@@ -4,7 +4,6 @@ slug: foundations
 ---
 
 import { styled } from "styled-system/jsx";
-import Illustration from "../../../assets/hearderImages/about.svg";
 import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
 import PageHeadLine from "../../../components/PageHeadLine.astro";
 import CodeBox from "../../../layouts/CodeBox.astro";
@@ -22,8 +21,8 @@ import { css } from "styled-system/css";
 
 <PageHeader>
   <IndexPageHeader
+    illustType="A"
     title={"Design Tokens"}
-    image={Illustration}
     description={
       "デザイントークンはデザインシステムを構成する最小単位です。デザインと開発でデザイントークンを共有することで、Single Source of Truthを実現します。"
     }

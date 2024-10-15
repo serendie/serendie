@@ -4,7 +4,6 @@ slug: get-started/dev
 ---
 
 import { styled } from "styled-system/jsx";
-import Illustration from "../../../assets/hearderImages/about.svg";
 import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
 import PageHeadLine from "../../../components/PageHeadLine.astro";
 import CodeBox from "../../../layouts/CodeBox.astro";
@@ -26,7 +25,7 @@ export const sampleCodeCss = `@layer reset, base, tokens, recipes, utilities;
 <PageHeader>
   <IndexPageHeader
     title={frontmatter.title}
-    image={Illustration}
+    illustType="B"
     description={
       "Webフロントエンド開発において、Serendie UIを使ったデザインファイルをデザイナーと共有し、それをReactで実装していくシーンを想定して活用方法を紹介します。"
     }

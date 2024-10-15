@@ -4,7 +4,6 @@ slug: foundations/theming
 ---
 
 import { styled } from "styled-system/jsx";
-import Illustration from "../../../assets/hearderImages/about.svg";
 import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
 import PageHeadLine from "../../../components/PageHeadLine.astro";
 import CodeBox from "../../../layouts/CodeBox.astro";
@@ -23,7 +22,7 @@ import { css } from "styled-system/css";
 <PageHeader>
   <IndexPageHeader
     title={frontmatter.title}
-    image={Illustration}
+    illustType="A"
     description={
       "アクセシビリティ基準を満たしたカラーテーマを5つ提供しています。FigmaとReactコンポーネントそれぞれテーマ切り替えに対応しています。"
     }
