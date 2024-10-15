@@ -52,7 +52,17 @@ const IndexPageHeader_ = ({
         </h2>
         {description && <p>{description}</p>}
       </div>
-      <Illust />
+      <div
+        className={css({
+          "&>svg": {
+            width: "100%",
+            height: "auto",
+            maxWidth: "414px",
+          },
+        })}
+      >
+        <Illust />
+      </div>
     </div>
   );
 };
