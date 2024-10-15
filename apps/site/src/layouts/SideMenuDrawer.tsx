@@ -1,4 +1,4 @@
-import { Drawer, IconButton } from "@serendie/ui";
+import { Drawer } from "@serendie/ui";
 import { useState } from "react";
 import { SideMenuList, SideMenuListItemLink, type Links } from "./SideMenu";
 import { css } from "styled-system/css";
@@ -15,20 +15,33 @@ export const SideMenuDrawer: React.FC<{
         alignItems: "center",
       })}
     >
-      <IconButton
-        styleType="ghost"
-        size="small"
-        icon="menu"
+      <button
+        onClick={() => {
+          setIsOpen(true);
+        }}
         className={css({
-          color: "white",
+          color: "sd.reference.color.scale.white.1000",
           sm: {
             display: "none",
           },
         })}
-        onClick={() => {
-          setIsOpen(true);
-        }}
-      />
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width={24}
+          height={24}
+          fill="none"
+        >
+          <g
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.4}
+          >
+            <path d="M21.048 4H2.952C2.426 4 2 4.341 2 4.762v14.476c0 .42.426.762.952.762h18.096c.526 0 .952-.341.952-.762V4.762c0-.42-.426-.762-.952-.762ZM9 4v15M4 7.805h2.828M4 10.805h2.828" />
+          </g>
+        </svg>
+      </button>
 
       <Drawer
         type="full"
