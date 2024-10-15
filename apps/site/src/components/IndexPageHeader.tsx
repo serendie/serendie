@@ -34,7 +34,7 @@ const IndexPageHeader_ = ({
         gridTemplateColumns: "1fr auto",
         alignItems: "center",
         gap: "sd.reference.dimension.scale.12",
-        mb: "sd.reference.dimension.scale.18",
+        mb: "sd.reference.dimension.scale.17",
         color: "web.system.color.component.background.onSurface",
         mdDown: {
           gridTemplateColumns: "1fr",
