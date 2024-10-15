@@ -1,8 +1,5 @@
-<svg width="48" height="36" viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M24 0V36" stroke="#4ECA53" stroke-width="6"/>
-<path d="M42 18L6 18" stroke="#4ECA53" stroke-width="6"/>
-<path d="M39.5885 9L8.41154 27" stroke="#4ECA53" stroke-width="6"/>
-<path d="M33 2.41162L15 33.5885" stroke="#4ECA53" stroke-width="6"/>
-<path d="M32.9998 33.5884L14.9998 2.41146" stroke="#4ECA53" stroke-width="6"/>
-<path d="M39.5885 26.9998L8.41154 8.99975" stroke="#4ECA53" stroke-width="6"/>
+<svg width="45" height="36" viewBox="0 0 45 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g style="mix-blend-mode:multiply">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22.4996 19.7992C26.9731 19.7992 30.5996 16.1727 30.5996 11.6992L39.5996 11.6992C39.5996 21.1433 31.9437 28.7992 22.4996 28.7992C13.0555 28.7992 5.39961 21.1433 5.39961 11.6992L14.3996 11.6992C14.3996 16.1727 18.0261 19.7992 22.4996 19.7992Z" fill="var(--_illustration-system-composition-tertiary-1, #8FAEFE)"/>
+</g>
 </svg>

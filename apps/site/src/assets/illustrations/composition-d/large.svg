@@ -10,7 +10,7 @@
 <circle cx="130" cy="152" r="77" fill="var(--_illustration-system-composition-primary, #0A69CF)"/>
 </g>
 <g style="mix-blend-mode:multiply">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M164.989 99.448C183.767 104.48 203.069 93.3358 208.1 74.5578L232.828 81.1836C224.137 113.618 190.798 132.867 158.364 124.176C125.929 115.485 106.681 82.1459 115.372 49.7112L140.099 56.337C135.068 75.115 146.211 94.4164 164.989 99.448Z" fill="var(--_illustration-system-composition-accent, #F84258)"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M164.99 99.448C183.768 104.48 203.069 93.3358 208.101 74.5578L232.828 81.1836C224.138 113.618 190.799 132.867 158.364 124.176C125.929 115.485 106.681 82.1459 115.372 49.7112L140.099 56.337C135.068 75.115 146.212 94.4164 164.99 99.448Z" fill="var(--_illustration-system-composition-accent, #F84258)"/>
 </g>
 <g style="mix-blend-mode:multiply">
 <circle cx="36" cy="36" r="36" transform="matrix(-1 0 0 1 106 166)" fill="var(--_illustration-system-composition-secondary, #428CFE)"/>
