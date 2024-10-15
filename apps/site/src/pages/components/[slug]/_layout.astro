@@ -1,7 +1,7 @@
 ---
 import { styled } from "styled-system/jsx";
 import SiteLayout from "../../../layouts/Layout.astro";
-import { css } from "styled-system/css";
+import PageTab from "@/components/PageTab.astro";
 
 interface Props {
   title: string;
@@ -52,38 +52,7 @@ const paths = [
   <Container>
     {componentName && <ComponentName>{componentName}</ComponentName>}
     {description && <Description>{description}</Description>}
-    <div
-      class={css({
-        h: 44,
-        display: "flex",
-        alignItems: "stretch",
-        borderBottomWidth: 1,
-        borderBottomColor: "sd.system.color.component.onSurfaceVariant",
-        mb: "sd.system.dimension.spacing.threeExtraLarge",
-      })}
-    >
-      {
-        paths.map((path) => (
-          <a
-            href={path.path}
-            class={css({
-              px: "sd.system.dimension.spacing.twoExtraLarge",
-              pb: "sd.system.dimension.spacing.twoExtraSmall",
-              "&:hover": {
-                color: "sd.system.color.impression.primary",
-              },
-              borderBottomWidth: 2,
-              borderBottomColor:
-                Astro.url.pathname === path.path
-                  ? "sd.system.color.impression.primary"
-                  : "transparent",
-            })}
-          >
-            {path.name}
-          </a>
-        ))
-      }
-    </div>
+    <PageTab paths={paths} />
     <slot />
   </Container>
 </SiteLayout>

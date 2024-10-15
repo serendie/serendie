@@ -1,0 +1,106 @@
+---
+import { css } from "styled-system/css/css";
+import { getColorValue } from "./ColorMatrix.astro";
+import type { colorScale } from "./ColorMatrix.astro";
+
+interface Props {
+  color: keyof typeof colorScale;
+  shade: string;
+  celadon?: boolean;
+}
+
+const { color, shade, celadon } = Astro.props as Props;
+
+function getTextColor(bgColor: string): string {
+  const rgb = hexToRgb(bgColor);
+  const luminance = 0.299 * rgb.r + 0.587 * rgb.g + 0.114 * rgb.b;
+  const threshold = 169; // 明度のしきい値
+  return luminance > threshold ? "#000000" : "#FFFFFF";
+}
+
+function hexToRgb(hex: string): { r: number; g: number; b: number } {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result
+    ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16),
+      }
+    : { r: 0, g: 0, b: 0 };
+}
+---
+
+<td
+  class={css({
+    pb: "sd.system.dimension.spacing.extraLarge",
+  })}
+>
+  {celadon ? <div class="celadon" /> : null}
+  <div
+    data-color={getColorValue(color, shade)}
+    class={`group ${css({ h: "48px", position: "relative", cursor: "pointer", borderWidth: color === "white" ? 1 : 0 })}`}
+    style={`background-color: ${getColorValue(color, shade)}`}
+  >
+    <span
+      class={css({
+        position: "absolute",
+        left: "50%",
+        top: "50%",
+        transform: "translate(-50%, -50%)",
+        fontSize: "x-small",
+        opacity: 0,
+        _groupHover: {
+          opacity: 1,
+        },
+      })}
+      style={{
+        color: celadon ? "#000000" : getTextColor(getColorValue(color, shade)),
+      }}
+    >
+      {getColorValue(color, shade)}
+    </span>
+  </div>
+</td>
+
+<style>
+  td {
+    text-align: center;
+    position: relative;
+    height: 48px;
+    box-sizing: content-box;
+    min-width: 48px;
+  }
+  .celadon {
+    position: absolute;
+    height: 48px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: linear-gradient(45deg, #ccc 25%, transparent 25%),
+      linear-gradient(-45deg, #ccc 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #ccc 75%),
+      linear-gradient(-45deg, transparent 75%, #ccc 75%);
+    background-size: 16px 16px;
+    background-position:
+      0 0,
+      0 8px,
+      8px -8px,
+      -8px 0px;
+  }
+</style>
+
+<script>
+  const colors = document.querySelectorAll("[data-color]");
+  colors.forEach((color) => {
+    color.addEventListener("click", () => {
+      navigator.clipboard.writeText(color.getAttribute("data-color") || "");
+      const span = color.querySelector("span");
+      if (span) {
+        span.textContent = "Copied";
+        setTimeout(() => {
+          span.textContent = color.getAttribute("data-color") || "";
+        }, 1000);
+      }
+    });
+  });
+</script>

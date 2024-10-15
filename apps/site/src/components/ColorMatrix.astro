@@ -1,0 +1,147 @@
+---
+import tokens from "@serendie/design-token/panda";
+import { css } from "../../../../ui/styled-system/css/css";
+import ColorMatrixCell from "./ColorMatrixCell.astro";
+
+export const { colors } = tokens;
+export const colorScale = colors.sd.reference.color.scale;
+
+const colorOrder: (keyof typeof colorScale)[] = [
+  "gray",
+  "blue",
+  "skyBlue",
+  "green",
+  "purple",
+  "pink",
+  "red",
+  "chestnut",
+  "beige",
+  "yellow",
+  "white",
+  "black",
+];
+
+const nameMap: Record<keyof typeof colorScale, string> = {
+  gray: "銀鼠",
+  blue: "紺青",
+  skyBlue: "浅葱",
+  green: "木賊",
+  purple: "すみれ",
+  pink: "つつじ",
+  red: "薄緋",
+  chestnut: "栗皮",
+  beige: "幣色",
+  yellow: "刈安",
+  white: "",
+  black: "",
+  transparency: "",
+};
+
+export function getColorValue(color: keyof typeof colorScale, shade: string) {
+  return colorScale[color][shade].value;
+}
+
+function getJapaneseName(color: keyof typeof colorScale) {
+  return nameMap[color] || "";
+}
+
+function getShades(color: keyof typeof colorScale) {
+  return Object.keys(colorScale[color]).reverse();
+}
+
+function toCamelCase(color: string) {
+  return color.charAt(0).toUpperCase() + color.slice(1);
+}
+---
+
+<table
+  class={css({
+    borderCollapse: "collapse",
+    width: "100%",
+  })}
+>
+  <thead>
+    <tr>
+      <th></th>
+      {
+        getShades("gray").map((shade) => (
+          <th
+            class={css({
+              fontFamily: "sd.reference.typography.fontFamily.monospace",
+              textStyle: "sd.system.typography.label.small_compact",
+              pb: "sd.system.dimension.spacing.extraLarge",
+              color: "sd.system.color.component.onSurfaceVariant",
+            })}
+          >
+            {shade}
+          </th>
+        ))
+      }
+    </tr>
+  </thead>
+  <tbody>
+    {
+      colorOrder.map((color) => (
+        <tr>
+          <th
+            class={css({
+              textAlign: "left",
+              textStyle: "sd.system.typography.label.large_compact",
+            })}
+          >
+            <div>{toCamelCase(color)}</div>
+            <div
+              class={css({
+                mt: "sd.system.dimension.spacing.extraSmall",
+                color: "sd.system.color.component.onSurfaceVariant",
+              })}
+            >
+              {getJapaneseName(color)}
+            </div>
+          </th>
+          {getShades(color).map((shade) => (
+            <ColorMatrixCell color={color} shade={shade} />
+          ))}
+        </tr>
+      ))
+    }
+    <tr>
+      <th></th>
+      {
+        getShades("transparency").map((shade) => (
+          <th
+            class={css({
+              fontFamily: "sd.reference.typography.fontFamily.monospace",
+              textStyle: "sd.system.typography.label.small_compact",
+              pb: "sd.system.dimension.spacing.extraLarge",
+              color: "sd.system.color.component.onSurfaceVariant",
+            })}
+          >
+            {shade}
+          </th>
+        ))
+      }
+    </tr>
+    <tr>
+      <th
+        class={css({
+          textAlign: "left",
+          textStyle: "sd.system.typography.label.large_compact",
+        })}
+      >
+        Transparency
+      </th>
+      {
+        getShades("transparency").map((shade) => (
+          <ColorMatrixCell color="transparency" shade={shade} celadon />
+        ))
+      }
+    </tr>
+  </tbody>
+</table>
+
+<style>
+  th {
+    font-weight: 400;
+  }
+</style>
