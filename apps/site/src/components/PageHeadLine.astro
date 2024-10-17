@@ -42,12 +42,13 @@ export const snackBarClassName = css({
       color: "web.system.color.component.onSurface",
       gridTemplateColumns: "max-content 1fr",
       alignItems: "center",
-      gap: "sd.system.dimension.spacing.small",
+      gap: "sd.system.dimension.spacing.extraSmall",
       position: "relative",
       textStyle: "_Web.headline.h1_sp",
       fontWeight: "700",
       sm: {
         textStyle: "_Web.headline.h1",
+        gap: "sd.system.dimension.spacing.small",
       },
     })}`}
   >
@@ -86,7 +87,20 @@ export const snackBarClassName = css({
         </defs>
       </svg>
     </a>
-    <Fragment set:html={icon} />
+    <div
+      class={css({
+        width: "32px",
+        sm: {
+          width: "45px",
+        },
+        "&>svg": {
+          width: "100%",
+          height: "auto",
+        },
+      })}
+    >
+      <Fragment set:html={icon} />
+    </div>
     <slot />
   </h2>
 </astro-page-headline>
