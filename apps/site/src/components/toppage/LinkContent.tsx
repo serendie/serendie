@@ -55,7 +55,7 @@ const linkContentExpandedStyle = sva({
       position: "relative",
       display: "grid",
       gap: "10%",
-      color: "web.system.color.component.background.onSurface",
+      color: "web.system.color.impression.onTertiary",
       height: "300vh",
       gridTemplateColumns: "320px 1fr",
       gridTemplateRows: "1fr",
@@ -90,7 +90,7 @@ const linkContentExpandedStyle = sva({
       letterSpacing: "0.1em",
       textTransform: "uppercase",
       textAlign: "center",
-      color: "web.system.color.component.background.onSurface",
+      color: "web.system.color.impression.onTertiary",
       "& h2": {
         display: "flex",
         alignItems: "center",

@@ -7,9 +7,10 @@ import { GlobalHeaderMenu } from "./GlobalHeaderMenu";
 
 interface Props {
   className?: string;
+  isToppage?: boolean;
 }
 
-const { className } = Astro.props;
+const { className, isToppage } = Astro.props;
 
 const Header = styled("header", {
   base: {
@@ -24,11 +25,18 @@ const Header = styled("header", {
     borderBottom: "solid",
     borderColor: "sd.system.color.component.outline",
     borderBottomWidth: "sd.system.dimension.border.medium",
-    color: "web.system.color.component.background.onSurface",
+    color: "web.system.color.component.onSurface",
     mdDown: {
       px: '24px'
     }
   },
+  variants: {
+    isToppage: {
+      true: {
+        color: "web.system.color.impression.onTertiary",
+      },
+    }
+  }
 });
 
 const HeaderContainer = styled("div", {
@@ -89,7 +97,7 @@ const menuItems = [
 
 ---
 
-<Header className={className}>
+<Header className={className} isToppage={isToppage}>
   <HeaderContainer>
     <H1>
       <a href="/">{siteConfig.siteName}</a>
