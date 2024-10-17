@@ -2,7 +2,7 @@ import type tokens from "@serendie/design-token/token-list";
 import { IconButton, Search } from "@serendie/ui";
 import { css } from "styled-system/css";
 import { Box, Circle, Flex, styled } from "styled-system/jsx";
-import React, { useCallback, useState } from "react";
+import React, { Fragment, useCallback, useState } from "react";
 
 interface TokenList {
   tokens: typeof tokens;
@@ -11,10 +11,15 @@ interface TokenList {
 type Tokens = typeof tokens;
 type Token = Tokens[number];
 
-const Table = styled("table");
-const Td = styled("td");
+const Grid = styled("div");
+const Row = styled("div");
 const Span = styled("span");
-const Th = styled("th", {
+const Wrapper = styled("div", {
+  base: {
+    display: "contents",
+  },
+});
+const Th = styled("div", {
   base: {
     fontFamily: "var(--global-font-mono)",
     textAlign: "left",
@@ -43,41 +48,36 @@ export function TokenList({ tokens }: TokenList) {
           items={[]}
         />
       </div>
-      <Table
-        tableLayout="fixed"
+      <Grid
+        display={"grid"}
+        gridTemplateColumns={"minmax(100px, auto) minmax(100px, auto) auto"}
         mt="sd.system.dimension.spacing.extraLarge"
         fontSize={"sd.reference.typography.scale.expanded.twoExtraSmall"}
       >
-        <thead>
-          <tr>
-            <Th>Key</Th>
-            <Th>Value</Th>
-          </tr>
-        </thead>
-        <tbody>
-          {types.map((type, i) => (
-            <>
-              <tr key={i}>
-                <td colSpan={2}>
-                  <h2
-                    className={css({
-                      textStyle: "sd.system.typography.title.small_expanded",
-                      pt: "sd.system.dimension.spacing.threeExtraLarge",
-                      pb: "sd.system.dimension.spacing.small",
-                    })}
-                    style={{ textTransform: "capitalize" }}
-                  >
-                    {type}
-                  </h2>
-                </td>
-              </tr>
-              <List
-                tokens={filteredTokens.filter((token) => token.type === type)}
-              />
-            </>
-          ))}
-        </tbody>
-      </Table>
+        <Wrapper>
+          <Th>name</Th>
+          <Th>reference</Th>
+          <Th>comment</Th>
+        </Wrapper>
+        {types.map((type, i) => (
+          <Wrapper key={i}>
+            <h2
+              className={css({
+                gridColumn: "1 / -1",
+                textStyle: "sd.system.typography.title.small_expanded",
+                pt: "sd.system.dimension.spacing.threeExtraLarge",
+                pb: "sd.system.dimension.spacing.small",
+              })}
+              style={{ textTransform: "capitalize" }}
+            >
+              {type}
+            </h2>
+            <List
+              tokens={filteredTokens.filter((token) => token.type === type)}
+            />
+          </Wrapper>
+        ))}
+      </Grid>
     </div>
   );
 }
@@ -90,19 +90,24 @@ const List: React.FC<ListByTYpeProps> = ({ tokens }) => {
   return (
     <>
       {tokens.map((token, i) => (
-        <tr key={i}>
-          <Td
-            valign="top"
+        <Fragment key={i}>
+          <Row
             title={token.key}
-            py="sd.system.dimension.spacing.small"
-            pr="sd.system.dimension.spacing.fiveExtraLarge"
+            p="sd.system.dimension.spacing.small"
             borderBottom={"1px solid"}
             borderColor={"sd.reference.color.scale.gray.200"}
           >
             <PathSpan path={token.path} />
-          </Td>
+          </Row>
           <Values token={token} />
-        </tr>
+          <Row
+            p="sd.system.dimension.spacing.small"
+            borderBottom={"1px solid"}
+            borderColor={"sd.reference.color.scale.gray.200"}
+          >
+            -
+          </Row>
+        </Fragment>
       ))}
     </>
   );
@@ -115,9 +120,8 @@ interface ValuesProps {
 const Values: React.FC<ValuesProps> = ({ token }) => {
   const { originalValue, value } = token;
   return (
-    <Td
-      valign="top"
-      py="sd.system.dimension.spacing.extraSmall"
+    <Row
+      p="sd.system.dimension.spacing.extraSmall"
       borderBottom={"1px solid"}
       borderColor={"sd.reference.color.scale.gray.200"}
     >
@@ -152,7 +156,7 @@ const Values: React.FC<ValuesProps> = ({ token }) => {
           />
         )}
       </Flex>
-    </Td>
+    </Row>
   );
 };
 
@@ -160,7 +164,7 @@ const ReferenceValue: React.FC<{
   token: Token;
   originalValue: string;
   value?: string;
-}> = ({ token, originalValue, value }) => {
+}> = ({ token, originalValue }) => {
   const isRef =
     originalValue.startsWith("{") &&
     originalValue.endsWith("}") &&
@@ -174,9 +178,8 @@ const ReferenceValue: React.FC<{
           color={token.value.toString()}
         />
       )}
-      <Code>
+      <Code lineBreak={"anywhere"}>
         {originalValue.replace(/[(^{)(}$)]/g, "")}
-        {isRef && value && <>({value})</>}
       </Code>
     </Flex>
   );
@@ -192,13 +195,16 @@ const PathSpan: React.FC<{ path: string[] }> = ({ path }) => {
   }, [path]);
   return (
     <Box
-      pos={"relative"}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onClick={handleClick}
       cursor={"pointer"}
     >
-      <code>
+      <code
+        style={{
+          lineBreak: "anywhere",
+        }}
+      >
         {path.map((p, i) => (
           <Span
             key={i}

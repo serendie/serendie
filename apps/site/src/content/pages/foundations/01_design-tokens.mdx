@@ -21,7 +21,7 @@ export const referenceTokens = tokens.filter((token) =>
   token.key.includes("sd.reference")
 );
 export const systemTokens = tokens.filter(
-  (token) => !token.key.includes("themes") && !token.key.includes("sd.system")
+  (token) => !token.key.includes("themes") && token.key.includes("sd.system")
 );
 
 <PageHeader>
@@ -33,11 +33,8 @@ export const systemTokens = tokens.filter(
     }
   />
 </PageHeader>
-<PageMain>
+<PageMain gridColumn={"span 8"}>
   <PageSection>
     <TokenList tokens={systemTokens} client:load />
-  </PageSection>
-  <PageSection>
-    <TokenList tokens={referenceTokens} client:load />
   </PageSection>
 </PageMain>
