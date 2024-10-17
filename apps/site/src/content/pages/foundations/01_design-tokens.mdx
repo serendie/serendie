@@ -20,8 +20,8 @@ import PageHeader from "@/components/PageHeader.astro";
 export const referenceTokens = tokens.filter((token) =>
   token.key.includes("sd.reference")
 );
-export const systemTokens = tokens.filter((token) =>
-  token.key.includes("sd.system")
+export const systemTokens = tokens.filter(
+  (token) => !token.key.includes("themes") && !token.key.includes("sd.system")
 );
 
 <PageHeader>
