@@ -1,0 +1,31 @@
+<script>
+  window.onmessage = (event) => {
+    if (
+      event.data.pluginMessage
+    ) {
+      switch (event.data.pluginMessage.type) {
+        case "svg-data":
+          downloadSvgFile(event);
+          break;
+      }
+    }
+  };
+
+  function downloadSvgFile(event) {
+    const svgContent = event.data.pluginMessage.svg;
+    const blob = new Blob([svgContent], { type: "image/svg+xml" });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = event.data.pluginMessage.name + ".svg";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    URL.revokeObjectURL(url);
+    parent.postMessage({ pluginMessage: { type: "close-plugin" } }, "*");
+  }
+
+</script>

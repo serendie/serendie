@@ -32,19 +32,17 @@ export default {
                   }
                 },
                 "component": {
-                  "background": {
-                    "surface": {
-                      "value": "#FFFFFF"
-                    },
-                    "onSurface": {
-                      "value": "#02373C"
-                    },
-                    "surfaceDim": {
-                      "value": "#EFEEEB"
-                    },
-                    "surfaceDimmest": {
-                      "value": "#AFAEAA"
-                    }
+                  "surface": {
+                    "value": "#FFFFFF"
+                  },
+                  "onSurface": {
+                    "value": "#02373C"
+                  },
+                  "surfaceDim": {
+                    "value": "#EFEEEB"
+                  },
+                  "surfaceDimmest": {
+                    "value": "#AFAEAA"
                   }
                 },
                 "mvShape": {
@@ -149,23 +147,21 @@ export default {
                     "value": "#AB4919"
                   },
                   "onTertiary": {
-                    "value": "#50230D"
+                    "value": "#FFFFFF"
                   }
                 },
                 "component": {
-                  "background": {
-                    "surface": {
-                      "value": "#FFFFFF"
-                    },
-                    "onSurface": {
-                      "value": "#50230D"
-                    },
-                    "surfaceDim": {
-                      "value": "#EFEEEB"
-                    },
-                    "surfaceDimmest": {
-                      "value": "#AFAEAA"
-                    }
+                  "surface": {
+                    "value": "#FFFFFF"
+                  },
+                  "onSurface": {
+                    "value": "#50230D"
+                  },
+                  "surfaceDim": {
+                    "value": "#EFEEEB"
+                  },
+                  "surfaceDimmest": {
+                    "value": "#AFAEAA"
                   }
                 },
                 "mvShape": {
@@ -270,23 +266,21 @@ export default {
                     "value": "#043F81"
                   },
                   "onTertiary": {
-                    "value": "#462352"
+                    "value": "#FFFFFF"
                   }
                 },
                 "component": {
-                  "background": {
-                    "surface": {
-                      "value": "#FFFFFF"
-                    },
-                    "onSurface": {
-                      "value": "#462352"
-                    },
-                    "surfaceDim": {
-                      "value": "#EFEEEB"
-                    },
-                    "surfaceDimmest": {
-                      "value": "#AFAEAA"
-                    }
+                  "surface": {
+                    "value": "#FFFFFF"
+                  },
+                  "onSurface": {
+                    "value": "#462352"
+                  },
+                  "surfaceDim": {
+                    "value": "#EFEEEB"
+                  },
+                  "surfaceDimmest": {
+                    "value": "#AFAEAA"
                   }
                 },
                 "mvShape": {
@@ -395,19 +389,17 @@ export default {
                   }
                 },
                 "component": {
-                  "background": {
-                    "surface": {
-                      "value": "#FFFFFF"
-                    },
-                    "onSurface": {
-                      "value": "#591734"
-                    },
-                    "surfaceDim": {
-                      "value": "#EFEEEB"
-                    },
-                    "surfaceDimmest": {
-                      "value": "#AFAEAA"
-                    }
+                  "surface": {
+                    "value": "#FFFFFF"
+                  },
+                  "onSurface": {
+                    "value": "#591734"
+                  },
+                  "surfaceDim": {
+                    "value": "#EFEEEB"
+                  },
+                  "surfaceDimmest": {
+                    "value": "#AFAEAA"
                   }
                 },
                 "mvShape": {
@@ -515,19 +507,17 @@ export default {
             }
           },
           "component": {
-            "background": {
-              "surface": {
-                "value": "#FFFFFF"
-              },
-              "onSurface": {
-                "value": "#073165"
-              },
-              "surfaceDim": {
-                "value": "#EFEEEB"
-              },
-              "surfaceDimmest": {
-                "value": "#AFAEAA"
-              }
+            "surface": {
+              "value": "#FFFFFF"
+            },
+            "onSurface": {
+              "value": "#073165"
+            },
+            "surfaceDim": {
+              "value": "#EFEEEB"
+            },
+            "surfaceDimmest": {
+              "value": "#AFAEAA"
             }
           },
           "mvShape": {

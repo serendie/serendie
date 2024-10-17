@@ -34,7 +34,9 @@ const siblings = await getCollection(
   "pages",
   (page) =>
     // Filter out pages that in the same directory
-    page.id.split("/").slice(0, -1).join("/") === currentDir
+    page.id.split("/").slice(0, -1).join("/") === currentDir &&
+    // and filename does not have parent
+    !page.data.parent
 );
 
 const propsForMdx = {
@@ -50,11 +52,10 @@ const { Content } = await page.render();
       links={siblings.map((link) => ({
         href: `/${link.slug}`,
         title: link.data.title,
-        isActive: link.slug === page.slug,
+        isActive: link.slug === page.slug || link.slug === page.data.parent,
       }))}
       client:idle
     />
-
     <Main className={css({
       display: "grid",
       gridTemplateColumns: "repeat(8, 1fr)",

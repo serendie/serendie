@@ -22,6 +22,13 @@ export const PageMain = styled("div", {
       color: "sd.system.color.impression.primary",
       textDecoration: "underline",
     },
+    "& ul": {
+      textStyle: "sd.system.typography.body.small_compact",
+      marginInlineStart: "1em",
+    },
+    "& li": {
+      listStyleType: "disc",
+    },
   },
 });
 
@@ -53,6 +60,14 @@ export const PageLinks = (props: PageFooterProps) => (
     className={css({
       display: "grid",
       gap: "sd.system.dimension.spacing.extraLarge",
+      marginInlineStart: "0",
+      "& li": {
+        listStyleType: "none",
+      },
+      "& a": {
+        textDecoration: "none",
+        color: "inherit",
+      },
     })}
   >
     {props.siblings
@@ -126,8 +141,13 @@ export const PageARef = styled("a", {
     color: "sd.system.color.impression.primary",
     textDecoration: "underline",
     display: "inline-flex",
+    width: "100%",
     alignItems: "center",
     gap: "sd.system.dimension.spacing.twoExtraSmall",
+    textStyle: "sd.system.typography.body.small_compact",
+    "& + &": {
+      mt: "sd.system.dimension.spacing.large",
+    },
     _after: {
       content: '""',
       display: "block",
