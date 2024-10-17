@@ -39,12 +39,16 @@ export const snackBarClassName = css({
   <h2
     class={`group ${css({
       display: "grid",
+      color: "web.system.color.component.onSurface",
       gridTemplateColumns: "max-content 1fr",
       alignItems: "center",
       gap: "sd.system.dimension.spacing.small",
       position: "relative",
-      textStyle: "sd.system.typography.headline.small_compact",
+      textStyle: "_Web.headline.h1_sp",
       fontWeight: "700",
+      sm: {
+        textStyle: "_Web.headline.h1",
+      },
     })}`}
   >
     <a
