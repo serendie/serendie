@@ -53,15 +53,19 @@ export const SideMenuDrawer: React.FC<{
         <div
           className={css({
             pt: "sd.system.dimension.spacing.extraLarge",
-            h: "100%",
+            h: "calc(100% - 56px)",
             w: "100%",
             display: "flex",
             alignItems: "start",
             justifyContent: "start",
             bg: "web.system.color.impression.primary",
+            overflow: "auto",
           })}
         >
-          <SideMenuList w="100%">
+          <SideMenuList
+            w="100%"
+            mb="sd.system.dimension.spacing.fiveExtraLarge"
+          >
             {links.map((link) => (
               <li key={link.href}>
                 <SideMenuListItemLink href={link.href} active={link.isActive}>
