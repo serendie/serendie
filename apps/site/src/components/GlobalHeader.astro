@@ -4,6 +4,14 @@ import { siteConfig } from "@/../siteConfig";
 import { ThemeSelector } from "./ThemeSelector";
 import { GlobalHeaderMenu } from "./GlobalHeaderMenu";
 
+
+interface Props {
+  className?: string;
+  isToppage?: boolean;
+}
+
+const { className, isToppage } = Astro.props;
+
 const Header = styled("header", {
   base: {
     h: "64px",
@@ -17,11 +25,18 @@ const Header = styled("header", {
     borderBottom: "solid",
     borderColor: "sd.system.color.component.outline",
     borderBottomWidth: "sd.system.dimension.border.medium",
-    color: "globalMenu",
+    color: "web.system.color.component.onSurface",
     mdDown: {
       px: "24px",
     },
   },
+  variants: {
+    isToppage: {
+      true: {
+        color: "web.system.color.impression.onTertiary",
+      },
+    }
+  }
 });
 
 const HeaderContainer = styled("div", {
@@ -82,7 +97,7 @@ const menuItems = [
 ];
 ---
 
-<Header>
+<Header className={className} isToppage={isToppage}>
   <HeaderContainer>
     <H1>
       <a href="/">{siteConfig.siteName}</a>

@@ -22,6 +22,7 @@ export const Main = styled("main", {
   base: {
     maxW: "100vw",
     py: "56px",
+    color: "web.system.color.component.onSurface",
     pt: "0px",
     sm: {
       maxW: "calc(1200px + 80px * 2)",
