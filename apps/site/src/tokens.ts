@@ -1,19 +1,26 @@
-import type { Tokens } from "@pandacss/dev";
-import tokens from "@serendie/design-token";
-
-const { sd } = tokens;
-
-export const extendedTokens: Tokens = {
-  colors: {
-    globalMenu: { value: sd.reference.color.scale.blue[900] },
-  },
-};
-
-export const extendedHisuiTokens: Tokens = {
-  colors: {
-    primary: { value: sd.reference.color.scale.green[500] },
-    accent: { value: sd.reference.color.scale.orange[400] },
-    background: { value: sd.reference.color.scale.gray[100] },
-    text: { value: sd.reference.color.scale.gray[900] },
+export const webTypography = {
+  textStyles: {
+    "_Web.headline.h1": {
+      value: {
+        fontFamily: "token(fonts.sd.reference.typography.fontFamily.primary)",
+        fontSize: "28px",
+        fontStyle: "normal",
+        fontWeight:
+          "token(fontWeights.sd.reference.typography.fontWeight.bold)",
+        lineHeight:
+          "token(lineHeights.sd.reference.typography.lineHeight.normal)",
+      },
+    },
+    "_Web.headline.h1_sp": {
+      value: {
+        fontFamily: "token(fonts.sd.reference.typography.fontFamily.primary)",
+        fontSize: "20px",
+        fontStyle: "normal",
+        fontWeight:
+          "token(fontWeights.sd.reference.typography.fontWeight.bold)",
+        lineHeight:
+          "token(lineHeights.sd.reference.typography.lineHeight.normal)",
+      },
+    },
   },
 };

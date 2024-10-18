@@ -11,6 +11,7 @@ export const GlobalHeaderMenu: React.FC<{
   return (
     <div>
       <IconButton
+        color="web.system.color.component.background.onSurface"
         styleType="ghost"
         icon="menu"
         onClick={() => {

@@ -1,31 +1,44 @@
 ---
-import { css } from "styled-system/css/css";
+import { css } from "styled-system/css";
 
-interface Props {
-  paths: {
+export interface Props {
+  links?: {
     name: string;
     path: string;
   }[];
 }
 
-const { paths } = Astro.props;
+const { links } = Astro.props;
 ---
 
 <div
   class={css({
-    h: 44,
     display: "flex",
     alignItems: "stretch",
-    borderBottomWidth: 1,
-    borderBottomColor: "sd.system.color.component.onSurfaceVariant",
     mb: "sd.system.dimension.spacing.threeExtraLarge",
+    position: "relative",
+    _before: {
+      content: '""',
+      position: "absolute",
+      bottom: 0,
+      left: "0",
+      sm: {
+        left: "-80px",
+        right: "-24px",
+      },
+      zIndex: -1,
+      right: 0,
+      borderBottomWidth: 1,
+      borderBottomColor: "sd.system.color.component.outline",
+    },
   })}
 >
   {
-    paths.map((path) => (
+    links?.map((path) => (
       <a
         href={path.path}
-        class={css({
+        class:list={css({
+          h: 44,
           px: "sd.system.dimension.spacing.twoExtraLarge",
           pb: "sd.system.dimension.spacing.twoExtraSmall",
           "&:hover": {

@@ -3,18 +3,18 @@ title: Color
 slug: foundations/color
 ---
 
-import Illustration from "../../../assets/hearderImages/about.svg";
-import PageTab from "@/components/PageTab.astro";
 import {
   PageMain,
   PageSection,
   PageAside,
-  PageHeader,
   PageLinks,
 } from "../../../components/PageLayout";
+import PageHeader from "@/components/PageHeader.astro";
 import { IndexPageHeader } from "../../../components/IndexPageHeader";
 import ColorMatrix from "@/components/ColorMatrix.astro";
-export const paths = [
+import { css } from "styled-system/css";
+
+export const links = [
   {
     name: "カラーパレット",
     path: "/foundations/color",
@@ -25,12 +25,17 @@ export const paths = [
   },
 ];
 
-<PageHeader>
-  <IndexPageHeader title={frontmatter.title} image={Illustration} />
+<PageHeader links={links}>
+  <IndexPageHeader title={frontmatter.title} illustType="A" />
 </PageHeader>
 <PageMain>
   <PageSection>
-    <PageTab paths={paths} />
-    <ColorMatrix />
+    <div
+      class={css({
+        overflowX: "auto",
+      })}
+    >
+      <ColorMatrix />
+    </div>
   </PageSection>
 </PageMain>

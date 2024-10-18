@@ -3,17 +3,16 @@ title: Elevation
 slug: foundations/elevation
 ---
 
-import Illustration from "../../../assets/hearderImages/about.svg";
 import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
 import PageHeadLine from "../../../components/PageHeadLine.astro";
 import {
   PageMain,
   PageSection,
   PageAside,
-  PageHeader,
   PageLinks,
   PageA,
 } from "../../../components/PageLayout.tsx";
+import PageHeader from "@/components/PageHeader.astro";
 import StickySideNav from "../../../components/StickySideNav.astro";
 import { css } from "styled-system/css";
 
@@ -45,3 +44,7 @@ import { css } from "styled-system/css";
     </PageSection>
 
 </PageMain>
+
+<PageAside>
+  <StickySideNav />
+</PageAside>

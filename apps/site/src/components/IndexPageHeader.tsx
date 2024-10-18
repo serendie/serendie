@@ -34,11 +34,13 @@ const IndexPageHeader_ = ({
         gridTemplateColumns: "1fr auto",
         alignItems: "center",
         gap: "sd.reference.dimension.scale.12",
-        mb: "sd.reference.dimension.scale.18",
-        color: "web.system.color.component.background.onSurface",
+        mb: "sd.reference.dimension.scale.17",
+        color: "web.system.color.component.onSurface",
         mdDown: {
           gridTemplateColumns: "1fr",
-          gap: "sd.reference.dimension.scale.threeExtraLarge",
+          gap: "sd.system.dimension.spacing.threeExtraLarge",
+          mt: "sd.system.dimension.spacing.twoExtraLarge",
+          mb: "sd.system.dimension.spacing.fiveExtraLarge",
         },
       })}
     >
@@ -46,13 +48,26 @@ const IndexPageHeader_ = ({
         <h2
           className={css({
             textStyle: "sd.system.typography.display.medium_compact",
+            mdDown: {
+              textStyle: "sd.system.typography.display.small_compact",
+            },
           })}
         >
           {title}
         </h2>
         {description && <p>{description}</p>}
       </div>
-      <Illust />
+      <div
+        className={css({
+          "&>svg": {
+            width: "100%",
+            height: "auto",
+            maxWidth: "414px",
+          },
+        })}
+      >
+        <Illust />
+      </div>
     </div>
   );
 };

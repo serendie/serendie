@@ -63,6 +63,10 @@ const StyledButton = styled("button", {
       p="sd.system.dimension.spacing.threeExtraLarge"
       borderBottomColor="sd.system.color.component.outline"
       borderBottomWidth={code ? "sd.system.dimension.border.medium" : "none"}
+      overflowX="auto"
+      sm={{
+        overflowX: "visible",
+      }}
     >
       <slot />
     </Box>

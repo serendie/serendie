@@ -4,19 +4,18 @@ slug: foundations/typography
 ---
 
 import { styled } from "styled-system/jsx";
-import Illustration from "../../../assets/hearderImages/about.svg";
 import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
 import PageHeadLine from "../../../components/PageHeadLine.astro";
-import CodeBox from "../../../layouts/CodeBox.astro";
+import CodeBox from "../../../components/CodeBox.astro";
 import {
   PageMain,
   PageSection,
   PageAside,
-  PageHeader,
   PageLinks,
   PageA,
   PageARef,
 } from "../../../components/PageLayout.tsx";
+import PageHeader from "@/components/PageHeader.astro";
 import StickySideNav from "../../../components/StickySideNav.astro";
 import { css } from "styled-system/css";
 
@@ -320,3 +319,7 @@ export const sampleCode = `body {
     </PageSection>
 
 </PageMain>
+
+<PageAside>
+  <StickySideNav />
+</PageAside>
