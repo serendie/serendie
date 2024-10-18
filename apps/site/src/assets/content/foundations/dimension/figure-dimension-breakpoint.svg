@@ -2,11 +2,11 @@
 <g clip-path="url(#clip0_12120_54307)">
 <rect width="310" height="186" fill="#F5F5F5"/>
 <rect x="32.5" y="56.5" width="43" height="87" rx="7.5" fill="white"/>
-<rect x="32.5" y="56.5" width="43" height="87" rx="7.5" stroke="#0650A0" stroke-width="5"/>
-<path d="M107 47.9269C107 44.1013 110.101 41 113.927 41H261.176C265.002 41 268.103 44.1013 268.103 47.9269V145.632H107V47.9269Z" fill="#0650A0"/>
+<rect x="32.5" y="56.5" width="43" height="87" rx="7.5" stroke="var(--sd-system-color-impression-primary, #0650A0)" stroke-width="5"/>
+<path d="M107 47.9269C107 44.1013 110.101 41 113.927 41H261.176C265.002 41 268.103 44.1013 268.103 47.9269V145.632H107V47.9269Z" fill="var(--sd-system-color-impression-primary, #0650A0)"/>
 <path d="M109.5 47.9269C109.5 45.482 111.482 43.5 113.927 43.5H261.176C263.621 43.5 265.603 45.482 265.603 47.9269V143.132H109.5V47.9269Z" fill="white"/>
-<path d="M109.5 47.9269C109.5 45.482 111.482 43.5 113.927 43.5H261.176C263.621 43.5 265.603 45.482 265.603 47.9269V143.132H109.5V47.9269Z" stroke="#0650A0" stroke-width="5"/>
-<rect x="95" y="140" width="184" height="6" rx="1.77612" fill="#0650A0"/>
+<path d="M109.5 47.9269C109.5 45.482 111.482 43.5 113.927 43.5H261.176C263.621 43.5 265.603 45.482 265.603 47.9269V143.132H109.5V47.9269Z" stroke="var(--sd-system-color-impression-primary, #0650A0)" stroke-width="5"/>
+<rect x="95" y="140" width="184" height="6" rx="1.77612" fill="var(--sd-system-color-impression-primary, #0650A0)"/>
 </g>
 <defs>
 <clipPath id="clip0_12120_54307">

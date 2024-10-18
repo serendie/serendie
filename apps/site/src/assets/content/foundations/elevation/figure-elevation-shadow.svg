@@ -16,7 +16,7 @@
 <g filter="url(#filter4_di_12543_34065)">
 <circle cx="266.401" cy="55.3953" r="21.3953" fill="white"/>
 </g>
-<path d="M80 134H118M25 145H62M136 122H174M192 111H229M247 99H285" stroke="var(---web-articleFigure-foreground-onPrimary, #0A69CF)" stroke-width="1.88713" stroke-linecap="round"/>
+<path d="M80 134H118M25 145H62M136 122H174M192 111H229M247 99H285" stroke="var(--web-system-color-articleFigure-foreground-onPrimary, #0A69CF)" stroke-width="1.88713" stroke-linecap="round"/>
 <path d="M22 157L288 157.003" stroke="black" stroke-opacity="0.1" stroke-width="0.5"/>
 </g>
 <defs>
