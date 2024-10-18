@@ -1,23 +1,18 @@
-<svg width="644" height="405" viewBox="0 0 644 405" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="643.623" height="404.208" rx="24.8743" fill="#EAF3ED"/>
+<svg width="414" height="260" viewBox="0 0 414 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="414" height="260" rx="16" fill="var(--_illustration-system-composition-background, #EFF2FC)"/>
 <g style="mix-blend-mode:multiply">
-<circle cx="138.363" cy="262.735" r="108.825" fill="#F4B72B"/>
-</g>
-<path d="M548.79 273.617V351.349" stroke="#4ECA53" stroke-width="12.4372"/>
-<path d="M587.656 312.484L509.924 312.484" stroke="#4ECA53" stroke-width="12.4372"/>
-<path d="M582.449 293.051L515.131 331.917" stroke="#4ECA53" stroke-width="12.4372"/>
-<path d="M568.223 278.82L529.357 346.138" stroke="#4ECA53" stroke-width="12.4372"/>
-<path d="M568.222 346.145L529.356 278.826" stroke="#4ECA53" stroke-width="12.4372"/>
-<path d="M582.449 331.918L515.131 293.052" stroke="#4ECA53" stroke-width="12.4372"/>
-<g style="mix-blend-mode:multiply">
-<g style="mix-blend-mode:multiply">
-<path d="M499.456 105.715H614.085L577.913 202.103H463.284L499.456 105.715Z" fill="#FB514D"/>
-</g>
+<path d="M338 31L250 31V185L338 185L338 31Z" fill="var(--_illustration-system-composition-tertiary-2, #00A3AF)"/>
 </g>
 <g style="mix-blend-mode:multiply">
-<rect x="270.508" y="34.2031" width="259.626" height="105.716" fill="#248EFF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M310.681 206.288L328.006 196.285H308L308 187.714H328.006L310.681 177.711L314.966 170.288L332.289 180.289L322.288 162.967L329.711 158.681L339.714 176.007V156H348.286V176.005L358.288 158.68L365.711 162.965L355.708 180.292L373.034 170.288L377.32 177.711L359.995 187.714H380V196.285H359.995L377.32 206.288L373.034 213.711L355.707 203.707L365.711 221.035L358.288 225.321L348.286 207.996V228H339.714V207.994L329.711 225.319L322.288 221.033L332.291 203.709L314.966 213.711L310.681 206.288Z" fill="var(--_illustration-system-composition-tertiary-1, #8FAEFE)"/>
 </g>
 <g style="mix-blend-mode:multiply">
-<path d="M231.94 174.119C211.245 186.067 196.079 205.634 189.778 228.515C183.477 251.396 186.558 275.717 198.342 296.128C210.126 316.538 229.648 331.366 252.615 337.35C275.581 343.334 300.109 339.983 320.804 328.035" stroke="#E46C24" stroke-width="46.6394"/>
+<circle cx="130" cy="152" r="77" fill="var(--_illustration-system-composition-primary, #0A69CF)"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M164.989 99.448C183.767 104.48 203.069 93.3358 208.1 74.5578L232.828 81.1836C224.137 113.618 190.798 132.867 158.364 124.176C125.929 115.485 106.681 82.1459 115.372 49.7112L140.099 56.337C135.068 75.115 146.211 94.4164 164.989 99.448Z" fill="var(--_illustration-system-composition-accent, #F84258)"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<circle cx="36" cy="36" r="36" transform="matrix(-1 0 0 1 106 166)" fill="var(--_illustration-system-composition-secondary, #428CFE)"/>
 </g>
 </svg>

@@ -3,9 +3,15 @@ import { Box, styled } from "styled-system/jsx";
 export const HBox = styled(Box, {
   base: {
     display: "flex",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "flex-end",
-    gap: "sd.system.dimension.spacing.extraLarge",
+    gap: "sd.system.dimension.spacing.small",
+    flexWrap: "wrap",
+    sm: {
+      gap: "sd.system.dimension.spacing.extraLarge",
+      flexWrap: "nowrap",
+      justifyContent: "flex-start",
+    },
   },
 });
 
@@ -14,17 +20,26 @@ export const VBox = styled(Box, {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    gap: "sd.system.dimension.spacing.medium",
+    gap: "sd.system.dimension.spacing.small",
+    sm: {
+      gap: "sd.system.dimension.spacing.extraLarge",
+    },
+    "& p": {
+      my: 0,
+    },
   },
 });
 
 export const Dl = styled("dl", {
   base: {
     display: "grid",
-    gridTemplateColumns: "80px auto",
+    gridTemplateColumns: "1fr",
     alignItems: "center",
-    rowGap: "sd.system.dimension.spacing.threeExtraLarge",
     columnGap: "sd.system.dimension.spacing.medium",
+    sm: {
+      rowGap: "sd.system.dimension.spacing.threeExtraLarge",
+      gridTemplateColumns: "80px auto",
+    },
   },
   variants: {
     variant: {
@@ -42,6 +57,10 @@ export const Dl = styled("dl", {
 export const Dt = styled("dt", {
   base: {
     fontWeight: "bold",
+    my: "sd.system.dimension.spacing.small",
+    sm: {
+      my: 0,
+    },
   },
 });
 

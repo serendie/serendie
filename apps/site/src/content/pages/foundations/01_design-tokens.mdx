@@ -6,15 +6,35 @@ slug: foundations/design-tokens
 import { TokenList } from "src/components/TokenList";
 import tokens from "@serendie/design-token/token-list";
 
+import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
+import {
+  PageMain,
+  PageSection,
+  PageAside,
+  PageLinks,
+  PageA,
+  PageARef,
+} from "../../../components/PageLayout.tsx";
+import PageHeader from "@/components/PageHeader.astro";
+
 export const referenceTokens = tokens.filter((token) =>
   token.key.includes("sd.reference")
 );
-export const systemTokens = tokens.filter((token) =>
-  token.key.includes("sd.system")
+export const systemTokens = tokens.filter(
+  (token) => !token.key.includes("themes") && token.key.includes("sd.system")
 );
 
-TODO: システムトークンとリファレンストークンを2つのページに分ける
-
-<TokenList tokens={systemTokens} client:load />
-
-<TokenList tokens={referenceTokens} client:load />
+<PageHeader>
+  <IndexPageHeader
+    illustType="A"
+    title={"Design Tokens"}
+    description={
+      "デザイントークンはデザインシステムを構成する最小単位です。デザインと開発でデザイントークンを共有することで、Single Source of Truthを実現します。"
+    }
+  />
+</PageHeader>
+<PageMain gridColumn={"span 8"}>
+  <PageSection>
+    <TokenList tokens={systemTokens} client:load />
+  </PageSection>
+</PageMain>

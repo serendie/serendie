@@ -1,0 +1,22 @@
+---
+title: Color
+slug: foundations/color/role
+parent: foundations/color
+---
+
+import { links } from "./02_00_color_palette.mdx";
+import {
+  PageMain,
+  PageSection,
+  PageAside,
+  PageLinks,
+} from "../../../components/PageLayout";
+import PageHeader from "@/components/PageHeader.astro";
+import { IndexPageHeader } from "../../../components/IndexPageHeader";
+
+<PageHeader links={links}>
+  <IndexPageHeader title={frontmatter.title} illustType="A" />
+</PageHeader>
+<PageMain>
+  <PageSection>TODO: カラーロール</PageSection>
+</PageMain>

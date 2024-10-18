@@ -1,0 +1,21 @@
+---
+import { css } from "styled-system/css";
+import PageTab from "./PageTab.astro";
+import type { Props as PageTabProps } from "./PageTab.astro";
+
+interface Props extends PageTabProps {}
+const { links } = Astro.props;
+---
+
+<header
+  class={css({
+    position: "relative",
+    gridColumn: "span 8",
+    mdDown: {
+      gridColumn: "span 1",
+    },
+  })}
+>
+  <slot />
+  <PageTab links={links} />
+</header>

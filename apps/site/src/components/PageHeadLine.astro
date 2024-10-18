@@ -1,11 +1,11 @@
 ---
 import { css } from "styled-system/css";
-import icon01 from "../assets/headLineIcon/icon01.svg";
-import icon02 from "../assets/headLineIcon/icon02.svg";
-import icon03 from "../assets/headLineIcon/icon03.svg";
-import icon04 from "../assets/headLineIcon/icon04.svg";
-import icon05 from "../assets/headLineIcon/icon05.svg";
-import icon06 from "../assets/headLineIcon/icon06.svg";
+import icon01 from "../assets/headLineIcon/icon01.svg?raw";
+import icon02 from "../assets/headLineIcon/icon02.svg?raw";
+import icon03 from "../assets/headLineIcon/icon03.svg?raw";
+import icon04 from "../assets/headLineIcon/icon04.svg?raw";
+import icon05 from "../assets/headLineIcon/icon05.svg?raw";
+import icon06 from "../assets/headLineIcon/icon06.svg?raw";
 
 interface Props {
   number: number;
@@ -39,12 +39,17 @@ export const snackBarClassName = css({
   <h2
     class={`group ${css({
       display: "grid",
+      color: "web.system.color.component.onSurface",
       gridTemplateColumns: "max-content 1fr",
       alignItems: "center",
-      gap: "sd.system.dimension.spacing.small",
+      gap: "sd.system.dimension.spacing.extraSmall",
       position: "relative",
-      textStyle: "sd.system.typography.headline.small_compact",
+      textStyle: "_Web.headline.h1_sp",
       fontWeight: "700",
+      sm: {
+        textStyle: "_Web.headline.h1",
+        gap: "sd.system.dimension.spacing.small",
+      },
     })}`}
   >
     <a
@@ -82,7 +87,20 @@ export const snackBarClassName = css({
         </defs>
       </svg>
     </a>
-    <img src={icon.src} alt="" />
+    <div
+      class={css({
+        width: "32px",
+        sm: {
+          width: "45px",
+        },
+        "&>svg": {
+          width: "100%",
+          height: "auto",
+        },
+      })}
+    >
+      <Fragment set:html={icon} />
+    </div>
     <slot />
   </h2>
 </astro-page-headline>

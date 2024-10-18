@@ -11,7 +11,7 @@ export const LinkContentCard: React.FC<{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        color: "web.system.color.component.background.onSurface",
+        color: "web.system.color.impression.onTertiary",
         cursor: "pointer",
         height: "fit-content",
         gap: "14px",
