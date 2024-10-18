@@ -1,7 +1,7 @@
 import { SerendiePreset } from "@serendie/ui";
 import { defineConfig } from "@pandacss/dev";
 import webTokens from "@serendie/design-token/internal/web";
-
+import { webTypography } from "./src/tokens";
 const { themes, ...tokens } = webTokens;
 const themeNames = Object.keys(themes);
 
@@ -34,6 +34,7 @@ export default defineConfig({
         md: "1280px",
         lg: "1440px",
       },
+      textStyles: webTypography.textStyles,
     },
   },
 

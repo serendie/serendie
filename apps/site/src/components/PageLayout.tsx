@@ -1,15 +1,6 @@
 import { css } from "styled-system/css";
 import { styled } from "styled-system/jsx";
 
-export const PageHeader = styled("header", {
-  base: {
-    gridColumn: "span 8",
-    mdDown: {
-      gridColumn: "span 1",
-    },
-  },
-});
-
 export const PageMain = styled("div", {
   base: {
     color: "web.system.color.component.background.onSurface",

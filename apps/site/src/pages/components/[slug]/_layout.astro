@@ -30,29 +30,17 @@ const Container = styled("div", {
     maxW: "860px",
     mdDown: {
       px: "24px",
-    }
+      maxW: "100%",
+    },
   },
 });
-
-const basePath = `/components/${Astro.params.slug}`;
-
-const paths = [
-  {
-    name: "概要",
-    path: `${basePath}`,
-  },
-  {
-    name: "ガイドライン",
-    path: `${basePath}/guideline`,
-  },
-];
 ---
 
 <SiteLayout title={title}>
   <Container>
     {componentName && <ComponentName>{componentName}</ComponentName>}
     {description && <Description>{description}</Description>}
-    <PageTab paths={paths} />
+    <PageTab />
     <slot />
   </Container>
 </SiteLayout>

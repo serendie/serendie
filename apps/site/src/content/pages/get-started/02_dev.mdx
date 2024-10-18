@@ -4,19 +4,18 @@ slug: get-started/dev
 ---
 
 import { styled } from "styled-system/jsx";
-import Illustration from "../../../assets/hearderImages/about.svg";
 import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
 import PageHeadLine from "../../../components/PageHeadLine.astro";
-import CodeBox from "../../../layouts/CodeBox.astro";
+import CodeBox from "../../../components/CodeBox.astro";
 import {
   PageMain,
   PageSection,
   PageAside,
-  PageHeader,
   PageLinks,
   PageA,
   PageARef,
 } from "../../../components/PageLayout.tsx";
+import PageHeader from "@/components/PageHeader.astro";
 import StickySideNav from "../../../components/StickySideNav.astro";
 import { css } from "styled-system/css";
 
@@ -26,7 +25,7 @@ export const sampleCodeCss = `@layer reset, base, tokens, recipes, utilities;
 <PageHeader>
   <IndexPageHeader
     title={frontmatter.title}
-    image={Illustration}
+    illustType="B"
     description={
       "Webフロントエンド開発において、Serendie UIを使ったデザインファイルをデザイナーと共有し、それをReactで実装していくシーンを想定して活用方法を紹介します。"
     }
@@ -102,3 +101,6 @@ export const sampleCodeCss = `@layer reset, base, tokens, recipes, utilities;
 
   </PageSection>
 </PageMain>
+<PageAside>
+  <StickySideNav />
+</PageAside>
