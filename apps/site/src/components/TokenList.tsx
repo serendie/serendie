@@ -50,14 +50,16 @@ export function TokenList({ tokens }: TokenList) {
       </div>
       <Grid
         display={"grid"}
-        gridTemplateColumns={"minmax(100px, auto) minmax(100px, auto) auto"}
+        gridTemplateColumns={{
+          sm: "minmax(100px, auto) minmax(100px, auto)",
+          md: "minmax(100px, auto) minmax(100px, auto)",
+        }}
         mt="sd.system.dimension.spacing.extraLarge"
         fontSize={"sd.reference.typography.scale.expanded.twoExtraSmall"}
       >
         <Wrapper>
           <Th>name</Th>
           <Th>reference</Th>
-          <Th>comment</Th>
         </Wrapper>
         {types.map((type, i) => (
           <Wrapper key={i}>
@@ -94,19 +96,12 @@ const List: React.FC<ListByTYpeProps> = ({ tokens }) => {
           <Row
             title={token.key}
             p="sd.system.dimension.spacing.small"
-            borderBottom={"1px solid"}
-            borderColor={"sd.reference.color.scale.gray.200"}
+            borderBottom={{ sm: "1px solid" }}
+            borderColor={{ sm: "sd.reference.color.scale.gray.200" }}
           >
             <PathSpan path={token.path} />
           </Row>
           <Values token={token} />
-          <Row
-            p="sd.system.dimension.spacing.small"
-            borderBottom={"1px solid"}
-            borderColor={"sd.reference.color.scale.gray.200"}
-          >
-            -
-          </Row>
         </Fragment>
       ))}
     </>
