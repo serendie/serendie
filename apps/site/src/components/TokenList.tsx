@@ -37,6 +37,10 @@ export function TokenList({ tokens }: TokenList) {
     return token.key.toLowerCase().includes(keyword.toLowerCase());
   });
 
+  const AllTypes = [...new Set(tokens.map((token) => token.type))];
+
+  console.log(AllTypes);
+
   const types = [...new Set(filteredTokens.map((token) => token.type))];
 
   return (
@@ -182,7 +186,7 @@ const ReferenceValue: React.FC<{
     originalValue.includes("reference");
 
   return (
-    <Flex px="2px" flexDirection="column" alignItems={"flex-start"}>
+    <Flex flexDirection="column" alignItems={"flex-start"}>
       {token.type === "color" && (
         <ColorName
           name={isRef ? originalValue.toString() : token.key}
