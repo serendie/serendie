@@ -52,12 +52,11 @@ export function TokenList({ tokens }: TokenList) {
         display={"grid"}
         gridTemplateColumns={{
           sm: "minmax(100px, auto) minmax(100px, auto)",
-          md: "minmax(100px, auto) minmax(100px, auto)",
         }}
         mt="sd.system.dimension.spacing.extraLarge"
         fontSize={"sd.reference.typography.scale.expanded.twoExtraSmall"}
       >
-        <Wrapper>
+        <Wrapper display={{ base: "contents", smDown: "none" }}>
           <Th>name</Th>
           <Th>reference</Th>
         </Wrapper>
@@ -95,7 +94,14 @@ const List: React.FC<ListByTYpeProps> = ({ tokens }) => {
         <Fragment key={i}>
           <Row
             title={token.key}
-            p="sd.system.dimension.spacing.small"
+            pt={{
+              base: "sd.system.dimension.spacing.medium",
+              sm: "sd.system.dimension.spacing.extraSmall",
+            }}
+            pb={{
+              base: "sd.system.dimension.spacing.large",
+              sm: "sd.system.dimension.spacing.small",
+            }}
             borderBottom={{ sm: "1px solid" }}
             borderColor={{ sm: "sd.reference.color.scale.gray.200" }}
           >
@@ -116,7 +122,11 @@ const Values: React.FC<ValuesProps> = ({ token }) => {
   const { originalValue, value } = token;
   return (
     <Row
-      p="sd.system.dimension.spacing.extraSmall"
+      pt={{ sm: "sd.system.dimension.spacing.extraSmall" }}
+      pb={{
+        base: "sd.system.dimension.spacing.large",
+        sm: "sd.system.dimension.spacing.small",
+      }}
       borderBottom={"1px solid"}
       borderColor={"sd.reference.color.scale.gray.200"}
     >
@@ -166,7 +176,7 @@ const ReferenceValue: React.FC<{
     originalValue.includes("reference");
 
   return (
-    <Flex flexDirection="column" alignItems={"flex-start"}>
+    <Flex px="2px" flexDirection="column" alignItems={"flex-start"}>
       {token.type === "color" && (
         <ColorName
           name={isRef ? originalValue.toString() : token.key}
