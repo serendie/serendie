@@ -65,9 +65,13 @@ export function TokenList({ tokens }: TokenList) {
             <h2
               className={css({
                 gridColumn: "1 / -1",
-                textStyle: "sd.system.typography.title.small_expanded",
+                textStyle: {
+                  base: "_Web.headline.h1_sp",
+                  sm: "sd.system.typography.title.small_compact",
+                },
                 pt: "sd.system.dimension.spacing.threeExtraLarge",
                 pb: "sd.system.dimension.spacing.small",
+                color: "web.system.color.component.onSurface",
               })}
               style={{ textTransform: "capitalize" }}
             >
@@ -143,7 +147,9 @@ const Values: React.FC<ValuesProps> = ({ token }) => {
               alignItems={"center"}
               gap={"sd.reference.dimension.scale.3"}
             >
-              <Box color={"sd.system.color.component.onSurface"}>{key}: </Box>
+              <Box color={"sd.system.color.component.onSurfaceVariant"}>
+                {key}:{" "}
+              </Box>
               <ReferenceValue
                 token={token}
                 originalValue={originalValue[key].toString()}
@@ -216,7 +222,7 @@ const PathSpan: React.FC<{ path: string[] }> = ({ path }) => {
             color={
               i < path.length - 1
                 ? "sd.system.color.component.onSurfaceVariant"
-                : "sd.system.color.component.onSurface"
+                : "web.system.color.component.onSurface"
             }
           >
             <span>{p}</span>
@@ -291,7 +297,7 @@ const ColorName: React.FC<{ name: string; color: string }> = ({
         </Span>
         <code
           className={css({
-            color: "sd.system.color.component.onSurface",
+            color: "web.system.color.component.onSurface",
           })}
         >
           {colorNumber}
