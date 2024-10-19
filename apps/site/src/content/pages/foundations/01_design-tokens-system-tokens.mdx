@@ -1,11 +1,12 @@
 ---
 title: Design Tokens
-slug: foundations/design-tokens
+slug: foundations/design-tokens/system-tokens
+parent: foundations/design-tokens
 ---
 
 import { TokenList } from "src/components/TokenList";
 import tokens from "@serendie/design-token/token-list";
-
+import { links } from "./01_design-tokens.mdx";
 import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
 import {
   PageMain,
@@ -17,27 +18,9 @@ import {
 } from "../../../components/PageLayout.tsx";
 import PageHeader from "@/components/PageHeader.astro";
 
-export const referenceTokens = tokens.filter((token) =>
-  token.key.includes("sd.reference")
-);
 export const systemTokens = tokens.filter(
   (token) => !token.key.includes("themes") && token.key.includes("sd.system")
 );
-
-export const links = [
-  {
-    name: "設計",
-    path: "/foundations/design-tokens",
-  },
-  {
-    name: "リファレンストークン",
-    path: "/foundations/design-tokens/reference-tokens",
-  },
-  {
-    name: "システムトークン",
-    path: "/foundations/design-tokens/system-tokens",
-  },
-];
 
 <PageHeader links={links}>
   <IndexPageHeader
@@ -49,5 +32,7 @@ export const links = [
   />
 </PageHeader>
 <PageMain gridColumn={"span 8"}>
-  <PageSection>TBD</PageSection>
+  <PageSection>
+    <TokenList tokens={systemTokens} client:load />
+  </PageSection>
 </PageMain>
