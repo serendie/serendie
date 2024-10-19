@@ -13,6 +13,8 @@ const { links } = Astro.props;
 
 <div
   class={css({
+    maxWidth: "100%",
+    overflowX: "auto",
     display: "flex",
     alignItems: "stretch",
     mb: "sd.system.dimension.spacing.threeExtraLarge",
@@ -38,6 +40,7 @@ const { links } = Astro.props;
       <a
         href={path.path}
         class:list={css({
+          whiteSpace: "nowrap",
           h: 44,
           px: "sd.system.dimension.spacing.twoExtraLarge",
           pb: "sd.system.dimension.spacing.twoExtraSmall",
@@ -45,6 +48,7 @@ const { links } = Astro.props;
             color: "sd.system.color.impression.primary",
           },
           borderBottomWidth: 2,
+          fontWeight: Astro.url.pathname === path.path ? "bold" : "normal",
           borderBottomColor:
             Astro.url.pathname === path.path
               ? "sd.system.color.impression.primary"
