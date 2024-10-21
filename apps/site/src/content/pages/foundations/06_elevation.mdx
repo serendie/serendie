@@ -3,6 +3,8 @@ title: Elevation
 slug: foundations/elevation
 ---
 
+import Illustration from "../../../assets/hearderImages/about.svg";
+import FigureElevationShadow from "../../../assets/content/foundations/elevation/figure-elevation-shadow.svg?raw";
 import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
 import PageHeadLine from "../../../components/PageHeadLine.astro";
 import {
@@ -26,6 +28,8 @@ import { css } from "styled-system/css";
       ドロップシャドウは背景に影を落とす効果であり、その強さによって高低差を表現できます。Serendie Design Systemでは、Level1~5まで5段階のElevationを定義しています。
 
       Level0はBody (surface)であり、ほとんどのUIコンポーネントはこのLevel0に位置します。<PageA href="/components/dropdown-menu">DropdownMenu</PageA>の開閉メニューはLevel1、<PageA href="/components/toast">Toast</PageA>はLevel3、<PageA href="/components/modal-dialog">Modal Dialog</PageA>や<PageA href="/components/drawer">Drawer</PageA>はLevel5など、UIの一般的な振る舞いに合わせてLevelをコントロールすることが大切です。
+
+      <Fragment set:html={FigureElevationShadow} />
 
     	### Figmaでの利用上の注意
 
