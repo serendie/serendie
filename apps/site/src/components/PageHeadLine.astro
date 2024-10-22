@@ -18,24 +18,30 @@ const icon = icons[number % icons.length];
 const id = `section-${number}`;
 
 export const snackBarClassName = css({
+  cursor: "pointer",
   position: "fixed",
   top: "24px",
+  w: "min(400px, calc(100vw - 48px))",
   right: "24px",
-  backgroundColor: "#0A69CF", //TODO: theme
+  display: "grid",
+  gridTemplateColumns: "min-content 1fr min-content",
+  gap: "sd.system.dimension.spacing.small",
+  alignItems: "center",
+  bg: "web.system.color.impression.primary",
   py: "sd.system.dimension.spacing.extraLarge",
   px: "sd.system.dimension.spacing.twoExtraLarge",
   textStyle: "sd.system.typography.body.small",
   fontWeight: "sd.reference.typography.fontWeight.bold",
   lineHeight: "1",
   color: "#fff",
-  textAlign: "center",
   borderRadius: "sd.system.dimension.radius.extraLarge",
   opacity: 0,
   transition: "opacity 0.3s ease-in-out",
+  boxShadow: "0px 4px 20px 0px rgba(11, 24, 63, 0.30)",
 });
 ---
 
-<astro-page-headline data-snackBarClassName={snackBarClassName}>
+<astro-page-headline data-snack-bar-class-name={snackBarClassName}>
   <h2
     class={`group ${css({
       display: "grid",
@@ -109,7 +115,7 @@ export const snackBarClassName = css({
   class PageHeadLine extends HTMLElement {
     constructor() {
       super();
-      const link = this.querySelector<HTMLElement>("[data-copy-url]");
+      const link = this.querySelector("[data-copy-url]");
       if (!link) return;
       link.addEventListener("click", (event) => {
         event.preventDefault();
@@ -123,20 +129,36 @@ export const snackBarClassName = css({
     }
 
     showSnackbar() {
-      // TODO: アイコンと閉じるボタンを追加
-      const bar = document.createElement("div");
-      bar.className = this.dataset.snackbarclassname ?? "";
-      bar.textContent = "コピーしました";
-      document.body.appendChild(bar);
-      setTimeout(function () {
-        bar.style.opacity = "1";
-        setTimeout(function () {
-          bar.style.opacity = "0";
-          setTimeout(function () {
-            document.body.removeChild(bar);
-          }, 1000);
-        }, 2000);
-      });
+      const snackbar = document.createElement("div");
+      snackbar.className = this.dataset.snackBarClassName ?? "";
+      snackbar.innerHTML = `
+          <div class="snackbar-icon">
+            <svg width="21" height="26" viewBox="0 0 21 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.00084 19.2338C3.96641 19.7913 5.03233 20.1531 6.13774 20.2986C7.24315 20.4441 8.3664 20.3705 9.44336 20.082C10.5203 19.7934 11.5299 19.2955 12.4144 18.6168C13.299 17.938 14.0412 17.0917 14.5987 16.1262C15.1561 15.1606 15.518 14.0947 15.6635 12.9893C15.809 11.8838 15.7354 10.7606 15.4468 9.68364C15.1583 8.60668 14.6604 7.59711 13.9817 6.71256C13.3029 5.82801 12.4566 5.08582 11.491 4.52834" stroke="#FFE885" stroke-width="10"/>
+            </svg>
+          </div>
+          <span>コピーしました</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.5996 5.34875L18.6533 6.4025L13.0533 12.0025L18.6533 17.6025L17.5996 18.6563L11.9996 13.0563L6.39957 18.6563L5.34582 17.6025L10.9458 12.0025L5.34582 6.4025L6.39957 5.34875L11.9996 10.9488L17.5996 5.34875Z" fill="currentColor"/>
+          </svg>
+      `;
+
+      document.body.appendChild(snackbar);
+
+      setTimeout(() => {
+        snackbar.style.opacity = "1";
+      }, 10);
+
+      snackbar.addEventListener("click", () => this.hideSnackbar(snackbar));
+
+      setTimeout(() => this.hideSnackbar(snackbar), 3000);
+    }
+
+    hideSnackbar(snackbar: HTMLDivElement) {
+      snackbar.style.opacity = "0";
+      setTimeout(() => {
+        document.body.removeChild(snackbar);
+      }, 300);
     }
   }
 
