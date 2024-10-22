@@ -26,7 +26,6 @@ export const snackBarClassName = css({
   display: "grid",
   gridTemplateColumns: "min-content 1fr min-content",
   alignItems: "center",
-  gap: "sd.system.dimension.spacing.extraSmall",
   bg: "web.system.color.impression.primary",
   py: "sd.system.dimension.spacing.extraLarge",
   px: "sd.system.dimension.spacing.twoExtraLarge",
@@ -37,6 +36,9 @@ export const snackBarClassName = css({
   borderRadius: "sd.system.dimension.radius.extraLarge",
   opacity: 0,
   transition: "opacity 0.3s ease-in-out",
+  "& svg": {
+    height: "26px",
+  },
 });
 
 const iconJSON = JSON.stringify(icon);
@@ -139,11 +141,9 @@ const iconJSON = JSON.stringify(icon);
       snackbar.innerHTML = `
           <div class="snackbar-icon">${icon}</div>
           <span>コピーしました</span>
-          <button class="snackbar-close" aria-label="閉じる">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" fill="currentColor"/>
-            </svg>
-          </button>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.5996 5.34875L18.6533 6.4025L13.0533 12.0025L18.6533 17.6025L17.5996 18.6563L11.9996 13.0563L6.39957 18.6563L5.34582 17.6025L10.9458 12.0025L5.34582 6.4025L6.39957 5.34875L11.9996 10.9488L17.5996 5.34875Z" fill="currentColor"/>
+          </svg>
       `;
 
       document.body.appendChild(snackbar);
