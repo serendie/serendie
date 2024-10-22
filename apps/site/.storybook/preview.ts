@@ -4,8 +4,10 @@ import type { Preview, ReactRenderer } from "@storybook/react";
 import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import { SerendieTokens } from "../../../ui/src/tokens";
 
+const defaultTheme = "konjo";
+
 const { themes } = SerendieTokens;
-const themeNames = Object.keys(themes);
+const themeNames = [defaultTheme].concat(Object.keys(themes));
 
 const preview: Preview = {
   parameters: {
@@ -24,7 +26,7 @@ const preview: Preview = {
           return acc;
         }, {}),
       },
-      defaultTheme: "konjo",
+      defaultTheme,
       attributeName: "data-panda-theme",
     }),
   ],
