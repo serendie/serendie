@@ -18,24 +18,34 @@ const icon = icons[number % icons.length];
 const id = `section-${number}`;
 
 export const snackBarClassName = css({
+  cursor: "pointer",
   position: "fixed",
   top: "24px",
+  w: "min(400px, calc(100vw - 48px))",
   right: "24px",
-  backgroundColor: "#0A69CF", //TODO: theme
+  display: "grid",
+  gridTemplateColumns: "min-content 1fr min-content",
+  alignItems: "center",
+  gap: "sd.system.dimension.spacing.extraSmall",
+  bg: "web.system.color.impression.primary",
   py: "sd.system.dimension.spacing.extraLarge",
   px: "sd.system.dimension.spacing.twoExtraLarge",
   textStyle: "sd.system.typography.body.small",
   fontWeight: "sd.reference.typography.fontWeight.bold",
   lineHeight: "1",
   color: "#fff",
-  textAlign: "center",
   borderRadius: "sd.system.dimension.radius.extraLarge",
   opacity: 0,
   transition: "opacity 0.3s ease-in-out",
 });
+
+const iconJSON = JSON.stringify(icon);
 ---
 
-<astro-page-headline data-snackBarClassName={snackBarClassName}>
+<astro-page-headline
+  data-icon={iconJSON}
+  data-snack-bar-class-name={snackBarClassName}
+>
   <h2
     class={`group ${css({
       display: "grid",
@@ -109,7 +119,7 @@ export const snackBarClassName = css({
   class PageHeadLine extends HTMLElement {
     constructor() {
       super();
-      const link = this.querySelector<HTMLElement>("[data-copy-url]");
+      const link = this.querySelector("[data-copy-url]");
       if (!link) return;
       link.addEventListener("click", (event) => {
         event.preventDefault();
@@ -123,20 +133,35 @@ export const snackBarClassName = css({
     }
 
     showSnackbar() {
-      // TODO: アイコンと閉じるボタンを追加
-      const bar = document.createElement("div");
-      bar.className = this.dataset.snackbarclassname ?? "";
-      bar.textContent = "コピーしました";
-      document.body.appendChild(bar);
-      setTimeout(function () {
-        bar.style.opacity = "1";
-        setTimeout(function () {
-          bar.style.opacity = "0";
-          setTimeout(function () {
-            document.body.removeChild(bar);
-          }, 1000);
-        }, 2000);
-      });
+      const snackbar = document.createElement("div");
+      snackbar.className = this.dataset.snackBarClassName ?? "";
+      const icon = JSON.parse(this.dataset.icon ?? "");
+      snackbar.innerHTML = `
+          <div class="snackbar-icon">${icon}</div>
+          <span>コピーしました</span>
+          <button class="snackbar-close" aria-label="閉じる">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" fill="currentColor"/>
+            </svg>
+          </button>
+      `;
+
+      document.body.appendChild(snackbar);
+
+      setTimeout(() => {
+        snackbar.style.opacity = "1";
+      }, 10);
+
+      snackbar.addEventListener("click", () => this.hideSnackbar(snackbar));
+
+      setTimeout(() => this.hideSnackbar(snackbar), 3000);
+    }
+
+    hideSnackbar(snackbar: HTMLDivElement) {
+      snackbar.style.opacity = "0";
+      setTimeout(() => {
+        document.body.removeChild(snackbar);
+      }, 300);
     }
   }
 
