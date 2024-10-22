@@ -5,7 +5,6 @@ export const PageMain = styled("div", {
   base: {
     color: "web.system.color.component.background.onSurface",
     gridColumn: "span 6",
-    overflow: "hidden",
     mdDown: {
       gridColumn: "span 1",
     },

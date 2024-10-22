@@ -37,6 +37,10 @@ export function TokenList({ tokens }: TokenList) {
     return token.key.toLowerCase().includes(keyword.toLowerCase());
   });
 
+  const AllTypes = [...new Set(tokens.map((token) => token.type))];
+
+  console.log(AllTypes);
+
   const types = [...new Set(filteredTokens.map((token) => token.type))];
 
   return (
@@ -50,23 +54,28 @@ export function TokenList({ tokens }: TokenList) {
       </div>
       <Grid
         display={"grid"}
-        gridTemplateColumns={"minmax(100px, auto) minmax(100px, auto) auto"}
+        gridTemplateColumns={{
+          sm: "minmax(100px, auto) minmax(100px, auto)",
+        }}
         mt="sd.system.dimension.spacing.extraLarge"
         fontSize={"sd.reference.typography.scale.expanded.twoExtraSmall"}
       >
-        <Wrapper>
+        <Wrapper display={{ base: "contents", smDown: "none" }}>
           <Th>name</Th>
           <Th>reference</Th>
-          <Th>comment</Th>
         </Wrapper>
         {types.map((type, i) => (
           <Wrapper key={i}>
             <h2
               className={css({
                 gridColumn: "1 / -1",
-                textStyle: "sd.system.typography.title.small_expanded",
+                textStyle: {
+                  base: "_Web.headline.h1_sp",
+                  sm: "sd.system.typography.title.small_compact",
+                },
                 pt: "sd.system.dimension.spacing.threeExtraLarge",
                 pb: "sd.system.dimension.spacing.small",
+                color: "web.system.color.component.onSurface",
               })}
               style={{ textTransform: "capitalize" }}
             >
@@ -93,20 +102,20 @@ const List: React.FC<ListByTYpeProps> = ({ tokens }) => {
         <Fragment key={i}>
           <Row
             title={token.key}
-            p="sd.system.dimension.spacing.small"
-            borderBottom={"1px solid"}
-            borderColor={"sd.reference.color.scale.gray.200"}
+            pt={{
+              base: "sd.system.dimension.spacing.medium",
+              sm: "sd.system.dimension.spacing.extraSmall",
+            }}
+            pb={{
+              base: "sd.system.dimension.spacing.large",
+              sm: "sd.system.dimension.spacing.small",
+            }}
+            borderBottom={{ sm: "1px solid" }}
+            borderColor={{ sm: "sd.reference.color.scale.gray.200" }}
           >
             <PathSpan path={token.path} />
           </Row>
           <Values token={token} />
-          <Row
-            p="sd.system.dimension.spacing.small"
-            borderBottom={"1px solid"}
-            borderColor={"sd.reference.color.scale.gray.200"}
-          >
-            -
-          </Row>
         </Fragment>
       ))}
     </>
@@ -121,7 +130,11 @@ const Values: React.FC<ValuesProps> = ({ token }) => {
   const { originalValue, value } = token;
   return (
     <Row
-      p="sd.system.dimension.spacing.extraSmall"
+      pt={{ sm: "sd.system.dimension.spacing.extraSmall" }}
+      pb={{
+        base: "sd.system.dimension.spacing.large",
+        sm: "sd.system.dimension.spacing.small",
+      }}
       borderBottom={"1px solid"}
       borderColor={"sd.reference.color.scale.gray.200"}
     >
@@ -138,7 +151,9 @@ const Values: React.FC<ValuesProps> = ({ token }) => {
               alignItems={"center"}
               gap={"sd.reference.dimension.scale.3"}
             >
-              <Box color={"sd.system.color.component.onSurface"}>{key}: </Box>
+              <Box color={"sd.system.color.component.onSurfaceVariant"}>
+                {key}:{" "}
+              </Box>
               <ReferenceValue
                 token={token}
                 originalValue={originalValue[key].toString()}
@@ -211,7 +226,7 @@ const PathSpan: React.FC<{ path: string[] }> = ({ path }) => {
             color={
               i < path.length - 1
                 ? "sd.system.color.component.onSurfaceVariant"
-                : "sd.system.color.component.onSurface"
+                : "web.system.color.component.onSurface"
             }
           >
             <span>{p}</span>
@@ -286,7 +301,7 @@ const ColorName: React.FC<{ name: string; color: string }> = ({
         </Span>
         <code
           className={css({
-            color: "sd.system.color.component.onSurface",
+            color: "web.system.color.component.onSurface",
           })}
         >
           {colorNumber}
