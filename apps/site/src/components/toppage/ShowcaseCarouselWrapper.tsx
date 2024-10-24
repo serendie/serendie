@@ -3,10 +3,21 @@ import { ShowcaseCarousel } from "./ShowcaseCarousel";
 
 const ShowcaseImageWrapper = styled("div", {
   base: {
+    position: "relative",
     flex: "0 0 calc(100% - 32px)",
     minWidth: "0",
     aspectRatio: "364 / 234",
     pl: "16px",
+
+    expanded: {
+      flex: "0 0 33.333%",
+      pl: "24px",
+    },
+  },
+});
+const ShowcaseImageContainer = styled("div", {
+  base: {
+    position: "relative",
     "& > img": {
       width: "100%",
       height: "100%",
@@ -16,10 +27,23 @@ const ShowcaseImageWrapper = styled("div", {
       borderColor: "sd.system.color.component.surface",
       borderRadius: "16px",
     },
-
-    expanded: {
-      flex: "0 0 33.333%",
-      pl: "24px",
+    _before: {
+      transition: "all 0.3s",
+      content: "''",
+      position: "absolute",
+      display: "block",
+      width: "calc(100% - 2px)",
+      height: "calc(100% - 2px)",
+      bg: "rgba(0, 0, 0, 0.5)",
+      top: 1,
+      left: 1,
+      opacity: 0,
+      borderRadius: "15px",
+    },
+    _hover: {
+      _before: {
+        opacity: 1,
+      },
     },
   },
 });
@@ -29,7 +53,9 @@ export const ShowcaseCarouselWrapper: React.FC = () => {
     <ShowcaseCarousel>
       {Array.from({ length: 10 }).map((_, index) => (
         <ShowcaseImageWrapper key={index}>
-          <img src={`https://picsum.photos/seed/${index}/728/468`} />
+          <ShowcaseImageContainer>
+            <img src={`https://picsum.photos/seed/${index}/728/468`} />
+          </ShowcaseImageContainer>
         </ShowcaseImageWrapper>
       ))}
     </ShowcaseCarousel>

@@ -57,7 +57,9 @@ const showcaseCarouselStyles = sva({
 export const ShowcaseCarousel: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel();
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+  });
   const styles = showcaseCarouselStyles();
 
   const {

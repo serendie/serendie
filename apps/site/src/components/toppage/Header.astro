@@ -6,6 +6,7 @@ import { Shapes } from "./Shapes";
 import { AnimationFadeIn } from "./AnimationFadeIn";
 import { motion } from "framer-motion";
 
+
 const HeaderOver = styled("header", {
   base: {
     color: 'web.system.color.impression.onTertiary',
@@ -35,9 +36,9 @@ const HeaderContainer = styled(motion.div, {
     animationDelay: "3s",
     opacity: 0,
     expanded: {
-      pt: "12.5%",
-      mx: "12.22%",
-      width: "calc(100vw - 24.44%)",
+      pt: "24.889vh",
+      mx: "10.417vw",
+      width: "calc(100vw - 20.833%)",
     },
   },
 });
@@ -78,9 +79,12 @@ const ShapesWrapper = styled("div", {
     top: "50%",
     right: "24px",
     expanded: {
+      bottom: "0",
       top: "50%",
-      right: "10%",
       transform: "translateY(-50%)",
+      right: "10.417vw",
+      width: "37.222vw",
+      height: "37.222vw",
     },
   },
 });
@@ -142,7 +146,11 @@ const ShapesWrapper = styled("div", {
         Serendie Design Systemは、多様な事業と人々をつなぎ、新たな価値を生み出すための三菱電機によるオープンソースデザインシステムです。
       </HeaderDescription>
 
-      <Button>スターターガイド</Button>
+      <Button className={css({
+        py: "sd.system.dimension.spacing.medium",
+        height: "56px",
+        px: "sd.system.dimension.spacing.threeExtraLarge",
+      })}>スターターガイド</Button>
     </HeaderContainer>
   </HeaderWrapper>
 </HeaderOver>
