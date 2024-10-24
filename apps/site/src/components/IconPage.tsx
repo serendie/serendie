@@ -52,6 +52,7 @@ const IconBoxSvg = styled("div", {
 const IconTitle = styled("h2", {
   base: {
     margin: 0,
+    fontFamily: "Noto Sans Mono",
     textStyle: "sd.system.typography.body.medium_compact",
     expanded: {
       textStyle: "sd.system.typography.body.medium_expanded",
