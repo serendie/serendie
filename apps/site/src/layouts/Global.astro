@@ -19,6 +19,8 @@ const Body = styled("body", {
     alignItems: "start",
   },
 });
+
+const ogImage = new URL("/og.png", Astro.url).toString();
 ---
 
 <!doctype html>
@@ -27,6 +29,7 @@ const Body = styled("body", {
     <meta charset="UTF-8" />
     <meta name="description" content={siteConfig.siteDescription} />
     <meta name="viewport" content="width=device-width" />
+    <meta property="og:image" content={ogImage} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}{title && " | "}{siteConfig.siteName}</title>
 
