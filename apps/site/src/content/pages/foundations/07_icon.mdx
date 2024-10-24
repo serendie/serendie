@@ -3,4 +3,17 @@ title: Icon
 slug: foundations/icon
 ---
 
-TODO:設計指針とアイコン一覧をタブで表現
+import { IconPage } from "@/components/IconPage";
+import PageHeader from "@/components/PageHeader.astro";
+import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
+
+<PageHeader>
+  <IndexPageHeader
+    title={frontmatter.title}
+    illustType="D"
+    description={
+      "オブジェクトに落とすシャドウはその強弱によって、オブジェクト間の高低差を表現し、UIに階層 (Elevation) を作り出します。またCSSにおいて階層を指定するz-indexについても取り扱います。"
+    }
+  />
+</PageHeader>
+<IconPage client:idle />
