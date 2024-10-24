@@ -1,9 +1,9 @@
 ---
 import "@/index.css";
-import { siteConfig } from "@/../siteConfig";
-import { styled, Box } from "styled-system/jsx";
+import { styled } from "styled-system/jsx";
 import Footer from "@/components/toppage/Footer.astro";
 import GlobalHeader from "@/components/GlobalHeader.astro";
+import Html from "./Html.astro";
 
 interface Props {
   title: string;
@@ -19,38 +19,12 @@ const Body = styled("body", {
     alignItems: "start",
   },
 });
-
-const ogImage = new URL("/og.png", Astro.url).toString();
 ---
 
-<!doctype html>
-<html lang="ja" style="height: 100%">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content={siteConfig.siteDescription} />
-    <meta name="viewport" content="width=device-width" />
-    <meta property="og:title" content={title} />
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:description" content={siteConfig.siteDescription} />
-    <meta property="og:url" content={Astro.url.href} />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={siteConfig.siteDescription} />
-    <meta property="twitter:image" content={ogImage} />
-
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}{title && " | "}{siteConfig.siteName}</title>
-
-    <script>
-      const storedTheme = localStorage.getItem("panda-theme");
-      if (storedTheme) {
-        document.documentElement.setAttribute("data-panda-theme", storedTheme);
-      }
-    </script>
-  </head>
+<Html title={title}>
   <Body>
     <GlobalHeader />
     <slot />
     <Footer />
   </Body>
-</html>
+</Html>
