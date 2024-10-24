@@ -2,10 +2,9 @@
 import Footer from "@/components/toppage/Footer.astro";
 import "@/index.css";
 import { styled } from "styled-system/jsx";
-import { siteConfig } from "@/../siteConfig";
-import { ThemeSelector } from "@/components/ThemeSelector";
 import GlobalHeader from "@/components/GlobalHeader.astro";
 import { css } from "styled-system/css";
+import Html from "./Html.astro";
 
 const Container = styled("div", {
   base: {
@@ -77,44 +76,32 @@ const menuItems = [
 ];
 ---
 
-<!doctype html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content={siteConfig.siteDescription} />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{siteConfig.siteName}</title>
-
-    <script>
-      const storedTheme = localStorage.getItem("panda-theme");
-      if (storedTheme) {
-        document.documentElement.setAttribute("data-panda-theme", storedTheme);
-      }
-    </script>
-  </head>
+<Html>
   <body>
-    <GlobalHeader className={css({
-      position: "fixed",
-      top: 0,
-      zIndex: 100,
-      w: "100%",
-      pt: "sd.system.dimension.spacing.extraLarge",
-      pr: "sd.system.dimension.spacing.threeExtraLarge",
-      pb: "sd.system.dimension.spacing.extraLarge",
-      pl: "sd.system.dimension.spacing.threeExtraLarge",
-      borderBottom: "none",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      animation: `fadein 0.6s forwards`,
-      animationDelay: "3s",
-      opacity: 0,
-      '& > div': {
-        'w': '100%',
-        'maxW': '100%',
-      }
-    })} isToppage />
+    <GlobalHeader
+      className={css({
+        position: "fixed",
+        top: 0,
+        zIndex: 100,
+        w: "100%",
+        pt: "sd.system.dimension.spacing.extraLarge",
+        pr: "sd.system.dimension.spacing.threeExtraLarge",
+        pb: "sd.system.dimension.spacing.extraLarge",
+        pl: "sd.system.dimension.spacing.threeExtraLarge",
+        borderBottom: "none",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        animation: `fadein 0.6s forwards`,
+        animationDelay: "3s",
+        opacity: 0,
+        "& > div": {
+          w: "100%",
+          maxW: "100%",
+        },
+      })}
+      isToppage
+    />
 
     <Wrapper>
       <Container>
@@ -124,4 +111,4 @@ const menuItems = [
 
     <Footer />
   </body>
-</html>
+</Html>
