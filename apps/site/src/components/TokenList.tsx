@@ -3,7 +3,21 @@ import { IconButton, Search } from "@serendie/ui";
 import { css } from "styled-system/css";
 import { Box, Circle, Flex, styled } from "styled-system/jsx";
 import React, { Fragment, useCallback, useState } from "react";
+import Icon01 from "../assets/headLineIcon/icon01.svg?react";
+import Icon02 from "../assets/headLineIcon/icon02.svg?react";
+import Icon03 from "../assets/headLineIcon/icon03.svg?react";
+import Icon04 from "../assets/headLineIcon/icon04.svg?react";
+import Icon05 from "../assets/headLineIcon/icon05.svg?react";
+import Icon06 from "../assets/headLineIcon/icon06.svg?react";
 
+const icons = [
+  <Icon01 />,
+  <Icon02 />,
+  <Icon03 />,
+  <Icon04 />,
+  <Icon05 />,
+  <Icon06 />,
+];
 interface TokenList {
   tokens: typeof tokens;
 }
@@ -38,8 +52,6 @@ export function TokenList({ tokens }: TokenList) {
   });
 
   const AllTypes = [...new Set(tokens.map((token) => token.type))];
-
-  console.log(AllTypes);
 
   const types = [...new Set(filteredTokens.map((token) => token.type))];
 
@@ -76,9 +88,20 @@ export function TokenList({ tokens }: TokenList) {
                 pt: "sd.system.dimension.spacing.threeExtraLarge",
                 pb: "sd.system.dimension.spacing.small",
                 color: "web.system.color.component.onSurface",
+                display: "flex",
+                alignItems: "center",
+                gap: "sd.system.dimension.spacing.twoExtraSmall",
+                ml: "-sd.system.dimension.spacing.twoExtraSmall",
+                "& > svg": {
+                  w: "28px",
+                },
+                "& > svg path": {
+                  fill: "sd.reference.color.scale.gray.400",
+                },
               })}
               style={{ textTransform: "capitalize" }}
             >
+              {icons[AllTypes.indexOf(type) % icons.length]}
               {type}
             </h2>
             <List
