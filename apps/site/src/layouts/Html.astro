@@ -34,7 +34,7 @@ const pageTitle = title
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{pageTitle}</title>
 
-    <script>
+    <script is:inline>
       const storedTheme = localStorage.getItem("panda-theme");
       if (storedTheme) {
         document.documentElement.setAttribute("data-panda-theme", storedTheme);
