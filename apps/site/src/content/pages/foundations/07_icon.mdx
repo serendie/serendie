@@ -3,4 +3,11 @@ title: Icon
 slug: foundations/icon
 ---
 
-TODO:設計指針とアイコン一覧をタブで表現
+import { IconPage } from "@/components/IconPage";
+import PageHeader from "@/components/PageHeader.astro";
+import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
+
+<PageHeader>
+  <IndexPageHeader title={frontmatter.title} illustType="D" />
+</PageHeader>
+<IconPage client:idle />
