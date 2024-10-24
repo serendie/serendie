@@ -29,7 +29,15 @@ const ogImage = new URL("/og.png", Astro.url).toString();
     <meta charset="UTF-8" />
     <meta name="description" content={siteConfig.siteDescription} />
     <meta name="viewport" content="width=device-width" />
+    <meta property="og:title" content={title} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:description" content={siteConfig.siteDescription} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={siteConfig.siteDescription} />
+    <meta property="twitter:image" content={ogImage} />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}{title && " | "}{siteConfig.siteName}</title>
 

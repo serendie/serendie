@@ -3,7 +3,7 @@ import react from "@astrojs/react";
 
 import mdx from "@astrojs/mdx";
 import svgr from "vite-plugin-svgr";
-import { getSiteUrl, BASE_PATH } from "./utils";
+import { getSiteUrl, BASE_PATH } from "./src/utils";
 
 // https://astro.build/config
 export default defineConfig({
