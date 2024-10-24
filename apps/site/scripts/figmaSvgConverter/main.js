@@ -2,13 +2,18 @@ async function convertSvg(node) {
   const colors = getColors(node);
   const svg = await node.exportAsync({ format: "SVG" });
   const svgString = String.fromCharCode.apply(null, new Uint8Array(svg));
-  const regex = /stroke|fill="(#[0-9A-F]{6})"/g;
+  const regex = /[stroke|fill]="(#[0-9A-F]{6})"/g;
   const replacedSvgString = svgString.replace(regex, (match, color) => {
     const colorObj = colors.find((c) => c.color === color);
-    return match.replace(
-      color,
-      `var(--${colorObj.collectionName}-${colorObj.name.replaceAll("/", "-")}, ${color})`
-    );
+    return colorObj
+      ? match.replace(
+          color,
+          `var(--${colorObj.collectionName}-${colorObj.name.replaceAll(
+            "/",
+            "-"
+          )}, ${color})`
+        )
+      : match;
   });
 
   figma.ui.postMessage({
@@ -28,7 +33,7 @@ function rgb2hex(r, g, b) {
 
 function getColors(n) {
   const ret = [];
-  n.fills.concat(n.strokes).forEach((paint) => {
+  [...n.fills, ...n.strokes].forEach((paint) => {
     if (
       paint.boundVariables &&
       paint.boundVariables.color &&
