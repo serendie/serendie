@@ -92,6 +92,7 @@ const FooterCopyright = styled("div", {
 const footerLink = [
   {
     title: "About",
+    url: "/about",
     links: [
       {
         title: "Serendie Design System",
@@ -101,6 +102,7 @@ const footerLink = [
   },
   {
     title: "Get Started",
+    url: "/get-started",
     links: [
       {
         title: "デザイン",
@@ -114,6 +116,7 @@ const footerLink = [
   },
   {
     title: "Foundation",
+    url: "/foundations",
     links: [
       {
         title: "Design Tokens",
@@ -151,6 +154,7 @@ const footerLink = [
   },
   {
     title: "Components",
+    url: "/components",
     links: [
       {
         title: "Accordion",
@@ -196,7 +200,7 @@ const footerLink = [
       {
         footerLink.map((link) => (
           <div>
-            <h2>{link.title}</h2>
+            <h2><a href={link.url}>{link.title}</a></h2>
             <ul>
               {link.links.map((item, index) => (
                 <FooterLinksLi>
