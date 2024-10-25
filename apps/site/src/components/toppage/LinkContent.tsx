@@ -294,6 +294,7 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
               {c.links.map((link, i) => (
                 <LinkContentCard
                   key={i}
+                  href={link.href}
                   title={link.title}
                   illustration={link.illustration}
                 />

@@ -1,4 +1,4 @@
-import useEmblaCarousel from "embla-carousel-react";
+// import useEmblaCarousel from "embla-carousel-react";
 import { sva } from "styled-system/css";
 // import { IconButton } from "@serendie/ui";
 // import { usePrevNextButtons } from "../utils/carouselUtils";
@@ -57,9 +57,9 @@ const showcaseCarouselStyles = sva({
 export const ShowcaseCarousel: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => {
-  const [emblaRef] = useEmblaCarousel({
-    loop: true,
-  });
+  // const [emblaRef] = useEmblaCarousel({
+  //   loop: true,
+  // });
   const styles = showcaseCarouselStyles();
 
   // const {
@@ -71,7 +71,10 @@ export const ShowcaseCarousel: React.FC<{
 
   return (
     <div className={styles.buttonWrapper}>
-      <div className={styles.wrapper} ref={emblaRef}>
+      <div
+        className={styles.wrapper}
+        // ref={emblaRef}
+      >
         <div className={styles.container}>{children}</div>
       </div>
 
