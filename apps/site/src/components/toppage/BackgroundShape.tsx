@@ -53,29 +53,27 @@ export const BackgroundShape1: React.FC = () => {
       <motion.div
         className={css({
           position: "absolute",
-          top: "67vh",
-          left: "-70vw",
-          width: "100vw",
-          aspectRatio: "1/1",
           zIndex: "-2",
           transformOrigin: "center center",
           pointerEvents: "none",
           mixBlendMode: "multiply",
-          expanded: {
-            scale: "1",
-            top: "calc(-20vh - 10vw)",
-            right: "initial",
-            left: "35%",
-            width: "calc(100vw + 25%)",
-            aspectRatio: "1/1",
-          },
+          scale: "1",
+          top: "calc(-20vh - 10vw)",
+          right: "-20%",
+          width: "calc(100vw + 25%)",
+          aspectRatio: "1/1",
         })}
-        initial={{ opacity: 0, rotate: 0, scale: 1.2, x: "-50%" }}
+        initial={{
+          opacity: 0,
+          rotate: 0,
+          scale: 1.2,
+          // x: "-50%"
+        }}
         animate={{
           opacity: 1,
           scale: 1,
-          rotate: 140,
-          x: "-50%",
+          rotate: 145,
+          // x: "-50%",
         }}
         transition={{
           duration: 1.5,
@@ -112,16 +110,16 @@ export const BackgroundShape1: React.FC = () => {
 export const BackgroundShape2: React.FC = () => {
   const { scrollYProgress } = useScroll();
 
-  const y = useParallax(scrollYProgress, 600);
+  const y = useParallax(scrollYProgress, 0);
 
   return (
     <>
       <motion.div
         className={css({
           position: "absolute",
-          top: "200vh",
-          left: "0%",
-          width: "100%",
+          top: "calc(100vh + 60px)",
+          left: "-79px",
+          width: "124%",
           aspectRatio: "1/1",
           zIndex: "-2",
           transformOrigin: "center center",
@@ -157,7 +155,7 @@ export const BackgroundShape2: React.FC = () => {
         >
           <g>
             <path
-              d="M1223.47 1153.21C1272.84 1067.69 1304.89 973.284 1317.78 875.377C1330.67 777.47 1324.15 677.984 1298.59 582.597C1273.03 487.211 1228.94 397.792 1168.82 319.447C1108.7 241.103 1033.75 175.366 948.224 125.99C862.703 76.6143 768.294 44.5668 670.387 31.6771C572.481 18.7875 472.994 25.3082 377.607 50.867C282.221 76.4257 192.802 120.522 114.458 180.638C36.1127 240.754 -29.6242 315.713 -78.9999 401.234"
+              d="M1223.47 1153.21C1272.84 1067.69 1304.89 973.282 1317.78 875.375C1330.67 777.469 1324.15 677.982 1298.59 582.596C1273.03 487.209 1228.94 397.791 1168.82 319.446C1108.7 241.101 1033.75 175.364 948.224 125.988C862.703 76.6127 768.294 44.5651 670.387 31.6755C572.48 18.7859 472.994 25.3066 377.607 50.8654C282.221 76.4241 192.802 120.52 114.457 180.636C36.1126 240.753 -29.6243 315.711 -79 401.232"
               stroke-width="50"
             />
           </g>
@@ -176,8 +174,8 @@ export const BackgroundShape3: React.FC = () => {
       <motion.div
         className={css({
           position: "absolute",
-          top: "300vh",
-          right: "10%",
+          top: "250vh",
+          right: "-183px",
           width: "50vw",
           height: "50vw",
           zIndex: "-2",
@@ -237,24 +235,14 @@ export const BackgroundShape4: React.FC = () => {
       <motion.div
         className={css({
           position: "absolute",
-          top: "calc(305vh + 50vw)",
-          left: "-10%",
-          width: "100%",
+          top: "350vh",
+          left: "-13.889%",
+          width: "136%",
           height: "100%",
           zIndex: "-3",
           transformOrigin: "center center",
           pointerEvents: "none",
           mixBlendMode: "multiply",
-          md: {
-            top: "calc(305vh + 80vw)",
-            width: "110%",
-            height: "110%",
-          },
-          lg: {
-            top: "330vh",
-            width: "100%",
-            height: "100%",
-          },
           "& svg": {
             overflow: "visible",
             width: "100%",
@@ -311,26 +299,23 @@ export const BackgroundShape4: React.FC = () => {
 export const BackgroundShape5: React.FC = () => {
   const { scrollYProgress } = useScroll();
 
-  const y = useParallax(scrollYProgress, 700);
+  const y = useParallax(scrollYProgress, 0);
 
   return (
     <>
       <motion.div
         className={css({
           position: "absolute",
-          top: "calc(455vh - 25vw)",
-          left: "-12.22%",
-          width: "100vw",
-          aspectRatio: "1/1",
+          top: "510vh",
+          left: "-150px",
+          width: "calc(100% + 300px)",
           zIndex: "-3",
           transformOrigin: "center center",
           pointerEvents: "none",
           mixBlendMode: "multiply",
-          lg: {
-            top: "calc(485vh - 30vw)",
-          },
-          md: {
-            top: "calc(455vh - 60vw)",
+          "& svg": {
+            overflow: "visible",
+            width: "100%",
           },
         })}
         initial={{ opacity: 0 }}
@@ -349,17 +334,19 @@ export const BackgroundShape5: React.FC = () => {
         }}
       >
         <svg
-          viewBox="0 0 2096 1673"
+          viewBox="0 0 1375 1352"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className={css({
             stroke: "web.system.color.mvShape.background.arc.fifth",
           })}
         >
-          <path
-            d="M1755.56 1560.12C1813.27 1460.17 1850.23 1349.54 1864.33 1234.56C1878.44 1119.57 1869.4 1002.48 1837.75 889.974C1806.1 777.464 1752.45 671.738 1679.87 578.831C1607.28 485.924 1517.19 407.656 1414.72 348.496C1312.25 289.336 1199.42 250.443 1082.67 234.036C965.915 217.63 847.529 224.031 734.267 252.876C621.006 281.721 515.088 332.443 422.56 402.148C330.033 471.852 252.708 559.173 195 659.126"
-            strokeWidth="450"
-          />
+          <g>
+            <path
+              d="M-366 636.933C-324.067 539.172 -262.805 450.836 -185.712 376.968C-108.618 303.1 -17.2026 245.147 83.3151 206.417C183.833 167.687 291.484 148.94 400.123 151.244C508.762 153.549 616.261 176.86 716.482 219.848C816.703 262.837 907.683 324.659 984.228 401.786C1060.77 478.913 1121.38 569.834 1162.6 669.359C1203.82 768.883 1224.83 875.061 1224.44 981.831C1224.05 1088.6 1202.27 1193.87 1160.34 1291.63"
+              stroke-width="300"
+            />
+          </g>
         </svg>
       </motion.div>
     </>

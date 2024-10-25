@@ -139,7 +139,7 @@ const linkContentExpandedStyle = sva({
       width: "100%",
       display: "grid",
       gridTemplateColumns: "repeat(auto-fill, minmax(224px, 1fr))",
-      gap: "64px 28px",
+      gap: "48px 28px",
     },
   },
 });
