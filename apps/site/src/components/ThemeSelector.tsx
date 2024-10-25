@@ -1,8 +1,8 @@
-import { Select } from "@serendie/ui";
 import { useEffect, useState } from "react";
 
 import tokens from "@serendie/design-token/panda";
 import { css } from "styled-system/css";
+import { ThemeSelect } from "./ThemeSelect";
 
 const { themes } = tokens;
 const themeNames = Object.keys(themes);
@@ -36,7 +36,7 @@ export const ThemeSelector = () => {
   }, [theme]);
 
   return (
-    <Select
+    <ThemeSelect
       onValueChange={({ value }) => setTheme(value[0])}
       value={[theme]}
       size="small"
