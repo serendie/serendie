@@ -763,12 +763,12 @@ export const BackgroundShapeCompact5: React.FC = () => {
           mixBlendMode: "multiply",
         })}
       >
-        <motion.g clip-path="url(#clip0_13517_19234)">
+        <motion.g clipPath="url(#clip0_13517_19234)">
           <motion.g
-            clip-path="url(#clip1_13517_19234)"
+            clipPath="url(#clip1_13517_19234)"
             style={{ rotate: rotate }}
           >
-            <g clip-path="url(#clip2_13517_19234)">
+            <g clipPath="url(#clip2_13517_19234)">
               <motion.circle
                 cx="-326.14"
                 cy="911.86"
