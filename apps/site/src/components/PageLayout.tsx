@@ -48,6 +48,7 @@ type PageFooterProps = {
 export const PageLinks = (props: PageFooterProps) => (
   <ul
     className={css({
+      ml: "0 !important",
       display: "grid",
       gap: "sd.system.dimension.spacing.extraLarge",
       marginInlineStart: "0",
