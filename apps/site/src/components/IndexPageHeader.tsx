@@ -19,19 +19,21 @@ type IndexPageHeaderProps = {
   title: string;
   description?: string;
   illustType: type;
+  illustSize?: "large" | "small";
 };
 
 const IndexPageHeader_ = ({
   illustType,
   title,
   description,
+  illustSize = "small",
 }: IndexPageHeaderProps) => {
   const Illust = illustMap[illustType];
   return (
     <div
       className={css({
         display: "grid",
-        gridTemplateColumns: "1fr auto",
+        gridTemplateColumns: "minmax(auto, 1fr) auto",
         alignItems: "center",
         gap: "sd.reference.dimension.scale.12",
         mb: "sd.reference.dimension.scale.17",
@@ -60,10 +62,8 @@ const IndexPageHeader_ = ({
       <div
         className={css({
           "&>svg": {
-            width: "100%",
+            width: illustSize === "large" ? "644px" : "auto",
             height: "auto",
-            maxHeight: "300px",
-            maxWidth: "414px",
           },
         })}
       >

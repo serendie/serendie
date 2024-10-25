@@ -2,3 +2,18 @@
 title: Get Started
 slug: get-started
 ---
+
+import { IndexPageHeader } from "@/components/IndexPageHeader.tsx";
+import PageHeader from "@/components/PageHeader.astro";
+import { PageMain, PageLinks } from "@/components/PageLayout.tsx";
+
+<PageHeader>
+  <IndexPageHeader
+    title={frontmatter.title}
+    illustType="B"
+    illustSize="large"
+  />
+</PageHeader>
+<PageMain>
+  <PageLinks siblings={props.siblings} currentSlug={frontmatter.slug} />
+</PageMain>
