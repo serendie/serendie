@@ -18,6 +18,7 @@ const illustMap = {
 type IndexPageHeaderProps = {
   title: string;
   description?: string;
+  lastUpdated?: string;
   illustType: type;
   illustSize?: "large" | "small";
 };
@@ -26,9 +27,12 @@ const IndexPageHeader_ = ({
   illustType,
   title,
   description,
+  lastUpdated,
   illustSize = "small",
 }: IndexPageHeaderProps) => {
   const Illust = illustMap[illustType];
+  const lastUpdateDate = lastUpdated ? new Date(lastUpdated) : undefined;
+
   return (
     <div
       className={css({
@@ -58,6 +62,16 @@ const IndexPageHeader_ = ({
           {title}
         </h2>
         {description && <p>{description}</p>}
+        {lastUpdated && (
+          <p
+            className={css({
+              fontSize: "12px",
+              color: "sd.reference.color.scale.gray.600",
+            })}
+          >
+            更新 {lastUpdateDate?.toLocaleDateString("ja-JP")}
+          </p>
+        )}
       </div>
       <div
         className={css({
