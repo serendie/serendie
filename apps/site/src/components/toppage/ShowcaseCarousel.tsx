@@ -1,7 +1,7 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { sva } from "styled-system/css";
-import { IconButton } from "@serendie/ui";
-import { usePrevNextButtons } from "../utils/carouselUtils";
+// import { IconButton } from "@serendie/ui";
+// import { usePrevNextButtons } from "../utils/carouselUtils";
 
 const showcaseCarouselStyles = sva({
   slots: [
@@ -57,15 +57,15 @@ const showcaseCarouselStyles = sva({
 export const ShowcaseCarousel: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel();
+  const [emblaRef, _emblaApi] = useEmblaCarousel();
   const styles = showcaseCarouselStyles();
 
-  const {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
-  } = usePrevNextButtons(emblaApi);
+  // const {
+  //   prevBtnDisabled,
+  //   nextBtnDisabled,
+  //   onPrevButtonClick,
+  //   onNextButtonClick,
+  // } = usePrevNextButtons(emblaApi);
 
   return (
     <div className={styles.buttonWrapper}>
@@ -73,7 +73,7 @@ export const ShowcaseCarousel: React.FC<{
         <div className={styles.container}>{children}</div>
       </div>
 
-      <IconButton
+      {/* <IconButton
         icon={"chevron_left"}
         className={styles.buttonLeft}
         onClick={onPrevButtonClick}
@@ -84,7 +84,7 @@ export const ShowcaseCarousel: React.FC<{
         className={styles.buttonRight}
         onClick={onNextButtonClick}
         disabled={nextBtnDisabled}
-      />
+      /> */}
     </div>
   );
 };

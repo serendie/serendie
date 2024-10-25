@@ -86,8 +86,8 @@ const { icon, title, link } = Astro.props;
       transition: "rotate 0.3s",
     })}
   />
-  <div class={styles.grid}>
+  <a class={styles.grid} href={link} target="_blank">
     <img class={styles.img} src={icon} />
     <h2 class={styles.title}>{title}</h2>
-  </div>
+  </a>
 </div>

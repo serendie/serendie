@@ -27,7 +27,7 @@ const ShowcaseImageWrapper = styled("div", {
 export const ShowcaseCarouselWrapper: React.FC = () => {
   return (
     <ShowcaseCarousel>
-      {Array.from({ length: 10 }).map((_, index) => (
+      {Array.from({ length: 3 }).map((_, index) => (
         <ShowcaseImageWrapper key={index}>
           <img src={`https://picsum.photos/seed/${index}/728/468`} />
         </ShowcaseImageWrapper>
