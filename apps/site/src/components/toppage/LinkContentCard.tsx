@@ -1,5 +1,6 @@
 import { css } from "styled-system/css";
 import { TitleShapeRenew } from "./TitleShapeRenew";
+import { TitleShape } from "./TitleShape";
 
 export const LinkContentCard: React.FC<{
   href: string;
@@ -11,9 +12,11 @@ export const LinkContentCard: React.FC<{
       <div
         className={css({
           display: "grid",
-          gridTemplateRows: "16px 224px",
           color: "web.system.color.impression.onTertiary",
           cursor: "pointer",
+          _expanded: {
+            gridTemplateRows: "16px 224px",
+          },
         })}
       >
         <h2
@@ -29,11 +32,12 @@ export const LinkContentCard: React.FC<{
         <div
           className={css({
             position: "relative",
-            width: "70%",
             aspectRatio: "1 / 1",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            margin: "auto",
+            width: "100%",
             expanded: {
               height: "224px",
               width: "224px",
@@ -44,13 +48,36 @@ export const LinkContentCard: React.FC<{
             strokeWidth="16"
             className={css({
               position: "absolute",
-              top: "0%",
-              left: "0%",
-              width: "100%",
-              height: "100%",
               transition: "transform 0.3s",
               mixBlendMode: "multiply",
               rotate: "225deg",
+              width: "100%",
+              height: "100%",
+              display: "none",
+              expanded: {
+                display: "block",
+                top: "0%",
+                left: "0%",
+                width: "100%",
+                height: "100%",
+              },
+              _hover: {
+                transform: "rotate(180deg)",
+              },
+            })}
+          />
+          <TitleShape
+            className={css({
+              position: "absolute",
+              transition: "transform 0.3s",
+              mixBlendMode: "multiply",
+              rotate: "225deg",
+              width: "100%",
+              height: "100%",
+              display: "block",
+              expanded: {
+                display: "none",
+              },
               _hover: {
                 transform: "rotate(180deg)",
               },
@@ -59,8 +86,12 @@ export const LinkContentCard: React.FC<{
           <img
             src={illustration}
             className={css({
-              width: "160px",
-              height: "160px",
+              width: "110px",
+              height: "110px",
+              expanded: {
+                width: "160px",
+                height: "160px",
+              },
               objectFit: "contain",
               borderRadius: "50%",
             })}

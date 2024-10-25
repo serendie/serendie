@@ -169,7 +169,7 @@ export const BackgroundShape2: React.FC = () => {
 
 export const BackgroundShape3: React.FC = () => {
   const { scrollYProgress } = useScroll();
-  const y = useParallax(scrollYProgress, 300);
+  const y = useParallax(scrollYProgress, 350);
 
   return (
     <>
@@ -177,7 +177,7 @@ export const BackgroundShape3: React.FC = () => {
         className={css({
           position: "absolute",
           top: "300vh",
-          right: "0",
+          right: "10%",
           width: "50vw",
           height: "50vw",
           zIndex: "-2",
@@ -185,7 +185,7 @@ export const BackgroundShape3: React.FC = () => {
           pointerEvents: "none",
           mixBlendMode: "multiply",
           lg: {
-            top: "250vh",
+            top: "270vh",
           },
           "& svg": {
             overflow: "visible",
@@ -251,7 +251,7 @@ export const BackgroundShape4: React.FC = () => {
             height: "110%",
           },
           lg: {
-            top: "295vh",
+            top: "330vh",
             width: "100%",
             height: "100%",
           },
@@ -311,7 +311,7 @@ export const BackgroundShape4: React.FC = () => {
 export const BackgroundShape5: React.FC = () => {
   const { scrollYProgress } = useScroll();
 
-  const y = useParallax(scrollYProgress, 400);
+  const y = useParallax(scrollYProgress, 700);
 
   return (
     <>
@@ -327,7 +327,7 @@ export const BackgroundShape5: React.FC = () => {
           pointerEvents: "none",
           mixBlendMode: "multiply",
           lg: {
-            top: "calc(455vh - 30vw)",
+            top: "calc(485vh - 30vw)",
           },
           md: {
             top: "calc(455vh - 60vw)",
