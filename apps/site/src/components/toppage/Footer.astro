@@ -29,6 +29,9 @@ const FooterContainer = styled("div", {
       flexDirection: "row",
       justifyContent: "space-between",
     },
+    "& a:hover": {
+      opacity: 0.6,
+    },
   },
 });
 const FooterTitle = styled("div", {
@@ -195,7 +198,7 @@ const footerLink = [
 
 <FooterWrapper>
   <FooterContainer>
-    <FooterTitle><h1>Serendie Design System</h1></FooterTitle>
+    <FooterTitle><h1><a href='/'>Serendie Design System</a></h1></FooterTitle>
     <FooterLinks>
       {
         footerLink.map((link) => (
