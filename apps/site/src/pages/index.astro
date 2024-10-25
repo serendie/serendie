@@ -6,8 +6,8 @@ import { styled } from "styled-system/jsx";
 import ReleaseNote from "@/components/toppage/ReleaseNote.astro";
 import Contact from "@/components/toppage/Contact.astro";
 import { BackgroundShape } from "@/components/toppage/BackgroundShape";
-import Header from "@/components/toppage/Header.astro";
 import Global from "@/layouts/Global.astro";
+import { Header } from "@/components/toppage/Header";
 
 const Container = styled("div", {
   base: {
@@ -116,7 +116,7 @@ const content = [
 ---
 
 <TopLayout>
-  <Header />
+  <Header client:load/>
 
   <Container>
     <LinkContent content={content} client:idle />

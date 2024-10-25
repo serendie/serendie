@@ -54,10 +54,10 @@ const linkContentExpandedStyle = sva({
     container: {
       position: "relative",
       display: "grid",
-      gap: "10%",
+      gap: "100px 120px",
       color: "web.system.color.impression.onTertiary",
       height: "300vh",
-      gridTemplateColumns: "320px 1fr",
+      gridTemplateColumns: "285px 1fr",
       gridTemplateRows: "1fr",
     },
     sidebar: {
@@ -111,7 +111,7 @@ const linkContentExpandedStyle = sva({
       width: "100%",
       height: "100%",
       "& svg": {
-        width: "100%",
+        width: "285px",
         height: "100%",
       },
     },
