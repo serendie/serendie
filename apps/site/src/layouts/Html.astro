@@ -40,6 +40,16 @@ const pageTitle = title
         document.documentElement.setAttribute("data-panda-theme", storedTheme);
       }
     </script>
+
+    <style is:global>
+      @font-face {
+        font-family: "SerendieOfficeVF";
+        src: url("/fonts/SerendieOfficeVF.ttf") format("truetype");
+        font-weight: 50;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
   </head>
   <slot />
 </html>

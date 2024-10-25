@@ -1,15 +1,11 @@
 import { css, cx, sva } from "styled-system/css";
-import { useMotionValueEvent, useScroll } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useRef, useState } from "react";
 import { LinkContentCard } from "./LinkContentCard";
 import { TitleShape } from "./TitleShape";
 import useEmblaCarousel from "embla-carousel-react";
 import { useDotButton, usePrevNextButtons } from "../utils/carouselUtils";
 import { IconButton } from "@serendie/ui";
-import Title01 from "../../assets/toppage/title01.svg?raw";
-import Title02 from "../../assets/toppage/title02.svg?raw";
-import Title03 from "../../assets/toppage/title03.svg?raw";
-
 type LinkContentProps = {
   content: {
     titleEn: string;
@@ -71,8 +67,8 @@ const linkContentExpandedStyle = sva({
       gridTemplateRows: "1fr",
       lgDown: {
         gap: "48px",
-        gridTemplateColumns: "200px 1fr",
-        height: "calc((224px + 28px) * 3 + 64px)",
+        // gridTemplateColumns: "200px 1fr",
+        // height: "calc((224px + 28px) * 3 + 64px)",
       },
     },
     sidebar: {},
@@ -93,12 +89,16 @@ const linkContentExpandedStyle = sva({
       textTransform: "uppercase",
       textAlign: "center",
       color: "web.system.color.impression.onTertiary",
-      "& h2": {
+      fontFamily: "SerendieOfficeVF",
+      "& div": {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        mb: "20px",
+        // mb: "16px",
+        lineHeight: "1",
         textWrap: "nowrap",
+        fontSize: "80px",
+        fontWeight: 50,
         "& svg": {
           h: "64px",
           pointerEvents: "none",
@@ -106,6 +106,9 @@ const linkContentExpandedStyle = sva({
       },
       "& p": {
         whiteSpace: "nowrap",
+        fontSize: "26px",
+        fontWeight: 50,
+        lineHeight: "1",
       },
     },
     titleShape: {
@@ -118,7 +121,7 @@ const linkContentExpandedStyle = sva({
         width: "285px",
         height: "100%",
         lgDown: {
-          width: "200px",
+          // width: "200px",
           height: "100%",
         },
       },
@@ -291,14 +294,93 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
       <div className={styles.titleWrapper}>
         <div className={styles.title}>
           <div className={styles.titleDescription}>
-            <h2>
+            {/* <h2>
               <div
                 dangerouslySetInnerHTML={{
                   __html: [Title01, Title02, Title03][selectedIndex],
                 }}
               />
-            </h2>
-            <p>{content[selectedIndex].titleEn}</p>
+            </h2> */}
+
+            <div
+              className={css({
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                height: "50px",
+                width: "100%",
+                overflow: "hidden",
+                mb: "16px",
+              })}
+            >
+              <motion.h2
+                className={css({
+                  display: "flex",
+                  alignSelf: "baseline",
+                  alignItems: "center",
+                  justifyContent: "flex-start",
+                  flexDirection: "column",
+                  textAlign: "center",
+                  overflow: "hidden",
+                  fontSize: "58px",
+                  lineHeight: 1,
+                  fontFamily: "SerendieOfficeVF",
+                  mb: "0px",
+                  "& span": {
+                    height: "50px",
+                  },
+                })}
+                animate={{
+                  y: -selectedIndex * 50,
+                }}
+              >
+                {content.map((c, i) => (
+                  <span
+                    key={i}
+                    aria-hidden={i === selectedIndex ? "false" : "true"}
+                  >
+                    0{i + 1}
+                  </span>
+                ))}
+              </motion.h2>
+            </div>
+            <div
+              className={css({
+                height: "18px",
+                width: "100%",
+                overflow: "hidden",
+              })}
+            >
+              <motion.p
+                className={css({
+                  display: "flex",
+                  alignSelf: "baseline",
+                  alignItems: "center",
+                  justifyContent: "flex-start",
+                  flexDirection: "column",
+                  textAlign: "center",
+                  overflow: "hidden",
+                  lineHeight: 1,
+                  fontFamily: "SerendieOfficeVF",
+                  fontSize: "18px",
+                  "& span": {
+                    height: "18px",
+                  },
+                })}
+                animate={{
+                  y: -selectedIndex * 18,
+                }}
+              >
+                {content.map((c, i) => (
+                  <span
+                    key={i}
+                    aria-hidden={i === selectedIndex ? "false" : "true"}
+                  >
+                    {c.titleEn}
+                  </span>
+                ))}
+              </motion.p>
+            </div>
           </div>
           <div className={styles.titleShape}>
             <TitleShape
@@ -395,14 +477,72 @@ const LinkContentExpanded: React.FC<LinkContentProps> = ({ content }) => {
             <div className={styles.titleWrapper}>
               <div className={styles.title}>
                 <div className={styles.titleDescription}>
-                  <h2>
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: [Title01, Title02, Title03][index],
+                  <div
+                    className={css({
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "flex-start",
+                      height: "80px",
+                      width: "100%",
+                      overflow: "hidden",
+                      mb: "16px",
+                    })}
+                  >
+                    <motion.h2
+                      className={css({
+                        display: "flex",
+                        alignSelf: "baseline",
+                        alignItems: "center",
+                        justifyContent: "flex-start",
+                        flexDirection: "column",
+                        textAlign: "center",
+                        overflow: "hidden",
+                      })}
+                      animate={{
+                        y: -index * 80,
                       }}
-                    />
-                  </h2>
-                  <p>{content[index].titleEn}</p>
+                    >
+                      {content.map((c, i) => (
+                        <span
+                          key={i}
+                          aria-hidden={i === index ? "false" : "true"}
+                        >
+                          0{i + 1}
+                        </span>
+                      ))}
+                    </motion.h2>
+                  </div>
+                  <div
+                    className={css({
+                      height: "26px",
+                      width: "100%",
+                      overflow: "hidden",
+                    })}
+                  >
+                    <motion.p
+                      className={css({
+                        display: "flex",
+                        alignSelf: "baseline",
+                        alignItems: "center",
+                        justifyContent: "flex-start",
+                        flexDirection: "column",
+                        textAlign: "center",
+                        overflow: "hidden",
+                      })}
+                      animate={{
+                        y: -index * 26,
+                      }}
+                    >
+                      {content.map((c, i) => (
+                        <span
+                          key={i}
+                          aria-hidden={i === index ? "false" : "true"}
+                        >
+                          {c.titleEn}
+                        </span>
+                      ))}
+                    </motion.p>
+                  </div>
                 </div>
                 <div className={styles.titleShape}>
                   <TitleShape
@@ -427,6 +567,7 @@ const LinkContentExpanded: React.FC<LinkContentProps> = ({ content }) => {
                       transition: "opacity 0.3s",
                       pointerEvents: i === index ? "auto" : "none",
                     }}
+                    aria-hidden={i === index ? "false" : "true"}
                   >
                     {c.links.map((link, i) => (
                       <LinkContentCard

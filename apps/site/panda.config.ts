@@ -17,6 +17,7 @@ export default defineConfig({
 
   // Useful for theme customization
   themes,
+
   theme: {
     extend: {
       keyframes: {
