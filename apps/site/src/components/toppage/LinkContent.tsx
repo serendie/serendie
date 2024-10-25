@@ -31,6 +31,7 @@ export const LinkContent: React.FC<LinkContentProps> = ({ content }) => {
 const linkContentExpandedStyle = sva({
   slots: [
     "wrapper",
+    "scrollContainer",
     "container",
     "sidebar",
     "titleWrapper",
@@ -46,39 +47,32 @@ const linkContentExpandedStyle = sva({
   base: {
     wrapper: {
       display: "none",
-      mt: "-25vh",
+      mt: "25%",
       expanded: {
         display: "block",
       },
     },
+    scrollContainer: {
+      height: "300vh",
+      position: "sticky",
+    },
     container: {
-      position: "relative",
+      position: "sticky",
+      top: "50%",
+      transform: "translateY(-50%)",
       display: "grid",
       gap: "100px 120px",
       color: "web.system.color.impression.onTertiary",
-      height: "300vh",
+      height: "calc((224px + 16px) * 2 + 16px)",
       gridTemplateColumns: "285px 1fr",
       gridTemplateRows: "1fr",
     },
-    sidebar: {
-      position: "sticky",
-      top: 0,
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      height: "50vh",
-      expanded: {
-        height: "100vh",
-      },
-    },
+    sidebar: {},
     titleWrapper: { my: "auto" },
     title: {
       position: "relative",
       aspectRatio: "1 / 1",
-      maxWidth: "240px",
-      expanded: {
-        maxWidth: "inherit",
-      },
+      maxWidth: "inherit",
     },
     titleDescription: {
       fontSize: "20px",
@@ -96,12 +90,14 @@ const linkContentExpandedStyle = sva({
         alignItems: "center",
         justifyContent: "center",
         mb: "20px",
+        textWrap: "nowrap",
         "& svg": {
-          h: "46px",
-          expanded: {
-            h: "64px",
-          },
+          h: "64px",
+          pointerEvents: "none",
         },
+      },
+      "& p": {
+        whiteSpace: "nowrap",
       },
     },
     titleShape: {
@@ -122,31 +118,19 @@ const linkContentExpandedStyle = sva({
     mainWrapper: {
       position: "sticky",
       top: 0,
-      height: "50vh",
-      expanded: {
-        height: "100vh",
-      },
+      height: "100vh",
     },
     mainContainer: {
       position: "relative",
-      height: "50vh",
-      expanded: {
-        height: "100vh",
-      },
+      height: "100vh",
     },
     main: {
       position: "absolute",
       width: "100%",
-      display: "flex",
-      gap: "10%",
-      justifyContent: "flex-start",
-      alignItems: "center",
-      flexWrap: "wrap",
-      alignContent: "center",
-      height: "50vh",
-      expanded: {
-        height: "100vh",
-      },
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fill, minmax(224px, 1fr))",
+      gridTemplateRows: "repeat(calc(224px + 16px), 2)",
+      gap: "48px 16px",
     },
   },
 });
@@ -357,72 +341,56 @@ const LinkContentExpanded: React.FC<LinkContentProps> = ({ content }) => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.container}>
-        <div className={styles.sidebar}>
-          <div className={styles.titleWrapper}>
-            <div className={styles.title}>
-              <div className={styles.titleDescription}>
-                <h2>
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: [Title01, Title02, Title03][index],
+      <div className={styles.scrollContainer} ref={ref}>
+        <div className={styles.container}>
+          <div className={styles.sidebar}>
+            <div className={styles.titleWrapper}>
+              <div className={styles.title}>
+                <div className={styles.titleDescription}>
+                  <h2>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: [Title01, Title02, Title03][index],
+                      }}
+                    />
+                  </h2>
+                  <p>{content[index].titleEn}</p>
+                </div>
+                <div className={styles.titleShape}>
+                  <TitleShape
+                    style={{
+                      transition: "rotate 0.3s",
+                      rotate: `${index * 90 - 45}deg`,
                     }}
                   />
-                </h2>
-                <p>{content[index].titleEn}</p>
-              </div>
-              <div className={styles.titleShape}>
-                <TitleShape
-                  style={{
-                    transition: "rotate 0.3s",
-                    rotate: `${index * 90 - 45}deg`,
-                  }}
-                />
+                </div>
               </div>
             </div>
-            {/* <div className={styles.description}>
-              <h2
-                className={css({
-                  textStyle: "sd.system.typography.headline.small_expanded",
-                  fontWeight: "bold",
-                  mb: "10px",
-                })}
-              >
-                {content[index].titleJa}
-              </h2>
-              <p
-                className={css({
-                  textStyle: "sd.system.typography.title.medium_expanded",
-                  fontWeight: "bold",
-                })}
-              >
-                {content[index].description}
-              </p>
-            </div> */}
           </div>
-        </div>
-        <div ref={ref}>
-          <div className={styles.mainWrapper}>
-            <div className={styles.mainContainer}>
-              {content.map((c, i) => (
-                <div
-                  key={i}
-                  className={styles.main}
-                  style={{
-                    opacity: i === index ? 1 : 0,
-                    transition: "opacity 0.3s",
-                    pointerEvents: i === index ? "auto" : "none",
-                  }}
-                >
-                  {c.links.map((link, i) => (
-                    <LinkContentCard
-                      key={i}
-                      title={link.title}
-                      illustration={link.illustration}
-                    />
-                  ))}
-                </div>
-              ))}
+          <div>
+            <div className={styles.mainWrapper}>
+              <div className={styles.mainContainer}>
+                {content.map((c, i) => (
+                  <div
+                    key={i}
+                    className={styles.main}
+                    style={{
+                      opacity: i === index ? 1 : 0,
+                      transition: "opacity 0.3s",
+                      pointerEvents: i === index ? "auto" : "none",
+                    }}
+                  >
+                    {c.links.map((link, i) => (
+                      <LinkContentCard
+                        key={i}
+                        href={link.href}
+                        title={link.title}
+                        illustration={link.illustration}
+                      />
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
