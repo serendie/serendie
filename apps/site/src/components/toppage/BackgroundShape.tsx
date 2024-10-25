@@ -20,7 +20,7 @@ export const BackgroundShape: React.FC = () => {
         zIndex: "-1",
         mixBlendMode: "multiply",
         mx: "12.22%",
-        width: "100%",
+        width: "calc(100% - 24.44%)",
         maxW: "calc(1640px + 24.44%)",
       })}
     >
