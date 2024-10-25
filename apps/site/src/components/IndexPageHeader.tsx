@@ -36,7 +36,7 @@ const IndexPageHeader_ = ({
         gap: "sd.reference.dimension.scale.12",
         mb: "sd.reference.dimension.scale.17",
         color: "web.system.color.component.onSurface",
-        mdDown: {
+        smDown: {
           gridTemplateColumns: "1fr",
           gap: "sd.system.dimension.spacing.threeExtraLarge",
           mt: "sd.system.dimension.spacing.twoExtraLarge",
@@ -62,6 +62,7 @@ const IndexPageHeader_ = ({
           "&>svg": {
             width: "100%",
             height: "auto",
+            maxHeight: "300px",
             maxWidth: "414px",
           },
         })}

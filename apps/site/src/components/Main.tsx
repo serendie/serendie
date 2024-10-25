@@ -36,6 +36,10 @@ export const Main = styled("main", {
       my: "sd.system.dimension.spacing.extraLarge",
       textStyle: "sd.system.typography.title.large_compact",
     },
+    "& svg": {
+      maxWidth: "100%",
+      height: "auto",
+    },
   },
 });
 
