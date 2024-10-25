@@ -20,7 +20,7 @@ export const TitleShapeRenew: React.FC<{
       {...props}
     >
       <g clipPath="url(#clip0_13461_17977)">
-        <circle cx="128" cy="128" r="116" stroke-width={strokeWidth || "24"} />
+        <circle cx="128" cy="128" r="116" strokeWidth={strokeWidth || "24"} />
       </g>
       <defs>
         <clipPath id="clip0_13461_17977">
