@@ -27,9 +27,7 @@ function createCssVars(rootKey: string, obj: any, prefix: string = "") {
     if (typeof value === "object") {
       if (value["$value"]) {
         console.log(
-          `--${rootKey}-${prefix.toLowerCase()}${key.toLowerCase()}: ${tokenValue2CssVar(
-            value["$value"]
-          )};`
+          `--${rootKey}-${prefix}${key}: ${tokenValue2CssVar(value["$value"])};`
         );
       } else {
         createCssVars(rootKey, value, `${prefix}${key}-`);
