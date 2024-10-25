@@ -70,6 +70,7 @@ const linkContentExpandedStyle = sva({
       gridTemplateColumns: "285px 1fr",
       gridTemplateRows: "1fr",
       lgDown: {
+        gap: "48px",
         gridTemplateColumns: "200px 1fr",
         height: "calc((224px + 28px) * 3 + 64px)",
       },
@@ -236,6 +237,7 @@ const linkContentCompactStyle = sva({
       justifyContent: "center",
       width: "100%",
       gap: "16px",
+      color: "web.system.color.impression.onTertiary",
     },
     titleDescription: {
       position: "absolute",
@@ -355,7 +357,9 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
               className={cx(
                 styles.carouselDots,
                 index === selectedIndex
-                  ? css({ bg: "sd.reference.color.scale.blue.900" })
+                  ? css({
+                      bg: "web.system.color.impression.secondary !important",
+                    })
                   : css({ bg: "sd.reference.color.scale.gray.300" })
               )}
               onClick={() => onDotButtonClick(index)}

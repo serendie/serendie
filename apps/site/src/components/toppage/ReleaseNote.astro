@@ -88,6 +88,12 @@ const NoteTitle = styled("h2", {
     p: "0",
     textStyle: "sd.system.typography.body.small_expanded",
     alignContent: "center",
+    // line 2
+    textOverflow: "ellipsis",
+    overflow: "hidden",
+    boxOrient: 'vertical',
+    display: '-webkit-box',
+    lineClamp: 2,
     expanded: {
       p: "sd.system.dimension.spacing.small",
     },

@@ -6,6 +6,7 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
+import React from "react";
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
@@ -24,6 +25,7 @@ export const BackgroundShape: React.FC = () => {
           width: "calc(100% - 24.44%)",
           maxW: "calc(1640px + 24.44%)",
           display: "none",
+          pointerEvents: "none",
           expanded: {
             display: "block",
           },
@@ -49,6 +51,7 @@ export const BackgroundShape: React.FC = () => {
           width: "100%",
           maxW: "100%",
           display: "block",
+          pointerEvents: "none",
           expanded: {
             display: "none",
           },
@@ -187,7 +190,7 @@ export const BackgroundShape2: React.FC = () => {
           <g>
             <path
               d="M1223.47 1153.21C1272.84 1067.69 1304.89 973.282 1317.78 875.375C1330.67 777.469 1324.15 677.982 1298.59 582.596C1273.03 487.209 1228.94 397.791 1168.82 319.446C1108.7 241.101 1033.75 175.364 948.224 125.988C862.703 76.6127 768.294 44.5651 670.387 31.6755C572.48 18.7859 472.994 25.3066 377.607 50.8654C282.221 76.4241 192.802 120.52 114.457 180.636C36.1126 240.753 -29.6243 315.711 -79 401.232"
-              stroke-width="50"
+              strokeWidth="50"
             />
           </g>
         </svg>
@@ -247,7 +250,7 @@ export const BackgroundShape3: React.FC = () => {
           <g>
             <path
               d="M789.44 261.948C761.924 220.194 726.453 184.268 685.052 156.222C643.652 128.177 597.133 108.56 548.151 98.4921C499.169 88.4245 448.684 88.1031 399.578 97.5463C350.472 106.989 303.707 126.012 261.953 153.529C220.199 181.045 184.273 216.516 156.228 257.917C128.182 299.317 108.565 345.836 98.4974 394.818C88.4297 443.8 88.1083 494.285 97.5515 543.39C106.995 592.496 126.017 639.261 153.534 681.016"
-              stroke-width="180"
+              strokeWidth="180"
             />
           </g>
         </svg>
@@ -318,7 +321,7 @@ export const BackgroundShape4: React.FC = () => {
           <g>
             <path
               d="M319.767 126.996C258.076 218.108 215.387 320.785 194.137 429.164C172.887 537.543 173.492 649.501 195.918 758.647C218.343 867.793 262.151 971.988 324.838 1065.28C387.525 1158.58 467.865 1239.15 561.271 1302.39C654.676 1365.64 759.318 1410.32 869.221 1433.88C979.124 1457.44 1092.14 1459.42 1201.81 1439.72C1311.48 1420.01 1415.65 1379 1508.39 1319.03C1601.13 1259.05 1680.62 1181.29 1742.31 1090.18"
-              stroke-width="450"
+              strokeWidth="450"
             />
           </g>
         </svg>
@@ -375,7 +378,7 @@ export const BackgroundShape5: React.FC = () => {
           <g>
             <path
               d="M-366 636.933C-324.067 539.172 -262.805 450.836 -185.712 376.968C-108.618 303.1 -17.2026 245.147 83.3151 206.417C183.833 167.687 291.484 148.94 400.123 151.244C508.762 153.549 616.261 176.86 716.482 219.848C816.703 262.837 907.683 324.659 984.228 401.786C1060.77 478.913 1121.38 569.834 1162.6 669.359C1203.82 768.883 1224.83 875.061 1224.44 981.831C1224.05 1088.6 1202.27 1193.87 1160.34 1291.63"
-              stroke-width="300"
+              strokeWidth="300"
             />
           </g>
         </svg>
@@ -457,7 +460,7 @@ export const BackgroundShapeCompact1: React.FC = () => {
               r="515"
               transform="rotate(45 -83.9727 279.026)"
               stroke="#8FAEFE"
-              stroke-width="240"
+              strokeWidth="240"
             />
           </g>
         </motion.g>
@@ -489,6 +492,12 @@ export const BackgroundShapeCompact1: React.FC = () => {
 
 export const BackgroundShapeCompact2: React.FC = () => {
   const { scrollYProgress } = useScroll();
+  const rotate = useSpring(
+    useTransform(scrollYProgress, [0, 1], [0, -30], {
+      clamp: false,
+    }),
+    { stiffness: 20, damping: 10 }
+  );
 
   const y = useParallax(scrollYProgress, 0);
 
@@ -516,7 +525,10 @@ export const BackgroundShapeCompact2: React.FC = () => {
             y: y,
           }}
         >
-          <g clipPath="url(#clip1_13517_18730)">
+          <motion.g
+            clipPath="url(#clip1_13517_18730)"
+            style={{ rotate: rotate }}
+          >
             <g clipPath="url(#clip2_13517_18730)">
               <circle
                 cx="83.4606"
@@ -524,10 +536,10 @@ export const BackgroundShapeCompact2: React.FC = () => {
                 r="421"
                 transform="rotate(-15.0819 83.4606 454.461)"
                 stroke="#9CE6EC"
-                stroke-width="48"
+                strokeWidth="48"
               />
             </g>
-          </g>
+          </motion.g>
         </motion.g>
         <defs>
           <clipPath id="clip0_13517_18730">
@@ -557,6 +569,12 @@ export const BackgroundShapeCompact2: React.FC = () => {
 
 export const BackgroundShapeCompact3: React.FC = () => {
   const { scrollYProgress } = useScroll();
+  const rotate = useSpring(
+    useTransform(scrollYProgress, [0, 1], [0, 60], {
+      clamp: false,
+    }),
+    { stiffness: 20, damping: 10 }
+  );
 
   const y = useParallax(scrollYProgress, 0);
 
@@ -582,17 +600,20 @@ export const BackgroundShapeCompact3: React.FC = () => {
         })}
       >
         <motion.g clipPath="url(#clip0_13517_19200)">
-          <g clipPath="url(#clip1_13517_19200)">
+          <motion.g
+            clipPath="url(#clip1_13517_19200)"
+            style={{ rotate: rotate }}
+          >
             <g clipPath="url(#clip2_13517_19200)">
               <circle
                 cx="430.848"
                 cy="261.1"
                 r="198"
                 transform="rotate(-132.885 430.848 261.1)"
-                stroke-width="120"
+                strokeWidth="120"
               />
             </g>
-          </g>
+          </motion.g>
         </motion.g>
         <defs>
           <clipPath id="clip0_13517_19200">
@@ -627,6 +648,12 @@ export const BackgroundShapeCompact3: React.FC = () => {
 
 export const BackgroundShapeCompact4: React.FC = () => {
   const { scrollYProgress } = useScroll();
+  const rotate = useSpring(
+    useTransform(scrollYProgress, [0, 1], [0, -20], {
+      clamp: false,
+    }),
+    { stiffness: 20, damping: 10 }
+  );
 
   const y = useParallax(scrollYProgress, 0);
 
@@ -636,7 +663,12 @@ export const BackgroundShapeCompact4: React.FC = () => {
         position: "absolute",
         top: "263.547vh",
         width: "100%",
+        mixBlendMode: "multiply",
         left: "0",
+        "& svg": {
+          overflow: "visible",
+          width: "100%",
+        },
       })}
       style={{
         y: y,
@@ -652,17 +684,20 @@ export const BackgroundShapeCompact4: React.FC = () => {
         })}
       >
         <motion.g clipPath="url(#clip0_13517_19209)">
-          <g clipPath="url(#clip1_13517_19209)">
+          <motion.g
+            clipPath="url(#clip1_13517_19209)"
+            style={{ rotate: rotate }}
+          >
             <g clipPath="url(#clip2_13517_19209)">
               <circle
                 cx="820.792"
                 cy="521.972"
                 r="755.553"
                 transform="rotate(124.497 820.792 521.972)"
-                stroke-width="319.57"
+                strokeWidth="319.57"
               />
             </g>
-          </g>
+          </motion.g>
         </motion.g>
         <defs>
           <clipPath id="clip0_13517_19209">
@@ -697,8 +732,14 @@ export const BackgroundShapeCompact4: React.FC = () => {
 
 export const BackgroundShapeCompact5: React.FC = () => {
   const { scrollYProgress } = useScroll();
+  const rotate = useSpring(
+    useTransform(scrollYProgress, [0, 1], [30, 0], {
+      clamp: false,
+    }),
+    { stiffness: 20, damping: 10 }
+  );
 
-  const y = useParallax(scrollYProgress, 0);
+  const y = useParallax(scrollYProgress, -50);
 
   return (
     <motion.div
@@ -707,6 +748,7 @@ export const BackgroundShapeCompact5: React.FC = () => {
         top: "384.236vh",
         width: "100%",
         left: "0",
+        mixBlendMode: "multiply",
       })}
       style={{
         y: y,
@@ -722,18 +764,21 @@ export const BackgroundShapeCompact5: React.FC = () => {
         })}
       >
         <motion.g clip-path="url(#clip0_13517_19234)">
-          <g clip-path="url(#clip1_13517_19234)">
+          <motion.g
+            clip-path="url(#clip1_13517_19234)"
+            style={{ rotate: rotate }}
+          >
             <g clip-path="url(#clip2_13517_19234)">
-              <circle
+              <motion.circle
                 cx="-326.14"
                 cy="911.86"
                 r="817.667"
                 transform="rotate(-50.6415 -326.14 911.86)"
                 stroke="#8FAEFE"
-                stroke-width="300"
+                strokeWidth="300"
               />
             </g>
-          </g>
+          </motion.g>
         </motion.g>
         <defs>
           <clipPath id="clip0_13517_19234">

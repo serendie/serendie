@@ -155,7 +155,7 @@ export const Header: React.FC = () => {
                 px: "sd.system.dimension.spacing.threeExtraLarge",
                 pr: "sd.system.dimension.spacing.twoExtraLarge",
                 border: "1px solid",
-                borderColor: "web.system.color.component.outline",
+                borderColor: "white",
               })}
             >
               スターターガイド
