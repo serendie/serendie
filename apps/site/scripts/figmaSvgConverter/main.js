@@ -33,7 +33,7 @@ function rgb2hex(r, g, b) {
 
 function getColors(n) {
   const ret = [];
-  [...n.fills, ...n.strokes].forEach((paint) => {
+  [...(n.fills || []), ...(n.strokes || [])].forEach((paint) => {
     if (
       paint.boundVariables &&
       paint.boundVariables.color &&
@@ -54,7 +54,7 @@ function getColors(n) {
   });
 
   if (n.children) {
-    n.children.forEach(async (child) => {
+    n.children.forEach((child) => {
       ret.push(...getColors(child));
     });
   }
@@ -71,9 +71,7 @@ figma.on("run", async () => {
   }
 
   try {
-    for (const node of selectedNodes) {
-      await convertSvg(node);
-    }
+    await convertSvg(selectedNodes[0]);
   } catch (error) {
     console.error(error);
     figma.notify("SVGの生成中にエラーが発生しました");
