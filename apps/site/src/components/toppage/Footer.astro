@@ -15,7 +15,7 @@ const FooterWrapper = styled("footer", {
     expanded: {
       pt: 120,
       pb: 40,
-      px: 0,
+      px: 150,
     },
   },
 });
@@ -23,14 +23,11 @@ const FooterContainer = styled("div", {
   base: {
     maxWidth: "calc(1640px + 240px)",
     margin: "0 auto",
-    display: "grid",
-    gridTemplateColumns: "repeat(2, 1fr)",
-    gridTemplateRows: "auto auto",
-    rowGap: "40px",
+    display: "flex",
+    flexDirection: "column",
     expanded: {
-      gridTemplateColumns: "repeat(3, 1fr)",
-      px: 120,
-      rowGap: "100px",
+      flexDirection: "row",
+      justifyContent: "space-between",
     },
   },
 });
@@ -39,9 +36,9 @@ const FooterTitle = styled("div", {
     textStyle: "sd.system.typography.headline.large_expanded",
     fontSize: "24px",
     fontWeight: "bold",
-    gridColumn: "1 / 3",
+    mr: 32,
+    mb: 40,
     expanded: {
-      gridColumn: "1 / 2",
       textStyle: "sd.system.typography.headline.large_expanded",
     },
   },
@@ -49,7 +46,6 @@ const FooterTitle = styled("div", {
 const FooterLinks = styled("div", {
   base: {
     display: "grid",
-    gridColumn: "1 / 3",
     gridTemplateColumns: "repeat(2, 1fr)",
     gap: 16,
     textStyle: "sd.system.typography.body.extraSmall_expanded",
@@ -65,8 +61,8 @@ const FooterLinks = styled("div", {
       padding: 0,
     },
     expanded: {
-      gridColumn: "2 / 4",
-      gridTemplateColumns: "repeat(5, 1fr)",
+      gap: 48,
+      gridTemplateColumns: "repeat(4, auto)",
     },
   },
 });
@@ -84,12 +80,11 @@ const FooterLinksLi = styled("li", {
 
 const FooterCopyright = styled("div", {
   base: {
-    gridColumn: "1 / 4",
     textAlign: "left",
-    mt: 120,
+    mt: 160,
     expanded: {
       textAlign: "right",
-      mt: 0,
+      mt: 80,
     },
   },
 });
@@ -206,6 +201,6 @@ const footerLink = [
         ))
       }
     </FooterLinks>
-    <FooterCopyright>© Mitsubishi Electric Corporation</FooterCopyright>
   </FooterContainer>
+  <FooterCopyright>© Mitsubishi Electric Corporation</FooterCopyright>
 </FooterWrapper>
