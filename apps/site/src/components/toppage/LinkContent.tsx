@@ -169,6 +169,7 @@ const linkContentCompactStyle = sva({
       gap: "32px",
       // py: "7vw",
       mb: "160px",
+      mt: "160px",
       expanded: {
         display: "none",
       },
