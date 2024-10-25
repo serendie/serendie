@@ -46,7 +46,7 @@ const ReleasenoteGrid = styled("div", {
   },
 });
 
-const Note = styled("div", {
+const Note = styled("a", {
   base: {
     display: "grid",
     gridColumn: "1 / 5",
@@ -118,7 +118,7 @@ const NoteIcon = styled("div", {
 
 <ReleasenoteContainer>
   <TitleContainer>
-    <Title>ニュース・イベント</Title>
+    <Title>ニュース・イベントを見る</Title>
     <!-- <Button
       styleType="ghost"
       className={css({
@@ -130,27 +130,41 @@ const NoteIcon = styled("div", {
   </TitleContainer>
 
   <ReleasenoteGrid>
-    {
-      Array.from({ length: 5 }).map((_, i) => (
-        <Note>
-          <NoteTime>2024/09/21</NoteTime>
-          <NoteTitle>
-            ブランドアセットにロゴのaiデータを追加しました。
-          </NoteTitle>
-          <NoteBadge>
-            <Badge
-              className={css({
-                background: 'web.system.color.impression.secondary',
-              })}
-            >
-              NEW
-            </Badge>
-          </NoteBadge>
-          <NoteIcon>
-            <SvgIcon icon="chevron_right" size="24px" />
-          </NoteIcon>
-        </Note>
-      ))
-    }
+    <Note href="https://www.figma.com/@serendiedesign" target="_blank">
+      <NoteTime>2024/11/1</NoteTime>
+      <NoteTitle>
+        Figma CommunityにてSerendie UI Kitを公開しました。
+      </NoteTitle>
+      <NoteBadge>
+        <Badge
+          className={css({
+            background: 'web.system.color.impression.secondary',
+          })}
+        >
+          NEW
+        </Badge>
+      </NoteBadge>
+      <NoteIcon>
+        <SvgIcon icon="chevron_right" size="24px" />
+      </NoteIcon>
+    </Note>
+    <Note href="https://www.mitsubishielectric.co.jp/serendie/" target="_blank">
+      <NoteTime>2024/11/1</NoteTime>
+      <NoteTitle>
+        Serendie Design Systemを公開しました。
+      </NoteTitle>
+      <NoteBadge>
+        <Badge
+          className={css({
+            background: 'web.system.color.impression.secondary',
+          })}
+        >
+          NEW
+        </Badge>
+      </NoteBadge>
+      <NoteIcon>
+        <SvgIcon icon="chevron_right" size="24px" />
+      </NoteIcon>
+    </Note>
   </ReleasenoteGrid>
 </ReleasenoteContainer>
