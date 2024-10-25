@@ -2,10 +2,10 @@ import { css, cx, sva } from "styled-system/css";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useRef, useState } from "react";
 import { LinkContentCard } from "./LinkContentCard";
-import { TitleShape } from "./TitleShape";
 import useEmblaCarousel from "embla-carousel-react";
 import { useDotButton, usePrevNextButtons } from "../utils/carouselUtils";
 import { IconButton } from "@serendie/ui";
+import { TitleShapeThin } from "./TitleShapeThin";
 type LinkContentProps = {
   content: {
     titleEn: string;
@@ -383,7 +383,7 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
             </div>
           </div>
           <div className={styles.titleShape}>
-            <TitleShape
+            <TitleShapeThin
               style={{
                 transition: "rotate 0.3s",
                 rotate: `${selectedIndex * 90 - 45}deg`,
@@ -545,7 +545,7 @@ const LinkContentExpanded: React.FC<LinkContentProps> = ({ content }) => {
                   </div>
                 </div>
                 <div className={styles.titleShape}>
-                  <TitleShape
+                  <TitleShapeThin
                     style={{
                       transition: "rotate 0.3s",
                       rotate: `${index * 90 - 45}deg`,
