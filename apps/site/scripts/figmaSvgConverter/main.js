@@ -8,10 +8,7 @@ async function convertSvg(node) {
     return colorObj
       ? match.replace(
           color,
-          `var(--${colorObj.collectionName}-${colorObj.name.replaceAll(
-            "/",
-            "-"
-          )}, ${color})`
+          `var(--${colorObj.name.replaceAll("/", "-")}, ${color})`
         )
       : match;
   });
