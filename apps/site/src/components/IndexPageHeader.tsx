@@ -51,7 +51,7 @@ const IndexPageHeader_ = ({
       })}
     >
       <div>
-        <h2
+        <h1
           className={css({
             textStyle: "sd.system.typography.display.medium_compact",
             mdDown: {
@@ -60,7 +60,7 @@ const IndexPageHeader_ = ({
           })}
         >
           {title}
-        </h2>
+        </h1>
         {description && <p>{description}</p>}
         {lastUpdated && (
           <p

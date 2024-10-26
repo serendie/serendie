@@ -6,7 +6,7 @@ export const PageMain = styled("div", {
     color: "web.system.color.component.background.onSurface",
     gridColumn: "span 6",
     mdDown: {
-      gridColumn: "span 1",
+      gridColumn: "span 2",
     },
     "& a": {
       color: "sd.system.color.impression.primary",

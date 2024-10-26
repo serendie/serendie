@@ -16,15 +16,23 @@ const SearchBar = styled("nav", {
   base: {
     display: "flex",
     justifyContent: "space-between",
+    alignItems: "center",
+    flexDirection: "column",
     mb: "32px",
+    sm: {
+      flexDirection: "row",
+    },
   },
 });
 
 const IconContainer = styled("div", {
   base: {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+    gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))",
     gap: "24px",
+    sm: {
+      gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+    },
   },
 });
 
@@ -49,7 +57,7 @@ const IconBoxSvg = styled("div", {
   },
 });
 
-const IconTitle = styled("h2", {
+const IconTitle = styled("h4", {
   base: {
     margin: 0,
     fontFamily: "Noto Sans Mono",
