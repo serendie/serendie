@@ -6,6 +6,10 @@ import Global from "@/layouts/Global.astro";
 import { SideMenu } from "@/components/SideMenu";
 import { Main, MainGrid } from "@/components/Main";
 import { css } from "styled-system/css";
+import { IndexPageHeader } from "@/components/IndexPageHeader";
+import PageHeader from "@/components/PageHeader.astro";
+import { PageAside, PageLinks, PageMain } from "@/components/PageLayout";
+import StickySideNav from "@/components/StickySideNav.astro";
 
 export async function getStaticPaths() {
   const pages = await getCollection("pages");
@@ -67,7 +71,23 @@ const { Content } = await page.render();
         },
       })}
     >
-      <Content {...propsForMdx} />
+      <PageHeader>
+        <IndexPageHeader
+          title={page.data.title}
+          illustType={page.data.illustType}
+          illustSize={page.data.illustSize}
+          lastUpdated={page.data.lastUpdated}
+          description={page.data.description}
+        />
+      </PageHeader>
+
+      <PageMain>
+        <Content {...propsForMdx} />
+        <PageLinks siblings={propsForMdx.siblings} currentSlug={page.slug} />
+      </PageMain>
+      <PageAside>
+        <StickySideNav />
+      </PageAside>
     </Main>
   </MainGrid>
 </Global>

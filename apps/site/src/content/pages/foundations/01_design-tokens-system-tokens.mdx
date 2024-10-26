@@ -1,38 +1,22 @@
 ---
-title: Design Tokens
 slug: foundations/design-tokens/system-tokens
 parent: foundations/design-tokens
+title: System Tokens
+illustType: "A"
+description: "システムトークンは、リファレンストークンを参照するトークンです。UIをとりまくコンテキストが変化した際には、その参照先を切り替えることで対応します。"
+lastUpdated: "2024-10-23"
 ---
 
 import { TokenList } from "src/components/TokenList";
 import tokens from "@serendie/design-token/token-list";
-import { links } from "./01_design-tokens.mdx";
-import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
-import {
-  PageMain,
-  PageSection,
-  PageAside,
-  PageLinks,
-  PageA,
-  PageARef,
-} from "../../../components/PageLayout.tsx";
+import { PageSection } from "../../../components/PageLayout.tsx";
 import PageHeader from "@/components/PageHeader.astro";
 
 export const systemTokens = tokens.filter(
   (token) => !token.key.includes("themes") && token.key.includes("sd.system")
 );
 
-<PageHeader links={links}>
-  <IndexPageHeader
-    illustType="A"
-    title={"Design Tokens"}
-    description={
-      "デザイントークンはデザインシステムを構成する最小単位です。デザインと開発でデザイントークンを共有することで、Single Source of Truthを実現します。"
-    }
-  />
-</PageHeader>
-<PageMain gridColumn={"span 8"}>
-  <PageSection>
-    <TokenList tokens={systemTokens} client:load />
-  </PageSection>
-</PageMain>
+<PageSection>
+  TODO: 右サイドバー部分を消す
+  <TokenList tokens={systemTokens} client:load />
+</PageSection>

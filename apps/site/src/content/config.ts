@@ -15,6 +15,10 @@ const pagesCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     parent: z.string().optional(),
+    lastUpdated: z.string().optional(),
+    description: z.string().optional(),
+    illustType: z.enum(["A", "B", "C", "D"]).optional(),
+    illustSize: z.enum(["large", "small"]).optional(),
   }),
 });
 

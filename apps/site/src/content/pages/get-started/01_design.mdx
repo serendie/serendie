@@ -1,37 +1,20 @@
 ---
 title: デザイン
 slug: get-started/design
+illustType: "B"
+description: "UIデザインにおいて活用できる各種ガイドラインや、FigmaでSerendie UI Kitを活用する方法を紹介します。"
+lastUpdated: "2024-10-23"
 ---
 
-import { styled } from "styled-system/jsx";
-import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
 import PageHeadLine from "../../../components/PageHeadLine.astro";
-import CodeBox from "../../../components/CodeBox.astro";
 import {
-  PageMain,
   PageSection,
-  PageAside,
-  PageLinks,
   PageA,
   PageARef,
 } from "../../../components/PageLayout.tsx";
-import PageHeader from "@/components/PageHeader.astro";
-import StickySideNav from "../../../components/StickySideNav.astro";
-import { css } from "styled-system/css";
 
-<PageHeader>
-  <IndexPageHeader
-    title={frontmatter.title}
-    illustType="A"
-    description={
-      "UIデザインにおいて活用できる各種ガイドラインや、FigmaでSerendie UI Kitを活用する方法を紹介します。"
-    }
-    lastUpdated="2024-10-23"
-  />
-</PageHeader>
-<PageMain>
-  <PageSection>
-    <PageHeadLine number={1}>Figmaの基礎を知る</PageHeadLine>
+<PageSection>
+   <PageHeadLine number={1}>Figmaの基礎を知る</PageHeadLine>
 
     UIコンポーネントとデザイントークンをまとめたSerendie UI KitをFigma向けに提供しています。FigmaはUIデザインにおいてスタンダードになりつつあるツールであり、一枚絵としてデザインするのではなく、コンポーネントを組み合わせ構造的にデザインできる点が特に優れています。
 
@@ -42,9 +25,9 @@ import { css } from "styled-system/css";
     <PageARef href="https://help.figma.com/hc/ja/articles/360040451373-%E3%82%AA%E3%83%BC%E3%83%88%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88%E3%81%AE%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E3%82%92%E8%AA%BF%E3%81%B9%E3%82%8B">オートレイアウトのプロパティを調べる - Figma Learn</PageARef>
     <PageARef href="https://help.figma.com/hc/ja/articles/15339657135383-Figma%E3%81%A7%E3%81%AE%E3%83%90%E3%83%AA%E3%82%A2%E3%83%96%E3%83%AB%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%82%AC%E3%82%A4%E3%83%89">Figmaでのバリアブルに関するガイド - Figma Learn</PageARef>
 
-  </PageSection>
+</PageSection>
 
-  <PageSection>
+<PageSection>
     <PageHeadLine number={2}>Serendie UI Kitを使う</PageHeadLine>
 
     ### Figmaファイルにライブラリを加える
@@ -87,9 +70,9 @@ import { css } from "styled-system/css";
       <img src="/assets/pages/getstarted-design-4.png" width="310" alt="" />
     </p>
 
-  </PageSection>
+</PageSection>
 
-  <PageSection>
+<PageSection>
     <PageHeadLine number={3}>モードを切り替える</PageHeadLine>
 
     Serendie UI KitはFigmaのVariablesモードを使って、カラーテーマやTypography (フォントサイズ) の切り替えを行います。詳しくは、[Theming]()及び[Foundations/Typography]()を参照してください。
@@ -99,8 +82,4 @@ import { css } from "styled-system/css";
       TODO:GIFアニメに変更する
     </p>
 
-  </PageSection>
-</PageMain>
-<PageAside>
-  <StickySideNav />
-</PageAside>
+</PageSection>

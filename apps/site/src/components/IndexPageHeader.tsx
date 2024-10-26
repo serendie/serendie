@@ -19,7 +19,7 @@ type IndexPageHeaderProps = {
   title: string;
   description?: string;
   lastUpdated?: string;
-  illustType: type;
+  illustType?: type;
   illustSize?: "large" | "small";
 };
 
@@ -30,7 +30,7 @@ const IndexPageHeader_ = ({
   lastUpdated,
   illustSize = "small",
 }: IndexPageHeaderProps) => {
-  const Illust = illustMap[illustType];
+  const Illust = illustType ? illustMap[illustType] : null;
   const lastUpdateDate = lastUpdated ? new Date(lastUpdated) : undefined;
 
   return (
@@ -81,7 +81,7 @@ const IndexPageHeader_ = ({
           },
         })}
       >
-        <Illust />
+        {Illust && <Illust />}
       </div>
     </div>
   );
