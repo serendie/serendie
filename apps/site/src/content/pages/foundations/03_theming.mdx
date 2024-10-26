@@ -1,6 +1,9 @@
 ---
 title: Theming
 slug: foundations/theming
+description: アクセシビリティ基準を満たしたカラーテーマを5つ提供しています。FigmaとReactコンポーネントそれぞれテーマ切り替えに対応しています。
+illustType: A
+lastUpdated: "2024-10-23"
 ---
 
 import { styled } from "styled-system/jsx";
@@ -19,16 +22,6 @@ import PageHeader from "@/components/PageHeader.astro";
 import StickySideNav from "../../../components/StickySideNav.astro";
 import { css } from "styled-system/css";
 
-<PageHeader>
-  <IndexPageHeader
-    title={frontmatter.title}
-    illustType="A"
-    description={
-      "アクセシビリティ基準を満たしたカラーテーマを5つ提供しています。FigmaとReactコンポーネントそれぞれテーマ切り替えに対応しています。"
-    }
-  />
-</PageHeader>
-<PageMain>
   <PageSection>
     <PageHeadLine number={1}>カラーテーマ</PageHeadLine>
 
@@ -78,7 +71,3 @@ import { css } from "styled-system/css";
     各テーマは、Figmaのなかで[バリアブルモード](https://help.figma.com/hc/ja/articles/15343816063383-%E3%83%90%E3%83%AA%E3%82%A2%E3%83%96%E3%83%AB%E3%83%A2%E3%83%BC%E3%83%89)として扱われます。バリアブルモードは、Figma Variablesに定義されたモード (テーマ) を、ページやセクション、フレームなどに割り当てる機能です。例えば、ページにASAGIを割り当てることで、そのページ内の全てのSerendie UIをASAGIテーマに切り替えることができます。
 
   </PageSection>
-</PageMain>
-<PageAside>
-  <StickySideNav />
-</PageAside>

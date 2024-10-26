@@ -1,6 +1,9 @@
 ---
 title: Typography
 slug: foundations/typography
+lastUpdated: "2024-10-23"
+illustType: A
+description: デジタルプロダクトは文字を中心に構成されるため、適切にタイポグラフィを扱うことは重要です。Serendie Design Systemでは、フォントやフォントサイズなどをリファレンストークンとし、UI上の役割に合わせてグループ化したシステムトークンを定義しています。
 ---
 
 import { styled } from "styled-system/jsx";
@@ -76,12 +79,8 @@ export const sampleCode = `body {
   font-family: Roboto, "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
 }`;
 
-<PageHeader>
-	<IndexPageHeader title={frontmatter.title} illustType="B" description={'デジタルプロダクトは文字を中心に構成されるため、適切にタイポグラフィを扱うことは重要です。Serendie Design Systemでは、フォントやフォントサイズなどをリファレンストークンとし、UI上の役割に合わせてグループ化したシステムトークンを定義しています。'} />
-</PageHeader>
-<PageMain>
-	<PageSection>
-		<PageHeadLine number={1}>フォント</PageHeadLine>
+    <PageSection>
+    	<PageHeadLine number={1}>フォント</PageHeadLine>
 
       Serendieブランドでは、欧文フォント「Roboto」、和文フォント「Noto Sans JP」を採用しています。Serendie Design Systemにおいてもそれを踏襲しつつ、等幅フォント「Noto Sans Mono」を追加しています。いずれのフォントもオープンソースであり、無償で商用利用可能です。
 
@@ -201,9 +200,3 @@ export const sampleCode = `body {
 
       Serendie Design Systemでは、これを[バリアブルモード](https://help.figma.com/hc/ja/articles/15343816063383-%E3%83%90%E3%83%AA%E3%82%A2%E3%83%96%E3%83%AB%E3%83%A2%E3%83%BC%E3%83%89)として扱います。Themingと同様に、ページやセクション、フレームなどにモード (Expanded/Compact) を割り当てることで、基準サイズを変更できます。デフォルトはCompactモードです。PC画面をデザインするときには、ページ全体をExpandedモードに変更してください。
     </PageSection>
-
-</PageMain>
-
-<PageAside>
-  <StickySideNav />
-</PageAside>

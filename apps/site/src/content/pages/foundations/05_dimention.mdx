@@ -1,6 +1,9 @@
 ---
 title: Dimension
 slug: foundations/dimension
+illustType: A
+lastUpdated: "2024-10-23"
+description: スペーシングやボーダー幅、角丸など、寸法にまつわるデザイントークンです。レスポンシブデザインにおけるBreakpointも取り扱います。
 ---
 
 import { styled } from "styled-system/jsx";
@@ -21,11 +24,7 @@ import PageHeader from "@/components/PageHeader.astro";
 import StickySideNav from "../../../components/StickySideNav.astro";
 import { css } from "styled-system/css";
 
-<PageHeader>
-	<IndexPageHeader title={frontmatter.title} illustType="C" description={'スペーシングやボーダー幅、角丸など、寸法にまつわるデザイントークンです。レスポンシブデザインにおけるBreakpointも取り扱います。'} />
-</PageHeader>
-<PageMain>
-	<PageSection>
+    <PageSection>
       <PageHeadLine number={1}>スペーシング</PageHeadLine>
 
       調和数列をベースにした数列をリファレンストークンとして定義し、レイアウト上使いやすいようにピックアップして、twoExtraSmallからsixExtraLargeまで13段階のサイズをシステムトークンとしています。
@@ -65,9 +64,3 @@ import { css } from "styled-system/css";
         <Fragment set:html={FigureElevationBreakpoint} />
 
     </PageSection>
-
-</PageMain>
-
-<PageAside>
-  <StickySideNav />
-</PageAside>
