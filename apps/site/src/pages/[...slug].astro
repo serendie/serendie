@@ -81,7 +81,7 @@ const { Content } = await page.render();
         />
       </PageHeader>
 
-      <PageMain>
+      <PageMain gridColumn={page.data.fullWidth ? "span8" : undefined}>
         <Content {...propsForMdx} />
         <PageLinks siblings={propsForMdx.siblings} currentSlug={page.slug} />
       </PageMain>

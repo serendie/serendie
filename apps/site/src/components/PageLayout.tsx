@@ -20,6 +20,13 @@ export const PageMain = styled("div", {
       listStyleType: "disc",
     },
   },
+  variants: {
+    gridColumn: {
+      span8: {
+        gridColumn: "span 8",
+      },
+    },
+  },
 });
 
 export const PageSection = styled("section", {

@@ -19,6 +19,7 @@ const pagesCollection = defineCollection({
     description: z.string().optional(),
     illustType: z.enum(["A", "B", "C", "D"]).optional(),
     illustSize: z.enum(["large", "small"]).optional(),
+    fullWidth: z.boolean().optional(),
   }),
 });
 

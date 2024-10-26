@@ -5,6 +5,7 @@ parent: foundations/design-tokens
 illustType: "A"
 description: "リファレンストークンは、カラーコードなど生の値を参照するトークンであり、このトークンをプロダクトのUI内で使用することは例外的です。"
 lastUpdated: "2024-10-23"
+fullWidth: true
 ---
 
 import { TokenList } from "src/components/TokenList";
@@ -16,6 +17,5 @@ export const referenceTokens = tokens.filter((token) =>
 );
 
 <PageSection>
-  TODO: 右サイドバー部分を消す
   <TokenList tokens={referenceTokens} client:load />
 </PageSection>
