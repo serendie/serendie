@@ -1,7 +1,7 @@
 ---
 title: Icon
 slug: foundations/icon
-description: Serendie Symbolsは、Serendieブランドを継承し、デジタルプロダクトのなかで汎用性高く使えるベーシックなアイコン集です。
+description: Serendie Symbolsは、デジタルプロダクトのなかで汎用性高く使える、Serendieらしいアイコン集です。
 illustType: A
 lastUpdated: "2024-11-1"
 subLinks:
@@ -11,6 +11,86 @@ subLinks:
   ]
 ---
 
-import { IconPage } from "@/components/IconPage";
+import PageHeadLine from "../../../components/PageHeadLine.astro";
+import { PageSection } from "../../../components/PageLayout.tsx";
 
-<IconPage client:idle />
+<PageSection>
+  <PageHeadLine number={1}>Serendie Symbols</PageHeadLine>
+
+    Serendie Symbolsは、Outlined(線)とFilled(塗り)の2パターンがあり、それぞれ300種類程度のアイコンを提供しています。[Serendie UI Kit (Figma)](https://www.figma.com/@serendiedesign)では、「SerendieSymbols」としてComponent化されており、バリアントプロパティにより切り替えできます。
+
+  <img src="/assets/pages/icon/icons.png" width="310px" alt="" />
+</PageSection>
+
+<PageSection>
+  <PageHeadLine number={2}>原則</PageHeadLine>
+
+    Serendie Symbolsの設計原則と、デザインする際のTipsです。アイコンを更新・追加する際に意識してください。
+
+    ## Arcを生かす
+
+    SerendieブランドのシンボルであるArc (半円) を表現の中で生かしてください。ただし、形の中にArcが多すぎると、アイコンの意味が伝わらず実用性を損なうため注意してください。
+
+    - 意味的にArcを含まない形であっても、Arc化 (ラインを切る) することでSerendieのアイデンティティを強調する。
+    - 基本的に「最も外側に位置する円」のラインを切ることで、Arcに見せる。逆に、内側に位置する円はArc化しない。
+    - 特に長円形を使うような箇所はArc化すると効果的。
+
+    ## 極端なシルエット
+
+    線と角のコントラストを意識しメリハリをつけ、全体的に形をはっきりさせてください。幾何学的な形を意識しつつ、必要に応じて有機的な形も利用しましょう。
+
+    - 大胆な形の組み合わせでメリハリのあるシルエットにする。
+    - 奥行を出さずに、平で左右対称な形にする。
+    - 角には小さい丸みを加え、線の端は四角をキープし、形に些細なコントラストを加える。
+
+    ## ユーザーを驚かせない
+
+    Arcを生かすことによってアイコンの意味が変わってしまう恐れがある場合は、個性よりも一般性を重視してください。また、アイコンのコーナーに丸みを活かし、オンスクリーンで自然と存在するものを目指してください。
+
+    - 角丸を少し足すことで尖った印象を柔らげ、親しみやすい形にする。
+    - 余白を生かし、全体的に陽気な印象を与える。
+
+</PageSection>
+
+<PageSection>
+  <PageHeadLine number={3}>制作ガイドライン</PageHeadLine>
+
+    ## 解剖
+    アイコンは1.2pxの線幅で作られており、角丸半径は0.25です。パスの間にギャップを作る際は、両端点の間に1.6pxの感覚を開けます。開いたパスの端にはキャップやティップは追加されません。
+    <img src="/assets/pages/icon/guideline1.png" width="310px" alt="" />
+
+    ## グリッドとキーライン
+    アイコンシステム全体で一貫した比率を維持するために、24dp x 24dp のグリッドに配置されている幾何学的なキーラインシェイプをガイドラインとして使用します。
+    <img src="/assets/pages/icon/guideline2.png" width="310px" alt="" />
+
+    ## レイアウト
+    全体を24dp x 24dpとし、Paddingを2dp、Live areaを20dp x 20dpとします。
+    アイコン本体はLive area内に原則収めてください。一部がPadding領域に出ることも許容されますが、トリムエリア（枠外）に出てはいけません。
+    <img src="/assets/pages/icon/guideline3.png" width="310px" alt="" />
+
+</PageSection>
+
+<PageSection>
+  <PageHeadLine number={4}>Figmaの設定</PageHeadLine>
+
+    ## 線幅
+    1.2pxの線幅で作り、線の終了点にキャップやティップは追加しません。ストロークの位置を「中央」に設定することにより、図形や線が一貫してスタイリングされます。図形レイヤーのデフォルトオプションは「内側」とします。
+    <img src="/assets/pages/icon/settings1.png" width="310px" alt="" />
+
+    ## 角丸の大きさ
+    形に少し柔らかさを加えるために、角の半径は0.25pxに設定します。
+    <img src="/assets/pages/icon/settings2.png" width="310px" alt="" />
+
+    ## 制約
+    横軸と縦軸に「拡大縮小」制約を適用することで、アイコンのサイズを変更しても、比率が維持されます。この制約はアイコン自体につけ、アイコンを囲むフレームには適用されません（横軸「左」、縦軸「上」を保つ）。
+    <img src="/assets/pages/icon/settings3.png" width="310px" alt="" />
+
+    ## 統合
+    アイコンを作成する際、すべての要素を選択し、コンテキストメニューから「統合」を選択して、レイヤーを1つのベクターパスにフラット化します。これにより完成したアイコンを1つのエンティティとして扱いやすくなり、アイコンの複雑さに応じてストロークのアウトラインを作成しやすくなります。
+    <img src="/assets/pages/icon/settings4.png" width="310px" alt="" />
+
+    ## アウトライン化
+    アイコンのスタイルが適切に設定されたら、線をアウトライン化してベクターオブジェクトに変換し、サイズ変更時に比率が影響を受けないようにします。
+    <img src="/assets/pages/icon/settings5.png" width="310px" alt="" />
+
+</PageSection>
