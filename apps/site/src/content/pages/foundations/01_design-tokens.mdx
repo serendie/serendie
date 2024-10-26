@@ -4,29 +4,25 @@ slug: foundations/design-tokens
 description: "デザイントークンはデザインシステムを構成する最小単位です。デザインと開発でデザイントークンを共有することで、Single Source of Truthを実現します。"
 lastUpdated: "2024-10-23"
 illustType: "A"
+subLinks:
+  [
+    { name: "設計", path: "/foundations/design-tokens" },
+    {
+      name: "リファレンストークン",
+      path: "/foundations/design-tokens/reference-tokens",
+    },
+    {
+      name: "システムトークン",
+      path: "/foundations/design-tokens/system-tokens",
+    },
+  ]
 ---
 
 import PageHeadLine from "../../../components/PageHeadLine.astro";
 import CodeBox from "../../../components/CodeBox.astro";
 import { PageSection, PageARef } from "../../../components/PageLayout.tsx";
 
-export const links = [
-  {
-    name: "設計",
-    path: "/foundations/design-tokens",
-  },
-  {
-    name: "リファレンストークン",
-    path: "/foundations/design-tokens/reference-tokens",
-  },
-  {
-    name: "システムトークン",
-    path: "/foundations/design-tokens/system-tokens",
-  },
-];
-
-  <PageSection>
-  TODO: リファレンストークン・システムトークンへ移動するタブを表示
+<PageSection>
     <PageHeadLine number={1}>デザイントークンとは</PageHeadLine>
 
     デザイントークンはKey/Value (名前と値)のペアからなり、[Color]()や[Typography]()、[Dimension]()、[Elevation]()などデジタルプロダクトの視覚要素を指し示します。デザインシステムにおける最も抽象度の高い構成要素であり、全てのUIコンポーネントを形づくります。

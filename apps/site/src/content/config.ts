@@ -20,6 +20,14 @@ const pagesCollection = defineCollection({
     illustType: z.enum(["A", "B", "C", "D"]).optional(),
     illustSize: z.enum(["large", "small"]).optional(),
     fullWidth: z.boolean().optional(),
+    subLinks: z
+      .array(
+        z.object({
+          name: z.string(),
+          path: z.string(),
+        })
+      )
+      .optional(),
   }),
 });
 

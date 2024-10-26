@@ -71,7 +71,10 @@ const { Content } = await page.render();
         },
       })}
     >
-      <PageHeader hideBorder={page.data.illustSize === "large"}>
+      <PageHeader
+        hideBorder={page.data.illustSize === "large"}
+        links={page.data.subLinks}
+      >
         <IndexPageHeader
           title={page.data.title}
           illustType={page.data.illustType}
