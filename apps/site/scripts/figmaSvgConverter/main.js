@@ -30,8 +30,16 @@ function rgb2hex(r, g, b) {
 
 function getColors(n) {
   const ret = [];
-  [...(n.fills || []), ...(n.strokes || [])].forEach((paint) => {
+  const paints = [];
+  if (Array.isArray(n.fills)) {
+    paints.push(...n.fills);
+  }
+  if (Array.isArray(n.strokes)) {
+    paints.push(...n.strokes);
+  }
+  paints.flat().forEach((paint) => {
     if (
+      paint &&
       paint.boundVariables &&
       paint.boundVariables.color &&
       paint.boundVariables.color.type === "VARIABLE_ALIAS"

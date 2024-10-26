@@ -12,14 +12,42 @@ subLinks:
   ]
 ---
 
-import { links } from "./02_00_color_palette.mdx";
-import {
-  PageMain,
-  PageSection,
-  PageAside,
-  PageLinks,
-} from "../../../components/PageLayout";
-import PageHeader from "@/components/PageHeader.astro";
-import { IndexPageHeader } from "../../../components/IndexPageHeader";
+import { PageSection } from "../../../components/PageLayout";
+import { styled } from "styled-system/jsx";
+import ImageHovered from "../../../assets/content/foundations/color/dynamic_hovered.svg?react";
+import ImageImpression from "../../../assets/content/foundations/color/dynamic_impression.svg?react";
+import ImageRoles from "../../../assets/content/foundations/color/dynamic_roles.svg?react";
 
-<PageSection>TODO: カラーロール</PageSection>
+export const ImageWrapper = styled("p", {
+  base: {
+    "& > img": {
+      maxWidth: "310px",
+    },
+  },
+});
+
+<PageSection>
+
+<ImageRoles />
+
+<ImageWrapper>
+  <ImageImpression />
+</ImageWrapper>
+
+<ImageWrapper>
+  <img src="/assets/pages/color/button-colors.png" alt="" />
+</ImageWrapper>
+
+<ImageWrapper>
+  <img src="/assets/pages/color/negative-color.png" alt="" />
+</ImageWrapper>
+
+<ImageWrapper>
+  <img src="/assets/pages/color/component-colors.png" alt="" />
+</ImageWrapper>
+
+<ImageWrapper>
+  <ImageHovered />
+</ImageWrapper>
+
+</PageSection>
