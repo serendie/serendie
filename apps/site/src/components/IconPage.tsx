@@ -15,12 +15,14 @@ const Container = styled("div", {
 const SearchBar = styled("nav", {
   base: {
     display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
+    alignItems: "flex-start",
     flexDirection: "column",
+    justifyContent: "flex-start",
     mb: "32px",
-    sm: {
+    expanded: {
       flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
     },
   },
 });
@@ -77,7 +79,7 @@ export const IconPage: React.FC = () => {
     <Container>
       <SearchBar>
         <Search
-          items={icons.map((icon) => icon.name)}
+          items={[]} // IconContainer側で表示されるため候補は無しに
           value={searchText as unknown as string[]}
           onChange={(e) => {
             setSearchText((e.target as HTMLInputElement).value as string);
@@ -91,8 +93,9 @@ export const IconPage: React.FC = () => {
           }}
         />
         <Switch
-          label={"塗りつぶし"}
+          label={"Filled"}
           className={css({
+            paddingLeft: 0,
             "&>div": {
               width: "fit-content",
             },
