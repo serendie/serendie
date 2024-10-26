@@ -7,27 +7,19 @@ description: デジタルプロダクトは文字を中心に構成されるた�
 ---
 
 import { styled } from "styled-system/jsx";
-import Illustration from "../../../assets/hearderImages/about.svg";
 import FigureTypographyFontsize from "../../../assets/content/foundations/typography/figure-typography-fontsize.svg?raw";
 import FigureTypographyRolesDisplay from "../../../assets/content/foundations/typography/figure-typography-roles-display.svg?raw";
 import FigureTypographyRolesHeadline from "../../../assets/content/foundations/typography/figure-typography-roles-headline.svg?raw";
 import FigureTypographyRolesTitle from "../../../assets/content/foundations/typography/figure-typography-roles-title.svg?raw";
 import FigureTypographyRolesBody from "../../../assets/content/foundations/typography/figure-typography-roles-body.svg?raw";
 import FigureTypographyRolesLabel from "../../../assets/content/foundations/typography/figure-typography-roles-label.svg?raw";
-import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
 import PageHeadLine from "../../../components/PageHeadLine.astro";
 import CodeBox from "../../../components/CodeBox.astro";
 import {
-  PageMain,
   PageSection,
-  PageAside,
-  PageLinks,
   PageA,
   PageARef,
 } from "../../../components/PageLayout.tsx";
-import PageHeader from "@/components/PageHeader.astro";
-import StickySideNav from "../../../components/StickySideNav.astro";
-import { css } from "styled-system/css";
 
 export const FontFigureWrapper = styled("figure", {
   base: {
