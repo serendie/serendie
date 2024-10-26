@@ -86,7 +86,14 @@ const { Content } = await page.render();
 
       <PageMain gridColumn={page.data.fullWidth ? "span8" : undefined}>
         <Content {...propsForMdx} />
-        <PageLinks siblings={propsForMdx.siblings} currentSlug={page.slug} />
+        {
+          page.data.showSiblingLinks && (
+            <PageLinks
+              siblings={propsForMdx.siblings}
+              currentSlug={page.slug}
+            />
+          )
+        }
       </PageMain>
       <PageAside>
         <StickySideNav />

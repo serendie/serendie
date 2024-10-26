@@ -1,39 +1,35 @@
 ---
-title: Color
 slug: foundations/color
+title: Color
+description: Serendieらしさを視覚的に表現するための基礎となるカラーパレットです。このパレットに基づくことでプロダクト間の一貫性を強化できます。カラーパレットはリファレンストークンとして定義されています。
+illustType: A
+lastUpdated: "2024-10-23"
+subLinks:
+  [
+    { name: "カラーパレット", path: "/foundations/color" },
+    { name: "カラーロール", path: "/foundations/color/role" },
+  ]
 ---
 
-import {
-  PageMain,
-  PageSection,
-  PageAside,
-  PageLinks,
-} from "../../../components/PageLayout";
-import PageHeader from "@/components/PageHeader.astro";
-import { IndexPageHeader } from "../../../components/IndexPageHeader";
+import { PageSection } from "../../../components/PageLayout";
 import ColorMatrix from "@/components/ColorMatrix.astro";
 import { css } from "styled-system/css";
+import PageHeadline from "../../../components/PageHeadLine.astro";
 
-export const links = [
-  {
-    name: "カラーパレット",
-    path: "/foundations/color",
-  },
-  {
-    name: "カラーロール",
-    path: "/foundations/color/role",
-  },
-];
+<PageSection>
+  <PageHeadline number={1}>カラーパレット</PageHeadline>
 
-<PageMain>
-  <PageSection>
-    <div
-      class={css({
-        maxWidth: "calc(100vw - 48px)",
-        overflowX: "auto",
-      })}
-    >
-      <ColorMatrix />
-    </div>
-  </PageSection>
-</PageMain>
+Serendieブランドでは日本の伝統色をベースにしたカラーパレットを、オフィス空間やコミュニケーションツールなど様々なタッチポイントで使用しています。Serendieデザインシステムはそれを継承しつつ、デジタルプロダクトに最適化したカラーパレットを提供しています。
+
+基本的に色相ごとに10段階の明度でスケールを設計していますが、UIのなかで必要となるWhiteとBlack、Transparencyは例外です。Transparencyの用途はカラーロールを参照してください。
+
+  <div
+    class={css({
+      mt: "sd.system.dimension.spacing.twoExtraLarge",
+      maxWidth: "calc(100vw - 48px)",
+      overflowX: "auto",
+    })}
+  >
+    <ColorMatrix />
+  </div>
+</PageSection>
