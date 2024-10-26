@@ -42,7 +42,7 @@ export const snackBarClassName = css({
 ---
 
 <astro-page-headline data-snack-bar-class-name={snackBarClassName}>
-  <h2
+  <h1
     class={`group ${css({
       display: "grid",
       color: "web.system.color.component.onSurface",
@@ -108,7 +108,7 @@ export const snackBarClassName = css({
       <Fragment set:html={icon} />
     </div>
     <slot />
-  </h2>
+  </h1>
 </astro-page-headline>
 
 <script>

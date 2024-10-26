@@ -12,11 +12,12 @@ subLinks:
   ]
 ---
 
-import { PageSection } from "../../../components/PageLayout";
+import { PageSection, PageARef } from "../../../components/PageLayout";
 import { styled } from "styled-system/jsx";
 import ImageHovered from "../../../assets/content/foundations/color/dynamic_hovered.svg?react";
 import ImageImpression from "../../../assets/content/foundations/color/dynamic_impression.svg?react";
 import ImageRoles from "../../../assets/content/foundations/color/dynamic_roles.svg?react";
+import PageHeadLine from "../../../components/PageHeadLine.astro";
 
 export const ImageWrapper = styled("p", {
   base: {
@@ -28,26 +29,105 @@ export const ImageWrapper = styled("p", {
 
 <PageSection>
 
+    <PageHeadLine number={1}>カラーテーマ</PageHeadLine>
+
+カラーロールは、Impression, Component, Interactionの3つの区分で整理されます。この区分はシステムトークンのKey名に含まれます。
+
 <ImageRoles />
+
+現在提供しているカラーロールは、Serendie UIを構成する上で必要な最低限のセットです。オリジナルのUIコンポーネントを追加するときは、カラーロールの追加を検討してください。
+
+なお、Serendie Design SystemのカラーロールはMaterial Design 3の設計をベースに、よりシンプルになるように一部アレンジしたサブセットとなります。ロール名など用語選びもMaterial Design 3に準拠しています。Material Design 3のドキュメントを参照することで、より深く理解することができます。
+
+### 参考文献
+
+    <PageARef href="https://m3.material.io/styles/color/roles">Color – Material Design 3</PageARef>
+
+</PageSection>
+
+<PageSection>
+
+<PageHeadLine number={2}>Impression</PageHeadLine>
+
+## ブランドカラーとUIカラー
+
+プロダクトを目にした**ユーザーがいだく「印象」に関するカラーロールがImpression**です。この区分の中には、ブランドカラーに関するロールと、UIカラーに関するロールが含まれます。
+
+ブランドカラーに関するロールは、その優先度ごとにPrimary, Secondary, Tertiaryの3種類が存在します。Primaryカラーは、プロダクト及びブランドの印象を形づくり、UIの重要度を示す役割です。SecondaryおよびTertiaryカラーは補助的な役割で、プロダクト内で登場しないこともあります。
+
+UIカラーに関するロールは、「成功」や「失敗」「警告」など、UIの持つ機能やインタラクションの結果を、ユーザーに伝える役割です。これをユーザーに与える印象という観点で、Positive, Negative, Noiceという3種類で整理します。Impressionのなかに合計6つの小区分を用意していますが、プロダクトによってはPrimaryとPositiveが同じ色を指すことも多く、全てに別の色を当てはめる必要はありません。結果として同じ色であっても、**ロールを分けておくことで変化に強いデザイントークン**となります。
 
 <ImageWrapper>
   <ImageImpression />
 </ImageWrapper>
 
+## 前景色と背景色
+
+Impression系のデザイントークンは、Buttonをはじめとして多くのUIコンポーネント内で使用されます。ここで重要となるのが、**前景と背景および色面積に応じてデザイントークンを分ける**考え方です。例えば、Primaryロールを担うデザイントークンは、次の4つです。（トークン名の一部を抜粋）
+
+1. primary ― テキスト色や、色面積の小さな背景色
+2. onPrimary ― primaryを背景とする前景色
+3. primaryContainer ― 色面積の大きな背景色
+4. onPrimaryContainer ― primaryContainerを背景とする前景色
+
 <ImageWrapper>
   <img src="/assets/pages/color/button-colors.png" alt="" />
 </ImageWrapper>
+
+前景色には接頭辞「on」が付き、色面積が大きな背景色には接尾辞「Container」が付くルールです。先に紹介したImpression系の6つのカラーロールは、全てこのルールが当てはまります。
+
+アクセシブルなUIを設計する上で、**前景色と背景色のコントラスト比の確保は重要**であり、ダークモードなどコンテキストの変化に対応するためには、前景と背景でデザイントークンを分けることが必要になります。さらに同じロールを持つ色であっても、その色面積に応じて明度を調整することは多々あります。慣習的に赤色を用いることが多いNegativeロールはその代表例です。このような理由から、「on」及び「Container」がついたデザイントークンの使い分けが大切です。
 
 <ImageWrapper>
   <img src="/assets/pages/color/negative-color.png" alt="" />
 </ImageWrapper>
 
+</PageSection>
+
+<PageSection>
+<PageHeadLine number={3}>Component</PageHeadLine>
+
+Componentに区分されるロールは**UIを形作る役割**を担います。代表的なロールはSurfaceとOutlineです。Surfaceはデフォルトの背景色・テキスト色を指し、多くの場合ニュートラルカラーが使われます。Surfaceロールを担う代表的なデザイントークンは次の3つです。（トークン名の一部を抜粋）
+
+1. surface ― Webサイト全体の背景色やカードUIの背景色など地色
+2. onSurface ― surfaceを背景とするデフォルトのテキスト色
+3. onSurfaceVariant ― surfaceを背景とするサブテキスト色
+
+Outlineは、UIのボーダー色であり、視覚的な強弱によってバリエーションが存在します。
+
+1. outline ― デフォルトのボーダー色
+2. outlineVariant ― より強調する場合に使用されるボーダー色
+
+SurfaceとOutlineともにニュートラルカラーを使う性質から、プロダクトによってそのバリエーション (階調) が増える傾向にあります。Serendie Design Systemでは、現在のところバリエーションを抑えて提供しています。
+
 <ImageWrapper>
   <img src="/assets/pages/color/component-colors.png" alt="" />
 </ImageWrapper>
 
+</PageSection>
+
+<PageSection>
+<PageHeadLine number={4}>Interaction</PageHeadLine>
+
+Interactionに区分されるロールは、UIコンポーネントの状態変化を担います。Hovered、Selected、Disabledの3種類のロールが存在します。
+
+UIの選択状態を示すSelectedや、非活性状態を示すDisabledは、規定色 (Disabledはグレー系など) が用いられることが多く、Serendie Design Systemでもそのようにしています。
+
+一方でHoveredは、ホバー前の色に応じてホバー後の色が変化し、1色に規定できないことに注意が必要です。Serendie Design Systemでは、Hovered系デザイントークンは半透明色 (Transparency) を指します。これを状態レイヤーとし、ホバー対象のコンポーネントに重ね合わせることで、そのホバー後の状態を表現します。
+
 <ImageWrapper>
   <ImageHovered />
 </ImageWrapper>
+
+### 参考文献
+
+    <PageARef href="https://m3.material.io/foundations/interaction/states/state-layers">States – Material Design 3</PageARef>
+
+</PageSection>
+
+<PageSection>
+<PageHeadLine number={5}>カラーテーマ</PageHeadLine>
+
+Serendie Design Systemでは、このページで紹介したカラーロールのプリセットをカラーテーマとして提供しています。カラーテーマについて詳しくは[Theming](/foundations/theming)を参照してください。
 
 </PageSection>
