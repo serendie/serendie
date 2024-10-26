@@ -71,7 +71,7 @@ const { Content } = await page.render();
         },
       })}
     >
-      <PageHeader>
+      <PageHeader hideBorder={page.data.illustSize === "large"}>
         <IndexPageHeader
           title={page.data.title}
           illustType={page.data.illustType}

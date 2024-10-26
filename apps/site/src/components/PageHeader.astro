@@ -3,14 +3,15 @@ import { css } from "styled-system/css";
 import PageTab from "./PageTab.astro";
 import type { Props as PageTabProps } from "./PageTab.astro";
 
-interface Props extends PageTabProps {}
-const { links } = Astro.props;
+interface Props extends PageTabProps {
+  hideBorder?: boolean;
+}
+const { links, hideBorder } = Astro.props;
 ---
 
 <header
   class={css({
     maxWidth: "100%",
-    overflow: "hidden",
     position: "relative",
     gridColumn: "span 8",
     mdDown: {
@@ -19,5 +20,5 @@ const { links } = Astro.props;
   })}
 >
   <slot />
-  <PageTab links={links} />
+  <PageTab links={links} hideBorder={hideBorder} />
 </header>
