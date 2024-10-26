@@ -1,15 +1,11 @@
 import { css, cx, sva } from "styled-system/css";
-import { useMotionValueEvent, useScroll } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useRef, useState } from "react";
 import { LinkContentCard } from "./LinkContentCard";
-import { TitleShape } from "./TitleShape";
 import useEmblaCarousel from "embla-carousel-react";
 import { useDotButton, usePrevNextButtons } from "../utils/carouselUtils";
 import { IconButton } from "@serendie/ui";
-import Title01 from "../../assets/toppage/title01.svg?raw";
-import Title02 from "../../assets/toppage/title02.svg?raw";
-import Title03 from "../../assets/toppage/title03.svg?raw";
-
+import { TitleShapeThin } from "./TitleShapeThin";
 type LinkContentProps = {
   content: {
     titleEn: string;
@@ -31,6 +27,7 @@ export const LinkContent: React.FC<LinkContentProps> = ({ content }) => {
 const linkContentExpandedStyle = sva({
   slots: [
     "wrapper",
+    "scrollContainer",
     "container",
     "sidebar",
     "titleWrapper",
@@ -46,39 +43,40 @@ const linkContentExpandedStyle = sva({
   base: {
     wrapper: {
       display: "none",
-      mt: "-25vh",
+      mt: "25%",
       expanded: {
         display: "block",
       },
-    },
-    container: {
-      position: "relative",
-      display: "grid",
-      gap: "10%",
-      color: "web.system.color.impression.onTertiary",
-      height: "300vh",
-      gridTemplateColumns: "320px 1fr",
-      gridTemplateRows: "1fr",
-    },
-    sidebar: {
-      position: "sticky",
-      top: 0,
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      height: "50vh",
-      expanded: {
-        height: "100vh",
+      lgDown: {
+        mt: "50%",
       },
     },
+    scrollContainer: {
+      height: "300vh",
+      position: "sticky",
+    },
+    container: {
+      position: "sticky",
+      top: "50%",
+      transform: "translateY(-50%)",
+      display: "grid",
+      gap: "100px 120px",
+      color: "web.system.color.impression.onTertiary",
+      height: "calc((224px + 28px) * 2 + 64px)",
+      gridTemplateColumns: "285px 1fr",
+      gridTemplateRows: "1fr",
+      lgDown: {
+        gap: "48px",
+        // gridTemplateColumns: "200px 1fr",
+        // height: "calc((224px + 28px) * 3 + 64px)",
+      },
+    },
+    sidebar: {},
     titleWrapper: { my: "auto" },
     title: {
       position: "relative",
       aspectRatio: "1 / 1",
-      maxWidth: "240px",
-      expanded: {
-        maxWidth: "inherit",
-      },
+      maxWidth: "inherit",
     },
     titleDescription: {
       fontSize: "20px",
@@ -91,17 +89,26 @@ const linkContentExpandedStyle = sva({
       textTransform: "uppercase",
       textAlign: "center",
       color: "web.system.color.impression.onTertiary",
-      "& h2": {
+      fontFamily: "SerendieOfficeVF",
+      "& div": {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        mb: "20px",
+        // mb: "16px",
+        lineHeight: "1",
+        textWrap: "nowrap",
+        fontSize: "80px",
+        fontWeight: 50,
         "& svg": {
-          h: "46px",
-          expanded: {
-            h: "64px",
-          },
+          h: "64px",
+          pointerEvents: "none",
         },
+      },
+      "& p": {
+        whiteSpace: "nowrap",
+        fontSize: "26px",
+        fontWeight: 50,
+        lineHeight: "1",
       },
     },
     titleShape: {
@@ -111,8 +118,12 @@ const linkContentExpandedStyle = sva({
       width: "100%",
       height: "100%",
       "& svg": {
-        width: "100%",
+        width: "285px",
         height: "100%",
+        lgDown: {
+          // width: "200px",
+          height: "100%",
+        },
       },
     },
     description: {
@@ -122,31 +133,17 @@ const linkContentExpandedStyle = sva({
     mainWrapper: {
       position: "sticky",
       top: 0,
-      height: "50vh",
-      expanded: {
-        height: "100vh",
-      },
+      height: "100vh",
     },
     mainContainer: {
       position: "relative",
-      height: "50vh",
-      expanded: {
-        height: "100vh",
-      },
     },
     main: {
       position: "absolute",
       width: "100%",
-      display: "flex",
-      gap: "10%",
-      justifyContent: "flex-start",
-      alignItems: "center",
-      flexWrap: "wrap",
-      alignContent: "center",
-      height: "50vh",
-      expanded: {
-        height: "100vh",
-      },
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fill, minmax(224px, 1fr))",
+      gap: "48px 28px",
     },
   },
 });
@@ -163,6 +160,10 @@ const linkContentCompactStyle = sva({
     "carouselContainer",
     "carouselDotsContainer",
     "carouselDots",
+
+    "title",
+    "titleDescription",
+    "titleShape",
   ],
   base: {
     wrapper: {
@@ -170,8 +171,9 @@ const linkContentCompactStyle = sva({
       display: "grid",
       height: "fit-content",
       gap: "32px",
-      py: "7vw",
+      // py: "7vw",
       mb: "160px",
+      mt: "160px",
       expanded: {
         display: "none",
       },
@@ -187,6 +189,11 @@ const linkContentCompactStyle = sva({
     titleWrapper: {
       position: "relative",
       alignItems: "center",
+      mb: "calc(-80% + 32px)",
+      transform: "translateY(32px)",
+      pointerEvents: "none",
+      width: "100%",
+      maxHeight: "240px",
       "& > div": {
         margin: "auto",
       },
@@ -203,7 +210,9 @@ const linkContentCompactStyle = sva({
       right: "-12px",
     },
     carouselWrapper: {
-      // overflow: "hidden",
+      overflow: "hidden",
+      w: "100%",
+      pt: "min(calc(240px + 32px), calc(80% + 32px))",
     },
     carouselContainer: {
       display: "flex",
@@ -224,13 +233,50 @@ const linkContentCompactStyle = sva({
       borderRadius: "50%",
       bg: "sd.reference.color.scale.gray.300",
     },
+
+    title: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      width: "100%",
+      gap: "16px",
+      color: "web.system.color.impression.onTertiary",
+    },
+    titleDescription: {
+      position: "absolute",
+      top: "50%",
+      transform: "translateY(-50%)",
+      width: "100%",
+      height: "100%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flexDirection: "column",
+      "& h2": {
+        "& svg": {
+          h: "50px",
+        },
+      },
+    },
+    titleShape: {
+      position: "absolute",
+      top: 0,
+      left: "50%",
+      transform: "translateX(-50%)",
+      maxWidth: "240px",
+      height: "100%",
+      aspectRatio: "1 / 1",
+      "& svg": {
+        width: "min(240px, 100%)",
+        height: "min(240px, 100%)",
+      },
+    },
   },
 });
 
 const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel();
 
-  const stylesExpanded = linkContentExpandedStyle();
   const styles = linkContentCompactStyle();
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
@@ -246,33 +292,98 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.titleWrapper}>
-        <div className={stylesExpanded.title}>
-          <div className={stylesExpanded.titleDescription}>
-            <h2>
-              {/* <svg
-                viewBox="0 0 104 66"
-                xmlns="http://www.w3.org/2000/svg"
-                className={css({
-                  fill: "currentcolor",
-                })}
-              >
-                <path d="M99.7786 12.2555C97.562 8.4863 94.5566 5.50079 90.7622 3.29898C86.9678 1.09717 82.8127 0 78.3045 0V6.9413C81.5354 6.9413 84.5033 7.72499 87.2082 9.29238C89.9131 10.8598 92.077 12.9869 93.685 15.6739C95.3004 18.3608 96.1119 21.3464 96.1119 24.6304H103.1C103.1 20.1522 101.995 16.0322 99.7786 12.2555ZM103.1 65.8125V30.2282H96.1119V65.8125H103.1Z" />
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M29.3359 59.1947C16.541 57.4719 6.69484 46.5599 6.69484 33.3789C6.69484 20.198 16.541 9.28596 29.3359 7.56321L29.3359 1.72664C13.3521 3.48339 0.901365 16.9735 0.901366 33.3789C0.901367 49.7844 13.3521 63.2745 29.3359 65.0312L29.3359 59.1947ZM36.4298 59.1947L36.4298 65.0312C52.4135 63.2744 64.8642 49.7843 64.8642 33.3789C64.8642 16.9736 52.4135 3.48345 36.4298 1.72665L36.4298 7.56323C49.2247 9.28602 59.0708 20.198 59.0708 33.3789C59.0708 46.5598 49.2247 57.4719 36.4298 59.1947Z"
-                />
-              </svg> */}
+        <div className={styles.title}>
+          <div className={styles.titleDescription}>
+            {/* <h2>
               <div
                 dangerouslySetInnerHTML={{
                   __html: [Title01, Title02, Title03][selectedIndex],
                 }}
               />
-            </h2>
-            <p>{content[selectedIndex].titleEn}</p>
+            </h2> */}
+
+            <div
+              className={css({
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                height: "50px",
+                width: "100%",
+                overflow: "hidden",
+                mb: "16px",
+              })}
+            >
+              <motion.h2
+                className={css({
+                  display: "flex",
+                  alignSelf: "baseline",
+                  alignItems: "center",
+                  justifyContent: "flex-start",
+                  flexDirection: "column",
+                  textAlign: "center",
+                  overflow: "hidden",
+                  fontSize: "58px",
+                  lineHeight: 1,
+                  fontFamily: "SerendieOfficeVF",
+                  mb: "0px",
+                  "& span": {
+                    height: "50px",
+                  },
+                })}
+                animate={{
+                  y: -selectedIndex * 50,
+                }}
+              >
+                {content.map((c, i) => (
+                  <span
+                    key={i}
+                    aria-hidden={i === selectedIndex ? "false" : "true"}
+                  >
+                    0{i + 1}
+                  </span>
+                ))}
+              </motion.h2>
+            </div>
+            <div
+              className={css({
+                height: "18px",
+                width: "100%",
+                overflow: "hidden",
+              })}
+            >
+              <motion.p
+                className={css({
+                  display: "flex",
+                  alignSelf: "baseline",
+                  alignItems: "center",
+                  justifyContent: "flex-start",
+                  flexDirection: "column",
+                  textAlign: "center",
+                  overflow: "hidden",
+                  lineHeight: 1,
+                  fontFamily: "SerendieOfficeVF",
+                  fontSize: "18px",
+                  "& span": {
+                    height: "18px",
+                  },
+                })}
+                animate={{
+                  y: -selectedIndex * 18,
+                }}
+              >
+                {content.map((c, i) => (
+                  <span
+                    key={i}
+                    aria-hidden={i === selectedIndex ? "false" : "true"}
+                  >
+                    {c.titleEn}
+                  </span>
+                ))}
+              </motion.p>
+            </div>
           </div>
-          <div className={stylesExpanded.titleShape}>
-            <TitleShape
+          <div className={styles.titleShape}>
+            <TitleShapeThin
               style={{
                 transition: "rotate 0.3s",
                 rotate: `${selectedIndex * 90 - 45}deg`,
@@ -310,6 +421,7 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
               {c.links.map((link, i) => (
                 <LinkContentCard
                   key={i}
+                  href={link.href}
                   title={link.title}
                   illustration={link.illustration}
                 />
@@ -327,7 +439,9 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
               className={cx(
                 styles.carouselDots,
                 index === selectedIndex
-                  ? css({ bg: "sd.reference.color.scale.blue.900" })
+                  ? css({
+                      bg: "web.system.color.impression.secondary !important",
+                    })
                   : css({ bg: "sd.reference.color.scale.gray.300" })
               )}
               onClick={() => onDotButtonClick(index)}
@@ -357,72 +471,115 @@ const LinkContentExpanded: React.FC<LinkContentProps> = ({ content }) => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.container}>
-        <div className={styles.sidebar}>
-          <div className={styles.titleWrapper}>
-            <div className={styles.title}>
-              <div className={styles.titleDescription}>
-                <h2>
+      <div className={styles.scrollContainer} ref={ref}>
+        <div className={styles.container}>
+          <div className={styles.sidebar}>
+            <div className={styles.titleWrapper}>
+              <div className={styles.title}>
+                <div className={styles.titleDescription}>
                   <div
-                    dangerouslySetInnerHTML={{
-                      __html: [Title01, Title02, Title03][index],
+                    className={css({
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "flex-start",
+                      height: "80px",
+                      width: "100%",
+                      overflow: "hidden",
+                      mb: "16px",
+                    })}
+                  >
+                    <motion.h2
+                      className={css({
+                        display: "flex",
+                        alignSelf: "baseline",
+                        alignItems: "center",
+                        justifyContent: "flex-start",
+                        flexDirection: "column",
+                        textAlign: "center",
+                        overflow: "hidden",
+                      })}
+                      animate={{
+                        y: -index * 80,
+                      }}
+                    >
+                      {content.map((c, i) => (
+                        <span
+                          key={i}
+                          aria-hidden={i === index ? "false" : "true"}
+                        >
+                          0{i + 1}
+                        </span>
+                      ))}
+                    </motion.h2>
+                  </div>
+                  <div
+                    className={css({
+                      height: "26px",
+                      width: "100%",
+                      overflow: "hidden",
+                    })}
+                  >
+                    <motion.p
+                      className={css({
+                        display: "flex",
+                        alignSelf: "baseline",
+                        alignItems: "center",
+                        justifyContent: "flex-start",
+                        flexDirection: "column",
+                        textAlign: "center",
+                        overflow: "hidden",
+                      })}
+                      animate={{
+                        y: -index * 26,
+                      }}
+                    >
+                      {content.map((c, i) => (
+                        <span
+                          key={i}
+                          aria-hidden={i === index ? "false" : "true"}
+                        >
+                          {c.titleEn}
+                        </span>
+                      ))}
+                    </motion.p>
+                  </div>
+                </div>
+                <div className={styles.titleShape}>
+                  <TitleShapeThin
+                    style={{
+                      transition: "rotate 0.3s",
+                      rotate: `${index * 90 - 45}deg`,
                     }}
                   />
-                </h2>
-                <p>{content[index].titleEn}</p>
-              </div>
-              <div className={styles.titleShape}>
-                <TitleShape
-                  style={{
-                    transition: "rotate 0.3s",
-                    rotate: `${index * 90 - 45}deg`,
-                  }}
-                />
+                </div>
               </div>
             </div>
-            {/* <div className={styles.description}>
-              <h2
-                className={css({
-                  textStyle: "sd.system.typography.headline.small_expanded",
-                  fontWeight: "bold",
-                  mb: "10px",
-                })}
-              >
-                {content[index].titleJa}
-              </h2>
-              <p
-                className={css({
-                  textStyle: "sd.system.typography.title.medium_expanded",
-                  fontWeight: "bold",
-                })}
-              >
-                {content[index].description}
-              </p>
-            </div> */}
           </div>
-        </div>
-        <div ref={ref}>
-          <div className={styles.mainWrapper}>
-            <div className={styles.mainContainer}>
-              {content.map((c, i) => (
-                <div
-                  key={i}
-                  className={styles.main}
-                  style={{
-                    opacity: i === index ? 1 : 0,
-                    transition: "opacity 0.3s",
-                    pointerEvents: i === index ? "auto" : "none",
-                  }}
-                >
-                  {c.links.map((link, i) => (
-                    <LinkContentCard
-                      key={i}
-                      title={link.title}
-                      illustration={link.illustration}
-                    />
-                  ))}
-                </div>
-              ))}
+          <div>
+            <div className={styles.mainWrapper}>
+              <div className={styles.mainContainer}>
+                {content.map((c, i) => (
+                  <div
+                    key={i}
+                    className={styles.main}
+                    style={{
+                      opacity: i === index ? 1 : 0,
+                      transition: "opacity 0.3s",
+                      pointerEvents: i === index ? "auto" : "none",
+                    }}
+                    aria-hidden={i === index ? "false" : "true"}
+                  >
+                    {c.links.map((link, i) => (
+                      <LinkContentCard
+                        key={i}
+                        href={link.href}
+                        title={link.title}
+                        illustration={link.illustration}
+                      />
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

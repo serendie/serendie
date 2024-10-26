@@ -1,5 +1,6 @@
 import { Drawer, IconButton, List, ListItem } from "@serendie/ui";
 import { useState } from "react";
+import { css } from "styled-system/css";
 
 export const GlobalHeaderMenu: React.FC<{
   menuItems: {
@@ -11,7 +12,10 @@ export const GlobalHeaderMenu: React.FC<{
   return (
     <div>
       <IconButton
-        color="web.system.color.component.background.onSurface"
+        // color="web.system.color.component.background.onSurface"
+        className={css({
+          color: "var(--colors-web-system-color-impression-on-tertiary)",
+        })}
         styleType="ghost"
         icon="menu"
         onClick={() => {

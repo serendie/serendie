@@ -6,117 +6,130 @@ import { styled } from "styled-system/jsx";
 import ReleaseNote from "@/components/toppage/ReleaseNote.astro";
 import Contact from "@/components/toppage/Contact.astro";
 import { BackgroundShape } from "@/components/toppage/BackgroundShape";
-import Header from "@/components/toppage/Header.astro";
 import Global from "@/layouts/Global.astro";
+import { Header } from "@/components/toppage/Header";
 
 const Container = styled("div", {
   base: {
     px: "24px",
-    maxWidth: "calc(1640px + 240px)",
+    maxWidth: "calc(1640px + 300px)",
     mx: "auto",
     expanded: {
-      px: "120px",
+      px: "150px",
+      lgDown: {
+        px: "48px",
+      }
     },
   },
 });
 
 const content = [
   {
-    titleEn: "Components",
+    titleEn: "Get Started",
     titleJa: "コンポーネント",
-    description: "コンポーネントの一覧です。",
+    description: "",
     links: [
       {
-        title: "ボタン",
+        title: "デザイン",
+        href: "/get-started/design",
+        illustration: "/assets/illustration/sample/illustration-0.svg",
+      },
+      {
+        title: "開発",
+        href: "/get-started/dev",
+        illustration: "/assets/illustration/sample/illustration-1.svg",
+      },
+    ],
+  },
+  {
+    titleEn: "Foundations",
+    titleJa: "ファンデーション",
+    description: "",
+    links: [
+      {
+        title: "Design Tokens",
+        href: "/foundations/design-tokens",
+        illustration: "/assets/illustration/sample/illustration-0.svg",
+      },
+      {
+        title: "Color",
+        href: "/foundations/color",
+        illustration: "/assets/illustration/sample/illustration-1.svg",
+      },
+      {
+        title: "Theming",
+        href: "/foundations/theming",
+        illustration: "/assets/illustration/sample/illustration-2.svg",
+      },
+      {
+        title: "Typography",
+        href: "/foundations/typography",
+        illustration: "/assets/illustration/sample/illustration-3.svg",
+      },
+      {
+        title: "Dimension",
+        href: "/foundations/dimension",
+        illustration: "/assets/illustration/sample/illustration-4.svg",
+      },
+      {
+        title: "Elevation",
+        href: "/foundations/elevation",
+        illustration: "/assets/illustration/sample/illustration-0.svg",
+      },
+      {
+        title: "Icon",
+        href: "/foundations/icon",
+        illustration: "/assets/illustration/sample/illustration-1.svg",
+      },
+    ],
+  },
+  {
+    titleEn: "Components",
+    titleJa: "コンポーネント",
+    description: "",
+    links: [
+      {
+        title: "Accordion",
+        href: "/components/accordion",
+        illustration: "/assets/illustration/sample/illustration-0.svg",
+      },
+      {
+        title: "Avatar",
+        href: "/components/avatar",
+        illustration: "/assets/illustration/sample/illustration-1.svg",
+      },
+      {
+        title: "Badge",
+        href: "/components/badge",
+        illustration: "/assets/illustration/sample/illustration-2.svg",
+      },
+      {
+        title: "Banner",
+        href: "/components/banner",
+        illustration: "/assets/illustration/sample/illustration-3.svg",
+      },
+      {
+        title: "Bottom Navigation",
+        href: "/components/bottom-navigation",
+        illustration: "/assets/illustration/sample/illustration-4.svg",
+      },
+      {
+        title: "Button",
         href: "/components/button",
         illustration: "/assets/illustration/sample/illustration-0.svg",
       },
       {
-        title: "アイコン",
-        href: "/components/icon",
+        title: "Check Box",
+        href: "/components/check-box",
         illustration: "/assets/illustration/sample/illustration-1.svg",
-      },
-      {
-        title: "テキスト",
-        href: "/components/text",
-        illustration: "/assets/illustration/sample/illustration-2.svg",
-      },
-    ],
-  },
-  {
-    titleEn: "Icons",
-    titleJa: "アイコン",
-    description: "アイコンの一覧です。",
-    links: [
-      {
-        title: "アイコン",
-        href: "/icons",
-        illustration: "/assets/illustration/sample/illustration-0.svg",
-      },
-      {
-        title: "アイコン",
-        href: "/icons",
-        illustration: "/assets/illustration/sample/illustration-1.svg",
-      },
-      {
-        title: "アイコン",
-        href: "/icons",
-        illustration: "/assets/illustration/sample/illustration-2.svg",
-      },
-      {
-        title: "アイコン",
-        href: "/icons",
-        illustration: "/assets/illustration/sample/illustration-3.svg",
-      },
-      {
-        title: "アイコン",
-        href: "/icons",
-        illustration: "/assets/illustration/sample/illustration-4.svg",
-      },
-    ],
-  },
-  {
-    titleEn: "Tokens",
-    titleJa: "トークン",
-    description: "トークンの一覧です。",
-    links: [
-      {
-        title: "システム",
-        href: "/tokens/system",
-        illustration: "/assets/illustration/sample/illustration-0.svg",
-      },
-      {
-        title: "リファレンス",
-        href: "/tokens/reference",
-        illustration: "/assets/illustration/sample/illustration-1.svg",
-      },
-      {
-        title: "カラー",
-        href: "/tokens/color",
-        illustration: "/assets/illustration/sample/illustration-2.svg",
-      },
-      {
-        title: "システム",
-        href: "/tokens/system",
-        illustration: "/assets/illustration/sample/illustration-0.svg",
-      },
-      {
-        title: "リファレンス",
-        href: "/tokens/reference",
-        illustration: "/assets/illustration/sample/illustration-1.svg",
-      },
-      {
-        title: "カラー",
-        href: "/tokens/color",
-        illustration: "/assets/illustration/sample/illustration-2.svg",
-      },
+      }
     ],
   },
 ];
 ---
 
 <TopLayout>
-  <Header />
+  <Header client:load/>
 
   <Container>
     <LinkContent content={content} client:idle />

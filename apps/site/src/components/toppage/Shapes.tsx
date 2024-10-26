@@ -168,8 +168,8 @@ export const Shapes = () => {
     <div
       className={css({
         position: "relative",
-        height: "calc(100vw - 48px)",
-        width: "calc(100vw - 48px)",
+        height: "64vw",
+        width: "64vw",
         expanded: {
           height: "37.222vw",
           width: "37.222vw",
