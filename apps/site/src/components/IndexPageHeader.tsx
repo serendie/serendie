@@ -57,8 +57,10 @@ const IndexPageHeader_ = ({
           className={css({
             fontWeight: "sd.reference.typography.fontWeight.regular",
             textStyle: "sd.system.typography.display.medium_compact",
-            mdDown: {
+            fontSize: illustSize === "small" ? "48px" : undefined,
+            smDown: {
               textStyle: "sd.system.typography.display.small_compact",
+              fontSize: illustSize === "large" ? "42px" : undefined,
             },
           })}
         >
