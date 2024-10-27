@@ -21,7 +21,7 @@ import { PageSection, PageA } from "../../../components/PageLayout.tsx";
 
     ### Figmaでの利用上の注意
 
-    ドロップシャドウは、影の色、位置、拡散量など複数の値から構成されます。Figma Variablesは、このようなグループ化されたトークン (<PageA href="https://tr.designtokens.org/format/#composite-design-token">Composit Token</PageA>と呼ばれます) に現在対応していません。そのため、シャドウはVariablesではなくEffect Stylesとして定義しており、他と使用感が異なることに注意してください。
+    ドロップシャドウは、影の色、位置、拡散量など複数の値から構成されます。Figma Variablesは、このようなグループ化されたトークン (<PageA href="https://tr.designtokens.org/format/#composite-design-token">Composit Token</PageA>と呼ばれます) に現在対応していません。そのため、シャドウは**VariablesではなくEffect Styles**として定義しており、他と使用感が異なることに注意してください。
 
   </PageSection>
 
@@ -30,6 +30,6 @@ import { PageSection, PageA } from "../../../components/PageLayout.tsx";
 
       z-indexはオブジェクトの重なり順を制御するCSSプロパティであり、値が大きいほど階層が高くなります。システムトークンとしてz-index値を定義していますが、これはCSS実装用のトークンのためFigmaでは意識する必要はありません。
 
-      シャドウは表現上の階層ですが、z-indexは実装上の階層です。そのためシビアにz-index値をコントロールすることが堅牢なUIを作る上で大切であり、トークン名には意味性の強い名前を付けています。詳しくは<PageA href="/foundations/design-tokens">System Token</PageA>の一覧を参照してください。
+      **シャドウは表現上の階層ですが、z-indexは実装上の階層**です。そのためシビアにz-index値をコントロールすることが堅牢なUIを作る上で大切であり、トークン名には意味性の強い名前を付けています。詳しくは<PageA href="/foundations/design-tokens/system-tokens">System Token</PageA>の一覧を参照してください。
 
   </PageSection>
