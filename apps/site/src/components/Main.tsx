@@ -63,7 +63,7 @@ export const Main = styled("main", {
     },
     "& strong": {
       fontWeight: "sd.reference.typography.fontWeight.regular",
-      color: "web.system.color.component.onSurface",
+      color: "web.system.color.impression.onTertiary",
       px: "2px",
       py: "1px",
       backgroundColor: "web.system.color.impression.tertiary",
