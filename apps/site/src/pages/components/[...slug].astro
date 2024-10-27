@@ -1,9 +1,13 @@
 ---
 import ComponentLayout from "@/layouts/ComponentLayout.astro";
-import { getComponentsCollection } from "./_utils";
+import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  return await getComponentsCollection();
+  const components = await getCollection("components");
+  return components.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
 }
 
 const { entry } = Astro.props;
