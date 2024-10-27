@@ -6,6 +6,7 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
+import React from "react";
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
@@ -13,32 +14,330 @@ function useParallax(value: MotionValue<number>, distance: number) {
 
 export const BackgroundShape: React.FC = () => {
   return (
-    <div
-      className={css({
-        position: "absolute",
-        maxWidth: "100vw",
-        // overflow: "hidden",
-        width: "100%",
-        top: "0",
-        zIndex: "-1",
-      })}
-    >
-      {[
-        BackgroundShape1,
-        BackgroundShape2,
-        BackgroundShape3,
-        BackgroundShape4,
-      ].map((Component, index) => (
-        <Component key={index} />
-      ))}
-    </div>
+    <>
+      <div
+        className={css({
+          position: "absolute",
+          top: "0",
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: "-1",
+          mixBlendMode: "multiply",
+          mx: "auto",
+          width: "calc(100%)",
+          maxW: "calc(1440px)",
+          display: "none",
+          pointerEvents: "none",
+          expanded: {
+            display: "block",
+          },
+        })}
+      >
+        {[
+          BackgroundShape1,
+          BackgroundShape2,
+          BackgroundShape3,
+          BackgroundShape4,
+          BackgroundShape5,
+        ].map((Component, index) => (
+          <Component key={index} />
+        ))}
+      </div>
+      <div
+        className={css({
+          position: "absolute",
+          top: "0",
+          zIndex: "-1",
+          mixBlendMode: "multiply",
+          mx: "auto",
+          width: "100%",
+          maxW: "100%",
+          display: "block",
+          pointerEvents: "none",
+          expanded: {
+            display: "none",
+          },
+        })}
+      >
+        {[
+          BackgroundShapeCompact1,
+          BackgroundShapeCompact2,
+          BackgroundShapeCompact3,
+          BackgroundShapeCompact4,
+          BackgroundShapeCompact5,
+        ].map((Component, index) => (
+          <Component key={index} />
+        ))}
+      </div>
+    </>
   );
 };
 
 export const BackgroundShape1: React.FC = () => {
   const { scrollYProgress } = useScroll();
   const rotate = useSpring(
-    useTransform(scrollYProgress, [0, 1], [140, 140], {
+    useTransform(scrollYProgress, [0, 1], [0, 120], {
+      clamp: false,
+    }),
+    { stiffness: 20, damping: 10 }
+  );
+
+  const y = useParallax(scrollYProgress, -50);
+
+  return (
+    <motion.div
+      className={css({
+        position: "absolute",
+        top: "0",
+        width: "100vw",
+        left: "50%",
+        transform: "translateX(-50%)",
+        zIndex: "-2",
+        transformOrigin: "center center",
+        pointerEvents: "none",
+        mixBlendMode: "multiply",
+        "& svg": {
+          overflow: "visible",
+          width: "100%",
+        },
+      })}
+    >
+      <svg
+        viewBox="0 0 1440 1036"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={css({
+          stroke: "web.system.color.mvShape.background.arc.first",
+          mixBlendMode: "multiply",
+        })}
+      >
+        <motion.g
+          clip-path="url(#clip1_13561_18660)"
+          initial={{
+            opacity: 0,
+            rotate: -145,
+            scale: 1.2,
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            rotate: 0,
+          }}
+          transition={{
+            duration: 1.5,
+            delay: 2.6,
+            rotate: {
+              duration: 0.6,
+              delay: 2.2,
+              ease: "easeInOut",
+            },
+          }}
+          style={{
+            rotate: rotate,
+            y: y,
+          }}
+        >
+          <g clip-path="url(#clip2_13561_18660)">
+            <circle
+              cx="634.136"
+              cy="149.05"
+              r="696.421"
+              transform="rotate(53.66 634.136 149.05)"
+              stroke="#8FAEFE"
+              stroke-width="380"
+            />
+          </g>
+        </motion.g>
+        <defs>
+          <clipPath id="clip0_13561_18660">
+            <rect width="1440" height="1036" fill="white" />
+          </clipPath>
+          <clipPath id="clip1_13561_18660">
+            <rect
+              width="1772.84"
+              height="1772.84"
+              fill="white"
+              transform="translate(822.889 -1090.25) rotate(53.66)"
+            />
+          </clipPath>
+          <clipPath id="clip2_13561_18660">
+            <rect
+              width="886.421"
+              height="1772.84"
+              fill="white"
+              transform="translate(1348.16 -376.223) rotate(53.66)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </motion.div>
+  );
+};
+
+export const BackgroundShape2: React.FC = () => {
+  const { scrollYProgress } = useScroll();
+
+  const rotate = useSpring(
+    useTransform(scrollYProgress, [0, 1], [0, -30], {
+      clamp: false,
+    }),
+    { stiffness: 20, damping: 10 }
+  );
+  const y = useParallax(scrollYProgress, -35);
+
+  return (
+    <motion.div
+      className={css({
+        position: "absolute",
+        top: "103.556vh",
+        width: "100%",
+        zIndex: "-2",
+        transformOrigin: "center center",
+        pointerEvents: "none",
+        mixBlendMode: "multiply",
+        "& svg": {
+          overflow: "visible",
+          width: "100%",
+        },
+      })}
+    >
+      <svg
+        viewBox="0 0 1440 1166"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={css({
+          stroke: "web.system.color.mvShape.background.arc.second",
+          mixBlendMode: "multiply",
+        })}
+      >
+        <motion.g
+          clip-path="url(#clip1_13561_18670)"
+          style={{
+            y,
+            rotate,
+          }}
+        >
+          <g clip-path="url(#clip2_13561_18670)">
+            <circle
+              cx="573.342"
+              cy="776.691"
+              r="750.603"
+              transform="rotate(-60 573.342 776.691)"
+              stroke="#9CE6EC"
+              stroke-width="50"
+            />
+          </g>
+        </motion.g>
+        <defs>
+          <clipPath id="clip0_13561_18670">
+            <rect width="1440" height="1166" fill="white" />
+          </clipPath>
+          <clipPath id="clip1_13561_18670">
+            <rect
+              width="1551.21"
+              height="1551.21"
+              fill="white"
+              transform="translate(-486.152 1060.58) rotate(-60)"
+            />
+          </clipPath>
+          <clipPath id="clip2_13561_18670">
+            <rect
+              width="775.603"
+              height="1551.21"
+              fill="white"
+              transform="translate(-98.3516 388.891) rotate(-60)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </motion.div>
+  );
+};
+
+export const BackgroundShape3: React.FC = () => {
+  const { scrollYProgress } = useScroll();
+  const rotate = useSpring(
+    useTransform(scrollYProgress, [0, 1], [0, 60], {
+      clamp: false,
+    }),
+    { stiffness: 20, damping: 10 }
+  );
+
+  const y = useParallax(scrollYProgress, 0);
+
+  return (
+    <motion.div
+      className={css({
+        position: "absolute",
+        top: "238.556vh",
+        width: "100%",
+        zIndex: "-2",
+        transformOrigin: "center center",
+        pointerEvents: "none",
+        mixBlendMode: "multiply",
+        "& svg": {
+          overflow: "visible",
+          width: "100%",
+        },
+      })}
+    >
+      <svg
+        viewBox="0 0 1440 729"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={css({
+          stroke: "web.system.color.mvShape.background.arc.third",
+          mixBlendMode: "multiply",
+        })}
+      >
+        <motion.g
+          clip-path="url(#clip1_13561_18676)"
+          style={{
+            y: y,
+            rotate: rotate,
+          }}
+        >
+          <g clip-path="url(#clip2_13561_18676)">
+            <circle
+              cx="1215.23"
+              cy="469.384"
+              r="380.529"
+              transform="rotate(-123.54 1215.23 469.384)"
+              stroke="#8FAEFE"
+              stroke-width="180"
+            />
+          </g>
+        </motion.g>
+        <defs>
+          <clipPath id="clip0_13561_18676">
+            <rect width="1440" height="729" fill="white" />
+          </clipPath>
+          <clipPath id="clip1_13561_18676">
+            <rect
+              width="941.058"
+              height="941.058"
+              fill="white"
+              transform="translate(1083.02 1121.55) rotate(-123.54)"
+            />
+          </clipPath>
+          <clipPath id="clip2_13561_18676">
+            <rect
+              width="470.529"
+              height="941.058"
+              fill="white"
+              transform="translate(823.045 729.363) rotate(-123.54)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </motion.div>
+  );
+};
+
+export const BackgroundShape4: React.FC = () => {
+  const { scrollYProgress } = useScroll();
+  const rotate = useSpring(
+    useTransform(scrollYProgress, [0, 1], [0, -20], {
       clamp: false,
     }),
     { stiffness: 20, damping: 10 }
@@ -47,215 +346,570 @@ export const BackgroundShape1: React.FC = () => {
   const y = useParallax(scrollYProgress, 300);
 
   return (
-    <>
-      <motion.div
+    <motion.div
+      className={css({
+        position: "absolute",
+        top: "319vh",
+        width: "100%",
+        zIndex: "-2",
+        transformOrigin: "center center",
+        pointerEvents: "none",
+        mixBlendMode: "multiply",
+        "& svg": {
+          overflow: "visible",
+          width: "100%",
+        },
+      })}
+    >
+      <svg
+        viewBox="0 0 1440 1675"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
         className={css({
-          position: "absolute",
-          top: "115vh",
-          left: "-70vw",
-          width: "100vw",
-          height: "100vw",
-          scale: "3",
-          zIndex: "-2",
-          transformOrigin: "center center",
-          pointerEvents: "none",
+          stroke: "web.system.color.mvShape.background.arc.fourth",
           mixBlendMode: "multiply",
-          expanded: {
-            scale: "1.2",
-            top: "0",
-            left: "0",
-            width: "100vw",
-            height: "100vw",
-          },
         })}
-        initial={{ opacity: 0, rotate: 0, scale: 1.2 }}
-        animate={{ opacity: 1, scale: 1, rotate: 140 }}
-        transition={{
-          duration: 1.5,
-          delay: 2.6,
-          rotate: {
-            duration: 0.6,
-            delay: 2.2,
-            ease: "easeInOut",
-          },
-        }}
-        style={{
-          rotate: rotate,
-          y: y,
-        }}
       >
-        <svg
-          viewBox="0 0 2251 2251"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className={css({
-            stroke: "web.system.color.mvShape.background.arc.first",
-          })}
+        <motion.g
+          clip-path="url(#clip1_13561_18686)"
+          style={{
+            y: y,
+            rotate: rotate,
+          }}
         >
-          <path
-            d="M2025.83 1125.39C2025.83 1007.2 2002.55 890.168 1957.33 780.975C1912.1 671.782 1845.8 572.567 1762.23 488.994C1678.66 405.422 1579.44 339.128 1470.25 293.899C1361.06 248.67 1244.02 225.391 1125.83 225.391C1007.64 225.391 890.611 248.67 781.418 293.899C672.225 339.128 573.01 405.422 489.437 488.995C405.865 572.567 339.571 671.783 294.342 780.976C249.113 890.169 225.833 1007.2 225.833 1125.39"
-            strokeWidth="450"
-          />
-        </svg>
-      </motion.div>
-    </>
+          <g clip-path="url(#clip2_13561_18686)">
+            <circle
+              cx="1041.19"
+              cy="591.19"
+              r="855.212"
+              transform="rotate(124.12 1041.19 591.19)"
+              stroke="#C3EFF4"
+              stroke-width="450"
+            />
+          </g>
+        </motion.g>
+        <defs>
+          <clipPath id="clip0_13561_18686">
+            <rect width="1440" height="1675" fill="white" />
+          </clipPath>
+          <clipPath id="clip1_13561_18686">
+            <rect
+              width="2160.42"
+              height="2160.42"
+              fill="white"
+              transform="translate(2541.38 302.832) rotate(124.12)"
+            />
+          </clipPath>
+          <clipPath id="clip2_13561_18686">
+            <rect
+              width="1080.21"
+              height="2160.42"
+              fill="white"
+              transform="translate(1935.46 1197.11) rotate(124.12)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </motion.div>
   );
 };
 
-export const BackgroundShape2: React.FC = () => {
+export const BackgroundShape5: React.FC = () => {
   const { scrollYProgress } = useScroll();
 
-  const y = useParallax(scrollYProgress, 600);
+  const rotate = useSpring(
+    useTransform(scrollYProgress, [0, 1], [30, 0], {
+      clamp: false,
+    }),
+    { stiffness: 20, damping: 10 }
+  );
+
+  const y = useParallax(scrollYProgress, -300);
 
   return (
-    <>
-      <motion.div
+    <motion.div
+      className={css({
+        position: "absolute",
+        top: "520.222vh",
+        width: "100%",
+        zIndex: "-2",
+        transformOrigin: "center center",
+        pointerEvents: "none",
+        mixBlendMode: "multiply",
+        "& svg": {
+          overflow: "visible",
+          width: "100%",
+        },
+      })}
+    >
+      <svg
+        viewBox="0 0 1440 1362"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
         className={css({
-          position: "absolute",
-          top: "200vh",
-          right: "0",
-          width: "100vw",
-          height: "100vw",
-          scale: "1.2",
-          zIndex: "-2",
-          transformOrigin: "center center",
-          pointerEvents: "none",
+          stroke: "web.system.color.mvShape.background.arc.fifth",
           mixBlendMode: "multiply",
         })}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          duration: 1.5,
-          delay: 2.6,
-          rotate: {
-            duration: 0.6,
-            delay: 2.2,
-            ease: "easeInOut",
-          },
-        }}
-        style={{
-          y: y,
-        }}
       >
-        <svg
-          width="1319"
-          height="1234"
-          viewBox="0 0 1319 1234"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className={css({
-            stroke: "web.system.color.mvShape.background.arc.second",
-          })}
+        <motion.g
+          clip-path="url(#clip1_13561_18691)"
+          style={{
+            y: y,
+            rotate: rotate,
+          }}
         >
-          <path
-            d="M1153.27 1219.35C1210.9 1138.64 1252.07 1047.36 1274.43 950.735C1296.78 854.11 1299.89 754.027 1283.57 656.201C1267.25 558.375 1231.82 464.721 1179.3 380.588C1126.78 296.455 1058.21 223.489 977.495 165.857C896.78 108.225 805.504 67.0552 708.879 44.6984C612.253 22.3416 512.17 19.2356 414.344 35.5577C316.518 51.8797 222.865 87.3102 138.731 139.826C54.5981 192.342 -18.3676 260.915 -75.9996 341.63"
-            strokeWidth="50"
-          />
-        </svg>
-      </motion.div>
-    </>
+          <g clip-path="url(#clip2_13561_18691)">
+            <circle
+              cx="389.713"
+              cy="980.712"
+              r="829.743"
+              transform="rotate(-67.1058 389.713 980.712)"
+              stroke="#8FAEFE"
+              stroke-width="300"
+            />
+          </g>
+        </motion.g>
+        <defs>
+          <clipPath id="clip0_13561_18691">
+            <rect width="1440" height="1362" fill="white" />
+          </clipPath>
+          <clipPath id="clip1_13561_18691">
+            <rect
+              width="1959.49"
+              height="1959.49"
+              fill="white"
+              transform="translate(-894 1502.12) rotate(-67.1058)"
+            />
+          </clipPath>
+          <clipPath id="clip2_13561_18691">
+            <rect
+              width="979.743"
+              height="1959.49"
+              fill="white"
+              transform="translate(-512.85 599.562) rotate(-67.1058)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </motion.div>
   );
 };
 
-export const BackgroundShape3: React.FC = () => {
+export const BackgroundShapeCompact1: React.FC = () => {
   const { scrollYProgress } = useScroll();
-  const y = useParallax(scrollYProgress, 300);
+  const rotate = useSpring(
+    useTransform(scrollYProgress, [0, 1], [0, 120], {
+      clamp: false,
+    }),
+    { stiffness: 20, damping: 10 }
+  );
+
+  const y = useParallax(scrollYProgress, -50);
 
   return (
-    <>
-      <motion.div
+    <motion.div
+      className={css({
+        position: "absolute",
+        zIndex: "-2",
+        transformOrigin: "center center",
+        pointerEvents: "none",
+        mixBlendMode: "multiply",
+        scale: "1",
+        top: "0",
+        right: "0",
+        width: "100%",
+        aspectRatio: "1/1",
+        "& svg": {
+          overflow: "visible",
+          width: "100%",
+        },
+      })}
+    >
+      <svg
+        width="375"
+        height="812"
+        viewBox="0 0 375 812"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
         className={css({
-          position: "absolute",
-          top: "300vh",
-          right: "0",
-          width: "50vw",
-          height: "50vw",
-          zIndex: "-2",
-          transformOrigin: "center center",
-          pointerEvents: "none",
-          mixBlendMode: "multiply",
+          stroke: "web.system.color.mvShape.background.arc.fifth",
         })}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          duration: 1.5,
-          delay: 2.6,
-          rotate: {
-            duration: 0.6,
-            delay: 2.2,
-            ease: "easeInOut",
-          },
-        }}
-        style={{
-          y: y,
-        }}
       >
-        <svg
-          viewBox="0 0 978 1216"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className={css({
-            stroke: "web.system.color.mvShape.background.arc.third",
-          })}
+        <motion.g
+          clipPath="url(#clip1_13512_18714)"
+          style={{
+            rotate: rotate,
+            y: y,
+          }}
+          initial={{
+            opacity: 0,
+            scale: 1.2,
+            rotate: 140,
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            rotate: 0,
+          }}
+          transition={{
+            duration: 1.5,
+            delay: 2.6,
+            rotate: {
+              duration: 0.6,
+              delay: 2.2,
+              ease: "easeInOut",
+            },
+          }}
         >
-          <path
-            d="M924.915 178.284C862.755 142.396 794.134 119.102 722.971 109.734C651.809 100.365 579.498 105.104 510.167 123.682C440.836 142.259 375.843 174.31 318.898 218.005C261.954 261.7 214.174 316.183 178.285 378.343C142.397 440.504 119.104 509.124 109.735 580.287C100.366 651.45 105.106 723.761 123.683 793.092C142.26 862.423 174.311 927.416 218.006 984.36C261.701 1041.3 316.184 1089.08 378.344 1124.97"
-            strokeWidth="210"
-          />
-        </svg>
-      </motion.div>
-    </>
+          <g clipPath="url(#clip2_13512_18714)">
+            <motion.circle
+              cx="-83.9727"
+              cy="279.026"
+              r="515"
+              transform="rotate(45 -83.9727 279.026)"
+              stroke="#8FAEFE"
+              strokeWidth="240"
+            />
+          </g>
+        </motion.g>
+        <defs>
+          <clipPath id="clip0_13512_18714">
+            <rect width="375" height="812" fill="white" />
+          </clipPath>
+          <clipPath id="clip1_13512_18714">
+            <rect
+              width="1270"
+              height="1270"
+              fill="white"
+              transform="translate(-83.9727 -619) rotate(45)"
+            />
+          </clipPath>
+          <clipPath id="clip2_13512_18714">
+            <rect
+              width="635"
+              height="1270"
+              fill="white"
+              transform="translate(365.039 -169.988) rotate(45)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </motion.div>
   );
 };
 
-export const BackgroundShape4: React.FC = () => {
+export const BackgroundShapeCompact2: React.FC = () => {
   const { scrollYProgress } = useScroll();
+  const rotate = useSpring(
+    useTransform(scrollYProgress, [0, 1], [0, -30], {
+      clamp: false,
+    }),
+    { stiffness: 20, damping: 10 }
+  );
 
-  const y = useParallax(scrollYProgress, 500);
+  const y = useParallax(scrollYProgress, 0);
 
   return (
-    <>
-      <motion.div
+    <motion.div
+      className={css({
+        position: "absolute",
+        top: "100vh",
+        width: "100%",
+        left: "0",
+      })}
+    >
+      <svg
+        viewBox="0 0 375 885"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
         className={css({
-          position: "absolute",
-          top: "365vh",
-          left: "-20%",
-          width: "100vw",
-          height: "100vw",
-          zIndex: "-3",
-          scale: "1.5",
-          transformOrigin: "center center",
-          pointerEvents: "none",
+          stroke: "web.system.color.mvShape.background.arc.second",
+          mixBlendMode: "multiply",
         })}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          duration: 1.5,
-          delay: 2.6,
-          rotate: {
-            duration: 0.6,
-            delay: 2.2,
-            ease: "easeInOut",
-          },
-        }}
-        style={{
-          y: y,
-        }}
       >
-        <svg
-          viewBox="0 0 2096 1673"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className={css({
-            stroke: "web.system.color.mvShape.background.arc.fourth",
-          })}
+        <motion.g
+          clipPath="url(#clip0_13517_18730)"
+          style={{
+            y: y,
+          }}
         >
-          <path
-            d="M1755.56 1560.12C1813.27 1460.17 1850.23 1349.54 1864.33 1234.56C1878.44 1119.57 1869.4 1002.48 1837.75 889.974C1806.1 777.464 1752.45 671.738 1679.87 578.831C1607.28 485.924 1517.19 407.656 1414.72 348.496C1312.25 289.336 1199.42 250.443 1082.67 234.036C965.915 217.63 847.529 224.031 734.267 252.876C621.006 281.721 515.088 332.443 422.56 402.148C330.033 471.852 252.708 559.173 195 659.126"
-            strokeWidth="450"
-          />
-        </svg>
-      </motion.div>
-    </>
+          <motion.g
+            clipPath="url(#clip1_13517_18730)"
+            style={{ rotate: rotate }}
+          >
+            <g clipPath="url(#clip2_13517_18730)">
+              <circle
+                cx="83.4606"
+                cy="454.461"
+                r="421"
+                transform="rotate(-15.0819 83.4606 454.461)"
+                stroke="#9CE6EC"
+                strokeWidth="48"
+              />
+            </g>
+          </motion.g>
+        </motion.g>
+        <defs>
+          <clipPath id="clip0_13517_18730">
+            <rect width="375" height="885" fill="white" />
+          </clipPath>
+          <clipPath id="clip1_13517_18730">
+            <rect
+              width="890"
+              height="890"
+              fill="white"
+              transform="translate(-462 140.578) rotate(-15.0819)"
+            />
+          </clipPath>
+          <clipPath id="clip2_13517_18730">
+            <rect
+              width="445"
+              height="890"
+              fill="white"
+              transform="translate(-32.3281 24.7891) rotate(-15.0819)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </motion.div>
+  );
+};
+
+export const BackgroundShapeCompact3: React.FC = () => {
+  const { scrollYProgress } = useScroll();
+  const rotate = useSpring(
+    useTransform(scrollYProgress, [0, 1], [0, 60], {
+      clamp: false,
+    }),
+    { stiffness: 20, damping: 10 }
+  );
+
+  const y = useParallax(scrollYProgress, 0);
+
+  return (
+    <motion.div
+      className={css({
+        position: "absolute",
+        top: "230.419vh",
+        width: "100%",
+        left: "0",
+      })}
+      style={{
+        y: y,
+      }}
+    >
+      <svg
+        viewBox="0 0 376 439"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={css({
+          stroke: "web.system.color.mvShape.background.arc.third",
+          mixBlendMode: "multiply",
+        })}
+      >
+        <motion.g clipPath="url(#clip0_13517_19200)">
+          <motion.g
+            clipPath="url(#clip1_13517_19200)"
+            style={{ rotate: rotate }}
+          >
+            <g clipPath="url(#clip2_13517_19200)">
+              <circle
+                cx="430.848"
+                cy="261.1"
+                r="198"
+                transform="rotate(-132.885 430.848 261.1)"
+                strokeWidth="120"
+              />
+            </g>
+          </motion.g>
+        </motion.g>
+        <defs>
+          <clipPath id="clip0_13517_19200">
+            <rect
+              width="375"
+              height="439"
+              fill="white"
+              transform="translate(0.5)"
+            />
+          </clipPath>
+          <clipPath id="clip1_13517_19200">
+            <rect
+              width="516"
+              height="516"
+              fill="white"
+              transform="translate(417.383 625.719) rotate(-132.885)"
+            />
+          </clipPath>
+          <clipPath id="clip2_13517_19200">
+            <rect
+              width="258"
+              height="516"
+              fill="white"
+              transform="translate(241.805 436.676) rotate(-132.885)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </motion.div>
+  );
+};
+
+export const BackgroundShapeCompact4: React.FC = () => {
+  const { scrollYProgress } = useScroll();
+  const rotate = useSpring(
+    useTransform(scrollYProgress, [0, 1], [0, -20], {
+      clamp: false,
+    }),
+    { stiffness: 20, damping: 10 }
+  );
+
+  const y = useParallax(scrollYProgress, 0);
+
+  return (
+    <motion.div
+      className={css({
+        position: "absolute",
+        top: "263.547vh",
+        width: "100%",
+        mixBlendMode: "multiply",
+        left: "0",
+        "& svg": {
+          overflow: "visible",
+          width: "100%",
+        },
+      })}
+      style={{
+        y: y,
+      }}
+    >
+      <svg
+        viewBox="0 0 376 1313"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={css({
+          stroke: "web.system.color.mvShape.background.arc.fourth",
+          mixBlendMode: "multiply",
+        })}
+      >
+        <motion.g clipPath="url(#clip0_13517_19209)">
+          <motion.g
+            clipPath="url(#clip1_13517_19209)"
+            style={{ rotate: rotate }}
+          >
+            <g clipPath="url(#clip2_13517_19209)">
+              <circle
+                cx="820.792"
+                cy="521.972"
+                r="755.553"
+                transform="rotate(124.497 820.792 521.972)"
+                strokeWidth="319.57"
+              />
+            </g>
+          </motion.g>
+        </motion.g>
+        <defs>
+          <clipPath id="clip0_13517_19209">
+            <rect
+              width="375"
+              height="1313"
+              fill="white"
+              transform="translate(0.496094)"
+            />
+          </clipPath>
+          <clipPath id="clip1_13517_19209">
+            <rect
+              width="1830.68"
+              height="1830.68"
+              fill="white"
+              transform="translate(2093.59 286) rotate(124.497)"
+            />
+          </clipPath>
+          <clipPath id="clip2_13517_19209">
+            <rect
+              width="915.338"
+              height="1830.68"
+              fill="white"
+              transform="translate(1575.18 1040.38) rotate(124.497)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </motion.div>
+  );
+};
+
+export const BackgroundShapeCompact5: React.FC = () => {
+  const { scrollYProgress } = useScroll();
+  const rotate = useSpring(
+    useTransform(scrollYProgress, [0, 1], [30, 0], {
+      clamp: false,
+    }),
+    { stiffness: 20, damping: 10 }
+  );
+
+  const y = useParallax(scrollYProgress, -50);
+
+  return (
+    <motion.div
+      className={css({
+        position: "absolute",
+        top: "384.236vh",
+        width: "100%",
+        left: "0",
+        mixBlendMode: "multiply",
+      })}
+      style={{
+        y: y,
+      }}
+    >
+      <svg
+        viewBox="0 0 375 1489"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={css({
+          stroke: "web.system.color.mvShape.background.arc.fifth",
+          mixBlendMode: "multiply",
+        })}
+      >
+        <motion.g clipPath="url(#clip0_13517_19234)">
+          <motion.g
+            clipPath="url(#clip1_13517_19234)"
+            style={{ rotate: rotate }}
+          >
+            <g clipPath="url(#clip2_13517_19234)">
+              <motion.circle
+                cx="-326.14"
+                cy="911.86"
+                r="817.667"
+                transform="rotate(-50.6415 -326.14 911.86)"
+                stroke="#8FAEFE"
+                strokeWidth="300"
+              />
+            </g>
+          </motion.g>
+        </motion.g>
+        <defs>
+          <clipPath id="clip0_13517_19234">
+            <rect width="375" height="1489" fill="white" />
+          </clipPath>
+          <clipPath id="clip1_13517_19234">
+            <rect
+              width="1935.33"
+              height="1935.33"
+              fill="white"
+              transform="translate(-1688 1046.39) rotate(-50.6415)"
+            />
+          </clipPath>
+          <clipPath id="clip2_13517_19234">
+            <rect
+              width="967.667"
+              height="1935.33"
+              fill="white"
+              transform="translate(-1074.33 298.191) rotate(-50.6415)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </motion.div>
   );
 };

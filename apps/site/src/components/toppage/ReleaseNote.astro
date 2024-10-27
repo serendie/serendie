@@ -5,7 +5,7 @@ import { styled } from "styled-system/jsx";
 
 const ReleasenoteContainer = styled("div", {
   base: {
-    pb: "160px",
+    pb: "240px",
   },
 });
 
@@ -18,7 +18,7 @@ const TitleContainer = styled("div", {
     alignItems: "center",
     mb: "40px",
     expanded: {
-      mb: "24px",
+      mb: "40px",
     },
   },
 });
@@ -55,6 +55,8 @@ const Note = styled("a", {
     background: "sd.system.color.component.surface",
     py: "16px",
     px: "20px",
+    alignSelf: "center",
+    alignContent: "center",
     borderRadius: "130px",
     expanded: {
       gap: "0",
@@ -87,7 +89,12 @@ const NoteTitle = styled("h2", {
   base: {
     p: "0",
     textStyle: "sd.system.typography.body.small_expanded",
-    alignContent: "center",
+    textOverflow: "ellipsis",
+    overflow: "hidden",
+    boxOrient: "vertical",
+    display: "-webkit-box",
+    alignSelf: "center",
+    lineClamp: 2,
     expanded: {
       p: "sd.system.dimension.spacing.small",
     },

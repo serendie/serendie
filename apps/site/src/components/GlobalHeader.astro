@@ -77,7 +77,12 @@ const MenuButton = styled("div", {
 });
 
 const Link = styled("a", {
-  base: {},
+  base: {
+    transition: "opacity 0.3s",
+    _hover: {
+      opacity: 0.4,
+    },
+  },
   variants: {
     active: {
       true: {
