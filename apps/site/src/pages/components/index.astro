@@ -1,9 +1,11 @@
 ---
 import ComponentLayout from "@/layouts/ComponentLayout.astro";
+import { getCollection } from "astro:content";
+import { PageLinks } from "@/components/PageLayout";
+export const components = await getCollection("components");
 ---
 
 <ComponentLayout
-  isIndex
   data={{
     title: "Components",
     componentName: "",
@@ -12,5 +14,12 @@ import ComponentLayout from "@/layouts/ComponentLayout.astro";
     illustSize: "large",
   }}
 >
-  aaaaaaaaaaaa
+  <PageLinks
+    siblings={components.map((c) => ({
+      slug: `components/${c.slug}`,
+      data: c.data,
+    }))}
+    currentSlug={""}
+    column="span2"
+  />
 </ComponentLayout>
