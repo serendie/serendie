@@ -87,7 +87,7 @@ import ImageAnatomy from "../../../assets/content/design-tokens/dynamic_anatomy.
   <PageSection>
     <PageHeadLine number={5}>フォーマット</PageHeadLine>
     
-    デザイントークンは開発とデザインの共通言語であり、それぞれから利用しやすい形で表現することが求められます。Serendieデザインシステムでは、W3C Community Groupの[Design Tokens Format Module]()で現在策定中の草案フォーマットを採用しています。このフォーマットでは、デザイントークンをJSON形式で表現し、Figmaなど特定ツールに依存しない形で、デザイントークンの型 ($type) などを表記するのが特徴です。
+    デザイントークンは開発とデザインの共通言語であり、それぞれから利用しやすい形で表現することが求められます。Serendieデザインシステムでは、W3C Community Groupの[Design Tokens Format Module – W3C Community Group Draft Report](https://tr.designtokens.org/format/)で現在策定中の草案フォーマットを採用しています。このフォーマットでは、デザイントークンをJSON形式で表現し、Figmaなど特定ツールに依存しない形で、デザイントークンの型 ($type) などを表記するのが特徴です。
 
     このJSONファイルは、SerendieデザインシステムのGitHubリポジトリで管理され、このファイル群がデザイントークンのマスター (Single Source of Truth) となります。
 
@@ -104,9 +104,9 @@ import ImageAnatomy from "../../../assets/content/design-tokens/dynamic_anatomy.
   <PageSection>
     <PageHeadLine number={6}>コードとFigmaの同期</PageHeadLine>
 
-    コードとデザイン間のSingle Source of Truthを実現するため、マスターとなるJSONファイルに記載されたデザイントークンが、**[Figma Variables]()として自動同期されるのが特徴**です。これによりFigma利用者は、Variablesを使うことで、JSONに記載したデザイントークンを使ってデザインすることができます。なお、この同期にはFigma REST APIを利用しており、2024年10月現在、[Figmaエンタープライズプラン]()の契約が必要になります。
+    コードとデザイン間のSingle Source of Truthを実現するため、マスターとなるJSONファイルに記載されたデザイントークンが、**[Figma Variables](https://help.figma.com/hc/ja/articles/15871097384471-%E3%83%90%E3%83%AA%E3%82%A2%E3%83%96%E3%83%AB%E3%81%A8%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E9%81%95%E3%81%84)として自動同期されるのが特徴**です。これによりFigma利用者は、Variablesを使うことで、JSONに記載したデザイントークンを使ってデザインすることができます。なお、この同期にはFigma REST APIを利用しており、2024年10月現在、[Figmaエンタープライズプラン](https://www.figma.com/ja-jp/pricing/?fuid=1212571380417963371)の契約が必要になります。
 
-    コード側では、デザイントークンが記載されたJSONファイルを、React及びCSSで利用しやすくするための[Style Dictonary]()を整備しています。詳しくはGet Startedを参照してください。
+    コード側では、デザイントークンが記載されたJSONファイルを、React及びCSSで利用しやすくするための[Style Dictonary](https://amzn.github.io/style-dictionary)を整備しています。詳しくはGet Startedを参照してください。
 
     このような仕組みから、デザイントークンを開発とデザインの共通言語とすることができます。例えばprimaryカラーに変更があった際には、その変更がデザインファイルとWebアプリケーションに波及することが容易になります。
 
@@ -127,7 +127,7 @@ import ImageAnatomy from "../../../assets/content/design-tokens/dynamic_anatomy.
       <img src="/assets/pages/design-tokens/theming.png" width="310" alt="" />
     </p>
 
-    前述したDesign Token Format Module草案では、現在のところコンテキストを表現するフォーマットが定まっていません。そのためSerendieデザインシステムでは、「typography.compact.json」や「typography.expanded.json」のようにコンテキストごとにJSONファイルを分けることで対応しています。これはFigma上ではバリアブルモードとして同期されます。バリアブルモードの使い方はGet Startedを参照してください。
+    前述したDesign Token Format Module草案では、現在のところコンテキストを表現するフォーマットが定まっていません。そのためSerendieデザインシステムでは、「typography.compact.json」や「typography.expanded.json」のようにコンテキストごとにJSONファイルを分けることで対応しています。これはFigma上ではバリアブルモードとして同期されます。バリアブルモードの使い方は[Get Started](/get-started/design/#section-3)を参照してください。
 
     <p>
       <img src="/assets/pages/design-tokens/theming-ss.png" width="310" alt="" />
