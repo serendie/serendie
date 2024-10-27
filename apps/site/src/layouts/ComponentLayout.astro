@@ -11,10 +11,9 @@ import { PageMain } from "@/components/PageLayout";
 
 interface Props {
   data: CollectionEntry<"components">["data"];
-  isIndex?: boolean;
 }
 
-const { data, isIndex } = Astro.props;
+const { data } = Astro.props;
 const components = await getCollection("components");
 ---
 
@@ -49,7 +48,7 @@ const components = await getCollection("components");
           description={data.description}
         />
       </PageHeader>
-      <PageMain gridColumn={isIndex ? "span8" : undefined}>
+      <PageMain>
         <slot />
       </PageMain>
     </Main>
