@@ -1,3 +1,4 @@
+import type { ComponentProps } from "react";
 import { css } from "styled-system/css";
 import { styled } from "styled-system/jsx";
 
@@ -6,7 +7,7 @@ export const PageMain = styled("div", {
     color: "web.system.color.component.background.onSurface",
     gridColumn: "span 6",
     mdDown: {
-      gridColumn: "span 1",
+      gridColumn: "span 2",
     },
     "& a": {
       color: "sd.system.color.impression.primary",
@@ -18,6 +19,13 @@ export const PageMain = styled("div", {
     },
     "& li": {
       listStyleType: "disc",
+    },
+  },
+  variants: {
+    gridColumn: {
+      span8: {
+        gridColumn: "span 8",
+      },
     },
   },
 });
@@ -127,7 +135,13 @@ export const PageA = styled("a", {
   },
 });
 
-export const PageARef = styled("a", {
+const Aref = ({ children, ...props }: ComponentProps<"a">) => (
+  <a target="_blank" rel="noopener noreferrer" {...props}>
+    {children}
+  </a>
+);
+
+export const PageARef = styled(Aref, {
   base: {
     color: "sd.system.color.impression.primary",
     textDecoration: "underline",

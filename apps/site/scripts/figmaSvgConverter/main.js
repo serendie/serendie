@@ -8,10 +8,7 @@ async function convertSvg(node) {
     return colorObj
       ? match.replace(
           color,
-          `var(--${colorObj.collectionName}-${colorObj.name.replaceAll(
-            "/",
-            "-"
-          )}, ${color})`
+          `var(--${colorObj.name.replaceAll("/", "-")}, ${color})`
         )
       : match;
   });
@@ -33,8 +30,47 @@ function rgb2hex(r, g, b) {
 
 function getColors(n) {
   const ret = [];
-  [...(n.fills || []), ...(n.strokes || [])].forEach((paint) => {
+  const collections = getCollections(n);
+  Object.keys(collections).forEach((key) => {
+    // コレクションから変数と値を取得
+    const collection = collections[key];
+    const defaultModeId = collection.defaultModeId;
+    collection.variableIds.forEach((id) => {
+      const variable = figma.variables.getVariableById(id);
+      const value = variable.valuesByMode[defaultModeId];
+      if (value.type === "VARIABLE_ALIAS") {
+        const v = figma.variables.getVariableById(value.id);
+        const color = Object.values(v.valuesByMode)[0];
+        ret.push({
+          collectionName: collection.name,
+          name: variable.name,
+          color: rgb2hex(color.r, color.g, color.b),
+        });
+      } else {
+        ret.push({
+          collectionName: collection.name,
+          name: variable.name,
+          color: rgb2hex(value.r, value.g, value.b),
+        });
+      }
+    });
+  });
+  return ret;
+}
+
+function getCollections(n) {
+  // ノードで使われているコレクションを取得
+  const ret = {};
+  const paints = [];
+  if (Array.isArray(n.fills)) {
+    paints.push(...n.fills);
+  }
+  if (Array.isArray(n.strokes)) {
+    paints.push(...n.strokes);
+  }
+  paints.flat().forEach((paint) => {
     if (
+      paint &&
       paint.boundVariables &&
       paint.boundVariables.color &&
       paint.boundVariables.color.type === "VARIABLE_ALIAS"
@@ -45,17 +81,12 @@ function getColors(n) {
       const collection = figma.variables.getVariableCollectionById(
         variable.variableCollectionId
       );
-      ret.push({
-        collectionName: collection.name,
-        name: variable.name,
-        color: rgb2hex(paint.color.r, paint.color.g, paint.color.b),
-      });
+      ret[collection.id] = collection;
     }
   });
-
   if (n.children) {
     n.children.forEach((child) => {
-      ret.push(...getColors(child));
+      Object.assign(ret, getCollections(child));
     });
   }
   return ret;

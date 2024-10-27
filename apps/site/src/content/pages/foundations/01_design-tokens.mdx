@@ -1,53 +1,136 @@
 ---
 title: デザイントークン
 slug: foundations/design-tokens
+description: "デザイントークンはデザインシステムを構成する最小単位です。デザインと開発でデザイントークンを共有することで、Single Source of Truthを実現します。"
+lastUpdated: "2024-11-1"
+illustType: "A"
+subLinks:
+  [
+    { name: "設計", path: "/foundations/design-tokens" },
+    {
+      name: "リファレンストークン",
+      path: "/foundations/design-tokens/reference-tokens",
+    },
+    {
+      name: "システムトークン",
+      path: "/foundations/design-tokens/system-tokens",
+    },
+  ]
 ---
 
-import { TokenList } from "src/components/TokenList";
-import tokens from "@serendie/design-token/token-list";
+import PageHeadLine from "../../../components/PageHeadLine.astro";
+import CodeBox from "../../../components/CodeBox.astro";
+import { PageSection, PageARef } from "../../../components/PageLayout.tsx";
+import ImageAnatomy from "../../../assets/content/design-tokens/dynamic_anatomy.svg?react";
 
-import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
-import {
-  PageMain,
-  PageSection,
-  PageAside,
-  PageLinks,
-  PageA,
-  PageARef,
-} from "../../../components/PageLayout.tsx";
-import PageHeader from "@/components/PageHeader.astro";
+<PageSection>
+    <PageHeadLine number={1}>デザイントークンとは</PageHeadLine>
 
-export const referenceTokens = tokens.filter((token) =>
-  token.key.includes("sd.reference")
-);
-export const systemTokens = tokens.filter(
-  (token) => !token.key.includes("themes") && token.key.includes("sd.system")
-);
+    デザイントークンはKey/Value (名前と値)のペアからなり、[Color](/foundations/color)や[Typography](/foundations/typography)、[Dimension](/foundations/dimension)、[Elevation](/foundations/elevation)などデジタルプロダクトの視覚要素を指し示します。デザインシステムにおける最も抽象度の高い構成要素であり、全てのUIコンポーネントを形づくります。
 
-export const links = [
-  {
-    name: "設計",
-    path: "/foundations/design-tokens",
-  },
-  {
-    name: "リファレンストークン",
-    path: "/foundations/design-tokens/reference-tokens",
-  },
-  {
-    name: "システムトークン",
-    path: "/foundations/design-tokens/system-tokens",
-  },
-];
+    デザイントークンは**デザインと開発をつなぐ共通言語**でもあります。例えば、アイコン色を「#0066DF」のような直値で指定するのではなく、デザイントークン「color.impression.primary」として指定することで、ブランド上重要な色であるという意味が付与できます。これによりデザイン上の意図をより詳細に伝達することができ、円滑なプロダクト開発が期待できます。
 
-<PageHeader links={links}>
-  <IndexPageHeader
-    illustType="A"
-    title={"デザイントークン"}
-    description={
-      "デザイントークンはデザインシステムを構成する最小単位です。デザインと開発でデザイントークンを共有することで、Single Source of Truthを実現します。"
-    }
-  />
-</PageHeader>
-<PageMain gridColumn={"span 8"}>
-  <PageSection>TBD</PageSection>
-</PageMain>
+    <ImageAnatomy />
+
+  </PageSection>
+
+  <PageSection>
+    <PageHeadLine number={2}>利用シーンと効果</PageHeadLine>
+
+    デザイントークンを利用することによる効果は、**最低限のデザイン品質の担保とプロダクト開発への集中**です。コントラスト比を確保したアクセシブルなカラー、ブランドやプラットフォームに合った書体、読みやすいフォントサイズのジャンプ率など、デザイントークンが示す値にはノウハウが詰まっています。デザイントークンを利用することで、例えデザイナーでなくても、このノウハウをベースにプロダクト開発をスタートできます。
+
+    Serendieデザインシステムが提供するUIコンポーネント (Serendie UI) は、デザイントークンをベースに作られているので、Serendie UIをそのまま使う場合はデザイントークンについて意識する必要はありません。ただし、Serendie UIのスタイルを上書きする場合や、オリジナルのコンポーネントを追加する場合は、デザイントークンの役割や設計について理解が必要になります。
+
+    また、**Serendie UIは利用せず、デザイントークンだけを利用することも可能**です。事情によりSerendie UIが使えない場合は、デザイントークンのみ利用することを検討してください。
+
+  </PageSection>
+
+  <PageSection>
+    <PageHeadLine number={3}>命名構造</PageHeadLine>
+
+    Serendieデザインシステムの**デザイントークンは「リファレンストークン」と「システムトークン」の2種類で構成**されます。リファレンストークンはカラーコードなど生の値を示し、システムトークンはリファレンストークンを参照 (エイリアス) するトークンです。
+
+    リファレンストークンは **color.scale.green.500 (カラースケール500番の緑色)** のような素朴な命名になり、システムトークンは **color.impression.positiveContainer (ポジティブな印象の背景色)** のような、UIにおける意味性の強い命名を行うのが特徴です。
+
+    さらに命名構造として、ドメイン (ブランドの略称) 、カテゴリ (system, reference) 、タイプ (color, typographyなど)を接頭辞としてつけ、一つのトークン名を構成します。このような構造にすることで、三菱電機内の多様なブランドに対応することを想定しています。
+
+    <img src="/assets/pages/design-tokens/flow.png" alt="" />
+
+    **プロダクトのUI内から参照するトークンは原則システムトークン**です。リファレンストークンを直接参照するのは例外的であることに注意してください。
+
+
+    ### 参考文献
+
+    <PageARef href="https://m3.material.io/foundations/design-tokens/overview">Design tokens - Material Design 3</PageARef>
+    <PageARef href="https://spectrum.adobe.com/page/design-tokens/">Design tokens - Spectrum</PageARef>
+    <PageARef href="https://putchom.square.site/product/how-to-create-design-tokens-pdf/2">デザイントークンのつくりかた - putchom</PageARef>
+
+  </PageSection>
+
+  <PageSection>
+    <PageHeadLine number={4}>用語</PageHeadLine>
+    
+    デザイントークンは命名が重要です。Serendieデザインシステムは、[Material Design 3](https://m3.material.io/foundations/design-tokens/overview)の設計から多くの影響を受けており、用語選びもその一つです。用語選びには下記のルールを採用しています。いずれも特定の技術やプラットフォームに依存しないことや、各種ツールの入力補完を前提とし省略記法を避けることを基本指針としています。
+
+    - トークン名はキャメルケース (camelCase)とする
+    - CSSなど特定技術に依存しない用語選び
+    - デバイス種別 (PC/Mobile)ではなく、画面幅 (Expanded/Compact) に着目する
+    - Tシャツサイズはxsのような省略記法を避け、extraSmallとする
+    - 頭文字に数字を避ける (2extraSmallではなく、twoExtraSmall)
+
+    ### 参考文献
+
+    <PageARef href="https://m3.material.io/foundations/layout/applying-layout/window-size-classes">Applying Layout - Material Design 3</PageARef>
+
+  </PageSection>
+
+  <PageSection>
+    <PageHeadLine number={5}>フォーマット</PageHeadLine>
+    
+    デザイントークンは開発とデザインの共通言語であり、それぞれから利用しやすい形で表現することが求められます。Serendieデザインシステムでは、W3C Community Groupの[Design Tokens Format Module – W3C Community Group Draft Report](https://tr.designtokens.org/format/)で現在策定中の草案フォーマットを採用しています。このフォーマットでは、デザイントークンをJSON形式で表現し、Figmaなど特定ツールに依存しない形で、デザイントークンの型 ($type) などを表記するのが特徴です。
+
+    このJSONファイルは、SerendieデザインシステムのGitHubリポジトリで管理され、このファイル群がデザイントークンのマスター (Single Source of Truth) となります。
+
+    <p>
+      <img src="/assets/pages/design-tokens/snippet.png" width="310" alt="" />
+    </p>
+
+    ### 参考文献
+
+    <PageARef href="https://m3.material.io/foundations/layout/applying-layout/window-size-classes">Applying Layout - Material Design 3</PageARef>
+
+  </PageSection>
+
+  <PageSection>
+    <PageHeadLine number={6}>コードとFigmaの同期</PageHeadLine>
+
+    コードとデザイン間のSingle Source of Truthを実現するため、マスターとなるJSONファイルに記載されたデザイントークンが、**[Figma Variables](https://help.figma.com/hc/ja/articles/15871097384471-%E3%83%90%E3%83%AA%E3%82%A2%E3%83%96%E3%83%AB%E3%81%A8%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E9%81%95%E3%81%84)として自動同期されるのが特徴**です。これによりFigma利用者は、Variablesを使うことで、JSONに記載したデザイントークンを使ってデザインすることができます。なお、この同期にはFigma REST APIを利用しており、2024年10月現在、[Figmaエンタープライズプラン](https://www.figma.com/ja-jp/pricing/?fuid=1212571380417963371)の契約が必要になります。
+
+    コード側では、デザイントークンが記載されたJSONファイルを、React及びCSSで利用しやすくするための[Style Dictonary](https://amzn.github.io/style-dictionary)を整備しています。詳しくはGet Startedを参照してください。
+
+    このような仕組みから、デザイントークンを開発とデザインの共通言語とすることができます。例えばprimaryカラーに変更があった際には、その変更がデザインファイルとWebアプリケーションに波及することが容易になります。
+
+    <p>
+      <img src="/assets/pages/design-tokens/pipeline.png" alt="" />
+    </p>
+
+  </PageSection>
+
+  <PageSection>
+    <PageHeadLine number={7}>コンテキストによる変化</PageHeadLine>
+
+    ブラウザのサイズ応じてUIが変化するレスポンシブデザイン、端末の環境に応じてカラーが変化するダークモードなど、デザイントークンはコンテキストによってその値が変化します。この変化に対応するため、システムトークンがリファレンストークンを参照する2層構造になっています。
+
+    コンテキストが変更された際には、システムトークンが参照するリファレンストークンを変更することで、プロダクト側には変更を与えることなく、UIの変化に対応できます。UI内で直接リファレンストークンを参照してしまうと、このようなコンテキスト変化に対応できなくなるため、原則システムトークンを参照してください。
+
+    <p>
+      <img src="/assets/pages/design-tokens/theming.png" width="310" alt="" />
+    </p>
+
+    前述したDesign Token Format Module草案では、現在のところコンテキストを表現するフォーマットが定まっていません。そのためSerendieデザインシステムでは、「typography.compact.json」や「typography.expanded.json」のようにコンテキストごとにJSONファイルを分けることで対応しています。これはFigma上ではバリアブルモードとして同期されます。バリアブルモードの使い方は[Get Started](/get-started/design/#section-3)を参照してください。
+
+    <p>
+      <img src="/assets/pages/design-tokens/theming-ss.png" width="310" alt="" />
+    </p>
+
+  </PageSection>

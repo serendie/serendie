@@ -32,13 +32,41 @@ export const Main = styled("main", {
       my: "sd.system.dimension.spacing.extraLarge",
       textStyle: "sd.system.typography.body.small_compact",
     },
-    "& h3": {
+    "& h2": {
+      fontWeight: "sd.reference.typography.fontWeight.bold",
       my: "sd.system.dimension.spacing.extraLarge",
-      textStyle: "sd.system.typography.title.large_compact",
+      fontSize: "20px",
+      sm: {
+        my: "sd.system.dimension.spacing.extraLarge",
+        fontSize: "24px",
+      },
+    },
+    "& h3": {
+      my: "sd.system.dimension.spacing.medium",
+      fontWeight: "sd.reference.typography.fontWeight.bold",
+      fontSize: "sd.reference.typography.scale.expanded.medium",
+      sm: {
+        my: "sd.system.dimension.spacing.extraLarge",
+        fontSize: "sd.reference.typography.scale.compact.extraLarge",
+      },
+    },
+    "& ol": {
+      pl: "sd.system.dimension.spacing.large",
+      textStyle: "sd.system.typography.body.small_compact",
+      "& li": {
+        listStyle: "decimal",
+      },
     },
     "& svg": {
       maxWidth: "100%",
       height: "auto",
+    },
+    "& strong": {
+      fontWeight: "sd.reference.typography.fontWeight.regular",
+      color: "web.system.color.component.onSurface",
+      px: "2px",
+      py: "1px",
+      backgroundColor: "web.system.color.impression.tertiary",
     },
   },
 });

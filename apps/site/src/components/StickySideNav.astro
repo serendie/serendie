@@ -57,7 +57,7 @@ const Ul = styled("ul", {
   const main = nav?.closest("main");
   const sectionNavMap: Record<string, HTMLAnchorElement> = {};
 
-  main?.querySelectorAll("h2").forEach((heading) => {
+  main?.querySelectorAll("h1").forEach((heading) => {
     const section = heading.closest("section");
     const link = heading.querySelector("a");
     if (!link) return;

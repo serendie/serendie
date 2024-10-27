@@ -2,38 +2,32 @@
 title: リファレンストークン
 slug: foundations/design-tokens/reference-tokens
 parent: foundations/design-tokens
+illustType: "A"
+description: "リファレンストークンは、カラーコードなど生の値を参照するトークンであり、このトークンをプロダクトのUI内で使用することは例外的です。"
+lastUpdated: "2024-11-1"
+fullWidth: true
+subLinks:
+  [
+    { name: "設計", path: "/foundations/design-tokens" },
+    {
+      name: "リファレンストークン",
+      path: "/foundations/design-tokens/reference-tokens",
+    },
+    {
+      name: "システムトークン",
+      path: "/foundations/design-tokens/system-tokens",
+    },
+  ]
 ---
 
 import { TokenList } from "src/components/TokenList";
 import tokens from "@serendie/design-token/token-list";
-import { links } from "./01_design-tokens.mdx";
-
-import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
-import {
-  PageMain,
-  PageSection,
-  PageAside,
-  PageLinks,
-  PageA,
-  PageARef,
-} from "../../../components/PageLayout.tsx";
-import PageHeader from "@/components/PageHeader.astro";
+import { PageSection } from "../../../components/PageLayout.tsx";
 
 export const referenceTokens = tokens.filter((token) =>
   token.key.includes("sd.reference")
 );
 
-<PageHeader links={links}>
-  <IndexPageHeader
-    illustType="A"
-    title={"Design Tokens"}
-    description={
-      "デザイントークンはデザインシステムを構成する最小単位です。デザインと開発でデザイントークンを共有することで、Single Source of Truthを実現します。"
-    }
-  />
-</PageHeader>
-<PageMain gridColumn={"span 8"}>
-  <PageSection>
-    <TokenList tokens={referenceTokens} client:load />
-  </PageSection>
-</PageMain>
+<PageSection>
+  <TokenList tokens={referenceTokens} client:load />
+</PageSection>

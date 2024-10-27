@@ -4,7 +4,6 @@ import { siteConfig } from "@/../siteConfig";
 import { ThemeSelector } from "./ThemeSelector";
 import { GlobalHeaderMenu } from "./GlobalHeaderMenu";
 
-
 interface Props {
   className?: string;
   isToppage?: boolean;
@@ -35,8 +34,8 @@ const Header = styled("header", {
       true: {
         color: "web.system.color.impression.onTertiary",
       },
-    }
-  }
+    },
+  },
 });
 
 const HeaderContainer = styled("div", {
@@ -96,8 +95,8 @@ const Link = styled("a", {
 const menuItems = [
   { href: "/about", text: "About" },
   { href: "/get-started", text: "Get Started" },
-  { href: "/foundations/", text: "Foundations" },
-  { href: "/components/", text: "Components" },
+  { href: "/foundations", text: "Foundations" },
+  { href: "/components", text: "Components" },
 ];
 ---
 

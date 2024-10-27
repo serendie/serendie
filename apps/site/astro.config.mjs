@@ -18,4 +18,5 @@ export default defineConfig({
   vite: {
     plugins: [svgr()],
   },
+  trailingSlash: "never",
 });

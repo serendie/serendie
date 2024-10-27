@@ -1,31 +1,18 @@
 ---
 title: 寸法
 slug: foundations/dimension
+illustType: A
+lastUpdated: "2024-11-1"
+description: スペーシングやボーダー幅、角丸など、寸法にまつわるデザイントークンです。レスポンシブデザインにおけるBreakpointも取り扱います。
 ---
 
-import { styled } from "styled-system/jsx";
-import Illustration from "../../../assets/hearderImages/about.svg";
 import FigureElevationShadow from "../../../assets/content/foundations/dimension/figure-dimension-spacing.svg?raw";
 import FigureElevationRadius from "../../../assets/content/foundations/dimension/figure-dimension-radius.svg?raw";
 import FigureElevationBreakpoint from "../../../assets/content/foundations/dimension/figure-dimension-breakpoint.svg?raw";
-import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
 import PageHeadLine from "../../../components/PageHeadLine.astro";
-import {
-  PageMain,
-  PageSection,
-  PageAside,
-  PageLinks,
-  PageA,
-} from "../../../components/PageLayout.tsx";
-import PageHeader from "@/components/PageHeader.astro";
-import StickySideNav from "../../../components/StickySideNav.astro";
-import { css } from "styled-system/css";
+import { PageSection, PageA } from "../../../components/PageLayout.tsx";
 
-<PageHeader>
-	<IndexPageHeader title={frontmatter.title} illustType="C" description={'スペーシングやボーダー幅、角丸など、寸法にまつわるデザイントークンです。レスポンシブデザインにおけるBreakpointも取り扱います。'} />
-</PageHeader>
-<PageMain>
-	<PageSection>
+    <PageSection>
       <PageHeadLine number={1}>スペーシング</PageHeadLine>
 
       調和数列をベースにした数列をリファレンストークンとして定義し、レイアウト上使いやすいようにピックアップして、twoExtraSmallからsixExtraLargeまで13段階のサイズをシステムトークンとしています。
@@ -41,6 +28,9 @@ import { css } from "styled-system/css";
 
         ボーダーの幅は medium/thick/extraThick の3パターンをシステムトークンとして定義しています。medium (1px) が最もよく使われます。Figma上では、Strokeペインのボーダー幅入力欄を「右クリック」することで、トークンを適用できます。
 
+        <p>
+          <img src="/assets/pages/border-width.png" width="310" alt="" />
+        </p>
 
     </PageSection>
 
@@ -65,9 +55,3 @@ import { css } from "styled-system/css";
         <Fragment set:html={FigureElevationBreakpoint} />
 
     </PageSection>
-
-</PageMain>
-
-<PageAside>
-  <StickySideNav />
-</PageAside>

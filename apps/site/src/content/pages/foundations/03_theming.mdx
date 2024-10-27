@@ -1,65 +1,55 @@
 ---
 title: テーミング
 slug: foundations/theming
+description: アクセシビリティ基準を満たしたカラーテーマを5つ提供しています。FigmaとReactコンポーネントそれぞれテーマ切り替えに対応しています。
+illustType: A
+lastUpdated: "2024-11-1"
 ---
 
-import { styled } from "styled-system/jsx";
-import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
 import PageHeadLine from "../../../components/PageHeadLine.astro";
-import CodeBox from "../../../components/CodeBox.astro";
-import {
-  PageMain,
-  PageSection,
-  PageAside,
-  PageLinks,
-  PageA,
-  PageARef,
-} from "../../../components/PageLayout.tsx";
-import PageHeader from "@/components/PageHeader.astro";
-import StickySideNav from "../../../components/StickySideNav.astro";
-import { css } from "styled-system/css";
+import { PageSection, PageARef } from "../../../components/PageLayout.tsx";
 
-<PageHeader>
-  <IndexPageHeader
-    title={frontmatter.title}
-    illustType="A"
-    description={
-      "アクセシビリティ基準を満たしたカラーテーマを5つ提供しています。FigmaとReactコンポーネントそれぞれテーマ切り替えに対応しています。"
-    }
-  />
-</PageHeader>
-<PageMain>
   <PageSection>
     <PageHeadLine number={1}>カラーテーマ</PageHeadLine>
 
     BtoBからBtoCまで多様な事業領域に対応するため、現在5つのカラーテーマを提供しています。各テーマはSerendieブランドに用いられる日本の伝統色をベースに設計しています。今後ニーズに合わせてテーマの追加・更新をしていく予定です。
 
-    ### KONJO
+    ## KONJO
 
-    紺青色をベースにしたテーマです。紺青色はSerendie St.横浜の拠点カラーでもあり、デフォルトのカラーテーマとしています。
+    紺青色をベースにしたテーマです。紺青色は[Serendie St.横浜](https://www.mitsubishielectric.co.jp/serendie/)の拠点カラーでもあり、デフォルトのカラーテーマとしています。
 
-    ### ASAGI
+    <img src="/assets/pages/theming/konjo.png" alt="" />
+
+    ## ASAGI
 
     浅葱色をベースにしたテーマです。
 
-    ### SUMIRE
+    <img src="/assets/pages/theming/asagi.png" alt="" />
+
+    ## SUMIRE
 
     すみれ色をベースにしたテーマです。
 
-    ### KURIKAWA
+    <img src="/assets/pages/theming/kurikawa.png" alt="" />
+
+    ## KURIKAWA
 
     栗皮色をベースにしたテーマです。
 
-    ### TSUTSUJI
+    <img src="/assets/pages/theming/sumire.png" alt="" />
+
+    ## TSUTSUJI
 
     つつじ色をベースにしたテーマです。
+
+    <img src="/assets/pages/theming/tsutsuji.png" alt="" />
 
   </PageSection>
 
   <PageSection>
     <PageHeadLine number={2}>アクセシビリティ基準</PageHeadLine>
 
-    現在提供している5つのカラーテーマは、前景色 (テキスト色) と背景色のコントラスト比をWCAG2.2 レベルAAに準拠します。Serendie Design Systemが提供するデザイントークンを用いて、UIコンポーネントを設計する際は、カラーロールを適切に使用してください。例えば、primaryとonPrimaryは合わせて使うことが推奨され、primaryとonPrimaryContainerを組み合わせることは非推奨です。
+    現在提供している5つのカラーテーマは、前景色 (テキスト色) と背景色のコントラスト比を[WCAG2.2 レベルAA](https://waic.jp/translations/WCAG22/#contrast-minimum)に準拠します。Serendie Design Systemが提供するデザイントークンを用いて、UIコンポーネントを設計する際は、カラーロールを適切に使用してください。例えば、primaryとonPrimaryは合わせて使うことが推奨され、primaryとonPrimaryContainerを組み合わせることは非推奨です。
 
     Serendieブランドは、カラーパレット内の多様な色を組み合わせる表現が特徴です。Serendie Design Systemではその多様さを5つのカラーテーマとして規定することで、アクセシビリティ基準を担保しています。
 
@@ -77,8 +67,6 @@ import { css } from "styled-system/css";
 
     各テーマは、Figmaのなかで[バリアブルモード](https://help.figma.com/hc/ja/articles/15343816063383-%E3%83%90%E3%83%AA%E3%82%A2%E3%83%96%E3%83%AB%E3%83%A2%E3%83%BC%E3%83%89)として扱われます。バリアブルモードは、Figma Variablesに定義されたモード (テーマ) を、ページやセクション、フレームなどに割り当てる機能です。例えば、ページにASAGIを割り当てることで、そのページ内の全てのSerendie UIをASAGIテーマに切り替えることができます。
 
+    <img src="/assets/pages/theming/theme-selector.png" width="310" alt="" />
+
   </PageSection>
-</PageMain>
-<PageAside>
-  <StickySideNav />
-</PageAside>

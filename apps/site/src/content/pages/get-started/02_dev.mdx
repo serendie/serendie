@@ -1,37 +1,18 @@
 ---
 title: 開発
 slug: get-started/dev
+illustType: "B"
+description: "Webフロントエンド開発において、Serendie UIを使ったデザインファイルをデザイナーと共有し、それをReactで実装していくシーンを想定して活用方法を紹介します。"
+lastUpdated: "2024-11-1"
 ---
 
-import { styled } from "styled-system/jsx";
-import { IndexPageHeader } from "../../../components/IndexPageHeader.tsx";
 import PageHeadLine from "../../../components/PageHeadLine.astro";
 import CodeBox from "../../../components/CodeBox.astro";
-import {
-  PageMain,
-  PageSection,
-  PageAside,
-  PageLinks,
-  PageA,
-  PageARef,
-} from "../../../components/PageLayout.tsx";
-import PageHeader from "@/components/PageHeader.astro";
-import StickySideNav from "../../../components/StickySideNav.astro";
-import { css } from "styled-system/css";
+import { PageSection, PageARef } from "../../../components/PageLayout.tsx";
 
 export const sampleCodeCss = `@layer reset, base, tokens, recipes, utilities;
 @import "@serendie/ui/styles.css";`;
 
-<PageHeader>
-  <IndexPageHeader
-    title={frontmatter.title}
-    illustType="B"
-    description={
-      "Webフロントエンド開発において、Serendie UIを使ったデザインファイルをデザイナーと共有し、それをReactで実装していくシーンを想定して活用方法を紹介します。"
-    }
-  />
-</PageHeader>
-<PageMain>
   <PageSection>
     <PageHeadLine number={1}>デザインを確認する</PageHeadLine>
 
@@ -45,9 +26,15 @@ export const sampleCodeCss = `@layer reset, base, tokens, recipes, utilities;
 
     Serendie UIのコンポーネントはCode Connectに対応しています。Code Connectは、デザインファイル上のコンポーネントに対応するコードスニペットをFigma Devモードに表示する機能です。Code Connectを活用することで、デザインを確認しながら、Reactコンポーネントの実装例を同時に確認することができます。
 
+    <p>
+      <img src="/assets/pages/code-connect.png" width="310" alt="" />
+    </p>
+
     ### Storybook
 
     またCode Connectと同等の内容を、Storybookとして提供しています。UIコンポーネントの状態変化や、ReactコンポーネントのPropsとの対応など、より詳しく確認したい場合に利用できます。
+
+    <PageARef href="https://serendie.design/storybook">Storybook - Serendie Design System</PageARef>
 
   </PageSection>
 
@@ -100,7 +87,3 @@ export const sampleCodeCss = `@layer reset, base, tokens, recipes, utilities;
     Serendie UIはスタイリングライブラリとして[Panda CSS](https://panda-css.com/)を利用しています。Panda CSSが提供するユーティリティを使ったコンポーネントの拡張や、テーマの変更などが可能です。詳しくはREADMEを参照してください。なお、カスタマイズせずに使う場合は、Panda CSSの導入は必要ありません。
 
   </PageSection>
-</PageMain>
-<PageAside>
-  <StickySideNav />
-</PageAside>

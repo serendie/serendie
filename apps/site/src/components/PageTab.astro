@@ -2,61 +2,76 @@
 import { css } from "styled-system/css";
 
 export interface Props {
+  hideBorder?: boolean;
   links?: {
     name: string;
     path: string;
   }[];
 }
 
-const { links } = Astro.props;
+const { links, hideBorder } = Astro.props;
 ---
 
-<div
-  class={css({
-    maxWidth: "100%",
-    overflowX: "auto",
-    display: "flex",
-    alignItems: "stretch",
-    mb: "sd.system.dimension.spacing.threeExtraLarge",
-    position: "relative",
-    _before: {
-      content: '""',
-      position: "absolute",
-      bottom: 0,
-      left: "0",
-      sm: {
-        left: "-80px",
-        right: "-24px",
-      },
-      zIndex: -1,
-      right: 0,
-      borderBottomWidth: 1,
-      borderBottomColor: "sd.system.color.component.outline",
-    },
-  })}
->
-  {
-    links?.map((path) => (
-      <a
-        href={path.path}
-        class:list={css({
-          whiteSpace: "nowrap",
-          h: 44,
-          px: "sd.system.dimension.spacing.twoExtraLarge",
-          pb: "sd.system.dimension.spacing.twoExtraSmall",
-          "&:hover": {
-            color: "sd.system.color.impression.primary",
+{
+  !hideBorder && (
+    <div
+      class={css({
+        position: "relative",
+        mb: "sd.system.dimension.spacing.threeExtraLarge",
+        _before: {
+          content: '""',
+          position: "absolute",
+          bottom: 0,
+          left: "-24px",
+          right: "-24px",
+          sm: {
+            left: "-80px",
+            right: "-24px",
           },
-          borderBottomWidth: 2,
-          fontWeight: Astro.url.pathname === path.path ? "bold" : "normal",
-          borderBottomColor:
-            Astro.url.pathname === path.path
-              ? "sd.system.color.impression.primary"
-              : "transparent",
+          zIndex: -1,
+          borderBottomWidth: 1,
+          borderBottomColor: "sd.system.color.component.outline",
+        },
+      })}
+    >
+      <div
+        class={css({
+          maxWidth: "100%",
+          display: "flex",
+          alignItems: "stretch",
+          position: "relative",
+          overflowX: "auto",
+          smDown: {
+            maxWidth: "none",
+            left: "-24px",
+            right: "-24px",
+            width: "100vw",
+          },
         })}
       >
-        {path.name}
-      </a>
-    ))
-  }
-</div>
+        {links?.map((path) => (
+          <a
+            href={path.path}
+            class:list={css({
+              whiteSpace: "nowrap",
+              h: 44,
+              px: "sd.system.dimension.spacing.twoExtraLarge",
+              pb: "sd.system.dimension.spacing.twoExtraSmall",
+              "&:hover": {
+                color: "sd.system.color.impression.primary",
+              },
+              borderBottomWidth: 2,
+              fontWeight: Astro.url.pathname === path.path ? "bold" : "normal",
+              borderBottomColor:
+                Astro.url.pathname === path.path
+                  ? "sd.system.color.impression.primary"
+                  : "transparent",
+            })}
+          >
+            {path.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  )
+}

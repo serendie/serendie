@@ -18,20 +18,26 @@ const illustMap = {
 type IndexPageHeaderProps = {
   title: string;
   description?: string;
-  illustType: type;
+  lastUpdated?: string;
+  illustType?: type;
+  illustSize?: "large" | "small";
 };
 
 const IndexPageHeader_ = ({
   illustType,
   title,
   description,
+  lastUpdated,
+  illustSize = "small",
 }: IndexPageHeaderProps) => {
-  const Illust = illustMap[illustType];
+  const Illust = illustType ? illustMap[illustType] : null;
+  const lastUpdateDate = lastUpdated ? new Date(lastUpdated) : undefined;
+
   return (
     <div
       className={css({
         display: "grid",
-        gridTemplateColumns: "1fr auto",
+        gridTemplateColumns: "minmax(auto, 1fr) auto",
         alignItems: "center",
         gap: "sd.reference.dimension.scale.12",
         mb: "sd.reference.dimension.scale.17",
@@ -45,7 +51,7 @@ const IndexPageHeader_ = ({
       })}
     >
       <div>
-        <h2
+        <h1
           className={css({
             textStyle: "sd.system.typography.display.medium_compact",
             mdDown: {
@@ -54,20 +60,28 @@ const IndexPageHeader_ = ({
           })}
         >
           {title}
-        </h2>
+        </h1>
         {description && <p>{description}</p>}
+        {lastUpdated && (
+          <p
+            className={css({
+              fontSize: "12px",
+              color: "sd.reference.color.scale.gray.600",
+            })}
+          >
+            更新 {lastUpdateDate?.toLocaleDateString("ja-JP")}
+          </p>
+        )}
       </div>
       <div
         className={css({
           "&>svg": {
-            width: "100%",
+            width: illustSize === "large" ? "644px" : "auto",
             height: "auto",
-            maxHeight: "300px",
-            maxWidth: "414px",
           },
         })}
       >
-        <Illust />
+        {Illust && <Illust />}
       </div>
     </div>
   );
