@@ -61,6 +61,13 @@ export const Main = styled("main", {
       maxWidth: "100%",
       height: "auto",
     },
+    "& strong": {
+      fontWeight: "sd.reference.typography.fontWeight.regular",
+      color: "web.system.color.component.onSurface",
+      px: "2px",
+      py: "1px",
+      backgroundColor: "web.system.color.impression.tertiary",
+    },
   },
 });
 
