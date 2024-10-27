@@ -21,6 +21,7 @@ subLinks:
 import PageHeadLine from "../../../components/PageHeadLine.astro";
 import CodeBox from "../../../components/CodeBox.astro";
 import { PageSection, PageARef } from "../../../components/PageLayout.tsx";
+import ImageAnatomy from "../../../assets/content/design-tokens/dynamic_anatomy.svg?react";
 
 <PageSection>
     <PageHeadLine number={1}>デザイントークンとは</PageHeadLine>
@@ -28,6 +29,8 @@ import { PageSection, PageARef } from "../../../components/PageLayout.tsx";
     デザイントークンはKey/Value (名前と値)のペアからなり、[Color](/foundations/color)や[Typography](/foundations/typography)、[Dimension](/foundations/dimension)、[Elevation](/foundations/elevation)などデジタルプロダクトの視覚要素を指し示します。デザインシステムにおける最も抽象度の高い構成要素であり、全てのUIコンポーネントを形づくります。
 
     デザイントークンは**デザインと開発をつなぐ共通言語**でもあります。例えば、アイコン色を「#0066DF」のような直値で指定するのではなく、デザイントークン「color.impression.primary」として指定することで、ブランド上重要な色であるという意味が付与できます。これによりデザイン上の意図をより詳細に伝達することができ、円滑なプロダクト開発が期待できます。
+
+    <ImageAnatomy />
 
   </PageSection>
 
@@ -51,7 +54,7 @@ import { PageSection, PageARef } from "../../../components/PageLayout.tsx";
 
     さらに命名構造として、ドメイン (ブランドの略称) 、カテゴリ (system, reference) 、タイプ (color, typographyなど)を接頭辞としてつけ、一つのトークン名を構成します。このような構造にすることで、三菱電機内の多様なブランドに対応することを想定しています。
 
-    <figure />
+    <img src="/assets/pages/design-tokens/flow.png" alt="" />
 
     **プロダクトのUI内から参照するトークンは原則システムトークン**です。リファレンストークンを直接参照するのは例外的であることに注意してください。
 
@@ -88,6 +91,9 @@ import { PageSection, PageARef } from "../../../components/PageLayout.tsx";
 
     このJSONファイルは、SerendieデザインシステムのGitHubリポジトリで管理され、このファイル群がデザイントークンのマスター (Single Source of Truth) となります。
 
+    <p>
+      <img src="/assets/pages/design-tokens/snippet.png" width="310" alt="" />
+    </p>
 
     ### 参考文献
 
@@ -104,6 +110,10 @@ import { PageSection, PageARef } from "../../../components/PageLayout.tsx";
 
     このような仕組みから、デザイントークンを開発とデザインの共通言語とすることができます。例えばprimaryカラーに変更があった際には、その変更がデザインファイルとWebアプリケーションに波及することが容易になります。
 
+    <p>
+      <img src="/assets/pages/design-tokens/pipeline.png" alt="" />
+    </p>
+
   </PageSection>
 
   <PageSection>
@@ -113,6 +123,14 @@ import { PageSection, PageARef } from "../../../components/PageLayout.tsx";
 
     コンテキストが変更された際には、システムトークンが参照するリファレンストークンを変更することで、プロダクト側には変更を与えることなく、UIの変化に対応できます。UI内で直接リファレンストークンを参照してしまうと、このようなコンテキスト変化に対応できなくなるため、原則システムトークンを参照してください。
 
+    <p>
+      <img src="/assets/pages/design-tokens/theming.png" width="310" alt="" />
+    </p>
+
     前述したDesign Token Format Module草案では、現在のところコンテキストを表現するフォーマットが定まっていません。そのためSerendieデザインシステムでは、「typography.compact.json」や「typography.expanded.json」のようにコンテキストごとにJSONファイルを分けることで対応しています。これはFigma上ではバリアブルモードとして同期されます。バリアブルモードの使い方はGet Startedを参照してください。
+
+    <p>
+      <img src="/assets/pages/design-tokens/theming-ss.png" width="310" alt="" />
+    </p>
 
   </PageSection>
