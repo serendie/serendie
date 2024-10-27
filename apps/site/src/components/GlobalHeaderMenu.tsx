@@ -12,9 +12,8 @@ export const GlobalHeaderMenu: React.FC<{
   return (
     <div>
       <IconButton
-        // color="web.system.color.component.background.onSurface"
         className={css({
-          color: "var(--colors-web-system-color-impression-on-tertiary)",
+          color: "web.system.color.component.onSurface",
         })}
         styleType="ghost"
         icon="menu"
