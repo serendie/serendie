@@ -1,3 +1,4 @@
+import type { ComponentProps } from "react";
 import { css } from "styled-system/css";
 import { styled } from "styled-system/jsx";
 
@@ -134,7 +135,13 @@ export const PageA = styled("a", {
   },
 });
 
-export const PageARef = styled("a", {
+const Aref = ({ children, ...props }: ComponentProps<"a">) => (
+  <a target="_blank" rel="noopener noreferrer" {...props}>
+    {children}
+  </a>
+);
+
+export const PageARef = styled(Aref, {
   base: {
     color: "sd.system.color.impression.primary",
     textDecoration: "underline",
