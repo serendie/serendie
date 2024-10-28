@@ -8,7 +8,7 @@ const meta: Meta<typeof RadioButton> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3354-7943",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=3354-7943",
       props: {
         label: figma.string("Label"),
         helperText: figma.enum("Lines", {

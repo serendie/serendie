@@ -8,7 +8,7 @@ const meta: Meta<typeof DashboardWidget> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3359-9200",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=3359-9200",
       props: {
         title: figma.string("Title"),
         label: figma.string("SubTitle"),

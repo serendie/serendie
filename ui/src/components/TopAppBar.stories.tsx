@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { TopAppBar } from "./TopAppBar";
 import { IconButton } from "./IconButton";
-import { NotificationBadge } from "./NotificationBadge";
 import figma from "@figma/code-connect";
 import React from "react";
 
@@ -10,7 +9,7 @@ const meta: Meta<typeof TopAppBar> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=1353-14085",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=1353-14085",
       props: {
         title: figma.string("Title"),
         type: figma.enum("Navbar", { True: "navbar", False: "titleBar" }),

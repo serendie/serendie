@@ -7,7 +7,7 @@ const meta: Meta<typeof Switch> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3311-28493",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=3311-28493",
       props: {
         label: figma.string("Label"),
         helperText: figma.enum("Line", {

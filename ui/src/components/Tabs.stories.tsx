@@ -8,7 +8,7 @@ const meta: Meta<typeof TabItem> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3430-26917",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=3430-26917",
       props: {
         title: figma.string("Title"),
         disabled: figma.enum("State", { Disabled: true }),

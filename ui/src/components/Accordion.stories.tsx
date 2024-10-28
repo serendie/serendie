@@ -8,7 +8,7 @@ const meta: Meta<typeof Accordion> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=4728-44779",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=4728-44779",
       props: {
         title: figma.string("Title"),
         description: figma.enum("State", {

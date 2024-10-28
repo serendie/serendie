@@ -7,7 +7,7 @@ const meta: Meta<typeof NotificationBadge> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=1262-28909",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=1262-28909",
       props: {
         variant: figma.enum("Color", {
           Primary: "primary",

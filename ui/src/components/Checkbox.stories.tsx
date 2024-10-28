@@ -7,7 +7,7 @@ const meta: Meta<typeof Checkbox> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=5129-40889",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=5129-40889",
       props: {
         label: figma.string("Label"),
         helperText: figma.enum("Lines", {
