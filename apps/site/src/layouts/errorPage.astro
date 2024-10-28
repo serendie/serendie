@@ -1,0 +1,62 @@
+---
+import Html from "@/layouts/Html.astro";
+import GlobalHeader from "@/components/GlobalHeader.astro";
+import Footer from "@/components/toppage/Footer.astro";
+import { css } from "styled-system/css";
+import { styled } from "styled-system/jsx";
+
+interface Props {
+  message: string;
+  title: string;
+}
+
+const { message, title } = Astro.props as Props;
+
+const Body = styled("body", {
+  base: {
+    maxWidth: "100vw",
+    display: "grid",
+    gridTemplateRows: "auto 1fr",
+    alignItems: "start",
+    background: "web.system.color.impression.tertiary",
+  },
+});
+---
+
+<Html title={title}>
+  <Body>
+    <GlobalHeader isToppage />
+    <div
+      class={css({
+        maxWidth: "422px",
+        mx: "auto",
+        p: "sd.system.dimension.spacing.extraLarge",
+        display: "flex",
+        flexDirection: "column",
+        mb: "sd.system.dimension.spacing.threeExtraLarge",
+        alignItems: "center",
+        justifyContent: "center",
+        minHeight: "50vh",
+        gap: "sd.system.dimension.spacing.twoExtraLarge",
+        sm: {
+          gap: "sd.system.dimension.spacing.threeExtraLarge",
+        },
+      })}
+    >
+      <slot />
+
+      <p
+        class={css({
+          color: "web.system.color.impression.onTertiary",
+          fontSize: "sd.reference.typography.scale.expanded.medium",
+          sm: {
+            fontSize: "sd.reference.typography.scale.expanded.large",
+          },
+        })}
+      >
+        <Fragment set:html={message} />
+      </p>
+    </div>
+    <Footer />
+  </Body>
+</Html>
