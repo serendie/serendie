@@ -21,10 +21,10 @@ export const TitleShape: React.FC<
       )}
       {...props}
     >
-      <g clip-path="url(#clip0_13566_18712)">
+      <g clipPath="url(#clip0_13566_18712)">
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M142.5 22.4844C209.05 22.4844 263 76.4341 263 142.984H285C285 64.298 221.224 0.507389 142.543 0.484375L142.457 0.484375C63.7906 0.507384 0.0230157 64.275 6.22887e-06 142.942C2.07577e-06 142.956 -6.20599e-10 142.97 0 142.984H22C22 76.4341 75.9497 22.4844 142.5 22.4844Z"
         />
       </g>
