@@ -144,7 +144,7 @@ export const BackgroundShape1: React.FC = () => {
               r="696.421"
               transform="rotate(53.66 634.136 149.05)"
               stroke="#8FAEFE"
-              stroke-width="380"
+              strokeWidth="380"
             />
           </g>
         </motion.g>
@@ -224,7 +224,7 @@ export const BackgroundShape2: React.FC = () => {
               r="750.603"
               transform="rotate(-60 573.342 776.691)"
               stroke="#9CE6EC"
-              stroke-width="50"
+              strokeWidth="50"
             />
           </g>
         </motion.g>
@@ -304,7 +304,7 @@ export const BackgroundShape3: React.FC = () => {
               r="380.529"
               transform="rotate(-123.54 1215.23 469.384)"
               stroke="#8FAEFE"
-              stroke-width="180"
+              strokeWidth="180"
             />
           </g>
         </motion.g>
@@ -384,7 +384,7 @@ export const BackgroundShape4: React.FC = () => {
               r="855.212"
               transform="rotate(124.12 1041.19 591.19)"
               stroke="#C3EFF4"
-              stroke-width="450"
+              strokeWidth="450"
             />
           </g>
         </motion.g>
@@ -465,7 +465,7 @@ export const BackgroundShape5: React.FC = () => {
               r="829.743"
               transform="rotate(-67.1058 389.713 980.712)"
               stroke="#8FAEFE"
-              stroke-width="300"
+              strokeWidth="300"
             />
           </g>
         </motion.g>

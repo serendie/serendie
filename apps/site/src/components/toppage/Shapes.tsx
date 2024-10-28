@@ -1,6 +1,8 @@
 import { css, cx, sva } from "styled-system/css";
 import { cubicBezier, motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
+import { useAtom } from "jotai";
+import { themeAtom } from "../ThemeSelector";
 
 const shapePositions: {
   size: {
@@ -161,8 +163,8 @@ const shapePositions: {
 ];
 
 export const Shapes = () => {
-  const styles = shapeDefaultStyles();
   const isExpanded = useMediaQuery({ query: "(min-width: 48rem)" });
+  const [theme] = useAtom(themeAtom);
 
   return (
     <div
@@ -175,41 +177,52 @@ export const Shapes = () => {
           width: "37.222vw",
         },
       })}
+      style={{
+        ...({
+          "--mixBlendMode":
+            "kurikawa" === theme || "sumire" === theme ? "screen" : "multiply",
+        } as React.CSSProperties),
+      }}
     >
       {[Shape1, Shape2, Shape3, Shape4, Shape5, Shape6].map(
-        (Component, index) => (
-          <motion.div
-            key={index}
-            className={cx("shape-" + index, styles.shape)}
-            style={{
-              width: shapePositions[index].size.width,
-              height: shapePositions[index].size.height,
-            }}
-            initial={
-              isExpanded
-                ? {
-                    top: shapePositions[index].initial.top,
-                    left: shapePositions[index].initial.left,
-                    rotate: shapePositions[index].initial.rotate,
-                  }
-                : {
-                    top: shapePositions[index].initial_compact.top,
-                    left: shapePositions[index].initial_compact.left,
-                    rotate: shapePositions[index].initial_compact.rotate,
-                  }
-            }
-            animate={{
-              top: shapePositions[index].animate.top,
-              left: shapePositions[index].animate.left,
-              rotate: shapePositions[index].animate.rotate,
-            }}
-            transition={transition({
-              delay: shapePositions[index].transition.delay,
-            })}
-          >
-            <Component />
-          </motion.div>
-        )
+        (Component, index) => {
+          const styles = shapeDefaultStyles({
+            mixBlendMode: index === 3 ? "normal" : undefined,
+          });
+          return (
+            <motion.div
+              key={index}
+              className={cx("shape-" + index, styles.shape)}
+              style={{
+                width: shapePositions[index].size.width,
+                height: shapePositions[index].size.height,
+              }}
+              initial={
+                isExpanded
+                  ? {
+                      top: shapePositions[index].initial.top,
+                      left: shapePositions[index].initial.left,
+                      rotate: shapePositions[index].initial.rotate,
+                    }
+                  : {
+                      top: shapePositions[index].initial_compact.top,
+                      left: shapePositions[index].initial_compact.left,
+                      rotate: shapePositions[index].initial_compact.rotate,
+                    }
+              }
+              animate={{
+                top: shapePositions[index].animate.top,
+                left: shapePositions[index].animate.left,
+                rotate: shapePositions[index].animate.rotate,
+              }}
+              transition={transition({
+                delay: shapePositions[index].transition.delay,
+              })}
+            >
+              <Component />
+            </motion.div>
+          );
+        }
       )}
     </div>
   );
@@ -243,9 +256,18 @@ const shapeDefaultStyles = sva({
       zIndex: "1",
       transformOrigin: "center center",
       pointerEvents: "none",
-      mixBlendMode: "multiply",
+      mixBlendMode: "var(--mixBlendMode)",
       width: "100%",
       height: "100%",
+    },
+  },
+  variants: {
+    mixBlendMode: {
+      normal: {
+        shape: {
+          mixBlendMode: "normal",
+        },
+      },
     },
   },
 });

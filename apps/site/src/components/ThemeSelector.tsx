@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { atom, useAtom } from "jotai";
 
 import tokens from "@serendie/design-token/panda";
 import { ThemeSelect } from "./ThemeSelect";
@@ -18,8 +19,10 @@ const themeItems = [
   })),
 ];
 
+export const themeAtom = atom<"" | string>("");
+
 export const ThemeSelector = () => {
-  const [theme, setTheme] = useState("");
+  const [theme, setTheme] = useAtom(themeAtom);
 
   useEffect(() => {
     if (!theme) {
