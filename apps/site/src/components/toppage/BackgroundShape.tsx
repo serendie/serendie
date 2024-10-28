@@ -112,7 +112,7 @@ export const BackgroundShape1: React.FC = () => {
         })}
       >
         <motion.g
-          clip-path="url(#clip1_13561_18660)"
+          clipPath="url(#clip1_13561_18660)"
           initial={{
             opacity: 0,
             rotate: -145,
@@ -137,14 +137,14 @@ export const BackgroundShape1: React.FC = () => {
             y: y,
           }}
         >
-          <g clip-path="url(#clip2_13561_18660)">
+          <g clipPath="url(#clip2_13561_18660)">
             <circle
               cx="634.136"
               cy="149.05"
               r="696.421"
               transform="rotate(53.66 634.136 149.05)"
               stroke="#8FAEFE"
-              stroke-width="380"
+              strokeWidth="380"
             />
           </g>
         </motion.g>
@@ -211,20 +211,20 @@ export const BackgroundShape2: React.FC = () => {
         })}
       >
         <motion.g
-          clip-path="url(#clip1_13561_18670)"
+          clipPath="url(#clip1_13561_18670)"
           style={{
             y,
             rotate,
           }}
         >
-          <g clip-path="url(#clip2_13561_18670)">
+          <g clipPath="url(#clip2_13561_18670)">
             <circle
               cx="573.342"
               cy="776.691"
               r="750.603"
               transform="rotate(-60 573.342 776.691)"
               stroke="#9CE6EC"
-              stroke-width="50"
+              strokeWidth="50"
             />
           </g>
         </motion.g>
@@ -291,20 +291,20 @@ export const BackgroundShape3: React.FC = () => {
         })}
       >
         <motion.g
-          clip-path="url(#clip1_13561_18676)"
+          clipPath="url(#clip1_13561_18676)"
           style={{
             y: y,
             rotate: rotate,
           }}
         >
-          <g clip-path="url(#clip2_13561_18676)">
+          <g clipPath="url(#clip2_13561_18676)">
             <circle
               cx="1215.23"
               cy="469.384"
               r="380.529"
               transform="rotate(-123.54 1215.23 469.384)"
               stroke="#8FAEFE"
-              stroke-width="180"
+              strokeWidth="180"
             />
           </g>
         </motion.g>
@@ -371,20 +371,20 @@ export const BackgroundShape4: React.FC = () => {
         })}
       >
         <motion.g
-          clip-path="url(#clip1_13561_18686)"
+          clipPath="url(#clip1_13561_18686)"
           style={{
             y: y,
             rotate: rotate,
           }}
         >
-          <g clip-path="url(#clip2_13561_18686)">
+          <g clipPath="url(#clip2_13561_18686)">
             <circle
               cx="1041.19"
               cy="591.19"
               r="855.212"
               transform="rotate(124.12 1041.19 591.19)"
               stroke="#C3EFF4"
-              stroke-width="450"
+              strokeWidth="450"
             />
           </g>
         </motion.g>
@@ -452,20 +452,20 @@ export const BackgroundShape5: React.FC = () => {
         })}
       >
         <motion.g
-          clip-path="url(#clip1_13561_18691)"
+          clipPath="url(#clip1_13561_18691)"
           style={{
             y: y,
             rotate: rotate,
           }}
         >
-          <g clip-path="url(#clip2_13561_18691)">
+          <g clipPath="url(#clip2_13561_18691)">
             <circle
               cx="389.713"
               cy="980.712"
               r="829.743"
               transform="rotate(-67.1058 389.713 980.712)"
               stroke="#8FAEFE"
-              stroke-width="300"
+              strokeWidth="300"
             />
           </g>
         </motion.g>
