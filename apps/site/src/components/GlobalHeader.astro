@@ -51,7 +51,6 @@ const HeaderContainer = styled("div", {
 const H1 = styled("h1", {
   base: {
     textStyle: "sd.system.typography.title.large_expanded",
-    color: "web.system.color.component.onSurface",
   },
 });
 
@@ -78,15 +77,15 @@ const MenuButton = styled("div", {
 
 const Link = styled("a", {
   base: {
-    transition: "opacity 0.3s",
+    transition: "color 0.3s",
     _hover: {
-      opacity: 0.4,
+      color: 'web.system.color.impression.primary',
     },
   },
   variants: {
     active: {
       true: {
-        opacity: 0.4,
+        color: 'web.system.color.impression.primary',
       },
     },
   },
