@@ -85,8 +85,12 @@ export const PageLinks = (props: PageFooterProps) => (
               borderRadius: "sd.system.dimension.radius.extraLarge",
               py: "sd.system.dimension.spacing.extraLarge",
               px: "sd.system.dimension.spacing.twoExtraLarge",
-              bg: "#EFEEEB", //TODO: use color token
+              bg: "sd.reference.color.scale.gray.100",
               textStyle: "sd.system.typography.body.large_compact",
+              transition: "background 0.3s",
+              _hover: {
+                bg: "sd.system.color.interaction.selectedSurface",
+              },
             })}
           >
             <span>
