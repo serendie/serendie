@@ -51,7 +51,7 @@ const HeaderContainer = styled("div", {
 const H1 = styled("h1", {
   base: {
     textStyle: "sd.system.typography.title.large_expanded",
-    color: "web.system.color.component.background.onSurface",
+    color: "web.system.color.component.onSurface",
   },
 });
 
@@ -86,7 +86,7 @@ const Link = styled("a", {
   variants: {
     active: {
       true: {
-        borderBottom: "solid",
+        opacity: 0.4,
       },
     },
   },
@@ -109,12 +109,7 @@ const menuItems = [
       {
         menuItems.map((item) => (
           <Link
-            active={
-              // 前方一致で判定
-              Astro.url.pathname.match(new RegExp(`^${item.href}`))
-                ? true
-                : false
-            }
+            active={Astro.url.pathname.startsWith(item.href)}
             href={item.href}
           >
             {item.text}
