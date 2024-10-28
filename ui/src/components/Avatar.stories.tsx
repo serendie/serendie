@@ -7,7 +7,7 @@ const meta: Meta<typeof Avatar> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3661-24552",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=3661-24552",
       props: {
         size: figma.enum("Size", {
           Small: "small",

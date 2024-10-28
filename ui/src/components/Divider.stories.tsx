@@ -42,7 +42,7 @@ export const Vertical: Story = {
 // Horizontal/VerticalがFigma上では別コンポーネント、Reactでは共通コンポーネントのため、例外的にfigma.connect()を利用
 figma.connect(
   Divider,
-  "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3122-30116",
+  "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=3122-30116",
   {
     props: {
       color: figma.enum("Color", {
@@ -56,7 +56,7 @@ figma.connect(
 );
 figma.connect(
   Divider,
-  "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3122-30141",
+  "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=3122-30141",
   {
     props: {
       color: figma.enum("Color", {

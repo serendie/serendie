@@ -9,7 +9,7 @@ const meta: Meta<typeof ModalDialog> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3311-28000",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=3311-28000",
       props: {
         title: figma.string("Title"),
         description: figma.string("Description"),

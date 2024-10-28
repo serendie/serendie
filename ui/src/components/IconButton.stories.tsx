@@ -7,7 +7,7 @@ const meta: Meta<typeof IconButton> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3107-13402",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=3107-13402",
       props: {
         shape: figma.enum("Shape", {
           Circle: "circle",

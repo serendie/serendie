@@ -7,7 +7,7 @@ const meta: Meta<typeof TextField> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=5113-4273",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=5113-4273",
       props: {
         label: figma.string("Label"),
         disabled: figma.enum("State", { Disabled: true }),

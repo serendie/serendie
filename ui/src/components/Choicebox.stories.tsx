@@ -8,7 +8,7 @@ const meta: Meta<typeof Choicebox> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=6816-45671",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=6816-45671",
       props: {
         type: figma.enum("Type", {
           Radio: "radio",

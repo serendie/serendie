@@ -7,7 +7,7 @@ const meta: Meta<typeof TextArea> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=1406-17592",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=1406-17592",
       props: {
         label: figma.string("Label"),
         placeholder: figma.string("Placeholder"),

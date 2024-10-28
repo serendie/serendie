@@ -15,7 +15,7 @@ const meta: Meta<typeof Select> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3154-26212",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=3154-26212",
       props: {
         label: figma.string("Label"),
         placeholder: figma.string("Placeholder"),

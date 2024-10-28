@@ -7,7 +7,7 @@ const meta: Meta<typeof Banner> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=4546-10391",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=4546-10391",
       props: {
         title: figma.string("Title"),
         description: figma.string("Description"),

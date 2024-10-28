@@ -9,7 +9,7 @@ const meta: Meta<typeof Toast> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3256-16094",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=3256-16094",
       props: {
         title: figma.string("Title"),
         type: figma.enum("Type", {

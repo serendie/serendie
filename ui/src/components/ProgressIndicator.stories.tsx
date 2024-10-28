@@ -7,7 +7,7 @@ const meta: Meta<typeof ProgressIndicator> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=1322-31566",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=1322-31566",
       props: {
         size: figma.enum("Size", {
           Small: "small",

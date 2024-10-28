@@ -8,7 +8,7 @@ const meta: Meta<typeof Button> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-Design-System?node-id=3066-14086",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=3066-14086",
       props: {
         styleType: figma.enum("Type", {
           Filled: "filled",
