@@ -12,10 +12,14 @@ const Ul = styled("ul", {
       borderRadius: "sd.system.dimension.radius.large",
       px: "sd.system.dimension.spacing.medium",
       py: "sd.system.dimension.spacing.small",
-      bg: "sd.reference.color.scale.gray.100",
-      textStyle: "sd.system.typography.body.small",
+      textStyle: "sd.system.typography.body.small_compact",
+      transition: "background-color 0.3s",
       _highlighted: {
-        fontWeight: "700",
+        bg: "sd.reference.color.scale.gray.100",
+        fontWeight: "sd.reference.typography.fontWeight.bold",
+      },
+      _hover: {
+        fontWeight: "sd.reference.typography.fontWeight.bold",
       },
     },
   },
