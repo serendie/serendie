@@ -1,0 +1,56 @@
+---
+import "@/index.css";
+import { getCollection, type CollectionEntry } from "astro:content";
+import Global from "./Global.astro";
+import { SideMenu } from "../components/SideMenu";
+import { Main, MainGrid } from "@/components/Main";
+import PageHeader from "@/components/PageHeader.astro";
+import { IndexPageHeader } from "@/components/IndexPageHeader";
+import { css } from "styled-system/css";
+import { PageMain } from "@/components/PageLayout";
+
+interface Props {
+  data: CollectionEntry<"components">["data"];
+}
+
+const { data } = Astro.props;
+const components = await getCollection("components");
+---
+
+<Global title={data.title}>
+  <MainGrid>
+    <SideMenu
+      links={components.map((component) => ({
+        href: `/components/${component.slug}`,
+        title: component.data.title,
+        isActive: component.data.title === data.title,
+      }))}
+      client:idle
+    />
+    <Main
+      className={css({
+        display: "grid",
+        gridTemplateColumns: "repeat(8, 1fr)",
+        columnGap: "40px",
+        mdDown: {
+          gridTemplateColumns: "1fr",
+          px: "24px",
+        },
+      })}
+    >
+      <PageHeader hideBorder={Astro.url.pathname === "/components"} links={[]}>
+        <IndexPageHeader
+          title={data.title}
+          subTitle={data.componentName}
+          illustType="D"
+          illustSize={data.illustSize}
+          lastUpdated={data.lastUpdated}
+          description={data.description}
+        />
+      </PageHeader>
+      <PageMain>
+        <slot />
+      </PageMain>
+    </Main>
+  </MainGrid>
+</Global>

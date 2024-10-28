@@ -51,6 +51,7 @@ type PageFooterProps = {
     };
   }[];
   currentSlug: string;
+  column?: "span1" | "span2";
 };
 
 export const PageLinks = (props: PageFooterProps) => (
@@ -59,6 +60,8 @@ export const PageLinks = (props: PageFooterProps) => (
       ml: "0 !important",
       display: "grid",
       gap: "sd.system.dimension.spacing.extraLarge",
+      gridTemplateColumns:
+        props.column === "span2" ? "repeat(2, 1fr)" : undefined,
       marginInlineStart: "0",
       "& li": {
         listStyleType: "none",
@@ -82,8 +85,12 @@ export const PageLinks = (props: PageFooterProps) => (
               borderRadius: "sd.system.dimension.radius.extraLarge",
               py: "sd.system.dimension.spacing.extraLarge",
               px: "sd.system.dimension.spacing.twoExtraLarge",
-              bg: "#EFEEEB", //TODO: use color token
+              bg: "sd.reference.color.scale.gray.100",
               textStyle: "sd.system.typography.body.large_compact",
+              transition: "background 0.3s",
+              _hover: {
+                bg: "sd.system.color.interaction.selectedSurface",
+              },
             })}
           >
             <span>
@@ -108,7 +115,7 @@ export const PageLinks = (props: PageFooterProps) => (
               <g clipPath="url(#clip0_11335_3329)">
                 <path
                   d="M21.5 12.4989L14.827 19.1719L13.7827 18.1276L18.6462 13.2489L2.49048 13.2489L2.49048 11.7489L18.6365 11.7489L13.7577 6.87012L14.827 5.82587L21.5 12.4989Z"
-                  fill="#073165" //TODO: use color token
+                  fill="currentColor"
                 />
               </g>
               <defs>

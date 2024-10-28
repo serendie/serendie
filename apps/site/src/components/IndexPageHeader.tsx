@@ -17,6 +17,7 @@ const illustMap = {
 
 type IndexPageHeaderProps = {
   title: string;
+  subTitle?: string;
   description?: string;
   lastUpdated?: string;
   illustType?: type;
@@ -26,6 +27,7 @@ type IndexPageHeaderProps = {
 const IndexPageHeader_ = ({
   illustType,
   title,
+  subTitle,
   description,
   lastUpdated,
   illustSize = "small",
@@ -53,13 +55,27 @@ const IndexPageHeader_ = ({
       <div>
         <h1
           className={css({
+            fontWeight: "sd.reference.typography.fontWeight.regular",
             textStyle: "sd.system.typography.display.medium_compact",
-            mdDown: {
+            fontSize: illustSize === "small" ? "48px" : undefined,
+            smDown: {
               textStyle: "sd.system.typography.display.small_compact",
+              fontSize: illustSize === "large" ? "42px" : undefined,
             },
           })}
         >
           {title}
+          {subTitle && (
+            <span
+              className={css({
+                display: "block",
+                fontSize: "sd.reference.typography.scale.compact.large",
+                fontWeight: "sd.reference.typography.fontWeight.bold",
+              })}
+            >
+              {subTitle}
+            </span>
+          )}
         </h1>
         {description && <p>{description}</p>}
         {lastUpdated && (

@@ -1,5 +1,25 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import ComponentLayout from "@/layouts/ComponentLayout.astro";
+import { getCollection } from "astro:content";
+import { PageLinks } from "@/components/PageLayout";
+export const components = await getCollection("components");
 ---
 
-<Layout title="Components"> Components </Layout>
+<ComponentLayout
+  data={{
+    title: "Components",
+    componentName: "",
+    description: "",
+    lastUpdated: "",
+    illustSize: "large",
+  }}
+>
+  <PageLinks
+    siblings={components.map((c) => ({
+      slug: `components/${c.slug}`,
+      data: c.data,
+    }))}
+    currentSlug={""}
+    column="span2"
+  />
+</ComponentLayout>

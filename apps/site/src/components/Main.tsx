@@ -70,13 +70,3 @@ export const Main = styled("main", {
     },
   },
 });
-
-export const MainTitle = styled("h1", {
-  base: {
-    textStyle: "sd.system.typography.headline.large_expanded",
-    mb: "sd.system.dimension.spacing.medium",
-    mdDown: {
-      px: "24px",
-    },
-  },
-});
