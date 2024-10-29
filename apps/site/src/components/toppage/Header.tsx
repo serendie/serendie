@@ -143,7 +143,7 @@ export const Header: React.FC = () => {
 
           <HeaderDescription>
             Serendie Design
-            Systemは、多様な事業と人々をつなぎ、新たな価値を生み出すための三菱電機によるオープンソースデザインシステムです。
+            Systemは、多様な事業と人々をつなぎ、新たな価値を生み出すための三菱電機によるオープンなデザインシステムです。
           </HeaderDescription>
 
           <a href="/get-started">
