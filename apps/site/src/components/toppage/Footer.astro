@@ -34,14 +34,14 @@ const FooterContainer = styled("div", {
     },
   },
 });
-const FooterTitle = styled("div", {
+const FooterTitle = styled("h1", {
   base: {
     textStyle: "sd.system.typography.headline.large_expanded",
     fontSize: "24px",
     fontWeight: "bold",
-    mr: 32,
     mb: 40,
     expanded: {
+      mr: 32,
       textStyle: "sd.system.typography.headline.large_expanded",
     },
   },
@@ -84,12 +84,27 @@ const FooterLinksLi = styled("li", {
 
 const FooterCopyright = styled("div", {
   base: {
-    textAlign: "left",
-    mt: 160,
+    display: "flex",
+    flexDirection: "column",
+    gap: '16px',
+    mt: '100px',
     expanded: {
-      textAlign: "right",
-      mt: 80,
+      flexDirection: "row",
+      alignItems: "center",
+      gap: '40px',
+      mt: '80px'
     },
+    "& ul": {
+      textStyle: "sd.system.typography.body.extraSmall_compact",
+      fontSize: "14px",
+      display: "flex"
+    },
+    "& ul li": {
+      mr: "16px"
+    },
+    "& a:hover": {
+      opacity: 0.6,
+    }
   },
 });
 
@@ -199,7 +214,9 @@ const footerLink = [
 
 <FooterWrapper>
   <FooterContainer>
-    <FooterTitle><h1><a href='/'>Serendie Design System</a></h1></FooterTitle>
+    <a href='/'>
+      <FooterTitle>Serendie Design System</FooterTitle>
+    </a>
     <FooterLinks>
       {
         footerLink.map((link) => (
@@ -217,5 +234,20 @@ const footerLink = [
       }
     </FooterLinks>
   </FooterContainer>
-  <FooterCopyright>© Mitsubishi Electric Corporation</FooterCopyright>
+  <FooterCopyright>
+    <span>
+      © Mitsubishi Electric Corporation
+    </span>
+    <ul>
+      <li>
+        <a href='/'>利用規約</a>
+      </li>
+      <li>
+        |
+      </li>
+      <li>
+        <a href='https://x.com/SerendieDesign' target="_blank">ご意見・お問い合わせ</a>
+      </li>
+    </ul>
+  </FooterCopyright>
 </FooterWrapper>
