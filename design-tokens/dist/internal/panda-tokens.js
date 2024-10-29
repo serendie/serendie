@@ -43,6 +43,9 @@ export default {
                   },
                   "surfaceDimmest": {
                     "value": "#AFAEAA"
+                  },
+                  "textHighlight": {
+                    "value": "#D9F6FC"
                   }
                 },
                 "mvShape": {
@@ -165,6 +168,9 @@ export default {
                   },
                   "surfaceDimmest": {
                     "value": "#AFAEAA"
+                  },
+                  "textHighlight": {
+                    "value": "#FAECE6"
                   }
                 },
                 "mvShape": {
@@ -287,6 +293,9 @@ export default {
                   },
                   "surfaceDimmest": {
                     "value": "#AFAEAA"
+                  },
+                  "textHighlight": {
+                    "value": "#F4ECF6"
                   }
                 },
                 "mvShape": {
@@ -409,6 +418,9 @@ export default {
                   },
                   "surfaceDimmest": {
                     "value": "#AFAEAA"
+                  },
+                  "textHighlight": {
+                    "value": "#F9EBF0"
                   }
                 },
                 "mvShape": {
@@ -530,6 +542,9 @@ export default {
             },
             "surfaceDimmest": {
               "value": "#AFAEAA"
+            },
+            "textHighlight": {
+              "value": "#EFF2FC"
             }
           },
           "mvShape": {

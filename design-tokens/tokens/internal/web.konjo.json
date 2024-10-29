@@ -44,6 +44,10 @@
           "surfaceDimmest": {
             "$type": "color",
             "$value": "{sd.reference.color.scale.gray.400}"
+          },
+          "textHighlight": {
+            "$type": "color",
+            "$value": "{sd.reference.color.scale.blue.100}"
           }
         },
         "mvShape": {
