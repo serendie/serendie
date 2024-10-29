@@ -13,7 +13,7 @@ export const StorybookButton: React.FC<StorybookButtonProps> = ({
       // TODO: ButtonLinkとかにして、<a>でリンクするようにしたい
       onClick={() => window.open(href, "_blank")}
       size={"small"}
-      styleType={"rectangle"}
+      styleType={"outlined"}
       rightIcon={<SvgIcon icon={"arrow_blank"} />}
     >
       Storybook

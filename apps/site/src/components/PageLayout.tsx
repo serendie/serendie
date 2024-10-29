@@ -31,7 +31,12 @@ export const PageMain = styled("div", {
 });
 
 export const PageSection = styled("section", {
-  base: { mb: "sd.system.dimension.spacing.fiveExtraLarge" },
+  base: {
+    mb: "sd.system.dimension.spacing.fiveExtraLarge",
+    "& img, svg, figure": {
+      borderRadius: "sd.system.dimension.radius.large",
+    },
+  },
 });
 
 export const PageAside = styled("aside", {

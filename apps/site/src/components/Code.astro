@@ -43,7 +43,7 @@ const StyledButton = styled("button", {
 ---
 
 <Container data-code-container>
-  <Flex justifyContent={"space-between"} mb="sd.system.dimension.spacing.small">
+  <Flex justifyContent={"space-between"} alignItems={"center"} mb="sd.system.dimension.spacing.small">
     <SubTitle>{title}</SubTitle>
     {storyPath && <StorybookButton storyPath={storyPath} client:load />}
   </Flex>
