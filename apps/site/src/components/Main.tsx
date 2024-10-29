@@ -63,10 +63,11 @@ export const Main = styled("main", {
     },
     "& strong": {
       fontWeight: "sd.reference.typography.fontWeight.regular",
-      color: "web.system.color.impression.onTertiary",
+      color: "web.system.color.impression.onSurface",
       px: "2px",
-      py: "1px",
-      backgroundColor: "web.system.color.impression.tertiary",
+      pb: "1px",
+      pt: "2.5px",
+      backgroundColor: "web.system.color.component.textHighlight",
     },
   },
 });
