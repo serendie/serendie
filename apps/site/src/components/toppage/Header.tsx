@@ -50,10 +50,10 @@ const HeaderTitle = styled("h1", {
     textStyle: "sd.system.typography.title.large_expanded",
     fontSize: "32px",
     fontWeight: "400",
+    maxW: "410px",
     expanded: {
       fontSize: "48px",
       gap: "sd.system.dimension.spacing.twoExtraSmall",
-      maxW: "410px",
     },
   },
 });
@@ -64,9 +64,9 @@ const HeaderDescription = styled("p", {
     mt: "sd.system.dimension.spacing.medium",
     mb: "sd.system.dimension.spacing.extraLarge",
     fontWeight: "400",
+    maxW: "410px",
     expanded: {
       textStyle: "sd.system.typography.title.large_expanded",
-      maxW: "410px",
     },
   },
 });
