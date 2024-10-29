@@ -9,7 +9,6 @@ import { TitleShapeThin } from "./TitleShapeThin";
 type LinkContentProps = {
   content: {
     titleEn: string;
-    titleJa: string;
     description: string;
     links: { title: string; href: string; illustration: string }[];
   }[];
