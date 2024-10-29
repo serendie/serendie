@@ -44,7 +44,7 @@ const IndexPageHeader_ = ({
         gap: "sd.reference.dimension.scale.12",
         mb: "sd.reference.dimension.scale.17",
         color: "web.system.color.component.onSurface",
-        smDown: {
+        mdDown: {
           gridTemplateColumns: "1fr",
           gap: "sd.system.dimension.spacing.threeExtraLarge",
           mt: "sd.system.dimension.spacing.twoExtraLarge",
@@ -58,7 +58,7 @@ const IndexPageHeader_ = ({
             fontWeight: "sd.reference.typography.fontWeight.regular",
             textStyle: "sd.system.typography.display.medium_compact",
             fontSize: illustSize === "small" ? "48px" : undefined,
-            smDown: {
+            mdDown: {
               textStyle: "sd.system.typography.display.small_compact",
               fontSize: illustSize === "large" ? "42px" : undefined,
             },
