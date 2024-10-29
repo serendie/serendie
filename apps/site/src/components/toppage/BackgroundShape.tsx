@@ -16,13 +16,13 @@ export const BackgroundShape: React.FC = () => {
   return (
     <>
       <div
+        data-name="top-background-shape"
         className={css({
           position: "absolute",
           top: "0",
           left: "50%",
           transform: "translateX(-50%)",
           zIndex: "-1",
-          mixBlendMode: "multiply",
           mx: "auto",
           width: "calc(100%)",
           maxW: "calc(1440px)",
@@ -44,11 +44,11 @@ export const BackgroundShape: React.FC = () => {
         ))}
       </div>
       <div
+        data-name="top-background-shape"
         className={css({
           position: "absolute",
           top: "0",
           zIndex: "-1",
-          mixBlendMode: "multiply",
           mx: "auto",
           width: "100%",
           maxW: "100%",
@@ -60,11 +60,12 @@ export const BackgroundShape: React.FC = () => {
         })}
       >
         {[
+          //Note: z-indexと命名が異なるので注意
           BackgroundShapeCompact1,
-          BackgroundShapeCompact2,
           BackgroundShapeCompact3,
-          BackgroundShapeCompact4,
+          BackgroundShapeCompact2,
           BackgroundShapeCompact5,
+          BackgroundShapeCompact4,
         ].map((Component, index) => (
           <Component key={index} />
         ))}
@@ -95,7 +96,6 @@ export const BackgroundShape1: React.FC = () => {
         zIndex: "-2",
         transformOrigin: "center center",
         pointerEvents: "none",
-        mixBlendMode: "multiply",
         "& svg": {
           overflow: "visible",
           width: "100%",
@@ -108,7 +108,6 @@ export const BackgroundShape1: React.FC = () => {
         xmlns="http://www.w3.org/2000/svg"
         className={css({
           stroke: "web.system.color.mvShape.background.arc.first",
-          mixBlendMode: "multiply",
         })}
       >
         <motion.g
@@ -143,7 +142,6 @@ export const BackgroundShape1: React.FC = () => {
               cy="149.05"
               r="696.421"
               transform="rotate(53.66 634.136 149.05)"
-              stroke="#8FAEFE"
               strokeWidth="380"
             />
           </g>
@@ -194,7 +192,6 @@ export const BackgroundShape2: React.FC = () => {
         zIndex: "-2",
         transformOrigin: "center center",
         pointerEvents: "none",
-        mixBlendMode: "multiply",
         "& svg": {
           overflow: "visible",
           width: "100%",
@@ -207,7 +204,6 @@ export const BackgroundShape2: React.FC = () => {
         xmlns="http://www.w3.org/2000/svg"
         className={css({
           stroke: "web.system.color.mvShape.background.arc.second",
-          mixBlendMode: "multiply",
         })}
       >
         <motion.g
@@ -223,7 +219,6 @@ export const BackgroundShape2: React.FC = () => {
               cy="776.691"
               r="750.603"
               transform="rotate(-60 573.342 776.691)"
-              stroke="#9CE6EC"
               strokeWidth="50"
             />
           </g>
@@ -274,7 +269,6 @@ export const BackgroundShape3: React.FC = () => {
         zIndex: "-2",
         transformOrigin: "center center",
         pointerEvents: "none",
-        mixBlendMode: "multiply",
         "& svg": {
           overflow: "visible",
           width: "100%",
@@ -287,7 +281,6 @@ export const BackgroundShape3: React.FC = () => {
         xmlns="http://www.w3.org/2000/svg"
         className={css({
           stroke: "web.system.color.mvShape.background.arc.third",
-          mixBlendMode: "multiply",
         })}
       >
         <motion.g
@@ -303,7 +296,6 @@ export const BackgroundShape3: React.FC = () => {
               cy="469.384"
               r="380.529"
               transform="rotate(-123.54 1215.23 469.384)"
-              stroke="#8FAEFE"
               strokeWidth="180"
             />
           </g>
@@ -354,7 +346,6 @@ export const BackgroundShape4: React.FC = () => {
         zIndex: "-2",
         transformOrigin: "center center",
         pointerEvents: "none",
-        mixBlendMode: "multiply",
         "& svg": {
           overflow: "visible",
           width: "100%",
@@ -367,7 +358,6 @@ export const BackgroundShape4: React.FC = () => {
         xmlns="http://www.w3.org/2000/svg"
         className={css({
           stroke: "web.system.color.mvShape.background.arc.fourth",
-          mixBlendMode: "multiply",
         })}
       >
         <motion.g
@@ -383,7 +373,6 @@ export const BackgroundShape4: React.FC = () => {
               cy="591.19"
               r="855.212"
               transform="rotate(124.12 1041.19 591.19)"
-              stroke="#C3EFF4"
               strokeWidth="450"
             />
           </g>
@@ -435,7 +424,6 @@ export const BackgroundShape5: React.FC = () => {
         zIndex: "-2",
         transformOrigin: "center center",
         pointerEvents: "none",
-        mixBlendMode: "multiply",
         "& svg": {
           overflow: "visible",
           width: "100%",
@@ -448,7 +436,6 @@ export const BackgroundShape5: React.FC = () => {
         xmlns="http://www.w3.org/2000/svg"
         className={css({
           stroke: "web.system.color.mvShape.background.arc.fifth",
-          mixBlendMode: "multiply",
         })}
       >
         <motion.g
@@ -464,7 +451,6 @@ export const BackgroundShape5: React.FC = () => {
               cy="980.712"
               r="829.743"
               transform="rotate(-67.1058 389.713 980.712)"
-              stroke="#8FAEFE"
               strokeWidth="300"
             />
           </g>
@@ -513,7 +499,6 @@ export const BackgroundShapeCompact1: React.FC = () => {
         zIndex: "-2",
         transformOrigin: "center center",
         pointerEvents: "none",
-        mixBlendMode: "multiply",
         scale: "1",
         top: "0",
         right: "0",
@@ -567,7 +552,6 @@ export const BackgroundShapeCompact1: React.FC = () => {
               cy="279.026"
               r="515"
               transform="rotate(45 -83.9727 279.026)"
-              stroke="#8FAEFE"
               strokeWidth="240"
             />
           </g>
@@ -624,7 +608,6 @@ export const BackgroundShapeCompact2: React.FC = () => {
         xmlns="http://www.w3.org/2000/svg"
         className={css({
           stroke: "web.system.color.mvShape.background.arc.second",
-          mixBlendMode: "multiply",
         })}
       >
         <motion.g
@@ -643,7 +626,6 @@ export const BackgroundShapeCompact2: React.FC = () => {
                 cy="454.461"
                 r="421"
                 transform="rotate(-15.0819 83.4606 454.461)"
-                stroke="#9CE6EC"
                 strokeWidth="48"
               />
             </g>
@@ -704,7 +686,6 @@ export const BackgroundShapeCompact3: React.FC = () => {
         xmlns="http://www.w3.org/2000/svg"
         className={css({
           stroke: "web.system.color.mvShape.background.arc.third",
-          mixBlendMode: "multiply",
         })}
       >
         <motion.g clipPath="url(#clip0_13517_19200)">
@@ -771,7 +752,6 @@ export const BackgroundShapeCompact4: React.FC = () => {
         position: "absolute",
         top: "263.547vh",
         width: "100%",
-        mixBlendMode: "multiply",
         left: "0",
         "& svg": {
           overflow: "visible",
@@ -788,7 +768,6 @@ export const BackgroundShapeCompact4: React.FC = () => {
         xmlns="http://www.w3.org/2000/svg"
         className={css({
           stroke: "web.system.color.mvShape.background.arc.fourth",
-          mixBlendMode: "multiply",
         })}
       >
         <motion.g clipPath="url(#clip0_13517_19209)">
@@ -856,7 +835,6 @@ export const BackgroundShapeCompact5: React.FC = () => {
         top: "384.236vh",
         width: "100%",
         left: "0",
-        mixBlendMode: "multiply",
       })}
       style={{
         y: y,
@@ -868,7 +846,6 @@ export const BackgroundShapeCompact5: React.FC = () => {
         xmlns="http://www.w3.org/2000/svg"
         className={css({
           stroke: "web.system.color.mvShape.background.arc.fifth",
-          mixBlendMode: "multiply",
         })}
       >
         <motion.g clipPath="url(#clip0_13517_19234)">
@@ -882,7 +859,6 @@ export const BackgroundShapeCompact5: React.FC = () => {
                 cy="911.86"
                 r="817.667"
                 transform="rotate(-50.6415 -326.14 911.86)"
-                stroke="#8FAEFE"
                 strokeWidth="300"
               />
             </g>

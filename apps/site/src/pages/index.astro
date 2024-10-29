@@ -18,7 +18,7 @@ const Container = styled("div", {
       px: "150px",
       lgDown: {
         px: "48px",
-      }
+      },
     },
   },
 });
@@ -122,14 +122,14 @@ const content = [
         title: "Check Box",
         href: "/components/check-box",
         illustration: "/assets/illustration/sample/illustration-1.svg",
-      }
+      },
     ],
   },
 ];
 ---
 
 <TopLayout>
-  <Header client:load/>
+  <Header client:load />
 
   <Container>
     <LinkContent content={content} client:idle />
@@ -139,4 +139,19 @@ const content = [
   </Container>
 
   <BackgroundShape client:idle />
+
+  <style is:global>
+    @layer utilities {
+      // テーマによってsvgを内包するdivのmix-blend-modeを変更
+      [data-name="top-background-shape"] > div {
+        mix-blend-mode: multiply;
+        [data-panda-theme="kurikawa"] & {
+          mix-blend-mode: normal;
+        }
+        [data-panda-theme="sumire"] & {
+          mix-blend-mode: normal;
+        }
+      }
+    }
+  </style>
 </TopLayout>
