@@ -51,6 +51,9 @@ export default {
                       "index": {
                         "value": "#00A3AF"
                       },
+                      "indexBorder": {
+                        "value": "#98E1C8"
+                      },
                       "extraBold": {
                         "value": "#98E1C8"
                       },
@@ -169,6 +172,9 @@ export default {
                     "arc": {
                       "index": {
                         "value": "#F49567"
+                      },
+                      "indexBorder": {
+                        "value": "#EDC18A"
                       },
                       "extraBold": {
                         "value": "#EDC18A"
@@ -289,6 +295,9 @@ export default {
                       "index": {
                         "value": "#CC9FD9"
                       },
+                      "indexBorder": {
+                        "value": "#BFCEFC"
+                      },
                       "extraBold": {
                         "value": "#BFCEFC"
                       },
@@ -408,6 +417,9 @@ export default {
                       "index": {
                         "value": "#EB4F8E"
                       },
+                      "indexBorder": {
+                        "value": "#F7C6B0"
+                      },
                       "extraBold": {
                         "value": "#F7C6B0"
                       },
@@ -525,6 +537,9 @@ export default {
               "arc": {
                 "index": {
                   "value": "#428CFE"
+                },
+                "indexBorder": {
+                  "value": "#BFCEFC"
                 },
                 "extraBold": {
                   "value": "#BFCEFC"

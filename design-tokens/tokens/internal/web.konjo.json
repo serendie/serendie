@@ -53,6 +53,10 @@
                 "$type": "color",
                 "$value": "{sd.reference.color.scale.blue.500}"
               },
+              "indexBorder": {
+                "$type": "color",
+                "$value": "{sd.reference.color.scale.blue.300}"
+              },
               "extraBold": {
                 "$type": "color",
                 "$value": "{sd.reference.color.scale.blue.300}"
