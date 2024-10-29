@@ -56,13 +56,21 @@ const ShowcaseImageContainer = styled("div", {
 export const ShowcaseCarouselWrapper: React.FC = () => {
   return (
     <ShowcaseCarousel>
-      {Array.from({ length: 3 }).map((_, index) => (
-        <ShowcaseImageWrapper key={index}>
-          <ShowcaseImageContainer>
-            <img src={`https://picsum.photos/seed/${index}/728/468`} />
-          </ShowcaseImageContainer>
-        </ShowcaseImageWrapper>
-      ))}
+      <ShowcaseImageWrapper key={1}>
+        <ShowcaseImageContainer>
+          <img src="/assets/pages/top/case1.png" alt="showcase" />
+        </ShowcaseImageContainer>
+      </ShowcaseImageWrapper>
+      <ShowcaseImageWrapper key={2}>
+        <ShowcaseImageContainer>
+          <img src="/assets/pages/top/case2.png" alt="showcase" />
+        </ShowcaseImageContainer>
+      </ShowcaseImageWrapper>
+      <ShowcaseImageWrapper key={3}>
+        <ShowcaseImageContainer>
+          <img src="/assets/pages/top/case3.png" alt="showcase" />
+        </ShowcaseImageContainer>
+      </ShowcaseImageWrapper>
     </ShowcaseCarousel>
   );
 };
