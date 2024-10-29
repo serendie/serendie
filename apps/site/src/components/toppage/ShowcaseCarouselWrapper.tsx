@@ -34,7 +34,7 @@ const ShowcaseImageContainer = styled("div", {
       display: "block",
       width: "calc(100% - 2px)",
       height: "calc(100% - 2px)",
-      bg: "rgba(0, 0, 0, 0.5)",
+      bg: "rgba(0, 0, 0, 0.1)",
       top: 1,
       left: 1,
       opacity: 0,
@@ -43,6 +43,11 @@ const ShowcaseImageContainer = styled("div", {
     _hover: {
       _before: {
         opacity: 1,
+      },
+    },
+    expanded: {
+      _before: {
+        display: "none",
       },
     },
   },
