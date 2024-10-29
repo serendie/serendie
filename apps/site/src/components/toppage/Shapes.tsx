@@ -1,8 +1,6 @@
 import { css, cx, sva } from "styled-system/css";
 import { cubicBezier, motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
-import { useAtom } from "jotai";
-import { themeAtom } from "../ThemeSelector";
 
 const shapePositions: {
   size: {
@@ -164,7 +162,6 @@ const shapePositions: {
 
 export const Shapes = () => {
   const isExpanded = useMediaQuery({ query: "(min-width: 48rem)" });
-  const [theme] = useAtom(themeAtom);
 
   return (
     <div
@@ -177,12 +174,6 @@ export const Shapes = () => {
           width: "37.222vw",
         },
       })}
-      style={{
-        ...({
-          "--mixBlendMode":
-            "kurikawa" === theme || "sumire" === theme ? "screen" : "multiply",
-        } as React.CSSProperties),
-      }}
     >
       {[Shape1, Shape2, Shape3, Shape4, Shape5, Shape6].map(
         (Component, index) => {
@@ -256,9 +247,15 @@ const shapeDefaultStyles = sva({
       zIndex: "1",
       transformOrigin: "center center",
       pointerEvents: "none",
-      mixBlendMode: "var(--mixBlendMode)",
+      mixBlendMode: "multiply",
       width: "100%",
       height: "100%",
+      "[data-panda-theme='kurikawa'] &": {
+        mixBlendMode: "screen",
+      },
+      "[data-panda-theme='sumire'] &": {
+        mixBlendMode: "screen",
+      },
     },
   },
   variants: {
