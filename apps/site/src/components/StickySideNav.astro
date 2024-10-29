@@ -54,14 +54,14 @@ const Ul = styled("ul", {
         }
       });
     },
-    { threshold: 0.5 }
+    { threshold: 0.2 }
   );
 
   const nav = document.getElementById("StickySideNav");
   const main = nav?.closest("main");
   const sectionNavMap: Record<string, HTMLAnchorElement> = {};
 
-  main?.querySelectorAll("h1").forEach((heading) => {
+  main?.querySelectorAll(".page-headline").forEach((heading) => {
     const section = heading.closest("section");
     const link = heading.querySelector("a");
     if (!link) return;

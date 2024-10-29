@@ -43,7 +43,7 @@ export const snackBarClassName = css({
 
 <astro-page-headline data-snack-bar-class-name={snackBarClassName}>
   <h1
-    class={`group ${css({
+    class={`page-headline group ${css({
       display: "grid",
       color: "web.system.color.component.onSurface",
       gridTemplateColumns: "max-content 1fr",
@@ -119,7 +119,7 @@ export const snackBarClassName = css({
       if (!link) return;
       link.addEventListener("click", (event) => {
         event.preventDefault();
-        const h2 = link.closest("h2");
+        const h2 = link.closest(".page-headline");
         const url = new URL(window.location.href);
         url.hash = link.getAttribute("href") ?? "";
         navigator.clipboard.writeText(url.href);
