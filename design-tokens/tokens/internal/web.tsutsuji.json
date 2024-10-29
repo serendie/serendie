@@ -55,7 +55,7 @@
               },
               "extraBold": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.pink.300}"
+                "$value": "{sd.reference.color.scale.chestnut.300}"
               },
               "bold": {
                 "$type": "color",
@@ -63,21 +63,21 @@
               },
               "normal": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.red.500}"
+                "$value": "{sd.reference.color.scale.skyBlue.500}"
               },
               "thin": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.yellow.300}"
+                "$value": "{sd.reference.color.scale.blue.300}"
               }
             },
             "rectangle": {
               "oblong": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.red.100}"
+                "$value": "{sd.reference.color.scale.purple.100}"
               },
               "square": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.yellow.300}"
+                "$value": "{sd.reference.color.scale.green.100}"
               }
             }
           },

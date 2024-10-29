@@ -52,24 +52,24 @@ export default {
                         "value": "#00A3AF"
                       },
                       "extraBold": {
-                        "value": "#9CE6EC"
+                        "value": "#98E1C8"
                       },
                       "bold": {
                         "value": "#00757E"
                       },
                       "normal": {
-                        "value": "#F84258"
+                        "value": "#EB4F8E"
                       },
                       "thin": {
-                        "value": "#FFE600"
+                        "value": "#F7C6B0"
                       }
                     },
                     "rectangle": {
                       "oblong": {
-                        "value": "#FCEBEA"
+                        "value": "#F9EBF0"
                       },
                       "square": {
-                        "value": "#FFE600"
+                        "value": "#D7DEFB"
                       }
                     }
                   },
@@ -171,24 +171,24 @@ export default {
                         "value": "#F49567"
                       },
                       "extraBold": {
-                        "value": "#F7C6B0"
+                        "value": "#EDC18A"
                       },
                       "bold": {
                         "value": "#803510"
                       },
                       "normal": {
-                        "value": "#F84258"
+                        "value": "#BFCEFC"
                       },
                       "thin": {
-                        "value": "#FFE600"
+                        "value": "#DCBDE4"
                       }
                     },
                     "rectangle": {
                       "oblong": {
-                        "value": "#FCEBEA"
+                        "value": "#D7DEFB"
                       },
                       "square": {
-                        "value": "#FFE600"
+                        "value": "#FDB9B4"
                       }
                     }
                   },
@@ -290,24 +290,24 @@ export default {
                         "value": "#CC9FD9"
                       },
                       "extraBold": {
-                        "value": "#DCBDE4"
+                        "value": "#BFCEFC"
                       },
                       "bold": {
                         "value": "#462352"
                       },
                       "normal": {
-                        "value": "#F84258"
+                        "value": "#EDC18A"
                       },
                       "thin": {
-                        "value": "#FFE600"
+                        "value": "#8FAEFE"
                       }
                     },
                     "rectangle": {
                       "oblong": {
-                        "value": "#FCEBEA"
+                        "value": "#F2DBC0"
                       },
                       "square": {
-                        "value": "#FFE600"
+                        "value": "#F5C1D1"
                       }
                     }
                   },
@@ -409,24 +409,24 @@ export default {
                         "value": "#EB4F8E"
                       },
                       "extraBold": {
-                        "value": "#F5C1D1"
+                        "value": "#F7C6B0"
                       },
                       "bold": {
                         "value": "#B9336B"
                       },
                       "normal": {
-                        "value": "#F84258"
+                        "value": "#00A3AF"
                       },
                       "thin": {
-                        "value": "#FFE600"
+                        "value": "#BFCEFC"
                       }
                     },
                     "rectangle": {
                       "oblong": {
-                        "value": "#FCEBEA"
+                        "value": "#F4ECF6"
                       },
                       "square": {
-                        "value": "#FFE600"
+                        "value": "#CAF9E6"
                       }
                     }
                   },
@@ -536,7 +536,7 @@ export default {
                   "value": "#F84258"
                 },
                 "thin": {
-                  "value": "#FFE600"
+                  "value": "#F2DBC0"
                 }
               },
               "rectangle": {
@@ -544,7 +544,7 @@ export default {
                   "value": "#FCEBEA"
                 },
                 "square": {
-                  "value": "#FFE600"
+                  "value": "#AEEAD5"
                 }
               }
             },

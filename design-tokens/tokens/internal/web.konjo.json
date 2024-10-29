@@ -67,7 +67,7 @@
               },
               "thin": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.yellow.300}"
+                "$value": "{sd.reference.color.scale.beige.200}"
               }
             },
             "rectangle": {
@@ -77,7 +77,7 @@
               },
               "square": {
                 "$type": "color",
-                "$value": "{sd.reference.color.scale.yellow.300}"
+                "$value": "{sd.reference.color.scale.green.200}"
               }
             }
           },
