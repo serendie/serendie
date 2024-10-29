@@ -10,6 +10,18 @@ const defaultTheme = "konjo";
 
 themeNames.unshift(defaultTheme);
 
+const statusBarColors = themeNames.map((name) => ({
+  name,
+  color:
+    name === defaultTheme
+      ? tokens.colors.sd.system.color.impression.primary.value
+      : themes[name as keyof typeof themes].tokens.colors.sd.system.color
+          .impression.primary.value,
+}));
+
+const defaultStatusBarColor =
+  tokens.colors.sd.system.color.impression.primary.value;
+
 const themeItems = [
   ...themeNames.map((name) => ({
     // 1文字目を大文字にする
@@ -17,6 +29,15 @@ const themeItems = [
     value: name,
   })),
 ];
+
+const getStatusBarColor = (theme: string) =>
+  statusBarColors.find((color) => color.name === theme)?.color ??
+  defaultStatusBarColor;
+
+const setStatusBarColor = (theme: string) =>
+  document
+    .querySelector("meta[name='theme-color']")
+    ?.setAttribute("content", getStatusBarColor(theme));
 
 export const ThemeSelector = () => {
   const [theme, setTheme] = useState("");
@@ -32,6 +53,7 @@ export const ThemeSelector = () => {
       document.documentElement.setAttribute("data-panda-theme", theme);
       localStorage.setItem("panda-theme", theme);
     }
+    setStatusBarColor(theme);
   }, [theme]);
 
   return (
