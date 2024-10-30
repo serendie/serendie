@@ -3,7 +3,7 @@ title: タイポグラフィ
 slug: foundations/typography
 lastUpdated: "2024-11-1"
 illustType: A
-description: デジタルプロダクトは文字を中心に構成されるため、適切にタイポグラフィを扱うことは重要です。Serendie Design Systemでは、フォントやフォントサイズなどをリファレンストークンとし、UI上の役割に合わせてグループ化したシステムトークンを定義しています。
+description: デジタルプロダクトは文字を中心に構成されるため、適切にタイポグラフィを扱うことは重要です。フォントやフォントサイズなどをリファレンストークンとし、UI上の役割に合わせてグループ化したシステムトークンを定義しています。
 ---
 
 import { styled } from "styled-system/jsx";
@@ -75,7 +75,7 @@ export const sampleCode = `body {
     <PageSection>
     	<PageHeadLine number={1}>フォント</PageHeadLine>
 
-      Serendieブランドでは、欧文フォント「Roboto」、和文フォント「Noto Sans JP」を採用しています。Serendie Design Systemにおいてもそれを踏襲しつつ、等幅フォント「Noto Sans Mono」を追加しています。いずれのフォントもオープンソースであり、無償で商用利用可能です。
+      [Serendieブランド](https://www.mitsubishielectric.co.jp/serendie/)は、欧文フォント「Roboto」、和文フォント「Noto Sans JP」を採用しています。Serendie Design Systemにおいてもそれを踏襲しつつ、等幅フォント「Noto Sans Mono」を追加しています。いずれのフォントもオープンソースであり、無償で商用利用可能です。
 
       <FontFigureWrapper>
         <FontFigureTitle>Noto Sans JP</FontFigureTitle>
@@ -88,9 +88,9 @@ export const sampleCode = `body {
 
       ## CSSで利用する
 
-      Webアプリケーションにおいては<PageA href="https://fonts.google.com/specimen/Roboto">Google Fonts</PageA>などでWebフォントとして利用してください。Serendie UIにはバンドルされており、個別設定は不要です。詳しくはGet Startedを参照してください。
+      Webアプリケーションにおいては<PageA href="https://fonts.google.com/specimen/Roboto">Google Fonts</PageA>などでWebフォントとして利用してください。Serendie UIにはバンドルされており、個別設定は不要です。
 
-      個別設定を行う場合は、CSSのfont-familyを下記を参考に記述してください。システムフォントへのフォールバックを適切に設定してください。
+      個別設定を行う場合は、下記を参考にCSSのfont-familyを記述し、システムフォントへのフォールバックを適切に設定してください。
 
       <CodeBox code={sampleCode} language={'css'} client:idle />
 
@@ -140,12 +140,12 @@ export const sampleCode = `body {
 
         ## Figmaでの利用上の注意
 
-        他と同様にFigmaではVariablesとして定義されていますが、現在のFigmaの仕様では、相対値を含むVariablesを行の高さに設定することができません。今後のアップデートで対応されると考え、現在のところVariablesを使わず直値指定で運用しています。
+        他と同様にFigmaではVariablesとして定義されていますが、2024年11月現在のFigmaの仕様では、相対値を含むVariablesを行の高さに設定することができません。今後のアップデートで対応されると考え、**現在のところVariablesを使わず直値指定で運用**しています。
 
     </PageSection>
 
     <PageSection>
-    	<PageHeadLine number={4}>Roles</PageHeadLine>
+    	<PageHeadLine number={4}>ロール</PageHeadLine>
 
         タイポグラフィは、フォント、ウェイト、サイズ、行の高さなどをグループ化し、グループごとに見出し、タイトル、本文、ラベルなど、UI上の役割を持つことが特徴です。これらをシステムトークンとして定義しています。
 
@@ -188,11 +188,15 @@ export const sampleCode = `body {
     </PageSection>
 
     <PageSection>
-      <PageHeadLine number={5}>ブラウザ幅に応じた基準サイズの変更</PageHeadLine>
+      <PageHeadLine number={5}>ブラウザ・画面幅に応じた基準サイズの変更</PageHeadLine>
 
-      Bodyロールのmediumサイズは、ページ本文に用いることを想定しており、これをフォントサイズの基準として扱います。ただしこの基準サイズは、ブラウザ幅によって変化するのが一般的です。Serendie Design Systemでは、ブラウザ幅がCompact (モバイル) の場合は16px、Expanded (PC) の場合は14pxを基準としています。これを基準として、全ロールが相対的にフォントサイズが変わることに注意してください。
+      Bodyロールのmediumサイズは、ページ本文に用いることを想定しており、これをフォントサイズの基準として扱います。
 
-      Serendie Design Systemでは、これを[バリアブルモード](https://help.figma.com/hc/ja/articles/15343816063383-%E3%83%90%E3%83%AA%E3%82%A2%E3%83%96%E3%83%AB%E3%83%A2%E3%83%BC%E3%83%89)として扱います。Themingと同様に、ページやセクション、フレームなどにモード (Expanded/Compact) を割り当てることで、基準サイズを変更できます。デフォルトはCompactモードです。PC画面をデザインするときには、ページ全体をExpandedモードに変更してください。
+      ただしこの基準サイズは、ブラウザ幅によって変化するのが一般的です。Serendie Design Systemでは、ブラウザ幅がCompact (モバイル) の場合は16px、Expanded (PC) の場合は14pxを基準としています。これを基準として、全ロールが相対的にフォントサイズが変わることに注意してください。
+
+      Serendie Design Systemでは、これを[Variableモード](https://help.figma.com/hc/ja/articles/15343816063383-%E3%83%90%E3%83%AA%E3%82%A2%E3%83%96%E3%83%AB%E3%83%A2%E3%83%BC%E3%83%89)として扱います。Themingと同様に、ページやセクション、フレームなどにモード (Expanded/Compact) を割り当てることで、基準サイズを変更できます。
+
+      **デフォルトはCompactモード(モバイル)です。** Expanded(PC)用の画面をデザインするときには、ページ全体をExpandedモードに変更してください。
 
       <img src="/assets/pages/typography/figure-typography-system.png" alt="" width="310px"/>
     </PageSection>
