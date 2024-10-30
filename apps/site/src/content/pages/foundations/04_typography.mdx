@@ -13,6 +13,7 @@ import FigureTypographyRolesHeadline from "../../../assets/content/foundations/t
 import FigureTypographyRolesTitle from "../../../assets/content/foundations/typography/figure-typography-roles-title.svg?raw";
 import FigureTypographyRolesBody from "../../../assets/content/foundations/typography/figure-typography-roles-body.svg?raw";
 import FigureTypographyRolesLabel from "../../../assets/content/foundations/typography/figure-typography-roles-label.svg?raw";
+import FigureTypographyLineHeight from "../../../assets/content/foundations/typography/figure-typography-line-height.svg?raw";
 import PageHeadLine from "../../../components/PageHeadLine.astro";
 import CodeBox from "../../../components/CodeBox.astro";
 import {
@@ -135,6 +136,7 @@ export const sampleCode = `body {
     	<PageHeadLine number={4}>行の高さ</PageHeadLine>
 
         行ボックスの高さ (line-height) は、文章の可読性や印象に影響します。normal (160%) を基準とし、ゆったりとした印象を与えるrelaxed (180%)、逆に情報量を優先させるtight (140%)、ボタンなどラベルテキストでの使用を想定した none (100%)の4パターンをリファレンストークンとして定義しています。
+        <Fragment set:html={FigureTypographyLineHeight} />
 
         ## Figmaでの利用上の注意
 
