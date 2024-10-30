@@ -86,7 +86,8 @@ export const LinkContentCard: React.FC<{
                   height: "100%",
                   borderRadius: "100%",
                   border: "3px solid",
-                  borderColor: "web.system.color.mvShape.foreground.arc.index",
+                  borderColor:
+                    "web.system.color.mvShape.foreground.arc.indexBorder",
                   expanded: {
                     borderWidth: "0",
                   },
