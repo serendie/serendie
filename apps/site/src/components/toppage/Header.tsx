@@ -146,7 +146,7 @@ export const Header: React.FC = () => {
             Systemは、多様な事業と人々をつなぎ、新たな価値を生み出すための三菱電機によるオープンなデザインシステムです。
           </HeaderDescription>
 
-          <a href="/get-started">
+          <a href="/about">
             <Button
               rightIcon={<ChevronRight />}
               className={css({
@@ -158,7 +158,7 @@ export const Header: React.FC = () => {
                 borderColor: "white",
               })}
             >
-              スターターガイド
+              コンセプト
             </Button>
           </a>
         </HeaderContainer>
