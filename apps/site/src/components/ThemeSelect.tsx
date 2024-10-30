@@ -138,6 +138,7 @@ export const SelectStyle = sva({
           gridTemplateColumns: "minmax(auto, 150px)",
           textStyle: {
             base: "sd.system.typography.body.small_compact",
+            expanded: "sd.system.typography.body.medium_compact",
           },
         },
         trigger: {
