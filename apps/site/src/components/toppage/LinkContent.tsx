@@ -180,10 +180,13 @@ const linkContentCompactStyle = sva({
     container: {
       display: "grid",
       gridTemplateColumns: "1fr 1fr",
-      gap: "54px 16px",
+      gap: "32px 28px",
       height: "fit-content",
       flex: "0 0 100%",
       pl: "24px",
+      expanded: {
+        gap: "54px 16px",
+      },
     },
     titleWrapper: {
       position: "relative",
