@@ -83,7 +83,9 @@ export const LinkContentCard: React.FC<{
               },
             })}
           />
-          <svg dangerouslySetInnerHTML={{ __html: illustration }} />
+          {illustration && (
+            <span dangerouslySetInnerHTML={{ __html: illustration }} />
+          )}
         </div>
       </div>
     </a>
