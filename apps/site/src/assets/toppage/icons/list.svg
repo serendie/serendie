@@ -1,0 +1,12 @@
+<svg width="172" height="172" viewBox="0 0 172 172" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="172" height="172" rx="86" fill="white"/>
+<g style="mix-blend-mode:multiply">
+<path d="M95.1592 51.707L37.7399 109.126L70.5509 141.937L127.97 84.518L95.1592 51.707Z" fill="var(--_illustration-system-composition-primary, #0A69CF)"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<circle cx="51.6144" cy="110.49" r="18.9825" fill="var(--_illustration-system-composition-tertiary-1, #8FAEFE)"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<path d="M77.5459 68.2415C77.5459 68.2415 84.5512 76.4219 93.1675 76.4219C97.479 76.4219 101.45 74.305 104.357 72.1681C107.265 70.0312 111.149 70.0646 114.003 72.1681C116.857 74.2716 120.881 76.4219 125.193 76.4219C133.816 76.4219 140.821 68.2415 140.821 68.2415L140.54 31.1462C136.403 31.1462 132.733 33.0694 130.026 35.0794C127.131 37.2297 123.167 37.2965 120.253 35.1796C117.339 33.0627 113.435 31.0126 109.183 31.0126C104.932 31.0126 100.988 33.0895 98.0873 35.1996C95.1862 37.3098 91.2357 37.2631 88.348 35.1262C85.4603 32.9893 81.8774 31.1462 77.7063 31.1462" fill="var(--_illustration-system-composition-accent, #F84258)"/>
+</g>
+</svg>

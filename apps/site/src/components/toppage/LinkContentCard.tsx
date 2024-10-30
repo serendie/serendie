@@ -83,19 +83,7 @@ export const LinkContentCard: React.FC<{
               },
             })}
           />
-          <img
-            src={illustration}
-            className={css({
-              width: "110px",
-              height: "110px",
-              expanded: {
-                width: "160px",
-                height: "160px",
-              },
-              objectFit: "contain",
-              borderRadius: "50%",
-            })}
-          />
+          <svg dangerouslySetInnerHTML={{ __html: illustration }} />
         </div>
       </div>
     </a>

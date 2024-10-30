@@ -1,0 +1,12 @@
+<svg width="172" height="172" viewBox="0 0 172 172" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="172" height="172" rx="86" fill="white"/>
+<g style="mix-blend-mode:multiply">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M120.364 74.7068L103.892 65.1962H122.913L122.913 55.609H103.891L120.364 46.098L115.571 37.7952L99.1007 47.3043L108.61 30.8343L100.307 26.0408L90.7962 42.5138V23.4922H81.209V42.5123L71.6987 26.04L63.396 30.8335L72.9072 47.3073L56.4335 37.7963L51.64 46.099L68.1119 55.609H49.0921V65.1962H68.111L51.64 74.7058L56.4335 83.0085L72.9081 73.4969L63.3964 89.9717L71.6991 94.7652L81.209 78.2935V97.3132H90.7962V78.292L100.307 94.7644L108.609 89.9708L99.0998 73.4999L115.571 83.0095L120.364 74.7068Z" fill="var(--_illustration-system-composition-primary, #0A69CF)"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<path d="M132.963 83.2734H103.273L126.839 123.348H156.529L132.963 83.2734Z" fill="var(--_illustration-system-composition-accent, #F84258)"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<path d="M63.7129 94.911L97.8023 120.542L63.7129 146.174L29.6235 120.542L63.7129 94.911Z" fill="var(--_illustration-system-composition-tertiary-1, #8FAEFE)"/>
+</g>
+</svg>
