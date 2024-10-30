@@ -42,7 +42,7 @@ export const LinkContentCard: React.FC<{
             margin: "auto",
             width: "100%",
             height: "auto",
-            maxWidth: "220px",
+            maxWidth: "200px",
             expanded: {
               height: "224px",
               width: "224px",
