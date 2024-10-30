@@ -278,8 +278,7 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
 
   const styles = linkContentCompactStyle();
 
-  const { selectedIndex, scrollSnaps, onDotButtonClick } =
-    useDotButton(emblaApi);
+  const { selectedIndex } = useDotButton(emblaApi);
 
   const {
     prevBtnDisabled,
@@ -428,25 +427,6 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
             </div>
           ))}
         </div>
-      </div>
-
-      <div className={styles.carouselDotsContainer}>
-        {scrollSnaps.map((_, index) => {
-          return (
-            <button
-              key={index}
-              className={cx(
-                styles.carouselDots,
-                index === selectedIndex
-                  ? css({
-                      bg: "web.system.color.impression.secondary !important",
-                    })
-                  : css({ bg: "sd.reference.color.scale.gray.300" })
-              )}
-              onClick={() => onDotButtonClick(index)}
-            ></button>
-          );
-        })}
       </div>
     </div>
   );
