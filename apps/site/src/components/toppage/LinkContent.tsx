@@ -359,7 +359,8 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
                   textAlign: "center",
                   overflow: "hidden",
                   lineHeight: 1,
-                  fontFamily: "SerendieOfficeVF",
+                  fontWeight: "sd.reference.typography.fontWeight.bold",
+                  textTransform: "uppercase",
                   fontSize: "18px",
                   "& span": {
                     height: "18px",
