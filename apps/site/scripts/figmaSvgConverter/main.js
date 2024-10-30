@@ -1,5 +1,5 @@
 async function convertSvg(node) {
-  const colors = getColors(node);
+  const colors = getColorsByNode(node);
   const svg = await node.exportAsync({ format: "SVG" });
   const svgString = String.fromCharCode.apply(null, new Uint8Array(svg));
   const regex = /[stroke|fill]="(#[0-9A-F]{6})"/g;
@@ -8,7 +8,10 @@ async function convertSvg(node) {
     return colorObj
       ? match.replace(
           color,
-          `var(--${colorObj.name.replaceAll("/", "-")}, ${color})`
+          `var(--${colorObj.collectionName}-${colorObj.name.replaceAll(
+            "/",
+            "-"
+          )}, ${color})`
         )
       : match;
   });
@@ -28,7 +31,7 @@ function rgb2hex(r, g, b) {
   return `#${toHex(r)}${toHex(g)}${toHex(b)}`.toUpperCase();
 }
 
-function getColors(n) {
+function getColorsByCollections(n) {
   const ret = [];
   const collections = getCollections(n);
   Object.keys(collections).forEach((key) => {
@@ -55,6 +58,44 @@ function getColors(n) {
       }
     });
   });
+  return ret;
+}
+
+function getColorsByNode(n) {
+  const ret = [];
+  const paints = [];
+  if (Array.isArray(n.fills)) {
+    paints.push(...n.fills);
+  }
+  if (Array.isArray(n.strokes)) {
+    paints.push(...n.strokes);
+  }
+  paints.flat().forEach((paint) => {
+    if (
+      paint &&
+      paint.boundVariables &&
+      paint.boundVariables.color &&
+      paint.boundVariables.color.type === "VARIABLE_ALIAS"
+    ) {
+      const variable = figma.variables.getVariableById(
+        paint.boundVariables.color.id
+      );
+      const collection = figma.variables.getVariableCollectionById(
+        variable.variableCollectionId
+      );
+      ret.push({
+        collectionName: collection.name,
+        name: variable.name,
+        color: rgb2hex(paint.color.r, paint.color.g, paint.color.b),
+      });
+    }
+  });
+
+  if (n.children) {
+    n.children.forEach((child) => {
+      ret.push(...getColorsByNode(child));
+    });
+  }
   return ret;
 }
 

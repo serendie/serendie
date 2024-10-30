@@ -1,0 +1,12 @@
+<svg width="172" height="172" viewBox="0 0 172 172" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="172" height="172" rx="86" fill="white"/>
+<g style="mix-blend-mode:multiply">
+<path d="M117.78 62.1484L48.1776 62.1484V131.751L117.78 131.751L117.78 62.1484Z" fill="var(--_illustration-system-composition-primary, #0A69CF)"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M51.6141 122.077C45.2149 122.077 40.0274 116.89 40.0274 110.49C40.0274 104.091 45.2149 98.9036 51.6141 98.9036C58.0133 98.9036 63.2009 104.091 63.2009 110.49C63.2009 116.89 58.0133 122.077 51.6141 122.077ZM51.6141 129.473C41.1304 129.473 32.6316 120.974 32.6316 110.49C32.6316 100.007 41.1304 91.5078 51.6141 91.5078C62.0979 91.5078 70.5967 100.007 70.5967 110.49C70.5967 120.974 62.0979 129.473 51.6141 129.473Z" fill="var(--_illustration-system-composition-tertiary-1, #8FAEFE)"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<path d="M118.644 86.8906L76.8841 45.1311L100.747 21.2686L142.506 63.0281L118.644 86.8906Z" fill="var(--_illustration-system-composition-accent, #F84258)"/>
+</g>
+</svg>
