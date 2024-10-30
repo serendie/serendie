@@ -39,7 +39,7 @@ import ImageAnatomy from "../../../assets/content/design-tokens/dynamic_anatomy.
 
     デザイントークンを利用することによる効果は、**最低限のデザイン品質の担保とプロダクト開発への集中**です。コントラスト比を確保したアクセシブルなカラー、ブランドやプラットフォームに合った書体、読みやすいフォントサイズのジャンプ率など、デザイントークンが示す値にはノウハウが詰まっています。デザイントークンを利用することで、例えデザイナーでなくても、このノウハウをベースにプロダクト開発をスタートできます。
 
-    Serendieデザインシステムが提供するUIコンポーネント (Serendie UI) は、デザイントークンをベースに作られているので、Serendie UIをそのまま使う場合はデザイントークンについて意識する必要はありません。ただし、Serendie UIのスタイルを上書きする場合や、オリジナルのコンポーネントを追加する場合は、デザイントークンの役割や設計について理解が必要になります。
+    Serendie Design Systemが提供するUIコンポーネント (Serendie UI) は、デザイントークンをベースに作られているので、Serendie UIをそのまま使う場合はデザイントークンについて意識する必要はありません。ただし、Serendie UIのスタイルを上書きする場合や、オリジナルのコンポーネントを追加する場合は、デザイントークンの役割や設計について理解が必要になります。
 
     また、**Serendie UIは利用せず、デザイントークンだけを利用することも可能**です。事情によりSerendie UIが使えない場合は、デザイントークンのみ利用することを検討してください。
 
@@ -48,7 +48,7 @@ import ImageAnatomy from "../../../assets/content/design-tokens/dynamic_anatomy.
   <PageSection>
     <PageHeadLine number={3}>命名構造</PageHeadLine>
 
-    Serendieデザインシステムの**デザイントークンは「リファレンストークン」と「システムトークン」の2種類で構成**されます。リファレンストークンはカラーコードなど生の値を示し、システムトークンはリファレンストークンを参照 (エイリアス) するトークンです。
+    Serendie Design Systemの**デザイントークンは「リファレンストークン」と「システムトークン」の2種類で構成**されます。リファレンストークンはカラーコードなど生の値を示し、システムトークンはリファレンストークンを参照 (エイリアス) するトークンです。
 
     リファレンストークンは **color.scale.green.500 (カラースケール500番の緑色)** のような素朴な命名になり、システムトークンは **color.impression.positiveContainer (ポジティブな印象の背景色)** のような、UIにおける意味性の強い命名を行うのが特徴です。
 
@@ -70,7 +70,7 @@ import ImageAnatomy from "../../../assets/content/design-tokens/dynamic_anatomy.
   <PageSection>
     <PageHeadLine number={4}>用語</PageHeadLine>
     
-    デザイントークンは命名が重要です。Serendieデザインシステムは、[Material Design 3](https://m3.material.io/foundations/design-tokens/overview)の設計から多くの影響を受けており、用語選びもその一つです。用語選びには下記のルールを採用しています。いずれも特定の技術やプラットフォームに依存しないことや、各種ツールの入力補完を前提とし省略記法を避けることを基本指針としています。
+    デザイントークンは命名が重要です。Serendie Design Systemは、[Material Design 3](https://m3.material.io/foundations/design-tokens/overview)の設計から多くの影響を受けており、用語選びもその一つです。用語選びには下記のルールを採用しています。いずれも特定の技術やプラットフォームに依存しないことや、各種ツールの入力補完を前提とし省略記法を避けることを基本指針としています。
 
     - トークン名はキャメルケース (camelCase)とする
     - CSSなど特定技術に依存しない用語選び
@@ -87,9 +87,9 @@ import ImageAnatomy from "../../../assets/content/design-tokens/dynamic_anatomy.
   <PageSection>
     <PageHeadLine number={5}>フォーマット</PageHeadLine>
     
-    デザイントークンは開発とデザインの共通言語であり、それぞれから利用しやすい形で表現することが求められます。Serendieデザインシステムでは、W3C Community Groupの[Design Tokens Format Module – W3C Community Group Draft Report](https://tr.designtokens.org/format/)で現在策定中の草案フォーマットを採用しています。このフォーマットでは、デザイントークンをJSON形式で表現し、Figmaなど特定ツールに依存しない形で、デザイントークンの型 ($type) などを表記するのが特徴です。
+    デザイントークンは開発とデザインの共通言語であり、それぞれから利用しやすい形で表現することが求められます。Serendie Design Systemでは、W3C Community Groupの[Design Tokens Format Module – W3C Community Group Draft Report](https://tr.designtokens.org/format/)で現在策定中の草案フォーマットを採用しています。このフォーマットでは、デザイントークンをJSON形式で表現し、Figmaなど特定ツールに依存しない形で、デザイントークンの型 ($type) などを表記するのが特徴です。
 
-    このJSONファイルは、SerendieデザインシステムのGitHubリポジトリで管理され、このファイル群がデザイントークンのマスター (Single Source of Truth) となります。
+    このJSONファイルは、Serendie Design SystemのGitHubリポジトリで管理され、このファイル群がデザイントークンのマスター (Single Source of Truth) となります。
 
     <p>
       <img src="/assets/pages/design-tokens/snippet.png" width="310" alt="" />
@@ -127,7 +127,7 @@ import ImageAnatomy from "../../../assets/content/design-tokens/dynamic_anatomy.
       <img src="/assets/pages/design-tokens/theming.png" width="310" alt="" />
     </p>
 
-    前述したDesign Token Format Module草案では、現在のところコンテキストを表現するフォーマットが定まっていません。そのためSerendieデザインシステムでは、「typography.compact.json」や「typography.expanded.json」のようにコンテキストごとにJSONファイルを分けることで対応しています。これはFigma上ではバリアブルモードとして同期されます。バリアブルモードの使い方は[Get Started](/get-started/design/#section-3)を参照してください。
+    前述したDesign Token Format Module草案では、現在のところコンテキストを表現するフォーマットが定まっていません。そのためSerendie Design Systemでは、「typography.compact.json」や「typography.expanded.json」のようにコンテキストごとにJSONファイルを分けることで対応しています。これはFigma上ではバリアブルモードとして同期されます。バリアブルモードの使い方は[Get Started](/get-started/design/#section-3)を参照してください。
 
     <p>
       <img src="/assets/pages/design-tokens/theming-ss.png" width="310" alt="" />
