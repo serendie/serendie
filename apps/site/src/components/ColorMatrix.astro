@@ -21,28 +21,8 @@ const colorOrder: (keyof typeof colorScale)[] = [
   "black",
 ];
 
-const nameMap: Record<keyof typeof colorScale, string> = {
-  gray: "銀鼠",
-  blue: "紺青",
-  skyBlue: "浅葱",
-  green: "木賊",
-  purple: "すみれ",
-  pink: "つつじ",
-  red: "薄緋",
-  chestnut: "栗皮",
-  beige: "幣色",
-  yellow: "刈安",
-  white: "",
-  black: "",
-  transparency: "",
-};
-
 export function getColorValue(color: keyof typeof colorScale, shade: string) {
   return colorScale[color][shade].value;
-}
-
-function getJapaneseName(color: keyof typeof colorScale) {
-  return nameMap[color] || "";
 }
 
 function getShades(color: keyof typeof colorScale) {
@@ -94,14 +74,6 @@ function toCamelCase(color: string) {
             })}
           >
             <div>{toCamelCase(color)}</div>
-            <div
-              class={css({
-                mt: "sd.system.dimension.spacing.extraSmall",
-                color: "sd.system.color.component.onSurfaceVariant",
-              })}
-            >
-              {getJapaneseName(color)}
-            </div>
           </th>
           {getShades(color).map((shade) => (
             <ColorMatrixCell color={color} shade={shade} />
