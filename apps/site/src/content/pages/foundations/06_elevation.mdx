@@ -3,7 +3,7 @@ title: 階層
 slug: foundations/elevation
 lastUpdated: "2024-11-1"
 illustType: A
-description: オブジェクトに落とすシャドウはその強弱によって、オブジェクト間の高低差を表現し、UIに階層 (Elevation) を作り出します。またCSSにおいて階層を指定するz-indexについても取り扱います。
+description: オブジェクトに落とすシャドウはその強弱によって、オブジェクト間の高低差を表現し、UIに階層(Elevation)を作り出します。またCSSにおいて階層を指定するz-indexについても取り扱います。
 ---
 
 import FigureElevationShadow from "../../../assets/content/foundations/elevation/figure-elevation-shadow.svg?raw";
@@ -13,7 +13,7 @@ import { PageSection, PageA } from "../../../components/PageLayout.tsx";
   <PageSection>
     <PageHeadLine number={1}>シャドウ</PageHeadLine>
 
-    ドロップシャドウは背景に影を落とす効果であり、その強さによって高低差を表現できます。Serendie Design Systemでは、Level1~5まで5段階のElevationを定義しています。
+    ドロップシャドウは背景に影を落とす効果であり、その強さによって高低差を表現できます。Level1~5まで5段階のElevationを定義しています。
 
     Level0はBody (surface)であり、ほとんどのUIコンポーネントはこのLevel0に位置します。<PageA href="/components/dropdown-menu">DropdownMenu</PageA>の開閉メニューはLevel1、<PageA href="/components/toast">Toast</PageA>はLevel3、<PageA href="/components/modal-dialog">Modal Dialog</PageA>や<PageA href="/components/drawer">Drawer</PageA>はLevel5など、UIの一般的な振る舞いに合わせてLevelをコントロールすることが大切です。
 
@@ -21,7 +21,7 @@ import { PageSection, PageA } from "../../../components/PageLayout.tsx";
 
     ### Figmaでの利用上の注意
 
-    ドロップシャドウは、影の色、位置、拡散量など複数の値から構成されます。Figma Variablesは、このようなグループ化されたトークン (<PageA href="https://tr.designtokens.org/format/#composite-design-token">Composit Token</PageA>と呼ばれます) に現在対応していません。そのため、シャドウは**VariablesではなくEffect Styles**として定義しており、他と使用感が異なることに注意してください。
+    ドロップシャドウは、影の色、位置、拡散量など複数の値から構成されます。Figma Variablesは、このようなグループ化されたトークン (<PageA href="https://tr.designtokens.org/format/#composite-design-token">Composit Token</PageA>と呼ばれます) に現在対応していません。そのため、シャドウは**VariablesではなくEffect Styles**として定義しており、他と適用方法が異なることに注意してください。
 
   </PageSection>
 

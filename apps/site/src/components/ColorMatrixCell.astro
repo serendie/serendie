@@ -30,15 +30,11 @@ function hexToRgb(hex: string): { r: number; g: number; b: number } {
 }
 ---
 
-<td
-  class={css({
-    pb: "sd.system.dimension.spacing.extraLarge",
-  })}
->
+<td>
   {celadon ? <div class="celadon" /> : null}
   <div
     data-color={getColorValue(color, shade)}
-    class={`group ${css({ h: "48px", position: "relative", cursor: "pointer", borderWidth: color === "white" ? 1 : 0 })}`}
+    class={`group ${css({ h: "48px", position: "relative", cursor: "pointer", borderWidth: color === "white" ? 1 : 0, borderColor: '#C8C7C2' })}`}
     style={`background-color: ${getColorValue(color, shade)}`}
   >
     <span

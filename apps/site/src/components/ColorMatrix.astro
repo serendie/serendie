@@ -21,28 +21,8 @@ const colorOrder: (keyof typeof colorScale)[] = [
   "black",
 ];
 
-const nameMap: Record<keyof typeof colorScale, string> = {
-  gray: "銀鼠",
-  blue: "紺青",
-  skyBlue: "浅葱",
-  green: "木賊",
-  purple: "すみれ",
-  pink: "つつじ",
-  red: "薄緋",
-  chestnut: "栗皮",
-  beige: "幣色",
-  yellow: "刈安",
-  white: "",
-  black: "",
-  transparency: "",
-};
-
 export function getColorValue(color: keyof typeof colorScale, shade: string) {
   return colorScale[color][shade].value;
-}
-
-function getJapaneseName(color: keyof typeof colorScale) {
-  return nameMap[color] || "";
 }
 
 function getShades(color: keyof typeof colorScale) {
@@ -56,7 +36,8 @@ function toCamelCase(color: string) {
 
 <table
   class={css({
-    borderCollapse: "collapse",
+    borderCollapse: "separate",
+    borderSpacing: "0 16px",
     width: "100%",
   })}
 >
@@ -69,7 +50,7 @@ function toCamelCase(color: string) {
             class={css({
               fontFamily: "sd.reference.typography.fontFamily.monospace",
               textStyle: "sd.system.typography.label.small_compact",
-              pb: "sd.system.dimension.spacing.extraLarge",
+              pb: "sd.system.dimension.spacing.extraSmall",
               color: "sd.system.color.component.onSurfaceVariant",
             })}
           >
@@ -91,17 +72,10 @@ function toCamelCase(color: string) {
               zIndex: 1,
               textAlign: "left",
               textStyle: "sd.system.typography.label.large_compact",
+              pr: "sd.system.dimension.spacing.extraSmall",
             })}
           >
             <div>{toCamelCase(color)}</div>
-            <div
-              class={css({
-                mt: "sd.system.dimension.spacing.extraSmall",
-                color: "sd.system.color.component.onSurfaceVariant",
-              })}
-            >
-              {getJapaneseName(color)}
-            </div>
           </th>
           {getShades(color).map((shade) => (
             <ColorMatrixCell color={color} shade={shade} />
@@ -117,7 +91,8 @@ function toCamelCase(color: string) {
             class={css({
               fontFamily: "sd.reference.typography.fontFamily.monospace",
               textStyle: "sd.system.typography.label.small_compact",
-              pb: "sd.system.dimension.spacing.extraLarge",
+              pt: "sd.system.dimension.spacing.small",
+              pb: "sd.system.dimension.spacing.extraSmall",
               color: "sd.system.color.component.onSurfaceVariant",
             })}
           >
@@ -135,9 +110,10 @@ function toCamelCase(color: string) {
           zIndex: 1,
           textAlign: "left",
           textStyle: "sd.system.typography.label.large_compact",
+          pr: "sd.system.dimension.spacing.extraSmall",
         })}
       >
-        Transparency
+        Trans-<br/>parency
       </th>
       {
         getShades("transparency").map((shade) => (
