@@ -36,7 +36,8 @@ function toCamelCase(color: string) {
 
 <table
   class={css({
-    borderCollapse: "collapse",
+    borderCollapse: "separate",
+    borderSpacing: "0 16px",
     width: "100%",
   })}
 >
@@ -49,7 +50,7 @@ function toCamelCase(color: string) {
             class={css({
               fontFamily: "sd.reference.typography.fontFamily.monospace",
               textStyle: "sd.system.typography.label.small_compact",
-              pb: "sd.system.dimension.spacing.extraLarge",
+              pb: "sd.system.dimension.spacing.extraSmall",
               color: "sd.system.color.component.onSurfaceVariant",
             })}
           >
@@ -71,6 +72,7 @@ function toCamelCase(color: string) {
               zIndex: 1,
               textAlign: "left",
               textStyle: "sd.system.typography.label.large_compact",
+              pr: "sd.system.dimension.spacing.extraSmall",
             })}
           >
             <div>{toCamelCase(color)}</div>
@@ -89,7 +91,7 @@ function toCamelCase(color: string) {
             class={css({
               fontFamily: "sd.reference.typography.fontFamily.monospace",
               textStyle: "sd.system.typography.label.small_compact",
-              pb: "sd.system.dimension.spacing.extraLarge",
+              pb: "sd.system.dimension.spacing.extraSmall",
               color: "sd.system.color.component.onSurfaceVariant",
             })}
           >
@@ -107,9 +109,10 @@ function toCamelCase(color: string) {
           zIndex: 1,
           textAlign: "left",
           textStyle: "sd.system.typography.label.large_compact",
+          pr: "sd.system.dimension.spacing.extraSmall",
         })}
       >
-        Transparency
+        Trans-<br/>parency
       </th>
       {
         getShades("transparency").map((shade) => (
