@@ -47,6 +47,10 @@ export const LinkContentCard: React.FC<{
               height: "224px",
               width: "224px",
               maxWidth: "none",
+              lgDown: {
+                height: "auto",
+                width: "100%",
+              },
               _hover: {
                 "& .shapecircle": {
                   // transitionDelay: "0.1s",
@@ -84,9 +88,14 @@ export const LinkContentCard: React.FC<{
               className={css({
                 display: "block",
                 width: "100%",
+                aspectRatio: "1 / 1",
                 expanded: {
                   width: "160px",
                   height: "160px",
+                  lgDown: {
+                    width: "80%",
+                    height: "auto",
+                  },
                 },
                 "& > svg": {
                   width: "100%",
