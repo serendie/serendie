@@ -4,7 +4,6 @@ import { styled } from "styled-system/jsx";
 
 export const PageMain = styled("div", {
   base: {
-    color: "web.system.color.component.background.onSurface",
     gridColumn: "span 6",
     mdDown: {
       gridColumn: "span 2",
@@ -92,7 +91,7 @@ export const PageLinks = (props: PageFooterProps) => (
             className={css({
               display: "flex",
               height: props.column === "span2" ? "100%" : undefined,
-              alignItems: "center",
+              alignItems: "start",
               justifyContent: "space-between",
               borderRadius: "sd.system.dimension.radius.extraLarge",
               textStyle: "sd.system.typography.body.large_compact",
@@ -100,6 +99,9 @@ export const PageLinks = (props: PageFooterProps) => (
               transition: "background 0.3s",
               px: "sd.system.dimension.spacing.large",
               p: "sd.system.dimension.spacing.medium",
+              smDown: {
+                lineHeight: "1.4",
+              },
               sm: {
                 py: "sd.system.dimension.spacing.extraLarge",
                 px: "sd.system.dimension.spacing.twoExtraLarge",
