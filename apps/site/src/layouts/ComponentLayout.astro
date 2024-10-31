@@ -15,18 +15,23 @@ interface Props {
 
 const { data } = Astro.props;
 const components = await getCollection("components");
+
+const componentLinks = components.map((component) => ({
+  href: `/components/${component.slug}`,
+  title: component.data.title,
+  isActive: component.data.title === data.title,
+}));
+
+componentLinks.unshift({
+  href: "/components",
+  title: "Components",
+  isActive: Astro.url.pathname === "/components",
+});
 ---
 
 <Global title={data.title}>
   <MainGrid>
-    <SideMenu
-      links={components.map((component) => ({
-        href: `/components/${component.slug}`,
-        title: component.data.title,
-        isActive: component.data.title === data.title,
-      }))}
-      client:idle
-    />
+    <SideMenu links={componentLinks} client:idle />
     <Main
       className={css({
         display: "grid",
