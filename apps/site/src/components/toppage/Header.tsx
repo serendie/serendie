@@ -156,6 +156,8 @@ export const Header: React.FC = () => {
                 pr: "sd.system.dimension.spacing.twoExtraLarge !important",
                 border: "1px solid",
                 borderColor: "white",
+                color: "white",
+                backgroundColor: "web.system.color.impression.secondary",
               })}
             >
               コンセプト
