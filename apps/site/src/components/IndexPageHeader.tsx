@@ -77,10 +77,19 @@ const IndexPageHeader_ = ({
             </span>
           )}
         </h1>
-        {description && <p>{description}</p>}
+        {description && (
+          <p
+            className={css({
+              my: "sd.system.dimension.spacing.extraLarge",
+            })}
+          >
+            {description}
+          </p>
+        )}
         {lastUpdated && (
           <p
             className={css({
+              my: "sd.system.dimension.spacing.extraLarge",
               fontSize: "12px",
               color: "sd.reference.color.scale.gray.600",
             })}
@@ -92,6 +101,7 @@ const IndexPageHeader_ = ({
       <div
         className={css({
           "&>svg": {
+            maxWidth: "100%",
             width: illustSize === "large" ? "644px" : "auto",
             height: "auto",
           },

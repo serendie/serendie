@@ -18,14 +18,17 @@ const { title, description, code, storyPath, language } = Astro.props;
 
 const Container = styled("div", {
   base: {
-    textStyle: "sd.system.typography.body.small_expanded",
     mb: "sd.system.dimension.spacing.threeExtraLarge",
   },
 });
 
 const SubTitle = styled("h2", {
   base: {
-    textStyle: "sd.system.typography.title.large_expanded",
+    fontWeight: "sd.reference.typography.fontWeight.bold",
+    textStyle: "_Web.title.large.SP",
+    sm: {
+      textStyle: "_Web.title.large.PC",
+    },
   },
 });
 
@@ -43,13 +46,15 @@ const StyledButton = styled("button", {
 ---
 
 <Container data-code-container>
-  <Flex justifyContent={"space-between"} alignItems={"center"} mb="sd.system.dimension.spacing.small">
+  <Flex
+    justifyContent={"space-between"}
+    alignItems={"center"}
+    mb="sd.system.dimension.spacing.small"
+  >
     <SubTitle>{title}</SubTitle>
     {storyPath && <StorybookButton storyPath={storyPath} client:load />}
   </Flex>
-  <Description
-    mb="sd.system.dimension.spacing.twoExtraLarge"
-    fontSize="sd.reference.typography.scale.expanded.extraSmall"
+  <Description mb="sd.system.dimension.spacing.twoExtraLarge"
     >{description}</Description
   >
   <Box

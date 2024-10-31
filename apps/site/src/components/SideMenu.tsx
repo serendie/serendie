@@ -64,7 +64,6 @@ export const SideMenuListItemLink = styled("a", {
   variants: {
     active: {
       true: {
-        color: "sd.reference.color.scale.blue.100",
         background: "web.system.color.impression.secondary",
         _hover: {
           background:

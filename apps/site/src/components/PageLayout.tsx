@@ -4,21 +4,9 @@ import { styled } from "styled-system/jsx";
 
 export const PageMain = styled("div", {
   base: {
-    color: "web.system.color.component.background.onSurface",
     gridColumn: "span 6",
     mdDown: {
       gridColumn: "span 2",
-    },
-    "& a": {
-      color: "sd.system.color.impression.primary",
-      textDecoration: "underline",
-    },
-    "& ul": {
-      textStyle: "sd.system.typography.body.small_compact",
-      marginInlineStart: "1em",
-    },
-    "& li": {
-      listStyleType: "disc",
     },
   },
   variants: {
@@ -33,11 +21,67 @@ export const PageMain = styled("div", {
 export const PageSection = styled("section", {
   base: {
     mb: "sd.system.dimension.spacing.fiveExtraLarge",
+    textStyle: "sd.system.typography.body.small_compact",
     sm: {
       mb: "sd.system.dimension.spacing.sixExtraLarge",
+      textStyle: "sd.system.typography.body.medium_compact",
     },
+    /*
+      中面のmarkdown向けのスタイルはここに記述
+    */
     "& img, svg, figure": {
       borderRadius: "sd.system.dimension.radius.large",
+    },
+    "& a": {
+      color: "sd.system.color.impression.primary",
+      textDecoration: "underline",
+    },
+    "& ul": {
+      marginInlineStart: "1em",
+    },
+    "& li": {
+      listStyleType: "disc",
+      my: "sd.system.dimension.spacing.extraSmall",
+    },
+    "& p": {
+      my: "sd.system.dimension.spacing.extraLarge",
+    },
+    "& h2": {
+      fontWeight: "sd.reference.typography.fontWeight.bold",
+      my: "sd.system.dimension.spacing.extraLarge",
+      fontSize: "20px",
+      sm: {
+        my: "sd.system.dimension.spacing.extraLarge",
+        fontSize: "24px",
+      },
+    },
+    "& h3": {
+      my: "sd.system.dimension.spacing.medium",
+      fontWeight: "sd.reference.typography.fontWeight.bold",
+      fontSize: "sd.reference.typography.scale.expanded.medium",
+      sm: {
+        my: "sd.system.dimension.spacing.extraLarge",
+        mt: "sd.system.dimension.spacing.twoExtraLarge",
+        fontSize: "sd.reference.typography.scale.compact.extraLarge",
+      },
+    },
+    "& ol": {
+      pl: "sd.system.dimension.spacing.large",
+      "& li": {
+        listStyle: "decimal",
+      },
+    },
+    "& svg": {
+      maxWidth: "100%",
+      height: "auto",
+    },
+    "& strong": {
+      fontWeight: "sd.reference.typography.fontWeight.regular",
+      color: "web.system.color.component.onSurface",
+      px: "2px",
+      pb: "1px",
+      pt: "2.5px",
+      backgroundColor: "web.system.color.component.textHighlight",
     },
   },
 });
@@ -67,7 +111,10 @@ export const PageLinks = (props: PageFooterProps) => (
     className={css({
       ml: "0 !important",
       display: "grid",
-      gap: "sd.system.dimension.spacing.extraLarge",
+      gap: "sd.system.dimension.spacing.small",
+      sm: {
+        gap: "sd.system.dimension.spacing.extraLarge",
+      },
       gridTemplateColumns:
         props.column === "span2" ? "repeat(2, 1fr)" : undefined,
       marginInlineStart: "0",
@@ -88,14 +135,22 @@ export const PageLinks = (props: PageFooterProps) => (
             href={`/${sib.slug}`}
             className={css({
               display: "flex",
-              alignItems: "center",
+              height: props.column === "span2" ? "100%" : undefined,
+              alignItems: "start",
               justifyContent: "space-between",
               borderRadius: "sd.system.dimension.radius.extraLarge",
-              py: "sd.system.dimension.spacing.extraLarge",
-              px: "sd.system.dimension.spacing.twoExtraLarge",
-              bg: "sd.reference.color.scale.gray.100",
               textStyle: "sd.system.typography.body.large_compact",
+              bg: "sd.reference.color.scale.gray.100",
               transition: "background 0.3s",
+              px: "sd.system.dimension.spacing.large",
+              p: "sd.system.dimension.spacing.medium",
+              smDown: {
+                lineHeight: "1.4",
+              },
+              sm: {
+                py: "sd.system.dimension.spacing.extraLarge",
+                px: "sd.system.dimension.spacing.twoExtraLarge",
+              },
               _hover: {
                 bg: "sd.system.color.interaction.selectedSurface",
               },
@@ -105,7 +160,9 @@ export const PageLinks = (props: PageFooterProps) => (
               <span
                 className={css({
                   display: "block",
-                  pb: "sd.system.dimension.spacing.large",
+                  sm: {
+                    pb: "sd.system.dimension.spacing.large",
+                  },
                   textStyle: "sd.system.typography.body.small_compact",
                 })}
               >
@@ -164,7 +221,6 @@ export const PageARef = styled(Aref, {
     width: "100%",
     alignItems: "center",
     gap: "sd.system.dimension.spacing.twoExtraSmall",
-    textStyle: "sd.system.typography.body.small_compact",
     "& + &": {
       mt: "sd.system.dimension.spacing.large",
     },
