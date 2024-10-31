@@ -13,6 +13,7 @@ export default defineConfig({
   markdown: {
     shikiConfig: {
       theme: "github-light",
+      langs: ["ts", "js", "jsx", "tsx", "css", "shell"],
     },
   },
   vite: {
