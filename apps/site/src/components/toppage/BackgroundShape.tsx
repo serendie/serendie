@@ -504,6 +504,7 @@ export const BackgroundShapeCompact1: React.FC = () => {
         right: "0",
         width: "100%",
         aspectRatio: "1/1",
+        mixBlendMode: "multiply",
         "& svg": {
           overflow: "visible",
           width: "100%",
@@ -600,6 +601,11 @@ export const BackgroundShapeCompact2: React.FC = () => {
         top: "100vh",
         width: "100%",
         left: "0",
+        mixBlendMode: "multiply",
+        "& svg": {
+          overflow: "visible",
+          width: "100%",
+        },
       })}
     >
       <svg
@@ -675,6 +681,11 @@ export const BackgroundShapeCompact3: React.FC = () => {
         top: "230.419vh",
         width: "100%",
         left: "0",
+        mixBlendMode: "multiply",
+        "& svg": {
+          overflow: "visible",
+          width: "100%",
+        },
       })}
       style={{
         y: y,
@@ -753,6 +764,7 @@ export const BackgroundShapeCompact4: React.FC = () => {
         top: "263.547vh",
         width: "100%",
         left: "0",
+        mixBlendMode: "multiply",
         "& svg": {
           overflow: "visible",
           width: "100%",
@@ -770,21 +782,16 @@ export const BackgroundShapeCompact4: React.FC = () => {
           stroke: "web.system.color.mvShape.background.arc.fourth",
         })}
       >
-        <motion.g clipPath="url(#clip0_13517_19209)">
-          <motion.g
-            clipPath="url(#clip1_13517_19209)"
-            style={{ rotate: rotate }}
-          >
-            <g clipPath="url(#clip2_13517_19209)">
-              <circle
-                cx="820.792"
-                cy="521.972"
-                r="755.553"
-                transform="rotate(124.497 820.792 521.972)"
-                strokeWidth="319.57"
-              />
-            </g>
-          </motion.g>
+        <motion.g clipPath="url(#clip1_13517_19209)" style={{ rotate: rotate }}>
+          <g clipPath="url(#clip2_13517_19209)">
+            <circle
+              cx="820.792"
+              cy="521.972"
+              r="755.553"
+              transform="rotate(124.497 820.792 521.972)"
+              strokeWidth="319.57"
+            />
+          </g>
         </motion.g>
         <defs>
           <clipPath id="clip0_13517_19209">
@@ -835,6 +842,11 @@ export const BackgroundShapeCompact5: React.FC = () => {
         top: "384.236vh",
         width: "100%",
         left: "0",
+        mixBlendMode: "multiply",
+        "& svg": {
+          overflow: "visible",
+          width: "100%",
+        },
       })}
       style={{
         y: y,
@@ -848,21 +860,16 @@ export const BackgroundShapeCompact5: React.FC = () => {
           stroke: "web.system.color.mvShape.background.arc.fifth",
         })}
       >
-        <motion.g clipPath="url(#clip0_13517_19234)">
-          <motion.g
-            clipPath="url(#clip1_13517_19234)"
-            style={{ rotate: rotate }}
-          >
-            <g clipPath="url(#clip2_13517_19234)">
-              <motion.circle
-                cx="-326.14"
-                cy="911.86"
-                r="817.667"
-                transform="rotate(-50.6415 -326.14 911.86)"
-                strokeWidth="300"
-              />
-            </g>
-          </motion.g>
+        <motion.g clipPath="url(#clip1_13517_19234)" style={{ rotate: rotate }}>
+          <g clipPath="url(#clip2_13517_19234)">
+            <motion.circle
+              cx="-326.14"
+              cy="911.86"
+              r="817.667"
+              transform="rotate(-50.6415 -326.14 911.86)"
+              strokeWidth="300"
+            />
+          </g>
         </motion.g>
         <defs>
           <clipPath id="clip0_13517_19234">
