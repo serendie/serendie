@@ -31,6 +31,9 @@ export const Main = styled("main", {
     "& p": {
       my: "sd.system.dimension.spacing.extraLarge",
       textStyle: "sd.system.typography.body.small_compact",
+      sm: {
+        textStyle: "sd.system.typography.body.medium_compact",
+      },
     },
     "& h2": {
       fontWeight: "sd.reference.typography.fontWeight.bold",
@@ -53,6 +56,9 @@ export const Main = styled("main", {
     "& ol": {
       pl: "sd.system.dimension.spacing.large",
       textStyle: "sd.system.typography.body.small_compact",
+      sm: {
+        textStyle: "sd.system.typography.body.medium_compact",
+      },
       "& li": {
         listStyle: "decimal",
       },
@@ -63,7 +69,7 @@ export const Main = styled("main", {
     },
     "& strong": {
       fontWeight: "sd.reference.typography.fontWeight.regular",
-      color: "web.system.color.impression.onSurface",
+      color: "web.system.color.component.onSurface",
       px: "2px",
       pb: "1px",
       pt: "2.5px",

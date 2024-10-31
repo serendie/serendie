@@ -28,9 +28,9 @@ const Title = styled("h2", {
     color: "web.system.color.impression.onTertiary",
     fontWeight: "bold",
     width: "100%",
-    textStyle: "sd.system.typography.title.large_compact",
+    textStyle: "_Web.title.large.PC",
     expanded: {
-      textStyle: '_Web.headline.h1'
+      textStyle: "_Web.display.medium",
     },
   },
 });
@@ -78,9 +78,12 @@ const Note = styled("a", {
 const NoteTime = styled("time", {
   base: {
     p: "0",
-    textStyle: "sd.system.typography.body.small_expanded",
+    textStyle: "sd.system.typography.body.small_compact",
+    fontWeight: "sd.reference.typography.fontWeight.bold",
+    color: "web.system.color.component.onSurface",
     alignContent: "center",
     expanded: {
+      textStyle: "sd.system.typography.body.small_expanded",
       p: "sd.system.dimension.spacing.small",
     },
   },
@@ -89,7 +92,7 @@ const NoteTime = styled("time", {
 const NoteTitle = styled("h2", {
   base: {
     p: "0",
-    textStyle: "sd.system.typography.body.small_expanded",
+    textStyle: "sd.system.typography.body.small_compact",
     textOverflow: "ellipsis",
     overflow: "hidden",
     boxOrient: "vertical",
@@ -97,6 +100,7 @@ const NoteTitle = styled("h2", {
     alignSelf: "center",
     lineClamp: 2,
     expanded: {
+      textStyle: "sd.system.typography.body.medium_compact",
       p: "sd.system.dimension.spacing.small",
     },
   },
