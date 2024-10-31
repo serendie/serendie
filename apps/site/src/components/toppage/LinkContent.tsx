@@ -61,13 +61,14 @@ const linkContentExpandedStyle = sva({
       display: "grid",
       gap: "100px 120px",
       color: "web.system.color.impression.onTertiary",
-      height: "calc((224px + 28px) * 2 + 64px)",
+      height: "calc(240px * 2 + 28px)",
       gridTemplateColumns: "285px 1fr",
       gridTemplateRows: "1fr",
       lgDown: {
         gap: "48px",
         gridTemplateColumns: "200px 1fr",
-        // height: "calc((224px + 28px) * 3 + 64px)",
+        height:
+          "calc(((((100vw - 48px - 200px) - (28px * 3)) / 4) + 16px) * 2)",
       },
     },
     sidebar: {},
@@ -116,14 +117,14 @@ const linkContentExpandedStyle = sva({
         fontWeight: "bold",
         letterSpacing: "0.05em",
         whiteSpace: "nowrap",
-        fontSize: "26px",
+        fontSize: "20px",
         lineHeight: "1",
         lgDown: {
           fontSize: "18px",
         },
         "& span": {
-          height: "26px",
-          minHeight: "26px",
+          height: "20px",
+          minHeight: "20px",
           alignContent: "center",
         },
       },
@@ -168,7 +169,7 @@ const linkContentExpandedStyle = sva({
       gridTemplateColumns: "repeat(auto-fill, minmax(224px, 1fr))",
       gap: "48px 28px",
       lgDown: {
-        gridTemplateColumns: "repeat(3, 1fr)",
+        gridTemplateColumns: "repeat(4, 1fr)",
       },
     },
   },
@@ -374,7 +375,7 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
             </div>
             <div
               className={css({
-                height: "18px",
+                height: "16px",
                 width: "100%",
                 overflow: "hidden",
               })}
@@ -391,13 +392,13 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
                   lineHeight: 1,
                   fontWeight: "sd.reference.typography.fontWeight.bold",
                   textTransform: "uppercase",
-                  fontSize: "18px",
+                  fontSize: "16px",
                   "& span": {
-                    height: "18px",
+                    height: "16px",
                   },
                 })}
                 animate={{
-                  y: -selectedIndex * 18,
+                  y: -selectedIndex * 16,
                 }}
               >
                 {content.map((c, i) => (
@@ -527,7 +528,7 @@ const LinkContentExpanded: React.FC<LinkContentProps> = ({ content }) => {
                   </div>
                   <div
                     className={css({
-                      height: "26px",
+                      height: "20px",
                       width: "100%",
                       overflow: "hidden",
                     })}
@@ -543,7 +544,7 @@ const LinkContentExpanded: React.FC<LinkContentProps> = ({ content }) => {
                         overflow: "hidden",
                       })}
                       animate={{
-                        y: -index * 26,
+                        y: -index * 20,
                       }}
                     >
                       {content.map((c, i) => (
