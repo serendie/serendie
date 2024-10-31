@@ -62,6 +62,7 @@ export const SelectStyle = sva({
       whiteSpace: "nowrap",
       overflow: "hidden",
       textOverflow: "ellipsis",
+      textTransform: "uppercase",
       "[data-placeholder-shown] &": {
         color: "sd.system.color.component.onSurfaceVariant",
       },
@@ -89,6 +90,7 @@ export const SelectStyle = sva({
       gap: "sd.system.dimension.spacing.small",
       justifyContent: "space-between",
       alignItems: "center",
+      textTransform: "uppercase",
       _highlighted: {
         backgroundColor: "sd.reference.color.scale.transparency.20",
       },
