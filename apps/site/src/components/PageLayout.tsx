@@ -35,11 +35,11 @@ export const PageSection = styled("section", {
       textDecoration: "underline",
     },
     "& ul": {
-      textStyle: "sd.system.typography.body.small_compact",
       marginInlineStart: "1em",
     },
     "& li": {
       listStyleType: "disc",
+      my: "sd.system.dimension.spacing.extraSmall",
     },
     "& p": {
       my: "sd.system.dimension.spacing.extraLarge",
@@ -69,10 +69,6 @@ export const PageSection = styled("section", {
     },
     "& ol": {
       pl: "sd.system.dimension.spacing.large",
-      textStyle: "sd.system.typography.body.small_compact",
-      sm: {
-        textStyle: "sd.system.typography.body.medium_compact",
-      },
       "& li": {
         listStyle: "decimal",
       },
