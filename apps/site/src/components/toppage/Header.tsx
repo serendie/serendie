@@ -84,6 +84,10 @@ const ShapesWrapper = styled("div", {
       right: "10.417vw",
       width: "37.222vw",
       height: "37.222vw",
+      maxH: "543px",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
     },
   },
 });
