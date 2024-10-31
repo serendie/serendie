@@ -249,24 +249,9 @@ const shapeDefaultStyles = sva({
       zIndex: "1",
       transformOrigin: "center center",
       pointerEvents: "none",
-      mixBlendMode: "multiply",
+      mixBlendMode: "screen",
       width: "100%",
       height: "100%",
-      "[data-panda-theme='kurikawa'] &": {
-        mixBlendMode: "screen",
-      },
-      "[data-panda-theme='sumire'] &": {
-        mixBlendMode: "screen",
-      },
-    },
-  },
-  variants: {
-    mixBlendMode: {
-      normal: {
-        shape: {
-          mixBlendMode: "normal",
-        },
-      },
     },
   },
 });
