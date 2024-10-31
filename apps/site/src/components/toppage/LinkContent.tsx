@@ -9,7 +9,6 @@ import { TitleShapeThin } from "./TitleShapeThin";
 type LinkContentProps = {
   content: {
     titleEn: string;
-    titleJa: string;
     description: string;
     links: { title: string; href: string; illustration: string }[];
   }[];
@@ -84,16 +83,15 @@ const linkContentExpandedStyle = sva({
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)",
-      fontWeight: "bold",
-      letterSpacing: "0.1em",
       textTransform: "uppercase",
       textAlign: "center",
       color: "web.system.color.impression.onTertiary",
-      fontFamily: "SerendieOfficeVF",
       "& div": {
+        fontFamily: "SerendieOfficeVF",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        letterSpacing: "0.1em",
         // mb: "16px",
         lineHeight: "1",
         textWrap: "nowrap",
@@ -105,9 +103,11 @@ const linkContentExpandedStyle = sva({
         },
       },
       "& p": {
+        fontFamily: "Roboto",
+        fontWeight: "bold",
+        letterSpacing: "0.05em",
         whiteSpace: "nowrap",
         fontSize: "26px",
-        fontWeight: 50,
         lineHeight: "1",
       },
     },
@@ -181,10 +181,13 @@ const linkContentCompactStyle = sva({
     container: {
       display: "grid",
       gridTemplateColumns: "1fr 1fr",
-      gap: "54px 16px",
+      gap: "32px 28px",
       height: "fit-content",
       flex: "0 0 100%",
       pl: "24px",
+      expanded: {
+        gap: "54px 16px",
+      },
     },
     titleWrapper: {
       position: "relative",
@@ -279,8 +282,7 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
 
   const styles = linkContentCompactStyle();
 
-  const { selectedIndex, scrollSnaps, onDotButtonClick } =
-    useDotButton(emblaApi);
+  const { selectedIndex } = useDotButton(emblaApi);
 
   const {
     prevBtnDisabled,
@@ -361,7 +363,8 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
                   textAlign: "center",
                   overflow: "hidden",
                   lineHeight: 1,
-                  fontFamily: "SerendieOfficeVF",
+                  fontWeight: "sd.reference.typography.fontWeight.bold",
+                  textTransform: "uppercase",
                   fontSize: "18px",
                   "& span": {
                     height: "18px",
@@ -429,25 +432,6 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
             </div>
           ))}
         </div>
-      </div>
-
-      <div className={styles.carouselDotsContainer}>
-        {scrollSnaps.map((_, index) => {
-          return (
-            <button
-              key={index}
-              className={cx(
-                styles.carouselDots,
-                index === selectedIndex
-                  ? css({
-                      bg: "web.system.color.impression.secondary !important",
-                    })
-                  : css({ bg: "sd.reference.color.scale.gray.300" })
-              )}
-              onClick={() => onDotButtonClick(index)}
-            ></button>
-          );
-        })}
       </div>
     </div>
   );

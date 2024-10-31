@@ -12,11 +12,11 @@ import { PageSection, PageARef } from "../../../components/PageLayout.tsx";
   <PageSection>
     <PageHeadLine number={1}>カラーテーマ</PageHeadLine>
 
-    BtoBからBtoCまで多様な事業領域に対応するため、現在5つのカラーテーマを提供しています。各テーマはSerendieブランドに用いられる日本の伝統色をベースに設計しています。今後ニーズに合わせてテーマの追加・更新をしていく予定です。
+    事業領域に応じたトンマナに対応するため、現在5つのカラーテーマを提供しています。各テーマは[Serendieブランド](https://www.mitsubishielectric.co.jp/serendie/)に用いられる日本の伝統色をベースに設計しています。今後ニーズに合わせてテーマの追加・更新をしていく予定です。
 
     ## KONJO
 
-    紺青色をベースにしたテーマです。紺青色は[Serendie St.横浜](https://www.mitsubishielectric.co.jp/serendie/)の拠点カラーでもあり、デフォルトのカラーテーマとしています。
+    紺青色をベースにしたテーマです。紺青色は[三菱電機Serendie St. Yokohama](https://www.mitsubishielectric.co.jp/serendie/)の拠点カラーでもあり、デフォルトのカラーテーマとしています。
 
     <img src="/assets/pages/theming/konjo.png" alt="" />
 
@@ -47,26 +47,32 @@ import { PageSection, PageARef } from "../../../components/PageLayout.tsx";
   </PageSection>
 
   <PageSection>
+    <PageHeadLine number={3}>Figma上でのテーマ変更</PageHeadLine>
+
+    各テーマは、Figmaのなかで[Variableモード](https://help.figma.com/hc/ja/articles/15343816063383-%E3%83%90%E3%83%AA%E3%82%A2%E3%83%96%E3%83%AB%E3%83%A2%E3%83%BC%E3%83%89)として扱われます。Variableモードは、Figma Variablesに定義されたモード (テーマ) を、ページやセクション、フレームなどに割り当てる機能です。
+
+    <img src="/assets/pages/theming/theme-selector.png" width="310" alt="" />
+
+    例えば、ページに「ASAGI」を割り当てることで、そのページ内の全てのSerendie UIをASAGIテーマに切り替えることができます。
+
+    <img src="/assets/pages/getstarted/getstarted-design-5.gif" width="310" alt="" />
+
+  </PageSection>
+
+  <PageSection>
     <PageHeadLine number={2}>アクセシビリティ基準</PageHeadLine>
 
-    現在提供している5つのカラーテーマは、前景色 (テキスト色) と背景色のコントラスト比を[WCAG2.2 レベルAA](https://waic.jp/translations/WCAG22/#contrast-minimum)に準拠します。Serendie Design Systemが提供するデザイントークンを用いて、UIコンポーネントを設計する際は、カラーロールを適切に使用してください。例えば、primaryとonPrimaryは合わせて使うことが推奨され、primaryとonPrimaryContainerを組み合わせることは非推奨です。
+    現在提供している5つのカラーテーマは、前景色(テキスト色)と背景色の**コントラスト比が[WCAG2.2 レベルAA](https://waic.jp/translations/WCAG22/#contrast-minimum)を満たす**ように設計しています。
 
-    Serendieブランドは、カラーパレット内の多様な色を組み合わせる表現が特徴です。Serendie Design Systemではその多様さを5つのカラーテーマとして規定することで、アクセシビリティ基準を担保しています。
+    そのためUIコンポーネントを追加設計する際は、カラーロールを適切に使用してください。**例えば、primaryとonPrimaryは合わせて使うことが推奨され、primaryとonPrimaryContainerを組み合わせることは非推奨です。**
 
-    このアクセシビリティ基準はベースラインであり、事業やプロダクトごとに必要な基準は異なります。今後のアップデートでは、一部のテーマをWCAG3.0 APCA (Advanced Perceptual Contrast Algorithm) 準拠とすることも検討しています。APCAはWCAG 3.0での採用が議論されており、より人間の知覚に基づいたコントラスト比になることが期待されています。
+    [Serendieブランド](https://www.mitsubishielectric.co.jp/serendie/)は、カラーパレット内の多様な色を組み合わせる表現が特徴です。Serendie Design Systemではその多様さを5つのカラーテーマとして規定することで、アクセシビリティ基準を担保しています。
+
+    このアクセシビリティ基準はベースラインであり、事業やプロダクトごとに必要な基準は異なることが想定されます。今後のアップデートでは、一部のテーマをWCAG3.0 APCA (Advanced Perceptual Contrast Algorithm) 準拠とすることも検討しています。APCAはWCAG 3.0での採用が議論されており、より人間の知覚に基づいたコントラスト比になることが期待されています。
 
     ### 参考文献
 
     <PageARef href="https://www.digital.go.jp/resources/introduction-to-web-accessibility-guidebook">ウェブアクセシビリティ導入ガイドブック - デジタル庁</PageARef>
     <PageARef href="https://git.apcacontrast.com/documentation/">APCA Documentation Index - APCA</PageARef>
-
-  </PageSection>
-
-  <PageSection>
-    <PageHeadLine number={3}>Figmaにおけるテーマ切り替え</PageHeadLine>
-
-    各テーマは、Figmaのなかで[バリアブルモード](https://help.figma.com/hc/ja/articles/15343816063383-%E3%83%90%E3%83%AA%E3%82%A2%E3%83%96%E3%83%AB%E3%83%A2%E3%83%BC%E3%83%89)として扱われます。バリアブルモードは、Figma Variablesに定義されたモード (テーマ) を、ページやセクション、フレームなどに割り当てる機能です。例えば、ページにASAGIを割り当てることで、そのページ内の全てのSerendie UIをASAGIテーマに切り替えることができます。
-
-    <img src="/assets/pages/theming/theme-selector.png" width="310" alt="" />
 
   </PageSection>

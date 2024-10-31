@@ -10,10 +10,11 @@ const contactCardStyle = sva({
       bg: "sd.system.color.component.surface",
       borderRadius: "50%",
       aspectRatio: "1 / 1",
-      maxWidth: "300px",
-      width: "110px",
+      width: "100%",
+      maxWidth: "160px",
+      border: "3px solid",
+      borderColor: "web.system.color.mvShape.foreground.arc.indexBorder",
 
-      height: "fit-content",
       textAlign: "center",
       display: "flex",
       alignItems: "center",
@@ -26,6 +27,7 @@ const contactCardStyle = sva({
       expanded: {
         width: "100%",
         maxWidth: "160px",
+        borderWidth: "0",
       },
 
       "&:hover": {
@@ -84,6 +86,10 @@ const { icon, title, link } = Astro.props;
       zIndex: -1,
       aspectRatio: "1 / 1",
       transition: "rotate 0.3s",
+      display: "none",
+      expanded: {
+        display: "block",
+      },
     })}
   />
   <a class={styles.grid} href={link} target="_blank">

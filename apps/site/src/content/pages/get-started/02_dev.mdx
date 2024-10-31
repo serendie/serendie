@@ -2,7 +2,7 @@
 title: 開発
 slug: get-started/dev
 illustType: "B"
-description: "Webフロントエンド開発において、Serendie UIを使ったデザインファイルをデザイナーと共有し、それをReactで実装していくシーンを想定して活用方法を紹介します。"
+description: "Webフロントエンド開発において、Serendie UI Kitをベースにした画面デザインを、Reactで実装していくシーンを想定して活用方法を紹介します。"
 lastUpdated: "2024-11-1"
 ---
 
@@ -14,54 +14,57 @@ export const sampleCodeCss = `@layer reset, base, tokens, recipes, utilities;
 @import "@serendie/ui/styles.css";`;
 
   <PageSection>
+    <PageHeadLine number={0}>Serendie UI</PageHeadLine>
+
+    Serendie UI Kit内で提供しているデザイントークンおよびUIコンポーネントを、Webフロントエンド開発でも利用できるように実装版を提供しています。特に開発シーンにおいてメインで活用することになるUIコンポーネント集を、Serendie UIと呼びます。
+
+    Serendie UIは、React環境を想定しており、**現在のところクローズドベータ版として三菱電機メンバーのみ利用可能**です。2025年2月にオープンソースとして一般公開を予定しています。
+
+    このページではSerendie UIを使い始めるための基本的な情報を紹介します。三菱電機メンバー向けにはブートキャンプも開催しています。開催予定は[社内ポータル](https://mitsubishielectricgroup.sharepoint.com/sites/014758/serendie_designsystem)を参照してください。
+
+  </PageSection>
+
+  <PageSection>
     <PageHeadLine number={1}>デザインを確認する</PageHeadLine>
 
-    ### Devモード
+    ### Figma - Devモード
 
     三菱電機のFigma組織内では、開発者向けにDevモードアカウントを準備しています。Devモードは開発者向けのFigmaビューであり、実装時のヒントとなるインスペクタやアノテーションを活用できます。詳しくはFigmaヘルプページを参照してください。
 
     <PageARef href="https://help.figma.com/hc/ja/articles/15023124644247-%E9%96%8B%E7%99%BA%E3%83%A2%E3%83%BC%E3%83%89%E3%81%AE%E3%82%AC%E3%82%A4%E3%83%89">Devモードのガイド - Figma Learn</PageARef>
 
-    ### Code Connect
+    ### Figma - Code Connect
 
-    Serendie UIのコンポーネントはCode Connectに対応しています。Code Connectは、デザインファイル上のコンポーネントに対応するコードスニペットをFigma Devモードに表示する機能です。Code Connectを活用することで、デザインを確認しながら、Reactコンポーネントの実装例を同時に確認することができます。
+    Serendie UIのコンポーネントはCode Connectに対応しています。Code Connectは、デザインファイル上のコンポーネントに対応するコードスニペットをFigma Devモードに表示する機能です。Code Connectを活用することで、デザインを確認しながら、Serendie UIを使った実装例を同時に確認することができます。
+
+    <PageARef href="https://www.figma.com/blog/introducing-code-connect/">Code Connect - Figma Blog</PageARef>
 
     <p>
-      <img src="/assets/pages/code-connect.png" width="310" alt="" />
+      <img src="/assets/pages/getstarted/dev-code-connect.png" width="310" alt="" />
     </p>
+
 
     ### Storybook
 
-    またCode Connectと同等の内容を、Storybookとして提供しています。UIコンポーネントの状態変化や、ReactコンポーネントのPropsとの対応など、より詳しく確認したい場合に利用できます。
-
-    <PageARef href="https://serendie.design/storybook">Storybook - Serendie Design System</PageARef>
+    またCode Connectと同等の内容を、[Storybook](/storybook)として提供しています。各コンポーネントの状態変化や、ReactコンポーネントのPropsとの対応など、より詳しく確認したい場合に利用できます。
 
   </PageSection>
 
   <PageSection>
-    <PageHeadLine number={2}>開発の準備</PageHeadLine>
+    <PageHeadLine number={2}>事前準備</PageHeadLine>
 
     ### GitHubチームに加わる
 
-    GitHubの[Serendieリポジトリ]()は公開に向けて準備中です。現在のところプライベート状態で運用しているため、三菱電機社内で利用希望の方は、Serendie Design Systemチームに連絡しGitHubチームへの招待を受けてください。
+    Serendie UIの[GitHubリポジトリ](https://github.com/serendie)は公開に向けて準備中です。現在のところプライベート状態で運用しているため、三菱電機社内で利用希望の方は、Serendie Design Systemチームに連絡しGitHubチームへの招待を受けてください。
 
     ### GitHub Packagesの利用準備
 
-    Serendie UIはnpmパッケージとして利用可能です。現在のところレジストラとして、GitHub Packagesを利用しており、事前にアクセストークンの準備が必要です。詳しくは[README]()を参照してください。
+    Serendie UIはnpmパッケージとして利用可能です。レジストリとして、GitHub Packagesを利用しており、事前にアクセストークンの設定が必要です。詳しくは[README](https://github.com/serendie/serendie/pkgs/npm/ui)を参照してください。
 
   </PageSection>
 
   <PageSection>
-    <PageHeadLine number={3}>デザイントークンを使う</PageHeadLine>
-
-    Serendie UIとデザイントークンは別のパッケージとなっており、独立して利用可能です。デザイントークンは、CSS, JavaScript環境であれば広く利用可能な形で配布しています。npmなどのパッケージマネージャーで下記のようにインストールしてください。なお、デザイントークンの一覧は[Foundations/Design Tokens]()を参照してください。
-
-    <CodeBox code={`npm install @serendie/design-token`} language={'shell'} client:idle />
-
-  </PageSection>
-
-  <PageSection>
-    <PageHeadLine number={4}>Reactコンポーネントを使う</PageHeadLine>
+    <PageHeadLine number={3}>Serendie UIを使う</PageHeadLine>
 
     Serendie UIはReact環境に対応しています。Reactコンポーネントを利用したい場合は、下記のようにインストールしてください。
 
@@ -79,11 +82,28 @@ export const sampleCodeCss = `@layer reset, base, tokens, recipes, utilities;
 
     Serendie UIはヘッドレスUIライブラリとして[Ark UI](https://ark-ui.com/)を内部的に利用しており、各コンポーネントのAPIはArk UIを継承します。Selectコンポーネントなどインタラクションが複雑なコンポーネントは、Ark UIのAPIリファレンスを合わせて参照してください。
 
-    <PageARef href="https://ark-ui.com/react/docs/components/select#api-reference">Select | API Reference - Ark UI</PageARef>
+    <PageARef href="https://ark-ui.com/react/docs/components/select#api-reference">API Reference - Ark UI</PageARef>
 
 
-    ### カスタマイズして使う
+    ### 機能の拡張とスタイルの上書き
 
-    Serendie UIはスタイリングライブラリとして[Panda CSS](https://panda-css.com/)を利用しています。Panda CSSが提供するユーティリティを使ったコンポーネントの拡張や、テーマの変更などが可能です。詳しくはREADMEを参照してください。なお、カスタマイズせずに使う場合は、Panda CSSの導入は必要ありません。
+    Serendie UIはスタイリングライブラリとして[Panda CSS](https://panda-css.com/)を内部的に利用しています。Panda CSSが提供するユーティリティを使ったコンポーネントの拡張や、テーマの変更、スタイルの上書きなどが可能です。詳しくはSerendie UIの[README](https://github.com/serendie/serendie/pkgs/npm/ui)を参照してください。
+
+    なお、プロジェクトへのPanda CSSの導入は任意です。機能拡張やスタイル上書きが不要な場合や、他のスタイリングライブラリを使いたい場合は導入の必要はありません。
+
+    <PageARef href="https://panda-css.com/docs/overview/getting-started">Get started with Panda - Panda CSS</PageARef>
+
+  </PageSection>
+
+  <PageSection>
+    <PageHeadLine number={4}>デザイントークンを使う</PageHeadLine>
+
+    Serendie UIとデザイントークンは別パッケージとなっており、デザイントークンだけを独立して利用することも可能です。
+
+    デザイントークンは、CSS/JavaScript環境であれば広く利用可能な形で配布しています。プロジェクトがReact環境ではないなどの理由で「Serendie UIは使えないが、カラーや書体定義だけは使いたい」シーンで活用できます。
+
+    npmなどのパッケージマネージャーで下記のようにインストールしてください。なお、デザイントークンの一覧は[こちら](/foundations/design-tokens/reference-tokens)を参照してください。
+
+    <CodeBox code={`npm install @serendie/design-token`} language={'shell'} client:idle />
 
   </PageSection>

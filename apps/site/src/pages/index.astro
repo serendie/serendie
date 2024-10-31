@@ -6,8 +6,27 @@ import { styled } from "styled-system/jsx";
 import ReleaseNote from "@/components/toppage/ReleaseNote.astro";
 import Contact from "@/components/toppage/Contact.astro";
 import { BackgroundShape } from "@/components/toppage/BackgroundShape";
-import Global from "@/layouts/Global.astro";
 import { Header } from "@/components/toppage/Header";
+
+import IconAbout from "@/assets/toppage/icons/about.svg?raw";
+import IconAccordion from "@/assets/toppage/icons/accordion.svg?raw";
+import IconBottomNavigation from "@/assets/toppage/icons/bottom-navigation.svg?raw";
+import IconButton from "@/assets/toppage/icons/button.svg?raw";
+import IconColor from "@/assets/toppage/icons/color-.svg?raw";
+import IconDesignTokens from "@/assets/toppage/icons/design-tokens.svg?raw";
+import IconDesign from "@/assets/toppage/icons/design.svg?raw";
+import IconDev from "@/assets/toppage/icons/dev.svg?raw";
+import IconDimension from "@/assets/toppage/icons/dimemntion.svg?raw";
+import IconElevation from "@/assets/toppage/icons/elevation.svg?raw";
+import IconIcon from "@/assets/toppage/icons/icon.svg?raw";
+import IconIllustration from "@/assets/toppage/icons/illustration.svg?raw";
+import IconList from "@/assets/toppage/icons/list.svg?raw";
+import IconSeeAll from "@/assets/toppage/icons/see-all.svg?raw";
+import IconSelect from "@/assets/toppage/icons/select.svg?raw";
+import IconTabs from "@/assets/toppage/icons/tabs.svg?raw";
+import IconTextField from "@/assets/toppage/icons/text-field.svg?raw";
+import IconTheming from "@/assets/toppage/icons/theming.svg?raw";
+import IconTypography from "@/assets/toppage/icons/typography.svg?raw";
 
 const Container = styled("div", {
   base: {
@@ -18,7 +37,7 @@ const Container = styled("div", {
       px: "150px",
       lgDown: {
         px: "48px",
-      }
+      },
     },
   },
 });
@@ -26,110 +45,117 @@ const Container = styled("div", {
 const content = [
   {
     titleEn: "Get Started",
-    titleJa: "コンポーネント",
     description: "",
     links: [
       {
         title: "デザイン",
         href: "/get-started/design",
-        illustration: "/assets/illustration/sample/illustration-0.svg",
+        illustration: IconDesign,
       },
       {
         title: "開発",
         href: "/get-started/dev",
-        illustration: "/assets/illustration/sample/illustration-1.svg",
+        illustration: IconDev,
       },
     ],
   },
   {
     titleEn: "Foundations",
-    titleJa: "ファンデーション",
     description: "",
     links: [
       {
-        title: "Design Tokens",
+        title: "デザイントークン",
         href: "/foundations/design-tokens",
-        illustration: "/assets/illustration/sample/illustration-0.svg",
+        illustration: IconDesignTokens,
       },
       {
-        title: "Color",
+        title: "カラー",
         href: "/foundations/color",
-        illustration: "/assets/illustration/sample/illustration-1.svg",
+        illustration: IconColor,
       },
       {
-        title: "Theming",
+        title: "テーミング",
         href: "/foundations/theming",
-        illustration: "/assets/illustration/sample/illustration-2.svg",
+        illustration: IconTheming,
       },
       {
-        title: "Typography",
+        title: "タイポグラフィ",
         href: "/foundations/typography",
-        illustration: "/assets/illustration/sample/illustration-3.svg",
+        illustration: IconTypography,
       },
       {
-        title: "Dimension",
+        title: "寸法",
         href: "/foundations/dimension",
-        illustration: "/assets/illustration/sample/illustration-4.svg",
+        illustration: IconDimension,
       },
       {
-        title: "Elevation",
+        title: "階層",
         href: "/foundations/elevation",
-        illustration: "/assets/illustration/sample/illustration-0.svg",
+        illustration: IconElevation,
       },
       {
-        title: "Icon",
+        title: "アイコン",
         href: "/foundations/icon",
-        illustration: "/assets/illustration/sample/illustration-1.svg",
+        illustration: IconIcon,
+      },
+      {
+        title: "イラストレーション",
+        href: "/foundations/illustration",
+        illustration: IconIllustration,
       },
     ],
   },
   {
     titleEn: "Components",
-    titleJa: "コンポーネント",
     description: "",
     links: [
       {
         title: "Accordion",
         href: "/components/accordion",
-        illustration: "/assets/illustration/sample/illustration-0.svg",
-      },
-      {
-        title: "Avatar",
-        href: "/components/avatar",
-        illustration: "/assets/illustration/sample/illustration-1.svg",
-      },
-      {
-        title: "Badge",
-        href: "/components/badge",
-        illustration: "/assets/illustration/sample/illustration-2.svg",
-      },
-      {
-        title: "Banner",
-        href: "/components/banner",
-        illustration: "/assets/illustration/sample/illustration-3.svg",
+        illustration: IconAccordion,
       },
       {
         title: "Bottom Navigation",
         href: "/components/bottom-navigation",
-        illustration: "/assets/illustration/sample/illustration-4.svg",
+        illustration: IconBottomNavigation,
       },
       {
         title: "Button",
         href: "/components/button",
-        illustration: "/assets/illustration/sample/illustration-0.svg",
+        illustration: IconButton,
       },
       {
-        title: "Check Box",
-        href: "/components/check-box",
-        illustration: "/assets/illustration/sample/illustration-1.svg",
-      }
+        title: "List",
+        href: "/components/list",
+        illustration: IconList,
+      },
+      {
+        title: "Select",
+        href: "/components/select",
+        illustration: IconSelect,
+      },
+      {
+        title: "Tabs",
+        href: "/components/tabs",
+        illustration: IconTabs,
+      },
+      {
+        title: "TextField",
+        href: "/components/text-field",
+        illustration: IconTextField,
+      },
+      {
+        title: "全て見る",
+        href: "/components",
+        illustration: IconSeeAll,
+      },
     ],
   },
 ];
 ---
 
 <TopLayout>
-  <Header client:load/>
+  <Header client:load />
 
   <Container>
     <LinkContent content={content} client:idle />
@@ -139,4 +165,19 @@ const content = [
   </Container>
 
   <BackgroundShape client:idle />
+
+  <style is:global>
+    @layer utilities {
+      // テーマによってsvgを内包するdivのmix-blend-modeを変更
+      [data-name="top-background-shape"] > div {
+        mix-blend-mode: multiply;
+        [data-panda-theme="kurikawa"] & {
+          mix-blend-mode: normal;
+        }
+        [data-panda-theme="sumire"] & {
+          mix-blend-mode: normal;
+        }
+      }
+    }
+  </style>
 </TopLayout>

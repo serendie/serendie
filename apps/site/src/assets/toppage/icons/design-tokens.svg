@@ -1,0 +1,12 @@
+<svg width="172" height="172" viewBox="0 0 172 172" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="172" height="172" rx="86" fill="white"/>
+<g style="mix-blend-mode:multiply">
+<path d="M117.057 87.6172L82.5162 87.6172V147.879L117.057 147.879L117.057 87.6172Z" fill="var(--_illustration-system-composition-tertiary-2, #00A3AF)"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<circle cx="71.1068" cy="68.8675" r="36.9105" fill="var(--_illustration-system-composition-primary, #0A69CF)"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M115.719 90.7518C125.621 93.4049 135.798 87.5289 138.451 77.6274L151.49 81.1211C146.908 98.2237 129.328 108.373 112.226 103.791C95.123 99.2079 84.9736 81.6285 89.5562 64.5259L102.595 68.0196C99.9419 77.9212 105.818 88.0987 115.719 90.7518Z" fill="var(--_illustration-system-composition-accent, #F84258)"/>
+</g>
+</svg>

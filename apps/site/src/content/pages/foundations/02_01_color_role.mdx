@@ -29,7 +29,7 @@ export const ImageWrapper = styled("p", {
 
 <PageSection>
 
-    <PageHeadLine number={1}>カラーテーマ</PageHeadLine>
+    <PageHeadLine number={1}>ロールの区分</PageHeadLine>
 
 カラーロールは、Impression, Component, Interactionの3つの区分で整理されます。この区分はシステムトークンのKey名に含まれます。
 
@@ -51,11 +51,13 @@ export const ImageWrapper = styled("p", {
 
 ## ブランドカラーとUIカラー
 
-プロダクトを目にした**ユーザーがいだく「印象」に関するカラーロールがImpression**です。この区分の中には、ブランドカラーに関するロールと、UIカラーに関するロールが含まれます。
+プロダクトを目にした**ユーザーが受ける「印象」に関するカラーロールがImpression**です。この区分の中には、ブランドカラーに関するロールと、UIカラーに関するロールが含まれます。
 
 ブランドカラーに関するロールは、その優先度ごとにPrimary, Secondary, Tertiaryの3種類が存在します。Primaryカラーは、プロダクト及びブランドの印象を形づくり、UIの重要度を示す役割です。SecondaryおよびTertiaryカラーは補助的な役割で、プロダクト内で登場しないこともあります。
 
-UIカラーに関するロールは、「成功」や「失敗」「警告」など、UIの持つ機能やインタラクションの結果を、ユーザーに伝える役割です。これをユーザーに与える印象という観点で、Positive, Negative, Noiceという3種類で整理します。Impressionのなかに合計6つの小区分を用意していますが、プロダクトによってはPrimaryとPositiveが同じ色を指すことも多く、全てに別の色を当てはめる必要はありません。結果として同じ色であっても、**ロールを分けておくことで変化に強いデザイントークン**となります。
+UIカラーに関するロールは、「成功」や「失敗」「警告」など、UIの持つ機能やインタラクションの結果を、ユーザーに伝える役割です。これをユーザーに与える印象という観点で、Positive, Negative, Noticeという3種類で整理します。Impressionのなかに合計6つの小区分を用意していますが、プロダクトによってはPrimaryとPositiveが同じ色を指すことも多く、全てに別の色を当てはめる必要はありません。
+
+結果として同じ色を指す場合でも、**ロールを分けておくことで変化に強いデザイントークン**となります。
 
 <ImageWrapper>
   <ImageImpression />

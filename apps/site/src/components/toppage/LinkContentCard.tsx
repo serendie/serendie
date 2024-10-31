@@ -1,6 +1,5 @@
 import { css } from "styled-system/css";
 import { TitleShapeRenew } from "./TitleShapeRenew";
-import { TitleShape } from "./TitleShape";
 
 export const LinkContentCard: React.FC<{
   href: string;
@@ -25,6 +24,10 @@ export const LinkContentCard: React.FC<{
             fontWeight: "bold",
             lineHeight: 1,
             textAlign: "center",
+            mb: "sd.reference.dimension.scale.8",
+            expanded: {
+              mb: "0",
+            },
           })}
         >
           {title}
@@ -38,9 +41,12 @@ export const LinkContentCard: React.FC<{
             justifyContent: "center",
             margin: "auto",
             width: "100%",
+            height: "auto",
+            maxWidth: "200px",
             expanded: {
               height: "224px",
               width: "224px",
+              maxWidth: "none",
             },
           })}
         >
@@ -66,36 +72,30 @@ export const LinkContentCard: React.FC<{
               },
             })}
           />
-          <TitleShape
-            className={css({
-              position: "absolute",
-              transition: "transform 0.3s",
-              mixBlendMode: "multiply",
-              rotate: "225deg",
-              width: "100%",
-              height: "100%",
-              display: "block",
-              expanded: {
-                display: "none",
-              },
-              _hover: {
-                transform: "rotate(180deg)",
-              },
-            })}
-          />
-          <img
-            src={illustration}
-            className={css({
-              width: "110px",
-              height: "110px",
-              expanded: {
-                width: "160px",
-                height: "160px",
-              },
-              objectFit: "contain",
-              borderRadius: "50%",
-            })}
-          />
+          {illustration && (
+            <span
+              className={css({
+                display: "block",
+                width: "100%",
+                expanded: {
+                  width: "160px",
+                  height: "160px",
+                },
+                "& > svg": {
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: "100%",
+                  border: "3px solid",
+                  borderColor:
+                    "web.system.color.mvShape.foreground.arc.indexBorder",
+                  expanded: {
+                    borderWidth: "0",
+                  },
+                },
+              })}
+              dangerouslySetInnerHTML={{ __html: illustration }}
+            />
+          )}
         </div>
       </div>
     </a>
