@@ -64,9 +64,17 @@ const linkContentExpandedStyle = sva({
       height: "calc(240px * 2 + 28px)",
       gridTemplateColumns: "285px 1fr",
       gridTemplateRows: "1fr",
+      "@media (max-width: 1684px)": {
+        height:
+          "calc(((100vw - 285px - 120px - (150px * 2) - (28px * 2) - (16px * 3) - (48px * 2) - 36px) / 3) * 3 + (48px * 2))",
+      },
       lgDown: {
         gap: "48px",
         gridTemplateColumns: "200px 1fr",
+        height:
+          "calc(((((100vw - 48px - 200px) - (28px * 3)) / 4) + 16px) * 2)",
+      },
+      mdDown: {
         height:
           "calc(((((100vw - 48px - 200px) - (28px * 3)) / 4) + 16px) * 2)",
       },
@@ -169,6 +177,9 @@ const linkContentExpandedStyle = sva({
       gridTemplateColumns: "repeat(auto-fill, minmax(224px, 1fr))",
       gap: "48px 28px",
       lgDown: {
+        gridTemplateColumns: "repeat(4, 1fr)",
+      },
+      mdDown: {
         gridTemplateColumns: "repeat(4, 1fr)",
       },
     },
