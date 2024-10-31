@@ -152,8 +152,8 @@ export const Header: React.FC = () => {
               className={css({
                 py: "sd.system.dimension.spacing.medium",
                 height: "56px",
-                px: "sd.system.dimension.spacing.threeExtraLarge !important",
-                pr: "sd.system.dimension.spacing.twoExtraLarge !important",
+                px: "34px !important",
+                pr: "26px !important",
                 border: "1px solid",
                 borderColor: "white",
                 color: "white",
