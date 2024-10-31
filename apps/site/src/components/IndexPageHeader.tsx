@@ -77,10 +77,19 @@ const IndexPageHeader_ = ({
             </span>
           )}
         </h1>
-        {description && <p>{description}</p>}
+        {description && (
+          <p
+            className={css({
+              my: "sd.system.dimension.spacing.extraLarge",
+            })}
+          >
+            {description}
+          </p>
+        )}
         {lastUpdated && (
           <p
             className={css({
+              my: "sd.system.dimension.spacing.extraLarge",
               fontSize: "12px",
               color: "sd.reference.color.scale.gray.600",
             })}
