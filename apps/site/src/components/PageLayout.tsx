@@ -33,6 +33,9 @@ export const PageMain = styled("div", {
 export const PageSection = styled("section", {
   base: {
     mb: "sd.system.dimension.spacing.fiveExtraLarge",
+    sm: {
+      mb: "sd.system.dimension.spacing.sixExtraLarge",
+    },
     "& img, svg, figure": {
       borderRadius: "sd.system.dimension.radius.large",
     },

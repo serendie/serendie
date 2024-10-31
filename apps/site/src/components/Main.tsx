@@ -50,6 +50,7 @@ export const Main = styled("main", {
       fontSize: "sd.reference.typography.scale.expanded.medium",
       sm: {
         my: "sd.system.dimension.spacing.extraLarge",
+        mt: "sd.system.dimension.spacing.twoExtraLarge",
         fontSize: "sd.reference.typography.scale.compact.extraLarge",
       },
     },
