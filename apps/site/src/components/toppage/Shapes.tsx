@@ -172,6 +172,8 @@ export const Shapes = () => {
         expanded: {
           height: "37.222vw",
           width: "37.222vw",
+          maxH: "543px",
+          maxW: "543px",
         },
       })}
     >

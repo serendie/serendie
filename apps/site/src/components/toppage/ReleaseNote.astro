@@ -50,7 +50,7 @@ const Note = styled("a", {
   base: {
     display: "grid",
     gridColumn: "1 / 5",
-    gridTemplateColumns: "subgrid",
+    gridTemplateColumns: "auto 1fr auto",
     gap: "12px",
     background: "sd.system.color.component.surface",
     py: "16px",
@@ -59,6 +59,7 @@ const Note = styled("a", {
     alignContent: "center",
     borderRadius: "130px",
     expanded: {
+      gridTemplateColumns: "auto 1fr auto auto",
       gap: "0",
       py: "sd.system.dimension.spacing.extraSmall",
       px: "sd.system.dimension.spacing.large",
