@@ -58,8 +58,8 @@ export const BadgeStyle = cva({
         bg: "sd.reference.color.scale.yellow.600",
         color: "sd.system.color.component.inverseOnSurface",
       },
-      orange: {
-        bg: "sd.reference.color.scale.orange.600",
+      chestnut: {
+        bg: "sd.reference.color.scale.chestnut.600",
         color: "sd.system.color.component.inverseOnSurface",
       },
       red: {
@@ -82,9 +82,9 @@ export const BadgeStyle = cva({
         bg: "sd.reference.color.scale.yellow.100",
         color: "sd.reference.color.scale.yellow.800",
       },
-      "orange-subtle": {
-        bg: "sd.reference.color.scale.orange.100",
-        color: "sd.reference.color.scale.orange.800",
+      "chestnut-subtle": {
+        bg: "sd.reference.color.scale.chestnut.100",
+        color: "sd.reference.color.scale.chestnut.800",
       },
       "red-subtle": {
         bg: "sd.reference.color.scale.red.100",
