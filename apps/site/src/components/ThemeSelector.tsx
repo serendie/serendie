@@ -14,13 +14,13 @@ const statusBarColors = themeNames.map((name) => ({
   name,
   color:
     name === defaultTheme
-      ? tokens.colors.sd.system.color.impression.primary.value
+      ? tokens.colors.sd.system.color.impression.tertiary.value
       : themes[name as keyof typeof themes].tokens.colors.sd.system.color
-          .impression.primary.value,
+          .impression.tertiary.value,
 }));
 
 const defaultStatusBarColor =
-  tokens.colors.sd.system.color.impression.primary.value;
+  tokens.colors.sd.system.color.impression.tertiary.value;
 
 const themeItems = [
   ...themeNames.map((name) => ({
@@ -53,7 +53,10 @@ export const ThemeSelector = () => {
       document.documentElement.setAttribute("data-panda-theme", theme);
       localStorage.setItem("panda-theme", theme);
     }
-    setStatusBarColor(theme);
+    // トップページのみステータスバーの色を変更
+    if (window.location.pathname === "/") {
+      setStatusBarColor(theme);
+    }
   }, [theme]);
 
   return (
