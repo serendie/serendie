@@ -36,8 +36,9 @@ const HeaderContainer = styled(motion.div, {
     opacity: 0,
     expanded: {
       pt: "24.889vh",
-      mx: "10.417vw",
+      mx: "auto",
       width: "calc(100vw - 20.833%)",
+      maxW: "1640px",
     },
   },
 });
