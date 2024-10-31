@@ -1,7 +1,5 @@
 ---
-import { SvgIcon } from "@serendie/ui";
-import { css } from "styled-system/css";
-import { Box, Flex, styled } from "styled-system/jsx";
+import { Box, styled } from "styled-system/jsx";
 import { Code as AstroCode } from "astro:components";
 
 const StyledButton = styled("button", {
@@ -11,7 +9,6 @@ const StyledButton = styled("button", {
 });
 
 const { code, language } = Astro.props;
-
 ---
 
 <Box
@@ -20,10 +17,7 @@ const { code, language } = Astro.props;
   bg="web.system.color.articleFigure.background"
   borderRadius="sd.system.dimension.radius.large"
 >
-  <Box
-    data-code-section
-    fontSize="sd.reference.typography.scale.compact.small"
-  >
+  <Box data-code-section fontSize="sd.reference.typography.scale.compact.small">
     <AstroCode
       code={code}
       lang={language ?? "tsx"}
@@ -68,4 +62,3 @@ const { code, language } = Astro.props;
     });
   });
 </script>
-        
