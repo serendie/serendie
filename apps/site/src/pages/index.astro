@@ -179,6 +179,25 @@ const content = [
           mix-blend-mode: normal;
         }
       }
+
+      /*
+      * getStartedのアイコンの色をテーマによって変更
+      */
+      :where(:root, :host) {
+        --ex-getStartedIcon: var(--sd-reference-color-scale-purple-400);
+      }
+      [data-panda-theme="asagi"] {
+        --ex-getStartedIcon: var(--sd-reference-color-scale-green-500);
+      }
+      [data-panda-theme="tsutuji"] {
+        --ex-getStartedIcon: var(--sd-reference-color-scale-blue-400);
+      }
+      [data-panda-theme="kurikawa"] {
+        --ex-getStartedIcon: var(--sd-reference-color-scale-yellow-400);
+      }
+      [data-panda-theme="sumire"] {
+        --ex-getStartedIcon: var(--sd-reference-color-scale-blue-400);
+      }
     }
   </style>
 </TopLayout>
