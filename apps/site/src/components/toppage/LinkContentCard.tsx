@@ -1,4 +1,4 @@
-import { css } from "styled-system/css";
+import { css, cx } from "styled-system/css";
 import { TitleShapeRenew } from "./TitleShapeRenew";
 
 export const LinkContentCard: React.FC<{
@@ -47,30 +47,37 @@ export const LinkContentCard: React.FC<{
               height: "224px",
               width: "224px",
               maxWidth: "none",
+              _hover: {
+                "& .shapecircle": {
+                  // transitionDelay: "0.1s",
+                  transform: "rotate(180deg)",
+                },
+              },
             },
           })}
         >
           <TitleShapeRenew
             strokeWidth="16"
-            className={css({
-              position: "absolute",
-              transition: "transform 0.3s",
-              mixBlendMode: "multiply",
-              rotate: "225deg",
-              width: "100%",
-              height: "100%",
-              display: "none",
-              expanded: {
-                display: "block",
-                top: "0%",
-                left: "0%",
+            className={cx(
+              "shapecircle",
+              css({
+                position: "absolute",
+                transition: "transform 0.3s",
+                mixBlendMode: "multiply",
+                rotate: "225deg",
                 width: "100%",
                 height: "100%",
-              },
-              _hover: {
-                transform: "rotate(180deg)",
-              },
-            })}
+                display: "none",
+                pointerEvents: "none",
+                expanded: {
+                  display: "block",
+                  top: "0%",
+                  left: "0%",
+                  width: "100%",
+                  height: "100%",
+                },
+              })
+            )}
           />
           {illustration && (
             <span
