@@ -101,6 +101,7 @@ const IndexPageHeader_ = ({
       <div
         className={css({
           "&>svg": {
+            maxWidth: "100%",
             width: illustSize === "large" ? "644px" : "auto",
             height: "auto",
           },
