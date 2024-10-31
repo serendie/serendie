@@ -116,14 +116,14 @@ const linkContentExpandedStyle = sva({
         fontWeight: "bold",
         letterSpacing: "0.05em",
         whiteSpace: "nowrap",
-        fontSize: "26px",
+        fontSize: "20px",
         lineHeight: "1",
         lgDown: {
           fontSize: "18px",
         },
         "& span": {
-          height: "26px",
-          minHeight: "26px",
+          height: "20px",
+          minHeight: "20px",
           alignContent: "center",
         },
       },
@@ -374,7 +374,7 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
             </div>
             <div
               className={css({
-                height: "18px",
+                height: "16px",
                 width: "100%",
                 overflow: "hidden",
               })}
@@ -391,13 +391,13 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
                   lineHeight: 1,
                   fontWeight: "sd.reference.typography.fontWeight.bold",
                   textTransform: "uppercase",
-                  fontSize: "18px",
+                  fontSize: "16px",
                   "& span": {
-                    height: "18px",
+                    height: "16px",
                   },
                 })}
                 animate={{
-                  y: -selectedIndex * 18,
+                  y: -selectedIndex * 16,
                 }}
               >
                 {content.map((c, i) => (
@@ -527,7 +527,7 @@ const LinkContentExpanded: React.FC<LinkContentProps> = ({ content }) => {
                   </div>
                   <div
                     className={css({
-                      height: "26px",
+                      height: "20px",
                       width: "100%",
                       overflow: "hidden",
                     })}
@@ -543,7 +543,7 @@ const LinkContentExpanded: React.FC<LinkContentProps> = ({ content }) => {
                         overflow: "hidden",
                       })}
                       animate={{
-                        y: -index * 26,
+                        y: -index * 20,
                       }}
                     >
                       {content.map((c, i) => (
