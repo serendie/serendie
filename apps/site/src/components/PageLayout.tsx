@@ -67,7 +67,10 @@ export const PageLinks = (props: PageFooterProps) => (
     className={css({
       ml: "0 !important",
       display: "grid",
-      gap: "sd.system.dimension.spacing.extraLarge",
+      gap: "sd.system.dimension.spacing.small",
+      sm: {
+        gap: "sd.system.dimension.spacing.extraLarge",
+      },
       gridTemplateColumns:
         props.column === "span2" ? "repeat(2, 1fr)" : undefined,
       marginInlineStart: "0",
@@ -88,14 +91,19 @@ export const PageLinks = (props: PageFooterProps) => (
             href={`/${sib.slug}`}
             className={css({
               display: "flex",
+              height: props.column === "span2" ? "100%" : undefined,
               alignItems: "center",
               justifyContent: "space-between",
               borderRadius: "sd.system.dimension.radius.extraLarge",
-              py: "sd.system.dimension.spacing.extraLarge",
-              px: "sd.system.dimension.spacing.twoExtraLarge",
-              bg: "sd.reference.color.scale.gray.100",
               textStyle: "sd.system.typography.body.large_compact",
+              bg: "sd.reference.color.scale.gray.100",
               transition: "background 0.3s",
+              px: "sd.system.dimension.spacing.large",
+              p: "sd.system.dimension.spacing.medium",
+              sm: {
+                py: "sd.system.dimension.spacing.extraLarge",
+                px: "sd.system.dimension.spacing.twoExtraLarge",
+              },
               _hover: {
                 bg: "sd.system.color.interaction.selectedSurface",
               },
@@ -105,7 +113,9 @@ export const PageLinks = (props: PageFooterProps) => (
               <span
                 className={css({
                   display: "block",
-                  pb: "sd.system.dimension.spacing.large",
+                  sm: {
+                    pb: "sd.system.dimension.spacing.large",
+                  },
                   textStyle: "sd.system.typography.body.small_compact",
                 })}
               >
