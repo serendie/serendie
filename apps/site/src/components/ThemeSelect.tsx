@@ -35,7 +35,7 @@ export const SelectStyle = sva({
       bg: "web.system.color.impression.secondary",
       borderRadius: "sd.system.dimension.radius.full",
       _hover: {
-        bg: "color-mix(in srgb,var(--colors-sd-system-color-impression-primary),var(--colors-sd-system-color-interaction-hovered-variant)) !important",
+        bg: "color-mix(in srgb,var(--colors-sd-system-color-impression-primary),var(--colors-sd-reference-color-scale-black-1000) 20%) !important",
       },
       _enabled: {
         _focusVisible: {
@@ -90,7 +90,13 @@ export const SelectStyle = sva({
       justifyContent: "space-between",
       alignItems: "center",
       _highlighted: {
-        backgroundColor: "sd.system.color.interaction.hoveredVariant",
+        backgroundColor: "sd.reference.color.scale.transparency.20",
+      },
+      _active: {
+        fontWeight: "bold",
+        "& figure": {
+          borderWidth: "2px",
+        },
       },
       _first: {
         pt: "sd.system.dimension.spacing.small",
