@@ -21,8 +21,10 @@ export const PageMain = styled("div", {
 export const PageSection = styled("section", {
   base: {
     mb: "sd.system.dimension.spacing.fiveExtraLarge",
+    textStyle: "sd.system.typography.body.small_compact",
     sm: {
       mb: "sd.system.dimension.spacing.sixExtraLarge",
+      textStyle: "sd.system.typography.body.medium_compact",
     },
     /*
       中面のmarkdown向けのスタイルはここに記述
@@ -43,10 +45,6 @@ export const PageSection = styled("section", {
     },
     "& p": {
       my: "sd.system.dimension.spacing.extraLarge",
-      textStyle: "sd.system.typography.body.small_compact",
-      sm: {
-        textStyle: "sd.system.typography.body.medium_compact",
-      },
     },
     "& h2": {
       fontWeight: "sd.reference.typography.fontWeight.bold",
@@ -223,7 +221,6 @@ export const PageARef = styled(Aref, {
     width: "100%",
     alignItems: "center",
     gap: "sd.system.dimension.spacing.twoExtraSmall",
-    textStyle: "sd.system.typography.body.small_compact",
     "& + &": {
       mt: "sd.system.dimension.spacing.large",
     },
