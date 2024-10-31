@@ -31,6 +31,7 @@ import IconTypography from "@/assets/toppage/icons/typography.svg?raw";
 const Container = styled("div", {
   base: {
     px: "24px",
+    textStyle: "_Web.body.small.PC.R",
     maxWidth: "calc(1640px + 300px)",
     mx: "auto",
     expanded: {
@@ -157,7 +158,7 @@ const content = [
 <TopLayout>
   <Header client:load />
 
-  <Container>
+  <Container data-name="top-container">
     <LinkContent content={content} client:idle />
     <Showcase />
     <ReleaseNote />
