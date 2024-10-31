@@ -66,7 +66,7 @@ const linkContentExpandedStyle = sva({
       gridTemplateRows: "1fr",
       lgDown: {
         gap: "48px",
-        // gridTemplateColumns: "200px 1fr",
+        gridTemplateColumns: "200px 1fr",
         // height: "calc((224px + 28px) * 3 + 64px)",
       },
     },
@@ -97,6 +97,15 @@ const linkContentExpandedStyle = sva({
         textWrap: "nowrap",
         fontSize: "80px",
         fontWeight: 50,
+        lgDown: {
+          fontSize: "58px",
+        },
+        "& h2": {
+          "& span": {
+            height: "80px",
+            alignContent: "center",
+          },
+        },
         "& svg": {
           h: "64px",
           pointerEvents: "none",
@@ -109,6 +118,14 @@ const linkContentExpandedStyle = sva({
         whiteSpace: "nowrap",
         fontSize: "26px",
         lineHeight: "1",
+        lgDown: {
+          fontSize: "18px",
+        },
+        "& span": {
+          height: "26px",
+          minHeight: "26px",
+          alignContent: "center",
+        },
       },
     },
     titleShape: {
@@ -117,6 +134,12 @@ const linkContentExpandedStyle = sva({
       left: 0,
       width: "100%",
       height: "100%",
+      aspectRatio: "1 / 1",
+      lgDown: {
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+      },
       "& svg": {
         width: "285px",
         height: "100%",
@@ -144,6 +167,9 @@ const linkContentExpandedStyle = sva({
       display: "grid",
       gridTemplateColumns: "repeat(auto-fill, minmax(224px, 1fr))",
       gap: "48px 28px",
+      lgDown: {
+        gridTemplateColumns: "repeat(3, 1fr)",
+      },
     },
   },
 });
@@ -470,6 +496,9 @@ const LinkContentExpanded: React.FC<LinkContentProps> = ({ content }) => {
                       width: "100%",
                       overflow: "hidden",
                       mb: "16px",
+                      lgDown: {
+                        mb: "0px",
+                      },
                     })}
                   >
                     <motion.h2
