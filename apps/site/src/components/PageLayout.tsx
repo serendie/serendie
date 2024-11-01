@@ -152,7 +152,7 @@ export const PageLinks = (props: PageFooterProps) => (
                 px: "sd.system.dimension.spacing.twoExtraLarge",
               },
               _hover: {
-                bg: "web.system.color.impression.subtle",
+                bg: "sd.system.color.interaction.selectedSurface",
               },
             })}
           >
