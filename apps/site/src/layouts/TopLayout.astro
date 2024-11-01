@@ -6,6 +6,15 @@ import GlobalHeader from "@/components/GlobalHeader.astro";
 import { css } from "styled-system/css";
 import Html from "./Html.astro";
 
+const Body = styled("body", {
+  base: {
+    "& *::selection": {
+      backgroundColor: "web.system.color.impression.primary",
+      color: "white"
+    }
+  }
+})
+
 const Container = styled("div", {
   base: {
     position: "relative",
@@ -77,7 +86,7 @@ const menuItems = [
 ---
 
 <Html>
-  <body>
+  <Body>
     <GlobalHeader
       className={css({
         position: "fixed",
@@ -110,5 +119,5 @@ const menuItems = [
     </Wrapper>
 
     <Footer />
-  </body>
+  </Body>
 </Html>

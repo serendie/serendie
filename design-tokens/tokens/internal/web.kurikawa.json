@@ -26,6 +26,10 @@
           "onTertiary": {
             "$type": "color",
             "$value": "{sd.reference.color.scale.white.1000}"
+          },
+          "subtle": {
+            "$type": "color",
+            "$value": "{sd.reference.color.scale.chestnut.100}"
           }
         },
         "component": {
@@ -44,10 +48,6 @@
           "surfaceDimmest": {
             "$type": "color",
             "$value": "{sd.reference.color.scale.gray.400}"
-          },
-          "textHighlight": {
-            "$type": "color",
-            "$value": "{sd.reference.color.scale.chestnut.100}"
           }
         },
         "mvShape": {
