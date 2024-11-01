@@ -1,6 +1,7 @@
 ---
-const gaId: string = 'G-EL89QYFD4D'
+const gaId = import.meta.env.PROD ? "G-EL89QYFD4D" : "G-WBLBGKEVCW";
 ---
+
 <>
   <script
     is:inline
@@ -14,6 +15,6 @@ const gaId: string = 'G-EL89QYFD4D'
     }
     gtag('js', new Date())
     gtag('config', gaId)
-    console.log(gaId)
+    console.log('GAID', gaId)
   </script>
 </>
