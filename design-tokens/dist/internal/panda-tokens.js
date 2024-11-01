@@ -29,6 +29,9 @@ export default {
                   },
                   "onTertiary": {
                     "value": "#02373C"
+                  },
+                  "subtle": {
+                    "value": "#D9F6FC"
                   }
                 },
                 "component": {
@@ -43,9 +46,6 @@ export default {
                   },
                   "surfaceDimmest": {
                     "value": "#AFAEAA"
-                  },
-                  "textHighlight": {
-                    "value": "#D9F6FC"
                   }
                 },
                 "mvShape": {
@@ -154,6 +154,9 @@ export default {
                   },
                   "onTertiary": {
                     "value": "#FFFFFF"
+                  },
+                  "subtle": {
+                    "value": "#FAECE6"
                   }
                 },
                 "component": {
@@ -168,9 +171,6 @@ export default {
                   },
                   "surfaceDimmest": {
                     "value": "#AFAEAA"
-                  },
-                  "textHighlight": {
-                    "value": "#FAECE6"
                   }
                 },
                 "mvShape": {
@@ -279,6 +279,9 @@ export default {
                   },
                   "onTertiary": {
                     "value": "#FFFFFF"
+                  },
+                  "subtle": {
+                    "value": "#F4ECF6"
                   }
                 },
                 "component": {
@@ -293,9 +296,6 @@ export default {
                   },
                   "surfaceDimmest": {
                     "value": "#AFAEAA"
-                  },
-                  "textHighlight": {
-                    "value": "#F4ECF6"
                   }
                 },
                 "mvShape": {
@@ -404,6 +404,9 @@ export default {
                   },
                   "onTertiary": {
                     "value": "#591734"
+                  },
+                  "subtle": {
+                    "value": "#F9EBF0"
                   }
                 },
                 "component": {
@@ -418,9 +421,6 @@ export default {
                   },
                   "surfaceDimmest": {
                     "value": "#AFAEAA"
-                  },
-                  "textHighlight": {
-                    "value": "#F9EBF0"
                   }
                 },
                 "mvShape": {
@@ -528,6 +528,9 @@ export default {
             },
             "onTertiary": {
               "value": "#073165"
+            },
+            "subtle": {
+              "value": "#EFF2FC"
             }
           },
           "component": {
@@ -542,9 +545,6 @@ export default {
             },
             "surfaceDimmest": {
               "value": "#AFAEAA"
-            },
-            "textHighlight": {
-              "value": "#EFF2FC"
             }
           },
           "mvShape": {
