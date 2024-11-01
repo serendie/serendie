@@ -81,7 +81,7 @@ export const PageSection = styled("section", {
       px: "2px",
       pb: "1px",
       pt: "2.5px",
-      backgroundColor: "web.system.color.component.textHighlight",
+      backgroundColor: "web.system.color.impression.subtle",
     },
   },
 });
