@@ -37,6 +37,7 @@
     "typescript": "^5.5.3"
   },
   "devDependencies": {
+    "@astrojs/partytown": "^2.1.2",
     "@chromatic-com/storybook": "^1.6.1",
     "@pandacss/dev": "^0.42.0",
     "@storybook/addon-essentials": "^8.2.4",
