@@ -1,6 +1,7 @@
 ---
 import "@/index.css";
 import { siteConfig } from "@/../siteConfig";
+import GoogleAnalytics from "@/components/GoogleAnalytics.astro";
 
 interface Props {
   title?: string;
@@ -51,6 +52,7 @@ const pageTitle = title
         font-display: swap;
       }
     </style>
+    <GoogleAnalytics />
   </head>
   <slot />
 </html>

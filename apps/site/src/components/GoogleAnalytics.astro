@@ -1,0 +1,19 @@
+---
+const gaId: string = 'G-EL89QYFD4D'
+---
+<>
+  <script
+    is:inline
+    data-astro-rerun
+    type='text/partytown'
+    src=`https://www.googletagmanager.com/gtag/js?id=${gaId}`></script>
+  <script is:inline data-astro-rerun type='text/partytown' define:vars={{ gaId }}>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
+    gtag('config', gaId)
+    console.log(gaId)
+  </script>
+</>
