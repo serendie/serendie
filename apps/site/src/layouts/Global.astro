@@ -17,6 +17,10 @@ const Body = styled("body", {
     display: "grid",
     gridTemplateRows: "auto 1fr",
     alignItems: "start",
+    "& *::selection": {
+      backgroundColor: "web.system.color.impression.primary",
+      color: "white"
+    }
   },
 });
 ---
