@@ -4,7 +4,10 @@ import { Dd, Dl, Dt, HBox } from "src/components/LayoutUtils";
 export function ColorSample() {
   return (
     <HBox>
-      <Dl w="100%" gridTemplateColumns="80px 1fr 80px 1fr">
+      <Dl
+        w="100%"
+        gridTemplateColumns={{ sm: "max-content auto max-content auto" }}
+      >
         <Dt>Gray</Dt>
         <Dd>
           <Badge>Label</Badge>
@@ -45,14 +48,14 @@ export function ColorSample() {
           <Badge styleColor="yellow-subtle">Label</Badge>
         </Dd>
 
-        <Dt>Orange</Dt>
+        <Dt>Chestnut</Dt>
         <Dd>
-          <Badge styleColor="orange">Label</Badge>
+          <Badge styleColor="chestnut">Label</Badge>
         </Dd>
 
-        <Dt>Orange-subtle</Dt>
+        <Dt>Chestnut-subtle</Dt>
         <Dd>
-          <Badge styleColor="orange-subtle">Label</Badge>
+          <Badge styleColor="chestnut-subtle">Label</Badge>
         </Dd>
 
         <Dt>Red</Dt>
