@@ -174,6 +174,7 @@ type Props = {
   label?: string;
   required?: boolean;
   invalidMessage?: string;
+  buttonClassName?: string;
 };
 
 type selectItem = {
@@ -192,6 +193,7 @@ export const ThemeSelect: React.FC<SelectStyleProps> = ({
   invalid,
   invalidMessage,
   className,
+  buttonClassName,
   ...props
 }) => {
   const [variantProps, elementProps] = SelectStyle.splitVariantProps(props);
@@ -230,7 +232,7 @@ export const ThemeSelect: React.FC<SelectStyleProps> = ({
         </ArkSelect.Label>
       )}
       <ArkSelect.Control>
-        <ArkSelect.Trigger className={styles.trigger}>
+        <ArkSelect.Trigger className={cx(styles.trigger, buttonClassName)}>
           <ArkSelect.ValueText
             placeholder={placeholder}
             className={styles.valueText}

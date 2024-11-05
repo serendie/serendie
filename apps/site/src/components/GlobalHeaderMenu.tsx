@@ -1,9 +1,12 @@
-import { List, ListItem } from "@serendie/ui";
 import { useRef } from "react";
 import IconClose from "../assets/icon/outline/close.svg?react";
 import IconMenu from "../assets/icon/outline/menu.svg?react";
+import IconFigma from "../assets/logo/figma-bw.svg?react";
+import IconGitHub from "../assets/logo/github.svg?react";
+import IconX from "../assets/logo/x.svg?react";
 import { css } from "styled-system/css";
 import { ThemeSelector } from "./ThemeSelector";
+import { HeaderTitleContent } from "./toppage/Header";
 
 export const GlobalHeaderMenu: React.FC<{
   menuItems: {
@@ -26,6 +29,8 @@ export const GlobalHeaderMenu: React.FC<{
         ref={dialogRef}
         className={css({
           bg: "web.system.color.impression.tertiary",
+          color: "web.system.color.impression.onTertiary",
+          padding: "sd.system.dimension.spacing.extraLarge",
           width: "100%",
           height: "100%",
           maxWidth: "100%",
@@ -43,22 +48,77 @@ export const GlobalHeaderMenu: React.FC<{
           },
         })}
       >
-        <button
-          aria-label="メニューを閉じる"
-          onClick={() => {
-            dialogRef.current?.close();
-          }}
-        >
-          <IconClose aria-label="Close" />
-        </button>
-        <List>
-          {menuItems.map((item) => (
-            <a key={item.href} href={item.href}>
-              <ListItem title={item.text} />
+        <div className={css({ display: "flex", justifyContent: "flex-end" })}>
+          <button
+            className={css({
+              "& svg > path": {
+                fill: "currentColor",
+              },
+            })}
+            aria-label="メニューを閉じる"
+            onClick={() => {
+              dialogRef.current?.close();
+            }}
+          >
+            <IconClose aria-label="Close" />
+          </button>
+        </div>
+        <div className={css({ maxWidth: "375px", mx: "auto" })}>
+          <div
+            className={css({
+              display: "flex",
+              gap: "6px",
+              flexDirection: "column",
+              maxWidth: "180px",
+              fontSize: "18px",
+              mb: "40px",
+              mt: "56px",
+            })}
+          >
+            <a href="/">
+              <HeaderTitleContent />
             </a>
-          ))}
-        </List>
-        <ThemeSelector />
+          </div>
+          <div
+            className={css({
+              display: "flex",
+              flexDirection: "column",
+              gap: "28px",
+              mb: "28px",
+              fontSize: "18px",
+              fontWeight: "sd.reference.typography.fontWeight.bold",
+            })}
+          >
+            {menuItems.map((item) => (
+              <a key={item.href} href={item.href}>
+                {item.text}
+              </a>
+            ))}
+          </div>
+          <ThemeSelector
+            buttonClassName={css({
+              width: "380px",
+              maxWidth: "calc(100vw - 48px)",
+            })}
+          />
+          <div
+            className={css({
+              my: "64px",
+              display: "flex",
+              justifyContent: "space-between",
+              width: "200px",
+              mx: "auto",
+              "& svg path[fill='#000000']": {
+                fill: "currentColor",
+              },
+            })}
+          >
+            <IconFigma width="40px" height="40px" />
+            <IconX width="40px" height="40px" />
+            <IconGitHub width="40px" height="40px" />
+          </div>
+          <div>© Mitsubishi Electric Corporation</div>
+        </div>
       </dialog>
     </div>
   );

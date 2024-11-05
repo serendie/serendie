@@ -39,7 +39,11 @@ const setStatusBarColor = (theme: string) =>
     .querySelector("meta[name='theme-color']")
     ?.setAttribute("content", getStatusBarColor(theme));
 
-export const ThemeSelector = () => {
+export const ThemeSelector = ({
+  buttonClassName,
+}: {
+  buttonClassName?: string;
+}) => {
   const [theme, setTheme] = useState("");
 
   useEffect(() => {
@@ -65,6 +69,7 @@ export const ThemeSelector = () => {
       value={[theme]}
       size="small"
       items={themeItems}
+      buttonClassName={buttonClassName}
     />
   );
 };
