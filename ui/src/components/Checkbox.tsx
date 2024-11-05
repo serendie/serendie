@@ -13,6 +13,18 @@ export const checkboxIconCss = {
     outlineColor: "sd.system.color.impression.primary",
     borderRadius: "sd.system.dimension.radius.small",
   },
+  _disabled: {
+    _checked: {
+      "& svg": {
+        color:
+          "color-mix(in srgb, {colors.sd.system.color.impression.primary}, {colors.sd.system.color.interaction.hoveredOnPrimary});",
+      },
+      "& .checkmark": {
+        color:
+          "color-mix(in srgb, {colors.sd.system.color.interaction.disabled}, {colors.sd.system.color.impression.onPrimaryContainer});",
+      },
+    },
+  },
 };
 
 export const checkboxCheckedIconCss = {
@@ -21,14 +33,6 @@ export const checkboxCheckedIconCss = {
   color: "sd.system.color.impression.primary",
   "& .checkmark": {
     color: "sd.system.color.impression.onPrimaryContainer",
-  },
-  _disabled: {
-    color:
-      "color-mix(in srgb, {colors.sd.system.color.impression.primary}, {colors.sd.system.color.interaction.hoveredOnPrimary});",
-    "& .checkmark": {
-      color:
-        "color-mix(in srgb, {colors.sd.system.color.interaction.disabled}, {colors.sd.system.color.impression.onPrimaryContainer});",
-    },
   },
 };
 
