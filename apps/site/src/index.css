@@ -5,6 +5,7 @@
 @import "@serendie/design-token/tokens.css";
 @import "../scripts/token2cssVars/composition.css";
 
+/* モーダルが開いている場合はスクロールを無効化 */
 body:has(dialog[open]) {
   overflow: hidden;
 }
