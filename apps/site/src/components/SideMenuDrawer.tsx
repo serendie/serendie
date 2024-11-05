@@ -44,10 +44,10 @@ export const SideMenuDrawer: React.FC<{
         })}
         contentClassName={css({
           _open: {
-            animation: "menuSlideInReverse 0.3s ease-in-out",
+            animation: "menuSlideInReverse 0.2s ease-in-out",
           },
           _closed: {
-            animation: "menuSlideOutReverse 0.3s ease-in-out",
+            animation: "menuSlideOutReverse 0.2s ease-in-out",
           },
         })}
       >
