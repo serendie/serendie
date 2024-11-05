@@ -1,5 +1,5 @@
 import { Dialog, DialogRootProps, Portal } from "@ark-ui/react";
-import { RecipeVariantProps, sva } from "../../styled-system/css";
+import { cx, RecipeVariantProps, sva } from "../../styled-system/css";
 import { IconButton } from "./IconButton";
 
 const DrawerStyle = sva({
@@ -66,6 +66,8 @@ const DrawerStyle = sva({
 type Props = {
   isOpen: boolean;
   children: React.ReactNode;
+  contentClassName?: string;
+  backdropClassName?: string;
   onOpenChange: (e: { open: boolean }) => void;
 };
 
@@ -76,6 +78,8 @@ export type DrawerProps = Props &
 export const Drawer: React.FC<DrawerProps> = ({
   isOpen,
   children,
+  contentClassName,
+  backdropClassName,
   ...props
 }) => {
   const [variantProps, elementProps] = DrawerStyle.splitVariantProps(props);
@@ -84,9 +88,9 @@ export const Drawer: React.FC<DrawerProps> = ({
   return (
     <Dialog.Root open={isOpen} {...elementProps}>
       <Portal>
-        <Dialog.Backdrop className={styles.backdrop} />
+        <Dialog.Backdrop className={cx(styles.backdrop, backdropClassName)} />
         <Dialog.Positioner>
-          <Dialog.Content className={styles.content}>
+          <Dialog.Content className={cx(styles.content, contentClassName)}>
             <header className={styles.closeTrigger}>
               <Dialog.CloseTrigger asChild>
                 <IconButton icon="close" shape="rectangle" styleType="ghost" />
