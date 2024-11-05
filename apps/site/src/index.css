@@ -4,3 +4,7 @@
 @import "@serendie/design-token/internal/web/tokens.css";
 @import "@serendie/design-token/tokens.css";
 @import "../scripts/token2cssVars/composition.css";
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}

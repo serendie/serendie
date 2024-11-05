@@ -1,6 +1,9 @@
-import { Drawer, IconButton, List, ListItem } from "@serendie/ui";
-import { useState } from "react";
+import { List, ListItem } from "@serendie/ui";
+import { useRef } from "react";
+import IconClose from "../assets/icon/outline/close.svg?react";
+import IconMenu from "../assets/icon/outline/menu.svg?react";
 import { css } from "styled-system/css";
+import { ThemeSelector } from "./ThemeSelector";
 
 export const GlobalHeaderMenu: React.FC<{
   menuItems: {
@@ -8,27 +11,46 @@ export const GlobalHeaderMenu: React.FC<{
     text: string;
   }[];
 }> = ({ menuItems }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const dialogRef = useRef<HTMLDialogElement>(null);
   return (
     <div>
-      <IconButton
-        className={css({
-          color: "web.system.color.component.onSurface",
-        })}
-        styleType="ghost"
-        icon="menu"
+      <button
+        aria-label="メニューを開く"
         onClick={() => {
-          setIsOpen(true);
-        }}
-      />
-
-      <Drawer
-        type="full"
-        isOpen={isOpen}
-        onOpenChange={(newIsOpen) => {
-          setIsOpen(newIsOpen.open);
+          dialogRef.current?.showModal();
         }}
       >
+        <IconMenu />
+      </button>
+      <dialog
+        ref={dialogRef}
+        className={css({
+          bg: "web.system.color.impression.tertiary",
+          width: "100%",
+          height: "100%",
+          maxWidth: "100%",
+          maxHeight: "100%",
+          zIndex: "99999",
+          pointerEvents: "none",
+          willChange: "transform",
+          animation: "menuSlideOut 0.2s ease-in-out",
+          _open: {
+            animation: "menuSlideIn 0.2s ease-in-out",
+            pointerEvents: "auto",
+          },
+          "&::backdrop": {
+            bg: "transparent",
+          },
+        })}
+      >
+        <button
+          aria-label="メニューを閉じる"
+          onClick={() => {
+            dialogRef.current?.close();
+          }}
+        >
+          <IconClose aria-label="Close" />
+        </button>
         <List>
           {menuItems.map((item) => (
             <a key={item.href} href={item.href}>
@@ -36,7 +58,8 @@ export const GlobalHeaderMenu: React.FC<{
             </a>
           ))}
         </List>
-      </Drawer>
+        <ThemeSelector />
+      </dialog>
     </div>
   );
 };

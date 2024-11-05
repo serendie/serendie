@@ -1,8 +1,4 @@
-import {
-  Select as ArkSelect,
-  Portal,
-  type SelectRootProps,
-} from "@ark-ui/react";
+import { Select as ArkSelect, type SelectRootProps } from "@ark-ui/react";
 import { type RecipeVariantProps, css, cx, sva } from "styled-system/css";
 import ChevronDown from "../assets/icon/outline/chevron-down.svg?raw";
 import { useId } from "react";
@@ -265,43 +261,41 @@ export const ThemeSelect: React.FC<SelectStyleProps> = ({
           {invalidMessage}
         </div>
       )}
-      <Portal>
-        <ArkSelect.Positioner>
-          {/* TODO: 上部に僅かに隙間があるので詰めたいがAPIが見つからない、、、 */}
-          <ArkSelect.Content className={styles.content}>
-            <ArkSelect.ItemGroup id={id}>
-              {props.items.map((item, i) => (
-                <ArkSelect.Item key={i} item={item} className={styles.item}>
-                  <ArkSelect.ItemText>{item.label}</ArkSelect.ItemText>
-                  <figure
-                    className={css({
-                      width: "14px",
-                      height: "14px",
-                      bg: "white",
-                      borderRadius: "50%",
-                      border: "1px solid #fff",
-                    })}
-                    style={{
-                      backgroundColor:
-                        item.value === "konjo"
-                          ? "var(--sd-reference-color-scale-blue-600)"
-                          : item.value === "asagi"
-                            ? "var(--sd-reference-color-scale-skyblue-600)"
-                            : item.value === "sumire"
-                              ? "var(--sd-reference-color-scale-purple-600)"
-                              : item.value === "kurikawa"
-                                ? "var(--sd-reference-color-scale-chestnut-600)"
-                                : item.value === "tsutsuji"
-                                  ? "var(--sd-reference-color-scale-pink-600)"
-                                  : "",
-                    }}
-                  ></figure>
-                </ArkSelect.Item>
-              ))}
-            </ArkSelect.ItemGroup>
-          </ArkSelect.Content>
-        </ArkSelect.Positioner>
-      </Portal>
+      <ArkSelect.Positioner>
+        {/* TODO: 上部に僅かに隙間があるので詰めたいがAPIが見つからない、、、 */}
+        <ArkSelect.Content className={styles.content}>
+          <ArkSelect.ItemGroup id={id}>
+            {props.items.map((item, i) => (
+              <ArkSelect.Item key={i} item={item} className={styles.item}>
+                <ArkSelect.ItemText>{item.label}</ArkSelect.ItemText>
+                <figure
+                  className={css({
+                    width: "14px",
+                    height: "14px",
+                    bg: "white",
+                    borderRadius: "50%",
+                    border: "1px solid #fff",
+                  })}
+                  style={{
+                    backgroundColor:
+                      item.value === "konjo"
+                        ? "var(--sd-reference-color-scale-blue-600)"
+                        : item.value === "asagi"
+                          ? "var(--sd-reference-color-scale-skyblue-600)"
+                          : item.value === "sumire"
+                            ? "var(--sd-reference-color-scale-purple-600)"
+                            : item.value === "kurikawa"
+                              ? "var(--sd-reference-color-scale-chestnut-600)"
+                              : item.value === "tsutsuji"
+                                ? "var(--sd-reference-color-scale-pink-600)"
+                                : "",
+                  }}
+                ></figure>
+              </ArkSelect.Item>
+            ))}
+          </ArkSelect.ItemGroup>
+        </ArkSelect.Content>
+      </ArkSelect.Positioner>
     </ArkSelect.Root>
   );
 };
