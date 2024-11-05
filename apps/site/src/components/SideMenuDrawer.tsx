@@ -49,6 +49,17 @@ export const SideMenuDrawer: React.FC<{
         onOpenChange={(newIsOpen) => {
           setIsOpen(newIsOpen.open);
         }}
+        backdropClassName={css({
+          bg: "transparent",
+        })}
+        contentClassName={css({
+          _open: {
+            animation: "menuSlideInReverse 0.3s ease-in-out",
+          },
+          _closed: {
+            animation: "menuSlideOutReverse 0.3s ease-in-out",
+          },
+        })}
       >
         <div
           className={css({

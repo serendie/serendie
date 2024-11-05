@@ -63,7 +63,7 @@ export const GlobalHeaderMenu: React.FC<{
             <IconClose aria-label="Close" />
           </button>
         </div>
-        <div className={css({ maxWidth: "375px", mx: "auto" })}>
+        <div className={css({ maxWidth: "768px", mx: "auto" })}>
           <div
             className={css({
               display: "flex",
@@ -97,7 +97,7 @@ export const GlobalHeaderMenu: React.FC<{
           </div>
           <ThemeSelector
             buttonClassName={css({
-              width: "380px",
+              width: "327px",
               maxWidth: "calc(100vw - 48px)",
             })}
           />

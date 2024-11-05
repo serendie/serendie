@@ -45,6 +45,14 @@ export default defineConfig({
             pointerEvents: "none",
           },
         },
+        menuSlideInReverse: {
+          from: { transform: "translateX(-100%)", display: "none" },
+          to: { transform: "translateX(0)", display: "block" },
+        },
+        menuSlideOutReverse: {
+          from: { transform: "translateX(0)", display: "block" },
+          to: { transform: "translateX(-100%)", display: "none" },
+        },
       },
       breakpoints: {
         expanded: "768px",
