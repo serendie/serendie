@@ -179,9 +179,7 @@ export const Shapes = () => {
     >
       {[Shape1, Shape2, Shape3, Shape4, Shape5, Shape6].map(
         (Component, index) => {
-          const styles = shapeDefaultStyles({
-            mixBlendMode: index === 3 ? "normal" : undefined,
-          });
+          const styles = shapeDefaultStyles();
           return (
             <motion.div
               key={index}
@@ -249,7 +247,7 @@ const shapeDefaultStyles = sva({
       zIndex: "1",
       transformOrigin: "center center",
       pointerEvents: "none",
-      mixBlendMode: "screen",
+      mixBlendMode: "normal",
       width: "100%",
       height: "100%",
     },
