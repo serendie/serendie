@@ -1,4 +1,4 @@
-import { Menu as ArkMenu, MenuRootProps } from "@ark-ui/react";
+import { Menu as ArkMenu, MenuRootProps, Portal } from "@ark-ui/react";
 import { Button, IconButton, SvgIcon, SvgIconName } from "..";
 import { sva } from "../../styled-system/css";
 
@@ -120,22 +120,24 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
           </Button>
         )}
       </ArkMenu.Trigger>
-      <ArkMenu.Positioner>
-        <ArkMenu.Content className={styles.content}>
-          <ArkMenu.ItemGroup className={styles.itemGroup}>
-            {items.map((item) => (
-              <ArkMenu.Item
-                key={item.value}
-                value={item.value}
-                className={styles.item}
-              >
-                {item.icon && <SvgIcon icon={item.icon} size="24px" />}
-                {item.label}
-              </ArkMenu.Item>
-            ))}
-          </ArkMenu.ItemGroup>
-        </ArkMenu.Content>
-      </ArkMenu.Positioner>
+      <Portal>
+        <ArkMenu.Positioner>
+          <ArkMenu.Content className={styles.content}>
+            <ArkMenu.ItemGroup className={styles.itemGroup}>
+              {items.map((item) => (
+                <ArkMenu.Item
+                  key={item.value}
+                  value={item.value}
+                  className={styles.item}
+                >
+                  {item.icon && <SvgIcon icon={item.icon} size="24px" />}
+                  {item.label}
+                </ArkMenu.Item>
+              ))}
+            </ArkMenu.ItemGroup>
+          </ArkMenu.Content>
+        </ArkMenu.Positioner>
+      </Portal>
     </ArkMenu.Root>
   );
 };
