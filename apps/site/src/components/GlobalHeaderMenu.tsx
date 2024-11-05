@@ -46,6 +46,9 @@ export const GlobalHeaderMenu: React.FC<{
           pointerEvents: "none",
           willChange: "transform",
           animation: "menuSlideOut 0.2s ease-in-out",
+          sm: {
+            pl: "sd.system.dimension.spacing.threeExtraLarge",
+          },
           _open: {
             animation: "menuSlideIn 0.2s ease-in-out",
             pointerEvents: "auto",
@@ -80,7 +83,10 @@ export const GlobalHeaderMenu: React.FC<{
             </button>
           </div>
           <div
-            className={css({ width: "100%", maxWidth: "375px", mx: "auto" })}
+            className={css({
+              width: "100%",
+              maxWidth: "311px",
+            })}
           >
             <div
               className={css({
@@ -115,7 +121,7 @@ export const GlobalHeaderMenu: React.FC<{
             </div>
             <ThemeSelector
               buttonClassName={css({
-                width: "375px",
+                width: "311px",
                 maxWidth: "calc(100vw - 48px)",
               })}
             />
