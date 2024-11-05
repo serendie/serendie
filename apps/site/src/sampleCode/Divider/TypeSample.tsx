@@ -13,8 +13,9 @@ export function TypeSample() {
       })}
     >
       <HBox
+        data-name="horizontal"
         className={css({
-          alignItems: "center",
+          alignItems: "center !important",
         })}
       >
         Horizontal
