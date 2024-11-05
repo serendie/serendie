@@ -18,12 +18,19 @@ export const GlobalHeaderMenu: React.FC<{
   return (
     <div>
       <button
+        className={css({
+          display: "flex",
+          p: "3px",
+          "& svg > path": {
+            fill: "currentColor",
+          },
+        })}
         aria-label="メニューを開く"
         onClick={() => {
           dialogRef.current?.showModal();
         }}
       >
-        <IconMenu />
+        <IconMenu width={18} height={18} />
       </button>
       <dialog
         ref={dialogRef}
@@ -51,6 +58,8 @@ export const GlobalHeaderMenu: React.FC<{
         <div className={css({ display: "flex", justifyContent: "flex-end" })}>
           <button
             className={css({
+              display: "flex",
+              p: "4px",
               "& svg > path": {
                 fill: "currentColor",
               },
@@ -60,7 +69,7 @@ export const GlobalHeaderMenu: React.FC<{
               dialogRef.current?.close();
             }}
           >
-            <IconClose aria-label="Close" />
+            <IconClose width={18} height={18} />
           </button>
         </div>
         <div className={css({ maxWidth: "768px", mx: "auto" })}>
