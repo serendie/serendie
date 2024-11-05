@@ -180,7 +180,9 @@ export const Shapes = () => {
       {[Shape1, Shape2, Shape3, Shape4, Shape5, Shape6].map(
         (Component, index) => {
           const styles = shapeDefaultStyles({
-            mixBlendMode: index === 3 ? "normal" : undefined,
+            shape: {
+              mixBlendMode: index === 3 ? "normal" : undefined,
+            },
           });
           return (
             <motion.div
