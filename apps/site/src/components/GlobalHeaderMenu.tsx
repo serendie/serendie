@@ -55,78 +55,96 @@ export const GlobalHeaderMenu: React.FC<{
           },
         })}
       >
-        <div className={css({ display: "flex", justifyContent: "flex-end" })}>
-          <button
-            className={css({
-              display: "flex",
-              p: "4px",
-              "& svg > path": {
-                fill: "currentColor",
-              },
-            })}
-            aria-label="メニューを閉じる"
-            onClick={() => {
-              dialogRef.current?.close();
-            }}
-          >
-            <IconClose width={18} height={18} />
-          </button>
-        </div>
-        <div className={css({ maxWidth: "768px", mx: "auto" })}>
-          <div
-            className={css({
-              display: "flex",
-              gap: "6px",
-              flexDirection: "column",
-              maxWidth: "180px",
-              fontSize: "18px",
-              mb: "40px",
-              mt: "56px",
-            })}
-          >
-            <a href="/">
-              <HeaderTitleContent />
-            </a>
+        <div
+          className={css({
+            display: "flex",
+            flexDirection: "column",
+            h: "100%",
+          })}
+        >
+          <div className={css({ display: "flex", justifyContent: "flex-end" })}>
+            <button
+              className={css({
+                display: "flex",
+                p: "4px",
+                "& svg > path": {
+                  fill: "currentColor",
+                },
+              })}
+              aria-label="メニューを閉じる"
+              onClick={() => {
+                dialogRef.current?.close();
+              }}
+            >
+              <IconClose width={18} height={18} />
+            </button>
           </div>
           <div
-            className={css({
-              display: "flex",
-              flexDirection: "column",
-              gap: "28px",
-              mb: "28px",
-              fontSize: "18px",
-              fontWeight: "sd.reference.typography.fontWeight.bold",
-            })}
+            className={css({ width: "100%", maxWidth: "375px", mx: "auto" })}
           >
-            {menuItems.map((item) => (
-              <a key={item.href} href={item.href}>
-                {item.text}
+            <div
+              className={css({
+                display: "flex",
+                gap: "6px",
+                flexDirection: "column",
+                maxWidth: "180px",
+                fontSize: "18px",
+                mb: "40px",
+                mt: "56px",
+              })}
+            >
+              <a href="/">
+                <HeaderTitleContent />
               </a>
-            ))}
+            </div>
+            <div
+              className={css({
+                display: "flex",
+                flexDirection: "column",
+                gap: "28px",
+                mb: "28px",
+                fontSize: "18px",
+                fontWeight: "sd.reference.typography.fontWeight.bold",
+              })}
+            >
+              {menuItems.map((item) => (
+                <a key={item.href} href={item.href}>
+                  {item.text}
+                </a>
+              ))}
+            </div>
+            <ThemeSelector
+              buttonClassName={css({
+                width: "375px",
+                maxWidth: "calc(100vw - 48px)",
+              })}
+            />
+            <div
+              className={css({
+                my: "64px",
+                display: "flex",
+                justifyContent: "space-between",
+                width: "200px",
+                mx: "auto",
+                "& svg path[fill='#000000']": {
+                  fill: "currentColor",
+                },
+              })}
+            >
+              <IconFigma width="40px" height="40px" />
+              <IconX width="40px" height="40px" />
+              <IconGitHub width="40px" height="40px" />
+            </div>
           </div>
-          <ThemeSelector
-            buttonClassName={css({
-              width: "327px",
-              maxWidth: "calc(100vw - 48px)",
-            })}
-          />
           <div
             className={css({
-              my: "64px",
+              flex: 1,
               display: "flex",
-              justifyContent: "space-between",
-              width: "200px",
-              mx: "auto",
-              "& svg path[fill='#000000']": {
-                fill: "currentColor",
-              },
+              alignItems: "flex-end",
             })}
           >
-            <IconFigma width="40px" height="40px" />
-            <IconX width="40px" height="40px" />
-            <IconGitHub width="40px" height="40px" />
+            © Mitsubishi Electric Corporation
           </div>
-          <div>© Mitsubishi Electric Corporation</div>
         </div>
       </dialog>
     </div>
