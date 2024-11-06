@@ -57,7 +57,10 @@ const IndexPageHeader_ = ({
           className={css({
             fontWeight: "sd.reference.typography.fontWeight.regular",
             textStyle: "sd.system.typography.display.medium_compact",
-            fontSize: illustSize === "small" ? "48px" : undefined,
+            fontSize: illustSize === "small" ? "32px" : "40px",
+            expanded: {
+              fontSize: illustSize === "small" ? "48px" : "56px",
+            },
             mdDown: {
               textStyle: "sd.system.typography.display.small_compact",
               fontSize: illustSize === "large" ? "42px" : undefined,
@@ -69,8 +72,11 @@ const IndexPageHeader_ = ({
             <span
               className={css({
                 display: "block",
-                fontSize: "sd.reference.typography.scale.compact.large",
+                fontSize: "14px",
                 fontWeight: "sd.reference.typography.fontWeight.bold",
+                expanded: {
+                  fontSize: "16px",
+                },
               })}
             >
               {subTitle}
