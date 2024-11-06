@@ -47,6 +47,9 @@ export const PageSection = styled("section", {
       listStyleType: "disc",
       my: "sd.system.dimension.spacing.extraSmall",
     },
+    "& p": {
+      lineHeight: "1.7",
+    },
     "& * + p": {
       mt: "sd.system.dimension.spacing.extraLarge",
     },
