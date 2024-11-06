@@ -42,8 +42,6 @@ export const PageSection = styled("section", {
     },
     "& p": {
       lineHeight: "1.7",
-    },
-    "& * + p": {
       mt: "sd.system.dimension.spacing.extraLarge",
     },
     "& p + p:has(img), & p + img, & p + svg, & p + figure, & p + pre, & .codeBox":
@@ -53,11 +51,15 @@ export const PageSection = styled("section", {
           mt: "sd.system.dimension.spacing.extraLarge",
         },
       },
+    "& h2 + p, & h3 + p": {
+      mt: 0,
+    },
     "& h2, & h3": {
       mt: "sd.system.dimension.spacing.twoExtraLarge",
       mb: "sd.system.dimension.spacing.medium",
       expanded: {
-        mb: "24px",
+        mt: "sd.system.dimension.spacing.twoExtraLarge",
+        mb: "sd.system.dimension.spacing.extraLarge",
       },
     },
     "& h2": {
