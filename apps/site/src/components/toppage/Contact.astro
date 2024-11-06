@@ -1,6 +1,7 @@
 ---
 import { styled } from "styled-system/jsx";
 import ContactCard from "./ContactCard.astro";
+import { siteConfig } from "../../../siteConfig";
 
 const ContactContainer = styled("div", {
   base: {
@@ -84,7 +85,7 @@ const ContactSection = styled("div", {
       <ContactCard
         icon="/assets/logo/figma.svg"
         title="Figma Community"
-        link="https://figma.com/@SerendieDesign"
+        link={siteConfig.serendieFigmaCommunityURL}
       />
       <ContactCard
         icon="/assets/logo/github.svg"

@@ -2,6 +2,7 @@
 import { Badge, Button, SvgIcon } from "@serendie/ui";
 import { css } from "styled-system/css";
 import { styled } from "styled-system/jsx";
+import { siteConfig } from "../../../siteConfig";
 
 const ReleasenoteContainer = styled("div", {
   base: {
@@ -142,8 +143,8 @@ const NoteIcon = styled("div", {
   </TitleContainer>
 
   <ReleasenoteGrid>
-    <Note href="https://www.figma.com/@serendiedesign" target="_blank">
-      <NoteTime>2024/11/1</NoteTime>
+    <Note href={siteConfig.serendieUIKitFigmaFileURL} target="_blank">
+      <NoteTime>2024/11/7</NoteTime>
       <NoteTitle>
         Figma CommunityにてSerendie UI Kitを公開しました。
       </NoteTitle>
@@ -161,7 +162,7 @@ const NoteIcon = styled("div", {
       </NoteIcon>
     </Note>
     <Note href="https://www.mitsubishielectric.co.jp/serendie/" target="_blank">
-      <NoteTime>2024/11/1</NoteTime>
+      <NoteTime>2024/11/7</NoteTime>
       <NoteTitle> Serendie Design Systemを公開しました。 </NoteTitle>
       <NoteBadge>
         <Badge
