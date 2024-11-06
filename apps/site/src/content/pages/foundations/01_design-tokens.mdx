@@ -57,7 +57,7 @@ import ImageAnatomy from "../../../assets/content/design-tokens/dynamic_anatomy.
 
     さらに命名構造として、ドメイン (ブランドの略称) 、カテゴリ (system, reference) 、タイプ (color, typographyなど)を接頭辞としてつけ、一つのトークン名を構成します。このような構造にすることで、三菱電機内の多様なブランドに対応することを想定しています。
 
-    <img src="/assets/pages/design-tokens/flow.png" alt="" />
+    <img src="/assets/pages/design-tokens/flow.avif" alt="" />
 
 
     ### 参考文献
@@ -76,7 +76,7 @@ import ImageAnatomy from "../../../assets/content/design-tokens/dynamic_anatomy.
     Serendie Design Systemでは、W3C Community Groupの[Design Tokens Format Module](https://tr.designtokens.org/format/)で現在策定中の草案フォーマットを採用しています。このフォーマットでは、デザイントークンをJSON形式で表現し、デザイントークンの型 ($type) などを表記するのが特徴です。
   
     <p>
-      <img src="/assets/pages/design-tokens/snippet.png" width="310" alt="" />
+      <img src="/assets/pages/design-tokens/snippet.avif" width="310" alt="" />
     </p>
 
     このJSONファイルは、Serendie Design SystemのGitHubリポジトリで管理され、このファイル群がデザイントークンのマスター (Single Source of Truth) となります。その上で、[Style Dictionary](https://amzn.github.io/style-dictionary)を使ったビルドパイプラインを構築し、JSONファイルを各環境 (CSS, TypeScriptなど) に適した形に変換しています。
@@ -95,13 +95,13 @@ import ImageAnatomy from "../../../assets/content/design-tokens/dynamic_anatomy.
     コンテキストが変更された際には、システムトークンが参照するリファレンストークンを変更することで、プロダクト側には変更を与えることなく、UIの変化に対応できます。UI内で直接リファレンストークンを参照してしまうと、このようなコンテキスト変化に対応できなくなるため、原則システムトークンを参照してください。
 
     <p>
-      <img src="/assets/pages/design-tokens/theming.png" width="310" alt="" />
+      <img src="/assets/pages/design-tokens/theming.avif" width="310" alt="" />
     </p>
 
     前述したDesign Token Format Module草案では、2024年11月現在コンテキストを表現するフォーマットが定まっていません。そのためSerendie Design Systemでは、「typography.compact.json」や「typography.expanded.json」のようにコンテキストごとにJSONファイルを分けることで対応し、これはFigma上では[Variableモード](https://help.figma.com/hc/ja/articles/15343816063383-%E3%83%90%E3%83%AA%E3%82%A2%E3%83%96%E3%83%AB%E3%83%A2%E3%83%BC%E3%83%89)として展開されます。Variableモードについては[Get Started](/get-started/design#section-3)を参照してください。
 
     <p>
-      <img src="/assets/pages/design-tokens/theming-ss.png" width="310" alt="" />
+      <img src="/assets/pages/design-tokens/theming-ss.avif" width="310" alt="" />
     </p>
 
   </PageSection>
@@ -116,7 +116,7 @@ import ImageAnatomy from "../../../assets/content/design-tokens/dynamic_anatomy.
     このような仕組みから、例えばprimaryカラーに変更があった際には、その変更がデザインファイルとWebアプリケーションに自動的に波及するなど、真の意味でデザイントークンを開発とデザインの共通言語とすることができます。
 
     <p>
-      <img src="/assets/pages/design-tokens/pipeline.png" alt="" />
+      <img src="/assets/pages/design-tokens/pipeline.avif" alt="" />
     </p>
 
   </PageSection>
