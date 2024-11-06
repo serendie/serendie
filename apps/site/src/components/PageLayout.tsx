@@ -44,7 +44,7 @@ export const PageSection = styled("section", {
       lineHeight: "1.7",
       mt: "sd.system.dimension.spacing.extraLarge",
     },
-    "& p + p:has(img), & p + img, & p + svg, & p + figure, & p + pre, & .codeBox":
+    "& p + p:has(img), & p + img, & p + svg, & p + figure, & p + pre, & p + a, & .codeBox":
       {
         mt: "sd.system.dimension.spacing.medium",
         expanded: {
