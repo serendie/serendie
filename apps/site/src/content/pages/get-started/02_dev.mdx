@@ -27,13 +27,13 @@ export const sampleCodeCss = `@layer reset, base, tokens, recipes, utilities;
   <PageSection>
     <PageHeadLine number={1}>デザインを確認する</PageHeadLine>
 
-    ### Figma - Devモード
+    ## Figma - Devモード
 
     三菱電機のFigma組織内では、開発者向けにDevモードアカウントを準備しています。Devモードは開発者向けのFigmaビューであり、実装時のヒントとなるインスペクタやアノテーションを活用できます。詳しくはFigmaヘルプページを参照してください。
 
     <PageARef href="https://help.figma.com/hc/ja/articles/15023124644247-%E9%96%8B%E7%99%BA%E3%83%A2%E3%83%BC%E3%83%89%E3%81%AE%E3%82%AC%E3%82%A4%E3%83%89">Devモードのガイド - Figma Learn</PageARef>
 
-    ### Figma - Code Connect
+    ## Figma - Code Connect
 
     Serendie UIのコンポーネントはCode Connectに対応しています。Code Connectは、デザインファイル上のコンポーネントに対応するコードスニペットをFigma Devモードに表示する機能です。Code Connectを活用することで、デザインを確認しながら、Serendie UIを使った実装例を同時に確認することができます。
 
@@ -44,7 +44,7 @@ export const sampleCodeCss = `@layer reset, base, tokens, recipes, utilities;
     </p>
 
 
-    ### Storybook
+    ## Storybook
 
     またCode Connectと同等の内容を、[Storybook](/storybook)として提供しています。各コンポーネントの状態変化や、ReactコンポーネントのPropsとの対応など、より詳しく確認したい場合に利用できます。
 
@@ -53,11 +53,11 @@ export const sampleCodeCss = `@layer reset, base, tokens, recipes, utilities;
   <PageSection>
     <PageHeadLine number={2}>事前準備</PageHeadLine>
 
-    ### GitHubチームに加わる
+    ## GitHubチームに加わる
 
     Serendie UIの[GitHubリポジトリ](https://github.com/serendie)は公開に向けて準備中です。現在のところプライベート状態で運用しているため、三菱電機社内で利用希望の方は、Serendie Design Systemチームに連絡しGitHubチームへの招待を受けてください。
 
-    ### GitHub Packagesの利用準備
+    ## GitHub Packagesの利用準備
 
     Serendie UIはnpmパッケージとして利用可能です。レジストリとして、GitHub Packagesを利用しており、事前にアクセストークンの設定が必要です。詳しくは[README](https://github.com/serendie/serendie/pkgs/npm/ui)を参照してください。
 
@@ -78,14 +78,14 @@ export const sampleCodeCss = `@layer reset, base, tokens, recipes, utilities;
 
     <CodeBox code={`import { Button } from "@serendie/ui";`} language={'jsx'} />
 
-    ### APIを詳しく知る
+    ## APIを詳しく知る
 
     Serendie UIはヘッドレスUIライブラリとして[Ark UI](https://ark-ui.com/)を内部的に利用しており、各コンポーネントのAPIはArk UIを継承します。Selectコンポーネントなどインタラクションが複雑なコンポーネントは、Ark UIのAPIリファレンスを合わせて参照してください。
 
     <PageARef href="https://ark-ui.com/react/docs/components/select#api-reference">API Reference - Ark UI</PageARef>
 
 
-    ### 機能の拡張とスタイルの上書き
+    ## 機能の拡張とスタイルの上書き
 
     Serendie UIはスタイリングライブラリとして[Panda CSS](https://panda-css.com/)を内部的に利用しています。Panda CSSが提供するユーティリティを使ったコンポーネントの拡張や、テーマの変更、スタイルの上書きなどが可能です。詳しくはSerendie UIの[README](https://github.com/serendie/serendie/pkgs/npm/ui)を参照してください。
 
