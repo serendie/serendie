@@ -40,13 +40,6 @@ export const PageSection = styled("section", {
     "& a:hover": {
       opacity: 0.7,
     },
-    "& ul": {
-      marginInlineStart: "1em",
-    },
-    "& li": {
-      listStyleType: "disc",
-      my: "sd.system.dimension.spacing.extraSmall",
-    },
     "& p": {
       lineHeight: "1.7",
     },
@@ -82,11 +75,21 @@ export const PageSection = styled("section", {
         fontSize: "sd.reference.typography.scale.compact.extraLarge",
       },
     },
+    "& ol li": {
+      listStyle: "decimal",
+    },
+    "& ul li": {
+      listStyle: "disc",
+    },
     "& ol, & ul": {
+      marginInlineStart: "0.5em",
       pl: "sd.system.dimension.spacing.large",
       my: "24px",
       "& li": {
-        listStyle: "decimal",
+        my: "sd.system.dimension.spacing.twoExtraSmall",
+        expanded: {
+          my: "sd.system.dimension.spacing.extraSmall",
+        },
       },
     },
     "& svg": {
