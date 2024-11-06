@@ -1,6 +1,7 @@
 import type { ComponentProps } from "react";
 import { css } from "styled-system/css";
 import { styled } from "styled-system/jsx";
+import IconRight from "../assets/icon/outline/arrow-right.svg?react";
 
 export const PageMain = styled("div", {
   base: {
@@ -138,24 +139,33 @@ export const PageLinks = (props: PageFooterProps) => (
             href={`/${sib.slug}`}
             className={css({
               display: "flex",
+              alignItems: props.column === "span2" ? "flex-start" : "center",
               height: props.column === "span2" ? "100%" : undefined,
-              alignItems: "start",
               justifyContent: "space-between",
               borderRadius: "sd.system.dimension.radius.extraLarge",
               textStyle: "sd.system.typography.body.large_compact",
+              fontSize: "16px",
               bg: "sd.reference.color.scale.gray.100",
               transition: "background 0.3s",
-              px: "sd.system.dimension.spacing.large",
-              p: "sd.system.dimension.spacing.medium",
-              smDown: {
-                lineHeight: "1.4",
+              lineHeight: "1.6",
+              py: "24px",
+              px: props.column === "span2" ? "24px" : "32px",
+              "& svg": {
+                display: props.column === "span2" ? "none" : "block", // SPかつ2カラムの場合はアイコンを非表示
               },
-              sm: {
-                py: "sd.system.dimension.spacing.extraLarge",
-                px: "sd.system.dimension.spacing.twoExtraLarge",
+              expanded: {
+                alignItems: "center",
+                fontSize: "18px",
+                px: "32px",
+                "& svg": {
+                  display: "block",
+                },
               },
               _hover: {
                 bg: "web.system.color.impression.subtle",
+              },
+              "& path": {
+                fill: "web.system.color.component.onSurface",
               },
             })}
           >
@@ -163,40 +173,20 @@ export const PageLinks = (props: PageFooterProps) => (
               <span
                 className={css({
                   display: "block",
-                  sm: {
-                    pb: "sd.system.dimension.spacing.large",
-                  },
                   textStyle: "sd.system.typography.body.small_compact",
+                  fontSize: "14px",
+                  mb: "10px",
+                  expanded: {
+                    fontSize: "14px",
+                    mb: "8px",
+                  },
                 })}
               >
                 Read More
               </span>
               {sib.data.title}
             </span>
-            <svg
-              width="24"
-              height="25"
-              viewBox="0 0 24 25"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clipPath="url(#clip0_11335_3329)">
-                <path
-                  d="M21.5 12.4989L14.827 19.1719L13.7827 18.1276L18.6462 13.2489L2.49048 13.2489L2.49048 11.7489L18.6365 11.7489L13.7577 6.87012L14.827 5.82587L21.5 12.4989Z"
-                  fill="currentColor"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_11335_3329">
-                  <rect
-                    width="24"
-                    height="24"
-                    fill="white"
-                    transform="translate(0 24.5) rotate(-90)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
+            <IconRight width="24px" />
           </a>
         </li>
       ))}
