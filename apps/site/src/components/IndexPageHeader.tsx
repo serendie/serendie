@@ -41,8 +41,8 @@ const IndexPageHeader_ = ({
         display: "grid",
         gridTemplateColumns: "minmax(auto, 1fr) auto",
         alignItems: "center",
-        gap: "sd.reference.dimension.scale.12",
-        mb: "sd.reference.dimension.scale.17",
+        gap: "40px",
+        mb: "58px",
         color: "web.system.color.component.onSurface",
         mdDown: {
           gridTemplateColumns: "1fr",

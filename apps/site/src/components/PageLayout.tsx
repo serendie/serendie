@@ -5,6 +5,10 @@ import IconRight from "../assets/icon/outline/arrow-right.svg?react";
 
 export const PageMain = styled("div", {
   base: {
+    pt: "sd.system.dimension.spacing.threeExtraLarge",
+    expanded: {
+      pt: "sd.system.dimension.spacing.fiveExtraLarge",
+    },
     gridColumn: "span 6",
     mdDown: {
       gridColumn: "span 2",
@@ -115,6 +119,7 @@ export const PageSection = styled("section", {
 export const PageAside = styled("aside", {
   base: {
     gridColumn: "span 2",
+    pt: "sd.system.dimension.spacing.fiveExtraLarge",
     mdDown: {
       display: "none",
     },
