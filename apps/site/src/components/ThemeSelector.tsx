@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import tokens from "@serendie/design-token/panda";
 import { ThemeSelect } from "./ThemeSelect";
@@ -45,7 +45,7 @@ export const ThemeSelector = ({
   buttonClassName?: string;
 }) => {
   const [theme, setTheme] = useState("");
-
+  const containerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (!theme) {
       const htmlTheme =
@@ -64,12 +64,15 @@ export const ThemeSelector = ({
   }, [theme]);
 
   return (
-    <ThemeSelect
-      onValueChange={({ value }) => setTheme(value[0])}
-      value={[theme]}
-      size="small"
-      items={themeItems}
-      buttonClassName={buttonClassName}
-    />
+    <div ref={containerRef}>
+      <ThemeSelect
+        onValueChange={({ value }) => setTheme(value[0])}
+        value={[theme]}
+        size="small"
+        items={themeItems}
+        buttonClassName={buttonClassName}
+        containerRef={containerRef}
+      />
+    </div>
   );
 };
