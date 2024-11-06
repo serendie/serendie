@@ -36,6 +36,9 @@ export const PageSection = styled("section", {
       color: "sd.system.color.impression.primary",
       textDecoration: "underline",
     },
+    "& a:hover": {
+      opacity: 0.7,
+    },
     "& ul": {
       marginInlineStart: "1em",
     },

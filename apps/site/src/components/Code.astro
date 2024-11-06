@@ -1,10 +1,11 @@
 ---
-import { Button, SvgIcon } from "@serendie/ui";
 import { Box, Flex, styled } from "styled-system/jsx";
 import { Code as AstroCode } from "astro:components";
 import type { BundledLanguage } from "shiki";
 import { StorybookButton } from "../components/StorybookButton.tsx";
 import { css } from "styled-system/css";
+import IconCopy from "../assets/icon/outline/copy.svg?react";
+import IconChevronRight from "../assets/icon/outline/chevron-right.svg?react";
 
 interface Props {
   title: string;
@@ -41,6 +42,9 @@ const Description = styled("p", {
 const StyledButton = styled("button", {
   base: {
     cursor: "pointer",
+    "&:hover": {
+      opacity: 0.7
+    }
   },
 });
 ---
@@ -93,14 +97,8 @@ const StyledButton = styled("button", {
               alignItems={"center"}
               textStyle="sd.system.typography.body.medium_expanded"
             >
-              <SvgIcon
-                icon={"chevron_right"}
-                size={"20px"}
-                className={css({
-                  mr: "sd.system.dimension.spacing.extraSmall",
-                })}
-              />
-              Code
+              <IconChevronRight width="20px"/> 
+              <span class={css({ml: 'sd.system.dimension.spacing.extraSmall'})}>Code</span>
             </StyledButton>
             <StyledButton data-copy-button aria-label="Copy" display="flex">
               <>
@@ -115,7 +113,7 @@ const StyledButton = styled("button", {
                 >
                   Copied
                 </span>
-                <SvgIcon size={"20px"} icon={"clipboard_copy"} />
+                <IconCopy width="20px"/>
               </>
             </StyledButton>
           </Flex>
