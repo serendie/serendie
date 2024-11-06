@@ -1,6 +1,7 @@
 import type { ComponentProps } from "react";
 import { css } from "styled-system/css";
 import { styled } from "styled-system/jsx";
+import IconRight from "../assets/icon/outline/arrow-right.svg?react";
 
 export const PageMain = styled("div", {
   base: {
@@ -36,19 +37,33 @@ export const PageSection = styled("section", {
       color: "sd.system.color.impression.primary",
       textDecoration: "underline",
     },
-    "& ul": {
-      marginInlineStart: "1em",
-    },
-    "& li": {
-      listStyleType: "disc",
-      my: "sd.system.dimension.spacing.extraSmall",
+    "& a:hover": {
+      opacity: 0.7,
     },
     "& p": {
-      my: "sd.system.dimension.spacing.extraLarge",
+      lineHeight: "1.7",
+      mt: "sd.system.dimension.spacing.extraLarge",
+    },
+    "& p + p:has(img), & p + img, & p + svg, & p + figure, & p + pre, & p + a, & .codeBox":
+      {
+        mt: "sd.system.dimension.spacing.medium",
+        expanded: {
+          mt: "sd.system.dimension.spacing.extraLarge",
+        },
+      },
+    "& h2 + p, & h3 + p": {
+      mt: 0,
+    },
+    "& h2, & h3": {
+      mt: "sd.system.dimension.spacing.twoExtraLarge",
+      mb: "sd.system.dimension.spacing.medium",
+      expanded: {
+        mt: "sd.system.dimension.spacing.twoExtraLarge",
+        mb: "sd.system.dimension.spacing.extraLarge",
+      },
     },
     "& h2": {
       fontWeight: "sd.reference.typography.fontWeight.bold",
-      my: "sd.system.dimension.spacing.extraLarge",
       fontSize: "20px",
       sm: {
         my: "sd.system.dimension.spacing.extraLarge",
@@ -56,19 +71,30 @@ export const PageSection = styled("section", {
       },
     },
     "& h3": {
-      my: "sd.system.dimension.spacing.medium",
       fontWeight: "sd.reference.typography.fontWeight.bold",
       fontSize: "sd.reference.typography.scale.expanded.medium",
       sm: {
-        my: "sd.system.dimension.spacing.extraLarge",
-        mt: "sd.system.dimension.spacing.twoExtraLarge",
         fontSize: "sd.reference.typography.scale.compact.extraLarge",
       },
     },
-    "& ol": {
+    "& ol li": {
+      listStyle: "decimal",
+    },
+    "& ul li": {
+      listStyle: "disc",
+    },
+    "& ol, & ul": {
+      marginInlineStart: "0em",
+      expanded: {
+        marginInlineStart: "0.8em",
+      },
       pl: "sd.system.dimension.spacing.large",
+      my: "24px",
       "& li": {
-        listStyle: "decimal",
+        my: "sd.system.dimension.spacing.twoExtraSmall",
+        expanded: {
+          my: "sd.system.dimension.spacing.extraSmall",
+        },
       },
     },
     "& svg": {
@@ -135,24 +161,33 @@ export const PageLinks = (props: PageFooterProps) => (
             href={`/${sib.slug}`}
             className={css({
               display: "flex",
+              alignItems: props.column === "span2" ? "flex-start" : "center",
               height: props.column === "span2" ? "100%" : undefined,
-              alignItems: "start",
               justifyContent: "space-between",
               borderRadius: "sd.system.dimension.radius.extraLarge",
               textStyle: "sd.system.typography.body.large_compact",
+              fontSize: "16px",
               bg: "sd.reference.color.scale.gray.100",
               transition: "background 0.3s",
-              px: "sd.system.dimension.spacing.large",
-              p: "sd.system.dimension.spacing.medium",
-              smDown: {
-                lineHeight: "1.4",
+              lineHeight: "1.6",
+              py: "24px",
+              px: props.column === "span2" ? "24px" : "32px",
+              "& svg": {
+                display: props.column === "span2" ? "none" : "block", // SPかつ2カラムの場合はアイコンを非表示
               },
-              sm: {
-                py: "sd.system.dimension.spacing.extraLarge",
-                px: "sd.system.dimension.spacing.twoExtraLarge",
+              expanded: {
+                alignItems: "center",
+                fontSize: "18px",
+                px: "32px",
+                "& svg": {
+                  display: "block",
+                },
               },
               _hover: {
                 bg: "web.system.color.impression.subtle",
+              },
+              "& path": {
+                fill: "web.system.color.component.onSurface",
               },
             })}
           >
@@ -160,40 +195,20 @@ export const PageLinks = (props: PageFooterProps) => (
               <span
                 className={css({
                   display: "block",
-                  sm: {
-                    pb: "sd.system.dimension.spacing.large",
-                  },
                   textStyle: "sd.system.typography.body.small_compact",
+                  fontSize: "14px",
+                  mb: "10px",
+                  expanded: {
+                    fontSize: "14px",
+                    mb: "8px",
+                  },
                 })}
               >
                 Read More
               </span>
               {sib.data.title}
             </span>
-            <svg
-              width="24"
-              height="25"
-              viewBox="0 0 24 25"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clipPath="url(#clip0_11335_3329)">
-                <path
-                  d="M21.5 12.4989L14.827 19.1719L13.7827 18.1276L18.6462 13.2489L2.49048 13.2489L2.49048 11.7489L18.6365 11.7489L13.7577 6.87012L14.827 5.82587L21.5 12.4989Z"
-                  fill="currentColor"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_11335_3329">
-                  <rect
-                    width="24"
-                    height="24"
-                    fill="white"
-                    transform="translate(0 24.5) rotate(-90)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
+            <IconRight width="24px" />
           </a>
         </li>
       ))}
@@ -217,16 +232,19 @@ export const PageARef = styled(Aref, {
   base: {
     color: "sd.system.color.impression.primary",
     textDecoration: "underline",
-    display: "inline-flex",
+    display: "block",
     width: "100%",
-    alignItems: "center",
-    gap: "sd.system.dimension.spacing.twoExtraSmall",
     "& + &": {
-      mt: "sd.system.dimension.spacing.large",
+      mt: "sd.system.dimension.spacing.extraSmall",
+      expanded: {
+        mt: "10px",
+      },
     },
     _after: {
       content: '""',
-      display: "block",
+      display: "inline-block",
+      verticalAlign: "middle",
+      ml: "6px",
       color: "sd.system.color.impression.primary",
       maskImage: `url("data:image/svg+xml;charset=utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20clip-path%3D%22url(%23clip0_11991_19177)%22%3E%3Cpath%20d%3D%22M4.19617%2011.7628L3.5%2011.0667L10.0603%204.5H4.09617V3.5H11.7628V11.1667H10.7628V5.2025L4.19617%2011.7628Z%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id%3D%22clip0_11991_19177%22%3E%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22white%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3C%2Fsvg%3E")`,
       maskSize: "contain",
