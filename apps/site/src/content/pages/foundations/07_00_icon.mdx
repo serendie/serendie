@@ -13,13 +13,14 @@ subLinks:
 
 import PageHeadLine from "../../../components/PageHeadLine.astro";
 import { PageSection } from "../../../components/PageLayout.tsx";
+import { siteConfig } from "../../../../siteConfig.js";
 
 <PageSection>
   <PageHeadLine number={1}>Serendie Symbols</PageHeadLine>
 
     Serendie Symbolsは、現在のところOutlined(線)とFilled(塗り)の2パターンがあり、それぞれ300種類程度のアイコンを提供しています。
 
-    [Serendie UI Kit (Figma)](https://www.figma.com/@serendiedesign)では、「SerendieSymbols」としてComponent化されており、UIコンポーネントと同様にバリアントプロパティによりアイコンを選択できます。
+    <a href={siteConfig.serendieUIKitFigmaFileURL}>Serendie UI Kit (Figma)</a>では、「SerendieSymbols」としてComponent化されており、UIコンポーネントと同様にバリアントプロパティによりアイコンを選択できます。
 
   <img src="/assets/pages/icon/iconcomponent.png" width="310px" alt="" />
 </PageSection>

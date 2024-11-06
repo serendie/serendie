@@ -12,11 +12,13 @@ import {
   PageA,
   PageARef,
 } from "../../../components/PageLayout.tsx";
+import { siteConfig } from "../../../../siteConfig.js";
 
 <PageSection>
   <PageHeadLine number={0}>Serendie UI Kitとは</PageHeadLine>
 
-Serendie UI KitはSerendie Design Systemの一部であり、Figma上でライブラリとして利用可能なデザインアセット集です。**[Figma Communiy](https://www.figma.com/@serendiedesign)にて公開しており、三菱電機メンバーにかかわらず誰でも利用できます。**
+Serendie UI KitはSerendie Design Systemの一部であり、Figma上でライブラリとして利用可能なデザインアセット集です。<a href={siteConfig.serendieUIKitFigmaFileURL}>Figma Communiy</a>
+にて公開しており、**三菱電機メンバーにかかわらずどなたでも利用できます。**
 
 現在のところ下記のようなアセットを含んでいます。
 
@@ -51,7 +53,7 @@ Serendie UI KitはSerendie Design Systemの一部であり、Figma上でライ�
     三菱電機のFigma組織内では、ライブラリとしてSerendie UI Kitが利用可能な状態です。Serendie UI Kitを使いたいFigmaファイルから、ライブラリを検索し追加してください。社外の方向けには、Figma Communityにて最新のSerendie UI Kitを公開していますので、こちらを利用してください。
 
     <p>
-      <PageARef href="https://www.figma.com/@serendiedesign">Serendie UI Kit - Figma Community</PageARef>
+      <PageARef href={siteConfig.serendieUIKitFigmaFileURL}>Serendie UI Kit - Figma Community</PageARef>
     </p>
 
     <p>
@@ -84,7 +86,7 @@ Serendie UI KitはSerendie Design Systemの一部であり、Figma上でライ�
 
     ### サンプルを使う
 
-    ログイン画面やウォークスルー画面など、業務アプリケーションでよく登場するサンプルをSerendie UI Kit内のデザインアセットを使いつつ作成しています。これを土台にしてデザインをスタートすることも可能です。[Serendie UI Kit](https://www.figma.com/@serendiedesign)内のExamplesページを参照してください。
+    ログイン画面やウォークスルー画面など、業務アプリケーションでよく登場するサンプルをSerendie UI Kit内のデザインアセットを使いつつ作成しています。これを土台にしてデザインをスタートすることも可能です。<a href={siteConfig.serendieUIKitFigmaFileURL}>Serendie UI Kit</a>内のExamplesページを参照してください。
 
     <p>
       <img src="/assets/pages/getstarted/getstarted-design-4.png" width="310" alt="" />
