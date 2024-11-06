@@ -61,10 +61,6 @@ const IndexPageHeader_ = ({
             expanded: {
               fontSize: illustSize === "small" ? "48px" : "56px",
             },
-            mdDown: {
-              textStyle: "sd.system.typography.display.small_compact",
-              fontSize: illustSize === "large" ? "42px" : undefined,
-            },
           })}
         >
           {title}
@@ -86,7 +82,11 @@ const IndexPageHeader_ = ({
         {description && (
           <p
             className={css({
-              my: "sd.system.dimension.spacing.extraLarge",
+              fontSize: "14px",
+              my: "sd.system.dimension.spacing.medium",
+              expanded: {
+                fontSize: "16px",
+              },
             })}
           >
             {description}
@@ -95,7 +95,6 @@ const IndexPageHeader_ = ({
         {lastUpdated && (
           <p
             className={css({
-              my: "sd.system.dimension.spacing.extraLarge",
               fontSize: "12px",
               color: "sd.reference.color.scale.gray.600",
             })}
