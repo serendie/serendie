@@ -47,12 +47,25 @@ export const PageSection = styled("section", {
       listStyleType: "disc",
       my: "sd.system.dimension.spacing.extraSmall",
     },
-    "& p": {
-      my: "sd.system.dimension.spacing.extraLarge",
+    "& * + p": {
+      mt: "sd.system.dimension.spacing.extraLarge",
+    },
+    "& p + p:has(img), & p + img, & p + svg, & p + figure, & p + pre, & .codeBox":
+      {
+        mt: "sd.system.dimension.spacing.medium",
+        expanded: {
+          mt: "sd.system.dimension.spacing.extraLarge",
+        },
+      },
+    "& h2, & h3": {
+      mt: "sd.system.dimension.spacing.twoExtraLarge",
+      mb: "sd.system.dimension.spacing.medium",
+      expanded: {
+        mb: "24px",
+      },
     },
     "& h2": {
       fontWeight: "sd.reference.typography.fontWeight.bold",
-      my: "sd.system.dimension.spacing.extraLarge",
       fontSize: "20px",
       sm: {
         my: "sd.system.dimension.spacing.extraLarge",
@@ -60,17 +73,15 @@ export const PageSection = styled("section", {
       },
     },
     "& h3": {
-      my: "sd.system.dimension.spacing.medium",
       fontWeight: "sd.reference.typography.fontWeight.bold",
       fontSize: "sd.reference.typography.scale.expanded.medium",
       sm: {
-        my: "sd.system.dimension.spacing.extraLarge",
-        mt: "sd.system.dimension.spacing.twoExtraLarge",
         fontSize: "sd.reference.typography.scale.compact.extraLarge",
       },
     },
-    "& ol": {
+    "& ol, & ul": {
       pl: "sd.system.dimension.spacing.large",
+      my: "24px",
       "& li": {
         listStyle: "decimal",
       },
