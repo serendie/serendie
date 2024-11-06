@@ -19,7 +19,7 @@ const { title, description, code, storyPath, language } = Astro.props;
 
 const Container = styled("div", {
   base: {
-    mb: "sd.system.dimension.spacing.threeExtraLarge",
+    mb: "sd.system.dimension.spacing.fiveExtraLarge",
   },
 });
 
@@ -37,6 +37,7 @@ const Description = styled("p", {
   base: {
     mb: "sd.system.dimension.spacing.medium",
     fontSize: '14px',
+    lineHeight: '1.7',
     expanded: {
       fontSize: '16px'
     }
@@ -57,12 +58,12 @@ const StyledButton = styled("button", {
   <Flex
     justifyContent={"space-between"}
     alignItems={"center"}
-    mb="sd.system.dimension.spacing.small"
+    mb="sd.system.dimension.spacing.medium"
   >
     <SubTitle>{title}</SubTitle>
     {storyPath && <StorybookButton storyPath={storyPath} client:load />}
   </Flex>
-  <Description mb="sd.system.dimension.spacing.twoExtraLarge"
+  <Description mb="sd.system.dimension.spacing.extraLarge"
     >{description}</Description
   >
   <Box
