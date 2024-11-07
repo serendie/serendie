@@ -27,8 +27,9 @@ export const Icon = ({
 }: IconProps) => {
   const icons = variant === "outlined" ? outlinedIcons : filledIcons;
   const iconPath = `./assets/${variant}/${name}.svg`;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const IconComponent = icons[iconPath] as any;
+  const IconComponent = icons[iconPath] as React.ComponentType<
+    ComponentPropsWithoutRef<"svg">
+  >;
 
   if (!IconComponent) {
     return null;
