@@ -1,5 +1,5 @@
 import { ComponentPropsWithoutRef } from "react";
-import { type IconName, type IconVariant } from "./iconNames";
+import { type IconName, type IconVariant } from "./generated/iconNames";
 
 const outlinedIcons = import.meta.glob("./assets/outlined/*.svg", {
   eager: true,

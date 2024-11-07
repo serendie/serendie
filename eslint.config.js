@@ -25,13 +25,13 @@ export default tsESLint.config(
       ],
       "@typescript-eslint/no-unused-vars": [
         "warn",
-      {
-        "argsIgnorePattern": "^_",
-        "varsIgnorePattern": "^_",
-        "caughtErrorsIgnorePattern": "^_",
-        "destructuredArrayIgnorePattern": "^_"
-      }
-    ]
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+          destructuredArrayIgnorePattern: "^_",
+        },
+      ],
     },
   },
   eslint.configs.recommended,
@@ -39,6 +39,7 @@ export default tsESLint.config(
   prettierRecommended,
   {
     ignores: [
+      "generated/",
       "**/dist/",
       "**/styled-system/",
       "**/*.cjs",
