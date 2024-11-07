@@ -484,7 +484,7 @@ const LinkContentExpanded: React.FC<LinkContentProps> = ({ content }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end end"],
+    offset: ["start center", "end start"],
   });
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
