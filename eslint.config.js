@@ -39,7 +39,7 @@ export default tsESLint.config(
   prettierRecommended,
   {
     ignores: [
-      "generated/",
+      "**/generated/",
       "**/dist/",
       "**/styled-system/",
       "**/*.cjs",
