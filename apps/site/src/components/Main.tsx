@@ -24,6 +24,7 @@ export const Main = styled("main", {
     py: "56px",
     color: "web.system.color.component.onSurface",
     pt: "0px",
+    gridTemplateRows: "max-content",
     sm: {
       maxW: "calc(1200px + 80px * 2)",
       py: "56px",
