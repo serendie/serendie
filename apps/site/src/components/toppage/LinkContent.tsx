@@ -42,12 +42,13 @@ const linkContentExpandedStyle = sva({
   base: {
     wrapper: {
       display: "none",
-      mt: "25%",
+      mt: "calc(100vh - (240px * 2 + 28px) / 2)",
       "@media (max-width: 1684px)": {
-        mt: "calc((100vh - ((100vw - 285px - 120px - (150px * 2) - (28px * 2) - (16px * 3) - (48px * 2) - 36px) / 3) * 3 + (48px * 2))/2)",
+        mt: "max(calc((100vh - ((100vw - 285px - 120px - (150px * 2) - (28px * 2) - (16px * 3) - (48px * 2) - 36px) / 3) * 3 + (48px * 2))/2), 500px)",
       },
       expanded: {
         display: "block",
+        mt: "calc(100vh - (((((100vw - 48px - 200px) - (28px * 3)) / 4) + 16px) * 2) / 2)",
       },
       lgDown: {
         mt: "50%",
