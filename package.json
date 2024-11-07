@@ -19,7 +19,8 @@
   "workspaces": [
     "ui",
     "apps/*",
-    "design-tokens"
+    "design-tokens",
+    "icons"
   ],
   "devDependencies": {
     "@eslint/eslintrc": "^3.1.0",
