@@ -19,7 +19,12 @@ interface IconProps extends ComponentPropsWithoutRef<"svg"> {
   variant?: IconVariant;
 }
 
-export const Icon = ({ name, variant = "outlined", ...props }: IconProps) => {
+export const Icon = ({
+  name,
+  variant = "outlined",
+  size = 24,
+  ...props
+}: IconProps) => {
   const icons = variant === "outlined" ? outlinedIcons : filledIcons;
   const iconPath = `./assets/${variant}/${name}.svg`;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -29,5 +34,5 @@ export const Icon = ({ name, variant = "outlined", ...props }: IconProps) => {
     return null;
   }
 
-  return <IconComponent {...props} />;
+  return <IconComponent {...props} width={size} height={size} />;
 };

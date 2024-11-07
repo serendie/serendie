@@ -9,9 +9,11 @@ export default defineConfig(({ command }) => {
       react(),
       svgr({
         svgrOptions: {
+          plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
+          svgo: true,
           icon: 24,
           replaceAttrValues: {
-            black: "currentColor",
+            "#000": "currentColor",
           },
         },
       }),
