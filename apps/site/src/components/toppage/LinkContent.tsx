@@ -43,6 +43,9 @@ const linkContentExpandedStyle = sva({
     wrapper: {
       display: "none",
       mt: "25%",
+      "@media (max-width: 1684px)": {
+        mt: "calc((100vh - ((100vw - 285px - 120px - (150px * 2) - (28px * 2) - (16px * 3) - (48px * 2) - 36px) / 3) * 3 + (48px * 2))/2)",
+      },
       expanded: {
         display: "block",
       },
