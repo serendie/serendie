@@ -137,9 +137,15 @@ export const GlobalHeaderMenu: React.FC<{
                 },
               })}
             >
-              <IconFigma width="40px" height="40px" />
-              <IconX width="40px" height="40px" />
-              <IconGitHub width="40px" height="40px" />
+              <a href="https://www.figma.com/@serendiedesign" target="_blank">
+                <IconFigma width="40px" height="40px" />
+              </a>
+              <a href="https://x.com/SerendieDesign" target="_blank">
+                <IconX width="40px" height="40px" />
+              </a>
+              <a href="https://github.com/serendie" target="_blank">
+                <IconGitHub width="40px" height="40px" />
+              </a>
             </div>
           </div>
           <div
