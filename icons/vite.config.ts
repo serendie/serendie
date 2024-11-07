@@ -17,7 +17,10 @@ export default defineConfig(({ command }) => {
           },
         },
       }),
-      dts({ include: ["src"] }),
+      dts({
+        tsconfigPath: "./tsconfig.app.json",
+        rollupTypes: true,
+      }),
     ],
   };
 
@@ -34,7 +37,7 @@ export default defineConfig(({ command }) => {
           output: {
             preserveModules: true,
             preserveModulesRoot: "src",
-            entryFileNames: "[name].js",
+            //entryFileNames: "[name].js",
           },
         },
       },
