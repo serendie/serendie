@@ -1,19 +1,19 @@
 {
-  "name": "@serendie/icons",
-  "description": "Icon Components for Serendie",
+  "name": "@serendie/symbols",
+  "description": "Symbols for Serendie",
   "version": "0.0.1",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "dist/icons.js",
-  "module": "dist/icons.js",
+  "main": "dist/symbols.js",
+  "module": "dist/symbols.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
     "dev": "vite",
-    "generate-icon-names": "node scripts/generateIconNames.js",
-    "prebuild": "npm run generate-icon-names",
+    "generate-symbol-names": "node scripts/generateSymbolNames.js",
+    "prebuild": "npm run generate-symbol-names",
     "build": "vite build"
   },
   "dependencies": {
