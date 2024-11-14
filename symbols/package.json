@@ -1,7 +1,7 @@
 {
   "name": "@serendie/symbols",
   "description": "Symbols for Serendie",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "files": [
     "dist"
