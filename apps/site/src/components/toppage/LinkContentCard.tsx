@@ -24,7 +24,7 @@ export const LinkContentCard: React.FC<{
             fontWeight: "bold",
             lineHeight: 1,
             textAlign: "center",
-            mb: "sd.reference.dimension.scale.8",
+            mb: "10px",
             expanded: {
               mb: "0",
             },
@@ -88,8 +88,8 @@ export const LinkContentCard: React.FC<{
               className={css({
                 display: "block",
                 width: "100%",
-                aspectRatio: "1 / 1",
                 expanded: {
+                  aspectRatio: "1 / 1",
                   width: "160px",
                   height: "160px",
                   lgDown: {
@@ -98,14 +98,17 @@ export const LinkContentCard: React.FC<{
                   },
                 },
                 "& > svg": {
-                  width: "100%",
-                  height: "100%",
+                  margin: "auto",
+                  width: "90%",
+                  height: "90%",
                   borderRadius: "100%",
                   border: "3px solid",
                   borderColor:
                     "web.system.color.mvShape.foreground.arc.indexBorder",
                   expanded: {
                     borderWidth: "0",
+                    width: "100%",
+                    height: "100%",
                   },
                 },
               })}
