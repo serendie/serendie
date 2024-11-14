@@ -35,7 +35,6 @@ export const LinkContentCard: React.FC<{
         <div
           className={css({
             position: "relative",
-            aspectRatio: "1 / 1",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -44,6 +43,7 @@ export const LinkContentCard: React.FC<{
             height: "auto",
             maxWidth: "200px",
             expanded: {
+              aspectRatio: "1 / 1",
               height: "224px",
               width: "224px",
               maxWidth: "none",
