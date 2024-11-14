@@ -117,6 +117,7 @@ export const SearchStyle = sva({
           textStyle: "sd.system.typography.body.small_compact",
           paddingTop: "sd.system.dimension.spacing.twoExtraSmall",
           paddingLeft: "sd.system.dimension.spacing.extraSmall",
+          paddingRight: "sd.system.dimension.spacing.extraSmall",
           paddingBottom: "sd.system.dimension.spacing.twoExtraSmall",
           scrollPaddingLeft: "sd.system.dimension.spacing.twoExtraSmall",
         },
