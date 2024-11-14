@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const ICONS_ROOT = path.resolve(__dirname, "../src/assets");
+const ICONS_ROOT = path.resolve(__dirname, "../assets");
 const OUTPUT_FILE = path.resolve(__dirname, "../src/generated/iconNames.ts");
 
 const generateIconNames = () => {

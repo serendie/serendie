@@ -1,13 +1,13 @@
 import { ComponentPropsWithoutRef } from "react";
 import { type IconName, type IconVariant } from "./generated/iconNames";
 
-const outlinedIcons = import.meta.glob("./assets/outlined/*.svg", {
+const outlinedIcons = import.meta.glob("../assets/outlined/*.svg", {
   eager: true,
   import: "default",
   query: "?react",
 });
 
-const filledIcons = import.meta.glob("./assets/filled/*.svg", {
+const filledIcons = import.meta.glob("../assets/filled/*.svg", {
   eager: true,
   import: "default",
   query: "?react",
