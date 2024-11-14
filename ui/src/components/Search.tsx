@@ -121,10 +121,11 @@ export const SearchStyle = sva({
           scrollPaddingLeft: "sd.system.dimension.spacing.twoExtraSmall",
         },
         comboboxItem: {
+          gap: "sd.system.dimension.spacing.twoExtraSmall",
           paddingTop: "sd.system.dimension.spacing.extraSmall",
-          paddingRight: "sd.system.dimension.spacing.medium",
+          paddingRight: "sd.system.dimension.spacing.extraSmall",
           paddingBottom: "sd.system.dimension.spacing.extraSmall",
-          paddingLeft: "sd.system.dimension.spacing.medium",
+          paddingLeft: "sd.system.dimension.spacing.extraSmall",
         },
       },
     },
