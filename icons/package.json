@@ -1,20 +1,20 @@
 {
   "name": "@serendie/icons",
-  "private": true,
-  "version": "0.0.0",
+  "description": "Icon Components for Serendie",
+  "version": "0.0.1",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/icons.js",
+  "module": "dist/icons.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
     "dev": "vite",
     "generate-icon-names": "node scripts/generateIconNames.js",
     "prebuild": "npm run generate-icon-names",
-    "build": "tsc -b && vite build"
+    "build": "vite build"
   },
   "dependencies": {
     "react": "^18.3.1",

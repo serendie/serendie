@@ -106,7 +106,6 @@ export const IconPage: React.FC = () => {
           }}
         />
       </SearchBar>
-
       <IconContainer>
         {icons.map((icon) => (
           <IconBox key={icon.name}>

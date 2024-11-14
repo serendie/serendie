@@ -37,7 +37,6 @@ export default defineConfig(({ command }) => {
           output: {
             preserveModules: true,
             preserveModulesRoot: "src",
-            //entryFileNames: "[name].js",
           },
         },
       },
