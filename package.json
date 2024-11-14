@@ -6,13 +6,13 @@
   "scripts": {
     "prepare": "husky",
     "storybook": "npm run storybook -w @serendie/ui",
-    "build": "npm run build:icons && npm run build:ui && npm run build:site",
+    "build": "npm run build:symbols && npm run build:ui && npm run build:site",
     "build:ui": "npm run build --workspace @serendie/ui",
     "build:site": "npm run build --workspace @serendie/site",
-    "build:icons": "npm run build --workspace @serendie/icons",
+    "build:symbols": "npm run build --workspace @serendie/symbols",
     "dev:site": "npm run dev --workspace @serendie/site",
     "dev:example": "npm run dev --workspace @serendie/example",
-    "dev:icons": "npm run dev --workspace @serendie/icons",
+    "dev:symbols": "npm run dev --workspace @serendie/symbols",
     "dev:ui": "npm run storybook --workspace @serendie/ui",
     "test:ui": "npm run test --workspace @serendie/ui",
     "dev": "npm run dev:example && npm run dev:ui",
@@ -22,7 +22,7 @@
     "ui",
     "apps/*",
     "design-tokens",
-    "icons"
+    "symbols"
   ],
   "devDependencies": {
     "@eslint/eslintrc": "^3.1.0",
