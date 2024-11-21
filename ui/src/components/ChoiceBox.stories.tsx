@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Choicebox } from "./Choicebox";
+import { ChoiceBox } from "./ChoiceBox";
 import { RadioGroup } from "..";
 import figma from "@figma/code-connect";
 
-const meta: Meta<typeof Choicebox> = {
-  component: Choicebox,
+const meta: Meta<typeof ChoiceBox> = {
+  component: ChoiceBox,
   parameters: {
     design: {
       type: "figma",
@@ -26,21 +26,21 @@ const meta: Meta<typeof Choicebox> = {
   decorators: [(Story) => <Story />],
 };
 
-function FigmaExample(props: React.ComponentProps<typeof Choicebox>) {
+function FigmaExample(props: React.ComponentProps<typeof ChoiceBox>) {
   return (
     <RadioGroup>
-      <Choicebox {...props} value="itemA" />
+      <ChoiceBox {...props} value="itemA" />
     </RadioGroup>
   );
 }
 
 export default meta;
-type Story = StoryObj<typeof Choicebox>;
+type Story = StoryObj<typeof ChoiceBox>;
 
 export const Radio: Story = {
   render: () => (
     <RadioGroup>
-      <Choicebox value="itemA" type="radio" />
+      <ChoiceBox value="itemA" type="radio" />
     </RadioGroup>
   ),
 };
