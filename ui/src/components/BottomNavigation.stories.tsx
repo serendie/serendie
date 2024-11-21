@@ -5,6 +5,7 @@ import {
   BottomNavigationItemProps,
 } from "./BottomNavigationItem";
 import figma from "@figma/code-connect";
+import { SvgIcon } from "./SvgIcon";
 
 const meta: Meta<typeof BottomNavigationItem> = {
   component: BottomNavigationItem,
@@ -14,7 +15,7 @@ const meta: Meta<typeof BottomNavigationItem> = {
       url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=1001-20737",
       props: {
         label: figma.string("Label"),
-        icon: figma.instance("NavIcon"),
+        icon: figma.instance("IconInstance"),
         dot: figma.enum("Type", { Badge: true }),
         count: figma.enum("Type", {
           "Badge with number": 12,
@@ -36,15 +37,27 @@ export const Default: Story = {
   render: (args: BottomNavigationItemProps) => (
     <BottomNavigation>
       <BottomNavigationItem {...args} />
-      <BottomNavigationItem icon="search" label="検索" />
-      <BottomNavigationItem icon="search" label="トーク" dot />
-      <BottomNavigationItem icon="search" label="カレンダー" count={3} />
-      <BottomNavigationItem icon="search" label="アカウント" count={100} />
+      <BottomNavigationItem icon={<SvgIcon icon="search" />} label="検索" />
+      <BottomNavigationItem
+        icon={<SvgIcon icon="search" />}
+        label="トーク"
+        dot
+      />
+      <BottomNavigationItem
+        icon={<SvgIcon icon="search" />}
+        label="カレンダー"
+        count={3}
+      />
+      <BottomNavigationItem
+        icon={<SvgIcon icon="search" />}
+        label="アカウント"
+        count={100}
+      />
     </BottomNavigation>
   ),
   args: {
     label: "ホーム",
-    icon: "search",
+    icon: <SvgIcon icon="search" />,
     isActive: true,
   },
 };

@@ -1,9 +1,9 @@
 import { Menu as ArkMenu, MenuRootProps, Portal } from "@ark-ui/react";
-import { Button, IconButton, SvgIcon, SvgIconName } from "..";
+import { Button, IconButton, SvgIcon } from "..";
 import { sva } from "../../styled-system/css";
 
 export const DropdownMenuStyle = sva({
-  slots: ["content", "itemGroup", "item", "button", "buttonIcon"],
+  slots: ["content", "itemGroup", "item", "itemIcon", "button", "buttonIcon"],
   base: {
     content: {
       bgColor: "sd.system.color.component.surface",
@@ -32,6 +32,12 @@ export const DropdownMenuStyle = sva({
       },
       _highlighted: {
         bgColor: "sd.system.color.interaction.hoveredVariant",
+      },
+    },
+    itemIcon: {
+      "& svg": {
+        width: "sd.reference.dimension.scale.8",
+        height: "sd.reference.dimension.scale.8",
       },
     },
     button: {
@@ -72,7 +78,7 @@ export const DropdownMenuStyle = sva({
 export type MenuItemProps = {
   value: string;
   label: string;
-  icon?: SvgIconName;
+  icon?: React.ReactNode;
 };
 
 export type DropdownMenuProps = {
@@ -97,7 +103,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
       <ArkMenu.Trigger asChild>
         {isIconMenu ? (
           <IconButton
-            icon="menu"
+            icon={<SvgIcon icon="menu" />}
             shape="rectangle"
             disabled={disabled}
             styleType="outlined"
@@ -130,7 +136,9 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
                   value={item.value}
                   className={styles.item}
                 >
-                  {item.icon && <SvgIcon icon={item.icon} size="24px" />}
+                  {item.icon && (
+                    <div className={styles.itemIcon}>{item.icon}</div>
+                  )}
                   {item.label}
                 </ArkMenu.Item>
               ))}

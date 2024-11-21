@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { IconButton, IconButtonStyle } from "./IconButton";
 import figma from "@figma/code-connect";
+import { SvgIcon } from "./SvgIcon";
 
 const meta: Meta<typeof IconButton> = {
   component: IconButton,
@@ -24,7 +25,7 @@ const meta: Meta<typeof IconButton> = {
           Ghost: "ghost",
         }),
         disabled: figma.enum("State", { Disabled: true }),
-        // icon: figma.instance("IconInstance"),
+        icon: figma.instance("IconInstance"),
       },
       examples: [FigmaExample],
     },
@@ -53,6 +54,10 @@ const meta: Meta<typeof IconButton> = {
       control: { type: "radio" },
       defaultValue: "medium",
     },
+    icon: {
+      control: { type: "object" },
+      defaultValue: <SvgIcon icon={"add"} />,
+    },
   },
 };
 
@@ -66,7 +71,7 @@ type Story = StoryObj<typeof IconButton>;
 export const Rectangle: Story = {
   args: {
     shape: "rectangle",
-    icon: "add",
+    icon: <SvgIcon icon={"add"} />,
     size: "medium",
     disabled: false,
   },
@@ -76,7 +81,7 @@ export const Rectangle: Story = {
 export const Circle: Story = {
   args: {
     shape: "circle",
-    icon: "add",
+    icon: <SvgIcon icon={"add"} />,
     size: "medium",
     disabled: false,
   },
@@ -85,7 +90,7 @@ export const Circle: Story = {
 export const Small: Story = {
   args: {
     shape: "circle",
-    icon: "add",
+    icon: <SvgIcon icon={"add"} />,
     size: "small",
     disabled: false,
   },
@@ -94,7 +99,7 @@ export const Small: Story = {
 export const Medium: Story = {
   args: {
     shape: "circle",
-    icon: "add",
+    icon: <SvgIcon icon={"add"} />,
     size: "medium",
     disabled: false,
   },
@@ -103,7 +108,7 @@ export const Medium: Story = {
 export const Large: Story = {
   args: {
     shape: "circle",
-    icon: "add",
+    icon: <SvgIcon icon={"add"} />,
     size: "large",
     disabled: false,
   },
@@ -112,7 +117,7 @@ export const Large: Story = {
 export const Filled: Story = {
   args: {
     shape: "circle",
-    icon: "add",
+    icon: <SvgIcon icon={"add"} />,
     size: "medium",
     styleType: "filled",
     disabled: false,
@@ -122,7 +127,7 @@ export const Filled: Story = {
 export const Outlined: Story = {
   args: {
     shape: "circle",
-    icon: "add",
+    icon: <SvgIcon icon={"add"} />,
     size: "medium",
     styleType: "outlined",
     disabled: false,
@@ -132,7 +137,7 @@ export const Outlined: Story = {
 export const Ghost: Story = {
   args: {
     shape: "circle",
-    icon: "add",
+    icon: <SvgIcon icon={"add"} />,
     size: "medium",
     styleType: "ghost",
     disabled: false,
