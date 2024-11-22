@@ -1,6 +1,7 @@
 import { Dialog, DialogRootProps, Portal } from "@ark-ui/react";
 import { cx, RecipeVariantProps, sva } from "../../styled-system/css";
 import { IconButton } from "./IconButton";
+import { SvgIcon } from "./SvgIcon";
 
 const DrawerStyle = sva({
   slots: ["backdrop", "content", "contentInner", "closeTrigger"],
@@ -93,7 +94,11 @@ export const Drawer: React.FC<DrawerProps> = ({
           <Dialog.Content className={cx(styles.content, contentClassName)}>
             <header className={styles.closeTrigger}>
               <Dialog.CloseTrigger asChild>
-                <IconButton icon="close" shape="rectangle" styleType="ghost" />
+                <IconButton
+                  icon={<SvgIcon icon="close" />}
+                  shape="rectangle"
+                  styleType="ghost"
+                />
               </Dialog.CloseTrigger>
             </header>
             {children}

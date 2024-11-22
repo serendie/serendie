@@ -1,4 +1,4 @@
-import { List, ListItem } from "@serendie/ui";
+import { List, ListItem, SvgIcon } from "@serendie/ui";
 import { Dd, Dl, Dt } from "src/components/LayoutUtils";
 
 export function StateSample() {
@@ -7,25 +7,40 @@ export function StateSample() {
       <Dt>Enabled</Dt>
       <Dd>
         <List>
-          <ListItem title="リストタイトル" leftIcon="texture" />
+          <ListItem
+            title="リストタイトル"
+            leftIcon={<SvgIcon icon={"texture"} />}
+          />
         </List>
       </Dd>
       <Dt>Focused</Dt>
       <Dd>
         <List>
-          <ListItem title="リストタイトル" leftIcon="texture" focusVisible />
+          <ListItem
+            title="リストタイトル"
+            leftIcon={<SvgIcon icon={"texture"} />}
+            focusVisible
+          />
         </List>
       </Dd>
       <Dt>Disabled</Dt>
       <Dd>
         <List>
-          <ListItem title="リストタイトル" leftIcon="texture" disabled />
+          <ListItem
+            title="リストタイトル"
+            leftIcon={<SvgIcon icon={"texture"} />}
+            disabled
+          />
         </List>
       </Dd>
       <Dt>Selected</Dt>
       <Dd>
         <List>
-          <ListItem title="リストタイトル" leftIcon="texture" selected />
+          <ListItem
+            title="リストタイトル"
+            leftIcon={<SvgIcon icon={"texture"} />}
+            selected
+          />
         </List>
       </Dd>
     </Dl>

@@ -3,6 +3,7 @@ import { TopAppBar } from "./TopAppBar";
 import { IconButton } from "./IconButton";
 import figma from "@figma/code-connect";
 import React from "react";
+import { SvgIcon } from "./SvgIcon";
 
 const meta: Meta<typeof TopAppBar> = {
   component: TopAppBar,
@@ -78,7 +79,11 @@ export const All: StoryObj<typeof AllTemplate> = {
       trailingIconButtons: (
         <>
           <IconButton shape="rectangle" styleType="ghost" icon="search" />
-          <IconButton shape="rectangle" styleType="ghost" icon="add" />
+          <IconButton
+            shape="rectangle"
+            styleType="ghost"
+            icon={<SvgIcon icon={"add"} />}
+          />
           <IconButton shape="rectangle" styleType="ghost" icon="info" />
         </>
       ),
@@ -93,7 +98,11 @@ export const All: StoryObj<typeof AllTemplate> = {
       ),
       trailingIconButtons: (
         <>
-          <IconButton shape="rectangle" styleType="ghost" icon="add" />
+          <IconButton
+            shape="rectangle"
+            styleType="ghost"
+            icon={<SvgIcon icon={"add"} />}
+          />
         </>
       ),
     },
@@ -135,7 +144,11 @@ export const Navbar: Story = {
     trailingIconButtons: (
       <>
         <IconButton shape="rectangle" styleType="ghost" icon="search" />
-        <IconButton shape="rectangle" styleType="ghost" icon="add" />
+        <IconButton
+          shape="rectangle"
+          styleType="ghost"
+          icon={<SvgIcon icon={"add"} />}
+        />
         <IconButton shape="rectangle" styleType="ghost" icon="info" />
       </>
     ),
@@ -153,7 +166,11 @@ export const Title: Story = {
       <IconButton shape="rectangle" styleType="ghost" icon="chevron_left" />
     ),
     trailingIconButtons: (
-      <IconButton shape="rectangle" styleType="ghost" icon="add" />
+      <IconButton
+        shape="rectangle"
+        styleType="ghost"
+        icon={<SvgIcon icon={"add"} />}
+      />
     ),
   },
   render: (args) => {
@@ -169,7 +186,11 @@ export const NotificationBadgeExample: Story = {
       <IconButton shape="rectangle" styleType="ghost" icon="chevron_left" />
     ),
     trailingIconButtons: (
-      <IconButton shape="rectangle" styleType="ghost" icon="add" />
+      <IconButton
+        shape="rectangle"
+        styleType="ghost"
+        icon={<SvgIcon icon={"add"} />}
+      />
     ),
     badge: 3,
   },

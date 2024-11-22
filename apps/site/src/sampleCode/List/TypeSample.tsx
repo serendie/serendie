@@ -1,4 +1,4 @@
-import { List, ListItem } from "@serendie/ui";
+import { List, ListItem, SvgIcon } from "@serendie/ui";
 import { Dd, Dl, Dt } from "src/components/LayoutUtils";
 
 export function TypeSample() {
@@ -14,7 +14,10 @@ export function TypeSample() {
       <Dt>Left Icon</Dt>
       <Dd>
         <List>
-          <ListItem title="リストタイトル" leftIcon="texture" />
+          <ListItem
+            title="リストタイトル"
+            leftIcon={<SvgIcon icon={"texture"} />}
+          />
         </List>
       </Dd>
 
@@ -24,7 +27,7 @@ export function TypeSample() {
           <ListItem
             title="リストタイトル"
             description="補足テキスト"
-            leftIcon="texture"
+            leftIcon={<SvgIcon icon={"texture"} />}
           >
             <p>タイムスタンプなど</p>
           </ListItem>
@@ -34,7 +37,11 @@ export function TypeSample() {
       <Dt>Large Left Icon</Dt>
       <Dd>
         <List>
-          <ListItem title="リストタイトル" leftIcon="texture" isLargeLeftIcon />
+          <ListItem
+            title="リストタイトル"
+            leftIcon={<SvgIcon icon={"texture"} />}
+            isLargeLeftIcon
+          />
         </List>
       </Dd>
 
@@ -44,7 +51,7 @@ export function TypeSample() {
           <ListItem
             title="リストタイトル"
             description="補足テキスト"
-            leftIcon="texture"
+            leftIcon={<SvgIcon icon={"texture"} />}
             isLargeLeftIcon
           >
             <p>タイムスタンプなど</p>
@@ -55,7 +62,10 @@ export function TypeSample() {
       <Dt>Right Icon</Dt>
       <Dd>
         <List>
-          <ListItem title="リストタイトル" rightIcon="chevron_right" />
+          <ListItem
+            title="リストタイトル"
+            rightIcon={<SvgIcon icon={"chevron_right"} />}
+          />
         </List>
       </Dd>
 
@@ -65,7 +75,7 @@ export function TypeSample() {
           <ListItem
             title="リストタイトル"
             description="補足テキスト"
-            rightIcon="chevron_right"
+            rightIcon={<SvgIcon icon={"chevron_right"} />}
           />
         </List>
       </Dd>
@@ -76,7 +86,7 @@ export function TypeSample() {
           <ListItem
             title="リストタイトル"
             description="補足テキスト"
-            leftIcon="texture"
+            leftIcon={<SvgIcon icon={"texture"} />}
             isLargeLeftIcon
             badge={3}
           />
