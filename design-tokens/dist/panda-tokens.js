@@ -93,7 +93,7 @@ export default {
                     "value": "#000000"
                   },
                   "onSurfaceVariant": {
-                    "value": "#8C8B87"
+                    "value": "#696966"
                   },
                   "inverseSurface": {
                     "value": "#232322"
@@ -225,7 +225,7 @@ export default {
                     "value": "#000000"
                   },
                   "onSurfaceVariant": {
-                    "value": "#8C8B87"
+                    "value": "#696966"
                   },
                   "inverseSurface": {
                     "value": "#232322"
@@ -357,7 +357,7 @@ export default {
                     "value": "#000000"
                   },
                   "onSurfaceVariant": {
-                    "value": "#8C8B87"
+                    "value": "#696966"
                   },
                   "inverseSurface": {
                     "value": "#232322"
@@ -489,7 +489,7 @@ export default {
                     "value": "#000000"
                   },
                   "onSurfaceVariant": {
-                    "value": "#8C8B87"
+                    "value": "#696966"
                   },
                   "inverseSurface": {
                     "value": "#232322"
@@ -967,7 +967,7 @@ export default {
               "value": "#000000"
             },
             "onSurfaceVariant": {
-              "value": "#8C8B87"
+              "value": "#696966"
             },
             "inverseSurface": {
               "value": "#232322"

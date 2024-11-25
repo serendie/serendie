@@ -40,7 +40,7 @@ export default {
                 "component": {
                   "surface": "#FFFFFF",
                   "onSurface": "#000000",
-                  "onSurfaceVariant": "#8C8B87",
+                  "onSurfaceVariant": "#696966",
                   "inverseSurface": "#232322",
                   "inverseOnSurface": "#FFFFFF",
                   "outline": "#C8C7C2",
@@ -96,7 +96,7 @@ export default {
                 "component": {
                   "surface": "#FFFFFF",
                   "onSurface": "#000000",
-                  "onSurfaceVariant": "#8C8B87",
+                  "onSurfaceVariant": "#696966",
                   "inverseSurface": "#232322",
                   "inverseOnSurface": "#FFFFFF",
                   "outline": "#C8C7C2",
@@ -152,7 +152,7 @@ export default {
                 "component": {
                   "surface": "#FFFFFF",
                   "onSurface": "#000000",
-                  "onSurfaceVariant": "#8C8B87",
+                  "onSurfaceVariant": "#696966",
                   "inverseSurface": "#232322",
                   "inverseOnSurface": "#FFFFFF",
                   "outline": "#C8C7C2",
@@ -208,7 +208,7 @@ export default {
                 "component": {
                   "surface": "#FFFFFF",
                   "onSurface": "#000000",
-                  "onSurfaceVariant": "#8C8B87",
+                  "onSurfaceVariant": "#696966",
                   "inverseSurface": "#232322",
                   "inverseOnSurface": "#FFFFFF",
                   "outline": "#C8C7C2",
@@ -489,7 +489,7 @@ export default {
         "component": {
           "surface": "#FFFFFF",
           "onSurface": "#000000",
-          "onSurfaceVariant": "#8C8B87",
+          "onSurfaceVariant": "#696966",
           "inverseSurface": "#232322",
           "inverseOnSurface": "#FFFFFF",
           "outline": "#C8C7C2",
