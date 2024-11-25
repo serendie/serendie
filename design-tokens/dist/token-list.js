@@ -460,8 +460,8 @@ export default [
     ],
     "key": "themes.asagi.tokens.colors.sd.system.color.component.onSurfaceVariant",
     "type": "color",
-    "value": "#8C8B87",
-    "originalValue": "{sd.reference.color.scale.gray.500}"
+    "value": "#696966",
+    "originalValue": "{sd.reference.color.scale.gray.600}"
   },
   {
     "path": [
@@ -1106,8 +1106,8 @@ export default [
     ],
     "key": "themes.kurikawa.tokens.colors.sd.system.color.component.onSurfaceVariant",
     "type": "color",
-    "value": "#8C8B87",
-    "originalValue": "{sd.reference.color.scale.gray.500}"
+    "value": "#696966",
+    "originalValue": "{sd.reference.color.scale.gray.600}"
   },
   {
     "path": [
@@ -1752,8 +1752,8 @@ export default [
     ],
     "key": "themes.sumire.tokens.colors.sd.system.color.component.onSurfaceVariant",
     "type": "color",
-    "value": "#8C8B87",
-    "originalValue": "{sd.reference.color.scale.gray.500}"
+    "value": "#696966",
+    "originalValue": "{sd.reference.color.scale.gray.600}"
   },
   {
     "path": [
@@ -2398,8 +2398,8 @@ export default [
     ],
     "key": "themes.tsutsuji.tokens.colors.sd.system.color.component.onSurfaceVariant",
     "type": "color",
-    "value": "#8C8B87",
-    "originalValue": "{sd.reference.color.scale.gray.500}"
+    "value": "#696966",
+    "originalValue": "{sd.reference.color.scale.gray.600}"
   },
   {
     "path": [
@@ -5271,8 +5271,8 @@ export default [
     ],
     "key": "sd.system.color.component.onSurfaceVariant",
     "type": "color",
-    "value": "#8C8B87",
-    "originalValue": "{sd.reference.color.scale.gray.500}"
+    "value": "#696966",
+    "originalValue": "{sd.reference.color.scale.gray.600}"
   },
   {
     "path": [
