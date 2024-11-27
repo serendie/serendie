@@ -22,6 +22,8 @@
 
 ### Preparing
 
+https://github.com/serendie/serendie/tree/main/ui　←こちらのreadmeの内容も実施
+
 ```
 npm install
 ```
