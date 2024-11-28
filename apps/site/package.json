@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "npm run build:panda && astro dev",
     "start": "astro dev",
-    "build": "npm run build:panda && npm run build-storybook && astro build",
+    "build": "npm run build:panda && astro build",
     "build:astro": "astro check && astro build",
     "build:panda": "panda cssgen -m --clean && panda codegen",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
@@ -13,9 +13,7 @@
     "format": "prettier --write .",
     "preview": "astro preview",
     "astro": "astro",
-    "storybook": "storybook dev -p 6006",
-    "panda": "panda",
-    "build-storybook": "storybook build -o public/storybook"
+    "panda": "panda"
   },
   "dependencies": {
     "@ark-ui/react": "^3.5.0",
@@ -38,18 +36,7 @@
   },
   "devDependencies": {
     "@astrojs/partytown": "^2.1.2",
-    "@chromatic-com/storybook": "^1.6.1",
     "@pandacss/dev": "^0.42.0",
-    "@storybook/addon-essentials": "^8.2.4",
-    "@storybook/addon-interactions": "^8.2.4",
-    "@storybook/addon-links": "^8.2.4",
-    "@storybook/addon-onboarding": "^8.2.4",
-    "@storybook/addon-themes": "^8.2.8",
-    "@storybook/blocks": "^8.2.4",
-    "@storybook/react": "^8.2.4",
-    "@storybook/react-vite": "^8.2.4",
-    "@storybook/test": "^8.2.4",
-    "storybook": "^8.2.4",
     "vite-plugin-svgr": "^4.2.0"
   }
 }
