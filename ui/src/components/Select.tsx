@@ -2,6 +2,8 @@ import { Select as ArkSelect, Portal, SelectRootProps } from "@ark-ui/react";
 import { RecipeVariantProps, css, cx, sva } from "../../styled-system/css";
 import { useId } from "react";
 import { SvgIcon } from "./SvgIcon";
+import { ListItem } from "./ListItem";
+import { List } from "./List";
 
 export const SelectStyle = sva({
   slots: ["root", "valueText", "trigger", "content", "item", "iconBox"],
@@ -52,6 +54,10 @@ export const SelectStyle = sva({
       whiteSpace: "nowrap",
       overflow: "hidden",
       textOverflow: "ellipsis",
+      textStyle: {
+        base: "sd.system.typography.body.medium_compact",
+        expanded: "sd.system.typography.body.medium_expanded",
+      },
       "[data-placeholder-shown] &": {
         color: "sd.system.color.component.onSurfaceVariant",
       },
@@ -70,11 +76,7 @@ export const SelectStyle = sva({
       cursor: "pointer",
     },
     item: {
-      display: "flex",
-      gap: "sd.system.dimension.spacing.small",
-      _highlighted: {
-        backgroundColor: "sd.system.color.interaction.hoveredVariant",
-      },
+      width: "100%",
     },
     iconBox: {
       w: "40px",
@@ -94,27 +96,28 @@ export const SelectStyle = sva({
             expanded: "sd.system.typography.body.medium_expanded",
           },
         },
+        valueText: {
+          textStyle: {
+            base: "sd.system.typography.body.medium_compact",
+            expanded: "sd.system.typography.body.medium_expanded",
+          },
+        },
         trigger: {
           height: 48,
         },
-        item: {
-          paddingRight: "sd.system.dimension.spacing.medium",
-          paddingLeft: "sd.system.dimension.spacing.medium",
-          paddingBottom: {
-            base: "sd.system.dimension.spacing.small",
-            expanded: "sd.system.dimension.spacing.extraSmall",
-          },
-          paddingTop: {
-            base: "sd.system.dimension.spacing.small",
-            expanded: "sd.system.dimension.spacing.extraSmall",
-          },
-        },
+        item: {},
       },
       small: {
         root: {
           gridTemplateColumns: "minmax(auto, 150px)",
           textStyle: {
             base: "sd.system.typography.body.small_compact",
+          },
+        },
+        valueText: {
+          textStyle: {
+            base: "sd.system.typography.body.small_compact",
+            expanded: "sd.system.typography.body.small_expanded",
           },
         },
         trigger: {
@@ -128,12 +131,7 @@ export const SelectStyle = sva({
         content: {
           borderRadius: "sd.system.dimension.radius.small",
         },
-        item: {
-          paddingTop: "sd.system.dimension.spacing.extraSmall",
-          paddingRight: "sd.system.dimension.spacing.medium",
-          paddingBottom: "sd.system.dimension.spacing.extraSmall",
-          paddingLeft: "sd.system.dimension.spacing.medium",
-        },
+        item: {},
       },
     },
   },
@@ -228,13 +226,18 @@ export const Select: React.FC<SelectStyleProps> = ({
         <ArkSelect.Positioner>
           {/* TODO: 上部に僅かに隙間があるので詰めたいがAPIが見つからない、、、 */}
           <ArkSelect.Content className={styles.content}>
-            <ArkSelect.ItemGroup id={id}>
+            <List id={id}>
               {props.items.map((item, i) => (
-                <ArkSelect.Item key={i} item={item} className={styles.item}>
-                  <ArkSelect.ItemText>{item.label}</ArkSelect.ItemText>
+                <ArkSelect.Item key={i} item={item}>
+                  <ListItem
+                    title={item.label}
+                    value={item.value}
+                    className={styles.item}
+                    size={variantProps.size == "small" ? "small" : undefined}
+                  />
                 </ArkSelect.Item>
               ))}
-            </ArkSelect.ItemGroup>
+            </List>
           </ArkSelect.Content>
         </ArkSelect.Positioner>
       </Portal>
