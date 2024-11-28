@@ -46,7 +46,7 @@ export const checkboxUncheckedIconCss = {
   },
 };
 
-export const CheckboxStyle = sva({
+export const CheckBoxStyle = sva({
   slots: [
     "root",
     "itemControl",
@@ -96,24 +96,24 @@ export const CheckboxStyle = sva({
   },
 });
 
-type CheckboxItemProps = {
+type CheckBoxItemProps = {
   label: string;
   helperText?: string;
 };
 
-export type CheckboxProps = CheckboxRootProps &
-  RecipeVariantProps<typeof CheckboxStyle> &
-  CheckboxItemProps;
+export type CheckBoxProps = CheckboxRootProps &
+  RecipeVariantProps<typeof CheckBoxStyle> &
+  CheckBoxItemProps;
 
-export const Checkbox: React.FC<CheckboxProps> = ({
+export const CheckBox: React.FC<CheckBoxProps> = ({
   value,
   label,
   helperText,
   className,
   ...props
 }) => {
-  const [variantProps, elementProps] = CheckboxStyle.splitVariantProps(props);
-  const styles = CheckboxStyle(variantProps);
+  const [variantProps, elementProps] = CheckBoxStyle.splitVariantProps(props);
+  const styles = CheckBoxStyle(variantProps);
   const rootStyle = cx(
     styles.root,
     helperText && css({ alignItems: "flex-start" })

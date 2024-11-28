@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Checkbox, CheckboxProps } from "./Checkbox";
+import { CheckBox, CheckBoxProps } from "./CheckBox";
 import figma from "@figma/code-connect";
 
-const meta: Meta<typeof Checkbox> = {
-  component: Checkbox,
+const meta: Meta<typeof CheckBox> = {
+  component: CheckBox,
   parameters: {
     design: {
       type: "figma",
@@ -26,34 +26,34 @@ const meta: Meta<typeof Checkbox> = {
   },
 };
 
-function FigmaExample(props: React.ComponentProps<typeof Checkbox>) {
-  return <Checkbox {...props} value="item" />;
+function FigmaExample(props: React.ComponentProps<typeof CheckBox>) {
+  return <CheckBox {...props} value="item" />;
 }
 
 export default meta;
-type Story = StoryObj<typeof Checkbox>;
+type Story = StoryObj<typeof CheckBox>;
 
-const Template = (args: CheckboxProps) => (
+const Template = (args: CheckBoxProps) => (
   <>
-    <Checkbox
+    <CheckBox
       {...args}
       label="タイトルタイトル1"
       value="itemA"
       helperText={args.helperText}
     />
-    <Checkbox
+    <CheckBox
       {...args}
       label="タイトルタイトル2"
       value="itemB"
       helperText={args.helperText}
     />
-    <Checkbox
+    <CheckBox
       {...args}
       label="タイトルタイトル3"
       value="itemC"
       disabled={true}
     />
-    <Checkbox
+    <CheckBox
       {...args}
       label="タイトルタイトル4"
       value="itemD"
@@ -75,9 +75,9 @@ export const WithHelperText: Story = {
 };
 
 export const Disabled: Story = {
-  render: (args: CheckboxProps) => (
+  render: (args: CheckBoxProps) => (
     <>
-      <Checkbox
+      <CheckBox
         {...args}
         label="タイトルタイトル2"
         value="itemB"
@@ -85,7 +85,7 @@ export const Disabled: Story = {
         defaultChecked
         disabled
       />
-      <Checkbox {...args} label="タイトルタイトル3" value="itemC" disabled />
+      <CheckBox {...args} label="タイトルタイトル3" value="itemC" disabled />
     </>
   ),
   args: {

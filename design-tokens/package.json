@@ -1,7 +1,7 @@
 {
   "name": "@serendie/design-token",
   "description": "the design tokens of Serendie",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "scripts": {
     "build": "tsx style_dictionary/build.ts",

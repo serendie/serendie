@@ -1,11 +1,11 @@
 {
   "name": "@serendie/ui",
   "description": "UI components for Serendie",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "dev": "vite",
+    "dev": "npm run storybook",
     "build:panda": "panda codegen",
     "build:components": "vite build",
     "build": "npm run build:panda && npm run build:components",
@@ -13,7 +13,7 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "build:storybook": "npm run build && storybook build",
     "test": "test-storybook",
     "panda": "panda",
     "connect:publish": "npx figma connect publish",

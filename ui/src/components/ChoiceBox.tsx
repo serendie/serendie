@@ -2,7 +2,7 @@ import {
   checkboxCheckedIconCss,
   checkboxIconCss,
   checkboxUncheckedIconCss,
-} from "./Checkbox";
+} from "./CheckBox";
 import {
   radioCheckedIconCss,
   radioIconCss,
@@ -16,7 +16,7 @@ import CheckboxUncheckedIcon from "../assets/checkboxUnchecked.svg?react";
 import { cx, sva } from "../../styled-system/css";
 import { Checkbox as ArkCheckbox, CheckboxRootProps } from "@ark-ui/react";
 
-export const ChoiceboxStyle = sva({
+export const ChoiceBoxStyle = sva({
   slots: [
     "root",
     "radioItem",
@@ -39,22 +39,22 @@ export const ChoiceboxStyle = sva({
   },
 });
 
-type ChoiceboxBaseProps = {
+type ChoiceBoxBaseProps = {
   type: "radio" | "checkbox";
 };
 
-export type ChoiceboxProps = ChoiceboxBaseProps &
+export type ChoiceBoxProps = ChoiceBoxBaseProps &
   RadioGroupItemProps &
   CheckboxRootProps;
 
-export const Choicebox: React.FC<ChoiceboxProps> = ({
+export const ChoiceBox: React.FC<ChoiceBoxProps> = ({
   type,
   value,
   className,
   ...props
 }) => {
-  const [variantProps, elementProps] = ChoiceboxStyle.splitVariantProps(props);
-  const styles = ChoiceboxStyle(variantProps);
+  const [variantProps, elementProps] = ChoiceBoxStyle.splitVariantProps(props);
+  const styles = ChoiceBoxStyle(variantProps);
 
   if (type === "radio") {
     return (

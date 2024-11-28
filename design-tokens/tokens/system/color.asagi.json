@@ -321,7 +321,7 @@
           },
           "onSurfaceVariant": {
             "$type": "color",
-            "$value": "{sd.reference.color.scale.gray.500}",
+            "$value": "{sd.reference.color.scale.gray.600}",
             "$description": "プレイスホルダーやサブテキストなどonSurfaceに強弱をつける際に利用",
             "$extensions": {
               "com.figma": {

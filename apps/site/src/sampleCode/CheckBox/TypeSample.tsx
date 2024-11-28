@@ -1,4 +1,4 @@
-import { Checkbox } from "@serendie/ui";
+import { CheckBox } from "@serendie/ui";
 import { Dd, Dl, Dt } from "src/components/LayoutUtils";
 
 export function TypeSample() {
@@ -6,12 +6,12 @@ export function TypeSample() {
     <Dl>
       <Dt>Single Line</Dt>
       <Dd>
-        <Checkbox label={"タイトル"} />
+        <CheckBox label={"タイトル"} />
       </Dd>
 
       <Dt>Multiple Line</Dt>
       <Dd>
-        <Checkbox
+        <CheckBox
           label={"タイトル"}
           helperText="補足テキスト補足テキスト補足テキスト"
         />
