@@ -4,10 +4,12 @@ interface StorybookButtonProps {
   storyPath: string;
 }
 
+const URL = "https://storybook.serendie.design/";
+
 export const StorybookButton: React.FC<StorybookButtonProps> = ({
   storyPath,
 }) => {
-  const href = `/storybook?path=${storyPath}`;
+  const href = `${URL}?path=${storyPath}`;
   return (
     <Button
       // TODO: ButtonLinkとかにして、<a>でリンクするようにしたい
