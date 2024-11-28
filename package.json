@@ -6,6 +6,7 @@
   "scripts": {
     "prepare": "husky",
     "storybook": "npm run storybook -w @serendie/ui",
+    "build:storybook": "npm run build:storybook -w @serendie/ui",
     "build": "npm run build:ui && npm run build:site",
     "build:ui": "npm run build --workspace @serendie/ui",
     "build:site": "npm run build --workspace @serendie/site",
