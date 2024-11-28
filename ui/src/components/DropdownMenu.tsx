@@ -78,7 +78,7 @@ export const DropdownMenuStyle = sva({
 export type MenuItemProps = {
   value: string;
   label: string;
-  icon?: React.ReactNode;
+  icon?: React.ReactElement;
 };
 
 export type DropdownMenuProps = {

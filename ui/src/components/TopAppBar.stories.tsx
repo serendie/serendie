@@ -73,18 +73,30 @@ export const All: StoryObj<typeof AllTemplate> = {
       type: "navbar",
       headingIconButton: (
         <>
-          <IconButton shape="rectangle" styleType="ghost" icon="menu" />
+          <IconButton
+            shape="rectangle"
+            styleType="ghost"
+            icon={<SvgIcon icon="menu" />}
+          />
         </>
       ),
       trailingIconButtons: (
         <>
-          <IconButton shape="rectangle" styleType="ghost" icon="search" />
+          <IconButton
+            shape="rectangle"
+            styleType="ghost"
+            icon={<SvgIcon icon={"search"} />}
+          />
           <IconButton
             shape="rectangle"
             styleType="ghost"
             icon={<SvgIcon icon={"add"} />}
           />
-          <IconButton shape="rectangle" styleType="ghost" icon="info" />
+          <IconButton
+            shape="rectangle"
+            styleType="ghost"
+            icon={<SvgIcon icon={"info"} />}
+          />
         </>
       ),
     },
@@ -93,7 +105,11 @@ export const All: StoryObj<typeof AllTemplate> = {
       title: "Title Bar",
       headingIconButton: (
         <>
-          <IconButton shape="rectangle" styleType="ghost" icon="chevron_left" />
+          <IconButton
+            shape="rectangle"
+            styleType="ghost"
+            icon={<SvgIcon icon="chevron_left" />}
+          />
         </>
       ),
       trailingIconButtons: (
@@ -115,14 +131,14 @@ export const All: StoryObj<typeof AllTemplate> = {
 type AllTemplateProps = {
   arg1: {
     type: "navbar";
-    headingIconButton: React.ReactNode;
-    trailingIconButtons: React.ReactNode;
+    headingIconButton: React.ReactElement;
+    trailingIconButtons: React.ReactElement;
   };
   arg2: {
     type: "titleBar";
     title: string;
-    headingIconButton: React.ReactNode;
-    trailingIconButtons: React.ReactNode;
+    headingIconButton: React.ReactElement;
+    trailingIconButtons: React.ReactElement;
   };
 };
 
@@ -139,17 +155,29 @@ export const Navbar: Story = {
   args: {
     type: "navbar",
     headingIconButton: (
-      <IconButton shape="rectangle" styleType="ghost" icon="menu" />
+      <IconButton
+        shape="rectangle"
+        styleType="ghost"
+        icon={<SvgIcon icon="menu" />}
+      />
     ),
     trailingIconButtons: (
       <>
-        <IconButton shape="rectangle" styleType="ghost" icon="search" />
+        <IconButton
+          shape="rectangle"
+          styleType="ghost"
+          icon={<SvgIcon icon={"search"} />}
+        />
         <IconButton
           shape="rectangle"
           styleType="ghost"
           icon={<SvgIcon icon={"add"} />}
         />
-        <IconButton shape="rectangle" styleType="ghost" icon="info" />
+        <IconButton
+          shape="rectangle"
+          styleType="ghost"
+          icon={<SvgIcon icon={"info"} />}
+        />
       </>
     ),
   },
@@ -163,7 +191,11 @@ export const Title: Story = {
     type: "titleBar",
     title: "Title Bar",
     headingIconButton: (
-      <IconButton shape="rectangle" styleType="ghost" icon="chevron_left" />
+      <IconButton
+        shape="rectangle"
+        styleType="ghost"
+        icon={<SvgIcon icon="chevron_left" />}
+      />
     ),
     trailingIconButtons: (
       <IconButton
@@ -183,7 +215,11 @@ export const NotificationBadgeExample: Story = {
     type: "titleBar",
     title: "Title Bar",
     headingIconButton: (
-      <IconButton shape="rectangle" styleType="ghost" icon="chevron_left" />
+      <IconButton
+        shape="rectangle"
+        styleType="ghost"
+        icon={<SvgIcon icon="chevron_left" />}
+      />
     ),
     trailingIconButtons: (
       <IconButton

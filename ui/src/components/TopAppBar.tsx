@@ -59,8 +59,8 @@ const topAppBarStyle = sva({
 type VariantProps = Omit<RecipeVariantProps<typeof topAppBarStyle>, "type">;
 
 type BaseProps = {
-  headingIconButton?: React.ReactNode;
-  trailingIconButtons?: React.ReactNode;
+  headingIconButton?: React.ReactElement;
+  trailingIconButtons?: React.ReactElement;
   badge?: NotificationBadgeProps["count"];
   title?: string;
 } & VariantProps &

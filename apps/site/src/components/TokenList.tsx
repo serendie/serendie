@@ -1,5 +1,5 @@
 import type tokens from "@serendie/design-token/token-list";
-import { IconButton, Search } from "@serendie/ui";
+import { IconButton, Search, SvgIcon } from "@serendie/ui";
 import { css } from "styled-system/css";
 import { Box, Circle, Flex, styled } from "styled-system/jsx";
 import React, { Fragment, useCallback, useState } from "react";
@@ -271,7 +271,7 @@ const PathSpan: React.FC<{ path: string[] }> = ({ path }) => {
             size={"small"}
             styleType="ghost"
             shape="rectangle"
-            icon="clipboard_copy"
+            icon={<SvgIcon icon="clipboard_copy" />}
             onClick={handleClick}
           />
           {copied && (

@@ -115,7 +115,7 @@ export const IconButtonStyle = cva({
  */
 type ButtonProps = RecipeVariantProps<typeof IconButtonStyle> &
   ComponentProps<"button"> & {
-    icon: React.ReactNode;
+    icon: React.ReactElement;
   };
 
 export const IconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(

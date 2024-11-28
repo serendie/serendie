@@ -124,8 +124,8 @@ export const ListItemStyle = sva({
 type ListItemBaseProps = {
   title: string;
   description?: string;
-  rightIcon?: React.ReactNode;
-  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactElement;
+  leftIcon?: React.ReactElement;
   isLargeLeftIcon?: boolean;
   badge?: number;
   children?: React.ReactNode;
@@ -136,7 +136,7 @@ type ListItemBaseProps = {
 
 type ExclusiveRightItemProps =
   | ({ badge?: number } & { rightIcon?: never })
-  | ({ badge?: never } & { rightIcon?: React.ReactNode });
+  | ({ badge?: never } & { rightIcon?: React.ReactElement });
 
 type ListItemProps = ComponentProps<"li"> &
   ListItemBaseProps &
