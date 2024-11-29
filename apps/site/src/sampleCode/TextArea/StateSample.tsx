@@ -37,6 +37,16 @@ export function StateSample() {
           value="入力中"
         />
       </Dd>
+      <Dt>Focused</Dt>
+      <Dd>
+        <TextArea
+          description="入力方法などに関するヘルプテキスト"
+          invalidMessage="入力の誤りに関するテキスト"
+          label="ラベル"
+          placeholder="プレースホルダー"
+          data-focus
+        />
+      </Dd>
       <Dt>Disabled</Dt>
       <Dd>
         <TextArea

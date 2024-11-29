@@ -11,6 +11,9 @@ export const SwitchStyle = sva({
       gap: "sd.system.dimension.spacing.medium",
       paddingY: "sd.system.dimension.spacing.small",
       paddingX: "sd.system.dimension.spacing.medium",
+      '&[data-focus="true"] .control': {
+        borderColor: "sd.system.color.impression.primary",
+      },
     },
     control: {
       cursor: "pointer",
@@ -122,7 +125,7 @@ export const Switch = forwardRef<HTMLLabelElement, SwitchProps>(
             </ArkSwitch.Label>
           )}
         </div>
-        <ArkSwitch.Control className={styles.control}>
+        <ArkSwitch.Control className={cx("control", styles.control)}>
           <ArkSwitch.Thumb className={styles.thumb} />
         </ArkSwitch.Control>
         <ArkSwitch.HiddenInput />

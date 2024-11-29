@@ -42,6 +42,10 @@ const TextFieldStyle = sva({
       outlineColor: "sd.system.color.component.outline",
       borderRadius: "sd.system.dimension.radius.medium",
       backgroundColor: "sd.system.color.component.surface",
+      '&:has([data-focus="true"])': {
+        outlineWidth: "sd.system.dimension.border.thick",
+        outlineColor: "sd.system.color.impression.primary",
+      },
       _focusWithin: {
         outlineWidth: "sd.system.dimension.border.thick",
         outlineColor: "sd.system.color.impression.primary",
