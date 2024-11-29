@@ -1,9 +1,9 @@
 import { Select as ArkSelect, Portal, SelectRootProps } from "@ark-ui/react";
 import { RecipeVariantProps, css, cx, sva } from "../../styled-system/css";
 import { useId } from "react";
-import { SvgIcon } from "./SvgIcon";
 import { ListItem } from "./ListItem";
 import { List } from "./List";
+import { SerendieSymbol } from "@serendie/symbols";
 
 export const SelectStyle = sva({
   slots: ["root", "valueText", "trigger", "content", "item", "iconBox"],
@@ -206,7 +206,11 @@ export const Select: React.FC<SelectStyleProps> = ({
             placeholder={placeholder}
             className={styles.valueText}
           />
-          <SvgIcon icon="expandMore" size="20" className={styles.iconBox} />
+          <SerendieSymbol
+            name="chevron-down"
+            className={styles.iconBox}
+            size={20}
+          />
         </ArkSelect.Trigger>
       </ArkSelect.Control>
       {invalid && invalidMessage && (

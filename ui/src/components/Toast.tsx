@@ -4,11 +4,10 @@ import {
   createToaster,
   Toaster as ArkToaster,
 } from "@ark-ui/react";
-import { SvgIcon } from "..";
-import { SvgIconName } from "./SvgIcon";
+import { SerendieSymbol, SymbolName } from "@serendie/symbols";
 
 export const ToastStyle = sva({
-  slots: ["root", "textGroup", "text"],
+  slots: ["root", "textGroup", "text", "icon"],
   base: {
     root: {
       display: "flex",
@@ -29,6 +28,9 @@ export const ToastStyle = sva({
         textStyle: "sd.system.typography.body.small_expanded",
       },
     },
+    icon: {
+      color: "sd.system.color.component.inverseOnSurface",
+    },
   },
   variants: {
     variant: {
@@ -39,6 +41,9 @@ export const ToastStyle = sva({
         text: {
           color: "sd.system.color.component.inverseOnSurface",
         },
+        icon: {
+          color: "sd.system.color.impression.positive",
+        },
       },
       error: {
         root: {
@@ -47,6 +52,9 @@ export const ToastStyle = sva({
           borderWidth: 1,
         },
         text: {
+          color: "sd.system.color.impression.negative",
+        },
+        icon: {
           color: "sd.system.color.impression.negative",
         },
       },
@@ -67,9 +75,9 @@ type ToastProps = {
 
 const Toast: React.FC<ToastProps> = ({ toaster }) => {
   type ToastType = "success" | "error";
-  const iconMap: { [key in ToastType]?: SvgIconName } = {
-    success: "checkCircle",
-    error: "errorCircle",
+  const iconMap: { [key in ToastType]?: SymbolName } = {
+    success: "check-circle",
+    error: "alert-circle",
   };
 
   return (
@@ -78,13 +86,21 @@ const Toast: React.FC<ToastProps> = ({ toaster }) => {
         const type = toast.type === "error" ? "error" : "default";
         const styles = ToastStyle({ variant: type });
 
-        const iconType: SvgIconName | undefined =
+        const iconType: SymbolName | undefined =
           iconMap[toast.type as ToastType];
 
         return (
           <ArkToast.Root key={toast.id} className={styles.root}>
             <div className={styles.textGroup}>
-              {iconType && <SvgIcon icon={iconType} size="24px" />}
+              {iconType && (
+                <SerendieSymbol
+                  name={iconType}
+                  size={24}
+                  variant="filled"
+                  className={styles.icon}
+                />
+              )}
+
               <ArkToast.Title className={styles.text}>
                 {toast.title}
               </ArkToast.Title>

@@ -103,7 +103,7 @@ export const Error: Story = {
           onClick={() =>
             toaster.create({
               title: "エラーメッセージ",
-              duration: 3000,
+              duration: 300000,
               type: "error",
             })
           }

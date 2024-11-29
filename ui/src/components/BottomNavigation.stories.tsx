@@ -5,7 +5,7 @@ import {
   BottomNavigationItemProps,
 } from "./BottomNavigationItem";
 import figma from "@figma/code-connect";
-import { SvgIcon } from "./SvgIcon";
+import { SerendieSymbol } from "@serendie/symbols";
 
 const meta: Meta<typeof BottomNavigationItem> = {
   component: BottomNavigationItem,
@@ -37,19 +37,22 @@ export const Default: Story = {
   render: (args: BottomNavigationItemProps) => (
     <BottomNavigation>
       <BottomNavigationItem {...args} />
-      <BottomNavigationItem icon={<SvgIcon icon="search" />} label="検索" />
       <BottomNavigationItem
-        icon={<SvgIcon icon="search" />}
+        icon={<SerendieSymbol name="magnifying-glass" />}
+        label="検索"
+      />
+      <BottomNavigationItem
+        icon={<SerendieSymbol name="magnifying-glass" />}
         label="トーク"
         dot
       />
       <BottomNavigationItem
-        icon={<SvgIcon icon="search" />}
+        icon={<SerendieSymbol name="magnifying-glass" />}
         label="カレンダー"
         count={3}
       />
       <BottomNavigationItem
-        icon={<SvgIcon icon="search" />}
+        icon={<SerendieSymbol name="magnifying-glass" />}
         label="アカウント"
         count={100}
       />
@@ -57,7 +60,7 @@ export const Default: Story = {
   ),
   args: {
     label: "ホーム",
-    icon: <SvgIcon icon="search" />,
+    icon: <SerendieSymbol name="magnifying-glass" />,
     isActive: true,
   },
 };

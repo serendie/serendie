@@ -1,6 +1,7 @@
 import { Menu as ArkMenu, MenuRootProps, Portal } from "@ark-ui/react";
-import { Button, IconButton, SvgIcon } from "..";
+import { Button, IconButton } from "..";
 import { sva } from "../../styled-system/css";
+import { SerendieSymbol } from "@serendie/symbols";
 
 export const DropdownMenuStyle = sva({
   slots: ["content", "itemGroup", "item", "itemIcon", "button", "buttonIcon"],
@@ -103,7 +104,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
       <ArkMenu.Trigger asChild>
         {isIconMenu ? (
           <IconButton
-            icon={<SvgIcon icon="menu" />}
+            icon={<SerendieSymbol name="menu" />}
             shape="rectangle"
             disabled={disabled}
             styleType="outlined"
@@ -114,9 +115,9 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
             size="medium"
             disabled={disabled}
             rightIcon={
-              <SvgIcon
-                icon="expandMore"
-                size="24px"
+              <SerendieSymbol
+                name="chevron-down"
+                size={24}
                 className={styles.buttonIcon}
               />
             }

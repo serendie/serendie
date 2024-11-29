@@ -1,10 +1,7 @@
 import { Combobox, ComboboxRootProps, Portal } from "@ark-ui/react";
 import { RecipeVariantProps, sva } from "../../styled-system/css";
-import { SvgIcon } from "./SvgIcon";
 import { Box } from "../../styled-system/jsx";
-import { getToken } from "../tokens/getToken";
-
-const { sd } = getToken();
+import { SerendieSymbol } from "@serendie/symbols";
 
 /*
  * 検索候補を出すことができるサーチコンボボックス
@@ -20,6 +17,7 @@ export const SearchStyle = sva({
     "combobox",
     "comboboxItem",
     "iconBox",
+    "icon",
     "closeIcon",
   ],
   base: {
@@ -77,6 +75,9 @@ export const SearchStyle = sva({
       "[data-disabled] &": {
         color: "sd.system.color.interaction.disabledOnSurface",
       },
+    },
+    icon: {
+      width: "sd.system.dimension.spacing.large",
     },
     closeIcon: {
       opacity: 0,
@@ -149,14 +150,14 @@ export const Search: React.FC<SearchStyleProps> = ({
     <Combobox.Root items={items} lazyMount unmountOnExit {...props}>
       <Combobox.Control className={styles.control}>
         <div className={styles.iconBox}>
-          <SvgIcon icon="search" size={sd.system.dimension.spacing.large} />
+          <SerendieSymbol name="magnifying-glass" className={styles.icon} />
         </div>
         <Combobox.Input className={styles.input} />
         {/* ARK UIではOpenのトリガーも用意されているがデザインではナシ */}
         {items.length > 0 && (
           <Combobox.Trigger>
             <div className={styles.closeIcon}>
-              <SvgIcon icon="close" size={sd.system.dimension.spacing.large} />
+              <SerendieSymbol name="close" className={styles.icon} />
             </div>
           </Combobox.Trigger>
         )}

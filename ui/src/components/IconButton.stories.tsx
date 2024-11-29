@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { IconButton, IconButtonStyle } from "./IconButton";
 import figma from "@figma/code-connect";
-import { SvgIcon } from "./SvgIcon";
+import { SerendieSymbol } from "@serendie/symbols";
 
 const meta: Meta<typeof IconButton> = {
   component: IconButton,
@@ -56,7 +56,7 @@ const meta: Meta<typeof IconButton> = {
     },
     icon: {
       control: { type: "object" },
-      defaultValue: <SvgIcon icon={"add"} />,
+      defaultValue: <SerendieSymbol name="plus" />,
     },
   },
 };
@@ -71,7 +71,7 @@ type Story = StoryObj<typeof IconButton>;
 export const Rectangle: Story = {
   args: {
     shape: "rectangle",
-    icon: <SvgIcon icon={"add"} />,
+    icon: <SerendieSymbol name="plus" />,
     size: "medium",
     disabled: false,
   },
@@ -81,7 +81,7 @@ export const Rectangle: Story = {
 export const Circle: Story = {
   args: {
     shape: "circle",
-    icon: <SvgIcon icon={"add"} />,
+    icon: <SerendieSymbol name="plus" />,
     size: "medium",
     disabled: false,
   },
@@ -90,7 +90,7 @@ export const Circle: Story = {
 export const Small: Story = {
   args: {
     shape: "circle",
-    icon: <SvgIcon icon={"add"} />,
+    icon: <SerendieSymbol name="plus" />,
     size: "small",
     disabled: false,
   },
@@ -99,7 +99,7 @@ export const Small: Story = {
 export const Medium: Story = {
   args: {
     shape: "circle",
-    icon: <SvgIcon icon={"add"} />,
+    icon: <SerendieSymbol name="plus" />,
     size: "medium",
     disabled: false,
   },
@@ -108,7 +108,7 @@ export const Medium: Story = {
 export const Large: Story = {
   args: {
     shape: "circle",
-    icon: <SvgIcon icon={"add"} />,
+    icon: <SerendieSymbol name="plus" />,
     size: "large",
     disabled: false,
   },
@@ -117,7 +117,7 @@ export const Large: Story = {
 export const Filled: Story = {
   args: {
     shape: "circle",
-    icon: <SvgIcon icon={"add"} />,
+    icon: <SerendieSymbol name="plus" />,
     size: "medium",
     styleType: "filled",
     disabled: false,
@@ -127,7 +127,7 @@ export const Filled: Story = {
 export const Outlined: Story = {
   args: {
     shape: "circle",
-    icon: <SvgIcon icon={"add"} />,
+    icon: <SerendieSymbol name="plus" />,
     size: "medium",
     styleType: "outlined",
     disabled: false,
@@ -137,7 +137,7 @@ export const Outlined: Story = {
 export const Ghost: Story = {
   args: {
     shape: "circle",
-    icon: <SvgIcon icon={"add"} />,
+    icon: <SerendieSymbol name="plus" />,
     size: "medium",
     styleType: "ghost",
     disabled: false,

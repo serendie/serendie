@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ListItem } from "./ListItem";
 import { List } from "./List";
 import figma from "@figma/code-connect";
-import { SvgIcon } from "./SvgIcon";
+import { SerendieSymbol } from "@serendie/symbols";
 
 const meta: Meta<typeof ListItem> = {
   component: ListItem,
@@ -99,14 +99,14 @@ type Story = StoryObj<typeof ListItem>;
 
 export const Basic: Story = {
   args: {
-    leftIcon: <SvgIcon icon="texture" />,
+    leftIcon: <SerendieSymbol name="placeholder" />,
     title: "リストスタイル",
   },
 };
 
 export const Description: Story = {
   args: {
-    leftIcon: <SvgIcon icon="texture" />,
+    leftIcon: <SerendieSymbol name="placeholder" />,
     title: "リストスタイル",
     description: "補足テキスト補足テキスト",
   },
@@ -114,14 +114,14 @@ export const Description: Story = {
 
 export const RightIcon: Story = {
   args: {
-    rightIcon: <SvgIcon icon="chevron_right" />,
+    rightIcon: <SerendieSymbol name="chevron-right" />,
     title: "リストスタイル",
   },
 };
 
 export const Badge: Story = {
   args: {
-    leftIcon: <SvgIcon icon="texture" />,
+    leftIcon: <SerendieSymbol name="placeholder" />,
     title: "リストスタイル1",
     description: "補足テキスト補足テキスト10分前",
     badge: 100,
