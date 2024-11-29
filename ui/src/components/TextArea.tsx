@@ -48,6 +48,10 @@ const TextAreaStyle = sva({
       _invalid: {
         outlineColor: "sd.system.color.impression.negative",
       },
+      '&:has([data-focus="true"])': {
+        outlineWidth: "sd.system.dimension.border.thick",
+        outlineColor: "sd.system.color.impression.primary",
+      },
     },
     textarea: {
       outline: "none",
