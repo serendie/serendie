@@ -1,6 +1,6 @@
 import { ComponentProps } from "react";
 import { RecipeVariantProps, cx, sva } from "../../styled-system/css";
-import { SerendieSymbol, SymbolName } from "@serendie/symbols";
+import { SerendieSymbol } from "@serendie/symbols";
 
 const BannerStyle = sva({
   slots: ["container", "icon", "title", "description"],
@@ -69,7 +69,7 @@ const BannerStyle = sva({
 type BannerProps = {
   title: string;
   description: string;
-  icon?: SymbolName;
+  icon?: React.ReactElement;
 } & ComponentProps<"div">;
 
 export const Banner: React.FC<
@@ -84,15 +84,19 @@ export const Banner: React.FC<
   return (
     <div className={cx(styles.container, className)} {...restProps}>
       <div className={styles.icon}>
-        <SerendieSymbol
-          name={icon || "alert-circle"}
-          size={24}
-          variant={
-            variantType === "error" || variantType === "warning"
-              ? "filled"
-              : "outlined"
-          }
-        />
+        {icon ? (
+          icon
+        ) : (
+          <SerendieSymbol
+            name={"alert-circle"}
+            size={24}
+            variant={
+              variantType === "error" || variantType === "warning"
+                ? "filled"
+                : "outlined"
+            }
+          />
+        )}
       </div>
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.description}>{description}</p>
