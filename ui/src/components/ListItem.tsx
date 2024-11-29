@@ -102,6 +102,15 @@ export const ListItemStyle = sva({
       minW: 24,
     },
   },
+  variants: {
+    size: {
+      small: {
+        wrapper: {
+          minH: 38,
+        },
+      },
+    },
+  },
 });
 
 type ListItemBaseProps = {
@@ -115,6 +124,7 @@ type ListItemBaseProps = {
   disabled?: boolean;
   selected?: boolean;
   focusVisible?: boolean;
+  size?: "small";
 };
 
 type ExclusiveRightItemProps =
