@@ -127,8 +127,8 @@ export const ButtonStyle = cva({
 
 // leftIconとrightIconを両方指定できないようにする
 type ExclusiveIconProps =
-  | ({ leftIcon?: React.ReactNode } & { rightIcon?: never })
-  | ({ leftIcon?: never } & { rightIcon?: React.ReactNode });
+  | ({ leftIcon?: React.ReactElement } & { rightIcon?: never })
+  | ({ leftIcon?: never } & { rightIcon?: React.ReactElement });
 
 type ButtonLoadingProps = {
   isLoading?: boolean;

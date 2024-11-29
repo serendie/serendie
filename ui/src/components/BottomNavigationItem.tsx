@@ -1,7 +1,6 @@
 import { ComponentProps } from "react";
 import { RecipeVariantProps, cx, sva } from "../../styled-system/css";
 import { NotificationBadge } from "./NotificationBadge";
-import { SvgIcon, SvgIconName } from "./SvgIcon";
 
 export const BottomNavigationItemStyle = sva({
   slots: ["root", "iconGroup", "icon", "label", "badge"],
@@ -28,6 +27,10 @@ export const BottomNavigationItemStyle = sva({
     },
     icon: {
       color: "sd.system.color.component.onSurface",
+      "& svg": {
+        width: "sd.reference.dimension.scale.8",
+        height: "sd.reference.dimension.scale.8",
+      },
     },
     badge: {
       position: "absolute",
@@ -61,7 +64,7 @@ export const BottomNavigationItemStyle = sva({
 });
 
 type Props = {
-  icon: SvgIconName;
+  icon: React.ReactNode;
   label: string;
   count?: number;
 };
@@ -91,7 +94,7 @@ export const BottomNavigationItem: React.FC<BottomNavigationItemProps> = ({
             size="small"
           />
         </div>
-        <SvgIcon icon={icon} size="24px" className={styles.icon} />
+        <div className={styles.icon}>{icon}</div>
       </div>
       <span className={styles.label}>{label}</span>
     </button>

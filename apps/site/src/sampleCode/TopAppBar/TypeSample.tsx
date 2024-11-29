@@ -1,5 +1,5 @@
 import { Dd, Dl, Dt } from "@/components/LayoutUtils";
-import { IconButton } from "@serendie/ui";
+import { IconButton, SvgIcon } from "@serendie/ui";
 import { TopAppBar } from "@serendie/ui";
 
 export function TypeSample() {
@@ -10,10 +10,18 @@ export function TypeSample() {
         <TopAppBar
           type="navbar"
           headingIconButton={
-            <IconButton icon="menu" styleType="ghost" shape="rectangle" />
+            <IconButton
+              icon={<SvgIcon icon="menu" />}
+              styleType="ghost"
+              shape="rectangle"
+            />
           }
           trailingIconButtons={
-            <IconButton icon="search" styleType="ghost" shape="rectangle" />
+            <IconButton
+              icon={<SvgIcon icon={"search"} />}
+              styleType="ghost"
+              shape="rectangle"
+            />
           }
         />
       </Dd>
@@ -24,7 +32,11 @@ export function TypeSample() {
           type="titleBar"
           title="Page Title"
           trailingIconButtons={
-            <IconButton icon="add" styleType="ghost" shape="rectangle" />
+            <IconButton
+              icon={<SvgIcon icon={"add"} />}
+              styleType="ghost"
+              shape="rectangle"
+            />
           }
         />
       </Dd>
@@ -34,10 +46,18 @@ export function TypeSample() {
         <TopAppBar
           type="navbar"
           headingIconButton={
-            <IconButton icon="menu" styleType="ghost" shape="rectangle" />
+            <IconButton
+              icon={<SvgIcon icon="menu" />}
+              styleType="ghost"
+              shape="rectangle"
+            />
           }
           trailingIconButtons={
-            <IconButton icon="search" styleType="ghost" shape="rectangle" />
+            <IconButton
+              icon={<SvgIcon icon={"search"} />}
+              styleType="ghost"
+              shape="rectangle"
+            />
           }
         />
         <TopAppBar type="titleBar" title="Page Title" />
@@ -48,10 +68,18 @@ export function TypeSample() {
         <TopAppBar
           type="navbar"
           headingIconButton={
-            <IconButton icon="menu" styleType="ghost" shape="rectangle" />
+            <IconButton
+              icon={<SvgIcon icon="menu" />}
+              styleType="ghost"
+              shape="rectangle"
+            />
           }
           trailingIconButtons={
-            <IconButton icon="search" styleType="ghost" shape="rectangle" />
+            <IconButton
+              icon={<SvgIcon icon={"search"} />}
+              styleType="ghost"
+              shape="rectangle"
+            />
           }
         />
         <TopAppBar
@@ -59,13 +87,17 @@ export function TypeSample() {
           title="Page Title"
           headingIconButton={
             <IconButton
-              icon="chevron_left"
+              icon={<SvgIcon icon="chevron_left" />}
               styleType="ghost"
               shape="rectangle"
             />
           }
           trailingIconButtons={
-            <IconButton icon="add" styleType="ghost" shape="rectangle" />
+            <IconButton
+              icon={<SvgIcon icon={"add"} />}
+              styleType="ghost"
+              shape="rectangle"
+            />
           }
         />
       </Dd>

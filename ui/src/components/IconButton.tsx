@@ -1,7 +1,5 @@
 import React, { ComponentProps } from "react";
 import { cva, cx } from "../../styled-system/css";
-import { SvgIcon, SvgIconName } from "./SvgIcon";
-import { getToken } from "../tokens/getToken";
 import { RecipeVariantProps } from "../../styled-system/types";
 
 export const IconButtonStyle = cva({
@@ -15,6 +13,10 @@ export const IconButtonStyle = cva({
     outlineWidth: "sd.system.dimension.border.medium",
     outlineStyle: "solid",
     cursor: "pointer",
+    "& svg": {
+      width: "sd.reference.dimension.scale.8",
+      height: "sd.reference.dimension.scale.8",
+    },
     _disabled: {
       color: "sd.system.color.interaction.disabledOnSurface",
       cursor: "not-allowed",
@@ -84,6 +86,10 @@ export const IconButtonStyle = cva({
       large: {
         w: "{spacing.sd.reference.dimension.scale.17}",
         h: "{spacing.sd.reference.dimension.scale.17}",
+        "& svg": {
+          width: "sd.reference.dimension.scale.12",
+          height: "sd.reference.dimension.scale.12",
+        },
       },
       medium: {
         w: "{spacing.sd.reference.dimension.scale.13}",
@@ -109,7 +115,7 @@ export const IconButtonStyle = cva({
  */
 type ButtonProps = RecipeVariantProps<typeof IconButtonStyle> &
   ComponentProps<"button"> & {
-    icon: SvgIconName;
+    icon: React.ReactElement;
   };
 
 export const IconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -117,17 +123,9 @@ export const IconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const [variantProps, elementProps] =
       IconButtonStyle.splitVariantProps(props);
     const style = IconButtonStyle(variantProps);
-    const token = getToken();
     return (
       <button ref={ref} className={cx(style, className)} {...elementProps}>
-        <SvgIcon
-          size={
-            props.size === "large"
-              ? token.sd.reference.dimension.scale[12]
-              : token.sd.reference.dimension.scale[8]
-          }
-          icon={icon}
-        />
+        {icon}
       </button>
     );
   }

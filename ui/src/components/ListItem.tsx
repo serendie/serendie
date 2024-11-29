@@ -1,7 +1,5 @@
 import { ComponentProps } from "react";
-import { SvgIcon } from "..";
 import { css, cx, sva } from "../../styled-system/css";
-import { SvgIconName } from "./SvgIcon";
 import { NotificationBadge } from "./NotificationBadge";
 
 export const ListItemStyle = sva({
@@ -83,6 +81,8 @@ export const ListItemStyle = sva({
         display: "block",
         maxHeight: "100%",
         maxWidth: "100%",
+        width: "24px",
+        height: "24px",
       },
       _disabled: {
         opacity: 0.3,
@@ -90,6 +90,10 @@ export const ListItemStyle = sva({
     },
     rightIcon: {
       flexShrink: 0,
+      "& svg": {
+        width: "24px",
+        height: "24px",
+      },
       _disabled: {
         opacity: 0.3,
       },
@@ -103,6 +107,17 @@ export const ListItemStyle = sva({
     },
   },
   variants: {
+    isLargeLeftIcon: {
+      true: {
+        leftIcon: {
+          "& svg": {
+            width: "40px",
+            height: "40px",
+          },
+        },
+      },
+      false: {},
+    },
     size: {
       small: {
         wrapper: {
@@ -116,8 +131,8 @@ export const ListItemStyle = sva({
 type ListItemBaseProps = {
   title: string;
   description?: string;
-  rightIcon?: SvgIconName;
-  leftIcon?: SvgIconName;
+  rightIcon?: React.ReactElement;
+  leftIcon?: React.ReactElement;
   isLargeLeftIcon?: boolean;
   badge?: number;
   children?: React.ReactNode;
@@ -129,7 +144,7 @@ type ListItemBaseProps = {
 
 type ExclusiveRightItemProps =
   | ({ badge?: number } & { rightIcon?: never })
-  | ({ badge?: never } & { rightIcon?: SvgIconName });
+  | ({ badge?: never } & { rightIcon?: React.ReactElement });
 
 type ListItemProps = ComponentProps<"li"> &
   ListItemBaseProps &
@@ -138,7 +153,6 @@ type ListItemProps = ComponentProps<"li"> &
 export const ListItem: React.FC<ListItemProps> = ({
   leftIcon,
   rightIcon,
-  isLargeLeftIcon,
   title,
   description,
   badge,
@@ -151,7 +165,7 @@ export const ListItem: React.FC<ListItemProps> = ({
 }) => {
   const [variantProps, elementProps] = ListItemStyle.splitVariantProps(props);
   const styles = ListItemStyle(variantProps);
-  const iconSize = isLargeLeftIcon ? "40px" : "24px";
+  // const iconSize = isLargeLeftIcon ? "40px" : "24px";
 
   return (
     <li className={cx(styles.root, className)} {...elementProps}>
@@ -170,12 +184,12 @@ export const ListItem: React.FC<ListItemProps> = ({
           <div
             className={styles.leftIcon}
             style={
-              isLargeLeftIcon
+              props.isLargeLeftIcon
                 ? { padding: "0", width: "40px", height: "40px" }
                 : { padding: "0", width: "24px", height: "24px" }
             }
           >
-            <SvgIcon icon={leftIcon} size={iconSize} />
+            {leftIcon}
           </div>
         )}
         <div
@@ -190,11 +204,7 @@ export const ListItem: React.FC<ListItemProps> = ({
             {children}
           </div>
         </div>
-        {rightIcon && (
-          <div className={styles.rightIcon}>
-            <SvgIcon icon={rightIcon} size="24px" />
-          </div>
-        )}
+        {rightIcon && <div className={styles.rightIcon}>{rightIcon}</div>}
       </div>
       {badge && (
         <div className={styles.badge}>

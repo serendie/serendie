@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ListItem } from "./ListItem";
 import { List } from "./List";
 import figma from "@figma/code-connect";
+import { SvgIcon } from "./SvgIcon";
 
 const meta: Meta<typeof ListItem> = {
   component: ListItem,
@@ -21,12 +22,12 @@ const meta: Meta<typeof ListItem> = {
           "Multiple Lines": figma.string("SubDescription"),
         }),
         leftIcon: figma.enum("Heading Elements", {
-          IconMedium: figma.instance("HeadingComponent"),
-          IconLarge: figma.instance("HeadingComponentLarge"),
+          IconMedium: figma.instance("LeftIconInstance"),
+          IconLarge: figma.instance("LeftLargeIconInstance"),
         }),
         isLargeLeftIcon: figma.enum("Heading Elements", { IconLarge: true }),
         rightIcon: figma.enum("Trailing Elements", {
-          Icon: figma.instance("TrailingComponent"),
+          Icon: figma.instance("RightIconInstance"),
         }),
         badge: figma.enum("Trailing Elements", {
           Badge: 5,
@@ -98,14 +99,14 @@ type Story = StoryObj<typeof ListItem>;
 
 export const Basic: Story = {
   args: {
-    leftIcon: "texture",
+    leftIcon: <SvgIcon icon="texture" />,
     title: "リストスタイル",
   },
 };
 
 export const Description: Story = {
   args: {
-    leftIcon: "texture",
+    leftIcon: <SvgIcon icon="texture" />,
     title: "リストスタイル",
     description: "補足テキスト補足テキスト",
   },
@@ -113,14 +114,14 @@ export const Description: Story = {
 
 export const RightIcon: Story = {
   args: {
-    rightIcon: "chevron_right",
+    rightIcon: <SvgIcon icon="chevron_right" />,
     title: "リストスタイル",
   },
 };
 
 export const Badge: Story = {
   args: {
-    leftIcon: "texture",
+    leftIcon: <SvgIcon icon="texture" />,
     title: "リストスタイル1",
     description: "補足テキスト補足テキスト10分前",
     badge: 100,

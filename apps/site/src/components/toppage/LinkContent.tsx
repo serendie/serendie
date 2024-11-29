@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { LinkContentCard } from "./LinkContentCard";
 import useEmblaCarousel from "embla-carousel-react";
 import { useDotButton, usePrevNextButtons } from "../utils/carouselUtils";
-import { IconButton } from "@serendie/ui";
+import { IconButton, SvgIcon } from "@serendie/ui";
 import { TitleShapeThin } from "./TitleShapeThin";
 type LinkContentProps = {
   content: {
@@ -439,7 +439,7 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
 
         <IconButton
           styleType="ghost"
-          icon={"chevron_left"}
+          icon={<SvgIcon icon="chevron_left" />}
           className={cx(
             styles.titleWrapperButton,
             styles.titleWrapperButtonLeft
@@ -449,7 +449,7 @@ const LinkContentCompact: React.FC<LinkContentProps> = ({ content }) => {
         />
         <IconButton
           styleType="ghost"
-          icon={"chevron_right"}
+          icon={<SvgIcon icon="chevron_right" />}
           className={cx(
             styles.titleWrapperButton,
             styles.titleWrapperButtonRight

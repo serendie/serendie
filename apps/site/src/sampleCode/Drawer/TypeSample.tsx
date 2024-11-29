@@ -1,4 +1,4 @@
-import { Drawer, IconButton, ListItem, List } from "@serendie/ui";
+import { Drawer, IconButton, ListItem, List, SvgIcon } from "@serendie/ui";
 import { Dd, Dl, Dt } from "src/components/LayoutUtils";
 import { useState } from "react";
 
@@ -12,7 +12,7 @@ export function TypeSample() {
       <Dt>Right</Dt>
       <Dd>
         <IconButton
-          icon="menu"
+          icon={<SvgIcon icon="menu" />}
           shape="rectangle"
           styleType="outlined"
           onClick={() => {
@@ -30,7 +30,7 @@ export function TypeSample() {
       <Dt>Left</Dt>
       <Dd>
         <IconButton
-          icon="menu"
+          icon={<SvgIcon icon="menu" />}
           shape="rectangle"
           styleType="outlined"
           onClick={() => {
@@ -52,7 +52,7 @@ export function TypeSample() {
       <Dt>Full</Dt>
       <Dd>
         <IconButton
-          icon="menu"
+          icon={<SvgIcon icon="menu" />}
           shape="rectangle"
           styleType="outlined"
           onClick={() => {

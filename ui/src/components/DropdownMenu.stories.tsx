@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { DropdownMenu, DropdownMenuProps, MenuItemProps } from "./DropdownMenu";
 import figma from "@figma/code-connect";
+import { SvgIcon } from "./SvgIcon";
 
 const meta: Meta<typeof DropdownMenu> = {
   component: DropdownMenu,
@@ -37,7 +38,13 @@ function FigmaExample(props: DropdownMenuProps) {
   return (
     <DropdownMenu
       {...props}
-      items={[{ label: "list title", value: "value1", icon: "texture" }]}
+      items={[
+        {
+          label: "list title",
+          value: "value1",
+          icon: <SvgIcon icon="texture" />,
+        },
+      ]}
     />
   );
 }
@@ -46,11 +53,31 @@ export default meta;
 type Story = StoryObj<typeof DropdownMenu>;
 
 const sampleItems: MenuItemProps[] = [
-  { label: "リストタイトル", value: "value1", icon: "texture" },
-  { label: "リストタイトル", value: "value2", icon: "texture" },
-  { label: "リストタイトル", value: "value3", icon: "texture" },
-  { label: "リストタイトル", value: "value4", icon: "texture" },
-  { label: "リストタイトル", value: "value5", icon: "texture" },
+  {
+    label: "リストタイトル",
+    value: "value1",
+    icon: <SvgIcon icon="texture" />,
+  },
+  {
+    label: "リストタイトル",
+    value: "value2",
+    icon: <SvgIcon icon="texture" />,
+  },
+  {
+    label: "リストタイトル",
+    value: "value3",
+    icon: <SvgIcon icon="texture" />,
+  },
+  {
+    label: "リストタイトル",
+    value: "value4",
+    icon: <SvgIcon icon="texture" />,
+  },
+  {
+    label: "リストタイトル",
+    value: "value5",
+    icon: <SvgIcon icon="texture" />,
+  },
 ];
 
 const Template = (args: DropdownMenuProps) => (
