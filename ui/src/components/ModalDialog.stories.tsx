@@ -32,6 +32,7 @@ const meta: Meta<typeof ModalDialog> = {
     submitButtonLabel: "Button",
     children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam",
   },
+  decorators: [(Story) => <Story />],
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
