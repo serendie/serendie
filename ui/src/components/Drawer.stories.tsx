@@ -3,7 +3,7 @@ import { Drawer, DrawerProps } from "./Drawer";
 import { useState } from "react";
 import { IconButton } from "./IconButton";
 import figma from "@figma/code-connect";
-import { SvgIcon } from "./SvgIcon";
+import { SerendieSymbol } from "@serendie/symbols";
 
 const meta: Meta<typeof Drawer> = {
   component: Drawer,
@@ -36,7 +36,7 @@ const DrawerOpenTemplate = (args: DrawerProps) => {
     <>
       <IconButton
         shape="rectangle"
-        icon={<SvgIcon icon="menu" />}
+        icon={<SerendieSymbol name="menu" />}
         styleType="outlined"
         onClick={() => setIsOpen(true)}
       />

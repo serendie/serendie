@@ -1,7 +1,7 @@
-import { SvgIcon } from "..";
 import { sva } from "../../styled-system/css";
 import { AccordionItemProps, Accordion as ArkAccordion } from "@ark-ui/react";
 import { RecipeVariantProps } from "../../styled-system/types";
+import { SerendieSymbol } from "@serendie/symbols";
 
 const AccordionStyle = sva({
   slots: ["item", "title", "itemIndicator", "icon", "description"],
@@ -34,8 +34,6 @@ const AccordionStyle = sva({
       },
     },
     icon: {
-      width: 24,
-      height: 24,
       color: "sd.system.color.component.onSurface",
     },
     description: {
@@ -85,7 +83,11 @@ export const Accordion: React.FC<AccordionProps> = ({
       <ArkAccordion.ItemTrigger className={styles.item}>
         <span className={styles.title}>{title}</span>
         <ArkAccordion.ItemIndicator className={styles.itemIndicator}>
-          <SvgIcon icon="expandMore" className={styles.icon} />
+          <SerendieSymbol
+            name="chevron-down"
+            className={styles.icon}
+            width={24}
+          />
         </ArkAccordion.ItemIndicator>
       </ArkAccordion.ItemTrigger>
       <ArkAccordion.ItemContent className={styles.description}>

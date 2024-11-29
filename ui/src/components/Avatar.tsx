@@ -1,6 +1,6 @@
 import { Avatar as ArkAvatar, AvatarRootProps } from "@ark-ui/react";
-import { SvgIcon } from "..";
 import { RecipeVariantProps, cx, sva } from "../../styled-system/css";
+import { SerendieSymbol } from "@serendie/symbols";
 
 export const AvatarStyle = sva({
   slots: ["root", "fallback", "image"],
@@ -80,8 +80,7 @@ export const Avatar: React.FC<AvatarProps> = ({
   const [variantProps, elementProps] = AvatarStyle.splitVariantProps(props);
   const { size } = variantProps;
   const styles = AvatarStyle({ size, ...variantProps });
-  const iconSize =
-    size === "small" ? "24px" : size === "large" ? "80px" : "40px";
+  const iconSize = size === "small" ? 24 : size === "large" ? 80 : 40;
 
   return (
     <ArkAvatar.Root className={cx(styles.root, className)} {...elementProps}>
@@ -92,7 +91,7 @@ export const Avatar: React.FC<AvatarProps> = ({
           {text.slice(0, 2)}
         </ArkAvatar.Fallback>
       ) : placeholder === "outlined" ? (
-        <SvgIcon icon="avatar" size={iconSize} />
+        <SerendieSymbol name="user-circle" size={iconSize} />
       ) : (
         <FallbackIllustration />
       )}

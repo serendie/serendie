@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button, ButtonStyle } from "./Button";
-import { SvgIcon } from "./SvgIcon";
 import figma from "@figma/code-connect";
+import { SerendieSymbol } from "@serendie/symbols";
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -105,13 +105,13 @@ export const Rectangle: Story = {
 export const WithLeftIcon: Story = {
   args: {
     children: "Button",
-    leftIcon: <SvgIcon icon="chevron_left" />,
+    leftIcon: <SerendieSymbol name="chevron-left" />,
   },
 };
 
 export const WithRightIcon: Story = {
   args: {
     children: "Button",
-    rightIcon: <SvgIcon icon="chevron_right" />,
+    rightIcon: <SerendieSymbol name="chevron-right" />,
   },
 };

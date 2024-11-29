@@ -2,7 +2,7 @@ import React from "react";
 import mergeRefs from "merge-refs";
 import { forwardRef } from "react";
 import { css, cx, sva } from "../../styled-system/css";
-import { SvgIcon } from "./SvgIcon";
+import { SerendieSymbol } from "@serendie/symbols";
 
 const TextFieldStyle = sva({
   slots: [
@@ -177,7 +177,7 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
                     color: "sd.system.color.impression.negative",
                   })}
                 >
-                  <SvgIcon icon="error" size="20" />
+                  <SerendieSymbol name="alert-circle" size={20} />
                 </span>
               ) : _value ? (
                 <button
@@ -185,7 +185,7 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
                   onClick={resetValue}
                   aria-label="値をクリア"
                 >
-                  <SvgIcon icon="close" size="20" />
+                  <SerendieSymbol name="close" size={20} />
                 </button>
               ) : null)}
           </div>

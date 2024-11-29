@@ -1,7 +1,7 @@
 import { ComponentProps } from "react";
 import { cva, cx } from "../../styled-system/css";
 import { RecipeVariantProps } from "../../styled-system/types";
-import { SvgIcon } from "./SvgIcon";
+import { SerendieSymbol } from "@serendie/symbols";
 
 export const BadgeStyle = cva({
   base: {
@@ -132,7 +132,7 @@ export const BadgeCloseButton: React.FC<ComponentProps<"button">> = (props) => {
   const styles = BadgeCloseButtonStyle();
   return (
     <button {...props} className={styles}>
-      <SvgIcon icon="close" />
+      <SerendieSymbol name="close" color="currentColor" size={12} />
     </button>
   );
 };

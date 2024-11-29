@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { DropdownMenu, DropdownMenuProps, MenuItemProps } from "./DropdownMenu";
 import figma from "@figma/code-connect";
-import { SvgIcon } from "./SvgIcon";
+import { SerendieSymbol } from "@serendie/symbols";
 
 const meta: Meta<typeof DropdownMenu> = {
   component: DropdownMenu,
@@ -42,7 +42,7 @@ function FigmaExample(props: DropdownMenuProps) {
         {
           label: "list title",
           value: "value1",
-          icon: <SvgIcon icon="texture" />,
+          icon: <SerendieSymbol name="placeholder" />,
         },
       ]}
     />
@@ -56,27 +56,27 @@ const sampleItems: MenuItemProps[] = [
   {
     label: "リストタイトル",
     value: "value1",
-    icon: <SvgIcon icon="texture" />,
+    icon: <SerendieSymbol name="placeholder" />,
   },
   {
     label: "リストタイトル",
     value: "value2",
-    icon: <SvgIcon icon="texture" />,
+    icon: <SerendieSymbol name="placeholder" />,
   },
   {
     label: "リストタイトル",
     value: "value3",
-    icon: <SvgIcon icon="texture" />,
+    icon: <SerendieSymbol name="placeholder" />,
   },
   {
     label: "リストタイトル",
     value: "value4",
-    icon: <SvgIcon icon="texture" />,
+    icon: <SerendieSymbol name="placeholder" />,
   },
   {
     label: "リストタイトル",
     value: "value5",
-    icon: <SvgIcon icon="texture" />,
+    icon: <SerendieSymbol name="placeholder" />,
   },
 ];
 

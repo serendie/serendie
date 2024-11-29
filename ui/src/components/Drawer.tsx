@@ -1,7 +1,7 @@
 import { Dialog, DialogRootProps, Portal } from "@ark-ui/react";
 import { cx, RecipeVariantProps, sva } from "../../styled-system/css";
 import { IconButton } from "./IconButton";
-import { SvgIcon } from "./SvgIcon";
+import { SerendieSymbol } from "@serendie/symbols";
 
 const DrawerStyle = sva({
   slots: ["backdrop", "content", "contentInner", "closeTrigger"],
@@ -95,7 +95,7 @@ export const Drawer: React.FC<DrawerProps> = ({
             <header className={styles.closeTrigger}>
               <Dialog.CloseTrigger asChild>
                 <IconButton
-                  icon={<SvgIcon icon="close" />}
+                  icon={<SerendieSymbol name="close" />}
                   shape="rectangle"
                   styleType="ghost"
                 />

@@ -1,6 +1,6 @@
 import { ComponentProps } from "react";
 import { cx, sva } from "../../styled-system/css";
-import { SvgIcon } from "./SvgIcon";
+import { SerendieSymbol } from "@serendie/symbols";
 
 const DashboardWidgetStyle = sva({
   slots: [
@@ -169,7 +169,7 @@ export const DashboardWidget: React.FC<DashboardWidgetProps> = ({
           <h2 className={style.labelTitle}>title</h2>
           <p className={style.labelText}>icon</p>
         </div>
-        <SvgIcon icon={"chevron_right"} size="24px" />
+        <SerendieSymbol name="chevron-right" />
       </a>
 
       <div className={style.area}>

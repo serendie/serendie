@@ -3,7 +3,7 @@ import { TopAppBar } from "./TopAppBar";
 import { IconButton } from "./IconButton";
 import figma from "@figma/code-connect";
 import React from "react";
-import { SvgIcon } from "./SvgIcon";
+import { SerendieSymbol } from "@serendie/symbols";
 
 const meta: Meta<typeof TopAppBar> = {
   component: TopAppBar,
@@ -76,7 +76,7 @@ export const All: StoryObj<typeof AllTemplate> = {
           <IconButton
             shape="rectangle"
             styleType="ghost"
-            icon={<SvgIcon icon="menu" />}
+            icon={<SerendieSymbol name="menu" />}
           />
         </>
       ),
@@ -85,17 +85,17 @@ export const All: StoryObj<typeof AllTemplate> = {
           <IconButton
             shape="rectangle"
             styleType="ghost"
-            icon={<SvgIcon icon={"search"} />}
+            icon={<SerendieSymbol name="magnifying-glass" />}
           />
           <IconButton
             shape="rectangle"
             styleType="ghost"
-            icon={<SvgIcon icon={"add"} />}
+            icon={<SerendieSymbol name="plus" />}
           />
           <IconButton
             shape="rectangle"
             styleType="ghost"
-            icon={<SvgIcon icon={"info"} />}
+            icon={<SerendieSymbol name="information" />}
           />
         </>
       ),
@@ -108,7 +108,7 @@ export const All: StoryObj<typeof AllTemplate> = {
           <IconButton
             shape="rectangle"
             styleType="ghost"
-            icon={<SvgIcon icon="chevron_left" />}
+            icon={<SerendieSymbol name="chevron-left" />}
           />
         </>
       ),
@@ -117,7 +117,7 @@ export const All: StoryObj<typeof AllTemplate> = {
           <IconButton
             shape="rectangle"
             styleType="ghost"
-            icon={<SvgIcon icon={"add"} />}
+            icon={<SerendieSymbol name="plus" />}
           />
         </>
       ),
@@ -158,7 +158,7 @@ export const Navbar: Story = {
       <IconButton
         shape="rectangle"
         styleType="ghost"
-        icon={<SvgIcon icon="menu" />}
+        icon={<SerendieSymbol name="menu" />}
       />
     ),
     trailingIconButtons: (
@@ -166,17 +166,17 @@ export const Navbar: Story = {
         <IconButton
           shape="rectangle"
           styleType="ghost"
-          icon={<SvgIcon icon={"search"} />}
+          icon={<SerendieSymbol name="magnifying-glass" />}
         />
         <IconButton
           shape="rectangle"
           styleType="ghost"
-          icon={<SvgIcon icon={"add"} />}
+          icon={<SerendieSymbol name="plus" />}
         />
         <IconButton
           shape="rectangle"
           styleType="ghost"
-          icon={<SvgIcon icon={"info"} />}
+          icon={<SerendieSymbol name="information" />}
         />
       </>
     ),
@@ -194,14 +194,14 @@ export const Title: Story = {
       <IconButton
         shape="rectangle"
         styleType="ghost"
-        icon={<SvgIcon icon="chevron_left" />}
+        icon={<SerendieSymbol name="chevron-left" />}
       />
     ),
     trailingIconButtons: (
       <IconButton
         shape="rectangle"
         styleType="ghost"
-        icon={<SvgIcon icon={"add"} />}
+        icon={<SerendieSymbol name="plus" />}
       />
     ),
   },
@@ -218,14 +218,14 @@ export const NotificationBadgeExample: Story = {
       <IconButton
         shape="rectangle"
         styleType="ghost"
-        icon={<SvgIcon icon="chevron_left" />}
+        icon={<SerendieSymbol name="chevron-left" />}
       />
     ),
     trailingIconButtons: (
       <IconButton
         shape="rectangle"
         styleType="ghost"
-        icon={<SvgIcon icon={"add"} />}
+        icon={<SerendieSymbol name="plus" />}
       />
     ),
     badge: 3,
