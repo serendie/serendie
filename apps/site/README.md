@@ -1,1 +1,0 @@
-# DIC Design System Website

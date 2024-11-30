@@ -7,19 +7,15 @@
     "prepare": "husky",
     "storybook": "npm run storybook -w @serendie/ui",
     "build:storybook": "npm run build:storybook -w @serendie/ui",
-    "build": "npm run build:ui && npm run build:site",
-    "build:ui": "npm run build --workspace @serendie/ui",
-    "build:site": "npm run build --workspace @serendie/site",
-    "dev:site": "npm run dev --workspace @serendie/site",
-    "dev:example": "npm run dev --workspace @serendie/example",
-    "dev:ui": "npm run storybook --workspace @serendie/ui",
-    "test:ui": "npm run test --workspace @serendie/ui",
-    "dev": "npm run dev:example && npm run dev:ui",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build:ui",
+    "build:ui": "npm run build -w @serendie/ui",
+    "dev": "npm run dev:ui",
+    "dev:ui": "npm run storybook -w @serendie/ui",
+    "test:ui": "npm run test -w @serendie/ui",
+    "test": "npm run test:ui"
   },
   "workspaces": [
     "ui",
-    "apps/*",
     "design-tokens"
   ],
   "devDependencies": {
