@@ -1,2 +1,5 @@
+// This file is used by Cloudflare pages
+// see: https://developers.cloudflare.com/pages/how-to/npm-private-registry/#managing-multiple-environments
+
 //npm.pkg.github.com/:_authToken=${TOKEN_FOR_GITHUB}
 @serendie:registry=https://npm.pkg.github.com
