@@ -21,6 +21,7 @@ const meta: Meta<typeof Drawer> = {
       examples: [FigmaExample],
     },
   },
+  decorators: [(Story) => <Story />],
 };
 
 export default meta;
