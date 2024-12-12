@@ -80,6 +80,16 @@ const TextAreaStyle = sva({
       color: "sd.system.color.impression.negative",
     },
   },
+  variants: {
+    autoAdjustHeight: {
+      true: {
+        textarea: {
+          fieldSizing: "content",
+          minHeight: "2lh",
+        },
+      },
+    },
+  },
 });
 
 type Props = {
@@ -87,6 +97,7 @@ type Props = {
   description?: string;
   invalid?: boolean;
   invalidMessage?: string;
+  autoAdjustHeight?: boolean;
 } & ComponentPropsWithoutRef<"textarea">;
 
 export const TextArea = forwardRef<HTMLTextAreaElement, Props>(

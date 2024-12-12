@@ -53,3 +53,9 @@ export const HasError: Story = {
     invalid: true,
   },
 };
+
+export const AutoAdjustHeight: Story = {
+  args: {
+    autoAdjustHeight: true,
+  },
+};
