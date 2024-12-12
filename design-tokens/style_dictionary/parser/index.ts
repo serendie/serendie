@@ -1,1 +1,1 @@
-import "./serendie";
+import "./filenameToTheme";
