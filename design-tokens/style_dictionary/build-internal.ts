@@ -30,7 +30,7 @@ const internalDictionary = StyleDictionary.extend({
       files: [
         {
           destination: "tokens.css",
-          format: "css-with-theme",
+          format: "serendie/cssWithTheme",
           filter: "onlyInternal",
         },
       ],
@@ -50,12 +50,12 @@ const internalDictionary = StyleDictionary.extend({
       files: [
         {
           destination: "panda-tokens.js",
-          format: "panda-css-module",
+          format: "serendie/pandaToken",
           filter: "onlyInternal",
         },
         {
           destination: "panda-tokens.d.ts",
-          format: "panda-css-module-declarations",
+          format: "serendie/pandaTokenDeclarations",
           filter: "onlyInternal",
         },
       ],

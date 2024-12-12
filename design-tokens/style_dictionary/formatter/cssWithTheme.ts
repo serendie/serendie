@@ -3,7 +3,7 @@ import StyleDictionary from "style-dictionary";
 const { fileHeader } = StyleDictionary.formatHelpers;
 
 StyleDictionary.registerFormat({
-  name: "css-with-theme",
+  name: "serendie/cssWithTheme",
   formatter: ({ dictionary, file }) => {
     const themes: Record<string, string[]> = {};
     dictionary.allProperties.forEach((p) => {

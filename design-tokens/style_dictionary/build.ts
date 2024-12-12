@@ -30,7 +30,7 @@ const myStyleDictionary = StyleDictionary.extend({
       files: [
         {
           destination: "tokens.css",
-          format: "css-with-theme",
+          format: "serendie/cssWithTheme",
           filter: "excludeInternal",
         },
       ],
@@ -49,32 +49,32 @@ const myStyleDictionary = StyleDictionary.extend({
       files: [
         {
           destination: "dist/tokens.js",
-          format: "serendie-module",
+          format: "serendie/jsModule",
           filter: "excludeInternal",
         },
         {
           destination: "dist/tokens.d.ts",
-          format: "serendie-module-declarations",
+          format: "serendie/jsModuleDeclarations",
           filter: "excludeInternal",
         },
         {
           destination: "dist/panda-tokens.js",
-          format: "panda-css-module",
+          format: "serendie/pandaToken",
           filter: "excludeInternal",
         },
         {
           destination: "dist/panda-tokens.d.ts",
-          format: "panda-css-module-declarations",
+          format: "serendie/pandaTokenDeclarations",
           filter: "excludeInternal",
         },
         {
           destination: "dist/token-list.js",
-          format: "serendie-token-list",
+          format: "serendie/tokenList",
           filter: "excludeInternal",
         },
         {
           destination: "dist/token-list.d.ts",
-          format: "serendie-token-list-declarations",
+          format: "serendie/tokenListDeclarations",
           filter: "excludeInternal",
         },
       ],

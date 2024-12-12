@@ -3,7 +3,7 @@ import StyleDictionary from "style-dictionary-utils";
 const { fileHeader } = StyleDictionary.formatHelpers;
 
 StyleDictionary.registerFormat({
-  name: "serendie-token-list",
+  name: "serendie/tokenList",
   formatter: ({ dictionary, file }) => {
     const list = dictionary.allTokens.map((t) => {
       return {
@@ -22,7 +22,7 @@ StyleDictionary.registerFormat({
 });
 
 StyleDictionary.registerFormat({
-  name: "serendie-token-list-declarations",
+  name: "serendie/tokenListDeclarations",
   formatter: ({ file }) => {
     const output =
       fileHeader({ file }) +

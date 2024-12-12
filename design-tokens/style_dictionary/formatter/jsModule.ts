@@ -4,7 +4,7 @@ import { path2Token } from "./utils";
 const { fileHeader, getTypeScriptType } = StyleDictionary.formatHelpers;
 
 StyleDictionary.registerFormat({
-  name: "serendie-module",
+  name: "serendie/jsModule",
   formatter: ({ dictionary, file }) => {
     const token: Token = {};
     dictionary.allTokens.forEach((t) => {
@@ -17,7 +17,7 @@ StyleDictionary.registerFormat({
 });
 
 StyleDictionary.registerFormat({
-  name: "serendie-module-declarations",
+  name: "serendie/jsModuleDeclarations",
   formatter: ({ dictionary, file }) => {
     const token: Token = {};
     dictionary.allTokens.forEach((t) => {

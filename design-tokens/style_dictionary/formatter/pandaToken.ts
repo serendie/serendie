@@ -4,7 +4,7 @@ import { path2Token, valueTypeConverter } from "./utils";
 const { fileHeader, getTypeScriptType } = StyleDictionary.formatHelpers;
 
 StyleDictionary.registerFormat({
-  name: "panda-css-module",
+  name: "serendie/pandaToken",
   formatter: ({ dictionary, file }) => {
     const token = generatePandaTokens(dictionary);
     return (
@@ -14,7 +14,7 @@ StyleDictionary.registerFormat({
 });
 
 StyleDictionary.registerFormat({
-  name: "panda-css-module-declarations",
+  name: "serendie/pandaTokenDeclarations",
   formatter: ({ dictionary, file }) => {
     const token = generatePandaTokens(dictionary);
     const output =
