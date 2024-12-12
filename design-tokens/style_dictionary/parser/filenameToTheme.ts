@@ -7,7 +7,7 @@ interface ParsedObject {
   [key: string]: ParsedObjectValue;
 }
 
-export const SerendieParser: StyleDictionary.Parser = {
+StyleDictionary.registerParser({
   pattern: /\.json$/,
   parse: ({ filePath, contents }) => {
     const obj = w3cTokenJsonParser.parse({ contents });
@@ -43,10 +43,9 @@ export const SerendieParser: StyleDictionary.Parser = {
       // defaultの場合はpostfixを付与しない
       if (postfix !== "default") return appendPostfixToValueWalk(obj, postfix);
     }
-    replaceFontFamily(obj);
     return obj;
   },
-};
+});
 
 function appendPostfixToValueWalk(obj: ParsedObject, postfix: string) {
   const ret: ParsedObject = {};
@@ -65,28 +64,5 @@ function appendPostfixToValueWalk(obj: ParsedObject, postfix: string) {
     }
   }
 
-  return ret;
-}
-
-function replaceFontFamily(obj: ParsedObject) {
-  const ret: ParsedObject = {};
-  if (typeof obj === "object") {
-    if (obj.$type === "fontFamily" && obj.value) {
-      // これ以上探索する必要がないので$valueのみ置換してobjを返却
-      if (obj.value === "Roboto") {
-        // ui側でhtmlのfont-familyを指定しているので、ここではinheritに置換
-        // https://github.com/serendie/serendie/blob/main/ui/src/styles.css
-        obj.value = `inherit`;
-      }
-      return obj;
-    } else {
-      for (const key in obj) {
-        if (typeof obj[key] === "object")
-          ret[key] = replaceFontFamily(obj[key]);
-      }
-    }
-  } else {
-    return obj;
-  }
   return ret;
 }

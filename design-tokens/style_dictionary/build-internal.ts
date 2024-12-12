@@ -1,18 +1,11 @@
 import StyleDictionary from "style-dictionary-utils";
-import { SerendieParser } from "./parser";
+import "./parser";
 import "./formatter";
-import "./transformer/cssShadow";
-import "./transformer/cssTypography";
+import "./transformer";
+import "./filter";
 import { customFileHeader } from "./customFileHeader";
 
-StyleDictionary.registerParser(SerendieParser);
-
-StyleDictionary.registerFilter({
-  name: "onlyInternal",
-  matcher: (token) => token.filePath.includes("internal"),
-});
-
-const internalDictionary = StyleDictionary.extend({
+StyleDictionary.extend({
   source: ["tokens/**/*.json"],
   platforms: {
     css: {
@@ -24,14 +17,15 @@ const internalDictionary = StyleDictionary.extend({
         "attribute/cti",
         "name/cti/kebab",
         "color/css",
-        "cssShadow",
-        "cssTypography",
+        "serendie/cssShadow",
+        "serendie/cssTypography",
+        "serendie/robotoToInherit",
       ],
       files: [
         {
           destination: "tokens.css",
-          format: "css-with-theme",
-          filter: "onlyInternal",
+          format: "serendie/cssWithTheme",
+          filter: "serendie/internalOnly",
         },
       ],
     },
@@ -46,21 +40,20 @@ const internalDictionary = StyleDictionary.extend({
         "time/seconds",
         "content/icon",
         "color/css",
+        "serendie/robotoToInherit",
       ],
       files: [
         {
           destination: "panda-tokens.js",
-          format: "panda-css-module",
-          filter: "onlyInternal",
+          format: "serendie/pandaToken",
+          filter: "serendie/internalOnly",
         },
         {
           destination: "panda-tokens.d.ts",
-          format: "panda-css-module-declarations",
-          filter: "onlyInternal",
+          format: "serendie/pandaTokenDeclarations",
+          filter: "serendie/internalOnly",
         },
       ],
     },
   },
-});
-
-internalDictionary.buildAllPlatforms();
+}).buildAllPlatforms();

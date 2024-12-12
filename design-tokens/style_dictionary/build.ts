@@ -1,41 +1,36 @@
 import StyleDictionary from "style-dictionary-utils";
-import { SerendieParser } from "./parser";
+import "./parser";
 import "./formatter";
-import "./transformer/cssShadow";
-import "./transformer/cssTypography";
+import "./transformer";
+import "./filter";
 import { customFileHeader } from "./customFileHeader";
 
-StyleDictionary.registerParser(SerendieParser);
-
-StyleDictionary.registerFilter({
-  name: "excludeInternal",
-  matcher: (token) => !token.filePath.includes("internal"),
-});
-
-const myStyleDictionary = StyleDictionary.extend({
+StyleDictionary.extend({
   source: ["tokens/**/*.json"],
   platforms: {
     css: {
+      buildPath: "dist/",
       transforms: [
         "attribute/cti",
         "name/cti/kebab",
         "color/css",
-        "cssShadow",
-        "cssTypography",
+        "serendie/cssShadow",
+        "serendie/cssTypography",
+        "serendie/robotoToInherit",
       ],
-      buildPath: "dist/",
       options: {
         fileHeader: customFileHeader,
       },
       files: [
         {
           destination: "tokens.css",
-          format: "css-with-theme",
-          filter: "excludeInternal",
+          format: "serendie/cssWithTheme",
+          filter: "serendie/excludeInternal",
         },
       ],
     },
     js: {
+      buildPath: "dist/",
       options: {
         fileHeader: customFileHeader,
       },
@@ -45,41 +40,40 @@ const myStyleDictionary = StyleDictionary.extend({
         "time/seconds",
         "content/icon",
         "color/css",
+        "serendie/robotoToInherit",
       ],
       files: [
         {
-          destination: "dist/tokens.js",
-          format: "serendie-module",
-          filter: "excludeInternal",
+          destination: "tokens.js",
+          format: "serendie/jsModule",
+          filter: "serendie/excludeInternal",
         },
         {
-          destination: "dist/tokens.d.ts",
-          format: "serendie-module-declarations",
-          filter: "excludeInternal",
+          destination: "tokens.d.ts",
+          format: "serendie/jsModuleDeclarations",
+          filter: "serendie/excludeInternal",
         },
         {
-          destination: "dist/panda-tokens.js",
-          format: "panda-css-module",
-          filter: "excludeInternal",
+          destination: "panda-tokens.js",
+          format: "serendie/pandaToken",
+          filter: "serendie/excludeInternal",
         },
         {
-          destination: "dist/panda-tokens.d.ts",
-          format: "panda-css-module-declarations",
-          filter: "excludeInternal",
+          destination: "panda-tokens.d.ts",
+          format: "serendie/pandaTokenDeclarations",
+          filter: "serendie/excludeInternal",
         },
         {
-          destination: "dist/token-list.js",
-          format: "serendie-token-list",
-          filter: "excludeInternal",
+          destination: "token-list.js",
+          format: "serendie/tokenList",
+          filter: "serendie/excludeInternal",
         },
         {
-          destination: "dist/token-list.d.ts",
-          format: "serendie-token-list-declarations",
-          filter: "excludeInternal",
+          destination: "token-list.d.ts",
+          format: "serendie/tokenListDeclarations",
+          filter: "serendie/excludeInternal",
         },
       ],
     },
   },
-});
-
-myStyleDictionary.buildAllPlatforms();
+}).buildAllPlatforms();

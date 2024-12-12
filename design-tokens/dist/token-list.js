@@ -4522,7 +4522,7 @@ export default [
     "key": "sd.reference.typography.fontFamily.primary",
     "type": "fontFamily",
     "value": "inherit",
-    "originalValue": "inherit"
+    "originalValue": "Roboto"
   },
   {
     "path": [
