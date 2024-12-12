@@ -25,7 +25,7 @@ StyleDictionary.extend({
         {
           destination: "tokens.css",
           format: "serendie/cssWithTheme",
-          filter: "serendie/onlyInternal",
+          filter: "serendie/internalOnly",
         },
       ],
     },
@@ -46,12 +46,12 @@ StyleDictionary.extend({
         {
           destination: "panda-tokens.js",
           format: "serendie/pandaToken",
-          filter: "serendie/onlyInternal",
+          filter: "serendie/internalOnly",
         },
         {
           destination: "panda-tokens.d.ts",
           format: "serendie/pandaTokenDeclarations",
-          filter: "serendie/onlyInternal",
+          filter: "serendie/internalOnly",
         },
       ],
     },
