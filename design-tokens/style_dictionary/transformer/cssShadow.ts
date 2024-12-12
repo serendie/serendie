@@ -1,7 +1,7 @@
 import StyleDictionary from "style-dictionary";
 
 StyleDictionary.registerTransform({
-  name: "cssShadow",
+  name: "serendie/cssShadow",
   type: "value",
   matcher: (token) => token.path.includes("shadow"),
   transformer: (token) => {

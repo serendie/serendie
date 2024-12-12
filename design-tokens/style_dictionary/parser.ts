@@ -7,7 +7,7 @@ interface ParsedObject {
   [key: string]: ParsedObjectValue;
 }
 
-export const SerendieParser: StyleDictionary.Parser = {
+StyleDictionary.registerParser({
   pattern: /\.json$/,
   parse: ({ filePath, contents }) => {
     const obj = w3cTokenJsonParser.parse({ contents });
@@ -46,7 +46,7 @@ export const SerendieParser: StyleDictionary.Parser = {
     replaceFontFamily(obj);
     return obj;
   },
-};
+});
 
 function appendPostfixToValueWalk(obj: ParsedObject, postfix: string) {
   const ret: ParsedObject = {};

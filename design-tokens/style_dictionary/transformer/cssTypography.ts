@@ -1,7 +1,7 @@
 import StyleDictionary from "style-dictionary";
 
 StyleDictionary.registerTransform({
-  name: "cssTypography",
+  name: "serendie/cssTypography",
   transitive: true,
   type: "value",
   matcher: (token) => token.$type === "typography",

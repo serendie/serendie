@@ -1,18 +1,11 @@
 import StyleDictionary from "style-dictionary-utils";
-import { SerendieParser } from "./parser";
+import "./parser";
 import "./formatter";
-import "./transformer/cssShadow";
-import "./transformer/cssTypography";
+import "./transformer";
+import "./filter";
 import { customFileHeader } from "./customFileHeader";
 
-StyleDictionary.registerParser(SerendieParser);
-
-StyleDictionary.registerFilter({
-  name: "excludeInternal",
-  matcher: (token) => !token.filePath.includes("internal"),
-});
-
-const myStyleDictionary = StyleDictionary.extend({
+StyleDictionary.extend({
   source: ["tokens/**/*.json"],
   platforms: {
     css: {
@@ -20,8 +13,8 @@ const myStyleDictionary = StyleDictionary.extend({
         "attribute/cti",
         "name/cti/kebab",
         "color/css",
-        "cssShadow",
-        "cssTypography",
+        "serendie/cssShadow",
+        "serendie/cssTypography",
       ],
       buildPath: "dist/",
       options: {
@@ -31,7 +24,7 @@ const myStyleDictionary = StyleDictionary.extend({
         {
           destination: "tokens.css",
           format: "serendie/cssWithTheme",
-          filter: "excludeInternal",
+          filter: "serendie/excludeInternal",
         },
       ],
     },
@@ -50,36 +43,34 @@ const myStyleDictionary = StyleDictionary.extend({
         {
           destination: "dist/tokens.js",
           format: "serendie/jsModule",
-          filter: "excludeInternal",
+          filter: "serendie/excludeInternal",
         },
         {
           destination: "dist/tokens.d.ts",
           format: "serendie/jsModuleDeclarations",
-          filter: "excludeInternal",
+          filter: "serendie/excludeInternal",
         },
         {
           destination: "dist/panda-tokens.js",
           format: "serendie/pandaToken",
-          filter: "excludeInternal",
+          filter: "serendie/excludeInternal",
         },
         {
           destination: "dist/panda-tokens.d.ts",
           format: "serendie/pandaTokenDeclarations",
-          filter: "excludeInternal",
+          filter: "serendie/excludeInternal",
         },
         {
           destination: "dist/token-list.js",
           format: "serendie/tokenList",
-          filter: "excludeInternal",
+          filter: "serendie/excludeInternal",
         },
         {
           destination: "dist/token-list.d.ts",
           format: "serendie/tokenListDeclarations",
-          filter: "excludeInternal",
+          filter: "serendie/excludeInternal",
         },
       ],
     },
   },
-});
-
-myStyleDictionary.buildAllPlatforms();
+}).buildAllPlatforms();
