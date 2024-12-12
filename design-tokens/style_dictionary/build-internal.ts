@@ -19,6 +19,7 @@ StyleDictionary.extend({
         "color/css",
         "serendie/cssShadow",
         "serendie/cssTypography",
+        "serendie/robotoToInherit",
       ],
       files: [
         {
@@ -39,6 +40,7 @@ StyleDictionary.extend({
         "time/seconds",
         "content/icon",
         "color/css",
+        "serendie/robotoToInherit",
       ],
       files: [
         {
