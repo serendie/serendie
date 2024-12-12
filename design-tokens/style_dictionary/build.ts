@@ -9,6 +9,7 @@ StyleDictionary.extend({
   source: ["tokens/**/*.json"],
   platforms: {
     css: {
+      buildPath: "dist/",
       transforms: [
         "attribute/cti",
         "name/cti/kebab",
@@ -16,7 +17,6 @@ StyleDictionary.extend({
         "serendie/cssShadow",
         "serendie/cssTypography",
       ],
-      buildPath: "dist/",
       options: {
         fileHeader: customFileHeader,
       },
@@ -29,6 +29,7 @@ StyleDictionary.extend({
       ],
     },
     js: {
+      buildPath: "dist/",
       options: {
         fileHeader: customFileHeader,
       },
@@ -41,32 +42,32 @@ StyleDictionary.extend({
       ],
       files: [
         {
-          destination: "dist/tokens.js",
+          destination: "tokens.js",
           format: "serendie/jsModule",
           filter: "serendie/excludeInternal",
         },
         {
-          destination: "dist/tokens.d.ts",
+          destination: "tokens.d.ts",
           format: "serendie/jsModuleDeclarations",
           filter: "serendie/excludeInternal",
         },
         {
-          destination: "dist/panda-tokens.js",
+          destination: "panda-tokens.js",
           format: "serendie/pandaToken",
           filter: "serendie/excludeInternal",
         },
         {
-          destination: "dist/panda-tokens.d.ts",
+          destination: "panda-tokens.d.ts",
           format: "serendie/pandaTokenDeclarations",
           filter: "serendie/excludeInternal",
         },
         {
-          destination: "dist/token-list.js",
+          destination: "token-list.js",
           format: "serendie/tokenList",
           filter: "serendie/excludeInternal",
         },
         {
-          destination: "dist/token-list.d.ts",
+          destination: "token-list.d.ts",
           format: "serendie/tokenListDeclarations",
           filter: "serendie/excludeInternal",
         },
