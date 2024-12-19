@@ -1,6 +1,6 @@
 import StyleDictionary from "style-dictionary";
 
-StyleDictionary.registerTransform({
+export const cssTypography: StyleDictionary.Named<StyleDictionary.Transform> = {
   name: "serendie/cssTypography",
   transitive: true,
   type: "value",
@@ -9,4 +9,4 @@ StyleDictionary.registerTransform({
     const { fontSize, fontWeight, lineHeight } = token.value;
     return `${fontWeight} ${fontSize}/${lineHeight}`;
   },
-});
+};

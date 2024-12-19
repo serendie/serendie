@@ -1,9 +1,10 @@
 import StyleDictionary from "style-dictionary-utils";
-import "./parser";
-import "./formatter";
-import "./transformer";
-import "./filter";
-import { customFileHeader } from "./customFileHeader";
+import {
+  registerAll,
+  customFileHeader,
+} from "@serendie/style-dictionary-formatter";
+
+registerAll();
 
 StyleDictionary.extend({
   source: ["tokens/**/*.json"],

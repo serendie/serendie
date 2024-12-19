@@ -1,6 +1,6 @@
 import StyleDictionary from "style-dictionary";
 
-StyleDictionary.registerFilter({
+export const excludeInternal: StyleDictionary.Filter = {
   name: "serendie/excludeInternal",
   matcher: (token) => !token.filePath.includes("internal"),
-});
+};

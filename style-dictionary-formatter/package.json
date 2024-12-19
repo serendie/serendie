@@ -1,0 +1,26 @@
+{
+  "name": "@serendie/style-dictionary-formatter",
+  "version": "0.0.1",
+  "description": "the style-dictionary formatter of Serendie",
+  "type": "module",
+  "scripts": {
+    "build": "tsup src/index.ts --clean --format esm,cjs --dts --minify"
+  },
+  "peerDependencies": {
+    "style-dictionary": "^3.9.2",
+    "style-dictionary-utils": "^2.0.7"
+  },
+  "devDependencies": {
+    "style-dictionary": "^3.9.2",
+    "style-dictionary-utils": "^2.0.7",
+    "tsup": "^8.3.5",
+    "typescript": "^5.5.3"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  }
+}

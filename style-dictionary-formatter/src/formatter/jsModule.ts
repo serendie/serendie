@@ -1,9 +1,10 @@
 import StyleDictionary from "style-dictionary";
 import { path2Token } from "./utils";
+import { Token } from "../types";
 
 const { fileHeader, getTypeScriptType } = StyleDictionary.formatHelpers;
 
-StyleDictionary.registerFormat({
+export const jsModule: StyleDictionary.Format = {
   name: "serendie/jsModule",
   formatter: ({ dictionary, file }) => {
     const token: Token = {};
@@ -14,9 +15,9 @@ StyleDictionary.registerFormat({
       fileHeader({ file }) + "export default " + JSON.stringify(token, null, 2)
     );
   },
-});
+};
 
-StyleDictionary.registerFormat({
+export const jsModuleDeclarations: StyleDictionary.Format = {
   name: "serendie/jsModuleDeclarations",
   formatter: ({ dictionary, file }) => {
     const token: Token = {};
@@ -32,4 +33,4 @@ declare const tokens: ` +
 
     return output;
   },
-});
+};

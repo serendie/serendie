@@ -11,6 +11,7 @@
     "ci:sync-json-to-figma": "tsx json_to_figma/sync_tokens_to_figma.ts --silent"
   },
   "devDependencies": {
+    "@serendie/style-dictionary-formatter": "file:../style-dictionary-formatter",
     "@figma/rest-api-spec": "^0.16.0",
     "@types/node": "^20.11.25",
     "style-dictionary": "^3.9.2",

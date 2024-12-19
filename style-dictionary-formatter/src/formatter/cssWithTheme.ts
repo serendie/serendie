@@ -2,7 +2,7 @@ import StyleDictionary from "style-dictionary";
 
 const { fileHeader } = StyleDictionary.formatHelpers;
 
-StyleDictionary.registerFormat({
+export const cssWithTheme: StyleDictionary.Format = {
   name: "serendie/cssWithTheme",
   formatter: ({ dictionary, file }) => {
     const themes: Record<string, string[]> = {};
@@ -25,4 +25,4 @@ StyleDictionary.registerFormat({
 
     return fileHeader({ file }) + output;
   },
-});
+};

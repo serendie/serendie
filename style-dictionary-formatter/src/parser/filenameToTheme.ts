@@ -7,7 +7,7 @@ interface ParsedObject {
   [key: string]: ParsedObjectValue;
 }
 
-StyleDictionary.registerParser({
+export const filenameToTheme: StyleDictionary.Parser = {
   pattern: /\.json$/,
   parse: ({ filePath, contents }) => {
     const obj = w3cTokenJsonParser.parse({ contents });
@@ -45,7 +45,7 @@ StyleDictionary.registerParser({
     }
     return obj;
   },
-});
+};
 
 function appendPostfixToValueWalk(obj: ParsedObject, postfix: string) {
   const ret: ParsedObject = {};

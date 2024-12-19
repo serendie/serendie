@@ -2,7 +2,7 @@ import StyleDictionary from "style-dictionary-utils";
 
 const { fileHeader } = StyleDictionary.formatHelpers;
 
-StyleDictionary.registerFormat({
+export const tokenList: StyleDictionary.Format = {
   name: "serendie/tokenList",
   formatter: ({ dictionary, file }) => {
     const list = dictionary.allTokens.map((t) => {
@@ -19,9 +19,9 @@ StyleDictionary.registerFormat({
       fileHeader({ file }) + "export default " + JSON.stringify(list, null, 2)
     );
   },
-});
+};
 
-StyleDictionary.registerFormat({
+export const tokenListDeclarations: StyleDictionary.Format = {
   name: "serendie/tokenListDeclarations",
   formatter: ({ file }) => {
     const output =
@@ -44,4 +44,4 @@ declare const tokens: Token[];
 
     return output;
   },
-});
+};

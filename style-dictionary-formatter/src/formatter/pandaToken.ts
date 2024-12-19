@@ -1,9 +1,10 @@
 import StyleDictionary from "style-dictionary-utils";
 import { path2Token, valueTypeConverter } from "./utils";
+import { Token } from "../types";
 
 const { fileHeader, getTypeScriptType } = StyleDictionary.formatHelpers;
 
-StyleDictionary.registerFormat({
+export const pandaToken: StyleDictionary.Format = {
   name: "serendie/pandaToken",
   formatter: ({ dictionary, file }) => {
     const token = generatePandaTokens(dictionary);
@@ -11,9 +12,9 @@ StyleDictionary.registerFormat({
       fileHeader({ file }) + "export default " + JSON.stringify(token, null, 2)
     );
   },
-});
+};
 
-StyleDictionary.registerFormat({
+export const pandaTokenDeclarations: StyleDictionary.Format = {
   name: "serendie/pandaTokenDeclarations",
   formatter: ({ dictionary, file }) => {
     const token = generatePandaTokens(dictionary);
@@ -23,7 +24,7 @@ StyleDictionary.registerFormat({
 declare const tokens: ${getTypeScriptType(token)};`;
     return output;
   },
-});
+};
 
 function generatePandaTokens(dictionary: StyleDictionary.Dictionary): Token {
   const token: Token = {};
