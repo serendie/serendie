@@ -26,7 +26,6 @@ StyleDictionary.extend({
         {
           destination: "tokens.css",
           format: "serendie/cssWithTheme",
-          filter: "serendie/excludeInternal",
         },
       ],
     },
@@ -47,32 +46,26 @@ StyleDictionary.extend({
         {
           destination: "tokens.js",
           format: "serendie/jsModule",
-          filter: "serendie/excludeInternal",
         },
         {
           destination: "tokens.d.ts",
           format: "serendie/jsModuleDeclarations",
-          filter: "serendie/excludeInternal",
         },
         {
           destination: "panda-tokens.js",
           format: "serendie/pandaToken",
-          filter: "serendie/excludeInternal",
         },
         {
           destination: "panda-tokens.d.ts",
           format: "serendie/pandaTokenDeclarations",
-          filter: "serendie/excludeInternal",
         },
         {
           destination: "token-list.js",
           format: "serendie/tokenList",
-          filter: "serendie/excludeInternal",
         },
         {
           destination: "token-list.d.ts",
           format: "serendie/tokenListDeclarations",
-          filter: "serendie/excludeInternal",
         },
       ],
     },
