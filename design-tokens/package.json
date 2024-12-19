@@ -1,26 +1,27 @@
 {
   "name": "@serendie/design-token",
   "description": "the design tokens of Serendie",
-  "version": "0.1.2",
+  "version": "0.1.1",
   "type": "module",
   "scripts": {
     "build": "tsx style_dictionary/build.ts",
+    "build:internal": "tsx style_dictionary/build-internal.ts",
     "test": "vitest",
     "sync-json-to-figma": "tsx json_to_figma/sync_tokens_to_figma.ts",
     "ci:sync-json-to-figma": "tsx json_to_figma/sync_tokens_to_figma.ts --silent"
   },
   "devDependencies": {
+    "@serendie/style-dictionary-formatter": "file:../style-dictionary-formatter",
     "@figma/rest-api-spec": "^0.16.0",
     "@types/node": "^20.11.25",
+    "style-dictionary": "^3.9.2",
+    "style-dictionary-utils": "^2.0.7",
     "vitest": "^1.3.1"
   },
   "dependencies": {
-    "@serendie/style-dictionary-formatter": "*",
     "axios": "^1.6.7",
     "deepmerge": "^4.3.1",
     "dotenv": "^16.4.5",
-    "style-dictionary": "^3.9.2",
-    "style-dictionary-utils": "^2.0.7",
     "tsx": "^4.7.2",
     "typescript": "^5.5.3"
   },
@@ -37,6 +38,11 @@
       "import": "./dist/token-list.js",
       "types": "./dist/token-list.d.ts"
     },
+    "./internal/web": {
+      "import": "./dist/internal/panda-tokens.js",
+      "types": "./dist/internal/panda-tokens.d.ts"
+    },
+    "./internal/web/tokens.css": "./dist/internal/tokens.css",
     "./tokens.css": "./dist/tokens.css"
   },
   "files": [
