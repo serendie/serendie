@@ -20,6 +20,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@serendie"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.ACCESS_GITHUB_PACKAGES_TOKEN }}
 
       - name: Set NPM version
         run: npm install -g npm@latest
