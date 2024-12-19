@@ -1,4 +1,4 @@
-import StyleDictionary from "style-dictionary-utils";
+import StyleDictionary from "style-dictionary";
 import {
   registerAll,
   customFileHeader,

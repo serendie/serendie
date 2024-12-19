@@ -10,17 +10,17 @@
     "ci:sync-json-to-figma": "tsx json_to_figma/sync_tokens_to_figma.ts --silent"
   },
   "devDependencies": {
-    "@serendie/style-dictionary-formatter": "^0.0.2",
     "@figma/rest-api-spec": "^0.16.0",
     "@types/node": "^20.11.25",
-    "style-dictionary": "^3.9.2",
-    "style-dictionary-utils": "^2.0.7",
     "vitest": "^1.3.1"
   },
   "dependencies": {
+    "@serendie/style-dictionary-formatter": "^0.0.2",
     "axios": "^1.6.7",
     "deepmerge": "^4.3.1",
     "dotenv": "^16.4.5",
+    "style-dictionary": "^3.9.2",
+    "style-dictionary-utils": "^2.0.7",
     "tsx": "^4.7.2",
     "typescript": "^5.5.3"
   },
