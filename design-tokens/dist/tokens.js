@@ -4,232 +4,6 @@
  */
 
 export default {
-  "themes": {
-    "asagi": {
-      "tokens": {
-        "colors": {
-          "sd": {
-            "system": {
-              "color": {
-                "impression": {
-                  "primary": "#00757E",
-                  "onPrimary": "#FFFFFF",
-                  "primaryContainer": "#00757E",
-                  "onPrimaryContainer": "#FFFFFF",
-                  "secondary": "#AEEAD5",
-                  "onSecondary": "#000000",
-                  "secondaryContainer": "#AEEAD5",
-                  "onSecondaryContainer": "#000000",
-                  "tertiary": "#EFEEEB",
-                  "onTertiary": "#000000",
-                  "tertiaryContainer": "#EFEEEB",
-                  "onTertiaryContainer": "#000000",
-                  "notice": "#FFE600",
-                  "onNotice": "#000000",
-                  "noticeContainer": "#FFE600",
-                  "onNoticeContainer": "#000000",
-                  "negative": "#CE0037",
-                  "onNegative": "#FFFFFF",
-                  "negativeContainer": "#FCD6D3",
-                  "onNegativeContainer": "#000000",
-                  "positive": "#40A683",
-                  "onPositive": "#FFFFFF",
-                  "positiveContainer": "#40A683",
-                  "onPositiveContainer": "#FFFFFF"
-                },
-                "component": {
-                  "surface": "#FFFFFF",
-                  "onSurface": "#000000",
-                  "onSurfaceVariant": "#696966",
-                  "inverseSurface": "#232322",
-                  "inverseOnSurface": "#FFFFFF",
-                  "outline": "#C8C7C2",
-                  "outlineVariant": "#8C8B87",
-                  "scrim": "#00000033"
-                },
-                "interaction": {
-                  "disabled": "#EFEEEB",
-                  "disabledOnSurface": "#AFAEAA",
-                  "selectedSurface": "#AEEAD5",
-                  "hovered": "#00000033",
-                  "hoveredVariant": "#0000000D",
-                  "hoveredOnPrimary": "#FFFFFF99"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "kurikawa": {
-      "tokens": {
-        "colors": {
-          "sd": {
-            "system": {
-              "color": {
-                "impression": {
-                  "primary": "#803510",
-                  "onPrimary": "#FFFFFF",
-                  "primaryContainer": "#803510",
-                  "onPrimaryContainer": "#FFFFFF",
-                  "secondary": "#F7C6B0",
-                  "onSecondary": "#000000",
-                  "secondaryContainer": "#F7C6B0",
-                  "onSecondaryContainer": "#000000",
-                  "tertiary": "#F7EDE2",
-                  "onTertiary": "#000000",
-                  "tertiaryContainer": "#F7EDE2",
-                  "onTertiaryContainer": "#000000",
-                  "notice": "#FFE600",
-                  "onNotice": "#000000",
-                  "noticeContainer": "#FFE600",
-                  "onNoticeContainer": "#000000",
-                  "negative": "#CE0037",
-                  "onNegative": "#FFFFFF",
-                  "negativeContainer": "#FCD6D3",
-                  "onNegativeContainer": "#000000",
-                  "positive": "#40A683",
-                  "onPositive": "#FFFFFF",
-                  "positiveContainer": "#40A683",
-                  "onPositiveContainer": "#FFFFFF"
-                },
-                "component": {
-                  "surface": "#FFFFFF",
-                  "onSurface": "#000000",
-                  "onSurfaceVariant": "#696966",
-                  "inverseSurface": "#232322",
-                  "inverseOnSurface": "#FFFFFF",
-                  "outline": "#C8C7C2",
-                  "outlineVariant": "#8C8B87",
-                  "scrim": "#00000033"
-                },
-                "interaction": {
-                  "disabled": "#EFEEEB",
-                  "disabledOnSurface": "#AFAEAA",
-                  "selectedSurface": "#F7C6B0",
-                  "hovered": "#00000033",
-                  "hoveredVariant": "#0000000D",
-                  "hoveredOnPrimary": "#FFFFFF99"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "sumire": {
-      "tokens": {
-        "colors": {
-          "sd": {
-            "system": {
-              "color": {
-                "impression": {
-                  "primary": "#733B85",
-                  "onPrimary": "#FFFFFF",
-                  "primaryContainer": "#733B85",
-                  "onPrimaryContainer": "#FFFFFF",
-                  "secondary": "#DCBDE4",
-                  "onSecondary": "#000000",
-                  "secondaryContainer": "#DCBDE4",
-                  "onSecondaryContainer": "#000000",
-                  "tertiary": "#073165",
-                  "onTertiary": "#FFFFFF",
-                  "tertiaryContainer": "#073165",
-                  "onTertiaryContainer": "#FFFFFF",
-                  "notice": "#FFE600",
-                  "onNotice": "#000000",
-                  "noticeContainer": "#FFE600",
-                  "onNoticeContainer": "#000000",
-                  "negative": "#CE0037",
-                  "onNegative": "#FFFFFF",
-                  "negativeContainer": "#FCD6D3",
-                  "onNegativeContainer": "#000000",
-                  "positive": "#40A683",
-                  "onPositive": "#FFFFFF",
-                  "positiveContainer": "#40A683",
-                  "onPositiveContainer": "#FFFFFF"
-                },
-                "component": {
-                  "surface": "#FFFFFF",
-                  "onSurface": "#000000",
-                  "onSurfaceVariant": "#696966",
-                  "inverseSurface": "#232322",
-                  "inverseOnSurface": "#FFFFFF",
-                  "outline": "#C8C7C2",
-                  "outlineVariant": "#8C8B87",
-                  "scrim": "#00000033"
-                },
-                "interaction": {
-                  "disabled": "#EFEEEB",
-                  "disabledOnSurface": "#AFAEAA",
-                  "selectedSurface": "#DCBDE4",
-                  "hovered": "#00000033",
-                  "hoveredVariant": "#0000000D",
-                  "hoveredOnPrimary": "#FFFFFF99"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "tsutsuji": {
-      "tokens": {
-        "colors": {
-          "sd": {
-            "system": {
-              "color": {
-                "impression": {
-                  "primary": "#B9336B",
-                  "onPrimary": "#FFFFFF",
-                  "primaryContainer": "#F5C1D1",
-                  "onPrimaryContainer": "#000000",
-                  "secondary": "#F6D7E0",
-                  "onSecondary": "#000000",
-                  "secondaryContainer": "#F6D7E0",
-                  "onSecondaryContainer": "#000000",
-                  "tertiary": "#401026",
-                  "onTertiary": "#FFFFFF",
-                  "tertiaryContainer": "#401026",
-                  "onTertiaryContainer": "#FFFFFF",
-                  "notice": "#FFE600",
-                  "onNotice": "#000000",
-                  "noticeContainer": "#FFE600",
-                  "onNoticeContainer": "#000000",
-                  "negative": "#CE0037",
-                  "onNegative": "#FFFFFF",
-                  "negativeContainer": "#FCD6D3",
-                  "onNegativeContainer": "#000000",
-                  "positive": "#40A683",
-                  "onPositive": "#FFFFFF",
-                  "positiveContainer": "#40A683",
-                  "onPositiveContainer": "#FFFFFF"
-                },
-                "component": {
-                  "surface": "#FFFFFF",
-                  "onSurface": "#000000",
-                  "onSurfaceVariant": "#696966",
-                  "inverseSurface": "#232322",
-                  "inverseOnSurface": "#FFFFFF",
-                  "outline": "#C8C7C2",
-                  "outlineVariant": "#8C8B87",
-                  "scrim": "#00000033"
-                },
-                "interaction": {
-                  "disabled": "#EFEEEB",
-                  "disabledOnSurface": "#AFAEAA",
-                  "selectedSurface": "#F6D7E0",
-                  "hovered": "#00000033",
-                  "hoveredVariant": "#0000000D",
-                  "hoveredOnPrimary": "#FFFFFF99"
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  },
   "sd": {
     "reference": {
       "color": {
@@ -785,6 +559,232 @@ export default {
             "fontWeight": 400,
             "fontFamily": "inherit",
             "lineHeight": 1
+          }
+        }
+      }
+    }
+  },
+  "themes": {
+    "asagi": {
+      "tokens": {
+        "colors": {
+          "sd": {
+            "system": {
+              "color": {
+                "impression": {
+                  "primary": "#00757E",
+                  "onPrimary": "#FFFFFF",
+                  "primaryContainer": "#00757E",
+                  "onPrimaryContainer": "#FFFFFF",
+                  "secondary": "#AEEAD5",
+                  "onSecondary": "#000000",
+                  "secondaryContainer": "#AEEAD5",
+                  "onSecondaryContainer": "#000000",
+                  "tertiary": "#EFEEEB",
+                  "onTertiary": "#000000",
+                  "tertiaryContainer": "#EFEEEB",
+                  "onTertiaryContainer": "#000000",
+                  "notice": "#FFE600",
+                  "onNotice": "#000000",
+                  "noticeContainer": "#FFE600",
+                  "onNoticeContainer": "#000000",
+                  "negative": "#CE0037",
+                  "onNegative": "#FFFFFF",
+                  "negativeContainer": "#FCD6D3",
+                  "onNegativeContainer": "#000000",
+                  "positive": "#40A683",
+                  "onPositive": "#FFFFFF",
+                  "positiveContainer": "#40A683",
+                  "onPositiveContainer": "#FFFFFF"
+                },
+                "component": {
+                  "surface": "#FFFFFF",
+                  "onSurface": "#000000",
+                  "onSurfaceVariant": "#696966",
+                  "inverseSurface": "#232322",
+                  "inverseOnSurface": "#FFFFFF",
+                  "outline": "#C8C7C2",
+                  "outlineVariant": "#8C8B87",
+                  "scrim": "#00000033"
+                },
+                "interaction": {
+                  "disabled": "#EFEEEB",
+                  "disabledOnSurface": "#AFAEAA",
+                  "selectedSurface": "#AEEAD5",
+                  "hovered": "#00000033",
+                  "hoveredVariant": "#0000000D",
+                  "hoveredOnPrimary": "#FFFFFF99"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "kurikawa": {
+      "tokens": {
+        "colors": {
+          "sd": {
+            "system": {
+              "color": {
+                "impression": {
+                  "primary": "#803510",
+                  "onPrimary": "#FFFFFF",
+                  "primaryContainer": "#803510",
+                  "onPrimaryContainer": "#FFFFFF",
+                  "secondary": "#F7C6B0",
+                  "onSecondary": "#000000",
+                  "secondaryContainer": "#F7C6B0",
+                  "onSecondaryContainer": "#000000",
+                  "tertiary": "#F7EDE2",
+                  "onTertiary": "#000000",
+                  "tertiaryContainer": "#F7EDE2",
+                  "onTertiaryContainer": "#000000",
+                  "notice": "#FFE600",
+                  "onNotice": "#000000",
+                  "noticeContainer": "#FFE600",
+                  "onNoticeContainer": "#000000",
+                  "negative": "#CE0037",
+                  "onNegative": "#FFFFFF",
+                  "negativeContainer": "#FCD6D3",
+                  "onNegativeContainer": "#000000",
+                  "positive": "#40A683",
+                  "onPositive": "#FFFFFF",
+                  "positiveContainer": "#40A683",
+                  "onPositiveContainer": "#FFFFFF"
+                },
+                "component": {
+                  "surface": "#FFFFFF",
+                  "onSurface": "#000000",
+                  "onSurfaceVariant": "#696966",
+                  "inverseSurface": "#232322",
+                  "inverseOnSurface": "#FFFFFF",
+                  "outline": "#C8C7C2",
+                  "outlineVariant": "#8C8B87",
+                  "scrim": "#00000033"
+                },
+                "interaction": {
+                  "disabled": "#EFEEEB",
+                  "disabledOnSurface": "#AFAEAA",
+                  "selectedSurface": "#F7C6B0",
+                  "hovered": "#00000033",
+                  "hoveredVariant": "#0000000D",
+                  "hoveredOnPrimary": "#FFFFFF99"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "sumire": {
+      "tokens": {
+        "colors": {
+          "sd": {
+            "system": {
+              "color": {
+                "impression": {
+                  "primary": "#733B85",
+                  "onPrimary": "#FFFFFF",
+                  "primaryContainer": "#733B85",
+                  "onPrimaryContainer": "#FFFFFF",
+                  "secondary": "#DCBDE4",
+                  "onSecondary": "#000000",
+                  "secondaryContainer": "#DCBDE4",
+                  "onSecondaryContainer": "#000000",
+                  "tertiary": "#073165",
+                  "onTertiary": "#FFFFFF",
+                  "tertiaryContainer": "#073165",
+                  "onTertiaryContainer": "#FFFFFF",
+                  "notice": "#FFE600",
+                  "onNotice": "#000000",
+                  "noticeContainer": "#FFE600",
+                  "onNoticeContainer": "#000000",
+                  "negative": "#CE0037",
+                  "onNegative": "#FFFFFF",
+                  "negativeContainer": "#FCD6D3",
+                  "onNegativeContainer": "#000000",
+                  "positive": "#40A683",
+                  "onPositive": "#FFFFFF",
+                  "positiveContainer": "#40A683",
+                  "onPositiveContainer": "#FFFFFF"
+                },
+                "component": {
+                  "surface": "#FFFFFF",
+                  "onSurface": "#000000",
+                  "onSurfaceVariant": "#696966",
+                  "inverseSurface": "#232322",
+                  "inverseOnSurface": "#FFFFFF",
+                  "outline": "#C8C7C2",
+                  "outlineVariant": "#8C8B87",
+                  "scrim": "#00000033"
+                },
+                "interaction": {
+                  "disabled": "#EFEEEB",
+                  "disabledOnSurface": "#AFAEAA",
+                  "selectedSurface": "#DCBDE4",
+                  "hovered": "#00000033",
+                  "hoveredVariant": "#0000000D",
+                  "hoveredOnPrimary": "#FFFFFF99"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "tsutsuji": {
+      "tokens": {
+        "colors": {
+          "sd": {
+            "system": {
+              "color": {
+                "impression": {
+                  "primary": "#B9336B",
+                  "onPrimary": "#FFFFFF",
+                  "primaryContainer": "#F5C1D1",
+                  "onPrimaryContainer": "#000000",
+                  "secondary": "#F6D7E0",
+                  "onSecondary": "#000000",
+                  "secondaryContainer": "#F6D7E0",
+                  "onSecondaryContainer": "#000000",
+                  "tertiary": "#401026",
+                  "onTertiary": "#FFFFFF",
+                  "tertiaryContainer": "#401026",
+                  "onTertiaryContainer": "#FFFFFF",
+                  "notice": "#FFE600",
+                  "onNotice": "#000000",
+                  "noticeContainer": "#FFE600",
+                  "onNoticeContainer": "#000000",
+                  "negative": "#CE0037",
+                  "onNegative": "#FFFFFF",
+                  "negativeContainer": "#FCD6D3",
+                  "onNegativeContainer": "#000000",
+                  "positive": "#40A683",
+                  "onPositive": "#FFFFFF",
+                  "positiveContainer": "#40A683",
+                  "onPositiveContainer": "#FFFFFF"
+                },
+                "component": {
+                  "surface": "#FFFFFF",
+                  "onSurface": "#000000",
+                  "onSurfaceVariant": "#696966",
+                  "inverseSurface": "#232322",
+                  "inverseOnSurface": "#FFFFFF",
+                  "outline": "#C8C7C2",
+                  "outlineVariant": "#8C8B87",
+                  "scrim": "#00000033"
+                },
+                "interaction": {
+                  "disabled": "#EFEEEB",
+                  "disabledOnSurface": "#AFAEAA",
+                  "selectedSurface": "#F6D7E0",
+                  "hovered": "#00000033",
+                  "hoveredVariant": "#0000000D",
+                  "hoveredOnPrimary": "#FFFFFF99"
+                }
+              }
+            }
           }
         }
       }

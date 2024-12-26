@@ -4,14 +4,13 @@
   "version": "0.1.1",
   "type": "module",
   "scripts": {
-    "build": "tsx style_dictionary/build.ts",
-    "build:internal": "tsx style_dictionary/build-internal.ts",
+    "build": "tsx buildTokens.ts",
     "test": "vitest",
     "sync-json-to-figma": "tsx json_to_figma/sync_tokens_to_figma.ts",
     "ci:sync-json-to-figma": "tsx json_to_figma/sync_tokens_to_figma.ts --silent"
   },
   "devDependencies": {
-    "@serendie/style-dictionary-formatter": "file:../style-dictionary-formatter",
+    "@serendie/style-dictionary-formatter": "^0.0.2",
     "@figma/rest-api-spec": "^0.16.0",
     "@types/node": "^20.11.25",
     "style-dictionary": "^3.9.2",
@@ -38,11 +37,6 @@
       "import": "./dist/token-list.js",
       "types": "./dist/token-list.d.ts"
     },
-    "./internal/web": {
-      "import": "./dist/internal/panda-tokens.js",
-      "types": "./dist/internal/panda-tokens.d.ts"
-    },
-    "./internal/web/tokens.css": "./dist/internal/tokens.css",
     "./tokens.css": "./dist/tokens.css"
   },
   "files": [

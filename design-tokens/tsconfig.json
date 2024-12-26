@@ -3,7 +3,7 @@
     "module": "ESNext",
     "target": "ES2020",
     "sourceMap": true,
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,

@@ -1,6 +1,4 @@
 import StyleDictionary from "style-dictionary";
-import { excludeInternal } from "./filter/excludeInternal";
-import { internalOnly } from "./filter/internalOnly";
 import { cssWithTheme } from "./formatter/cssWithTheme";
 import { jsModule, jsModuleDeclarations } from "./formatter/jsModule";
 import { pandaToken, pandaTokenDeclarations } from "./formatter/pandaToken";
@@ -10,11 +8,6 @@ import { cssShadow } from "./transformer/cssShadow";
 import { cssTypography } from "./transformer/cssTypography";
 import { robotoToInherit } from "./transformer/robotoToInherit";
 export { customFileHeader } from "./customFileHeader";
-
-export function registerFilter() {
-  StyleDictionary.registerFilter(excludeInternal);
-  StyleDictionary.registerFilter(internalOnly);
-}
 
 export function registerFormatter() {
   StyleDictionary.registerFormat(cssWithTheme);
@@ -37,7 +30,6 @@ export function registerTransformer() {
 }
 
 export function registerAll() {
-  registerFilter();
   registerFormatter();
   registerParser();
   registerTransformer();
