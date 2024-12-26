@@ -11,7 +11,8 @@
     "test": "vitest",
     "sync-json-to-figma": "tsx json_to_figma/sync_tokens_to_figma.ts",
     "ci:sync-json-to-figma": "tsx json_to_figma/sync_tokens_to_figma.ts --silent",
-    "release": "release-it --config ../.release-it.json"
+    "release": "release-it --config ../.release-it.json",
+    "figma-to-json": "tsx figma_to_json/index.ts"
   },
   "devDependencies": {
     "@figma/rest-api-spec": "^0.16.0",
