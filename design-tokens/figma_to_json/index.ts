@@ -5,6 +5,8 @@ import { resolveVariableAlias } from "./lib/resolveVariableAlias";
 import fs from "fs";
 import { slashToDot } from "./lib/utils";
 import path from "path";
+import { resolveType } from "./lib/resolveType";
+import { pathToObject } from "./lib/pathToObject";
 const OUTPUT_DIR = "figma_to_json/generated";
 
 const main = async () => {
@@ -26,15 +28,21 @@ const main = async () => {
             modeName: mode.name,
             values: Object.values(variableIds).map((variableId) => {
               const variable = variables[variableId];
+              const type = resolveType(variable);
               return {
                 name: slashToDot(variable.name),
                 description: variable.description || undefined,
-                type: variable.resolvedType,
+                type,
                 value: resolveValue(
-                  resolveVariableAlias(variable, mode.modeId, variables)
+                  resolveVariableAlias(variable, mode.modeId, variables),
+                  type
                 ),
-                scopes: variable.scopes,
-                codeSyntax: variable.codeSyntax,
+                extensions: {
+                  "com.figma": {
+                    scopes: variable.scopes || undefined,
+                    codeSyntax: variable.codeSyntax || undefined,
+                  },
+                },
               };
             }),
           };
@@ -49,7 +57,20 @@ const main = async () => {
         OUTPUT_DIR,
         `${name}.${mode.modeName}.json`
       );
-      fs.writeFileSync(outputPath, JSON.stringify(mode.values, null, 2));
+
+      const mergedValues = mode.values.reduce((acc, value) => {
+        return pathToObject(
+          value.name,
+          {
+            $value: value.value,
+            $type: value.type,
+            $description: value.description,
+          },
+          acc
+        );
+      }, {});
+
+      fs.writeFileSync(outputPath, JSON.stringify(mergedValues, null, 2));
     });
   });
 };
