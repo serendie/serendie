@@ -3,8 +3,12 @@
   "version": "0.0.1",
   "description": "the style-dictionary formatter of Serendie",
   "type": "module",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
-    "build": "tsup src/index.ts --clean --format esm,cjs --dts --minify"
+    "build": "tsup src/index.ts --clean --format esm,cjs --dts --minify",
+    "release": "release-it --config ../.release-it.json"
   },
   "peerDependencies": {
     "style-dictionary": "^3.9.2",

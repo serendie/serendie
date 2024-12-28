@@ -1,2 +1,2 @@
-//npm.pkg.github.com/:_authToken=YOUR_PERSONAL_TOKEN_WITH_WRITE_PACKAGE_SCOPE
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
 @serendie:registry=https://npm.pkg.github.com
