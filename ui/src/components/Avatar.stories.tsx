@@ -1,6 +1,6 @@
+import figma from "@figma/code-connect";
 import { Meta, StoryObj } from "@storybook/react";
 import { Avatar } from "./Avatar";
-import figma from "@figma/code-connect";
 
 const meta: Meta<typeof Avatar> = {
   component: Avatar,
@@ -50,7 +50,7 @@ type Story = StoryObj<typeof Avatar>;
 export const Image: Story = {
   args: {
     size: "medium",
-    src: "https://i.pravatar.cc/300",
+    src: "https://i.pravatar.cc/300?img=1",
     text: "AB",
   },
 };
