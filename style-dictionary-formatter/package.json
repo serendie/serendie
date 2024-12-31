@@ -1,6 +1,6 @@
 {
   "name": "@serendie/style-dictionary-formatter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "the style-dictionary formatter of Serendie",
   "type": "module",
   "publishConfig": {
