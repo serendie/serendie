@@ -40,6 +40,8 @@ jobs:
       - name: Setup .npmrc
         run: cp ./.npmrc.example ./.npmrc
       - run: npm ci
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Release
         run: npm run release --prefix ${{ github.event.inputs.package }} --ci --increment ${{ github.event.inputs.increment }}
         env:
