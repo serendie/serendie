@@ -9,7 +9,7 @@ on:
         type: choice
         options:
           - ui
-          - design-token
+          - design-tokens
           - style-dictionary-formatter
       increment:
         description: 'Increment'
