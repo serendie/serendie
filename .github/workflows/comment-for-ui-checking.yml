@@ -1,4 +1,4 @@
-name: Comment on Pull Request
+name: Comment for ui checking
 
 on:
   pull_request:
