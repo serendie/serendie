@@ -82,7 +82,6 @@ export const IconButtonStyle = cva({
       },
     },
     size: {
-      // TODO: PandaのTokenのsizesにも、dimensionを入れて`{}`を外したい
       large: {
         w: "{spacing.sd.reference.dimension.scale.17}",
         h: "{spacing.sd.reference.dimension.scale.17}",
@@ -108,11 +107,6 @@ export const IconButtonStyle = cva({
   },
 });
 
-/**
- * TODO: できれば
- * shapeがrectangleの時はsizeにlargeを取れず、
- * shapeがcircleの時にはtypeにoutlinedを取れないようにしたい
- */
 type ButtonProps = RecipeVariantProps<typeof IconButtonStyle> &
   ComponentProps<"button"> & {
     icon: React.ReactElement;

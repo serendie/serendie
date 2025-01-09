@@ -165,13 +165,11 @@ export const ListItem: React.FC<ListItemProps> = ({
 }) => {
   const [variantProps, elementProps] = ListItemStyle.splitVariantProps(props);
   const styles = ListItemStyle(variantProps);
-  // const iconSize = isLargeLeftIcon ? "40px" : "24px";
 
   return (
     <li className={cx(styles.root, className)} {...elementProps}>
       <div
         tabIndex={1}
-        /* TODO: tabIndexでfocusableにしてるけど、そもそもリンクやボタンとして扱うための仕組みが必要 */
         className={cx(
           styles.wrapper,
           description && css({ alignItems: "flex-start" })
