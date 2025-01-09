@@ -11,9 +11,6 @@ import { resolveTypographyValue } from "./lib/resolveTypographyValue";
 import { W3CToken } from "./types";
 const OUTPUT_DIR = "figma_to_json/generated";
 
-/*
- * Figmaからデータを取得して、W3C Token like な JSONに変換
- */
 const main = async () => {
   const client = new FigmaClient(
     process.env.PERSONAL_ACCESS_TOKEN as string,
@@ -22,6 +19,9 @@ const main = async () => {
 
   const { variableCollections, variables } = await client.getLocalVariables();
 
+  /*
+   * Figmaから取得したデータを、W3C Token like な JSONに変換
+   */
   const values = Object.values(variableCollections)
     .filter((v) => !v.remote)
     .map((collection) => {
@@ -65,6 +65,8 @@ const main = async () => {
         OUTPUT_DIR,
         `${name}.${mode.modeName}.json`
       );
+
+      // タイポグラフィ関連のトークンを統合
       const typographyValues = resolveTypographyValue(mode.values);
 
       const mergedValues = typographyValues.reduce((acc, value) => {
