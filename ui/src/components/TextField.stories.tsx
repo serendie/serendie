@@ -57,9 +57,3 @@ export const HasError: Story = {
     invalid: true,
   },
 };
-
-export const FullWidth: Story = {
-  args: {
-    fullWidth: true,
-  },
-};

@@ -19,7 +19,10 @@ const TextFieldStyle = sva({
   base: {
     root: {
       display: "inline-grid",
-      width: "min(100%, 300px)",
+      // 後から指定したCSSからwidthが上書きできないため、@layer componentsを指定
+      "@layer components": {
+        width: "min(100%, 300px)",
+      },
       gridTemplateColumns: "auto",
       rowGap: "sd.system.dimension.spacing.extraSmall",
       textStyle: {
@@ -88,15 +91,6 @@ const TextFieldStyle = sva({
     },
     invalidMessage: {
       color: "sd.system.color.impression.negative",
-    },
-  },
-  variants: {
-    fullWidth: {
-      true: {
-        root: {
-          width: "100%",
-        },
-      },
     },
   },
 });
