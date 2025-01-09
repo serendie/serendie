@@ -9,6 +9,9 @@ import { resolveType } from "./lib/resolveType";
 import { pathToObject } from "./lib/pathToObject";
 const OUTPUT_DIR = "figma_to_json/generated";
 
+/*
+ * Figmaからデータを取得して、W3C Token like な JSONに変換
+ */
 const main = async () => {
   const client = new FigmaClient(
     process.env.PERSONAL_ACCESS_TOKEN as string,
@@ -50,6 +53,9 @@ const main = async () => {
       };
     });
 
+  /*
+   * 各モードごとにファイルを出力
+   */
   values.forEach((collection) => {
     const { name, modes } = collection;
     modes.forEach((mode) => {
