@@ -1,5 +1,6 @@
 import { describe, expect, test } from "vitest";
 import { resolveTypographyValue } from "./resolveTypographyValue";
+import { VariableScope, W3CToken } from "../types";
 
 describe("resolveTypographyValue", () => {
   test("関数が定義されていること", () => {
@@ -7,32 +8,56 @@ describe("resolveTypographyValue", () => {
     expect(typeof resolveTypographyValue).toBe("function");
   });
 
-  test("空の配列が渡された場合はundefinedを返すこと", () => {
-    expect(resolveTypographyValue([])).toBeUndefined();
+  test("空のトークンが渡された場合は空の配列を返すこと", () => {
+    const input: W3CToken[] = [];
+    expect(resolveTypographyValue(input)).toEqual([]);
   });
 
-  test("タイポグラフィ以外のトークンの場合はundefinedを返すこと", () => {
-    const tokens = [
+  test("タイポグラフィ以外のトークンはそのまま返すこと", () => {
+    const input: W3CToken[] = [
       {
         name: "sd.system.color.primary",
         type: "color",
         value: "#000000",
         extensions: {
-          "com.figma": { scopes: ["COLOR"], codeSyntax: {} },
+          "com.figma": {
+            scopes: ["COLOR" as VariableScope],
+            codeSyntax: {
+              WEB: "'sd.system.color.primary'",
+            },
+          },
         },
       },
     ];
-    expect(resolveTypographyValue(tokens)).toBeUndefined();
+    expect(resolveTypographyValue(input)).toEqual(input);
   });
 
-  test("タイポグラフィ関連のトークンを1つのトークンに統合できること", () => {
-    const tokens = [
+  test("タイポグラフィ関連のトークンを統合し、他のトークンはそのまま返すこと", () => {
+    const input: W3CToken[] = [
+      {
+        name: "sd.system.color.primary",
+        type: "color",
+        value: "#000000",
+        extensions: {
+          "com.figma": {
+            scopes: ["COLOR" as VariableScope],
+            codeSyntax: {
+              WEB: "'sd.system.color.primary'",
+            },
+          },
+        },
+      },
       {
         name: "sd.system.typography.headline.large.fontFamily",
         type: "fontFamily",
         value: "Roboto",
         extensions: {
-          "com.figma": { scopes: ["FONT_FAMILY"], codeSyntax: {} },
+          "com.figma": {
+            scopes: ["FONT_FAMILY" as VariableScope],
+            codeSyntax: {
+              WEB: "'sd.system.typography.headline.large.fontFamily'",
+            },
+          },
         },
       },
       {
@@ -40,7 +65,12 @@ describe("resolveTypographyValue", () => {
         type: "dimension",
         value: { value: 32, unit: "px" },
         extensions: {
-          "com.figma": { scopes: ["FONT_SIZE"], codeSyntax: {} },
+          "com.figma": {
+            scopes: ["FONT_SIZE" as VariableScope],
+            codeSyntax: {
+              WEB: "'sd.system.typography.headline.large.fontSize'",
+            },
+          },
         },
       },
       {
@@ -48,7 +78,12 @@ describe("resolveTypographyValue", () => {
         type: "fontStyle",
         value: 400,
         extensions: {
-          "com.figma": { scopes: ["FONT_STYLE"], codeSyntax: {} },
+          "com.figma": {
+            scopes: ["FONT_STYLE" as VariableScope],
+            codeSyntax: {
+              WEB: "'sd.system.typography.headline.large.fontWeight'",
+            },
+          },
         },
       },
       {
@@ -56,54 +91,53 @@ describe("resolveTypographyValue", () => {
         type: "number",
         value: 1.6,
         extensions: {
-          "com.figma": { scopes: ["LINE_HEIGHT"], codeSyntax: {} },
+          "com.figma": {
+            scopes: ["LINE_HEIGHT" as VariableScope],
+            codeSyntax: {
+              WEB: "'sd.system.typography.headline.large.lineHeight'",
+            },
+          },
         },
       },
     ];
 
-    const expected = {
-      name: "sd.system.typography.headline.large",
-      value: {
-        fontFamily: "Roboto",
-        fontSize: {
-          value: 32,
-          unit: "px",
-        },
-        fontWeight: 400,
-        lineHeight: 1.6,
-      },
-    };
-
-    expect(resolveTypographyValue(tokens)).toEqual(expected);
-  });
-
-  test("関連しないトークンは無視されること", () => {
-    const tokens = [
+    const expected = [
       {
-        name: "sd.system.typography.headline.large.fontFamily",
-        type: "fontFamily",
-        value: "Roboto",
+        name: "sd.system.color.primary",
+        type: "color",
+        value: "#000000",
         extensions: {
-          "com.figma": { scopes: ["FONT_FAMILY"], codeSyntax: {} },
+          "com.figma": {
+            scopes: ["COLOR" as VariableScope],
+            codeSyntax: {
+              WEB: "'sd.system.color.primary'",
+            },
+          },
         },
       },
       {
-        name: "sd.system.typography.title.small.fontFamily",
-        type: "fontFamily",
-        value: "Roboto",
+        name: "sd.system.typography.headline.large",
+        type: "typography",
+        value: {
+          fontFamily: "Roboto",
+          fontSize: {
+            value: 32,
+            unit: "px",
+          },
+          fontWeight: 400,
+          lineHeight: 1.6,
+        },
         extensions: {
-          "com.figma": { scopes: ["FONT_FAMILY"], codeSyntax: {} },
+          "com.figma": {
+            scopes: ["TYPOGRAPHY" as VariableScope],
+            codeSyntax: {
+              WEB: "'sd.system.typography.headline.large'",
+            },
+          },
         },
       },
     ];
 
-    const expected = {
-      name: "sd.system.typography.headline.large",
-      value: {
-        fontFamily: "Roboto",
-      },
-    };
-
-    expect(resolveTypographyValue(tokens)).toEqual(expected);
+    expect(resolveTypographyValue(input)).toEqual(expected);
   });
 });

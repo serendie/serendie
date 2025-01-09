@@ -7,6 +7,8 @@ import { slashToDot } from "./lib/utils";
 import path from "path";
 import { resolveType } from "./lib/resolveType";
 import { pathToObject } from "./lib/pathToObject";
+import { resolveTypographyValue } from "./lib/resolveTypographyValue";
+import { W3CToken } from "./types";
 const OUTPUT_DIR = "figma_to_json/generated";
 
 /*
@@ -46,7 +48,7 @@ const main = async () => {
                     codeSyntax: variable.codeSyntax || undefined,
                   },
                 },
-              };
+              } as W3CToken;
             }),
           };
         }),
@@ -63,8 +65,9 @@ const main = async () => {
         OUTPUT_DIR,
         `${name}.${mode.modeName}.json`
       );
+      const typographyValues = resolveTypographyValue(mode.values);
 
-      const mergedValues = mode.values.reduce((acc, value) => {
+      const mergedValues = typographyValues.reduce((acc, value) => {
         return pathToObject(
           value.name,
           {
