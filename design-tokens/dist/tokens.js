@@ -281,6 +281,7 @@ export default {
       },
       "dimension": {
         "spacing": {
+          "none": "0px",
           "twoExtraSmall": "4px",
           "extraSmall": "8px",
           "small": "12px",
