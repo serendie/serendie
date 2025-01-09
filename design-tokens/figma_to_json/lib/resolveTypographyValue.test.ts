@@ -14,39 +14,13 @@ describe("resolveTypographyValue", () => {
   });
 
   test("タイポグラフィ以外のトークンはそのまま返すこと", () => {
-    const input: W3CToken[] = [
-      {
-        name: "sd.system.color.primary",
-        type: "color",
-        value: "#000000",
-        extensions: {
-          "com.figma": {
-            scopes: ["COLOR" as VariableScope],
-            codeSyntax: {
-              WEB: "'sd.system.color.primary'",
-            },
-          },
-        },
-      },
-    ];
+    const input: W3CToken[] = [colorToken];
     expect(resolveTypographyValue(input)).toEqual(input);
   });
 
   test("タイポグラフィ関連のトークンを統合し、他のトークンはそのまま返すこと", () => {
     const input: W3CToken[] = [
-      {
-        name: "sd.system.color.primary",
-        type: "color",
-        value: "#000000",
-        extensions: {
-          "com.figma": {
-            scopes: ["COLOR" as VariableScope],
-            codeSyntax: {
-              WEB: "'sd.system.color.primary'",
-            },
-          },
-        },
-      },
+      colorToken,
       {
         name: "sd.system.typography.headline.large.fontFamily",
         type: "fontFamily",
@@ -102,19 +76,7 @@ describe("resolveTypographyValue", () => {
     ];
 
     const expected = [
-      {
-        name: "sd.system.color.primary",
-        type: "color",
-        value: "#000000",
-        extensions: {
-          "com.figma": {
-            scopes: ["COLOR" as VariableScope],
-            codeSyntax: {
-              WEB: "'sd.system.color.primary'",
-            },
-          },
-        },
-      },
+      colorToken,
       {
         name: "sd.system.typography.headline.large",
         type: "typography",
@@ -141,3 +103,17 @@ describe("resolveTypographyValue", () => {
     expect(resolveTypographyValue(input)).toEqual(expected);
   });
 });
+
+const colorToken: W3CToken = {
+  name: "sd.system.color.primary",
+  type: "color",
+  value: "#000000",
+  extensions: {
+    "com.figma": {
+      scopes: ["COLOR" as VariableScope],
+      codeSyntax: {
+        WEB: "'sd.system.color.primary'",
+      },
+    },
+  },
+};
