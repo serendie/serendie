@@ -3,6 +3,18 @@
     "system": {
       "dimension": {
         "spacing": {
+          "none": {
+            "$type": "dimension",
+            "$value": "{sd.reference.dimension.scale.0}",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {
+                  "WEB": "'sd.system.dimension.spacing.none'"
+                },
+                "scopes": ["GAP"]
+              }
+            }
+          },
           "twoExtraSmall": {
             "$type": "dimension",
             "$value": "{sd.reference.dimension.scale.3}",

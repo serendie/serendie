@@ -2839,6 +2839,19 @@ export default [
       "system",
       "dimension",
       "spacing",
+      "none"
+    ],
+    "key": "sd.system.dimension.spacing.none",
+    "type": "dimension",
+    "value": "0px",
+    "originalValue": "{sd.reference.dimension.scale.0}"
+  },
+  {
+    "path": [
+      "sd",
+      "system",
+      "dimension",
+      "spacing",
       "twoExtraSmall"
     ],
     "key": "sd.system.dimension.spacing.twoExtraSmall",

@@ -547,6 +547,9 @@ export default {
       "system": {
         "dimension": {
           "spacing": {
+            "none": {
+              "value": "0px"
+            },
             "twoExtraSmall": {
               "value": "4px"
             },

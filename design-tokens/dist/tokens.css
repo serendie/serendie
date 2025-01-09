@@ -211,6 +211,7 @@
 --sd-system-color-interaction-hovered: #00000033;
 --sd-system-color-interaction-hoveredVariant: #0000000D;
 --sd-system-color-interaction-hoveredOnPrimary: #FFFFFF99;
+--sd-system-dimension-spacing-none: 0px;
 --sd-system-dimension-spacing-twoExtraSmall: 4px;
 --sd-system-dimension-spacing-extraSmall: 8px;
 --sd-system-dimension-spacing-small: 12px;
