@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { TextField } from "./TextField";
 import figma from "@figma/code-connect";
+import { css } from "../../styled-system/css";
 
 const meta: Meta<typeof TextField> = {
   component: TextField,
@@ -55,5 +56,14 @@ export const Disabled: Story = {
 export const HasError: Story = {
   args: {
     invalid: true,
+  },
+};
+
+export const FullWidth: Story = {
+  args: {
+    // fullWidth: true,
+    className: css({
+      width: "100%",
+    }),
   },
 };

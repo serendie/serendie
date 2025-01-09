@@ -19,7 +19,8 @@ const TextFieldStyle = sva({
   base: {
     root: {
       display: "inline-grid",
-      gridTemplateColumns: "minmax(auto, 300px)",
+      width: "min(100%, 300px)",
+      gridTemplateColumns: "auto",
       rowGap: "sd.system.dimension.spacing.extraSmall",
       textStyle: {
         base: "sd.system.typography.body.medium_compact",
@@ -89,6 +90,15 @@ const TextFieldStyle = sva({
       color: "sd.system.color.impression.negative",
     },
   },
+  variants: {
+    fullWidth: {
+      true: {
+        root: {
+          width: "100%",
+        },
+      },
+    },
+  },
 });
 
 type Props = {
@@ -96,6 +106,7 @@ type Props = {
   description?: string;
   invalid?: boolean;
   invalidMessage?: string;
+  fullWidth?: boolean;
 } & React.ComponentPropsWithoutRef<"input">;
 
 export const TextField = forwardRef<HTMLInputElement, Props>(
