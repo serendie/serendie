@@ -100,7 +100,6 @@ type Props = {
   description?: string;
   invalid?: boolean;
   invalidMessage?: string;
-  fullWidth?: boolean;
 } & React.ComponentPropsWithoutRef<"input">;
 
 export const TextField = forwardRef<HTMLInputElement, Props>(
