@@ -12,6 +12,12 @@ import { W3CToken } from "./types";
 const OUTPUT_DIR = "figma_to_json/generated";
 
 const main = async () => {
+  if (!process.env.PERSONAL_ACCESS_TOKEN || !process.env.FILE_KEY) {
+    throw new Error(
+      "PERSONAL_ACCESS_TOKEN and FILE_KEY environment variables are required."
+    );
+  }
+
   const client = new FigmaClient(
     process.env.PERSONAL_ACCESS_TOKEN as string,
     process.env.FILE_KEY as string
@@ -65,6 +71,10 @@ const main = async () => {
         OUTPUT_DIR,
         `${name}.${mode.modeName}.json`
       );
+
+      if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+      }
 
       // タイポグラフィ関連のトークンを統合
       const typographyValues = resolveTypographyValue(mode.values);
