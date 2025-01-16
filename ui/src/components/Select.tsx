@@ -167,7 +167,7 @@ export const Select: React.FC<SelectStyleProps> = ({
 }) => {
   const [variantProps, elementProps] = SelectStyle.splitVariantProps(props);
   const styles = SelectStyle(variantProps);
-  const id = useId(); // TODO: Ark UI 3.0.0 からIDの指定いらなくなる
+  const id = useId(); // TODO: https://github.com/serendie/serendie/issues/409 Ark UI 3 へのアップデート
 
   return (
     <ArkSelect.Root
@@ -228,7 +228,6 @@ export const Select: React.FC<SelectStyleProps> = ({
       )}
       <Portal>
         <ArkSelect.Positioner>
-          {/* TODO: 上部に僅かに隙間があるので詰めたいがAPIが見つからない、、、 */}
           <ArkSelect.Content className={styles.content}>
             <List id={id}>
               {props.items.map((item, i) => (
