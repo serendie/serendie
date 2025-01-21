@@ -9,7 +9,6 @@
   "scripts": {
     "build": "tsx buildTokens.ts",
     "sync-json-to-figma": "sync-to-figma",
-    "sync-figma-to-json": "sync-from-figma",
     "ci:sync-json-to-figma": "sync-to-figma --silent",
     "release": "release-it --config ../.release-it.json"
   },
