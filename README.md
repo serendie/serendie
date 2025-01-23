@@ -16,16 +16,16 @@
 
 | Package name  | Location | Description |
 | --- | --- | --- |
-| [@serendie/ui](https://github.com/serendie/serendie/pkgs/npm/ui) | [`/ui`](/ui/) | ReactベースのUIコンポーネント集。[Serendie UI Kit (Figma)](https://www.figma.com/community/file/1433690846108785966)と対になっておりFigma Code Connectに対応。 |
-| [@serendie/design-tokens](https://github.com/serendie/serendie/pkgs/npm/design-token) | [`/design-tokens`](/design-tokens/) | Serendie UIのベースとなるデザイントークン。5つのカラーテーマに対応し、[W3C Design Token Format Module](https://serendie.design/foundations/design-tokens/#section-6)の仕様に沿って定義。|
-| [@serendie/style-dictonary-formatter](https://github.com/serendie/serendie/pkgs/npm/style-dictionary-formatter) | [`/style-dictonary-formatter`](/style-dictonary-formatter/) | 上記仕様に基づくデザイントークンを各プラットフォームに展開するための [amzn/style-dictonary](https://github.com/amzn/style-dictionary)のフォーマッタ |
+| `@serendie/ui` | [`/ui`](/ui/) | ReactベースのUIコンポーネント集。[Serendie UI Kit (Figma)](https://www.figma.com/community/file/1433690846108785966)と対になっておりFigma Code Connectに対応。 |
+| `@serendie/design-tokens` | [`/design-tokens`](/design-tokens/) | Serendie UIのベースとなるデザイントークン。5つのカラーテーマに対応し、[W3C Design Token Format Module](https://serendie.design/foundations/design-tokens/#section-6)の仕様に沿って定義。|
+| `@serendie/style-dictonary-formatter` | [`/style-dictonary-formatter`](/style-dictonary-formatter/) | 上記仕様に基づくデザイントークンを各プラットフォームに展開するための [amzn/style-dictonary](https://github.com/amzn/style-dictionary)のフォーマッタ |
 
 また以下の関連リポジトリがあります。
 
 | Package name  | Location | Description |
 | --- | --- | --- |
-| [@serendie/symbols](https://github.com/serendie/serendie-symbols/pkgs/npm/symbols) | [serendie/symbols](https://github.com/serendie/serendie-symbols) | Serendieらしい300種類以上のSVGアイコン集 |
-| [@serendie/figma-utils](https://github.com/serendie/figma-utils/pkgs/npm/figma-utils) | [serendie/figma-utils](https://github.com/serendie/figma-utils) | Figma REST APIを用いて、`@serendie/design-tokens` と Figma Variables の同期 (import/export) を行うためのユーティリティー集 |
+| `@serendie/symbols` | [serendie/symbols](https://github.com/serendie/serendie-symbols) | Serendieらしい300種類以上のSVGアイコン集 |
+| `@serendie/figma-utils` | [serendie/figma-utils](https://github.com/serendie/figma-utils) | Figma REST APIを用いて、`@serendie/design-tokens` と Figma Variables の同期 (import/export) を行うためのユーティリティー集 |
 
 ## Examples
 
