@@ -73,4 +73,4 @@ npm run sync-json-to-figma
 なお、`/tokens`に変更が入るとGitHub Actionsにて[自動で実行](https://github.com/serendie/serendie/blob/main/.github/workflows/sync-tokens-to-figma.yml)されます。
 
 > [!WARNING]
-> この仕組みは三菱電機向けです。Figma REST APIを利用しており、Figmaのエンタープライズプラン契約が必要になります。
+> この仕組みは三菱電機社内向けです。Figma REST APIを利用しており、Figmaのエンタープライズプラン契約が必要になります。
