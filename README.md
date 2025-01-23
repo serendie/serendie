@@ -16,7 +16,7 @@
 
 | Package name  | Location | Description |
 | --- | --- | --- |
-| [@serendie/ui](https://github.com/serendie/serendie/pkgs/npm/ui) | [`/ui`](/ui/) | ReactベースのUIコンポーネント集。[Serendie UI Kit (Figma)](https://www.figma.com/community/file/1433690846108785966)と対になっており、[Figma Code Connect](https://serendie.design/get-started/dev/)に対応。 |
+| [@serendie/ui](https://github.com/serendie/serendie/pkgs/npm/ui) | [`/ui`](/ui/) | ReactベースのUIコンポーネント集。[Serendie UI Kit (Figma)](https://www.figma.com/community/file/1433690846108785966)と対になっておりFigma Code Connectに対応。 |
 | [@serendie/design-tokens](https://github.com/serendie/serendie/pkgs/npm/design-token) | [`/design-tokens`](/design-tokens/) | Serendie UIのベースとなるデザイントークン。5つのカラーテーマに対応し、[W3C Design Token Format Module](https://serendie.design/foundations/design-tokens/#section-6)の仕様に沿って定義。|
 | [@serendie/style-dictonary-formatter](https://github.com/serendie/serendie/pkgs/npm/style-dictionary-formatter) | [`/style-dictonary-formatter`](/style-dictonary-formatter/) | 上記仕様に基づくデザイントークンを各プラットフォームに展開するための [amzn/style-dictonary](https://github.com/amzn/style-dictionary)のフォーマッタ |
 
