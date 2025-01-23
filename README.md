@@ -31,7 +31,7 @@
 
 主要パッケージの導入サンプルとして、[serendie/bootcamp](https://github.com/serendie/bootcamp)を用意しています。また三菱電機内ではハンズオン形式で使い方を紹介するブートキャンプを開催しています。
 
-## Adapting to Sub-Brands
+## Adapting to sub-brands
 
 Serendie Design Systemは[三菱電機の有する多様な事業に適応](https://serendie.design/about/#section-3)することがコンセプトの一つです。
 
