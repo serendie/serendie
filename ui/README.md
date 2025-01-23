@@ -83,4 +83,4 @@ Serendie UIでは、Figma Code ConnectをStorybookと繋ぎこむ形で導入し
 npm run connect:publish
 ```
 
-storiesファイルに変更が入ると上記が[GitHub Actions](https://github.com/serendie/serendie/blob/main/.github/workflows/publish-code-connect.yml)によって実行され、三菱電機社内のSerendie UI Kitにpublishされます。
+storiesファイルに変更が入ると上記が[GitHub Actions](https://github.com/serendie/serendie/blob/main/.github/workflows/publish-code-connect.yml)によって実行されます。
