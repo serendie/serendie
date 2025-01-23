@@ -35,7 +35,7 @@
 
 Serendie Design Systemは[三菱電機の有する多様な事業に適応](https://serendie.design/about/#section-3)することがコンセプトの一つです。
 
-`@serendie/desigon-tokens`および`@serendie/ui`は、デフォルトでSerendieのVisual Identity (VI)を継承しますが、各事業のVIに合わせてテーミング(サブブランド対応)が可能です。社内向けにその仕組み(🔒️[serendie/subbrands-template](https://github.com/serendie/subbrands-template))を整備しています。
+`@serendie/desigon-tokens`および`@serendie/ui`は、デフォルトでSerendieのVisual Identity (VI)を継承しますが、各事業ブランドのVIに合わせてテーミング(サブブランド対応)できるよう社内向けに[🔒️serendie/subbrands-template](https://github.com/serendie/subbrands-template)を整備しています。
 
 詳しくはSerendie Design Systemチームまでお問い合わせください。
 
