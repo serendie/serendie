@@ -45,11 +45,7 @@ Serendie Design Systemには5つのカラーテーマがあり、デザイント
 
 ## スタイリングライブラリと併用する
 
-あるコンポーネントのpaddingやmarginを微修正したいなど、Serendie UIのスタイルをカスタムしたいシーンでは、プロジェクト側にスタイリングライブラリ(CSS-in-JSなど)を導入してください。どのスタイリングライブラリでも併用は可能ですが、ここではSerendie UIの内部でも使用している[Panda CSS](https://panda-css.com/)の例を紹介します。
-
-### Panda CSSの導入
-
-各プロジェクトの環境に合わせて導入が必要です。こちらの[サンプルプロジェクト](https://github.com/serendie/bootcamp)を参考にしてください。
+あるコンポーネントのmarginを微修正したいなど、Serendie UIのスタイルをカスタムしたいシーンでは、プロジェクト側にスタイリングライブラリ(CSS-in-JSなど)を導入してください。どのスタイリングライブラリでも併用は可能ですが、ここではSerendie UIの内部でも使用している[Panda CSS](https://panda-css.com/)の例を紹介します。
 
 ### SerendiePresetの追加
 
@@ -64,54 +60,27 @@ export default defineConfig({
 });
 ```
 
-その後、Panda CSSが提供するユーティリティやコンポーネントを生成するために以下のコマンドを実行してください。
+より実践的な例は、こちらの[サンプルプロジェクト](https://github.com/serendie/bootcamp?tab=readme-ov-file#%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%A8%E4%BD%B5%E7%94%A8%E3%81%99%E3%82%8B)を参考にしてください。
+
+## APIを詳しく知る
+
+Serendie UIはヘッドレスUIとして、[Ark UI](https://ark-ui.com/)を内部的に利用しており、各コンポーネントのAPIはArk UIを継承します。Selectコンポーネントなどインタラクションが複雑なコンポーネントは、Ark UIの[APIリファレンス](https://ark-ui.com/react/docs/components/select#api-reference)を合わせて参照してください。
+
+## 開発
+
+Serendie UIに新しくコンポーネントを追加する場合は、Ark UIをベースにしてください。
 
 ```
-npm run panda codegen
+npm run dev # run storybook
+npm run build
 ```
 
-### サンプル
+## Figma Code Connect
 
-下記のように、Panda CSSの提供するユーティリティ (`css`) やレイアウトコンポーネント (`VStack`) を使いつつ、デザイントークンや、Serendie UI、Serendie Symbolsを組み合わせて画面をスタイリングすることができます。
+Serendie UIでは、Figma Code ConnectをStorybookと繋ぎこむ形で導入しています。下記のコマンドで各コンポーネント毎のstoriesファイルの内容を、Figmaにpublishする必要します。
 
-```typescript
-import { Button, TextField } from "@serendie/ui";
-import { VStack } from "../styled-system/jsx";
-import { css } from "../styled-system/css";
-import { SerendieSymbol } from "@serendie/symbols";
-
-function App() {
-  return (
-    <main
-      className={css({
-        padding: "sd.system.dimension.spacing.extraLarge",
-        "& h1": {
-          textStyle: "sd.system.typography.title.large_compact",
-          marginBottom: "sd.system.dimension.spacing.extraLarge",
-        },
-      })}
-    >
-      <h1>SDS Bootcamp</h1>
-      <VStack
-        gap={"sd.system.dimension.spacing.extraLarge"}
-        alignItems="flex-start"
-      >
-        <TextField label="メールアドレス" placeholder="email" />
-        <TextField label="パスワード" placeholder="password" />
-        <Button
-          size="medium"
-          className={css({ width: "100%" })}
-          leftIcon={<SerendieSymbol name="login" />}
-        >
-          ログイン
-        </Button>
-        <Button styleType="ghost" size="small" className={css({ px: 0 })}>
-          パスワードをお忘れですか？
-        </Button>
-      </VStack>
-    </main>
-  );
-}
-
-export default App;
 ```
+npm run connect:publish
+```
+
+storiesファイルに変更が入ると上記が[GitHub Actions](https://github.com/serendie/serendie/blob/main/.github/workflows/publish-code-connect.yml)によって実行されます。
