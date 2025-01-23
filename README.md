@@ -16,9 +16,9 @@
 
 | Package name  | Location | Description |
 | --- | --- | --- |
-| `@serendie/ui` | [`/ui`](/ui/) | [Serendie UI Kit (Figma)](https://www.figma.com/community/file/1433690846108785966)と対となるReactベースのUIコンポーネント集(Figma Code Connectに対応) |
-| `@serendie/design-tokens` | [`/design-tokens`](/design-tokens/) | [W3C Design Token Format Module](https://serendie.design/foundations/design-tokens/#section-6)の仕様で定義されたSerendie UIのベースとなるデザイントークン |
-| `@serendie/style-dictonary-formatter` | [`/style-dictonary-formatter`](/style-dictonary-formatter/) | デザイントークンを各プラットフォームに展開するための[amzn/style-dictonary](https://github.com/amzn/style-dictionary)のフォーマッタ |
+| `@serendie/ui` | [/ui](/ui/) | [Serendie UI Kit (Figma)](https://www.figma.com/community/file/1433690846108785966)と対となるReactベースのUIコンポーネント集(Figma Code Connectに対応) |
+| `@serendie/design-tokens` | [/design-tokens](/design-tokens/) | [W3C Design Token Format Module](https://serendie.design/foundations/design-tokens/#section-6)の仕様で定義されたSerendie UIのベースとなるデザイントークン |
+| `@serendie/style-dictonary-formatter` | [/style-dictonary-formatter](/style-dictonary-formatter/) | デザイントークンを各プラットフォームに展開するための[amzn/style-dictonary](https://github.com/amzn/style-dictionary)のフォーマッタ |
 
 また以下の関連リポジトリがあります。
 
