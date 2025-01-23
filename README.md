@@ -25,7 +25,7 @@
 | Package name  | Location | Description |
 | --- | --- | --- |
 | `@serendie/symbols` | [serendie/symbols](https://github.com/serendie/serendie-symbols) | Serendieらしい300種類以上のSVGアイコン集 |
-| `@serendie/figma-utils` | [serendie/figma-utils](https://github.com/serendie/figma-utils) | Figma REST APIを用いて、`@serendie/design-tokens` と Figma Variables の同期 (import/export) を行うためのユーティリティー集 |
+| `@serendie/figma-utils` | [serendie/figma-utils](https://github.com/serendie/figma-utils) | Figma REST APIを用いて、`@serendie/design-tokens`とFigma Variablesの同期を行うためのユーティリティー集 |
 
 ## Examples
 
