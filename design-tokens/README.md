@@ -26,7 +26,7 @@ h1 {
 
 ### テーマ切り替え
 
-Serendie Design Systemには5つのカラーテーマがあり、デザイントークンもそれに対応します。任意のタグに、`data-panda-theme`属性 (`konjo`, `asagi`, `sumire`, `tsutusji`, `kurikawa`)を付与することで、CSS 環境であってもテーマを切り替えることができます。
+Serendie Design Systemには5つのカラーテーマがあり、デザイントークンもそれに対応します。htmlタグなどに、`data-panda-theme`属性 (`konjo`, `asagi`, `sumire`, `tsutusji`, `kurikawa`)を付与することで、CSS 環境であってもテーマを切り替えることができます。
 各テーマについては[こちら](https://serendie.design/foundations/theming/)を参照してください。
 
 ```html
