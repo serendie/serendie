@@ -1,15 +1,6 @@
-# 利用方法
+# Serendie UI
 
-[npm レジストリの利用 \- GitHub Docs](https://docs.github.com/ja/packages/working-with-a-github-packages-registry/working-with-the-npm-registry) を参考に、個人用アクセストークンを発行して`.npmrc` に以下の内容を追加してください。
-
-[個人用アクセストークンの発行方法詳細](https://docs.github.com/ja/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)の「fine-grained personal access token の作成」の項目に詳しい記載があります。
-
-```plaintext
-//npm.pkg.github.com/:_authToken={TOKEN}
-@serendie:registry=https://npm.pkg.github.com
-```
-
-その後、プロジェクトのルートディレクトリで以下のコマンドを実行してください。
+## Install
 
 ```bash
 npm install @serendie/ui
