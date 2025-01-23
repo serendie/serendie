@@ -1,209 +1,117 @@
 # Serendie UI
 
-## Install
 
-```bash
+[![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)](https://storybook.serendie.design/)
+
+[Serendie UI Kit (Figma)](https://www.figma.com/community/file/1433690846108785966)と対となるReactベースのUIコンポーネント集です。Figma Code Connectにも対応しており、Storybookと同等の内容が[Figma Devモードでも確認](https://serendie.design/get-started/dev/#section-1)できます。
+
+## 使い方
+
+### インストール
+
+デザイントークンも同梱されるので同時インストールは不要です。
+
+```
 npm install @serendie/ui
 ```
 
-# プロジェクトへの導入例
+### プロジェクトへの導入
 
-## Vite で React の基本プロジェクト作成
+rootのCSSに対して、次の2行を設定してください。1行目は、Serendie UIに対して、スタイルを適切に当てるためにカスケードレイヤーの指定をするもの、2行目は同梱のデザイントークンやデフォルトスタイルを読み込むものです。
 
-```bash
-npm create vite@latest projectName
-cd projectName
-npm install
-```
-
-## serendie/ui をインストール
-
-```bash
-npm install -D @serendie/ui
-```
-
-## Serendie の CSS を適用
-
-```index.css
+```css
 @layer reset, base, tokens, recipes, utilities;
 @import "@serendie/ui/styles.css";
 ```
 
-とすれば serendie の CSS が適用されます
+### コンポーネントを使う
 
-## コンポーネントの利用
+使いたいComponentをimportしたうえで、通常のReact Componentとして使用してください。各Componentが持つpropsについては、[ドキュメント](https://serendie.design/components/button/)や、[Storybook](https://storybook.serendie.design/?path=/story/components-button--medium)、Figma Code Connectを参照してください。
 
-```tsx
+```js
 import { Button } from "@serendie/ui";
+
+<Button size="medium">Login</Button>
 ```
 
-などとして Serendie が提供するコンポーネントを利用してください。
+### テーマ切り替え
 
-## Panda CSS を使う
+Serendie Design Systemには5つのカラーテーマがあり、デザイントークンもそれに対応します。htmlタグなどに、`data-panda-theme`属性 (`konjo`, `asagi`, `sumire`, `tsutusji`, `kurikawa`)を付与することでカラーテーマを切り替えることができます。
+各テーマについては[こちら](https://serendie.design/foundations/theming/)を参照してください。
 
-Panda CSS が提供するユーティリティ関数やコンポーネントを使う
-
-### Panda CSS をインストール
-
-```bash
- npm install -D @pandacss/dev
+```html
+<html data-panda-theme="asagi"></html>
 ```
 
-```bash
-npx panda init --postcss
+## スタイリングライブラリと併用する
+
+あるコンポーネントのpaddingやmarginを微修正したいなど、Serendie UIのスタイルをカスタムしたいシーンでは、プロジェクト側にスタイリングライブラリ(CSS-in-JSなど)を導入してください。どのスタイリングライブラリでも併用は可能ですが、ここではSerendie UIの内部でも使用している[Panda CSS](https://panda-css.com/)の例を紹介します。
+
+### Panda CSSの導入
+
+各プロジェクトの環境に合わせて導入が必要です。こちらの[サンプルプロジェクト](https://github.com/serendie/bootcamp)を参考にしてください。
+
+### SerendiePresetの追加
+
+Panda CSS導入後に生成される`panda.config.ts`に下記を追記することで、Panda CSSの[Preset](https://panda-css.com/docs/customization/presets)とSerendie Design Systemのデザイントークンを繋ぎこみます。
+
 ```
-
-を実行してください。
-
-Panda のコード生成を実行するために package.json に
-
-```package.json.diff
-{
-  "scripts": {
-+   "panda": "panda",
-+   "prepare": "panda codegen",
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
-  }
-}
-```
-
-を追加してください
-
-生成された `panda.config.ts` に以下の設定を追加してください。
-
-```panda.config.ts.diff
 +import { SerendiePreset } from "@serendie/ui";
 
 export default defineConfig({
 +  jsxFramework: "react",
 +  presets: [SerendiePreset],
 });
-
 ```
 
-Panda CSS の関数やコンポーネントを生成するために以下のコマンドを実行してください。
+その後、Panda CSSが提供するユーティリティやコンポーネントを生成するために以下のコマンドを実行してください。
 
-```bash
+```
 npm run panda codegen
 ```
 
-型情報を参照するために `tsconfig.json` に以下の設定を追加してください。
+### サンプル
 
-```tsconfig.json.diff
-{
-+  "include":  ["src", "styled-system"]
-}
-```
+下記のように、Panda CSSの提供するユーティリティ (`css`) やレイアウトコンポーネント (`VStack`) を使いつつ、デザイントークンや、Serendie UI、Serendie Symbolsを組み合わせて画面をスタイリングすることができます。
 
-以上で Panada CSS の関数やコンポーネントを利用できるようになります。
-
-```tsx
-import { Flex } from "../styled-system/jsx";
+```typescript
+import { Button, TextField } from "@serendie/ui";
+import { VStack } from "../styled-system/jsx";
 import { css } from "../styled-system/css";
+import { SerendieSymbol } from "@serendie/symbols";
+
+function App() {
+  return (
+    <main
+      className={css({
+        padding: "sd.system.dimension.spacing.extraLarge",
+        "& h1": {
+          textStyle: "sd.system.typography.title.large_compact",
+          marginBottom: "sd.system.dimension.spacing.extraLarge",
+        },
+      })}
+    >
+      <h1>SDS Bootcamp</h1>
+      <VStack
+        gap={"sd.system.dimension.spacing.extraLarge"}
+        alignItems="flex-start"
+      >
+        <TextField label="メールアドレス" placeholder="email" />
+        <TextField label="パスワード" placeholder="password" />
+        <Button
+          size="medium"
+          className={css({ width: "100%" })}
+          leftIcon={<SerendieSymbol name="login" />}
+        >
+          ログイン
+        </Button>
+        <Button styleType="ghost" size="small" className={css({ px: 0 })}>
+          パスワードをお忘れですか？
+        </Button>
+      </VStack>
+    </main>
+  );
+}
+
+export default App;
 ```
-
-# テーマをカスタマイズする
-
-生成された`panda.config.ts`を編集
-
-semanticTokens を上書きする
-
-```diff
-   theme: {
--    extend: {},
-+    extend: {
-+      semanticTokens: {
-+        colors: {
-+          sd: {
-+            system: {
-+              color: {
-+                impression: {
-+                  noticeContainer: { value: "red" },
-+                },
-+              },
-+            },
-+          },
-+        },
-+      },
-+    },
-   },
-```
-
-index.css に自プロジェクトのスタイルも追加
-
-```diff
-diff --git a/apps/theme-study/src/index.css b/apps/theme-study/src/index.css
-index e7e3f41..b042781 100644
---- a/apps/theme-study/src/index.css
-+++ b/apps/theme-study/src/index.css
-@@ -1,2 +1,3 @@
- @layer reset, base, tokens, recipes, utilities;
- @import "@serendie/ui/styles.css";
-+@import "../styled-system/styles.css";
-```
-
-ここまでで、特定のトークンの値を変更してプロダクトに適用できる
-
-<img src=https://github.com/user-attachments/assets/54889348-bd86-4fa8-8c9a-51e6b58cee16 width=400 />
-
-# 動的にテーマを変更する
-
-`panda.config.ts`で設定に`themes`を追加し、値が参照されていなくても CSS に書き出す`staticCss`の設定をする
-
-```diff
-diff --git a/apps/theme-study/panda.config.ts b/apps/theme-study/panda.config.ts
-index 1542a3f..3759c67 100644
---- a/apps/theme-study/panda.config.ts
-+++ b/apps/theme-study/panda.config.ts
-@@ -28,4 +28,24 @@ export default defineConfig({
-       },
-     },
-   },
-+  themes: {
-+    dark: {
-+      semanticTokens: {
-+        colors: {
-+          sd: {
-+            system: {
-+              color: {
-+                impression: {
-+                  noticeContainer: { value: "blue" },
-+                },
-+              },
-+            },
-+          },
-+        },
-+      },
-+    },
-+  },
-+  staticCss: {
-+    themes: ["dark"],
-+  },
- });
-```
-
-ここで `npm run panda`で CSS を生成
-
-その上で index.html などに`data-panda-theme`を指定するとテーマに応じてトークンの値が差し代わる
-
-```diff
-- <html lang="en">
-+ <html lang="en" data-panda-theme="dark">
-```
-
-<img src="https://github.com/user-attachments/assets/7a01e1e9-d6f4-4405-8227-788d56f72775" width=400 />
-
-# パッケージの配布
-
-ui ディレクトリ内で `npm run build` した後に `npm publish` でパッケージを配布できます。
-`.npmrc`に GitHub Packages のアクセストークンと、serendie のパッケージレジストリを設定することで、GitHub Packages にパッケージを公開できます。
-※設定に不備があると外部のレジストリに公開される場合があるので注意してください。
-
-# FAQ
-
-## VSCode で Design Token が保管されない
-
-`tsconfig.json` の設定を確認したうえで、VSCode を立ち上げ直してみてください
