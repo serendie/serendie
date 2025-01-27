@@ -1,6 +1,6 @@
 {
   "name": "@serendie/design-token",
-  "description": "the design tokens of Serendie",
+  "description": "Design tokens as part of Serendie Design System by Mitsubishi Electric",
   "version": "0.2.1",
   "type": "module",
   "publishConfig": {
