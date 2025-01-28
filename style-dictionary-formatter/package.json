@@ -4,9 +4,6 @@
   "license": "MIT",
   "description": "the style-dictionary formatter of Serendie Design System",
   "type": "module",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "scripts": {
     "build": "tsup src/index.ts --clean --format esm,cjs --dts --minify",
     "release": "release-it --config ../.release-it.json"

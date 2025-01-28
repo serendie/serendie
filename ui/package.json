@@ -5,9 +5,6 @@
   "license": "MIT",
   "type": "module",
   "types": "./dist/index.d.ts",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "scripts": {
     "dev": "npm run storybook",
     "build:panda": "panda codegen",

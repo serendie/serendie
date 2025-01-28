@@ -4,9 +4,6 @@
   "version": "0.2.1",
   "license": "MIT",
   "type": "module",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "scripts": {
     "build": "tsx buildTokens.ts",
     "sync-json-to-figma": "sync-to-figma",
