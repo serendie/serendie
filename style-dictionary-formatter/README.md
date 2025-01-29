@@ -1,3 +1,6 @@
-# Serendie Style Dictionary Formatter
+# SDS Style Dictionary Formatter
 
-Style Dictionary向けにTokenを各種プラットフォームのスタイル情報やトークンに変換するための、Filter、Formatter、Parser、Transformerを提供します。
+[![GitHub](https://img.shields.io/github/license/serendie/serendie)](https://github.com/serendie/serendie/blob/main/LICENSE)
+[![NPM Version](https://img.shields.io/npm/v/%40serendie%2Fdesign-token)](https://www.npmjs.com/package/@serendie/design-token)
+
+Style Dictionary向けにTokenを各種プラットフォームのスタイル情報やトークンに変換するための、Filter、Formatter、Parser、Transformerです。
