@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![GitHub](https://img.shields.io/github/license/serendie/serendie)](https://github.com/serendie/serendie/blob/main/LICENSE)
+[![GitHub](https://img.shields.io/github/license/serendie/serendie?style=flat)](https://github.com/serendie/serendie/blob/main/LICENSE)
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)](https://storybook.serendie.design/)
 [![X](https://img.shields.io/twitter/follow/SerendieDesign)](https://x.com/SerendieDesign/)
 

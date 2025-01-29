@@ -1,6 +1,6 @@
 # Design Token
 
-[![GitHub](https://img.shields.io/github/license/serendie/serendie)](https://github.com/serendie/serendie/blob/main/LICENSE)
+[![GitHub](https://img.shields.io/github/license/serendie/serendie?style=flat)](https://github.com/serendie/serendie/blob/main/LICENSE)
 [![NPM Version](https://img.shields.io/npm/v/%40serendie%2Fdesign-token)](https://www.npmjs.com/package/@serendie/design-token)
 
 [デザイントークン](https://serendie.design/foundations/design-tokens/)はSerendie Design Systemを構成する最小単位です。コードベースとデザイン(Figma)でデザイントークンを共有することで、**Single Source of Truth**を実現することを念頭において設計されています。
