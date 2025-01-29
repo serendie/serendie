@@ -1,8 +1,8 @@
 {
   "name": "@serendie/ui",
   "description": "Adaptive UI component library as part of Serendie Design System by Mitsubishi Electric",
-  "version": "0.1.6",
   "license": "MIT",
+  "version": "0.1.7",
   "type": "module",
   "types": "./dist/index.d.ts",
   "scripts": {
