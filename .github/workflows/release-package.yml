@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       package:
-        description: 'Package'
+        description: "Package"
         required: true
         type: choice
         options:
@@ -12,9 +12,9 @@ on:
           - design-tokens
           - style-dictionary-formatter
       increment:
-        description: 'Increment'
+        description: "Increment"
         required: true
-        default: 'patch'
+        default: "patch"
         type: choice
         options:
           - major
@@ -46,3 +46,4 @@ jobs:
         run: npm run release --prefix ${{ github.event.inputs.package }} --ci --increment ${{ github.event.inputs.increment }}
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}

@@ -20,10 +20,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          registry-url: "https://npm.pkg.github.com"
-          scope: "@serendie"
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.ACCESS_GITHUB_PACKAGES_TOKEN }}
 
       - name: Set NPM version
         run: npm install -g npm@latest
@@ -45,7 +41,7 @@ jobs:
 
       - name: Install dependencies
         if: ${{ steps.cache_dependency.outputs.cache-hit != 'true' }}
-        run: npm install
+        run: npm ci
 
       - name: Run Style Dictionary
         run: npm run build -w design-tokens
