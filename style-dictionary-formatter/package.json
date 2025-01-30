@@ -1,6 +1,6 @@
 {
   "name": "@serendie/style-dictionary-formatter",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "license": "MIT",
   "description": "the style-dictionary formatter of Serendie Design System",
   "type": "module",
@@ -24,5 +24,8 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     }
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }

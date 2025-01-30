@@ -16,8 +16,7 @@
   },
   "workspaces": [
     "ui",
-    "design-tokens",
-    "style-dictionary-formatter"
+    "design-tokens"
   ],
   "devDependencies": {
     "@eslint/eslintrc": "^3.1.0",
