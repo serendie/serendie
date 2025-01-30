@@ -1,4 +1,9 @@
-<h1 align='center'><img src='https://github.com/user-attachments/assets/a6e4b78e-a50c-4c6b-b04a-bb159a826b65' width='400px' alt="Serendie Design System" title="Serendie Design System"/></h1>
+<h1 align='center'>
+  <picture>
+    <source srcset='https://github.com/user-attachments/assets/afa39feb-f100-43f4-9f08-d11c81208dc8' media="(prefers-color-scheme: dark)" width='400px'/>
+    <img src='https://github.com/user-attachments/assets/a6e4b78e-a50c-4c6b-b04a-bb159a826b65' alt="Serendie Design System" title="Serendie Design System" width='400px'/>
+  </picture>
+</h1>
 
 <div align="center">
 
