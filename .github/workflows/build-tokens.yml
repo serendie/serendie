@@ -41,7 +41,7 @@ jobs:
 
       - name: Install dependencies
         if: ${{ steps.cache_dependency.outputs.cache-hit != 'true' }}
-        run: npm install
+        run: npm ci
 
       - name: Run Style Dictionary
         run: npm run build -w design-tokens
