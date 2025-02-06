@@ -104,7 +104,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
   return (
     <ArkMenu.Root {...restProps}>
       <ArkMenu.Trigger asChild>
-        {styleType === "iconButton" && (
+        {styleType === "iconButton" ? (
           <IconButton
             icon={
               icon || (
@@ -120,8 +120,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
             styleType="outlined"
             title={title}
           />
-        )}
-        {styleType == "default" && (
+        ) : (
           <Button
             styleType="rectangle"
             size="medium"
