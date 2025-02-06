@@ -48,6 +48,7 @@ export default tsESLint.config(
       "**/.astro/",
       "**/.storybook/",
       "**/env.d.ts",
+      "**/*.config.ts",
     ],
   }
 );
