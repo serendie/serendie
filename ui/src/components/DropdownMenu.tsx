@@ -87,6 +87,7 @@ export type DropdownMenuProps = {
   title: string;
   items: MenuItemProps[];
   disabled?: boolean;
+  icon?: React.ReactElement;
 };
 
 export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
@@ -94,6 +95,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
   title,
   items,
   disabled,
+  icon,
   ...restProps
 }) => {
   /* variant なし */
@@ -104,7 +106,15 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
       <ArkMenu.Trigger asChild>
         {isIconMenu ? (
           <IconButton
-            icon={<SerendieSymbol name="menu" />}
+            icon={
+              icon || (
+                <SerendieSymbol
+                  name="more-vertical"
+                  size={24}
+                  className={styles.buttonIcon}
+                />
+              )
+            }
             shape="rectangle"
             disabled={disabled}
             styleType="outlined"
