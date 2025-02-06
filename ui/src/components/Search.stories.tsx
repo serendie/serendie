@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Search } from "./Search";
 import figma from "@figma/code-connect";
-import { css } from "../../styled-system/css";
 
 const items = [
   "React",
