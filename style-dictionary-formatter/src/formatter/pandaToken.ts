@@ -80,6 +80,8 @@ function pathConverter(path_: string[], type: string): string[] {
     path.unshift("spacing");
   } else if (pathStr.match(/\.dimension\.border\./)) {
     path.unshift("borderWidths");
+  } else if (pathStr.match(/\.dimension\.breakpoint\./)) {
+    path.unshift("sizes");
   } else if (pathStr.match(/\.system\.typography\./)) {
     path.unshift("textStyles");
   } else {
