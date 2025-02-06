@@ -124,11 +124,12 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
     const [variantProps, elementProps] = TextAreaStyle.splitVariantProps(props);
     const styles = TextAreaStyle(variantProps);
     const showMessageField = description || (invalid && invalidMessage);
+    const inputId = props.id || React.useId();
 
     return (
       <div className={cx(styles.root, className)}>
         {label ? (
-          <label className={styles.label}>
+          <label className={styles.label} htmlFor={inputId}>
             {label}
             {required && <span className={styles.required}>必須</span>}
           </label>
@@ -140,6 +141,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
         >
           <textarea
             ref={mergedRef}
+            id={inputId}
             placeholder={placeholder}
             required={required}
             disabled={disabled}

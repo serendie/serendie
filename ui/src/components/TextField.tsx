@@ -127,6 +127,7 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
     const styles = TextFieldStyle(variantProps);
     const showMessageField = description || (invalid && invalidMessage);
     const [_value, setValue] = React.useState(props.defaultValue || value);
+    const inputId = props.id || React.useId();
 
     const resetValue = () => {
       const e = {
@@ -150,7 +151,7 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
     return (
       <div className={cx(styles.root, className)}>
         {label ? (
-          <label className={styles.label}>
+          <label className={styles.label} htmlFor={inputId}>
             {label}
             {required && <span className={styles.required}>必須</span>}
           </label>
@@ -162,6 +163,7 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
         >
           <input
             ref={mergedRef}
+            id={inputId}
             placeholder={placeholder}
             required={required}
             disabled={disabled}
