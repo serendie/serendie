@@ -149,13 +149,12 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
 
     return (
       <div className={cx(styles.root, className)}>
-        <label className={styles.label}>
-          {label}
-          {required && (
-            // とりあえず必須メッセージはハードコード
-            <span className={styles.required}>必須</span>
-          )}
-        </label>
+        {label ? (
+          <label className={styles.label}>
+            {label}
+            {required && <span className={styles.required}>必須</span>}
+          </label>
+        ) : null}
         <div
           className={styles.inputWrapper}
           data-invalid={invalid ? true : undefined}

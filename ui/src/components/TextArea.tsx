@@ -127,13 +127,12 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
 
     return (
       <div className={cx(styles.root, className)}>
-        <label className={styles.label}>
-          {label}
-          {required && (
-            // とりあえず必須メッセージはハードコード
-            <span className={styles.required}>必須</span>
-          )}
-        </label>
+        {label ? (
+          <label className={styles.label}>
+            {label}
+            {required && <span className={styles.required}>必須</span>}
+          </label>
+        ) : null}
         <div
           className={styles.wrapper}
           data-invalid={invalid ? true : undefined}
