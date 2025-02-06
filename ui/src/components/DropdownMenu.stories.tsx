@@ -27,9 +27,9 @@ const meta: Meta<typeof DropdownMenu> = {
       control: { type: "boolean" },
       defaultValue: false,
     },
-    isIconMenu: {
-      control: { type: "boolean" },
-      defaultValue: false,
+    styleType: {
+      control: { type: "inline-radio", options: ["default", "iconButton"] },
+      defaultValue: "default",
     },
   },
 };
@@ -95,7 +95,7 @@ export const Icon: Story = {
   render: Template,
   args: {
     title: "メニュータイトル",
-    isIconMenu: true,
+    styleType: "iconButton",
     icon: <SerendieSymbol name="menu" />,
   },
 };

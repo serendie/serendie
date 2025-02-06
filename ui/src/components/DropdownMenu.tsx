@@ -83,7 +83,7 @@ export type MenuItemProps = {
 };
 
 export type DropdownMenuProps = {
-  isIconMenu?: boolean;
+  styleType?: "default" | "iconButton";
   title: string;
   items: MenuItemProps[];
   disabled?: boolean;
@@ -91,7 +91,7 @@ export type DropdownMenuProps = {
 };
 
 export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
-  isIconMenu,
+  styleType = "default",
   title,
   items,
   disabled,
@@ -104,7 +104,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
   return (
     <ArkMenu.Root {...restProps}>
       <ArkMenu.Trigger asChild>
-        {isIconMenu ? (
+        {styleType === "iconButton" ? (
           <IconButton
             icon={
               icon || (
@@ -118,6 +118,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
             shape="rectangle"
             disabled={disabled}
             styleType="outlined"
+            title={title}
           />
         ) : (
           <Button
