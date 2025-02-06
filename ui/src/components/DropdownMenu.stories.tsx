@@ -96,5 +96,6 @@ export const Icon: Story = {
   args: {
     title: "メニュータイトル",
     isIconMenu: true,
+    icon: <SerendieSymbol name="menu" />,
   },
 };
