@@ -588,6 +588,40 @@ export default {
       }
     }
   },
+  "sizes": {
+    "sd": {
+      "reference": {
+        "dimension": {
+          "breakpoint": {
+            "small": {
+              "value": "640px"
+            },
+            "medium": {
+              "value": "768px"
+            },
+            "large": {
+              "value": "1024px"
+            },
+            "extraLarge": {
+              "value": "1280px"
+            }
+          }
+        }
+      },
+      "system": {
+        "dimension": {
+          "breakpoint": {
+            "compact": {
+              "value": "0px"
+            },
+            "expanded": {
+              "value": "768px"
+            }
+          }
+        }
+      }
+    }
+  },
   "opacity": {
     "sd": {
       "reference": {
