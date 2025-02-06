@@ -1,5 +1,5 @@
 import { Combobox, ComboboxRootProps, Portal } from "@ark-ui/react";
-import { RecipeVariantProps, sva } from "../../styled-system/css";
+import { cx, RecipeVariantProps, sva } from "../../styled-system/css";
 import { Box } from "../../styled-system/jsx";
 import { SerendieSymbol } from "@serendie/symbols";
 
@@ -23,6 +23,10 @@ export const SearchStyle = sva({
   base: {
     control: {
       display: "inline-grid",
+      // 後から指定したCSSからwidthが上書きできないため、@layer componentsを指定
+      "@layer components": {
+        width: "min(100%, 300px)",
+      },
       lineHeight: "1",
       gridTemplateColumns: "auto 1fr auto",
       alignItems: "center",
@@ -144,11 +148,12 @@ export const Search: React.FC<SearchStyleProps> = ({
   items = [],
   ...props
 }) => {
-  const styles = SearchStyle(props);
+  const [variantProps, elementProps] = SearchStyle.splitVariantProps(props);
+  const styles = SearchStyle(variantProps);
 
   return (
-    <Combobox.Root items={items} lazyMount unmountOnExit {...props}>
-      <Combobox.Control className={styles.control}>
+    <Combobox.Root items={items} lazyMount unmountOnExit {...elementProps}>
+      <Combobox.Control className={cx(styles.control, elementProps.className)}>
         <div className={styles.iconBox}>
           <SerendieSymbol name="magnifying-glass" className={styles.icon} />
         </div>
