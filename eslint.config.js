@@ -11,7 +11,6 @@ const compat = new FlatCompat();
 export default tsESLint.config(
   ...compat.extends("plugin:storybook/recommended"),
   {
-    ignores: ["**/node_modules/**", "**/dist/**", "**/build/**"],
     plugins: {
       "react-refresh": reactRefresh,
       "@pandacss": pandaCss,
@@ -40,6 +39,8 @@ export default tsESLint.config(
   prettierRecommended,
   {
     ignores: [
+      "**/node_modules/",
+      "**/build/",
       "**/dist/",
       "**/styled-system/",
       "**/*.cjs",
