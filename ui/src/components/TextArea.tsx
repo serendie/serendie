@@ -130,10 +130,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
         {label ? (
           <label className={styles.label}>
             {label}
-            {required && (
-              // とりあえず必須メッセージはハードコード
-              <span className={styles.required}>必須</span>
-            )}
+            {required && <span className={styles.required}>必須</span>}
           </label>
         ) : null}
         <div
