@@ -15,15 +15,12 @@ export default defineConfig({
     lib: {
       entry: ["src/index.ts", "src/styles.css"],
       name: "Serendie",
+      formats: ["es"],
     },
     rollupOptions: {
-      // 外部化する依存関係
-      external: ["react", "react-dom"],
+      external: ["react", "react-dom", "react/jsx-runtime"],
       output: {
-        globals: {
-          react: "React",
-          "react-dom": "ReactDOM",
-        },
+        preserveModules: true,
       },
     },
     cssCodeSplit: true,
