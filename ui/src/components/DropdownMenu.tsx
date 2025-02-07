@@ -109,7 +109,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
             icon={
               icon || (
                 <SerendieSymbol
-                  name="more-vertical"
+                  name="menu"
                   size={24}
                   className={styles.buttonIcon}
                 />
