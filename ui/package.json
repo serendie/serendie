@@ -2,7 +2,7 @@
   "name": "@serendie/ui",
   "description": "Adaptive UI component library as part of Serendie Design System by Mitsubishi Electric",
   "license": "MIT",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "type": "module",
   "types": "./dist/index.d.ts",
   "scripts": {
@@ -36,7 +36,6 @@
     "styled-system": "^5.1.5"
   },
   "devDependencies": {
-    "chromatic": "^11.20.2",
     "@chromatic-com/storybook": "^1.6.1",
     "@figma/code-connect": "^1.2.1",
     "@material-design-icons/svg": "^0.14.13",
