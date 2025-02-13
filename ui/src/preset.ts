@@ -1,4 +1,3 @@
-import { Preset } from "@pandacss/dev";
 import { SerendieRecipes } from "./recipes";
 import { SerendieTokens, SerendieTypography } from "./tokens";
 import { getToken } from "./tokens/getToken";
@@ -12,7 +11,8 @@ export { themes };
 
 export const themeNames = Object.keys(themes);
 
-export const SerendiePreset: Preset = {
+export const SerendiePreset = {
+  name: "serendie",
   theme: {
     extend: {
       breakpoints: {
