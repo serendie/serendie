@@ -2,7 +2,7 @@
   "name": "@serendie/design-token",
   "description": "Design tokens as part of Serendie Design System by Mitsubishi Electric",
   "license": "MIT",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "type": "module",
   "scripts": {
     "build": "tsx buildTokens.ts",
