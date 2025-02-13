@@ -174,7 +174,13 @@ export const Select: React.FC<SelectStyleProps> = ({
       {...elementProps}
       invalid={invalid}
       className={cx(styles.root, className)}
-      positioning={{ sameWidth: true }}
+      positioning={{
+        sameWidth: true,
+        offset: {
+          mainAxis: 1,
+          crossAxis: 0,
+        },
+      }}
     >
       {label && variantProps.size != "small" && (
         // smallの場合はラベルを表示しない

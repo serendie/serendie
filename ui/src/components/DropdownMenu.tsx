@@ -102,7 +102,15 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
   const styles = DropdownMenuStyle();
 
   return (
-    <ArkMenu.Root {...restProps}>
+    <ArkMenu.Root
+      positioning={{
+        offset: {
+          mainAxis: 1,
+          crossAxis: 0,
+        },
+      }}
+      {...restProps}
+    >
       <ArkMenu.Trigger asChild>
         {styleType === "iconButton" ? (
           <IconButton
