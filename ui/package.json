@@ -61,11 +61,13 @@
     "vite-plugin-dts": "^4.2.1",
     "vite-plugin-svgr": "^4.2.0"
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
       "require": "./dist/index.cjs",
-      "import": "./dist/index.js"
+      "types": "./dist/index.d.ts"
     },
     "./css": {
       "types": "./styled-system/css/index.d.ts",
