@@ -38,8 +38,8 @@ jobs:
       - name: Setup Git User
         shell: bash
         run: |
-          git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1 -- ${{ github.event.inputs.package}})"
-          git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1 -- ${{ github.event.inputs.package}})"
+          git config --local user.email "github-actions@github.com"
+          git config --local user.name "GitHub Actions"
       - name: Setup .npmrc
         run: cp ./.npmrc.example ./.npmrc
       - run: npm ci
