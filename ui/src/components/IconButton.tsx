@@ -107,10 +107,34 @@ export const IconButtonStyle = cva({
   },
 });
 
-type ButtonProps = RecipeVariantProps<typeof IconButtonStyle> &
+type Shape = "rectangle" | "circle";
+type StyleType = "filled" | "outlined" | "ghost";
+type Size = "large" | "medium" | "small";
+
+type ButtonPropsBase = RecipeVariantProps<typeof IconButtonStyle> &
   ComponentProps<"button"> & {
     icon: React.ReactElement;
   };
+
+type RectangleProps = {
+  shape: "rectangle";
+  size?: Exclude<Size, "large">;
+};
+
+type CircleProps = {
+  shape: "circle";
+  size?: Exclude<Size, "large">;
+  styleType?: StyleType;
+};
+
+type CircleLargeProps = {
+  shape: "circle";
+  size: "large";
+  styleType?: Exclude<StyleType, "ghost">;
+};
+
+type ButtonProps = ButtonPropsBase &
+  (RectangleProps | CircleProps | CircleLargeProps);
 
 export const IconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ icon, className, ...props }, ref) => {
