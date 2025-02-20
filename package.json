@@ -19,7 +19,7 @@
     "design-tokens"
   ],
   "devDependencies": {
-    "@serendie/eslint-config": "0.1.0",
+    "@serendie/eslint-config": "github:serendie/eslint-config",
     "@types/eslint__js": "^8.42.3",
     "eslint": "^8.57.0",
     "eslint-plugin-storybook": "^0.8.0",
