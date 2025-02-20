@@ -102,7 +102,18 @@ export const Icon: Story = {
 };
 
 export const PlayClickedButton: Story = {
-  render: Template,
+  render: (args) => {
+    return (
+      <div
+        style={{
+          height: "100vh",
+          width: "100vw",
+        }}
+      >
+        <Template {...args} />
+      </div>
+    );
+  },
   args: {
     title: "メニュータイトル",
   },

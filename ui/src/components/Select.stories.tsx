@@ -78,6 +78,18 @@ export const HasError: Story = {
 };
 
 export const PlayClickedSelect: Story = {
+  render: (args) => {
+    return (
+      <div
+        style={{
+          width: "100vw",
+          height: "100vh",
+        }}
+      >
+        <Select {...args} />
+      </div>
+    );
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 

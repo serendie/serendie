@@ -80,6 +80,18 @@ export const PlayDisplayMenu: Story = {
     placeholder: "デバイスIDなどを検索",
     items,
   },
+  render: (args) => {
+    return (
+      <div
+        style={{
+          height: "100vh",
+          width: "100vw",
+        }}
+      >
+        <Search {...args} />
+      </div>
+    );
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 

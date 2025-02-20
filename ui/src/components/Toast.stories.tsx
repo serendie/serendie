@@ -120,7 +120,12 @@ export const Error: Story = {
 export const PlayClickedSelect: Story = {
   render: () => {
     return (
-      <div>
+      <div
+        style={{
+          height: "100vh",
+          width: "100vw",
+        }}
+      >
         <Button
           size="medium"
           onClick={() =>

@@ -73,7 +73,18 @@ export const Full: Story = {
 };
 
 export const PlayClickedButton: Story = {
-  render: DrawerOpenTemplate,
+  render: (args) => {
+    return (
+      <div
+        style={{
+          height: "100vh",
+          width: "100vw",
+        }}
+      >
+        <DrawerOpenTemplate {...args} />
+      </div>
+    );
+  },
   args: {
     type: "left",
   },

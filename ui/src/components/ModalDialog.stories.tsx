@@ -3,7 +3,7 @@ import { ModalDialog, ModalDialogProps } from "./ModalDialog";
 import { useState } from "react";
 import { Button } from "./Button";
 import figma from "@figma/code-connect";
-import { userEvent, within } from "@storybook/test";
+import { expect, userEvent, waitFor, within } from "@storybook/test";
 import { allModes } from "../../.storybook/modes";
 
 const meta: Meta<typeof ModalDialog> = {
@@ -74,7 +74,18 @@ export const Basic: Story = {
 };
 
 export const PlayClickedButton: Story = {
-  render: DialogOpenTemplate,
+  render: (args) => {
+    return (
+      <div
+        style={{
+          height: "100vh",
+          width: "100vw",
+        }}
+      >
+        <DialogOpenTemplate {...args} />
+      </div>
+    );
+  },
   parameters: {
     chromatic: {
       modes: {
@@ -82,12 +93,22 @@ export const PlayClickedButton: Story = {
         large: allModes["large"],
       },
     },
+    layout: "fullscreen",
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
+    if (canvasElement.parentElement === null) {
+      return;
+    }
+    const root = within(canvasElement.parentElement);
 
     const button = canvas.getByRole("button");
 
     await userEvent.click(button);
+
+    await waitFor(async () => {
+      const modalHeading = await root.findByText("Dialog Title");
+      expect(modalHeading).toBeInTheDocument();
+    });
   },
 };
