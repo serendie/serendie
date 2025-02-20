@@ -108,7 +108,7 @@ const DashboardWidgetStyle = sva({
       doubleValue: {
         areaContainer: {
           gridColumn: "span 2",
-          order: -1,
+          order: "-1",
         },
         area: {
           gridTemplateColumns: "1fr 1fr",
