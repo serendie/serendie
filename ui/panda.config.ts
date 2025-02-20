@@ -16,6 +16,20 @@ export default defineConfig({
   outdir: "styled-system",
   outExtension: "js",
   jsxFramework: "react",
+  theme: {
+    extend: {
+      tokens: {
+        colors: {
+          transparent: {
+            value: "transparent",
+          },
+          currentColor: {
+            value: "currentColor",
+          },
+        },
+      },
+    },
+  },
   presets: [
     SerendiePreset,
     {
