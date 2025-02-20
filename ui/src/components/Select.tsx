@@ -10,7 +10,9 @@ export const SelectStyle = sva({
   base: {
     root: {
       display: "inline-grid",
-      gridTemplateColumns: "minmax(auto, 300px)",
+      "@layer components": {
+        width: "min(100%, 300px)",
+      },
       rowGap: "sd.system.dimension.spacing.extraSmall",
     },
     trigger: {
@@ -109,7 +111,9 @@ export const SelectStyle = sva({
       },
       small: {
         root: {
-          gridTemplateColumns: "minmax(auto, 150px)",
+          "@layer components": {
+            width: "min(100%, 150px)",
+          },
           textStyle: {
             base: "sd.system.typography.body.small_compact",
           },
@@ -230,7 +234,7 @@ export const Select: React.FC<SelectStyleProps> = ({
         <ArkSelect.Positioner>
           <ArkSelect.Content className={styles.content}>
             <List id={id}>
-              {props.items.map((item, i) => (
+              {props.items.map((item: selectItem, i: number) => (
                 <ArkSelect.Item key={i} item={item}>
                   <ListItem
                     title={item.label}
