@@ -152,7 +152,18 @@ export const Search: React.FC<SearchStyleProps> = ({
   const styles = SearchStyle(variantProps);
 
   return (
-    <Combobox.Root items={items} lazyMount unmountOnExit {...elementProps}>
+    <Combobox.Root
+      items={items}
+      lazyMount
+      unmountOnExit
+      positioning={{
+        offset: {
+          mainAxis: 2,
+          crossAxis: 0,
+        },
+      }}
+      {...elementProps}
+    >
       <Combobox.Control className={cx(styles.control, elementProps.className)}>
         <div className={styles.iconBox}>
           <SerendieSymbol name="magnifying-glass" className={styles.icon} />
