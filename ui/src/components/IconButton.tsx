@@ -83,20 +83,20 @@ export const IconButtonStyle = cva({
     },
     size: {
       large: {
-        w: "{spacing.sd.reference.dimension.scale.17}",
-        h: "{spacing.sd.reference.dimension.scale.17}",
+        w: "sd.reference.dimension.scale.17",
+        h: "sd.reference.dimension.scale.17",
         "& svg": {
           width: "sd.reference.dimension.scale.12",
           height: "sd.reference.dimension.scale.12",
         },
       },
       medium: {
-        w: "{spacing.sd.reference.dimension.scale.13}",
-        h: "{spacing.sd.reference.dimension.scale.13}",
+        w: "sd.reference.dimension.scale.13",
+        h: "sd.reference.dimension.scale.13",
       },
       small: {
-        w: "{spacing.sd.reference.dimension.scale.10}",
-        h: "{spacing.sd.reference.dimension.scale.10}",
+        w: "sd.reference.dimension.scale.10",
+        h: "sd.reference.dimension.scale.10",
       },
     },
   },
@@ -107,7 +107,6 @@ export const IconButtonStyle = cva({
   },
 });
 
-type Shape = "rectangle" | "circle";
 type StyleType = "filled" | "outlined" | "ghost";
 type Size = "large" | "medium" | "small";
 
