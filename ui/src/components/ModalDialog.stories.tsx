@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "./Button";
 import figma from "@figma/code-connect";
 import { userEvent, within } from "@storybook/test";
+import { allModes } from "../../.storybook/modes";
 
 const meta: Meta<typeof ModalDialog> = {
   component: ModalDialog,
@@ -74,6 +75,14 @@ export const Basic: Story = {
 
 export const PlayClickedButton: Story = {
   render: DialogOpenTemplate,
+  parameters: {
+    chromatic: {
+      modes: {
+        small: allModes["small"],
+        large: allModes["large"],
+      },
+    },
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
