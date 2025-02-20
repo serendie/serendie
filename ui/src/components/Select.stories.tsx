@@ -1,5 +1,6 @@
 import { Select } from "./Select";
 import type { Meta, StoryObj } from "@storybook/react";
+import { within, userEvent, expect, fn } from "@storybook/test";
 import figma from "@figma/code-connect";
 
 const items = [
@@ -73,5 +74,15 @@ export const HasError: Story = {
     onValueChange: (v) => console.log(v),
     invalid: true,
     invalidMessage: "エラーメッセージ",
+  },
+};
+
+export const PlayClickedSelect: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    const select = canvas.getByRole("combobox");
+
+    await userEvent.click(select);
   },
 };

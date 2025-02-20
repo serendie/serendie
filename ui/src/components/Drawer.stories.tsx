@@ -4,6 +4,7 @@ import { useState } from "react";
 import { IconButton } from "./IconButton";
 import figma from "@figma/code-connect";
 import { SerendieSymbol } from "@serendie/symbols";
+import { userEvent, within } from "@storybook/test";
 
 const meta: Meta<typeof Drawer> = {
   component: Drawer,
@@ -68,5 +69,19 @@ export const Full: Story = {
   render: DrawerOpenTemplate,
   args: {
     type: "full",
+  },
+};
+
+export const PlayClickedButton: Story = {
+  render: DrawerOpenTemplate,
+  args: {
+    type: "left",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    const button = canvas.getByRole("button");
+
+    await userEvent.click(button);
   },
 };

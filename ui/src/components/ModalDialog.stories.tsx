@@ -3,6 +3,7 @@ import { ModalDialog, ModalDialogProps } from "./ModalDialog";
 import { useState } from "react";
 import { Button } from "./Button";
 import figma from "@figma/code-connect";
+import { userEvent, within } from "@storybook/test";
 
 const meta: Meta<typeof ModalDialog> = {
   component: ModalDialog,
@@ -69,4 +70,15 @@ const DialogOpenTemplate = (args: ModalDialogProps) => {
 
 export const Basic: Story = {
   render: DialogOpenTemplate,
+};
+
+export const PlayClickedButton: Story = {
+  render: DialogOpenTemplate,
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    const button = canvas.getByRole("button");
+
+    await userEvent.click(button);
+  },
 };
