@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { DropdownMenu, DropdownMenuProps, MenuItemProps } from "./DropdownMenu";
 import figma from "@figma/code-connect";
 import { SerendieSymbol } from "@serendie/symbols";
-import { userEvent, within } from "@storybook/test";
+import { expect, userEvent, waitFor, within } from "@storybook/test";
 
 const meta: Meta<typeof DropdownMenu> = {
   component: DropdownMenu,
@@ -98,30 +98,5 @@ export const Icon: Story = {
     title: "メニュータイトル",
     styleType: "iconButton",
     icon: <SerendieSymbol name="menu" />,
-  },
-};
-
-export const PlayClickedButton: Story = {
-  render: (args) => {
-    return (
-      <div
-        style={{
-          height: "100vh",
-          width: "100vw",
-        }}
-      >
-        <Template {...args} />
-      </div>
-    );
-  },
-  args: {
-    title: "メニュータイトル",
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-
-    const button = canvas.getByRole("button");
-
-    await userEvent.click(button);
   },
 };

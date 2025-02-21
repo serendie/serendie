@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Search } from "./Search";
 import figma from "@figma/code-connect";
 import { userEvent, within } from "@storybook/test";
+import { FullscreenLayout } from "../../.storybook/FullscreenLayout";
 
 const items = [
   "React",
@@ -74,6 +75,9 @@ export const Disabled: Story = {
 };
 
 export const PlayDisplayMenu: Story = {
+  parameters: {
+    layout: "fullscreen",
+  },
   args: {
     onInputValueChange: (v) => console.log(v),
     disabled: false,
@@ -82,14 +86,9 @@ export const PlayDisplayMenu: Story = {
   },
   render: (args) => {
     return (
-      <div
-        style={{
-          height: "100vh",
-          width: "100vw",
-        }}
-      >
+      <FullscreenLayout>
         <Search {...args} />
-      </div>
+      </FullscreenLayout>
     );
   },
   play: async ({ canvasElement }) => {

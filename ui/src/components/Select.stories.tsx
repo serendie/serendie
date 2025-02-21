@@ -2,6 +2,7 @@ import { Select } from "./Select";
 import type { Meta, StoryObj } from "@storybook/react";
 import { within, userEvent, expect, fn } from "@storybook/test";
 import figma from "@figma/code-connect";
+import { FullscreenLayout } from "../../.storybook/FullscreenLayout";
 
 const items = [
   { label: "React", value: "React" },
@@ -78,16 +79,14 @@ export const HasError: Story = {
 };
 
 export const PlayClickedSelect: Story = {
+  parameters: {
+    layout: "fullscreen",
+  },
   render: (args) => {
     return (
-      <div
-        style={{
-          width: "100vw",
-          height: "100vh",
-        }}
-      >
+      <FullscreenLayout>
         <Select {...args} />
-      </div>
+      </FullscreenLayout>
     );
   },
   play: async ({ canvasElement }) => {

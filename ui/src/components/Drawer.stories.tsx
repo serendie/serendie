@@ -5,6 +5,7 @@ import { IconButton } from "./IconButton";
 import figma from "@figma/code-connect";
 import { SerendieSymbol } from "@serendie/symbols";
 import { userEvent, within } from "@storybook/test";
+import { FullscreenLayout } from "../../.storybook/FullscreenLayout";
 
 const meta: Meta<typeof Drawer> = {
   component: Drawer,
@@ -73,16 +74,14 @@ export const Full: Story = {
 };
 
 export const PlayClickedButton: Story = {
+  parameters: {
+    layout: "fullscreen",
+  },
   render: (args) => {
     return (
-      <div
-        style={{
-          height: "100vh",
-          width: "100vw",
-        }}
-      >
+      <FullscreenLayout>
         <DrawerOpenTemplate {...args} />
-      </div>
+      </FullscreenLayout>
     );
   },
   args: {

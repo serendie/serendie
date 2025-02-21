@@ -5,6 +5,7 @@ import { Button } from "./Button";
 import figma from "@figma/code-connect";
 import { expect, userEvent, waitFor, within } from "@storybook/test";
 import { allModes } from "../../.storybook/modes";
+import { FullscreenLayout } from "../../.storybook/FullscreenLayout";
 
 const meta: Meta<typeof ModalDialog> = {
   component: ModalDialog,
@@ -76,14 +77,9 @@ export const Basic: Story = {
 export const PlayClickedButton: Story = {
   render: (args) => {
     return (
-      <div
-        style={{
-          height: "100vh",
-          width: "100vw",
-        }}
-      >
+      <FullscreenLayout>
         <DialogOpenTemplate {...args} />
-      </div>
+      </FullscreenLayout>
     );
   },
   parameters: {

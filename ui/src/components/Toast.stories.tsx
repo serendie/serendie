@@ -4,6 +4,7 @@ import { Button } from "./Button";
 import { Stack } from "../../styled-system/jsx";
 import figma from "@figma/code-connect";
 import { userEvent, within } from "@storybook/test";
+import { FullscreenLayout } from "../../.storybook/FullscreenLayout";
 
 const meta: Meta<typeof Toast> = {
   component: Toast,
@@ -118,14 +119,12 @@ export const Error: Story = {
 };
 
 export const PlayClickedSelect: Story = {
+  parameters: {
+    layout: "fullscreen",
+  },
   render: () => {
     return (
-      <div
-        style={{
-          height: "100vh",
-          width: "100vw",
-        }}
-      >
+      <FullscreenLayout>
         <Button
           size="medium"
           onClick={() =>
@@ -138,7 +137,7 @@ export const PlayClickedSelect: Story = {
           Show Toast
         </Button>
         <Toast toaster={toaster} />
-      </div>
+      </FullscreenLayout>
     );
   },
   play: async ({ canvasElement }) => {
