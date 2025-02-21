@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { DropdownMenu, DropdownMenuProps, MenuItemProps } from "./DropdownMenu";
 import figma from "@figma/code-connect";
 import { SerendieSymbol } from "@serendie/symbols";
+import { expect, userEvent, waitFor, within } from "@storybook/test";
 
 const meta: Meta<typeof DropdownMenu> = {
   component: DropdownMenu,

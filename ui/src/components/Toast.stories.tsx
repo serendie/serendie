@@ -3,6 +3,8 @@ import { Toast, toaster } from "./Toast";
 import { Button } from "./Button";
 import { Stack } from "../../styled-system/jsx";
 import figma from "@figma/code-connect";
+import { userEvent, within } from "@storybook/test";
+import { FullscreenLayout } from "../../.storybook/FullscreenLayout";
 
 const meta: Meta<typeof Toast> = {
   component: Toast,
@@ -113,5 +115,36 @@ export const Error: Story = {
         <Toast toaster={toaster} />
       </div>
     );
+  },
+};
+
+export const PlayClickedSelect: Story = {
+  parameters: {
+    layout: "fullscreen",
+  },
+  render: () => {
+    return (
+      <FullscreenLayout>
+        <Button
+          size="medium"
+          onClick={() =>
+            toaster.create({
+              title: "通知メッセージ",
+              duration: 3000,
+            })
+          }
+        >
+          Show Toast
+        </Button>
+        <Toast toaster={toaster} />
+      </FullscreenLayout>
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    const select = canvas.getByRole("button");
+
+    await userEvent.click(select);
   },
 };

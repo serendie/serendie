@@ -1,6 +1,9 @@
 import { Select } from "./Select";
 import type { Meta, StoryObj } from "@storybook/react";
+import { within, userEvent, expect, fn } from "@storybook/test";
 import figma from "@figma/code-connect";
+import { FullscreenLayout } from "../../.storybook/FullscreenLayout";
+import { allModes } from "../../.storybook/modes";
 
 const items = [
   { label: "React", value: "React" },
@@ -76,10 +79,30 @@ export const HasError: Story = {
   },
 };
 
-export const CustomWidth: Story = {
-  args: {
-    width: "500px",
-    label: "カスタム幅のSelect",
-    placeholder: "幅を指定できます",
+export const PlayClickedSelect: Story = {
+  parameters: {
+    layout: "fullscreen",
+    viewport: {
+      defaultViewport: "large",
+    },
+    chromatic: {
+      modes: {
+        small: allModes["small"],
+      },
+    },
+  },
+  render: (args) => {
+    return (
+      <FullscreenLayout>
+        <Select {...args} />
+      </FullscreenLayout>
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    const select = canvas.getByRole("combobox");
+
+    await userEvent.click(select);
   },
 };

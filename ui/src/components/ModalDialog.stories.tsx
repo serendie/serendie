@@ -3,6 +3,9 @@ import { ModalDialog, ModalDialogProps } from "./ModalDialog";
 import { useState } from "react";
 import { Button } from "./Button";
 import figma from "@figma/code-connect";
+import { expect, userEvent, waitFor, within } from "@storybook/test";
+import { allModes } from "../../.storybook/modes";
+import { FullscreenLayout } from "../../.storybook/FullscreenLayout";
 
 const meta: Meta<typeof ModalDialog> = {
   component: ModalDialog,
@@ -69,4 +72,39 @@ const DialogOpenTemplate = (args: ModalDialogProps) => {
 
 export const Basic: Story = {
   render: DialogOpenTemplate,
+};
+
+export const PlayClickedButton: Story = {
+  render: (args) => {
+    return (
+      <FullscreenLayout>
+        <DialogOpenTemplate {...args} />
+      </FullscreenLayout>
+    );
+  },
+  parameters: {
+    chromatic: {
+      modes: {
+        small: allModes["small"],
+        large: allModes["large"],
+      },
+    },
+    layout: "fullscreen",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    if (canvasElement.parentElement === null) {
+      return;
+    }
+    const root = within(canvasElement.parentElement);
+
+    const button = canvas.getByRole("button");
+
+    await userEvent.click(button);
+
+    await waitFor(async () => {
+      const modalHeading = await root.findByText("Dialog Title");
+      expect(modalHeading).toBeInTheDocument();
+    });
+  },
 };

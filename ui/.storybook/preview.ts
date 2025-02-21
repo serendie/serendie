@@ -3,9 +3,13 @@ import "../src/styles.css";
 import type { Preview, ReactRenderer } from "@storybook/react";
 import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import { themeNames } from "../src/preset";
+import { viewports } from "./modes";
 
 const preview: Preview = {
   parameters: {
+    viewport: {
+      viewports: viewports,
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,

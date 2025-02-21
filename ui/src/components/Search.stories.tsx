@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Search } from "./Search";
 import figma from "@figma/code-connect";
+import { userEvent, within } from "@storybook/test";
+import { FullscreenLayout } from "../../.storybook/FullscreenLayout";
 
 const items = [
   "React",
@@ -69,5 +71,33 @@ export const Disabled: Story = {
     disabled: true,
     placeholder: "デバイスIDなどを検索",
     items,
+  },
+};
+
+export const PlayDisplayMenu: Story = {
+  parameters: {
+    layout: "fullscreen",
+  },
+  args: {
+    onInputValueChange: (v) => console.log(v),
+    disabled: false,
+    placeholder: "デバイスIDなどを検索",
+    items,
+  },
+  render: (args) => {
+    return (
+      <FullscreenLayout>
+        <Search {...args} />
+      </FullscreenLayout>
+    );
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    const button = canvas.getByRole("button");
+
+    await userEvent.type(button, "a");
+
+    await userEvent.click(button);
   },
 };
