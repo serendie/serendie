@@ -75,3 +75,11 @@ export const HasError: Story = {
     invalidMessage: "エラーメッセージ",
   },
 };
+
+export const CustomWidth: Story = {
+  args: {
+    width: "500px",
+    label: "カスタム幅のSelect",
+    placeholder: "幅を指定できます",
+  },
+};
