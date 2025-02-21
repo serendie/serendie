@@ -107,7 +107,6 @@ export const IconButtonStyle = cva({
   },
 });
 
-type Shape = "rectangle" | "circle";
 type StyleType = "filled" | "outlined" | "ghost";
 type Size = "large" | "medium" | "small";
 
