@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { within, userEvent, expect, fn } from "@storybook/test";
 import figma from "@figma/code-connect";
 import { FullscreenLayout } from "../../.storybook/FullscreenLayout";
+import { allModes } from "../../.storybook/modes";
 
 const items = [
   { label: "React", value: "React" },
@@ -81,6 +82,14 @@ export const HasError: Story = {
 export const PlayClickedSelect: Story = {
   parameters: {
     layout: "fullscreen",
+    viewport: {
+      defaultViewport: "large",
+    },
+    chromatic: {
+      modes: {
+        small: allModes["small"],
+      },
+    },
   },
   render: (args) => {
     return (

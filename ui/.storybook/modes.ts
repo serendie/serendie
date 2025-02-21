@@ -23,4 +23,13 @@ export const viewports = Object.entries(breakpoints).reduce<AllModes>(
   {}
 );
 
-export const allModes = viewports;
+export const allModes = Object.entries(breakpoints).reduce<{
+  [key: string]: {
+    viewport: string;
+  };
+}>((acc, [key]) => {
+  acc[key] = {
+    viewport: key,
+  };
+  return acc;
+}, {});
