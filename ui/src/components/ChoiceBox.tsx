@@ -2,12 +2,12 @@ import {
   checkboxCheckedIconCss,
   checkboxIconCss,
   checkboxUncheckedIconCss,
-} from "./CheckBox";
+} from "./styles/checkbox.styles";
 import {
   radioCheckedIconCss,
   radioIconCss,
   radioUncheckedIconCss,
-} from "./RadioButton";
+} from "./styles/radio.styles";
 import { RadioGroup, RadioGroupItemProps } from "@ark-ui/react";
 import RadioChecked from "../assets/radioChecked.svg?react";
 import RadioUnChecked from "../assets/radioUnchecked.svg?react";
