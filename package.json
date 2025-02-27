@@ -15,8 +15,7 @@
     "test": "npm run test:ui"
   },
   "workspaces": [
-    "ui",
-    "design-tokens"
+    "ui"
   ],
   "devDependencies": {
     "@eslint/eslintrc": "^3.1.0",
