@@ -24,7 +24,6 @@ export * from "./components/RadioButton.tsx";
 export * from "./components/RadioGroup.tsx";
 export * from "./components/Search.tsx";
 export * from "./components/Select.tsx";
-export * from "./components/SvgIcon.tsx";
 export * from "./components/Switch.tsx";
 export * from "./components/TabItem.tsx";
 export * from "./components/Tabs.tsx";
