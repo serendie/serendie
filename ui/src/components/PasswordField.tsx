@@ -27,6 +27,7 @@ export const PasswordField = forwardRef<HTMLInputElement, PasswordFieldProps>(
         onClick={togglePasswordVisibility}
         styleType="ghost"
         size="small"
+        shape="circle"
         aria-label={showPassword ? "パスワードを隠す" : "パスワードを表示"}
         icon={
           <SerendieSymbol
