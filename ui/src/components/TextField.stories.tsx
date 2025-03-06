@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { TextField } from "./TextField";
 import figma from "@figma/code-connect";
+import { SerendieSymbol } from "@serendie/symbols";
 
 const meta: Meta<typeof TextField> = {
   component: TextField,
@@ -55,5 +56,27 @@ export const Disabled: Story = {
 export const HasError: Story = {
   args: {
     invalid: true,
+  },
+};
+
+export const WithStartContent: Story = {
+  args: {
+    startContent: <SerendieSymbol name='magnifying-glass' size={20} />,
+    placeholder: "検索キーワードを入力",
+  },
+};
+
+export const WithEndContent: Story = {
+  args: {
+    endContent: <SerendieSymbol name='information' size={20} />,
+    placeholder: "情報を入力",
+  },
+};
+
+export const WithBothContents: Story = {
+  args: {
+    startContent: <SerendieSymbol name="mail" size={20} />,
+    endContent: <SerendieSymbol name='information' size={20} />,
+    placeholder: "メールアドレスを入力",
   },
 };
