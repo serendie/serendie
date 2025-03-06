@@ -5,21 +5,6 @@ import figma from "@figma/code-connect";
 const meta: Meta<typeof PasswordField> = {
   component: PasswordField,
   parameters: {
-    design: {
-      type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=5113-4273",
-      props: {
-        label: figma.string("Label"),
-        disabled: figma.enum("State", { Disabled: true }),
-        invalid: figma.enum("State", { Error: true }),
-        invalidMessage: figma.string("InvalidMessage"),
-        description: figma.string("Description"),
-        placeholder: figma.string("Placeholder"),
-        required: figma.boolean("Required"),
-        disableToggle: figma.boolean("DisableToggle"),
-      },
-      examples: [FigmaExample],
-    },
     controls: {
       expanded: true,
     },
