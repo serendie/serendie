@@ -30,6 +30,8 @@ const meta: Meta<typeof PasswordField> = {
     required: true,
     disabled: false,
     invalid: false,
+    label: "パスワード",
+    placeholder: "パスワードを入力",
     invalidMessage: "パスワードは8文字以上必要です",
     description:
       "大文字、小文字、数字を含む8文字以上のパスワードを設定してください",

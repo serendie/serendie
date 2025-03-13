@@ -14,16 +14,7 @@ type PasswordFieldProps = Omit<
 };
 
 export const PasswordField = forwardRef<HTMLInputElement, PasswordFieldProps>(
-  (
-    {
-      disableToggle = false,
-      disabled,
-      label = "パスワード",
-      placeholder = "パスワードを入力",
-      ...props
-    },
-    ref
-  ) => {
+  ({ disableToggle = false, disabled, ...props }, ref) => {
     const [showPassword, setShowPassword] = useState(false);
 
     const togglePasswordVisibility = () => {
@@ -53,8 +44,6 @@ export const PasswordField = forwardRef<HTMLInputElement, PasswordFieldProps>(
         type={showPassword ? "text" : "password"}
         rightContent={toggleButton}
         disabled={disabled}
-        label={label}
-        placeholder={placeholder}
         {...props}
         ref={ref}
       />
