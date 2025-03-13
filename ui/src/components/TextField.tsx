@@ -10,6 +10,8 @@ const TextFieldStyle = sva({
     "label",
     "required",
     "inputWrapper",
+    "leftContent",
+    "rightContent",
     "input",
     "icon",
     "messageField",
@@ -39,7 +41,7 @@ const TextFieldStyle = sva({
     inputWrapper: {
       height: 48,
       display: "grid",
-      gridTemplateColumns: "1fr auto",
+      gridTemplateColumns: "auto 1fr auto auto",
       alignItems: "center",
       outlineStyle: "solid",
       outlineWidth: "sd.system.dimension.border.medium",
@@ -61,6 +63,12 @@ const TextFieldStyle = sva({
       _invalid: {
         outlineColor: "sd.system.color.impression.negative",
       },
+    },
+    leftContent: {
+      paddingLeft: "sd.system.dimension.spacing.medium",
+    },
+    rightContent: {
+      paddingRight: "sd.system.dimension.spacing.medium",
     },
     input: {
       outline: "none",
@@ -100,6 +108,8 @@ type Props = {
   description?: string;
   invalid?: boolean;
   invalidMessage?: string;
+  leftContent?: React.ReactNode;
+  rightContent?: React.ReactNode;
 } & React.ComponentPropsWithoutRef<"input">;
 
 export const TextField = forwardRef<HTMLInputElement, Props>(
@@ -116,6 +126,8 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
       onChange,
       value,
       className,
+      leftContent,
+      rightContent,
       ...props
     },
     ref
@@ -161,6 +173,11 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
           data-invalid={invalid ? true : undefined}
           data-disabled={disabled ? true : undefined}
         >
+          {leftContent ? (
+            <div className={styles.leftContent}>{leftContent}</div>
+          ) : (
+            <div></div>
+          )}
           <input
             ref={mergedRef}
             id={inputId}
@@ -173,27 +190,31 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
             onChange={onValueChange}
             {...elementProps}
           />
-          <div className={styles.icon}>
-            {!disabled &&
-              /* disabledの場合はアイコンを表示しない */
-              (invalid ? (
-                <span
-                  className={css({
-                    color: "sd.system.color.impression.negative",
-                  })}
-                >
-                  <SerendieSymbol name="alert-circle" size={20} />
-                </span>
-              ) : _value ? (
-                <button
-                  className={css({ cursor: "pointer" })}
-                  onClick={resetValue}
-                  aria-label="値をクリア"
-                >
-                  <SerendieSymbol name="close" size={20} />
-                </button>
-              ) : null)}
-          </div>
+          {rightContent ? (
+            <div className={styles.rightContent}>{rightContent}</div>
+          ) : (
+            <div className={styles.icon}>
+              {!disabled &&
+                /* disabledの場合はアイコンを表示しない */
+                (invalid ? (
+                  <span
+                    className={css({
+                      color: "sd.system.color.impression.negative",
+                    })}
+                  >
+                    <SerendieSymbol name="alert-circle" size={20} />
+                  </span>
+                ) : _value ? (
+                  <button
+                    className={css({ cursor: "pointer" })}
+                    onClick={resetValue}
+                    aria-label="値をクリア"
+                  >
+                    <SerendieSymbol name="close" size={20} />
+                  </button>
+                ) : null)}
+            </div>
+          )}
         </div>
         {showMessageField && (
           <div className={styles.messageField}>
