@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { TextField } from "./TextField";
 import figma from "@figma/code-connect";
 import { SerendieSymbol } from "@serendie/symbols";
+import { Box } from "../../styled-system/jsx";
 
 const meta: Meta<typeof TextField> = {
   component: TextField,
@@ -59,24 +60,39 @@ export const HasError: Story = {
   },
 };
 
-export const WithStartContent: Story = {
+export const WithleftContent: Story = {
   args: {
-    startContent: <SerendieSymbol name='magnifying-glass' size={20} />,
+    leftContent: <SerendieSymbol name="magnifying-glass" size={20} />,
     placeholder: "検索キーワードを入力",
   },
 };
 
-export const WithEndContent: Story = {
+export const WithrightContent: Story = {
   args: {
-    endContent: <SerendieSymbol name='information' size={20} />,
+    rightContent: <SerendieSymbol name="information" size={20} />,
     placeholder: "情報を入力",
   },
 };
 
 export const WithBothContents: Story = {
   args: {
-    startContent: <SerendieSymbol name="mail" size={20} />,
-    endContent: <SerendieSymbol name='information' size={20} />,
+    leftContent: <SerendieSymbol name="mail" size={20} />,
+    rightContent: <SerendieSymbol name="information" size={20} />,
     placeholder: "メールアドレスを入力",
+  },
+};
+
+export const WithText: Story = {
+  args: {
+    leftContent: (
+      <Box
+        textStyle="sd.system.typography.label.medium_compact"
+        color={"sd.system.color.component.onSurfaceVariant"}
+      >
+        serendie.design/
+      </Box>
+    ),
+    placeholder: "URLを入力",
+    label: "URL",
   },
 };

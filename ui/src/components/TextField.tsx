@@ -10,8 +10,8 @@ const TextFieldStyle = sva({
     "label",
     "required",
     "inputWrapper",
-    "startContent",
-    "endContent",
+    "leftContent",
+    "rightContent",
     "input",
     "icon",
     "messageField",
@@ -64,10 +64,10 @@ const TextFieldStyle = sva({
         outlineColor: "sd.system.color.impression.negative",
       },
     },
-    startContent: {
+    leftContent: {
       paddingLeft: "sd.system.dimension.spacing.medium",
     },
-    endContent: {
+    rightContent: {
       paddingRight: "sd.system.dimension.spacing.medium",
     },
     input: {
@@ -108,8 +108,8 @@ type Props = {
   description?: string;
   invalid?: boolean;
   invalidMessage?: string;
-  startContent?: React.ReactNode;
-  endContent?: React.ReactNode;
+  leftContent?: React.ReactNode;
+  rightContent?: React.ReactNode;
 } & React.ComponentPropsWithoutRef<"input">;
 
 export const TextField = forwardRef<HTMLInputElement, Props>(
@@ -126,8 +126,8 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
       onChange,
       value,
       className,
-      startContent,
-      endContent,
+      leftContent,
+      rightContent,
       ...props
     },
     ref
@@ -173,8 +173,8 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
           data-invalid={invalid ? true : undefined}
           data-disabled={disabled ? true : undefined}
         >
-          {startContent ? (
-            <div className={styles.startContent}>{startContent}</div>
+          {leftContent ? (
+            <div className={styles.leftContent}>{leftContent}</div>
           ) : (
             <div></div>
           )}
@@ -190,8 +190,8 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
             onChange={onValueChange}
             {...elementProps}
           />
-          {endContent ? (
-            <div className={styles.endContent}>{endContent}</div>
+          {rightContent ? (
+            <div className={styles.rightContent}>{rightContent}</div>
           ) : (
             <div className={styles.icon}>
               {!disabled &&

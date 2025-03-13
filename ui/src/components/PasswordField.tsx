@@ -5,7 +5,7 @@ import { IconButton } from "./IconButton";
 
 type PasswordFieldProps = Omit<
   React.ComponentProps<typeof TextField>,
-  "type" | "endContent"
+  "type" | "rightContent"
 > & {
   /**
    * パスワードの表示/非表示切り替えを無効にする
@@ -14,7 +14,16 @@ type PasswordFieldProps = Omit<
 };
 
 export const PasswordField = forwardRef<HTMLInputElement, PasswordFieldProps>(
-  ({ disableToggle = false, ...props }, ref) => {
+  (
+    {
+      disableToggle = false,
+      disabled,
+      label = "パスワード",
+      placeholder = "パスワードを入力",
+      ...props
+    },
+    ref
+  ) => {
     const [showPassword, setShowPassword] = useState(false);
 
     const togglePasswordVisibility = () => {
@@ -29,6 +38,7 @@ export const PasswordField = forwardRef<HTMLInputElement, PasswordFieldProps>(
         size="small"
         shape="circle"
         aria-label={showPassword ? "パスワードを隠す" : "パスワードを表示"}
+        disabled={disabled}
         icon={
           <SerendieSymbol
             name={showPassword ? "eye-hidden" : "eye"}
@@ -41,7 +51,10 @@ export const PasswordField = forwardRef<HTMLInputElement, PasswordFieldProps>(
     return (
       <TextField
         type={showPassword ? "text" : "password"}
-        endContent={toggleButton}
+        rightContent={toggleButton}
+        disabled={disabled}
+        label={label}
+        placeholder={placeholder}
         {...props}
         ref={ref}
       />
