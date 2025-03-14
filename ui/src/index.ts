@@ -19,6 +19,7 @@ export * from "./components/List.tsx";
 export * from "./components/ListItem.tsx";
 export * from "./components/ModalDialog.tsx";
 export * from "./components/NotificationBadge.tsx";
+export * from "./components/PasswordField.tsx";
 export * from "./components/ProgressIndicator.tsx";
 export * from "./components/RadioButton.tsx";
 export * from "./components/RadioGroup.tsx";
