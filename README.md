@@ -13,10 +13,12 @@
 [![X](https://img.shields.io/twitter/follow/SerendieDesign)](https://x.com/SerendieDesign/)
 
 </div>
+<br/>
 
-[Serendie Design System](https://serendie.design/)は、多様な事業と人々をつなぎ、新たな価値を生み出すための三菱電機によるオープンなデザインシステムです。デザインと開発の共通言語となる[デザイントークン](https://github.com/serendie/design-token)、それをベースにしたUIコンポーネント集 Serendie UI、アイコン集[Serendie Symbols](https://github.com/serendie/serendie-symbols)などを提供しています。
+[Serendie Design System](https://serendie.design/)は、多様な事業と人々をつなぎ、新たな価値を生み出すための三菱電機によるオープンなデザインシステムです。<br/>
+[デザイントークン](https://github.com/serendie/design-token)や[Serendie Symbols](https://github.com/serendie/serendie-symbols)など複数のリポジトリから構成され、本リポジトリはSerendie UIを扱います。
 
-## Serendie UI
+# Serendie UI
 
 [Serendie UI Kit (Figma)](https://www.figma.com/community/file/1433690846108785966)と対となるReactベースのUIコンポーネント集です。Figma Code Connectにも対応しており、Storybookと同等の内容が[Figma Devモードでも確認](https://serendie.design/get-started/dev/#section-1)できます。
 
@@ -24,7 +26,7 @@
 
 ### インストール
 
-[デザイントークン](https://github.com/serendie/design-token)も同梱されるので同時インストールは不要です。
+[デザイントークン](https://github.com/serendie/design-token)も同梱されます。
 
 ```
 npm install @serendie/ui
@@ -32,7 +34,7 @@ npm install @serendie/ui
 
 ### プロジェクトへの導入
 
-rootのCSSに対して、次の2行を設定してください。1行目は、Serendie UIに対して、スタイルを適切に当てるためにカスケードレイヤーの指定をするもの、2行目は同梱のデザイントークンやデフォルトスタイルを読み込むものです。
+rootのCSSに対して下記を指定してください。1行目は、Serendie UIに対して、スタイルを適切に当てるためにカスケードレイヤーの指定をするもの、2行目は同梱のデザイントークンやデフォルトスタイルを読み込むものです。
 
 ```css
 @layer reset, base, tokens, recipes, utilities;
@@ -41,7 +43,7 @@ rootのCSSに対して、次の2行を設定してください。1行目は、Se
 
 ### コンポーネントを使う
 
-使いたいComponentをimportしたうえで、通常のReact Componentとして使用してください。各Componentが持つpropsについては、[ドキュメント](https://serendie.design/components/button/)や、[Storybook](https://storybook.serendie.design/?path=/story/components-button--medium)、Figma Code Connectを参照してください。
+各Componentのpropsについては、[ドキュメント](https://serendie.design/components/button/)や、[Storybook](https://storybook.serendie.design/?path=/story/components-button--medium)、Figma Code Connectを参照してください。
 
 ```js
 import { Button } from "@serendie/ui";
@@ -77,7 +79,7 @@ export default defineConfig({
 
 より実践的な例は、こちらの[サンプルプロジェクト](https://github.com/serendie/bootcamp?tab=readme-ov-file#%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%A8%E4%BD%B5%E7%94%A8%E3%81%99%E3%82%8B)を参考にしてください。
 
-### APIを詳しく知る
+## APIを詳しく知る
 
 Serendie UIはヘッドレスUIとして、[Ark UI](https://ark-ui.com/)を内部的に利用しており、各コンポーネントのAPIはArk UIを継承します。Selectコンポーネントなどインタラクションが複雑なコンポーネントは、Ark UIの[APIリファレンス](https://ark-ui.com/react/docs/components/select#api-reference)を合わせて参照してください。
 
