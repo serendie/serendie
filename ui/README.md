@@ -1,8 +1,6 @@
 # Serendie UI
 
-
 [![GitHub](https://img.shields.io/github/license/serendie/serendie?style=flat)](https://github.com/serendie/serendie/blob/main/LICENSE)
-[![NPM Version](https://img.shields.io/npm/v/%40serendie%2Fui)](https://www.npmjs.com/package/@serendie/ui)
 [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@main/badge/badge-storybook.svg)](https://storybook.serendie.design/)
 
 [Serendie UI Kit (Figma)](https://www.figma.com/community/file/1433690846108785966)と対となるReactベースのUIコンポーネント集です。Figma Code Connectにも対応しており、Storybookと同等の内容が[Figma Devモードでも確認](https://serendie.design/get-started/dev/#section-1)できます。
@@ -33,7 +31,7 @@ rootのCSSに対して、次の2行を設定してください。1行目は、Se
 ```js
 import { Button } from "@serendie/ui";
 
-<Button size="medium">Login</Button>
+<Button size="medium">Login</Button>;
 ```
 
 ### テーマ切り替え
