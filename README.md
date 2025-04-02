@@ -60,7 +60,7 @@ Serendie Design Systemには5つのカラーテーマがあり、デザイント
 
 ## スタイリングライブラリと併用する
 
-あるコンポーネントのmarginを微修正したいなど、Serendie UIのスタイルをカスタムしたいシーンでは、プロジェクト側にスタイリングライブラリ(CSS-in-JSなど)を導入してください。どのスタイリングライブラリでも併用は可能ですが、ここではSerendie UIの内部でも使用している[Panda CSS](https://panda-css.com/)の例を紹介します。
+マージンを微修正したいなど、Serendie UIのスタイルをカスタムしたいシーンでは、プロジェクト側にスタイリングライブラリ(CSS-in-JSなど)を導入してください。どのスタイリングライブラリでも併用は可能ですが、ここではSerendie UIの内部でも使用している[Panda CSS](https://panda-css.com/)の例を紹介します。
 
 ### SerendiePresetの追加
 
@@ -77,7 +77,7 @@ export default defineConfig({
 
 より実践的な例は、こちらの[サンプルプロジェクト](https://github.com/serendie/bootcamp?tab=readme-ov-file#%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%A8%E4%BD%B5%E7%94%A8%E3%81%99%E3%82%8B)を参考にしてください。
 
-## APIを詳しく知る
+### APIを詳しく知る
 
 Serendie UIはヘッドレスUIとして、[Ark UI](https://ark-ui.com/)を内部的に利用しており、各コンポーネントのAPIはArk UIを継承します。Selectコンポーネントなどインタラクションが複雑なコンポーネントは、Ark UIの[APIリファレンス](https://ark-ui.com/react/docs/components/select#api-reference)を合わせて参照してください。
 
@@ -90,7 +90,7 @@ npm run dev
 npm run build
 ```
 
-## Figma Code Connect
+### Figma Code Connect
 
 Serendie UIでは、Figma Code ConnectをStorybookと繋ぎこむ形で導入しています。下記のコマンドで各コンポーネント毎のstoriesファイルの内容を、Figmaにpublishします。
 
