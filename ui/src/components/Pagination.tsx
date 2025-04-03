@@ -1,8 +1,8 @@
 import { Pagination as ArkPagination } from "@ark-ui/react/pagination";
-import { cx, sva } from "../../styled-system/css";
+import { cx, RecipeVariantProps, sva } from "../../styled-system/css";
 import { IconButton } from "./IconButton";
 import { SerendieSymbol } from "@serendie/symbols";
-import React, { useState } from "react";
+import React, { ComponentProps, useState } from "react";
 
 export const PaginationStyle = sva({
   slots: ["root", "item", "ellipsis", "prevTrigger", "nextTrigger"],
@@ -21,7 +21,7 @@ export const PaginationStyle = sva({
       },
       "&[data-selected]": {
         "& button": {
-          color: "sd.system.color.interaction.disabledOnSurface",
+          color: "sd.system.color.impression.primary",
           fontWeight: "bold",
         },
       },
@@ -58,13 +58,30 @@ export const PaginationStyle = sva({
       },
     },
   },
-  variants: {},
+  variants: {
+    size: {
+      medium: {
+        root: {
+          gap: "sd.system.dimension.spacing.none",
+        },
+        item: {
+          height: 32,
+          minWidth: 32,
+        },
+        ellipsis: {
+          height: 32,
+          width: 32,
+        },
+      },
+    },
+  },
   defaultVariants: {
     size: "medium",
   },
 });
 
-export type PaginationProps = {
+export type PaginationProps = ComponentProps<"div"> & 
+  RecipeVariantProps<typeof PaginationStyle> & {
   /**
    * 合計項目数
    */
@@ -91,36 +108,44 @@ export type PaginationProps = {
   className?: string;
 };
 
-export const Pagination: React.FC<PaginationProps> = ({
-  count,
-  pageSize = 10,
-  page,
-  onPageChange,
-  siblingCount = 1,
-  className,
-}) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const styles = PaginationStyle();
+export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
+  (
+    {
+      count,
+      pageSize = 10,
+      page,
+      onPageChange,
+      siblingCount = 1,
+      className,
+      size = "medium",
+      ...props
+    },
+    ref
+  ) => {
+    const [currentPage, setCurrentPage] = useState(1);
+    const styles = PaginationStyle({ size });
 
-  const handlePageChange = (details: { page: number }) => {
-    if (!page) {
-      setCurrentPage(details.page);
-    }
-    onPageChange?.(details);
-  };
+    const handlePageChange = (details: { page: number }) => {
+      if (!page) {
+        setCurrentPage(details.page);
+      }
+      onPageChange?.(details);
+    };
 
-  const paginationProps = {
-    count,
-    pageSize,
-    siblingCount,
-    ...(page ? { page } : { page: currentPage }),
-    onPageChange: handlePageChange,
-  };
+    const paginationProps = {
+      count,
+      pageSize,
+      siblingCount,
+      ...(page ? { page } : { page: currentPage }),
+      onPageChange: handlePageChange,
+    };
 
   return (
     <ArkPagination.Root
+      ref={ref}
       className={cx(styles.root, className)}
       {...paginationProps}
+      {...props}
     >
       <ArkPagination.Context>
         {(ctx) => {
@@ -194,4 +219,4 @@ export const Pagination: React.FC<PaginationProps> = ({
       </ArkPagination.Context>
     </ArkPagination.Root>
   );
-};
+});
