@@ -1,9 +1,9 @@
-import { Select } from "./Select";
-import type { Meta, StoryObj } from "@storybook/react";
-import { within, userEvent, expect, fn } from "@storybook/test";
 import figma from "@figma/code-connect";
+import type { Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/test";
 import { FullscreenLayout } from "../../.storybook/FullscreenLayout";
 import { allModes } from "../../.storybook/modes";
+import { Select } from "./Select";
 
 const items = [
   { label: "React", value: "React" },

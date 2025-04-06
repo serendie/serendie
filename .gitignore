@@ -28,4 +28,7 @@ dist-ssr
 styled-system
 styled-system-studio
 
+# Storybook
+storybook-static
+
 .npmrc
