@@ -6,14 +6,14 @@ on:
     branches:
       - main
     paths:
-      - "ui/src/**/*.stories.tsx"
+      - "src/**/*.stories.tsx"
       - ".github/workflows/publish-code-connect.yml"
   pull_request:
     types: [closed]
     branches:
       - main
     paths:
-      - "ui/src/**/*.stories.tsx"
+      - "src/**/*.stories.tsx"
       - ".github/workflows/publish-code-connect.yml"
 
 jobs:

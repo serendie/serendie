@@ -6,8 +6,6 @@ on:
       - opened
     branches:
       - main
-    paths:
-      - "ui/**"
 
 jobs:
   comment:
