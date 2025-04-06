@@ -7,15 +7,20 @@
     "prepare": "husky",
     "storybook": "npm run storybook -w @serendie/ui",
     "build:storybook": "npm run build:storybook -w @serendie/ui",
-    "build": "npm run build:ui",
+    "build": "npm run build:ui && npm run build:mcp",
     "build:ui": "npm run build -w @serendie/ui",
+    "build:mcp": "npm run build -w @serendie/mcp-server",
     "dev": "npm run dev:ui",
     "dev:ui": "npm run storybook -w @serendie/ui",
+    "dev:mcp": "npm run dev -w @serendie/mcp-server",
     "test:ui": "npm run test -w @serendie/ui",
-    "test": "npm run test:ui"
+    "test:mcp": "npm run test -w @serendie/mcp-server",
+    "test": "npm run test:ui",
+    "start:mcp": "npm start -w @serendie/mcp-server"
   },
   "workspaces": [
-    "ui"
+    "ui",
+    "mcp-server"
   ],
   "devDependencies": {
     "@eslint/eslintrc": "^3.1.0",
@@ -31,6 +36,7 @@
     "husky": "^9.1.4",
     "lint-staged": "^15.2.8",
     "prettier": "^3.3.3",
+    "tsx": "^4.19.3",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.0.0"
   },
@@ -44,7 +50,10 @@
     ]
   },
   "dependencies": {
+    "@fastify/cors": "^11.0.1",
+    "@serendie/design-token": "^1.0.0",
     "@swc/core": "^1.10.0",
-    "@swc/jest": "^0.2.37"
+    "@swc/jest": "^0.2.37",
+    "fastify": "^5.2.2"
   }
 }
