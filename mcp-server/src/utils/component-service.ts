@@ -78,6 +78,36 @@ function getUIComponents(): UIComponentInfo[] {
 }
 
 /**
+ * 事前生成されたコンポーネント情報をJSONファイルから読み込む
+ */
+export function loadGeneratedComponents(): ComponentInfo[] {
+  const jsonPath = path.resolve("./data/components.json");
+
+  if (!fs.existsSync(jsonPath)) {
+    console.error(
+      `事前生成されたコンポーネント情報が見つかりません: ${jsonPath}`
+    );
+    console.error(
+      "npm run generate を実行してコンポーネント情報を生成してください"
+    );
+    return [];
+  }
+
+  try {
+    const jsonContent = fs.readFileSync(jsonPath, "utf-8");
+    const components = JSON.parse(jsonContent) as ComponentInfo[];
+    console.error(`${components.length}個のコンポーネント情報をロードしました`);
+    return components;
+  } catch (error) {
+    console.error(
+      "コンポーネント情報の読み込み中にエラーが発生しました:",
+      error
+    );
+    return [];
+  }
+}
+
+/**
  * すべてのコンポーネント情報を取得する
  * UIコンポーネントとスタイルシステムの両方を含む
  */
@@ -90,11 +120,25 @@ export function getAllComponents(): ComponentInfo[] {
     return cachedComponents;
   }
 
-  // UIコンポーネントを取得してtypeプロパティを追加
-  const uiComponents = getUIComponents().map((comp) => ({
-    ...comp,
-    type: "ui" as const,
-  }));
+  // JSONファイルからの読み込みを試みる
+  const jsonComponents = loadGeneratedComponents();
+  if (jsonComponents.length > 0) {
+    // JSONから読み込んだコンポーネント情報をキャッシュに保存
+    cachedComponents = jsonComponents;
+    return cachedComponents;
+  }
+
+  console.error(
+    "生成済みのJSONファイルが見つからないか空です。ソースコードから解析します。"
+  );
+
+  // UIコンポーネントを取得してtypeプロパティを追加し、filePathは省略可能に
+  const uiComponents = getUIComponents().map((comp) => {
+    return {
+      ...comp,
+      type: "ui" as const,
+    };
+  });
 
   // スタイルシステムコンポーネントは現在使用しないためコメントアウト
   const styleComponents: ComponentInfo[] = [];

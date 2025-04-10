@@ -23,7 +23,6 @@ export interface ComponentInfo {
   name: string;
   props: PropInfo[];
   description?: string;
-  filePath: string;
   exportType?: "default" | "named";
 }
 
@@ -575,7 +574,6 @@ export function parseComponentProps(
     name: componentName,
     props,
     description: componentDescription,
-    filePath,
     exportType,
   };
 }

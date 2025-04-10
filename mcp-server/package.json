@@ -11,7 +11,8 @@
     "test": "jest",
     "test-client": "cd ../ui && npm test",
     "test-components": "tsx src/test-components.ts",
-    "test-styled-system": "tsx src/test-styled-system.ts"
+    "test-styled-system": "tsx src/test-styled-system.ts",
+    "generate": "tsx scripts/generate.ts"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.8.0",

@@ -1,0 +1,2424 @@
+[
+  {
+    "name": "Accordion",
+    "props": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "isLeftIcon",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "Avatar",
+    "props": [
+      {
+        "name": "src",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "alt",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "text",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "placeholder",
+        "type": "\"filled\" | \"outlined\"",
+        "required": false,
+        "isEnum": true,
+        "enumValues": [
+          "'filled'",
+          "'outlined'"
+        ],
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "size",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "Badge",
+    "props": [
+      {
+        "name": "size",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "styleColor",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "closeButton",
+        "type": "ReactElement<BadgeCloseButtonProps, string | JSXElementConstructor<any>>",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": true,
+        "genericParams": [
+          "BadgeCloseButtonProps"
+        ],
+        "inherited": false,
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "Banner",
+    "props": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "icon",
+        "type": "ReactElement<any, string | JSXElementConstructor<any>>",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "BottomNavigationItem",
+    "props": [
+      {
+        "name": "icon",
+        "type": "ReactNode",
+        "required": true,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "undefined",
+          "null",
+          "string",
+          "number",
+          "false",
+          "true",
+          "ReactElement<any, string | JSXElementConstructor<any>>",
+          "Iterable<ReactNode>",
+          "ReactPortal"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "count",
+        "type": "number",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "icon",
+        "type": "ReactNode",
+        "required": true,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "undefined",
+          "null",
+          "string",
+          "number",
+          "false",
+          "true",
+          "ReactElement<any, string | JSXElementConstructor<any>>",
+          "Iterable<ReactNode>",
+          "ReactPortal"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "count",
+        "type": "number",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "isActive",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "dot",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "Button",
+    "props": [
+      {
+        "name": "leftIcon",
+        "type": "ReactElement<any, string | JSXElementConstructor<any>>",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "rightIcon",
+        "type": "never",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "isLoading",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ButtonLoadingProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "styleType",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "size",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "leftIcon",
+        "type": "ReactElement<any, string | JSXElementConstructor<any>>",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "rightIcon",
+        "type": "never",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "isLoading",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ButtonLoadingProps",
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "CheckBox",
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "CheckBoxItemProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "helperText",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "CheckBoxItemProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "CheckBoxItemProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "helperText",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "CheckBoxItemProps",
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "ChoiceBox",
+    "props": [
+      {
+        "name": "type",
+        "type": "\"radio\" | \"checkbox\"",
+        "required": true,
+        "isEnum": true,
+        "enumValues": [
+          "'radio'",
+          "'checkbox'"
+        ],
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ChoiceBoxBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "type",
+        "type": "\"radio\" | \"checkbox\"",
+        "required": true,
+        "isEnum": true,
+        "enumValues": [
+          "'radio'",
+          "'checkbox'"
+        ],
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ChoiceBoxBaseProps",
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "DashboardWidget",
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "AreaValueProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "value",
+        "type": "number",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "AreaValueProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "unit",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "AreaValueProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "values",
+        "type": "[AreaValueProps, AreaValueProps] | [AreaValueProps] | undefined",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "undefined",
+          "[AreaValueProps, AreaValueProps]",
+          "[AreaValueProps]"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "linkTo",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "undefined",
+          "null",
+          "string",
+          "number",
+          "false",
+          "true",
+          "ReactElement<any, string | JSXElementConstructor<any>>",
+          "Iterable<ReactNode>",
+          "ReactPortal"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "Divider",
+    "props": [
+      {
+        "name": "type",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "type",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "Drawer",
+    "props": [
+      {
+        "name": "isOpen",
+        "type": "boolean",
+        "required": true,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "undefined",
+          "null",
+          "string",
+          "number",
+          "false",
+          "true",
+          "ReactElement<any, string | JSXElementConstructor<any>>",
+          "Iterable<ReactNode>",
+          "ReactPortal"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "contentClassName",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "backdropClassName",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "onOpenChange",
+        "type": "(e: { open: boolean; }) => void",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "isOpen",
+        "type": "boolean",
+        "required": true,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "undefined",
+          "null",
+          "string",
+          "number",
+          "false",
+          "true",
+          "ReactElement<any, string | JSXElementConstructor<any>>",
+          "Iterable<ReactNode>",
+          "ReactPortal"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "contentClassName",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "backdropClassName",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "onOpenChange",
+        "type": "(e: { open: boolean; }) => void",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "type",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "DropdownMenu",
+    "props": [
+      {
+        "name": "value",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "MenuItemProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "MenuItemProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "icon",
+        "type": "ReactElement<any, string | JSXElementConstructor<any>>",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "MenuItemProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "styleType",
+        "type": "\"default\" | \"iconButton\"",
+        "required": false,
+        "isEnum": true,
+        "enumValues": [
+          "'default'",
+          "'iconButton'"
+        ],
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "DropdownMenuProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "DropdownMenuProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "items",
+        "type": "MenuItemProps[]",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "DropdownMenuProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "DropdownMenuProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "icon",
+        "type": "ReactElement<any, string | JSXElementConstructor<any>>",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "DropdownMenuProps",
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "IconButton",
+    "props": [
+      {
+        "name": "shape",
+        "type": "\"rectangle\"",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "RectangleProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "size",
+        "type": "\"medium\" | \"small\"",
+        "required": false,
+        "isEnum": true,
+        "enumValues": [
+          "'medium'",
+          "'small'"
+        ],
+        "isUnion": false,
+        "isGeneric": true,
+        "genericParams": [
+          "Size",
+          "\"large\""
+        ],
+        "inherited": false,
+        "inheritedFrom": "RectangleProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "shape",
+        "type": "\"circle\"",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "CircleProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "size",
+        "type": "\"medium\" | \"small\"",
+        "required": false,
+        "isEnum": true,
+        "enumValues": [
+          "'medium'",
+          "'small'"
+        ],
+        "isUnion": false,
+        "isGeneric": true,
+        "genericParams": [
+          "Size",
+          "\"large\""
+        ],
+        "inherited": false,
+        "inheritedFrom": "CircleProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "styleType",
+        "type": "StyleType",
+        "required": false,
+        "isEnum": true,
+        "enumValues": [
+          "'filled'",
+          "'outlined'",
+          "'ghost'"
+        ],
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "CircleProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "shape",
+        "type": "\"circle\"",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "CircleLargeProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "size",
+        "type": "\"large\"",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "CircleLargeProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "styleType",
+        "type": "\"filled\" | \"outlined\"",
+        "required": false,
+        "isEnum": true,
+        "enumValues": [
+          "'filled'",
+          "'outlined'"
+        ],
+        "isUnion": false,
+        "isGeneric": true,
+        "genericParams": [
+          "StyleType",
+          "\"ghost\""
+        ],
+        "inherited": false,
+        "inheritedFrom": "CircleLargeProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "shape",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "styleType",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "size",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "icon",
+        "type": "ReactElement<any, string | JSXElementConstructor<any>>",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "ListItem",
+    "props": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ListItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ListItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "rightIcon",
+        "type": "ReactElement<any, string | JSXElementConstructor<any>>",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ListItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "leftIcon",
+        "type": "ReactElement<any, string | JSXElementConstructor<any>>",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ListItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "isLargeLeftIcon",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ListItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "badge",
+        "type": "number",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ListItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "undefined",
+          "null",
+          "string",
+          "number",
+          "false",
+          "true",
+          "ReactElement<any, string | JSXElementConstructor<any>>",
+          "Iterable<ReactNode>",
+          "ReactPortal"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ListItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ListItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "selected",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ListItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "focusVisible",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ListItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "size",
+        "type": "\"small\"",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ListItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "badge",
+        "type": "number",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "rightIcon",
+        "type": "never",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ListItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "rightIcon",
+        "type": "ReactElement<any, string | JSXElementConstructor<any>>",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ListItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "leftIcon",
+        "type": "ReactElement<any, string | JSXElementConstructor<any>>",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ListItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "isLargeLeftIcon",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ListItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "badge",
+        "type": "number",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ListItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ListItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "selected",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ListItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "focusVisible",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ListItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "size",
+        "type": "\"small\"",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ListItemBaseProps",
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "ModalDialog",
+    "props": [
+      {
+        "name": "isOpen",
+        "type": "boolean",
+        "required": true,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "undefined",
+          "null",
+          "string",
+          "number",
+          "false",
+          "true",
+          "ReactElement<any, string | JSXElementConstructor<any>>",
+          "Iterable<ReactNode>",
+          "ReactPortal"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "cancelButtonLabel",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "submitButtonLabel",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "onButtonClick",
+        "type": "() => void",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "isOpen",
+        "type": "boolean",
+        "required": true,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "undefined",
+          "null",
+          "string",
+          "number",
+          "false",
+          "true",
+          "ReactElement<any, string | JSXElementConstructor<any>>",
+          "Iterable<ReactNode>",
+          "ReactPortal"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "className",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "cancelButtonLabel",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "submitButtonLabel",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "onButtonClick",
+        "type": "() => void",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "NotificationBadge",
+    "props": [
+      {
+        "name": "count",
+        "type": "number",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "BadgeProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "count",
+        "type": "number",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "BadgeProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "size",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "variant",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "noNumber",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "position",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "PasswordField",
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "invalidMessage",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "invalid",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "leftContent",
+        "type": "ReactNode",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "undefined",
+          "null",
+          "string",
+          "number",
+          "false",
+          "true",
+          "ReactElement<any, string | JSXElementConstructor<any>>",
+          "Iterable<ReactNode>",
+          "ReactPortal"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "disableToggle",
+        "type": "boolean",
+        "required": false,
+        "description": "パスワードの表示/非表示切り替えを無効にする",
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "ProgressIndicator",
+    "props": [
+      {
+        "name": "size",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "size",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "RadioButton",
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "RadioButtonItemProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "helperText",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "RadioButtonItemProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "RadioButtonItemProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "helperText",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "RadioButtonItemProps",
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "Search",
+    "props": [
+      {
+        "name": "size",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "Select",
+    "props": [
+      {
+        "name": "placeholder",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "required",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "invalidMessage",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "placeholder",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "required",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "invalidMessage",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "Props",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "size",
+        "type": "unknown",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "Switch",
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "SwitchItemProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "helperText",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "SwitchItemProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "helperText",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "SwitchItemProps",
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "TabItem",
+    "props": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "TabItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "TabItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "dot",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "TabItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "TabItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "badge",
+        "type": "number",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "TabItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "badge",
+        "type": "number",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "dot",
+        "type": "never",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "TabItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "TabItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "dot",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "TabItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "TabItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "badge",
+        "type": "number",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "TabItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "TabItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "value",
+        "type": "string",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "TabItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "dot",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "TabItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "disabled",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "TabItemBaseProps",
+        "isFromNodeModules": false
+      },
+      {
+        "name": "badge",
+        "type": "number",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "TabItemBaseProps",
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "TextArea",
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "invalid",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "invalidMessage",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "autoAdjustHeight",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "TextField",
+    "props": [
+      {
+        "name": "label",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "description",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "invalid",
+        "type": "boolean",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "false",
+          "true"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "invalidMessage",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "leftContent",
+        "type": "ReactNode",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "undefined",
+          "null",
+          "string",
+          "number",
+          "false",
+          "true",
+          "ReactElement<any, string | JSXElementConstructor<any>>",
+          "Iterable<ReactNode>",
+          "ReactPortal"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "rightContent",
+        "type": "ReactNode",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "undefined",
+          "null",
+          "string",
+          "number",
+          "false",
+          "true",
+          "ReactElement<any, string | JSXElementConstructor<any>>",
+          "Iterable<ReactNode>",
+          "ReactPortal"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  },
+  {
+    "name": "Toast",
+    "props": [
+      {
+        "name": "toaster",
+        "type": "CreateToasterReturn",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "inheritedFrom": "ToastProps",
+        "isFromNodeModules": false
+      }
+    ],
+    "exportType": "named",
+    "type": "ui"
+  },
+  {
+    "name": "TopAppBar",
+    "props": [
+      {
+        "name": "headingIconButton",
+        "type": "ReactElement<any, string | JSXElementConstructor<any>>",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "trailingIconButtons",
+        "type": "ReactElement<any, string | JSXElementConstructor<any>>",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "badge",
+        "type": "number | undefined",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "undefined",
+          "number"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "headingIconButton",
+        "type": "ReactElement<any, string | JSXElementConstructor<any>>",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "trailingIconButtons",
+        "type": "ReactElement<any, string | JSXElementConstructor<any>>",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "badge",
+        "type": "number | undefined",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "undefined",
+          "number"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "type",
+        "type": "\"navbar\"",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "headingIconButton",
+        "type": "ReactElement<any, string | JSXElementConstructor<any>>",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "trailingIconButtons",
+        "type": "ReactElement<any, string | JSXElementConstructor<any>>",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "badge",
+        "type": "number | undefined",
+        "required": false,
+        "isEnum": false,
+        "isUnion": true,
+        "unionTypes": [
+          "undefined",
+          "number"
+        ],
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": false,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      },
+      {
+        "name": "type",
+        "type": "\"titleBar\"",
+        "required": true,
+        "isEnum": false,
+        "isUnion": false,
+        "isGeneric": false,
+        "inherited": false,
+        "isFromNodeModules": false
+      }
+    ],
+    "type": "ui"
+  }
+]
