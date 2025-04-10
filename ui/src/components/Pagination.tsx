@@ -80,33 +80,15 @@ export const PaginationStyle = sva({
   },
 });
 
-export type PaginationProps = ComponentProps<"div"> & 
+export type PaginationProps = ComponentProps<"div"> &
   RecipeVariantProps<typeof PaginationStyle> & {
-  /**
-   * 合計項目数
-   */
-  count: number;
-  /**
-   * 1ページあたりの項目数
-   */
-  pageSize?: number;
-  /**
-   * 現在のページ（制御された状態で使用する場合）
-   */
-  page?: number;
-  /**
-   * ページ変更時のコールバック
-   */
-  onPageChange?: (details: { page: number }) => void;
-  /**
-   * 現在のページの両側に表示するページ数
-   */
-  siblingCount?: number;
-  /**
-   * 追加のクラス名
-   */
-  className?: string;
-};
+    count: number;
+    pageSize?: number;
+    page?: number;
+    onPageChange?: (details: { page: number }) => void;
+    siblingCount?: number;
+    className?: string;
+  };
 
 export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
   (
@@ -140,83 +122,86 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
       onPageChange: handlePageChange,
     };
 
-  return (
-    <ArkPagination.Root
-      ref={ref}
-      className={cx(styles.root, className)}
-      {...paginationProps}
-      {...props}
-    >
-      <ArkPagination.Context>
-        {(ctx) => {
-          const isFirstPage = ctx.page <= 1;
-          const lastPage = Math.ceil(count / pageSize);
-          const isLastPage = ctx.page >= lastPage;
+    return (
+      <ArkPagination.Root
+        ref={ref}
+        className={cx(styles.root, className)}
+        {...paginationProps}
+        {...props}
+      >
+        <ArkPagination.Context>
+          {(ctx) => {
+            const isFirstPage = ctx.page <= 1;
+            const lastPage = Math.ceil(count / pageSize);
+            const isLastPage = ctx.page >= lastPage;
 
-          return (
-            <>
-              <ArkPagination.PrevTrigger
-                className={styles.prevTrigger}
-                disabled={isFirstPage}
-                aria-label={isFirstPage ? "最初のページです" : "前のページへ"}
-              >
-                <IconButton
-                  icon={<SerendieSymbol name="chevron-left" />}
-                  shape="rectangle"
-                  styleType="ghost"
-                  size="small"
-                  aria-label={isFirstPage ? "最初のページです" : "前のページへ"}
+            return (
+              <>
+                <ArkPagination.PrevTrigger
+                  className={styles.prevTrigger}
                   disabled={isFirstPage}
-                  title={isFirstPage ? "最初のページです" : "前のページへ"}
-                />
-              </ArkPagination.PrevTrigger>
+                >
+                  <IconButton
+                    icon={<SerendieSymbol name="chevron-left" />}
+                    shape="rectangle"
+                    styleType="ghost"
+                    size="small"
+                    aria-label={
+                      isFirstPage ? "最初のページです" : "前のページへ"
+                    }
+                    disabled={isFirstPage}
+                    title={isFirstPage ? "最初のページです" : "前のページへ"}
+                  />
+                </ArkPagination.PrevTrigger>
 
-              {ctx.pages.map((page, index) =>
-                page.type === "page" ? (
-                  <ArkPagination.Item
-                    key={index}
-                    {...page}
-                    className={styles.item}
-                  >
-                    <IconButton
-                      icon={<>{page.value}</>}
-                      shape="rectangle"
-                      styleType="ghost"
-                      size="small"
-                      aria-label={`ページ${page.value}へ移動`}
-                      title={`ページ${page.value}へ移動`}
-                    />
-                  </ArkPagination.Item>
-                ) : (
-                  <ArkPagination.Ellipsis
-                    key={index}
-                    index={index}
-                    className={styles.ellipsis}
-                  >
-                    &#8230;
-                  </ArkPagination.Ellipsis>
-                )
-              )}
+                {ctx.pages.map((page, index) =>
+                  page.type === "page" ? (
+                    <ArkPagination.Item
+                      key={index}
+                      {...page}
+                      className={styles.item}
+                    >
+                      <IconButton
+                        icon={<>{page.value}</>}
+                        shape="rectangle"
+                        styleType="ghost"
+                        size="small"
+                        aria-label={`ページ${page.value}へ移動`}
+                        title={`ページ${page.value}へ移動`}
+                      />
+                    </ArkPagination.Item>
+                  ) : (
+                    <ArkPagination.Ellipsis
+                      key={index}
+                      index={index}
+                      className={styles.ellipsis}
+                    >
+                      &#8230;
+                    </ArkPagination.Ellipsis>
+                  )
+                )}
 
-              <ArkPagination.NextTrigger
-                className={styles.nextTrigger}
-                disabled={isLastPage}
-                aria-label={isLastPage ? "最後のページです" : "次のページへ"}
-              >
-                <IconButton
-                  icon={<SerendieSymbol name="chevron-right" />}
-                  shape="rectangle"
-                  styleType="ghost"
-                  size="small"
-                  aria-label={isLastPage ? "最後のページです" : "次のページへ"}
+                <ArkPagination.NextTrigger
+                  className={styles.nextTrigger}
                   disabled={isLastPage}
-                  title={isLastPage ? "最後のページです" : "次のページへ"}
-                />
-              </ArkPagination.NextTrigger>
-            </>
-          );
-        }}
-      </ArkPagination.Context>
-    </ArkPagination.Root>
-  );
-});
+                >
+                  <IconButton
+                    icon={<SerendieSymbol name="chevron-right" />}
+                    shape="rectangle"
+                    styleType="ghost"
+                    size="small"
+                    aria-label={
+                      isLastPage ? "最後のページです" : "次のページへ"
+                    }
+                    disabled={isLastPage}
+                    title={isLastPage ? "最後のページです" : "次のページへ"}
+                  />
+                </ArkPagination.NextTrigger>
+              </>
+            );
+          }}
+        </ArkPagination.Context>
+      </ArkPagination.Root>
+    );
+  }
+);
