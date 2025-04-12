@@ -46,6 +46,6 @@ jobs:
         run: npm install
 
       - name: Publish Code Connect
-        run: npm run connect:publish -w ui
+        run: npm run connect:publish
         env:
           FIGMA_ACCESS_TOKEN: ${{ secrets.SYNC_FIGMA_PERSONAL_ACCESS_TOKEN }}
