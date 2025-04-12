@@ -86,6 +86,11 @@
       "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
     },
+    "./*": {
+      "import": "./dist/components/*/index.js",
+      "require": "./dist/components/*/index.cjs",
+      "types": "./dist/components/*/index.d.ts"
+    },
     "./css": {
       "types": "./styled-system/css/index.d.ts",
       "require": "./styled-system/css/index.js",
