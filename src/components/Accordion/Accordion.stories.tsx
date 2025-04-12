@@ -1,7 +1,7 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { Accordion, AccordionProps } from "./Accordion";
-import { AccordionGroup } from "./AccordionGroup";
 import figma from "@figma/code-connect";
+import { Meta, StoryObj } from "@storybook/react";
+import { AccordionGroup } from "../AccordionGroup";
+import { Accordion, AccordionProps } from "./Accordion";
 
 const meta: Meta<typeof Accordion> = {
   component: Accordion,
