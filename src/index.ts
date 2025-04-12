@@ -1,6 +1,6 @@
 export { SerendiePreset } from "./preset";
 
-export * from "./components/Accordion";
+export * from "./components/Accordion/index.ts";
 export * from "./components/AccordionGroup.tsx";
 export * from "./components/Avatar.tsx";
 export * from "./components/Badge.tsx";
