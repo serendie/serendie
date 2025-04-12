@@ -1,0 +1,10 @@
+Release <%= Time.now %>
+<% pull_requests.each do |pr| -%>
+<%=  pr.to_checklist_item %>
+<% end -%>
+
+以下のラベルを付与すると自動的にpackage release処理が実行されます。
+
+- `release[patch]` : patchバージョンのアップデート
+- `release[minor]` : minorバージョンのアップデート
+- `release[major]` : majorバージョンのアップデート
