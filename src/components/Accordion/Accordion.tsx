@@ -1,7 +1,7 @@
-import { sva } from "../../styled-system/css";
 import { AccordionItemProps, Accordion as ArkAccordion } from "@ark-ui/react";
-import { RecipeVariantProps } from "../../styled-system/types";
 import { SerendieSymbol } from "@serendie/symbols";
+import { sva } from "../../../styled-system/css";
+import { RecipeVariantProps } from "../../../styled-system/types";
 
 const AccordionStyle = sva({
   slots: ["item", "title", "itemIndicator", "icon", "description"],
