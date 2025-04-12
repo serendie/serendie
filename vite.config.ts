@@ -1,7 +1,8 @@
-import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import svgr from "vite-plugin-svgr";
+import { globbySync } from "globby";
+import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
+import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
   plugins: [
@@ -13,7 +14,7 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: ["src/index.ts", "src/styles.css"],
+      entry: globbySync(["src/styles.css", "src/**/index.ts"]),
       name: "Serendie",
       formats: ["es"],
     },
