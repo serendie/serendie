@@ -1,6 +1,6 @@
 import figma from "@figma/code-connect";
 import { Meta, StoryObj } from "@storybook/react";
-import { AccordionGroup } from "../AccordionGroup";
+import { AccordionGroup } from "./AccordionGroup";
 import { Accordion, AccordionProps } from "./Accordion";
 
 const meta: Meta<typeof Accordion> = {
