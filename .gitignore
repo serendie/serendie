@@ -32,3 +32,6 @@ styled-system-studio
 storybook-static
 
 .npmrc
+
+.env
+.env.local
