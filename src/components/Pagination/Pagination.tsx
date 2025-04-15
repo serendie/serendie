@@ -94,10 +94,10 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
   (
     {
       count,
-      pageSize = 10,
+      pageSize = 1,
       page,
       onPageChange,
-      siblingCount = 1,
+      siblingCount = 2,
       className,
       size = "medium",
       ...props

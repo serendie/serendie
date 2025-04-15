@@ -6,7 +6,7 @@ const meta: Meta<typeof Pagination> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/%F0%9F%9B%A0%EF%B8%8F-Serendie-UI-Kit?node-id=17965-15475&m=dev",
       examples: [FigmaExample],
     },
     controls: {
@@ -16,21 +16,16 @@ const meta: Meta<typeof Pagination> = {
   argTypes: {
     count: {
       control: { type: "number" },
-      defaultValue: 100,
     },
-    pageSize: {
+    page: {
       control: { type: "number" },
-      defaultValue: 10,
-    },
-    siblingCount: {
-      control: { type: "number" },
-      defaultValue: 1,
+      defaultValue: 3,
     },
   },
 };
 
 function FigmaExample(props: React.ComponentProps<typeof Pagination>) {
-  return <Pagination {...props} />;
+  return <Pagination {...props} count={99} page={1} />;
 }
 
 export default meta;
@@ -39,24 +34,21 @@ type Story = StoryObj<typeof Pagination>;
 // 基本的なページネーション
 export const Basic: Story = {
   args: {
-    count: 100,
-    pageSize: 10,
+    count: 10,
   },
 };
 
 // 少ないページ数
 export const FewPages: Story = {
   args: {
-    count: 30,
-    pageSize: 10,
+    count: 5,
   },
 };
 
 // 多くのページ数
 export const ManyPages: Story = {
   args: {
-    count: 1000,
-    pageSize: 10,
+    count: 100,
   },
 };
 
@@ -64,7 +56,6 @@ export const ManyPages: Story = {
 export const WithMoreSiblings: Story = {
   args: {
     count: 100,
-    pageSize: 10,
-    siblingCount: 2,
+    siblingCount: 4,
   },
 };
