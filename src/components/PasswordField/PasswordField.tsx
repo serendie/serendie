@@ -1,6 +1,6 @@
 import React, { forwardRef, useState } from "react";
 import { TextField } from "../TextField";
-import { SerendieSymbol } from "@serendie/symbols";
+import { SerendieSymbolEye, SerendieSymbolEyeHidden } from "@serendie/symbols";
 import { IconButton } from "../IconButton";
 
 type PasswordFieldProps = Omit<
@@ -31,10 +31,7 @@ export const PasswordField = forwardRef<HTMLInputElement, PasswordFieldProps>(
         aria-label={showPassword ? "パスワードを隠す" : "パスワードを表示"}
         disabled={disabled}
         icon={
-          <SerendieSymbol
-            name={showPassword ? "eye-hidden" : "eye"}
-            size={20}
-          />
+          showPassword ? <SerendieSymbolEyeHidden /> : <SerendieSymbolEye />
         }
       />
     ) : undefined;

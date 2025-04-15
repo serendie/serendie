@@ -1,5 +1,5 @@
 import { AccordionItemProps, Accordion as ArkAccordion } from "@ark-ui/react";
-import { SerendieSymbol } from "@serendie/symbols";
+import { SerendieSymbolChevronDown } from "@serendie/symbols";
 import { sva } from "../../../styled-system/css";
 import { RecipeVariantProps } from "../../../styled-system/types";
 
@@ -83,11 +83,7 @@ export const Accordion: React.FC<AccordionProps> = ({
       <ArkAccordion.ItemTrigger className={styles.item}>
         <span className={styles.title}>{title}</span>
         <ArkAccordion.ItemIndicator className={styles.itemIndicator}>
-          <SerendieSymbol
-            name="chevron-down"
-            className={styles.icon}
-            width={24}
-          />
+          <SerendieSymbolChevronDown className={styles.icon} />
         </ArkAccordion.ItemIndicator>
       </ArkAccordion.ItemTrigger>
       <ArkAccordion.ItemContent className={styles.description}>

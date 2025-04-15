@@ -1,5 +1,5 @@
 import { Avatar as ArkAvatar, AvatarRootProps } from "@ark-ui/react";
-import { SerendieSymbol } from "@serendie/symbols";
+import { SerendieSymbolUserCircle } from "@serendie/symbols";
 import { cx, RecipeVariantProps, sva } from "../../../styled-system/css";
 
 export const AvatarStyle = sva({
@@ -91,7 +91,7 @@ export const Avatar: React.FC<AvatarProps> = ({
           {text.slice(0, 2)}
         </ArkAvatar.Fallback>
       ) : placeholder === "outlined" ? (
-        <SerendieSymbol name="user-circle" size={iconSize} />
+        <SerendieSymbolUserCircle width={iconSize} height={iconSize} />
       ) : (
         <FallbackIllustration />
       )}
