@@ -1,4 +1,7 @@
-import { SerendieSymbol } from "@serendie/symbols";
+import {
+  SerendieSymbolAlertCircle,
+  SerendieSymbolClose,
+} from "@serendie/symbols";
 import mergeRefs from "merge-refs";
 import React, { forwardRef } from "react";
 import { css, cx, sva } from "../../../styled-system/css";
@@ -201,7 +204,7 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
                       color: "sd.system.color.impression.negative",
                     })}
                   >
-                    <SerendieSymbol name="alert-circle" size={20} />
+                    <SerendieSymbolAlertCircle width={20} height={20} />
                   </span>
                 ) : _value ? (
                   <button
@@ -209,7 +212,7 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
                     onClick={resetValue}
                     aria-label="値をクリア"
                   >
-                    <SerendieSymbol name="close" size={20} />
+                    <SerendieSymbolClose width={20} height={20} />
                   </button>
                 ) : null)}
             </div>

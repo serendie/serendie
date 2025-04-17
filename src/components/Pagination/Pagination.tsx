@@ -1,5 +1,8 @@
 import { Pagination as ArkPagination } from "@ark-ui/react/pagination";
-import { SerendieSymbol } from "@serendie/symbols";
+import {
+  SerendieSymbolChevronLeft,
+  SerendieSymbolChevronRight,
+} from "@serendie/symbols";
 import React, { ComponentProps, useState } from "react";
 import { IconButton } from "../IconButton";
 import { cx, RecipeVariantProps, sva } from "../../../styled-system/css";
@@ -142,7 +145,7 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
                   disabled={isFirstPage}
                 >
                   <IconButton
-                    icon={<SerendieSymbol name="chevron-left" />}
+                    icon={<SerendieSymbolChevronLeft />}
                     shape="rectangle"
                     styleType="ghost"
                     size="small"
@@ -186,7 +189,7 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
                   disabled={isLastPage}
                 >
                   <IconButton
-                    icon={<SerendieSymbol name="chevron-right" />}
+                    icon={<SerendieSymbolChevronRight />}
                     shape="rectangle"
                     styleType="ghost"
                     size="small"

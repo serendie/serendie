@@ -3,7 +3,7 @@ import { Drawer, DrawerProps } from "./Drawer";
 import { useState } from "react";
 import { IconButton } from "../IconButton";
 import figma from "@figma/code-connect";
-import { SerendieSymbol } from "@serendie/symbols";
+import { SerendieSymbolMenu } from "@serendie/symbols";
 import { userEvent, within } from "@storybook/test";
 import { FullscreenLayout } from "../../../.storybook/FullscreenLayout";
 
@@ -39,7 +39,7 @@ const DrawerOpenTemplate = (args: DrawerProps) => {
     <>
       <IconButton
         shape="rectangle"
-        icon={<SerendieSymbol name="menu" />}
+        icon={<SerendieSymbolMenu />}
         styleType="outlined"
         onClick={() => setIsOpen(true)}
       />

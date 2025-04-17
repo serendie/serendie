@@ -1,5 +1,8 @@
 import figma from "@figma/code-connect";
-import { SerendieSymbol } from "@serendie/symbols";
+import {
+  SerendieSymbolMenu,
+  SerendieSymbolPlaceholder,
+} from "@serendie/symbols";
 import type { Meta, StoryObj } from "@storybook/react";
 import { DropdownMenu, DropdownMenuProps, MenuItemProps } from "./DropdownMenu";
 
@@ -42,7 +45,7 @@ function FigmaExample(props: DropdownMenuProps) {
         {
           label: "list title",
           value: "value1",
-          icon: <SerendieSymbol name="placeholder" />,
+          icon: <SerendieSymbolPlaceholder />,
         },
       ]}
     />
@@ -56,27 +59,27 @@ const sampleItems: MenuItemProps[] = [
   {
     label: "リストタイトル",
     value: "value1",
-    icon: <SerendieSymbol name="placeholder" />,
+    icon: <SerendieSymbolPlaceholder />,
   },
   {
     label: "リストタイトル",
     value: "value2",
-    icon: <SerendieSymbol name="placeholder" />,
+    icon: <SerendieSymbolPlaceholder />,
   },
   {
     label: "リストタイトル",
     value: "value3",
-    icon: <SerendieSymbol name="placeholder" />,
+    icon: <SerendieSymbolPlaceholder />,
   },
   {
     label: "リストタイトル",
     value: "value4",
-    icon: <SerendieSymbol name="placeholder" />,
+    icon: <SerendieSymbolPlaceholder />,
   },
   {
     label: "リストタイトル",
     value: "value5",
-    icon: <SerendieSymbol name="placeholder" />,
+    icon: <SerendieSymbolPlaceholder />,
   },
 ];
 
@@ -96,6 +99,6 @@ export const Icon: Story = {
   args: {
     title: "メニュータイトル",
     styleType: "iconButton",
-    icon: <SerendieSymbol name="menu" />,
+    icon: <SerendieSymbolMenu />,
   },
 };
