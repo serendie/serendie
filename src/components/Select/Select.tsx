@@ -1,5 +1,5 @@
 import { Select as ArkSelect, Portal, SelectRootProps } from "@ark-ui/react";
-import { SerendieSymbol } from "@serendie/symbols";
+import { SerendieSymbolChevronDown } from "@serendie/symbols";
 import { useId } from "react";
 import { RecipeVariantProps, css, cx, sva } from "../../../styled-system/css";
 import { List, ListItem } from "../List";
@@ -215,11 +215,7 @@ export const Select: React.FC<SelectStyleProps> = ({
             placeholder={placeholder}
             className={styles.valueText}
           />
-          <SerendieSymbol
-            name="chevron-down"
-            className={styles.iconBox}
-            size={20}
-          />
+          <SerendieSymbolChevronDown className={styles.iconBox} />
         </ArkSelect.Trigger>
       </ArkSelect.Control>
       {invalid && invalidMessage && (

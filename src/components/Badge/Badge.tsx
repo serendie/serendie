@@ -1,4 +1,4 @@
-import { SerendieSymbol } from "@serendie/symbols";
+import { SerendieSymbolClose } from "@serendie/symbols";
 import { ComponentProps } from "react";
 import { cva, cx } from "../../../styled-system/css";
 import { RecipeVariantProps } from "../../../styled-system/types";
@@ -132,7 +132,7 @@ export const BadgeCloseButton: React.FC<ComponentProps<"button">> = (props) => {
   const styles = BadgeCloseButtonStyle();
   return (
     <button {...props} className={styles}>
-      <SerendieSymbol name="close" color="currentColor" size={12} />
+      <SerendieSymbolClose width={12} height={12} />
     </button>
   );
 };

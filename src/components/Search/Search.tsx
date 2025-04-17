@@ -1,5 +1,8 @@
 import { Combobox, ComboboxRootProps, Portal } from "@ark-ui/react";
-import { SerendieSymbol } from "@serendie/symbols";
+import {
+  SerendieSymbolMagnifyingGlass,
+  SerendieSymbolClose,
+} from "@serendie/symbols";
 import { cx, RecipeVariantProps, sva } from "../../../styled-system/css";
 import { Box } from "../../../styled-system/jsx";
 
@@ -166,14 +169,14 @@ export const Search: React.FC<SearchStyleProps> = ({
     >
       <Combobox.Control className={cx(styles.control, elementProps.className)}>
         <div className={styles.iconBox}>
-          <SerendieSymbol name="magnifying-glass" className={styles.icon} />
+          <SerendieSymbolMagnifyingGlass className={styles.icon} />
         </div>
         <Combobox.Input className={styles.input} />
         {/* ARK UIではOpenのトリガーも用意されているがデザインではナシ */}
         {items.length > 0 && (
           <Combobox.Trigger>
             <div className={styles.closeIcon}>
-              <SerendieSymbol name="close" className={styles.icon} />
+              <SerendieSymbolClose className={styles.icon} />
             </div>
           </Combobox.Trigger>
         )}

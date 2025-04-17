@@ -1,4 +1,4 @@
-import { SerendieSymbol } from "@serendie/symbols";
+import { SerendieSymbolChevronRight } from "@serendie/symbols";
 import { ComponentProps } from "react";
 import { cx, sva } from "../../../styled-system/css";
 
@@ -169,7 +169,7 @@ export const DashboardWidget: React.FC<DashboardWidgetProps> = ({
           <h2 className={style.labelTitle}>title</h2>
           <p className={style.labelText}>icon</p>
         </div>
-        <SerendieSymbol name="chevron-right" />
+        <SerendieSymbolChevronRight />
       </a>
 
       <div className={style.area}>

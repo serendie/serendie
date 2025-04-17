@@ -16,6 +16,7 @@ export * from "./components/IconButton/index.ts";
 export * from "./components/List/index.ts";
 export * from "./components/ModalDialog/index.ts";
 export * from "./components/NotificationBadge/index.ts";
+export * from "./components/Pagination/index.ts";
 export * from "./components/PasswordField/index.ts";
 export * from "./components/ProgressIndicator/index.ts";
 export * from "./components/RadioButton/index.ts";

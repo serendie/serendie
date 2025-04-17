@@ -1,4 +1,7 @@
-import { SerendieSymbol } from "@serendie/symbols";
+import {
+  SerendieSymbolAlertCircleFilled,
+  SerendieSymbolAlertCircle,
+} from "@serendie/symbols";
 import { ComponentProps } from "react";
 import { RecipeVariantProps, cx, sva } from "../../../styled-system/css";
 
@@ -86,16 +89,10 @@ export const Banner: React.FC<
       <div className={styles.icon}>
         {icon ? (
           icon
+        ) : variantType === "error" || variantType === "warning" ? (
+          <SerendieSymbolAlertCircleFilled />
         ) : (
-          <SerendieSymbol
-            name={"alert-circle"}
-            size={24}
-            variant={
-              variantType === "error" || variantType === "warning"
-                ? "filled"
-                : "outlined"
-            }
-          />
+          <SerendieSymbolAlertCircle />
         )}
       </div>
       <h2 className={styles.title}>{title}</h2>

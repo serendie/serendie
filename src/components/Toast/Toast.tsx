@@ -3,7 +3,10 @@ import {
   Toaster as ArkToaster,
   createToaster,
 } from "@ark-ui/react";
-import { SerendieSymbol, SymbolName } from "@serendie/symbols";
+import {
+  SerendieSymbolAlertCircleFilled,
+  SerendieSymbolCheckCircleFilled,
+} from "@serendie/symbols";
 import { sva } from "../../../styled-system/css";
 
 export const ToastStyle = sva({
@@ -74,33 +77,23 @@ type ToastProps = {
 };
 
 const Toast: React.FC<ToastProps> = ({ toaster }) => {
-  type ToastType = "success" | "error";
-  const iconMap: { [key in ToastType]?: SymbolName } = {
-    success: "check-circle",
-    error: "alert-circle",
-  };
-
   return (
     <ArkToaster toaster={toaster}>
       {(toast) => {
         const type = toast.type === "error" ? "error" : "default";
         const styles = ToastStyle({ variant: type });
 
-        const iconType: SymbolName | undefined =
-          iconMap[toast.type as ToastType];
+        const Icon =
+          type === "error" ? (
+            <SerendieSymbolAlertCircleFilled className={styles.icon} />
+          ) : (
+            <SerendieSymbolCheckCircleFilled className={styles.icon} />
+          );
 
         return (
           <ArkToast.Root key={toast.id} className={styles.root}>
             <div className={styles.textGroup}>
-              {iconType && (
-                <SerendieSymbol
-                  name={iconType}
-                  size={24}
-                  variant="filled"
-                  className={styles.icon}
-                />
-              )}
-
+              {Icon}
               <ArkToast.Title className={styles.text}>
                 {toast.title}
               </ArkToast.Title>

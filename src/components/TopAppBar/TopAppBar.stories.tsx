@@ -3,7 +3,13 @@ import { TopAppBar } from "./TopAppBar";
 import { IconButton } from "../IconButton";
 import figma from "@figma/code-connect";
 import React from "react";
-import { SerendieSymbol } from "@serendie/symbols";
+import {
+  SerendieSymbolMagnifyingGlass,
+  SerendieSymbolMenu,
+  SerendieSymbolPlus,
+  SerendieSymbolInformation,
+  SerendieSymbolChevronLeft,
+} from "@serendie/symbols";
 
 const meta: Meta<typeof TopAppBar> = {
   component: TopAppBar,
@@ -76,7 +82,7 @@ export const All: StoryObj<typeof AllTemplate> = {
           <IconButton
             shape="rectangle"
             styleType="ghost"
-            icon={<SerendieSymbol name="menu" />}
+            icon={<SerendieSymbolMenu />}
           />
         </>
       ),
@@ -85,17 +91,17 @@ export const All: StoryObj<typeof AllTemplate> = {
           <IconButton
             shape="rectangle"
             styleType="ghost"
-            icon={<SerendieSymbol name="magnifying-glass" />}
+            icon={<SerendieSymbolMagnifyingGlass />}
           />
           <IconButton
             shape="rectangle"
             styleType="ghost"
-            icon={<SerendieSymbol name="plus" />}
+            icon={<SerendieSymbolPlus />}
           />
           <IconButton
             shape="rectangle"
             styleType="ghost"
-            icon={<SerendieSymbol name="information" />}
+            icon={<SerendieSymbolInformation />}
           />
         </>
       ),
@@ -108,7 +114,7 @@ export const All: StoryObj<typeof AllTemplate> = {
           <IconButton
             shape="rectangle"
             styleType="ghost"
-            icon={<SerendieSymbol name="chevron-left" />}
+            icon={<SerendieSymbolChevronLeft />}
           />
         </>
       ),
@@ -117,7 +123,7 @@ export const All: StoryObj<typeof AllTemplate> = {
           <IconButton
             shape="rectangle"
             styleType="ghost"
-            icon={<SerendieSymbol name="plus" />}
+            icon={<SerendieSymbolPlus />}
           />
         </>
       ),
@@ -158,7 +164,7 @@ export const Navbar: Story = {
       <IconButton
         shape="rectangle"
         styleType="ghost"
-        icon={<SerendieSymbol name="menu" />}
+        icon={<SerendieSymbolMenu />}
       />
     ),
     trailingIconButtons: (
@@ -166,17 +172,17 @@ export const Navbar: Story = {
         <IconButton
           shape="rectangle"
           styleType="ghost"
-          icon={<SerendieSymbol name="magnifying-glass" />}
+          icon={<SerendieSymbolMagnifyingGlass />}
         />
         <IconButton
           shape="rectangle"
           styleType="ghost"
-          icon={<SerendieSymbol name="plus" />}
+          icon={<SerendieSymbolPlus />}
         />
         <IconButton
           shape="rectangle"
           styleType="ghost"
-          icon={<SerendieSymbol name="information" />}
+          icon={<SerendieSymbolInformation />}
         />
       </>
     ),
@@ -194,14 +200,14 @@ export const Title: Story = {
       <IconButton
         shape="rectangle"
         styleType="ghost"
-        icon={<SerendieSymbol name="chevron-left" />}
+        icon={<SerendieSymbolChevronLeft />}
       />
     ),
     trailingIconButtons: (
       <IconButton
         shape="rectangle"
         styleType="ghost"
-        icon={<SerendieSymbol name="plus" />}
+        icon={<SerendieSymbolPlus />}
       />
     ),
   },
@@ -218,14 +224,14 @@ export const NotificationBadgeExample: Story = {
       <IconButton
         shape="rectangle"
         styleType="ghost"
-        icon={<SerendieSymbol name="chevron-left" />}
+        icon={<SerendieSymbolChevronLeft />}
       />
     ),
     trailingIconButtons: (
       <IconButton
         shape="rectangle"
         styleType="ghost"
-        icon={<SerendieSymbol name="plus" />}
+        icon={<SerendieSymbolPlus />}
       />
     ),
     badge: 3,
