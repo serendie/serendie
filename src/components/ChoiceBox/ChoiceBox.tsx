@@ -7,6 +7,7 @@ import {
 import { cx, sva } from "../../../styled-system/css";
 import CheckboxCheckedIcon from "../../assets/checkboxChecked.svg?react";
 import CheckboxUncheckedIcon from "../../assets/checkboxUnchecked.svg?react";
+import CheckboxIndeterminateIcon from "../../assets/checkboxIndeterminate.svg?react";
 import RadioChecked from "../../assets/radioChecked.svg?react";
 import RadioUnChecked from "../../assets/radioUnchecked.svg?react";
 import {
@@ -19,6 +20,7 @@ import {
   radioIconCss,
   radioUncheckedIconCss,
 } from "../RadioButton";
+import { useEffect, useRef } from "react";
 
 export const ChoiceBoxStyle = sva({
   slots: [
@@ -49,11 +51,14 @@ type ChoiceBoxBaseProps = {
 
 export type ChoiceBoxProps = ChoiceBoxBaseProps &
   RadioGroupItemProps &
-  CheckboxRootProps;
+  CheckboxRootProps & {
+    indeterminate?: boolean;
+  };
 
 export const ChoiceBox: React.FC<ChoiceBoxProps> = ({
   type,
   value,
+  indeterminate,
   className,
   ...props
 }) => {
@@ -84,17 +89,40 @@ export const ChoiceBox: React.FC<ChoiceBoxProps> = ({
   }
 
   if (type === "checkbox") {
+    const inputRef = useRef<HTMLInputElement>(null);
+    useEffect(() => {
+      if (inputRef.current) {
+        inputRef.current.indeterminate = !!indeterminate;
+      }
+    }, [indeterminate]);
+
     return (
       <ArkCheckbox.Root
         value={value}
         className={cx("group", styles.root, className)}
         {...elementProps}
+        onClick={(e) => {
+          if (indeterminate) {
+            e.preventDefault();
+            if (typeof props.onClick === "function") {
+              props.onClick(e);
+            }
+            return;
+          }
+          if (typeof props.onClick === "function") {
+            props.onClick(e);
+          }
+        }}
       >
         <ArkCheckbox.Context>
           {(checkbox) => (
             <ArkCheckbox.Control className={styles.checkboxItem}>
               {checkbox.checked ? (
                 <CheckboxCheckedIcon className={styles.checkboxCheckedIcon} />
+              ) : indeterminate ? (
+                <CheckboxIndeterminateIcon
+                  className={styles.checkboxCheckedIcon}
+                />
               ) : (
                 <CheckboxUncheckedIcon
                   className={styles.checkboxUncheckedIcon}
@@ -103,7 +131,7 @@ export const ChoiceBox: React.FC<ChoiceBoxProps> = ({
             </ArkCheckbox.Control>
           )}
         </ArkCheckbox.Context>
-        <ArkCheckbox.HiddenInput />
+        <ArkCheckbox.HiddenInput ref={inputRef} />
       </ArkCheckbox.Root>
     );
   }
