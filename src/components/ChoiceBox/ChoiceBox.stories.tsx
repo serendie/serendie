@@ -51,3 +51,11 @@ export const Checkbox: Story = {
     type: "checkbox",
   },
 };
+
+export const Indeterminate: Story = {
+  args: {
+    value: "itemA",
+    type: "checkbox",
+    indeterminate: true,
+  },
+};
