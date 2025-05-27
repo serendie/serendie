@@ -2,7 +2,7 @@ import { VictoryThemeDefinition } from "victory";
 import { token } from "@serendie/ui/tokens";
 
 // @serendie/ui/tokensの値を使用してカスタムテーマを定義
-const SerendieTheme: VictoryThemeDefinition = {
+export const SerendieTheme: VictoryThemeDefinition = {
   area: {
     style: {
       data: {
@@ -292,5 +292,3 @@ const SerendieTheme: VictoryThemeDefinition = {
     },
   },
 };
-
-export default SerendieTheme;

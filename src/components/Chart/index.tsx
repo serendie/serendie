@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { VictoryChart, VictoryChartProps } from "victory";
-import SerendieTheme from "./VictoryTheme";
+import { SerendieTheme } from "./VictoryTheme";
 
 /**
  * SerendieChart - SerendieThemeを適用したVictoryChartラッパーコンポーネント
@@ -25,7 +25,7 @@ interface SerendieChartProps extends Omit<VictoryChartProps, "theme"> {
   theme?: typeof SerendieTheme;
 }
 
-export const SerendieChart: React.FC<SerendieChartProps> = ({
+export const Chart: React.FC<SerendieChartProps> = ({
   children,
   theme = SerendieTheme,
   ...props
@@ -36,5 +36,3 @@ export const SerendieChart: React.FC<SerendieChartProps> = ({
     </VictoryChart>
   );
 };
-
-export default SerendieChart;
