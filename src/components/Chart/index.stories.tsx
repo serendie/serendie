@@ -38,7 +38,6 @@ const barData = [
   { x: "5月", y: 6 },
 ];
 
-// 円グラフのストーリー
 export const PieChart: Story = {
   render: () => (
     <div>
@@ -54,7 +53,6 @@ export const PieChart: Story = {
   ),
 };
 
-// 折れ線グラフのストーリー
 export const LineChart: Story = {
   render: () => (
     <Chart width={500} height={300}>
@@ -63,7 +61,6 @@ export const LineChart: Story = {
   ),
 };
 
-// 棒グラフのストーリー
 export const BarChart: Story = {
   render: () => (
     <Chart domainPadding={{ x: 50 }} width={500} height={300}>
