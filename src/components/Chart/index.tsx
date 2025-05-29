@@ -1,7 +1,6 @@
 import React, { ReactNode } from "react";
 import { VictoryChart, VictoryChartProps } from "victory-chart";
 import { SerendieTheme } from "./VictoryTheme";
-import { VictoryAxis } from "victory-axis";
 
 /**
  * SerendieChart - SerendieThemeを適用したVictoryChartラッパーコンポーネント
@@ -36,12 +35,6 @@ export const Chart: React.FC<SerendieChartProps> = ({
 }) => {
   return (
     <VictoryChart theme={theme} {...props}>
-      <VictoryAxis style={{ axis: { stroke: "none" } }} tickFormat={() => ""} />
-      <VictoryAxis
-        dependentAxis
-        style={{ axis: { stroke: "none" } }}
-        tickFormat={() => ""}
-      />
       {children}
     </VictoryChart>
   );

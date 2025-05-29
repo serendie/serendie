@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Chart } from "./index";
 import { VictoryPie, VictoryLine, VictoryBar } from "victory";
+import { SerendieTheme } from "./VictoryTheme";
 
 const meta: Meta<typeof Chart> = {
   title: "Components/Chart",
@@ -41,13 +42,14 @@ const barData = [
 export const PieChart: Story = {
   render: () => (
     <div>
-      <Chart width={400} height={400}>
-        <VictoryPie
-          data={pieData}
-          innerRadius={70}
-          labelRadius={({ innerRadius }) => (innerRadius as number) + 40}
-        />
-      </Chart>
+      <VictoryPie
+        theme={SerendieTheme}
+        data={pieData}
+        width={500}
+        height={500}
+        innerRadius={100}
+        labelRadius={({ innerRadius }) => (innerRadius as number) + 40}
+      />
     </div>
   ),
 };
@@ -64,7 +66,7 @@ export const LineChart: Story = {
 // 棒グラフのストーリー
 export const BarChart: Story = {
   render: () => (
-    <Chart width={500} height={300}>
+    <Chart domainPadding={{ x: 50 }} width={500} height={300}>
       <VictoryBar data={barData} />
     </Chart>
   ),
