@@ -2,7 +2,7 @@ export { HeaderCheckbox } from "./HeaderCheckbox";
 export { BodyCheckbox } from "./BodyCheckbox";
 
 // Backwards compatibility - keep the original component
-import { ChoiceBox } from "@serendie/ui";
+import { ChoiceBox } from "../../ChoiceBox";
 import { DataTable } from "..";
 
 export const CheckboxCell = ({

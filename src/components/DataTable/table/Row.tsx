@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback, useMemo } from "react";
 import {
   Row as TanstackRow,
   flexRender,
@@ -9,17 +9,28 @@ import { DataTable } from "..";
 
 export function Row<TData>({ row }: { row: TanstackRow<TData> }) {
   const [hovered, setHovered] = useState(false);
+
+  const handleMouseEnter = useCallback(() => setHovered(true), []);
+  const handleMouseLeave = useCallback(() => setHovered(false), []);
+  const handleToggleSelected = useCallback(() => row.toggleSelected(), [row]);
+
   const isSelected = row.getIsSelected();
+  const cellState = useMemo(() => {
+    if (isSelected) return "selected";
+    if (hovered) return "hovered";
+    return "enabled";
+  }, [isSelected, hovered]);
+
   return (
     <DataTable.Tr
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <TableCheckboxCell
         checked={isSelected}
-        onChange={() => row.toggleSelected()}
+        onChange={handleToggleSelected}
         value={row.id}
-        state={isSelected ? "selected" : hovered ? "hovered" : "enabled"}
+        state={cellState}
       />
       {row.getVisibleCells().map((cell) => {
         let type: "default" | "success" | "notice" | "error" = "default";
@@ -34,9 +45,6 @@ export function Row<TData>({ row }: { row: TanstackRow<TData> }) {
           ) => typeof type;
           type = getTypeFn(row.original);
         }
-        let cellState: "enabled" | "hovered" | "selected" = "enabled";
-        if (isSelected) cellState = "selected";
-        else if (hovered) cellState = "hovered";
         return (
           <DataTable.BodyCell key={cell.id} type={type} state={cellState}>
             {flexRender(cell.column.columnDef.cell, cell.getContext())}

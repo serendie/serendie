@@ -22,30 +22,64 @@ export const HeaderCell = ({
   children,
   size = "medium",
   state = "enabled",
-  isSortable = false,
-  sortDir,
+  sortable = false,
+  sortDirection,
+  onSort,
   ...props
 }: React.PropsWithChildren<{
   size?: "small" | "medium" | "large";
   state?: "enabled" | "hovered";
-  isSortable?: boolean;
-  sortDir?: "asc" | "desc" | false;
+  sortable?: boolean;
+  sortDirection?: "asc" | "desc" | false;
+  onSort?: () => void;
 }> &
-  React.ComponentProps<"th">) => (
-  <th className={tableHeaderCellStyle({ size, state })} {...props}>
-    <span style={{ display: "inline-flex", alignItems: "center" }}>
-      {children}
-      {isSortable &&
-        (sortDir === "asc" ? (
-          <SerendieSymbol name="chevron-double-up" style={{ marginLeft: 4 }} />
-        ) : sortDir === "desc" ? (
-          <SerendieSymbol
-            name="chevron-double-down"
-            style={{ marginLeft: 4 }}
-          />
-        ) : (
-          <SerendieSymbol name="chevron-up-down" style={{ marginLeft: 4 }} />
-        ))}
-    </span>
-  </th>
-);
+  React.ComponentProps<"th">) => {
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (sortable && (event.key === "Enter" || event.key === " ")) {
+      event.preventDefault();
+      onSort?.();
+    }
+  };
+
+  return (
+    <th
+      role="columnheader"
+      aria-sort={
+        sortDirection === "asc"
+          ? "ascending"
+          : sortDirection === "desc"
+            ? "descending"
+            : sortable
+              ? "none"
+              : undefined
+      }
+      tabIndex={sortable ? 0 : undefined}
+      onClick={sortable ? onSort : undefined}
+      onKeyDown={handleKeyDown}
+      className={tableHeaderCellStyle({ size, state })}
+      style={{
+        cursor: sortable ? "pointer" : "default",
+        userSelect: "none",
+      }}
+      {...props}
+    >
+      <span style={{ display: "inline-flex", alignItems: "center" }}>
+        {children}
+        {sortable &&
+          (sortDirection === "asc" ? (
+            <SerendieSymbol
+              name="chevron-double-up"
+              style={{ marginLeft: 4 }}
+            />
+          ) : sortDirection === "desc" ? (
+            <SerendieSymbol
+              name="chevron-double-down"
+              style={{ marginLeft: 4 }}
+            />
+          ) : (
+            <SerendieSymbol name="chevron-up-down" style={{ marginLeft: 4 }} />
+          ))}
+      </span>
+    </th>
+  );
+};

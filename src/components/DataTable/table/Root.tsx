@@ -14,6 +14,7 @@ export function Root({ children }: { children: ReactNode }) {
       })}
     >
       <table
+        role="table"
         className={css({
           w: "100%",
           borderCollapse: "separate",

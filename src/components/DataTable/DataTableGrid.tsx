@@ -6,6 +6,9 @@ import {
   flexRender,
   ColumnDef,
   SortingState,
+  HeaderGroup,
+  Header,
+  Row,
 } from "@tanstack/react-table";
 import { DataTable } from ".";
 
@@ -32,7 +35,7 @@ export function DataTableGrid<TData>({
   return (
     <DataTable.Root>
       <DataTable.Thead>
-        {table.getHeaderGroups().map((headerGroup) => (
+        {table.getHeaderGroups().map((headerGroup: HeaderGroup<TData>) => (
           <DataTable.Tr key={headerGroup.id}>
             <DataTable.HeaderCheckbox
               checked={table.getIsAllRowsSelected()}
@@ -40,20 +43,15 @@ export function DataTableGrid<TData>({
               onChange={table.getToggleAllRowsSelectedHandler()}
               value="select-all"
             />
-            {headerGroup.headers.map((header) => {
-              const isSortable = header.column.getCanSort();
-              const sortDir = header.column.getIsSorted();
+            {headerGroup.headers.map((header: Header<TData, unknown>) => {
+              const canSort = header.column.getCanSort();
+              const sortDirection = header.column.getIsSorted();
               return (
                 <DataTable.HeaderCell
                   key={header.id}
-                  isSortable={isSortable}
-                  sortDir={sortDir}
-                  onClick={
-                    isSortable
-                      ? header.column.getToggleSortingHandler()
-                      : undefined
-                  }
-                  style={{ cursor: isSortable ? "pointer" : undefined }}
+                  sortable={canSort}
+                  sortDirection={sortDirection}
+                  onSort={header.column.getToggleSortingHandler()}
                 >
                   {flexRender(
                     header.column.columnDef.header,
@@ -66,7 +64,7 @@ export function DataTableGrid<TData>({
         ))}
       </DataTable.Thead>
       <DataTable.Tbody>
-        {table.getRowModel().rows.map((row) => (
+        {table.getRowModel().rows.map((row: Row<TData>) => (
           <DataTable.Row key={row.id} row={row} />
         ))}
       </DataTable.Tbody>

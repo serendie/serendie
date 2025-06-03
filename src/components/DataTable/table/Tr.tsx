@@ -4,5 +4,9 @@ export function Tr({
 }: {
   children: React.ReactNode;
 } & React.ComponentProps<"tr">) {
-  return <tr {...props}>{children}</tr>;
+  return (
+    <tr role="row" {...props}>
+      {children}
+    </tr>
+  );
 }
