@@ -1,4 +1,4 @@
-export function TableTr({
+export function Tr({
   children,
   ...props
 }: {

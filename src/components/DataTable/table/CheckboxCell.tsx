@@ -1,8 +1,11 @@
-import { ChoiceBox } from "@serendie/ui";
-import { TableCell } from "./TableCell";
-import { TableHeaderCell } from "./TableHeaderCell";
+export { HeaderCheckbox } from "./HeaderCheckbox";
+export { BodyCheckbox } from "./BodyCheckbox";
 
-export const TableCheckboxCell = ({
+// Backwards compatibility - keep the original component
+import { ChoiceBox } from "@serendie/ui";
+import { DataTable } from "..";
+
+export const CheckboxCell = ({
   checked,
   onChange,
   value,
@@ -16,7 +19,7 @@ export const TableCheckboxCell = ({
   state?: "enabled" | "hovered" | "selected";
 }) =>
   header ? (
-    <TableHeaderCell>
+    <DataTable.HeaderCell>
       <ChoiceBox
         type="checkbox"
         value={value}
@@ -24,9 +27,9 @@ export const TableCheckboxCell = ({
         onChange={onChange}
         style={{ borderRadius: 2, borderColor: "#C8C7C2" }}
       />
-    </TableHeaderCell>
+    </DataTable.HeaderCell>
   ) : (
-    <TableCell state={state}>
+    <DataTable.BodyCell state={state}>
       <ChoiceBox
         type="checkbox"
         value={value}
@@ -34,5 +37,8 @@ export const TableCheckboxCell = ({
         onChange={onChange}
         style={{ borderRadius: 2, borderColor: "#C8C7C2" }}
       />
-    </TableCell>
+    </DataTable.BodyCell>
   );
+
+// Export as TableCheckboxCell for backwards compatibility
+export const TableCheckboxCell = CheckboxCell;

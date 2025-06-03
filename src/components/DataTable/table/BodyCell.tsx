@@ -1,6 +1,6 @@
 import { cva } from "../../../../styled-system/css";
 
-const tableCellStyle = cva({
+const cellStyle = cva({
   base: {
     borderBottom: "1px solid",
     borderColor: "sd.system.color.component.outline",
@@ -95,7 +95,7 @@ const tableCellStyle = cva({
   },
 });
 
-export const TableCell = ({
+export const BodyCell = ({
   children,
   size = "medium",
   type = "default",
@@ -110,7 +110,7 @@ export const TableCell = ({
   <td
     data-type={type}
     data-state={state}
-    className={tableCellStyle({ size, type, state })}
+    className={cellStyle({ size, type, state })}
     {...props}
   >
     {children}

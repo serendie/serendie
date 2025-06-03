@@ -101,18 +101,6 @@ export const ChoiceBox: React.FC<ChoiceBoxProps> = ({
         value={value}
         className={cx("group", styles.root, className)}
         {...elementProps}
-        onClick={(e) => {
-          if (indeterminate) {
-            e.preventDefault();
-            if (typeof props.onClick === "function") {
-              props.onClick(e);
-            }
-            return;
-          }
-          if (typeof props.onClick === "function") {
-            props.onClick(e);
-          }
-        }}
       >
         <ArkCheckbox.Context>
           {(checkbox) => (

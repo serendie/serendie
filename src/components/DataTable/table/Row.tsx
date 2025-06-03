@@ -1,14 +1,17 @@
 import { useState } from "react";
-import { TableCell } from "./TableCell";
-import { Row, flexRender, ColumnDef } from "@tanstack/react-table";
-import { TableTr } from "./TableTr";
-import { TableCheckboxCell } from "./TableCheckboxCell";
+import {
+  Row as TanstackRow,
+  flexRender,
+  ColumnDef,
+} from "@tanstack/react-table";
+import { TableCheckboxCell } from "./CheckboxCell";
+import { DataTable } from "..";
 
-export function TableRow<TData>({ row }: { row: Row<TData> }) {
+export function Row<TData>({ row }: { row: TanstackRow<TData> }) {
   const [hovered, setHovered] = useState(false);
   const isSelected = row.getIsSelected();
   return (
-    <TableTr
+    <DataTable.Tr
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -35,11 +38,11 @@ export function TableRow<TData>({ row }: { row: Row<TData> }) {
         if (isSelected) cellState = "selected";
         else if (hovered) cellState = "hovered";
         return (
-          <TableCell key={cell.id} type={type} state={cellState}>
+          <DataTable.BodyCell key={cell.id} type={type} state={cellState}>
             {flexRender(cell.column.columnDef.cell, cell.getContext())}
-          </TableCell>
+          </DataTable.BodyCell>
         );
       })}
-    </TableTr>
+    </DataTable.Tr>
   );
 }

@@ -9,6 +9,7 @@ export * from "./components/Button/index.ts";
 export * from "./components/CheckBox/index.ts";
 export * from "./components/ChoiceBox/index.ts";
 export * from "./components/DashboardWidget/index.ts";
+export * from "./components/DataTable/index.ts";
 export * from "./components/Divider/index.ts";
 export * from "./components/Drawer/index.ts";
 export * from "./components/DropdownMenu/index.ts";

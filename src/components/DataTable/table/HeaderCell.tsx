@@ -18,7 +18,7 @@ const tableHeaderCellStyle = cva({
   defaultVariants: {},
 });
 
-export const TableHeaderCell = ({
+export const HeaderCell = ({
   children,
   size = "medium",
   state = "enabled",

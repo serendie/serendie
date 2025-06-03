@@ -1,13 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { DataTable } from "./DataTable";
 import { createColumnHelper, ColumnDef } from "@tanstack/react-table";
-// Simple table components import
-import { Table } from "./table/Table";
-import { TableHeaderCell } from "./table/TableHeaderCell";
-import { TableCell } from "./table/TableCell";
-import { TableTbody } from "./table/TableTbody";
-import { TableThead } from "./table/TableThead";
-import { TableTr } from "./table/TableTr";
+// Import the main DataTable component
+import { DataTable } from "./index";
 
 const meta: Meta<typeof DataTable> = {
   component: DataTable,
@@ -149,42 +143,42 @@ const columns = [
 // Basic table with sample data
 export const Default: Story = {
   render: () => (
-    <DataTable data={Data} columns={columns as ColumnDef<DataRow, unknown>[]} />
+    <DataTable data={Data} columns={columns as ColumnDef<DataRow>[]} />
   ),
 };
 
 // Simple table story
 export const SimpleTable: Story = {
   render: () => (
-    <Table>
-      <TableThead>
-        <TableTr>
-          <TableHeaderCell>エリア</TableHeaderCell>
-          <TableHeaderCell>時間</TableHeaderCell>
-          <TableHeaderCell>ステータス</TableHeaderCell>
-          <TableHeaderCell>接続数</TableHeaderCell>
-          <TableHeaderCell>世帯数</TableHeaderCell>
-          <TableHeaderCell>カバー率</TableHeaderCell>
-          <TableHeaderCell>エラー率</TableHeaderCell>
-          <TableHeaderCell>プロセス状況</TableHeaderCell>
-          <TableHeaderCell>ID</TableHeaderCell>
-        </TableTr>
-      </TableThead>
-      <TableTbody>
+    <DataTable.Root>
+      <DataTable.Thead>
+        <DataTable.Tr>
+          <DataTable.HeaderCell>エリア</DataTable.HeaderCell>
+          <DataTable.HeaderCell>時間</DataTable.HeaderCell>
+          <DataTable.HeaderCell>ステータス</DataTable.HeaderCell>
+          <DataTable.HeaderCell>接続数</DataTable.HeaderCell>
+          <DataTable.HeaderCell>世帯数</DataTable.HeaderCell>
+          <DataTable.HeaderCell>カバー率</DataTable.HeaderCell>
+          <DataTable.HeaderCell>エラー率</DataTable.HeaderCell>
+          <DataTable.HeaderCell>プロセス状況</DataTable.HeaderCell>
+          <DataTable.HeaderCell>ID</DataTable.HeaderCell>
+        </DataTable.Tr>
+      </DataTable.Thead>
+      <DataTable.Tbody>
         {Data.map((row) => (
-          <TableTr key={row.id}>
-            <TableCell>{row.area}</TableCell>
-            <TableCell>{row.time}</TableCell>
-            <TableCell>{row.status}</TableCell>
-            <TableCell>{row.connections}</TableCell>
-            <TableCell>{row.households}</TableCell>
-            <TableCell>{row.coverage}</TableCell>
-            <TableCell>{row.errorRate}</TableCell>
-            <TableCell>{row.process}</TableCell>
-            <TableCell>{row.id}</TableCell>
-          </TableTr>
+          <DataTable.Tr key={row.id}>
+            <DataTable.BodyCell>{row.area}</DataTable.BodyCell>
+            <DataTable.BodyCell>{row.time}</DataTable.BodyCell>
+            <DataTable.BodyCell>{row.status}</DataTable.BodyCell>
+            <DataTable.BodyCell>{row.connections}</DataTable.BodyCell>
+            <DataTable.BodyCell>{row.households}</DataTable.BodyCell>
+            <DataTable.BodyCell>{row.coverage}</DataTable.BodyCell>
+            <DataTable.BodyCell>{row.errorRate}</DataTable.BodyCell>
+            <DataTable.BodyCell>{row.process}</DataTable.BodyCell>
+            <DataTable.BodyCell>{row.id}</DataTable.BodyCell>
+          </DataTable.Tr>
         ))}
-      </TableTbody>
-    </Table>
+      </DataTable.Tbody>
+    </DataTable.Root>
   ),
 };

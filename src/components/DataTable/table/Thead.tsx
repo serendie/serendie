@@ -1,4 +1,4 @@
-export function TableThead({
+export function Thead({
   children,
   ...props
 }: {

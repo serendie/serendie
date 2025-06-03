@@ -1,4 +1,4 @@
-export function TableTbody({
+export function Tbody({
   children,
   ...props
 }: {

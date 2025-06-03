@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { css } from "../../../../styled-system/css";
 
-export function Table({ children }: { children: ReactNode }) {
+export function Root({ children }: { children: ReactNode }) {
   return (
     <div
       className={css({

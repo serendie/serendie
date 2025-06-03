@@ -7,14 +7,9 @@ import {
   ColumnDef,
   SortingState,
 } from "@tanstack/react-table";
-import { Table } from "./table/Table";
-import { TableHeaderCell } from "./table/TableHeaderCell";
-import { TableRow } from "./table/TableRow";
-import { TableTbody } from "./table/TableTbody";
-import { TableThead } from "./table/TableThead";
-import { TableTr } from "./table/TableTr";
+import { DataTable } from ".";
 
-export function DataTable<TData>({
+export function DataTableGrid<TData>({
   data = [],
   columns = [],
 }: {
@@ -35,16 +30,21 @@ export function DataTable<TData>({
     enableSorting: true,
   });
   return (
-    <Table>
-      <TableThead>
+    <DataTable.Root>
+      <DataTable.Thead>
         {table.getHeaderGroups().map((headerGroup) => (
-          <TableTr key={headerGroup.id}>
-            <TableHeaderCell />
+          <DataTable.Tr key={headerGroup.id}>
+            <DataTable.HeaderCheckbox
+              checked={table.getIsAllRowsSelected()}
+              indeterminate={table.getIsSomeRowsSelected()}
+              onChange={table.getToggleAllRowsSelectedHandler()}
+              value="select-all"
+            />
             {headerGroup.headers.map((header) => {
               const isSortable = header.column.getCanSort();
               const sortDir = header.column.getIsSorted();
               return (
-                <TableHeaderCell
+                <DataTable.HeaderCell
                   key={header.id}
                   isSortable={isSortable}
                   sortDir={sortDir}
@@ -59,17 +59,19 @@ export function DataTable<TData>({
                     header.column.columnDef.header,
                     header.getContext()
                   )}
-                </TableHeaderCell>
+                </DataTable.HeaderCell>
               );
             })}
-          </TableTr>
+          </DataTable.Tr>
         ))}
-      </TableThead>
-      <TableTbody>
+      </DataTable.Thead>
+      <DataTable.Tbody>
         {table.getRowModel().rows.map((row) => (
-          <TableRow key={row.id} row={row} />
+          <DataTable.Row key={row.id} row={row} />
         ))}
-      </TableTbody>
-    </Table>
+      </DataTable.Tbody>
+    </DataTable.Root>
   );
 }
+
+export default DataTableGrid;
