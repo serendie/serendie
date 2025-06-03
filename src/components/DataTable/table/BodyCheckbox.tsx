@@ -1,5 +1,5 @@
-import { ChoiceBox } from "@serendie/ui";
 import { DataTable } from "..";
+import { ChoiceBox } from "../../ChoiceBox";
 
 export const BodyCheckbox = ({
   checked,
