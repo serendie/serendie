@@ -20,12 +20,9 @@ const cellStyle = cva({
       default: {
         background: "sd.system.color.component.surface",
       },
-      success: { background: "sd.system.color.impression.positiveContainer" },
-      notice: { background: "sd.system.color.impression.noticeContainer" },
-      error: {
-        background: "sd.system.color.impression.negativeContainer",
-        color: "sd.system.color.impression.onNegativeContainer",
-      },
+      success: { background: "#CAF9E6" },
+      notice: { background: "#FEEDBE" },
+      error: { background: "#FCEBEA", color: "#CE0037" },
     },
     state: {
       enabled: {},
