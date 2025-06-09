@@ -1,4 +1,4 @@
-import { ChoiceBox } from "../../ChoiceBox";
+import { ChoiceBox, ChoiceBoxProps } from "../../ChoiceBox";
 import { DataTable } from "..";
 
 export const BodyCheckbox = ({
@@ -6,14 +6,13 @@ export const BodyCheckbox = ({
   onChange,
   value,
   state = "enabled",
+  ...props
 }: {
-  checked: boolean;
-  onChange: (event: unknown) => void;
-  value: string;
   state?: "enabled" | "hovered" | "selected";
-}) => (
+} & Omit<ChoiceBoxProps, "type">) => (
   <DataTable.BodyCell state={state}>
     <ChoiceBox
+      {...props}
       type="checkbox"
       value={value}
       checked={checked}

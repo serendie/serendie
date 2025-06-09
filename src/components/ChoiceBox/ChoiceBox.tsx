@@ -20,7 +20,7 @@ import {
   radioIconCss,
   radioUncheckedIconCss,
 } from "../RadioButton";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 export const ChoiceBoxStyle = sva({
   slots: [
@@ -51,25 +51,18 @@ type ChoiceBoxBaseProps = {
 
 export type ChoiceBoxProps = ChoiceBoxBaseProps &
   RadioGroupItemProps &
-  CheckboxRootProps & {
-    indeterminate?: boolean;
-  };
+  CheckboxRootProps;
 
 export const ChoiceBox: React.FC<ChoiceBoxProps> = ({
   type,
   value,
-  indeterminate,
   className,
+  checked,
   ...props
 }) => {
   const [variantProps, elementProps] = ChoiceBoxStyle.splitVariantProps(props);
   const styles = ChoiceBoxStyle(variantProps);
   const inputRef = useRef<HTMLInputElement>(null);
-  useEffect(() => {
-    if (type === "checkbox" && inputRef.current) {
-      inputRef.current.indeterminate = !!indeterminate;
-    }
-  }, [indeterminate]);
 
   if (type === "radio") {
     return (
@@ -99,14 +92,15 @@ export const ChoiceBox: React.FC<ChoiceBoxProps> = ({
       <ArkCheckbox.Root
         value={value}
         className={cx("group", styles.root, className)}
+        checked={checked}
         {...elementProps}
       >
         <ArkCheckbox.Context>
           {(checkbox) => (
             <ArkCheckbox.Control className={styles.checkboxItem}>
-              {checkbox.checked ? (
+              {checkbox.checked === true ? (
                 <CheckboxCheckedIcon className={styles.checkboxCheckedIcon} />
-              ) : indeterminate ? (
+              ) : checkbox.checkedState === "indeterminate" ? (
                 <CheckboxIndeterminateIcon
                   className={styles.checkboxCheckedIcon}
                 />

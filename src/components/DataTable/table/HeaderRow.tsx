@@ -21,8 +21,13 @@ export function HeaderRow<TData>({
     <DataTable.Tr key={headerGroup.id}>
       {enableRowSelection && (
         <DataTable.HeaderCheckbox
-          checked={table.getIsAllRowsSelected()}
-          indeterminate={table.getIsSomeRowsSelected()}
+          checked={
+            table.getIsSomeRowsSelected()
+              ? "indeterminate"
+              : table.getIsAllRowsSelected()
+                ? true
+                : false
+          }
           onChange={table.getToggleAllRowsSelectedHandler()}
           value="select-all"
           className={css({
