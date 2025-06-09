@@ -57,7 +57,6 @@ export const ChoiceBox: React.FC<ChoiceBoxProps> = ({
   type,
   value,
   className,
-  checked,
   ...props
 }) => {
   const [variantProps, elementProps] = ChoiceBoxStyle.splitVariantProps(props);
@@ -92,8 +91,7 @@ export const ChoiceBox: React.FC<ChoiceBoxProps> = ({
       <ArkCheckbox.Root
         value={value}
         className={cx("group", styles.root, className)}
-        checked={checked}
-        {...elementProps}
+        {...props}
       >
         <ArkCheckbox.Context>
           {(checkbox) => (
@@ -109,13 +107,13 @@ export const ChoiceBox: React.FC<ChoiceBoxProps> = ({
                   className={styles.checkboxUncheckedIcon}
                 />
               )}
+              <ArkCheckbox.HiddenInput
+                ref={inputRef}
+                checked={checkbox.checked}
+              />
             </ArkCheckbox.Control>
           )}
         </ArkCheckbox.Context>
-        <ArkCheckbox.HiddenInput
-          ref={inputRef}
-          checked={checked ? true : false}
-        />
       </ArkCheckbox.Root>
     );
   }
