@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { createColumnHelper, ColumnDef } from "@tanstack/react-table";
-// Import the main DataTable component
+import { createColumnHelper } from "@tanstack/react-table";
 import { DataTable } from "./index";
 
 const meta: Meta<typeof DataTable> = {
@@ -142,8 +141,43 @@ const columns = [
 
 // Basic table with sample data
 export const Default: Story = {
+  render: () => <DataTable<DataRow> data={Data} columns={columns} />,
+};
+
+// Table without row selection
+export const WithoutRowSelection: Story = {
   render: () => (
-    <DataTable data={Data} columns={columns as ColumnDef<DataRow>[]} />
+    <DataTable<DataRow>
+      data={Data}
+      columns={columns}
+      enableRowSelection={false}
+    />
+  ),
+};
+
+// Table with custom sorting
+export const WithCustomSorting: Story = {
+  render: () => (
+    <DataTable<DataRow>
+      data={Data}
+      columns={columns}
+      initialSorting={[{ id: "area", desc: false }]}
+      onSortingChange={(sorting) => console.log("Sorting changed:", sorting)}
+    />
+  ),
+};
+
+// Table with callbacks
+export const WithCallbacks: Story = {
+  render: () => (
+    <DataTable<DataRow>
+      data={Data}
+      columns={columns}
+      onRowSelectionChange={(selection) =>
+        console.log("Row selection changed:", selection)
+      }
+      onSortingChange={(sorting) => console.log("Sorting changed:", sorting)}
+    />
   ),
 };
 
@@ -180,5 +214,58 @@ export const SimpleTable: Story = {
         ))}
       </DataTable.Tbody>
     </DataTable.Root>
+  ),
+};
+
+// 新しい型定義の例
+type User = {
+  id: number;
+  name: string;
+  email: string;
+  role: "admin" | "user" | "guest";
+};
+
+const userData: User[] = [
+  { id: 1, name: "田中太郎", email: "tanaka@example.com", role: "admin" },
+  { id: 2, name: "佐藤花子", email: "sato@example.com", role: "user" },
+  { id: 3, name: "山田次郎", email: "yamada@example.com", role: "guest" },
+];
+
+const userColumnHelper = createColumnHelper<User>();
+const userColumns = [
+  userColumnHelper.accessor("id", {
+    header: "ID",
+    enableSorting: true,
+  }),
+  userColumnHelper.accessor("name", {
+    header: "名前",
+    enableSorting: true,
+  }),
+  userColumnHelper.accessor("email", {
+    header: "メールアドレス",
+    enableSorting: true,
+  }),
+  userColumnHelper.accessor("role", {
+    header: "役割",
+    enableSorting: true,
+    meta: {
+      getType: (row: User) => {
+        if (row.role === "admin") return "success";
+        if (row.role === "guest") return "notice";
+        return "default";
+      },
+    },
+  }),
+];
+
+// 異なるデータ型での使用例
+export const DifferentDataType: Story = {
+  render: () => (
+    <DataTable<User>
+      data={userData}
+      columns={userColumns}
+      enableRowSelection={true}
+      enableSorting={true}
+    />
   ),
 };

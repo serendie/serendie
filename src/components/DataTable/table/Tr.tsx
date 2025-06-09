@@ -1,11 +1,24 @@
+import { css, cx } from "../../../../styled-system/css";
+
 export function Tr({
   children,
+  className,
   ...props
 }: {
   children: React.ReactNode;
+  className?: string;
 } & React.ComponentProps<"tr">) {
   return (
-    <tr role="row" {...props}>
+    <tr
+      role="row"
+      className={cx(
+        css({
+          position: "relative",
+        }),
+        className
+      )}
+      {...props}
+    >
       {children}
     </tr>
   );

@@ -64,6 +64,12 @@ export const ChoiceBox: React.FC<ChoiceBoxProps> = ({
 }) => {
   const [variantProps, elementProps] = ChoiceBoxStyle.splitVariantProps(props);
   const styles = ChoiceBoxStyle(variantProps);
+  const inputRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    if (type === "checkbox" && inputRef.current) {
+      inputRef.current.indeterminate = !!indeterminate;
+    }
+  }, [indeterminate]);
 
   if (type === "radio") {
     return (
@@ -89,13 +95,6 @@ export const ChoiceBox: React.FC<ChoiceBoxProps> = ({
   }
 
   if (type === "checkbox") {
-    const inputRef = useRef<HTMLInputElement>(null);
-    useEffect(() => {
-      if (inputRef.current) {
-        inputRef.current.indeterminate = !!indeterminate;
-      }
-    }, [indeterminate]);
-
     return (
       <ArkCheckbox.Root
         value={value}

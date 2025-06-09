@@ -8,7 +8,7 @@ export const BodyCheckbox = ({
   state = "enabled",
 }: {
   checked: boolean;
-  onChange: () => void;
+  onChange: (event: unknown) => void;
   value: string;
   state?: "enabled" | "hovered" | "selected";
 }) => (
@@ -18,7 +18,6 @@ export const BodyCheckbox = ({
       value={value}
       checked={checked}
       onChange={onChange}
-      style={{ borderRadius: 2, borderColor: "#C8C7C2" }}
     />
   </DataTable.BodyCell>
 );

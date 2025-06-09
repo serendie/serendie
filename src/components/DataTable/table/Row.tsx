@@ -1,37 +1,83 @@
-import { useState, useCallback, useMemo } from "react";
 import {
   Row as TanstackRow,
   flexRender,
   ColumnDef,
 } from "@tanstack/react-table";
-import { TableCheckboxCell } from "./CheckboxCell";
 import { DataTable } from "..";
+import { cva } from "../../../../styled-system/css";
 
-export function Row<TData>({ row }: { row: TanstackRow<TData> }) {
-  const [hovered, setHovered] = useState(false);
+const rowStyle = cva({
+  base: {
+    _hover: {
+      _after: {
+        content: "''",
+        position: "absolute",
+        top: 0,
+        left: 0,
+        pointerEvents: "none",
+        w: "100%",
+        h: "100%",
+        bg: "sd.system.color.interaction.hoveredVariant",
+        zIndex: 1,
+      },
+    },
+  },
+  variants: {
+    state: {
+      selected: {
+        base: {
+          _after: {
+            content: "''",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            pointerEvents: "none",
+            w: "100%",
+            h: "100%",
+            bg: "sd.system.color.component.inversePrimary",
+            zIndex: 1,
+            mixBlendMode: "multiply",
+          },
+          _hover: {
+            _after: {
+              content: "''",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              pointerEvents: "none",
+              w: "100%",
+              h: "100%",
+              bg: "color-mix(in srgb, token(colors.sd.system.color.component.inversePrimary) 95%, token(colors.sd.system.color.component.inverseSurface) 5%)",
+              zIndex: 1,
+              mixBlendMode: "multiply",
+            },
+          },
+        },
+      },
+    },
+  },
+});
 
-  const handleMouseEnter = useCallback(() => setHovered(true), []);
-  const handleMouseLeave = useCallback(() => setHovered(false), []);
-  const handleToggleSelected = useCallback(() => row.toggleSelected(), [row]);
-
-  const isSelected = row.getIsSelected();
-  const cellState = useMemo(() => {
-    if (isSelected) return "selected";
-    if (hovered) return "hovered";
-    return "enabled";
-  }, [isSelected, hovered]);
-
+export function Row<TData>({
+  row,
+  enableRowSelection,
+}: {
+  row: TanstackRow<TData>;
+  enableRowSelection?: boolean;
+}) {
   return (
     <DataTable.Tr
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      className={rowStyle({
+        state: row.getIsSelected() ? "selected" : undefined,
+      })}
     >
-      <TableCheckboxCell
-        checked={isSelected}
-        onChange={handleToggleSelected}
-        value={row.id}
-        state={cellState}
-      />
+      {enableRowSelection && (
+        <DataTable.BodyCheckbox
+          checked={row.getIsSelected()}
+          onChange={row.getToggleSelectedHandler()}
+          value={row.id}
+        />
+      )}
       {row.getVisibleCells().map((cell) => {
         let type: "default" | "success" | "notice" | "error" = "default";
         const columnDef = cell.column.columnDef as ColumnDef<TData>;
@@ -46,7 +92,7 @@ export function Row<TData>({ row }: { row: TanstackRow<TData> }) {
           type = getTypeFn(row.original);
         }
         return (
-          <DataTable.BodyCell key={cell.id} type={type} state={cellState}>
+          <DataTable.BodyCell key={cell.id} type={type}>
             {flexRender(cell.column.columnDef.cell, cell.getContext())}
           </DataTable.BodyCell>
         );

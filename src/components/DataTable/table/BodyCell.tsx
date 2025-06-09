@@ -13,18 +13,22 @@ const cellStyle = cva({
     px: "sd.system.dimension.spacing.extraSmall",
     py: "sd.system.dimension.spacing.twoExtraSmall",
     height: "32px",
-    background: "sd.system.color.component.surface",
+    whiteSpace: "nowrap",
   },
   variants: {
     type: {
       default: {
         background: "sd.system.color.component.surface",
       },
-      success: { background: "sd.system.color.impression.positiveContainer" },
-      notice: { background: "sd.system.color.impression.noticeContainer" },
+      success: {
+        background: "sd.system.color.impression.positiveContainerVariant",
+      },
+      notice: {
+        background: "sd.system.color.impression.noticeContainerVariant",
+      },
       error: {
-        background: "sd.system.color.impression.negativeContainer",
-        color: "sd.system.color.impression.onNegativeContainer",
+        background: "sd.system.color.impression.negativeContainerVariant",
+        color: "sd.system.color.impression.onNegativeContainerVariant",
       },
     },
     state: {

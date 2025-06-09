@@ -1,12 +1,12 @@
 import { SerendieSymbol } from "@serendie/symbols";
-import { cva } from "../../../../styled-system/css";
+import { css, cva, cx } from "../../../../styled-system/css";
 
 const tableHeaderCellStyle = cva({
   base: {
     borderBottom: "1px solid",
     borderColor: "sd.system.color.component.outline",
     fontFamily: "Roboto, sans-serif",
-    color: "sd.system.color.component.onSurface", // #000000
+    color: "sd.system.color.component.onSurface",
     textAlign: "left",
     fontWeight: 400,
     fontSize: "14px",
@@ -14,6 +14,8 @@ const tableHeaderCellStyle = cva({
     py: "sd.system.dimension.spacing.twoExtraSmall",
     height: "32px",
     background: "sd.system.color.component.inversePrimary",
+    verticalAlign: "middle",
+    whiteSpace: "nowrap",
   },
   defaultVariants: {},
 });
@@ -25,6 +27,7 @@ export const HeaderCell = ({
   sortable = false,
   sortDirection,
   onSort,
+  className,
   ...props
 }: React.PropsWithChildren<{
   size?: "small" | "medium" | "large";
@@ -32,6 +35,7 @@ export const HeaderCell = ({
   sortable?: boolean;
   sortDirection?: "asc" | "desc" | false;
   onSort?: () => void;
+  className?: string;
 }> &
   React.ComponentProps<"th">) => {
   const handleKeyDown = (event: React.KeyboardEvent) => {
@@ -56,14 +60,20 @@ export const HeaderCell = ({
       tabIndex={sortable ? 0 : undefined}
       onClick={sortable ? onSort : undefined}
       onKeyDown={handleKeyDown}
-      className={tableHeaderCellStyle({ size, state })}
+      className={cx(tableHeaderCellStyle({ size, state }), className)}
       style={{
         cursor: sortable ? "pointer" : "default",
         userSelect: "none",
       }}
       {...props}
     >
-      <span style={{ display: "inline-flex", alignItems: "center" }}>
+      <span
+        className={css({
+          display: "inline-flex",
+          alignItems: "center",
+          verticalAlign: "middle",
+        })}
+      >
         {children}
         {sortable &&
           (sortDirection === "asc" ? (
