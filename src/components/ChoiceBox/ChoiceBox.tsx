@@ -112,7 +112,10 @@ export const ChoiceBox: React.FC<ChoiceBoxProps> = ({
             </ArkCheckbox.Control>
           )}
         </ArkCheckbox.Context>
-        <ArkCheckbox.HiddenInput ref={inputRef} />
+        <ArkCheckbox.HiddenInput
+          ref={inputRef}
+          checked={checked ? true : false}
+        />
       </ArkCheckbox.Root>
     );
   }
