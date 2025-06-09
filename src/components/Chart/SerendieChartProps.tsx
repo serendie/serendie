@@ -142,17 +142,11 @@ interface ChartPropsResult {
 
 // チャートのプロパティを取得するフック
 export const useChartProps = (
-  colorCategory: ChartColorCategory = "multi"
+  colorCategory: ChartColorCategory = "primary"
 ): ChartPropsResult => {
   const colors = getChartColors(colorCategory);
 
-  // バーチャート用のラベルテキストカラー関数
-  const barLabelTextColor = (datum: { color: string }) => {
-    return getContrastTextColor(datum.color);
-  };
-
-  // パイチャート用のラベルテキストカラー関数
-  const pieLabelTextColor = (datum: { color: string }) => {
+  const calculateLabelTextColor = (datum: { color: string }) => {
     return getContrastTextColor(datum.color);
   };
 
@@ -164,7 +158,7 @@ export const useChartProps = (
       innerPadding: 1,
       borderRadius: 0,
       enableLabel: true,
-      labelTextColor: barLabelTextColor,
+      labelTextColor: calculateLabelTextColor,
     },
     line: {
       colors,
@@ -185,7 +179,7 @@ export const useChartProps = (
       activeOuterRadiusOffset: 8,
       enableArcLabels: true,
       enableArcLinkLabels: true,
-      arcLabelsTextColor: pieLabelTextColor,
+      arcLabelsTextColor: calculateLabelTextColor,
     },
   };
 };

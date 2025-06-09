@@ -86,8 +86,8 @@ const SerendieChartTheme: PartialTheme = {
   // ツールチップのスタイル
   tooltip: {
     container: {
-      background: token("colors.sd.system.color.chart.component.chartSurface"),
-      color: token("colors.sd.system.color.chart.component.onChartSurface"),
+      background: token("colors.sd.system.color.component.inverseOnSurface"),
+      color: token("colors.sd.system.color.component.inverseOnSurface"),
       fontSize: parseInt(typographyTokens.scale.expanded.extraSmall, 10), // 13px
       fontFamily: typographyTokens.fontFamily.primary,
       borderRadius: 6,

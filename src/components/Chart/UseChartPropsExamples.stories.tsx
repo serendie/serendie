@@ -71,6 +71,7 @@ export const BasicUsage = () => {
           data={barData}
           keys={["value"]}
           indexBy="month"
+          colorBy="indexValue"
           {...chartProps.bar}
         />
       </div>
