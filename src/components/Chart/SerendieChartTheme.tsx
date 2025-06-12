@@ -1,5 +1,4 @@
-import React from "react";
-import { PartialTheme, ThemeProvider } from "@nivo/theming";
+import { PartialTheme } from "@nivo/theming";
 import { token } from "../../../styled-system/tokens";
 import serendieTokens from "@serendie/design-token";
 
@@ -7,7 +6,7 @@ import serendieTokens from "@serendie/design-token";
 const typographyTokens = serendieTokens.sd.reference.typography;
 const spacingTokens = serendieTokens.sd.system.dimension.spacing;
 
-const SerendieChartTheme: PartialTheme = {
+export const SerendieChartTheme: PartialTheme = {
   background: token("colors.sd.system.color.chart.component.chartSurface"),
 
   // 軸関連のスタイル
@@ -16,7 +15,6 @@ const SerendieChartTheme: PartialTheme = {
       line: {
         stroke: token("colors.sd.system.color.chart.component.scalemark"),
         strokeWidth: 1,
-        strokeOpacity: 0.2,
       },
     },
     ticks: {
@@ -45,8 +43,6 @@ const SerendieChartTheme: PartialTheme = {
     line: {
       stroke: token("colors.sd.system.color.chart.component.scalemark"),
       strokeWidth: 1,
-      strokeOpacity: 0.15,
-      strokeDasharray: "4 4", // 点線スタイル
     },
   },
 
@@ -60,7 +56,6 @@ const SerendieChartTheme: PartialTheme = {
     ticks: {
       line: {
         strokeWidth: 1,
-        strokeOpacity: 0.2,
       },
     },
     title: {
@@ -76,7 +71,7 @@ const SerendieChartTheme: PartialTheme = {
   // ラベルのスタイル（バー内のテキスト）
   labels: {
     text: {
-      fill: "#ffffff", // 白色で表示
+      fill: token("colors.sd.system.color.chart.component.onChartSurface"),
       fontSize: parseInt(typographyTokens.scale.expanded.extraSmall, 10), // 13px
       fontWeight: typographyTokens.fontWeight.regular, // 500
       fontFamily: typographyTokens.fontFamily.primary,
@@ -86,8 +81,8 @@ const SerendieChartTheme: PartialTheme = {
   // ツールチップのスタイル
   tooltip: {
     container: {
-      background: token("colors.sd.system.color.component.inverseOnSurface"),
-      color: token("colors.sd.system.color.component.inverseOnSurface"),
+      background: token("colors.sd.system.color.chart.component.chartSurface"),
+      color: token("colors.sd.system.color.chart.component.onChartSurface"),
       fontSize: parseInt(typographyTokens.scale.expanded.extraSmall, 10), // 13px
       fontFamily: typographyTokens.fontFamily.primary,
       borderRadius: 6,
@@ -152,16 +147,3 @@ const SerendieChartTheme: PartialTheme = {
     },
   },
 };
-
-// シンプルなProvider（テーマのみ提供）
-interface SerendieChartThemeProviderProps {
-  children: React.ReactNode;
-}
-
-export const SerendieChartThemeProvider = ({
-  children,
-}: SerendieChartThemeProviderProps) => {
-  return <ThemeProvider theme={SerendieChartTheme}>{children}</ThemeProvider>;
-};
-
-export default SerendieChartTheme;

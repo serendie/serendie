@@ -1,8 +1,6 @@
-// テーマ関連のエクスポート
-export { default as SerendieChartTheme } from "./SerendieChartTheme";
-export { SerendieChartThemeProvider } from "./SerendieChartTheme";
+export { SerendieChartTheme } from "./SerendieChartTheme";
+export type { ChartColorCategory } from "./SerendieChartProps";
 
-// 新しいフック関連のエクスポート
 export {
   useChartProps,
   useBarChartProps,
@@ -16,6 +14,3 @@ export {
   legendChartMargin,
   spaciousChartMargin,
 } from "./SerendieChartProps";
-
-// 型定義の再エクスポート
-export type { ChartColorCategory } from "./SerendieChartProps";

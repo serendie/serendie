@@ -3,6 +3,7 @@ import { LineSeries, LineSvgProps } from "@nivo/line";
 import { PieSvgProps } from "@nivo/pie";
 import { token } from "../../../styled-system/tokens";
 import serendieTokens from "@serendie/design-token";
+import { SerendieChartTheme } from "./SerendieChartTheme";
 
 // チャートの色パレットタイプ
 export type ChartColorCategory =
@@ -150,6 +151,7 @@ export const useChartProps = <T extends keyof ChartPropsResult>(
 
   const chartProps: ChartPropsResult = {
     bar: {
+      theme: SerendieChartTheme,
       colors,
       margin: defaultChartMargin,
       padding: 0.3,
@@ -159,6 +161,7 @@ export const useChartProps = <T extends keyof ChartPropsResult>(
       labelTextColor: calculateLabelTextColor,
     },
     line: {
+      theme: SerendieChartTheme,
       colors,
       margin: defaultChartMargin,
       enablePoints: true,
@@ -169,6 +172,7 @@ export const useChartProps = <T extends keyof ChartPropsResult>(
       enableGridY: true,
     },
     pie: {
+      theme: SerendieChartTheme,
       colors,
       margin: defaultChartMargin,
       innerRadius: 0.5,
@@ -178,6 +182,13 @@ export const useChartProps = <T extends keyof ChartPropsResult>(
       enableArcLabels: true,
       enableArcLinkLabels: true,
       arcLabelsTextColor: calculateLabelTextColor,
+      arcLinkLabelsColor: token(
+        "colors.sd.system.color.chart.component.onChartSurface"
+      ),
+      arcLinkLabelsThickness: 2,
+      arcLinkLabelsTextColor: token(
+        "colors.sd.system.color.chart.component.onChartSurface"
+      ),
     },
   };
 
