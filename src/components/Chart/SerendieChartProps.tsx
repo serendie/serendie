@@ -134,23 +134,25 @@ export const spaciousChartMargin = {
 };
 
 // チャートプロパティの型定義
-interface ChartPropsResult {
+
+type ChartPropsResult = {
   bar: Partial<BarSvgProps<BarDatum>>;
   line: Partial<LineSvgProps<LineSeries>>;
   pie: Partial<PieSvgProps<Record<string, unknown>>>;
-}
+};
 
 // チャートのプロパティを取得するフック
-export const useChartProps = (
+export const useChartProps = <T extends keyof ChartPropsResult>(
+  chartType: T,
   colorCategory: ChartColorCategory = "primary"
-): ChartPropsResult => {
+): ChartPropsResult[T] => {
   const colors = getChartColors(colorCategory);
 
   const calculateLabelTextColor = (datum: { color: string }) => {
     return getContrastTextColor(datum.color);
   };
 
-  return {
+  const chartProps: ChartPropsResult = {
     bar: {
       colors,
       margin: defaultChartMargin,
@@ -182,26 +184,16 @@ export const useChartProps = (
       arcLabelsTextColor: calculateLabelTextColor,
     },
   };
+
+  return chartProps[chartType];
 };
 
-// 個別のチャートタイプ用のプロパティ取得関数
-export const useBarChartProps = (
-  colorCategory: ChartColorCategory = "multi"
-) => {
-  const { bar } = useChartProps(colorCategory);
-  return bar;
-};
+// 個別のチャートタイプ用のプロパティ取得関数（シンプル版）
+export const useBarChartProps = (c: ChartColorCategory = "primary") =>
+  useChartProps("bar", c);
 
-export const useLineChartProps = (
-  colorCategory: ChartColorCategory = "multi"
-) => {
-  const { line } = useChartProps(colorCategory);
-  return line;
-};
+export const useLineChartProps = (c: ChartColorCategory = "primary") =>
+  useChartProps("line", c);
 
-export const usePieChartProps = (
-  colorCategory: ChartColorCategory = "multi"
-) => {
-  const { pie } = useChartProps(colorCategory);
-  return pie;
-};
+export const usePieChartProps = (c: ChartColorCategory = "primary") =>
+  useChartProps("pie", c);

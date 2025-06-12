@@ -7,7 +7,10 @@ import {
   useBarChartProps,
   compactChartMargin,
   legendChartMargin,
+  useLineChartProps,
+  usePieChartProps,
 } from "./index";
+import { token } from "../../../styled-system/tokens";
 
 export default {
   title: "Chart/UseChartProps Examples",
@@ -62,7 +65,7 @@ const pieData = [
 
 // 基本的な使い方
 export const BasicUsage = () => {
-  const chartProps = useChartProps("primary");
+  const chartProps = useChartProps("bar", "primary");
 
   return (
     <SerendieChartThemeProvider>
@@ -72,7 +75,7 @@ export const BasicUsage = () => {
           keys={["value"]}
           indexBy="month"
           colorBy="indexValue"
-          {...chartProps.bar}
+          {...chartProps}
         />
       </div>
     </SerendieChartThemeProvider>
@@ -99,7 +102,7 @@ export const IndividualHooks = () => {
 
 // カスタマイズ可能
 export const CustomizedProps = () => {
-  const chartProps = useChartProps("multi");
+  const chartProps = useChartProps("bar", "multi");
 
   return (
     <SerendieChartThemeProvider>
@@ -109,7 +112,7 @@ export const CustomizedProps = () => {
           keys={["sales", "profit", "cost"]}
           indexBy="month"
           groupMode="grouped"
-          {...chartProps.bar}
+          {...chartProps}
           // カスタマイズも可能
           margin={legendChartMargin}
           legends={[
@@ -132,7 +135,9 @@ export const CustomizedProps = () => {
 
 // 複数のチャートタイプ
 export const MultipleChartTypes = () => {
-  const chartProps = useChartProps("multi");
+  const barProps = useBarChartProps("multi");
+  const lineProps = useLineChartProps("multi");
+  const pieProps = usePieChartProps("multi");
 
   return (
     <SerendieChartThemeProvider>
@@ -143,7 +148,7 @@ export const MultipleChartTypes = () => {
             data={barData}
             keys={["value"]}
             indexBy="month"
-            {...chartProps.bar}
+            {...barProps}
             margin={compactChartMargin}
           />
         </div>
@@ -152,7 +157,7 @@ export const MultipleChartTypes = () => {
           <h3>Line Chart</h3>
           <ResponsiveLine
             data={lineData}
-            {...chartProps.line}
+            {...lineProps}
             margin={compactChartMargin}
           />
         </div>
@@ -161,7 +166,7 @@ export const MultipleChartTypes = () => {
           <h3>Pie Chart</h3>
           <ResponsivePie
             data={pieData}
-            {...chartProps.pie}
+            {...pieProps}
             margin={compactChartMargin}
           />
         </div>
@@ -216,7 +221,7 @@ export const ColorContrastDemo = () => {
 
 // 単一系列で複数色を使用
 export const SingleSeriesMultiColor = () => {
-  const chartProps = useChartProps("multi");
+  const chartProps = useChartProps("bar", "multi");
 
   return (
     <SerendieChartThemeProvider>
@@ -231,7 +236,7 @@ export const SingleSeriesMultiColor = () => {
           ]}
           keys={["value"]}
           indexBy="item"
-          {...chartProps.bar}
+          {...chartProps}
           colorBy="indexValue" // 各バーに異なる色を適用
         />
       </div>
@@ -320,7 +325,7 @@ export const AllColorCategoriesTest = () => {
 
 // 積み上げバーでのラベルコントラスト
 export const StackedBarsWithLabels = () => {
-  const chartProps = useChartProps("primary");
+  const chartProps = useChartProps("bar", "primary");
 
   return (
     <SerendieChartThemeProvider>
@@ -329,7 +334,7 @@ export const StackedBarsWithLabels = () => {
           data={multiSeriesData}
           keys={["sales", "profit", "cost"]}
           indexBy="month"
-          {...chartProps.bar}
+          {...chartProps}
           margin={legendChartMargin}
           // 積み上げモード（デフォルト）
           legends={[
@@ -352,7 +357,7 @@ export const StackedBarsWithLabels = () => {
 
 // 水平バーチャート
 export const HorizontalBarsWithLabels = () => {
-  const chartProps = useChartProps("notice");
+  const chartProps = useChartProps("bar", "notice");
 
   return (
     <SerendieChartThemeProvider>
@@ -361,7 +366,7 @@ export const HorizontalBarsWithLabels = () => {
           data={barData}
           keys={["value"]}
           indexBy="month"
-          {...chartProps.bar}
+          {...chartProps}
           layout="horizontal"
           axisTop={null}
           axisRight={null}
@@ -375,6 +380,102 @@ export const HorizontalBarsWithLabels = () => {
             legendPosition: "middle",
             legendOffset: -40,
           }}
+        />
+      </div>
+    </SerendieChartThemeProvider>
+  );
+};
+
+// キャプチャー画像のような積み上げバーチャートを再現
+export const CaptureLikeStackedBars = () => {
+  // シンプルにデフォルト設定だけを取得
+  const barProps = useBarChartProps("primary");
+
+  // キャプチャー画像のようなデータ（6本の棒グラフになるよう修正）
+  const captureData = [
+    {
+      category: "凡例1",
+      segment1: 20,
+      segment2: 20,
+      segment3: 20,
+      segment4: 20,
+      segment5: 20,
+    },
+    {
+      category: "凡例2",
+      segment1: 20,
+      segment2: 20,
+      segment3: 20,
+      segment4: 20,
+      segment5: 0, // 5番目のセグメントがない
+    },
+    {
+      category: "凡例3",
+      segment1: 20,
+      segment2: 20,
+      segment3: 20,
+      segment4: 20,
+      segment5: 20,
+    },
+    {
+      category: "凡例4",
+      segment1: 20,
+      segment2: 20,
+      segment3: 20,
+      segment4: 20,
+      segment5: 0, // 5番目のセグメントがない
+    },
+    {
+      category: "凡例5",
+      segment1: 20,
+      segment2: 20,
+      segment3: 20,
+      segment4: 20,
+      segment5: 0, // 5番目のセグメントがない
+    },
+    {
+      category: "凡例6",
+      segment1: 20,
+      segment2: 20,
+      segment3: 20,
+      segment4: 20,
+      segment5: 0, // 5番目のセグメントがない
+    },
+  ];
+
+  return (
+    <SerendieChartThemeProvider>
+      <div style={{ height: 400, width: 700 }}>
+        <ResponsiveBar
+          data={captureData}
+          keys={["segment1", "segment2", "segment3", "segment4", "segment5"]}
+          indexBy="category"
+          {...barProps}
+          labelFormat={(datum) =>
+            typeof datum === "number" && datum > 0 ? "20%" : ""
+          }
+          axisRight={{
+            format: (value) => `${value}%`,
+          }}
+          markers={[
+            {
+              axis: "y",
+              value: 75,
+              lineStyle: {
+                stroke: token(
+                  "colors.sd.system.color.chart.component.threshold"
+                ),
+                strokeWidth: 2,
+                strokeDasharray: "4 4",
+              },
+              legend: "平均",
+              legendOrientation: "horizontal",
+              legendPosition: "bottom-right",
+              textStyle: {
+                fill: token("colors.sd.system.color.chart.component.threshold"),
+              },
+            },
+          ]}
         />
       </div>
     </SerendieChartThemeProvider>
