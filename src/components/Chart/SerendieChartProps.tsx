@@ -68,7 +68,6 @@ export const getChartColors = (
   return count ? colorArray.slice(0, count) : colorArray;
 };
 
-// 単一の色を取得するヘルパー関数
 export const getChartColor = (
   category: ChartColorCategory,
   index: number = 0
@@ -133,15 +132,12 @@ export const spaciousChartMargin = {
   left: parseInt(spacingTokens.sixExtraLarge, 10), // 80
 };
 
-// チャートプロパティの型定義
-
 type ChartPropsResult = {
   bar: Partial<BarSvgProps<BarDatum>>;
   line: Partial<LineSvgProps<LineSeries>>;
   pie: Partial<PieSvgProps<Record<string, unknown>>>;
 };
 
-// チャートのプロパティを取得するフック
 export const useChartProps = <T extends keyof ChartPropsResult>(
   chartType: T,
   colorCategory: ChartColorCategory = "primary"
