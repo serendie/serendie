@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import {
   useReactTable,
@@ -11,10 +10,7 @@ import {
 } from "@tanstack/react-table";
 import { DataTable } from ".";
 
-export interface DataTableComponentProps<
-  TData = Record<string, any>,
-  TValue = any,
-> {
+export interface DataTableComponentProps<TData, TValue> {
   data: TData[];
   columns: ColumnDef<TData, TValue>[];
   enableRowSelection?: boolean;
@@ -25,7 +21,7 @@ export interface DataTableComponentProps<
   className?: string;
 }
 
-export function DataTableComponent<TData = Record<string, any>, TValue = any>({
+export function DataTableComponent<TData, TValue>({
   data = [],
   columns = [],
   enableRowSelection = true,

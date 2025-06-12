@@ -20,7 +20,6 @@ import {
   radioIconCss,
   radioUncheckedIconCss,
 } from "../RadioButton";
-import { useRef } from "react";
 
 export const ChoiceBoxStyle = sva({
   slots: [
@@ -61,7 +60,6 @@ export const ChoiceBox: React.FC<ChoiceBoxProps> = ({
 }) => {
   const [variantProps, elementProps] = ChoiceBoxStyle.splitVariantProps(props);
   const styles = ChoiceBoxStyle(variantProps);
-  const inputRef = useRef<HTMLInputElement>(null);
 
   if (type === "radio") {
     return (
@@ -107,10 +105,7 @@ export const ChoiceBox: React.FC<ChoiceBoxProps> = ({
                   className={styles.checkboxUncheckedIcon}
                 />
               )}
-              <ArkCheckbox.HiddenInput
-                ref={inputRef}
-                checked={checkbox.checked}
-              />
+              <ArkCheckbox.HiddenInput checked={checkbox.checked} />
             </ArkCheckbox.Control>
           )}
         </ArkCheckbox.Context>

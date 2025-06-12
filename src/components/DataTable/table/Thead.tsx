@@ -1,8 +1,3 @@
-export function Thead({
-  children,
-  ...props
-}: {
-  children: React.ReactNode;
-} & React.ComponentProps<"thead">) {
+export function Thead({ children, ...props }: React.ComponentProps<"thead">) {
   return <thead {...props}>{children}</thead>;
 }

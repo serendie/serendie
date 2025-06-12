@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   DataTableComponent,
   DataTableComponentProps,
@@ -17,7 +16,7 @@ import {
 } from "./table";
 
 interface DataTableCompound {
-  <TData = Record<string, any>, TValue = any>(
+  <TData, TValue = unknown>(
     props: DataTableComponentProps<TData, TValue>
   ): JSX.Element;
   BodyCell: typeof BodyCell;

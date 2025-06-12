@@ -1,11 +1,8 @@
 import { ChoiceBox, ChoiceBoxProps } from "../../ChoiceBox";
 import { DataTable } from "..";
-import { css } from "../../../../styled-system/css";
+import { css, cx } from "../../../../styled-system/css";
 
 export const HeaderCheckbox: React.FC<Omit<ChoiceBoxProps, "type">> = ({
-  checked,
-  onChange,
-  value,
   ...props
 }) => {
   return (
@@ -13,13 +10,13 @@ export const HeaderCheckbox: React.FC<Omit<ChoiceBoxProps, "type">> = ({
       <ChoiceBox
         {...props}
         type="checkbox"
-        value={value}
-        checked={checked}
-        onChange={onChange}
-        className={css({
-          alignItems: "center",
-          verticalAlign: "middle",
-        })}
+        className={cx(
+          css({
+            alignItems: "center",
+            verticalAlign: "middle",
+          }),
+          props.className
+        )}
       />
     </DataTable.HeaderCell>
   );

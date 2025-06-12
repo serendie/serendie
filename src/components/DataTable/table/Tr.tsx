@@ -4,10 +4,7 @@ export function Tr({
   children,
   className,
   ...props
-}: {
-  children: React.ReactNode;
-  className?: string;
-} & React.ComponentProps<"tr">) {
+}: React.ComponentProps<"tr">) {
   return (
     <tr
       role="row"

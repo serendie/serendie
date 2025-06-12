@@ -1,4 +1,4 @@
-import { cva } from "../../../../styled-system/css";
+import { cva, RecipeVariantProps } from "../../../../styled-system/css";
 
 const cellStyle = cva({
   base: {
@@ -102,6 +102,20 @@ const cellStyle = cva({
   },
 });
 
+type CellStyleVariants = RecipeVariantProps<typeof cellStyle>;
+export type CellType =
+  NonNullable<CellStyleVariants> extends infer V
+    ? V extends { type?: infer T }
+      ? T
+      : never
+    : never;
+
+const CELL_TYPES: CellType[] = ["default", "success", "notice", "error"];
+
+const normalizeCellType = (type: string): CellType => {
+  return CELL_TYPES.includes(type as CellType) ? (type as CellType) : "default";
+};
+
 export const BodyCell = ({
   children,
   size = "medium",
@@ -110,17 +124,22 @@ export const BodyCell = ({
   ...props
 }: React.PropsWithChildren<{
   size?: "small" | "medium" | "large";
-  type?: "default" | "success" | "notice" | "error";
+  type?: CellType | string;
   state?: "enabled" | "hovered" | "selected";
 }> &
-  React.ComponentProps<"td">) => (
-  <td
-    role="cell"
-    data-type={type}
-    data-state={state}
-    className={cellStyle({ size, type, state })}
-    {...props}
-  >
-    {children}
-  </td>
-);
+  React.ComponentProps<"td">) => {
+  const cellType = normalizeCellType(type);
+  console.log(cellType, type);
+
+  return (
+    <td
+      role="cell"
+      data-type={cellType}
+      data-state={state}
+      className={cellStyle({ size, type: cellType, state })}
+      {...props}
+    >
+      {children}
+    </td>
+  );
+};

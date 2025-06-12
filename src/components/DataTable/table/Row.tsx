@@ -1,10 +1,7 @@
-import {
-  Row as TanstackRow,
-  flexRender,
-  ColumnDef,
-} from "@tanstack/react-table";
+import { Row as TanstackRow, flexRender, Cell } from "@tanstack/react-table";
 import { DataTable } from "..";
 import { cva } from "../../../../styled-system/css";
+import { CellType } from "./BodyCell";
 
 const rowStyle = cva({
   base: {
@@ -79,18 +76,7 @@ export function Row<TData>({
         />
       )}
       {row.getVisibleCells().map((cell) => {
-        let type: "default" | "success" | "notice" | "error" = "default";
-        const columnDef = cell.column.columnDef as ColumnDef<TData>;
-        if (
-          columnDef.meta &&
-          typeof columnDef.meta === "object" &&
-          "getType" in columnDef.meta
-        ) {
-          const getTypeFn = columnDef.meta.getType as (
-            row: TData
-          ) => typeof type;
-          type = getTypeFn(row.original);
-        }
+        const type = getCellType(cell);
         return (
           <DataTable.BodyCell key={cell.id} type={type}>
             {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -99,4 +85,15 @@ export function Row<TData>({
       })}
     </DataTable.Tr>
   );
+}
+
+function getCellType<TData>(cell: Cell<TData, unknown>): CellType | string {
+  if (
+    cell.column.columnDef.meta &&
+    "getType" in cell.column.columnDef.meta &&
+    typeof cell.column.columnDef.meta.getType === "function"
+  ) {
+    return cell.column.columnDef.meta.getType(cell.row.original);
+  }
+  return "default";
 }
