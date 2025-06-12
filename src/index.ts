@@ -6,6 +6,7 @@ export * from "./components/Badge/index.ts";
 export * from "./components/Banner/index.ts";
 export * from "./components/BottomNavigation/index.ts";
 export * from "./components/Button/index.ts";
+export * from "./components/Chart/index.ts";
 export * from "./components/CheckBox/index.ts";
 export * from "./components/ChoiceBox/index.ts";
 export * from "./components/DashboardWidget/index.ts";

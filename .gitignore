@@ -35,3 +35,5 @@ storybook-static
 
 .env
 .env.local
+
+*.local.json
