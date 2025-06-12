@@ -149,11 +149,15 @@ export const useChartProps = <T extends keyof ChartPropsResult>(
     return getContrastTextColor(datum.color);
   };
 
+  const commonProps = {
+    theme: SerendieChartTheme,
+    colors,
+    margin: defaultChartMargin,
+  };
+
   const chartProps: ChartPropsResult = {
     bar: {
-      theme: SerendieChartTheme,
-      colors,
-      margin: defaultChartMargin,
+      ...commonProps,
       padding: 0.3,
       innerPadding: 1,
       borderRadius: 0,
@@ -161,9 +165,7 @@ export const useChartProps = <T extends keyof ChartPropsResult>(
       labelTextColor: calculateLabelTextColor,
     },
     line: {
-      theme: SerendieChartTheme,
-      colors,
-      margin: defaultChartMargin,
+      ...commonProps,
       enablePoints: true,
       pointSize: 6,
       pointBorderWidth: 2,
@@ -172,9 +174,7 @@ export const useChartProps = <T extends keyof ChartPropsResult>(
       enableGridY: true,
     },
     pie: {
-      theme: SerendieChartTheme,
-      colors,
-      margin: defaultChartMargin,
+      ...commonProps,
       innerRadius: 0.5,
       padAngle: 0.7,
       cornerRadius: 0,
