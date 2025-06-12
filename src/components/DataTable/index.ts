@@ -16,7 +16,7 @@ import {
 } from "./table";
 
 interface DataTableCompound {
-  <TData, TValue = unknown>(
+  <TData = Record<string, unknown>, TValue = unknown>(
     props: DataTableComponentProps<TData, TValue>
   ): JSX.Element;
   BodyCell: typeof BodyCell;

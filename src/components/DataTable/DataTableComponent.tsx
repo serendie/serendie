@@ -10,7 +10,10 @@ import {
 } from "@tanstack/react-table";
 import { DataTable } from ".";
 
-export interface DataTableComponentProps<TData, TValue> {
+export interface DataTableComponentProps<
+  TData = Record<string, unknown>,
+  TValue = unknown,
+> {
   data: TData[];
   columns: ColumnDef<TData, TValue>[];
   enableRowSelection?: boolean;
@@ -21,7 +24,10 @@ export interface DataTableComponentProps<TData, TValue> {
   className?: string;
 }
 
-export function DataTableComponent<TData, TValue>({
+export function DataTableComponent<
+  TData = Record<string, unknown>,
+  TValue = unknown,
+>({
   data = [],
   columns = [],
   enableRowSelection = true,

@@ -103,12 +103,17 @@ const cellStyle = cva({
 });
 
 type CellStyleVariants = RecipeVariantProps<typeof cellStyle>;
-export type CellType =
-  NonNullable<CellStyleVariants> extends infer V
-    ? V extends { type?: infer T }
-      ? T
+
+type ExtractVariantProperty<T, K extends string> =
+  NonNullable<T> extends infer V
+    ? V extends { [P in K]?: infer U }
+      ? U
       : never
     : never;
+
+export type CellType = ExtractVariantProperty<CellStyleVariants, "type">;
+type CellState = ExtractVariantProperty<CellStyleVariants, "state">;
+type CellSize = ExtractVariantProperty<CellStyleVariants, "size">;
 
 const CELL_TYPES: CellType[] = ["default", "success", "notice", "error"];
 
@@ -116,12 +121,12 @@ const normalizeCellType = (type: string): CellType => {
   return CELL_TYPES.includes(type as CellType) ? (type as CellType) : "default";
 };
 
-export const BodyCell: React.FC<
-  CellStyleVariants & {
-    children?: React.ReactNode;
-    type?: string;
-  }
-> = ({
+export const BodyCell: React.FC<{
+  children: React.ReactNode;
+  size?: CellSize;
+  type?: CellType | string;
+  state?: CellState;
+}> = ({
   children,
   size = "medium",
   type = "default",
@@ -129,7 +134,6 @@ export const BodyCell: React.FC<
   ...props
 }) => {
   const cellType = normalizeCellType(type);
-  console.log(cellType, type);
 
   return (
     <td

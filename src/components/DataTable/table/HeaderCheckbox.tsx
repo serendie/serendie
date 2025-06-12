@@ -3,6 +3,7 @@ import { DataTable } from "..";
 import { css, cx } from "../../../../styled-system/css";
 
 export const HeaderCheckbox: React.FC<Omit<ChoiceBoxProps, "type">> = ({
+  className,
   ...props
 }) => {
   return (
@@ -15,7 +16,7 @@ export const HeaderCheckbox: React.FC<Omit<ChoiceBoxProps, "type">> = ({
             alignItems: "center",
             verticalAlign: "middle",
           }),
-          props.className
+          className
         )}
       />
     </DataTable.HeaderCell>
