@@ -116,18 +116,18 @@ const normalizeCellType = (type: string): CellType => {
   return CELL_TYPES.includes(type as CellType) ? (type as CellType) : "default";
 };
 
-export const BodyCell = ({
+export const BodyCell: React.FC<
+  CellStyleVariants & {
+    children?: React.ReactNode;
+    type?: string;
+  }
+> = ({
   children,
   size = "medium",
   type = "default",
   state = "enabled",
   ...props
-}: React.PropsWithChildren<{
-  size?: "small" | "medium" | "large";
-  type?: CellType | string;
-  state?: "enabled" | "hovered" | "selected";
-}> &
-  React.ComponentProps<"td">) => {
+}) => {
   const cellType = normalizeCellType(type);
   console.log(cellType, type);
 
