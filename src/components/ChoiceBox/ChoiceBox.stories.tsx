@@ -56,6 +56,6 @@ export const Indeterminate: Story = {
   args: {
     value: "itemA",
     type: "checkbox",
-    indeterminate: true,
+    checked: "indeterminate",
   },
 };
