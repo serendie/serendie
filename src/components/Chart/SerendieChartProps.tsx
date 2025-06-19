@@ -118,10 +118,6 @@ export const useChartProps = <T extends keyof ChartPropsResult>(
 ): ChartPropsResult[T] => {
   const colors = getChartColors(colorCategory);
 
-  const calculateLabelTextColor = (datum: { color: string }) => {
-    return getContrastTextColor(datum.color);
-  };
-
   const commonProps = {
     theme: SerendieChartTheme,
     colors,
@@ -135,7 +131,8 @@ export const useChartProps = <T extends keyof ChartPropsResult>(
       innerPadding: 1,
       borderRadius: 0,
       enableLabel: true,
-      labelTextColor: calculateLabelTextColor,
+      labelTextColor: (datum: { color: string }) =>
+        getContrastTextColor(datum.color),
     },
     line: {
       ...commonProps,
@@ -154,7 +151,8 @@ export const useChartProps = <T extends keyof ChartPropsResult>(
       activeOuterRadiusOffset: 8,
       enableArcLabels: true,
       enableArcLinkLabels: true,
-      arcLabelsTextColor: calculateLabelTextColor,
+      arcLabelsTextColor: (datum: { color: string }) =>
+        getContrastTextColor(datum.color),
       arcLinkLabelsColor: token(
         "colors.sd.system.color.chart.component.onChartSurface"
       ),

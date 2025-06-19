@@ -8,7 +8,6 @@ export {
   usePieChartProps,
   getChartColors,
   getChartColor,
-  getContrastTextColor,
   defaultChartMargin,
   compactChartMargin,
   legendChartMargin,
