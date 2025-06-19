@@ -20,7 +20,6 @@ import {
   radioIconCss,
   radioUncheckedIconCss,
 } from "../RadioButton";
-import { useEffect, useRef } from "react";
 
 export const ChoiceBoxStyle = sva({
   slots: [
@@ -51,14 +50,11 @@ type ChoiceBoxBaseProps = {
 
 export type ChoiceBoxProps = ChoiceBoxBaseProps &
   RadioGroupItemProps &
-  CheckboxRootProps & {
-    indeterminate?: boolean;
-  };
+  CheckboxRootProps;
 
 export const ChoiceBox: React.FC<ChoiceBoxProps> = ({
   type,
   value,
-  indeterminate,
   className,
   ...props
 }) => {
@@ -89,37 +85,18 @@ export const ChoiceBox: React.FC<ChoiceBoxProps> = ({
   }
 
   if (type === "checkbox") {
-    const inputRef = useRef<HTMLInputElement>(null);
-    useEffect(() => {
-      if (inputRef.current) {
-        inputRef.current.indeterminate = !!indeterminate;
-      }
-    }, [indeterminate]);
-
     return (
       <ArkCheckbox.Root
         value={value}
         className={cx("group", styles.root, className)}
-        {...elementProps}
-        onClick={(e) => {
-          if (indeterminate) {
-            e.preventDefault();
-            if (typeof props.onClick === "function") {
-              props.onClick(e);
-            }
-            return;
-          }
-          if (typeof props.onClick === "function") {
-            props.onClick(e);
-          }
-        }}
+        {...props}
       >
         <ArkCheckbox.Context>
           {(checkbox) => (
             <ArkCheckbox.Control className={styles.checkboxItem}>
-              {checkbox.checked ? (
+              {checkbox.checked === true ? (
                 <CheckboxCheckedIcon className={styles.checkboxCheckedIcon} />
-              ) : indeterminate ? (
+              ) : checkbox.checkedState === "indeterminate" ? (
                 <CheckboxIndeterminateIcon
                   className={styles.checkboxCheckedIcon}
                 />
@@ -128,10 +105,10 @@ export const ChoiceBox: React.FC<ChoiceBoxProps> = ({
                   className={styles.checkboxUncheckedIcon}
                 />
               )}
+              <ArkCheckbox.HiddenInput checked={checkbox.checked} />
             </ArkCheckbox.Control>
           )}
         </ArkCheckbox.Context>
-        <ArkCheckbox.HiddenInput ref={inputRef} />
       </ArkCheckbox.Root>
     );
   }
