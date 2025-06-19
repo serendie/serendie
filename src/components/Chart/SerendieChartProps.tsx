@@ -5,7 +5,6 @@ import { token } from "../../../styled-system/tokens";
 import serendieTokens from "@serendie/design-token";
 import { SerendieChartTheme } from "./SerendieChartTheme";
 
-// チャートの色パレットタイプ
 export type ChartColorCategory =
   | "primary"
   | "positive"
@@ -13,7 +12,6 @@ export type ChartColorCategory =
   | "notice"
   | "multi";
 
-// チャートの色パレットを取得するヘルパー関数
 export const getChartColors = (
   category: ChartColorCategory,
   count?: number
@@ -101,36 +99,35 @@ export const getContrastTextColor = (backgroundColor: string): string => {
     : token("colors.sd.system.color.chart.component.inverseOnMarkLabel");
 };
 
-// tokens.jsから直接spacing値を取得
 const spacingTokens = serendieTokens.sd.system.dimension.spacing;
 
 // よく使用されるマージン設定
 export const defaultChartMargin = {
-  top: parseInt(spacingTokens.large, 10), // 20
-  right: parseInt(spacingTokens.large, 10), // 20
-  bottom: parseInt(spacingTokens.fourExtraLarge, 10), // 48
-  left: parseInt(spacingTokens.fiveExtraLarge, 10), // 64
+  top: parseInt(spacingTokens.large, 10),
+  right: parseInt(spacingTokens.large, 10),
+  bottom: parseInt(spacingTokens.fourExtraLarge, 10),
+  left: parseInt(spacingTokens.fiveExtraLarge, 10),
 };
 
 export const compactChartMargin = {
-  top: parseInt(spacingTokens.small, 10), // 12
-  right: parseInt(spacingTokens.small, 10), // 12
-  bottom: parseInt(spacingTokens.twoExtraLarge, 10), // 32
-  left: parseInt(spacingTokens.threeExtraLarge, 10), // 40
+  top: parseInt(spacingTokens.small, 10),
+  right: parseInt(spacingTokens.small, 10),
+  bottom: parseInt(spacingTokens.twoExtraLarge, 10),
+  left: parseInt(spacingTokens.threeExtraLarge, 10),
 };
 
 export const legendChartMargin = {
-  top: parseInt(spacingTokens.large, 10), // 20
-  right: parseInt(spacingTokens.sixExtraLarge, 10), // 80
-  bottom: parseInt(spacingTokens.fourExtraLarge, 10), // 48
-  left: parseInt(spacingTokens.fiveExtraLarge, 10), // 64
+  top: parseInt(spacingTokens.large, 10),
+  right: parseInt(spacingTokens.sixExtraLarge, 10),
+  bottom: parseInt(spacingTokens.fourExtraLarge, 10),
+  left: parseInt(spacingTokens.fiveExtraLarge, 10),
 };
 
 export const spaciousChartMargin = {
-  top: parseInt(spacingTokens.extraLarge, 10), // 24
-  right: parseInt(spacingTokens.extraLarge, 10), // 24
-  bottom: parseInt(spacingTokens.fiveExtraLarge, 10), // 64
-  left: parseInt(spacingTokens.sixExtraLarge, 10), // 80
+  top: parseInt(spacingTokens.extraLarge, 10),
+  right: parseInt(spacingTokens.extraLarge, 10),
+  bottom: parseInt(spacingTokens.fiveExtraLarge, 10),
+  left: parseInt(spacingTokens.sixExtraLarge, 10),
 };
 
 type ChartPropsResult = {
@@ -195,7 +192,6 @@ export const useChartProps = <T extends keyof ChartPropsResult>(
   return chartProps[chartType];
 };
 
-// 個別のチャートタイプ用のプロパティ取得関数（シンプル版）
 export const useBarChartProps = (c: ChartColorCategory = "primary") =>
   useChartProps("bar", c);
 
