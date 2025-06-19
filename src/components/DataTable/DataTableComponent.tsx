@@ -5,17 +5,24 @@ import {
   getSortedRowModel,
   ColumnDef,
   SortingState,
-  HeaderGroup,
-  Row,
 } from "@tanstack/react-table";
 import { DataTable } from ".";
 
-export interface DataTableComponentProps<
-  TData = Record<string, unknown>,
-  TValue = unknown,
-> {
+/**
+ * TanStack Tableは設計上、各カラムが異なる値の型を持つことを前提としています。
+ * createColumnHelperは各カラムに正確な型（string, number等）を付与しますが、
+ * これらを単一の配列にまとめる際、TypeScriptの型システムの制約により問題が生じます。
+ *
+ * TanStack Table自体も内部実装で`ColumnDef<TData, any>[]`を使用しており、
+ * これは意図的な設計判断です。これに従い、型エイリアスで意図を明確にします。
+ * https://github.com/TanStack/table/blob/0cc6992c7836489661a0954a2b56e620850ad4da/packages/table-core/src/types.ts#L288C1-L289C1
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type TableColumnDef<TData> = ColumnDef<TData, any>;
+
+export interface DataTableComponentProps<TData = Record<string, unknown>> {
   data: TData[];
-  columns: ColumnDef<TData, TValue>[];
+  columns: TableColumnDef<TData>[];
   enableRowSelection?: boolean;
   enableSorting?: boolean;
   initialSorting?: SortingState;
@@ -24,10 +31,7 @@ export interface DataTableComponentProps<
   className?: string;
 }
 
-export function DataTableComponent<
-  TData = Record<string, unknown>,
-  TValue = unknown,
->({
+export function DataTableComponent<TData = Record<string, unknown>>({
   data = [],
   columns = [],
   enableRowSelection = true,
@@ -35,7 +39,7 @@ export function DataTableComponent<
   initialSorting = [],
   onSortingChange,
   className,
-}: DataTableComponentProps<TData, TValue>) {
+}: DataTableComponentProps<TData>) {
   const [rowSelection, setRowSelection] = useState<Record<string, boolean>>({});
   const [sorting, setSorting] = useState<SortingState>(initialSorting);
 
@@ -62,7 +66,7 @@ export function DataTableComponent<
   return (
     <DataTable.Root className={className}>
       <DataTable.Thead>
-        {table.getHeaderGroups().map((headerGroup: HeaderGroup<TData>) => (
+        {table.getHeaderGroups().map((headerGroup) => (
           <DataTable.HeaderRow
             key={headerGroup.id}
             headerGroup={headerGroup}
@@ -72,7 +76,7 @@ export function DataTableComponent<
         ))}
       </DataTable.Thead>
       <DataTable.Tbody>
-        {table.getRowModel().rows.map((row: Row<TData>) => (
+        {table.getRowModel().rows.map((row) => (
           <DataTable.Row
             key={row.id}
             row={row}

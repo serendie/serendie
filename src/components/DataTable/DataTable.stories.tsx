@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { createColumnHelper } from "@tanstack/react-table";
 import { DataTable } from "./index";
 
 const meta: Meta<typeof DataTable> = {
@@ -74,7 +73,7 @@ const Data: DataRow[] = Array.from({ length: 10 }, (_, i) => {
   };
 });
 
-const columnHelper = createColumnHelper<DataRow>();
+const columnHelper = DataTable.createColumnHelper<DataRow>();
 
 const columns = [
   columnHelper.accessor("area", {
@@ -231,7 +230,7 @@ const userData: User[] = [
   { id: 3, name: "山田次郎", email: "yamada@example.com", role: "guest" },
 ];
 
-const userColumnHelper = createColumnHelper<User>();
+const userColumnHelper = DataTable.createColumnHelper<User>();
 const userColumns = [
   userColumnHelper.accessor("id", {
     header: "ID",

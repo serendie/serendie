@@ -1,3 +1,4 @@
+import { createColumnHelper } from "./createColumnHelper";
 import {
   DataTableComponent,
   DataTableComponentProps,
@@ -16,8 +17,8 @@ import {
 } from "./table";
 
 interface DataTableCompound {
-  <TData = Record<string, unknown>, TValue = unknown>(
-    props: DataTableComponentProps<TData, TValue>
+  <TData = Record<string, unknown>>(
+    props: DataTableComponentProps<TData>
   ): JSX.Element;
   BodyCell: typeof BodyCell;
   BodyCheckbox: typeof BodyCheckbox;
@@ -29,6 +30,7 @@ interface DataTableCompound {
   Row: typeof Row;
   Thead: typeof Thead;
   Tr: typeof Tr;
+  createColumnHelper: typeof createColumnHelper;
 }
 
 const DataTable = DataTableComponent as DataTableCompound;
@@ -42,5 +44,6 @@ DataTable.Root = Root;
 DataTable.Row = Row;
 DataTable.Thead = Thead;
 DataTable.Tr = Tr;
+DataTable.createColumnHelper = createColumnHelper;
 
 export { DataTable, DataTableComponent };
