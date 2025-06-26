@@ -2,6 +2,7 @@ import { Checkbox as ArkCheckbox, CheckboxRootProps } from "@ark-ui/react";
 import { RecipeVariantProps, css, cx, sva } from "../../../styled-system/css";
 import CheckboxCheckedIcon from "../../assets/checkboxChecked.svg?react";
 import CheckboxUncheckedIcon from "../../assets/checkboxUnchecked.svg?react";
+import CheckboxIndeterminateIcon from "../../assets/checkboxIndeterminate.svg?react";
 
 export const checkboxIconCss = {
   flexShrink: 0,
@@ -128,8 +129,10 @@ export const CheckBox: React.FC<CheckBoxProps> = ({
       <ArkCheckbox.Context>
         {(checkbox) => (
           <ArkCheckbox.Control className={styles.itemControl}>
-            {checkbox.checked ? (
+            {checkbox.checkedState === true ? (
               <CheckboxCheckedIcon className={styles.checkedIcon} />
+            ) : checkbox.checkedState === "indeterminate" ? (
+              <CheckboxIndeterminateIcon className={styles.checkedIcon} />
             ) : (
               <CheckboxUncheckedIcon className={styles.uncheckedIcon} />
             )}
