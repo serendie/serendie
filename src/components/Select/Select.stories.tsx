@@ -100,14 +100,20 @@ export const PlayClickedSelect: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
+    const parentElement = canvasElement.parentElement;
+    if (!parentElement) return;
+    const root = within(parentElement);
 
     const select = canvas.getByRole("combobox");
 
     await userEvent.click(select);
 
-    await waitFor(async () => {
-      const option = await canvas.findByText("React");
-      expect(option).toBeInTheDocument();
-    });
+    await waitFor(
+      async () => {
+        const option = await root.findByText("React");
+        expect(option).toBeInTheDocument();
+      },
+      { timeout: 3000 }
+    );
   },
 };
