@@ -1,6 +1,6 @@
 import figma from "@figma/code-connect";
 import type { Meta, StoryObj } from "@storybook/react";
-import { userEvent, within } from "@storybook/test";
+import { userEvent, within, waitFor, expect } from "@storybook/test";
 import { FullscreenLayout } from "../../../.storybook/FullscreenLayout";
 import { allModes } from "../../../.storybook/modes";
 import { Select } from "./Select";
@@ -104,5 +104,10 @@ export const PlayClickedSelect: Story = {
     const select = canvas.getByRole("combobox");
 
     await userEvent.click(select);
+
+    await waitFor(async () => {
+      const option = await canvas.findByText("React");
+      expect(option).toBeInTheDocument();
+    });
   },
 };

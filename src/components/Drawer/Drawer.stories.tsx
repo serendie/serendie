@@ -4,7 +4,7 @@ import { useState } from "react";
 import { IconButton } from "../IconButton";
 import figma from "@figma/code-connect";
 import { SerendieSymbolMenu } from "@serendie/symbols";
-import { userEvent, within } from "@storybook/test";
+import { userEvent, within, waitFor, expect } from "@storybook/test";
 import { FullscreenLayout } from "../../../.storybook/FullscreenLayout";
 
 const meta: Meta<typeof Drawer> = {
@@ -93,5 +93,10 @@ export const PlayClickedButton: Story = {
     const button = canvas.getByRole("button");
 
     await userEvent.click(button);
+
+    await waitFor(async () => {
+      const drawer = await canvas.findByRole("dialog");
+      expect(drawer).toBeInTheDocument();
+    });
   },
 };
