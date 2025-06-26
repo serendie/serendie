@@ -129,9 +129,9 @@ export const CheckBox: React.FC<CheckBoxProps> = ({
       <ArkCheckbox.Context>
         {(checkbox) => (
           <ArkCheckbox.Control className={styles.itemControl}>
-            {checkbox.checkedState === true ? (
+            {checkbox.checked === true ? (
               <CheckboxCheckedIcon className={styles.checkedIcon} />
-            ) : checkbox.checkedState === "indeterminate" ? (
+            ) : checkbox.indeterminate === true ? (
               <CheckboxIndeterminateIcon className={styles.checkedIcon} />
             ) : (
               <CheckboxUncheckedIcon className={styles.uncheckedIcon} />
