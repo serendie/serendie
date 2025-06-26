@@ -1,4 +1,9 @@
-import { Combobox, ComboboxRootProps, Portal } from "@ark-ui/react";
+import {
+  Combobox,
+  ComboboxRootProps,
+  Portal,
+  createListCollection,
+} from "@ark-ui/react";
 import {
   SerendieSymbolMagnifyingGlass,
   SerendieSymbolClose,
@@ -145,18 +150,24 @@ export const SearchStyle = sva({
 });
 
 type SearchStyleProps = ComboboxRootProps<string> &
-  RecipeVariantProps<typeof SearchStyle>;
+  RecipeVariantProps<typeof SearchStyle> & {
+    items?: string[];
+  };
 
 export const Search: React.FC<SearchStyleProps> = ({
   items = [],
   ...props
 }) => {
-  const [variantProps, elementProps] = SearchStyle.splitVariantProps(props);
+  const [variantProps, comboboxProps] = SearchStyle.splitVariantProps(props);
   const styles = SearchStyle(variantProps);
+  const { collection: _, ...elementProps } = comboboxProps;
+
+  const collection = createListCollection({ items });
 
   return (
     <Combobox.Root
-      items={items}
+      {...elementProps}
+      collection={collection}
       lazyMount
       unmountOnExit
       positioning={{
@@ -165,7 +176,6 @@ export const Search: React.FC<SearchStyleProps> = ({
           crossAxis: 0,
         },
       }}
-      {...elementProps}
     >
       <Combobox.Control className={cx(styles.control, elementProps.className)}>
         <div className={styles.iconBox}>
@@ -186,7 +196,7 @@ export const Search: React.FC<SearchStyleProps> = ({
           <Combobox.Positioner>
             <Combobox.Content className={styles.combobox}>
               <Combobox.ItemGroup id="framework">
-                {items.map((item, i) => (
+                {collection.items.map((item, i) => (
                   <Combobox.Item
                     key={i}
                     item={item}

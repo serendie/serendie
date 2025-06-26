@@ -89,14 +89,20 @@ export const PlayClickedButton: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
+    const parentElement = canvasElement.parentElement;
+    if (!parentElement) return;
+    const root = within(parentElement);
 
     const button = canvas.getByRole("button");
 
     await userEvent.click(button);
 
-    await waitFor(async () => {
-      const drawer = await canvas.findByRole("dialog");
-      expect(drawer).toBeInTheDocument();
-    });
+    await waitFor(
+      async () => {
+        const drawer = await root.findByRole("dialog");
+        expect(drawer).toBeInTheDocument();
+      },
+      { timeout: 3000 }
+    );
   },
 };

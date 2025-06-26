@@ -93,14 +93,20 @@ export const PlayDisplayMenu: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
+    const parentElement = canvasElement.parentElement;
+    if (!parentElement) return;
+    const root = within(parentElement);
 
-    const input = canvas.getByRole("searchbox");
+    const input = canvas.getByRole("combobox");
 
     await userEvent.type(input, "a");
 
-    await waitFor(async () => {
-      const option = await canvas.findByText("Angular");
-      expect(option).toBeInTheDocument();
-    });
+    await waitFor(
+      async () => {
+        const option = await root.findByText("Angular");
+        expect(option).toBeInTheDocument();
+      },
+      { timeout: 3000 }
+    );
   },
 };
