@@ -18,10 +18,9 @@ const TooltipStyle = sva({
       zIndex: 1000,
     },
     arrow: {
+      "--arrow-size": "8px",
+      "--arrow-background": "colors.sd.system.color.component.inverseSurface",
       zIndex: 1001,
-    },
-    arrowTip: {
-      fill: "sd.system.color.component.inverseSurface",
     },
   },
 });
