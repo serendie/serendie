@@ -62,7 +62,7 @@ export const Tooltip: React.FC<TooltipProps> = ({
     <ArkTooltip.Root
       openDelay={openDelay}
       closeDelay={closeDelay}
-      positioning={{ placement }}
+      positioning={{ placement, arrowPadding: 8 }}
       disabled={disabled}
     >
       <ArkTooltip.Trigger asChild>{children}</ArkTooltip.Trigger>
