@@ -4,7 +4,7 @@ import { Tooltip } from "./Tooltip.tsx";
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
-  title: "Components/Feedback/Tooltip",
+  title: "Components/Tooltip",
   parameters: {
     design: {
       type: "figma",
@@ -37,7 +37,7 @@ export const Default: Story = {
       style={{ padding: "100px", display: "flex", justifyContent: "center" }}
     >
       <Tooltip content="ツールチップの内容">
-        <Button>ホバーしてください</Button>
+        <Button>Hover me</Button>
       </Tooltip>
     </div>
   ),
