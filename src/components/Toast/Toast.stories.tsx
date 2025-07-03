@@ -3,7 +3,7 @@ import { Toast, toaster } from "./Toast";
 import { Button } from "../Button";
 import { Stack } from "../../../styled-system/jsx";
 import figma from "@figma/code-connect";
-import { userEvent, within } from "@storybook/test";
+import { userEvent, within, waitFor, expect } from "@storybook/test";
 import { FullscreenLayout } from "../../../.storybook/FullscreenLayout";
 
 const meta: Meta<typeof Toast> = {
@@ -142,9 +142,17 @@ export const PlayClickedSelect: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
+    const parentElement = canvasElement.parentElement;
+    if (!parentElement) return;
+    const root = within(parentElement);
 
-    const select = canvas.getByRole("button");
+    const button = canvas.getByRole("button");
 
-    await userEvent.click(select);
+    await userEvent.click(button);
+
+    await waitFor(async () => {
+      const toast = await root.findByText("通知メッセージ");
+      expect(toast).toBeInTheDocument();
+    });
   },
 };
