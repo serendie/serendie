@@ -160,7 +160,9 @@ export const WithCustomSorting: Story = {
     <DataTable<DataRow>
       data={Data}
       columns={columns}
-      initialSorting={[{ id: "area", desc: false }]}
+      initialState={{
+        sorting: [{ id: "area", desc: false }],
+      }}
       onSortingChange={(sorting) => console.log("Sorting changed:", sorting)}
     />
   ),
