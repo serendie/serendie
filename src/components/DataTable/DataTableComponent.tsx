@@ -37,6 +37,7 @@ export function DataTableComponent<TData = Record<string, unknown>>({
   enableRowSelection = true,
   enableSorting = true,
   initialSorting = [],
+  onRowSelectionChange,
   onSortingChange,
   className,
 }: DataTableComponentProps<TData>) {
@@ -52,13 +53,24 @@ export function DataTableComponent<TData = Record<string, unknown>>({
     onSortingChange?.(newSorting);
   };
 
+  const handleRowSelectionChange = (
+    updater:
+      | Record<string, boolean>
+      | ((prev: Record<string, boolean>) => Record<string, boolean>)
+  ) => {
+    const newSelection =
+      typeof updater === "function" ? updater(rowSelection) : updater;
+    setRowSelection(newSelection);
+    onRowSelectionChange?.(newSelection);
+  };
+
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     state: { rowSelection, sorting },
-    onRowSelectionChange: setRowSelection,
+    onRowSelectionChange: handleRowSelectionChange,
     onSortingChange: handleSortingChange,
     enableRowSelection,
     enableSorting,
