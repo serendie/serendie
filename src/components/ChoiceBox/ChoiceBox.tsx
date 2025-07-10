@@ -93,20 +93,22 @@ export const ChoiceBox: React.FC<ChoiceBoxProps> = ({
       >
         <ArkCheckbox.Context>
           {(checkbox) => (
-            <ArkCheckbox.Control className={styles.checkboxItem}>
-              {checkbox.checked === true ? (
-                <CheckboxCheckedIcon className={styles.checkboxCheckedIcon} />
-              ) : checkbox.checkedState === "indeterminate" ? (
-                <CheckboxIndeterminateIcon
-                  className={styles.checkboxCheckedIcon}
-                />
-              ) : (
-                <CheckboxUncheckedIcon
-                  className={styles.checkboxUncheckedIcon}
-                />
-              )}
+            <>
+              <ArkCheckbox.Control className={styles.checkboxItem}>
+                {checkbox.checked === true ? (
+                  <CheckboxCheckedIcon className={styles.checkboxCheckedIcon} />
+                ) : checkbox.checkedState === "indeterminate" ? (
+                  <CheckboxIndeterminateIcon
+                    className={styles.checkboxCheckedIcon}
+                  />
+                ) : (
+                  <CheckboxUncheckedIcon
+                    className={styles.checkboxUncheckedIcon}
+                  />
+                )}
+              </ArkCheckbox.Control>
               <ArkCheckbox.HiddenInput checked={checkbox.checked} />
-            </ArkCheckbox.Control>
+            </>
           )}
         </ArkCheckbox.Context>
       </ArkCheckbox.Root>
