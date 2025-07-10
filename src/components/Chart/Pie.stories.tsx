@@ -11,11 +11,11 @@ import figma from "@figma/code-connect";
 type PieChartVariant = "primary" | "multi" | "positive" | "negative" | "notice";
 
 type PieChartProps = {
-  colorCategory?: PieChartVariant;
+  color?: PieChartVariant;
 };
 
-const PieChart = ({ colorCategory = "primary" }: PieChartProps) => {
-  const pieProps = usePieChartProps(colorCategory);
+const PieChart = ({ color = "primary" }: PieChartProps) => {
+  const pieProps = usePieChartProps(color);
   return (
     <div style={{ height: 400, width: 400 }}>
       <ResponsivePie data={pieData} {...pieProps} />
@@ -31,7 +31,7 @@ const meta: Meta<typeof PieChart> = {
       type: "figma",
       url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=17792-14082",
       props: {
-        colorCategory: figma.enum("Color", {
+        color: figma.enum("Color", {
           Primary: "primary",
           Multi: "multi",
           Positive: "positive",
@@ -44,7 +44,7 @@ const meta: Meta<typeof PieChart> = {
     controls: { expanded: true },
   },
   argTypes: {
-    colorCategory: {
+    color: {
       options: ["primary", "multi", "positive", "negative", "notice"],
       control: { type: "radio" },
       defaultValue: "primary",
@@ -61,9 +61,9 @@ function FigmaExample(props: PieChartProps) {
 type Story = StoryObj<typeof PieChart>;
 
 export const Primary: Story = {
-  args: { colorCategory: "primary" },
+  args: { color: "primary" },
 };
 
 export const MultiColored: Story = {
-  args: { colorCategory: "multi" },
+  args: { color: "multi" },
 };
