@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Search } from "./Search";
 import figma from "@figma/code-connect";
-import { userEvent, within } from "@storybook/test";
+import { userEvent, within, waitFor, expect } from "@storybook/test";
 import { FullscreenLayout } from "../../../.storybook/FullscreenLayout";
 
 const items = [
@@ -93,11 +93,20 @@ export const PlayDisplayMenu: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
+    const parentElement = canvasElement.parentElement;
+    if (!parentElement) return;
+    const root = within(parentElement);
 
-    const button = canvas.getByRole("button");
+    const input = canvas.getByRole("combobox");
 
-    await userEvent.type(button, "a");
+    await userEvent.type(input, "a");
 
-    await userEvent.click(button);
+    await waitFor(
+      async () => {
+        const option = await root.findByText("Angular");
+        expect(option).toBeInTheDocument();
+      },
+      { timeout: 3000 }
+    );
   },
 };
