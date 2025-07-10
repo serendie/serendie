@@ -1,24 +1,16 @@
 import { ResponsiveBar } from "@nivo/bar";
 import { ResponsiveLine } from "@nivo/line";
-import { ResponsivePie } from "@nivo/pie";
 import {
   useBarChartProps,
   useLineChartProps,
-  usePieChartProps,
   compactChartMargin,
   legendChartMargin,
 } from "./index";
 import { token } from "../../../styled-system/tokens";
-import {
-  barData,
-  multiSeriesData,
-  lineData,
-  pieData,
-  stackedData,
-} from "./chartData";
+import { barData, multiSeriesData, lineData, stackedData } from "./chartData";
 
 export default {
-  title: "Chart/Charts",
+  title: "components/Charts",
 };
 
 // Bar Charts
@@ -178,27 +170,6 @@ export const AreaChart = () => {
           legendOffset: -40,
         }}
       />
-    </div>
-  );
-};
-
-// Pie Charts
-export const PieChart = () => {
-  const pieProps = usePieChartProps("multi");
-
-  return (
-    <div style={{ height: 400, width: 400 }}>
-      <ResponsivePie data={pieData} {...pieProps} />
-    </div>
-  );
-};
-
-export const DonutChart = () => {
-  const pieProps = usePieChartProps("primary");
-
-  return (
-    <div style={{ height: 400, width: 400 }}>
-      <ResponsivePie data={pieData} {...pieProps} innerRadius={0.6} />
     </div>
   );
 };
