@@ -5,12 +5,22 @@ const meta: Meta<typeof DataTable> = {
   component: DataTable,
   parameters: {
     controls: { expanded: true },
+    design: {
+      type: "figma",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/%F0%9F%9B%A0%EF%B8%8F-Serendie-UI-Kit?node-id=17879-8713&t=HSwwyCClYMW0jJWi-4",
+      props: {},
+      examples: [FigmaExample],
+    },
   },
   args: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof DataTable>;
+
+function FigmaExample() {
+  return <DataTable columns={[]} data={[]} />;
+}
 
 export type DataRow = {
   id: number;
