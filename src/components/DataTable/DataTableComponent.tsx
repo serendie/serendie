@@ -1,118 +1,62 @@
-import type {
-  Table,
-  TableOptions,
-  TableState,
-  InitialTableState,
-} from "@tanstack/react-table";
 import {
   useReactTable,
   getCoreRowModel,
   getSortedRowModel,
+  TableOptions,
+  RowSelectionState,
+  SortingState,
 } from "@tanstack/react-table";
-import { forwardRef, useImperativeHandle, useState } from "react";
+import { useState } from "react";
 import { DataTable } from ".";
 
-interface DataTableComponentProps<TData = Record<string, unknown>>
+export interface DataTableComponentProps<TData = Record<string, unknown>>
   extends Omit<TableOptions<TData>, "getCoreRowModel" | "getSortedRowModel"> {
   className?: string;
 }
 
-interface DataTableComponentRef<TData = Record<string, unknown>> {
-  table: Table<TData>;
-  getCurrentState: () => TableState;
-  updateState: (partialState: Partial<TableState>) => void;
-}
+export function DataTableComponent<TData = Record<string, unknown>>({
+  className,
+  enableRowSelection = true,
+  onRowSelectionChange,
+  onSortingChange,
+  state,
+  ...tableOptions
+}: DataTableComponentProps<TData>) {
+  const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
+  const [sorting, setSorting] = useState<SortingState>([]);
 
-function mergeInitialState(
-  defaultState: InitialTableState,
-  userState: InitialTableState
-): InitialTableState {
-  return {
-    ...defaultState,
-    ...userState,
-    pagination: {
-      ...defaultState.pagination,
-      ...userState.pagination,
-    },
-  };
-}
-
-function useControlledTableState<TData>(
-  initialState: InitialTableState,
-  options: Partial<TableOptions<TData>>
-) {
-  const [rowSelection, setRowSelection] = useState(
-    initialState.rowSelection || {}
-  );
-  const [sorting, setSorting] = useState(initialState.sorting || []);
-
-  const isRowSelectionControlled = !!options.onRowSelectionChange;
-  const isSortingControlled = !!options.onSortingChange;
-
-  const controlledState = {
-    rowSelection,
-    sorting,
-    ...options.state,
-  };
-
-  const controlledHandlers = {
-    onRowSelectionChange: setRowSelection,
-    onSortingChange: setSorting,
-  };
-
-  return {
-    state: isRowSelectionControlled ? options.state : controlledState,
-    handlers: isRowSelectionControlled ? {} : controlledHandlers,
-    setters: { setRowSelection, setSorting },
-    isControlled: {
-      rowSelection: isRowSelectionControlled,
-      sorting: isSortingControlled,
-    },
-  };
-}
-
-export const DataTableComponent = forwardRef(function DataTableComponent<
-  TData = Record<string, unknown>,
->(
-  { className, ...tableOptions }: DataTableComponentProps<TData>,
-  ref: React.Ref<DataTableComponentRef<TData>>
-) {
-  const initialState = tableOptions.initialState
-    ? mergeInitialState({}, tableOptions.initialState)
-    : {};
-
-  const { state, handlers, setters, isControlled } = useControlledTableState(
-    initialState,
-    tableOptions
-  );
-
-  const options = {
+  const table = useReactTable({
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
-    enableRowSelection: true,
+    enableRowSelection,
     ...tableOptions,
-    initialState,
-    state,
-    ...handlers,
-  };
-
-  const table = useReactTable(options);
-
-  useImperativeHandle(ref, () => ({
-    table,
-    getCurrentState: () => table.getState(),
-    updateState: (partialState: Partial<TableState>) => {
-      if (
-        partialState.rowSelection !== undefined &&
-        !isControlled.rowSelection
-      ) {
-        setters.setRowSelection(partialState.rowSelection);
-      }
-      if (partialState.sorting !== undefined && !isControlled.sorting) {
-        setters.setSorting(partialState.sorting);
+    state: {
+      rowSelection: state?.rowSelection ?? rowSelection,
+      sorting: state?.sorting ?? sorting,
+      ...state,
+    },
+    onRowSelectionChange: (updater) => {
+      setRowSelection(updater);
+      if (onRowSelectionChange) {
+        const newValue =
+          typeof updater === "function" ? updater(rowSelection) : updater;
+        onRowSelectionChange(newValue);
       }
     },
-  }));
+    onSortingChange: (updater) => {
+      setSorting(updater);
+      if (onSortingChange) {
+        const newValue =
+          typeof updater === "function" ? updater(sorting) : updater;
+        onSortingChange(newValue);
+      }
+    },
+  });
+
+  const rowSelectionEnabled =
+    typeof enableRowSelection === "function"
+      ? true
+      : enableRowSelection === true;
 
   return (
     <DataTable.Root className={className}>
@@ -121,7 +65,7 @@ export const DataTableComponent = forwardRef(function DataTableComponent<
           <DataTable.HeaderRow
             key={headerGroup.id}
             headerGroup={headerGroup}
-            enableRowSelection={options.enableRowSelection === true}
+            enableRowSelection={rowSelectionEnabled}
             table={table}
           />
         ))}
@@ -131,12 +75,12 @@ export const DataTableComponent = forwardRef(function DataTableComponent<
           <DataTable.Row
             key={row.id}
             row={row}
-            enableRowSelection={options.enableRowSelection === true}
+            enableRowSelection={rowSelectionEnabled}
           />
         ))}
       </DataTable.Tbody>
     </DataTable.Root>
   );
-});
+}
 
 export default DataTableComponent;

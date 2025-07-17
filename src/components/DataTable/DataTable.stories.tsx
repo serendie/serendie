@@ -1,5 +1,44 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { DataTable } from "./index";
+import { figma } from "@figma/code-connect";
+
+function FigmaExample() {
+  return (
+    <DataTable
+      columns={[
+        {
+          accessorKey: "name",
+          header: "Name",
+        },
+        {
+          accessorKey: "age",
+          header: "Age",
+        },
+        {
+          accessorKey: "email",
+          header: "Email",
+        },
+      ]}
+      data={[
+        {
+          name: "John Doe",
+          age: 30,
+          email: "john.doe@example.com",
+        },
+        {
+          name: "Jane Smith",
+          age: 25,
+          email: "jane.smith@example.com",
+        },
+        {
+          name: "Alice Johnson",
+          age: 28,
+          email: "alice.johnson@example.com",
+        },
+      ]}
+    />
+  );
+}
 
 const meta: Meta<typeof DataTable> = {
   component: DataTable,
@@ -15,12 +54,181 @@ const meta: Meta<typeof DataTable> = {
   args: {},
 };
 
-export default meta;
-type Story = StoryObj<typeof DataTable>;
+figma.connect(
+  DataTable,
+  "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/%F0%9F%9B%A0%EF%B8%8F-Serendie-UI-Kit?node-id=17879-8658&m=dev",
+  {
+    props: {},
+    example: () => (
+      <DataTable
+        columns={[
+          {
+            accessorKey: "name",
+            header: "Name",
+          },
+          {
+            accessorKey: "age",
+            header: "Age",
+          },
+          {
+            accessorKey: "email",
+            header: "Email",
+          },
+        ]}
+        data={[
+          {
+            name: "John Doe",
+            age: 30,
+            email: "john.doe@example.com",
+          },
+          {
+            name: "Jane Smith",
+            age: 25,
+            email: "jane.smith@example.com",
+          },
+          {
+            name: "Alice Johnson",
+            age: 28,
+            email: "alice.johnson@example.com",
+          },
+        ]}
+      />
+    ),
+  }
+);
 
-function FigmaExample() {
-  return <DataTable columns={[]} data={[]} />;
-}
+figma.connect(
+  DataTable,
+  "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/%F0%9F%9B%A0%EF%B8%8F-Serendie-UI-Kit?node-id=17879-8659&m=dev",
+  {
+    props: {},
+    example: () => (
+      <DataTable
+        columns={[
+          {
+            accessorKey: "name",
+            header: "Name",
+          },
+          {
+            accessorKey: "age",
+            header: "Age",
+          },
+          {
+            accessorKey: "email",
+            header: "Email",
+          },
+        ]}
+        data={[
+          {
+            name: "John Doe",
+            age: 30,
+            email: "john.doe@example.com",
+          },
+          {
+            name: "Jane Smith",
+            age: 25,
+            email: "jane.smith@example.com",
+          },
+          {
+            name: "Alice Johnson",
+            age: 28,
+            email: "alice.johnson@example.com",
+          },
+        ]}
+      />
+    ),
+  }
+);
+
+figma.connect(
+  DataTable,
+  "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/%F0%9F%9B%A0%EF%B8%8F-Serendie-UI-Kit?node-id=17879-8712&m=dev",
+  {
+    props: {},
+    example: () => (
+      <DataTable
+        columns={[
+          {
+            accessorKey: "name",
+            header: "Name",
+          },
+          {
+            accessorKey: "age",
+            header: "Age",
+          },
+          {
+            accessorKey: "email",
+            header: "Email",
+          },
+        ]}
+        data={[
+          {
+            name: "John Doe",
+            age: 30,
+            email: "john.doe@example.com",
+          },
+          {
+            name: "Jane Smith",
+            age: 25,
+            email: "jane.smith@example.com",
+          },
+          {
+            name: "Alice Johnson",
+            age: 28,
+            email: "alice.johnson@example.com",
+          },
+        ]}
+      />
+    ),
+  }
+);
+
+figma.connect(
+  DataTable,
+  "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/%F0%9F%9B%A0%EF%B8%8F-Serendie-UI-Kit?node-id=17879-8686&m=dev",
+  {
+    props: {},
+    example: () => (
+      <DataTable
+        columns={[
+          {
+            accessorKey: "name",
+            header: "Name",
+          },
+          {
+            accessorKey: "age",
+            header: "Age",
+          },
+          {
+            accessorKey: "email",
+            header: "Email",
+          },
+        ]}
+        data={[
+          {
+            name: "John Doe",
+            age: 30,
+            email: "john.doe@example.com",
+          },
+          {
+            name: "Jane Smith",
+            age: 25,
+            email: "jane.smith@example.com",
+          },
+          {
+            name: "Alice Johnson",
+            age: 28,
+            email: "alice.johnson@example.com",
+          },
+        ]}
+      />
+    ),
+  }
+);
+
+export default meta;
+
+type Story = StoryObj<typeof DataTable>;
 
 export type DataRow = {
   id: number;

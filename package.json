@@ -18,7 +18,7 @@
     "build:storybook": "npm run build && storybook build",
     "test": "test-storybook",
     "panda": "panda",
-    "connect:publish": "npx figma connect publish",
+    "connect:publish": "npx figma connect publish --include-template-files",
     "connect:unpublish": "npx figma connect unpublish",
     "chromatic": "chromatic --only-changed --exit-zero-on-changes --build-script-name=build:storybook",
     "release": "release-it --config ./.release-it.json"
@@ -46,7 +46,7 @@
     "@chromatic-com/storybook": "^1.6.1",
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.8.0",
-    "@figma/code-connect": "^1.2.1",
+    "@figma/code-connect": "^1.3.4",
     "@pandacss/eslint-plugin": "^0.1.1",
     "@serendie/design-token": "^1.1.0",
     "@storybook/addon-designs": "^8.0.3",
