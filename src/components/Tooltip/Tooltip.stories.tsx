@@ -1,47 +1,31 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "../Button/Button.tsx";
 import { Tooltip } from "./Tooltip.tsx";
+import { figma } from "@figma/code-connect";
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
   title: "Components/Tooltip",
-  parameters: {
-    design: {
-      type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/%F0%9F%9B%A0%EF%B8%8F-Serendie-UI-Kit?node-id=20276-13553",
-      props: {
-        placement: "placement",
-        content: "content",
-        disabled: "disabled",
-        openDelay: "openDelay",
-        closeDelay: "closeDelay",
-      },
-      examples: [
-        {
-          label: "Default",
-          placement: "top",
-          content: "凡例",
-        },
-      ],
-      import: "@serendie/ui",
-    },
-  },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  render: () => (
-    <div
-      style={{ padding: "100px", display: "flex", justifyContent: "center" }}
-    >
-      <Tooltip content="ツールチップの内容">
-        <Button>Hover me</Button>
-      </Tooltip>
-    </div>
-  ),
-};
+export const Default = () => (
+  <div style={{ padding: "100px", display: "flex", justifyContent: "center" }}>
+    <Tooltip content="ツールチップの内容">
+      <Button>Hover me</Button>
+    </Tooltip>
+  </div>
+);
+
+figma.connect(
+  Tooltip,
+  "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=20276-13553",
+  {
+    example: Default,
+  }
+);
 
 export const Positions: Story = {
   render: () => (
