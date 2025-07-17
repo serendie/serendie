@@ -5,7 +5,6 @@ import {
   createListCollection,
 } from "@ark-ui/react";
 import { SerendieSymbolChevronDown } from "@serendie/symbols";
-import { useId } from "react";
 import { RecipeVariantProps, css, cx, sva } from "../../../styled-system/css";
 import { List, ListItem } from "../List";
 
@@ -177,7 +176,6 @@ export const Select: React.FC<SelectStyleProps> = ({
 }) => {
   const [variantProps, selectProps] = SelectStyle.splitVariantProps(props);
   const styles = SelectStyle(variantProps);
-  const id = useId(); // TODO: https://github.com/serendie/serendie/issues/409 Ark UI 3 へのアップデート
   const { collection: _, ...elementProps } = selectProps;
 
   const collection = createListCollection({
@@ -249,7 +247,7 @@ export const Select: React.FC<SelectStyleProps> = ({
       <Portal>
         <ArkSelect.Positioner>
           <ArkSelect.Content className={styles.content}>
-            <List id={id}>
+            <List>
               {collection.items.map((item, i) => (
                 <ArkSelect.Item key={i} item={item}>
                   <ListItem
