@@ -1,6 +1,10 @@
-import { Select as ArkSelect, Portal, SelectRootProps } from "@ark-ui/react";
+import {
+  Select as ArkSelect,
+  Portal,
+  SelectRootProps,
+  createListCollection,
+} from "@ark-ui/react";
 import { SerendieSymbolChevronDown } from "@serendie/symbols";
-import { useId } from "react";
 import { RecipeVariantProps, css, cx, sva } from "../../../styled-system/css";
 import { List, ListItem } from "../List";
 
@@ -148,6 +152,7 @@ type Props = {
   label?: string;
   required?: boolean;
   invalidMessage?: string;
+  items?: selectItem[];
 };
 
 type selectItem = {
@@ -166,15 +171,23 @@ export const Select: React.FC<SelectStyleProps> = ({
   invalid,
   invalidMessage,
   className,
+  items = [],
   ...props
 }) => {
-  const [variantProps, elementProps] = SelectStyle.splitVariantProps(props);
+  const [variantProps, selectProps] = SelectStyle.splitVariantProps(props);
   const styles = SelectStyle(variantProps);
-  const id = useId(); // TODO: https://github.com/serendie/serendie/issues/409 Ark UI 3 へのアップデート
+  const { collection: _, ...elementProps } = selectProps;
+
+  const collection = createListCollection({
+    items,
+    itemToString: (item) => item.label,
+    itemToValue: (item) => item.value,
+  });
 
   return (
     <ArkSelect.Root
       {...elementProps}
+      collection={collection}
       invalid={invalid}
       className={cx(styles.root, className)}
       positioning={{
@@ -234,8 +247,8 @@ export const Select: React.FC<SelectStyleProps> = ({
       <Portal>
         <ArkSelect.Positioner>
           <ArkSelect.Content className={styles.content}>
-            <List id={id}>
-              {props.items.map((item: selectItem, i: number) => (
+            <List>
+              {collection.items.map((item, i) => (
                 <ArkSelect.Item key={i} item={item}>
                   <ListItem
                     title={item.label}
