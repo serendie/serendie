@@ -115,6 +115,10 @@ figma.connect(
   }
 );
 
+/*
+NOTE: exampleに渡すコンポーネントの中でテンプレートリテラルを使うとエラーになることがあるので文字列連結しています
+*/
+
 export const PiledBarChart = () => {
   const barProps = useBarChartProps("primary");
   const labelFormat = (datum: string | number) =>
