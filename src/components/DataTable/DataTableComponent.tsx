@@ -29,11 +29,7 @@ export function DataTableComponent<TData = Record<string, unknown>>({
           <DataTable.HeaderRow
             key={headerGroup.id}
             headerGroup={headerGroup}
-            enableRowSelection={
-              typeof options.enableRowSelection === "boolean"
-                ? options.enableRowSelection
-                : true
-            }
+            enableRowSelection={options.enableRowSelection === true}
             table={table}
           />
         ))}
@@ -43,11 +39,7 @@ export function DataTableComponent<TData = Record<string, unknown>>({
           <DataTable.Row
             key={row.id}
             row={row}
-            enableRowSelection={
-              typeof options.enableRowSelection === "boolean"
-                ? options.enableRowSelection
-                : true
-            }
+            enableRowSelection={options.enableRowSelection === true}
           />
         ))}
       </DataTable.Tbody>
