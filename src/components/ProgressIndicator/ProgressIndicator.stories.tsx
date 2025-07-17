@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { ProgressIndicator } from "./ProgressIndicator";
-//import figma from "@figma/code-connect";
+import figma from "@figma/code-connect";
 
 const meta: Meta<typeof ProgressIndicator> = {
   component: ProgressIndicator,
@@ -8,7 +8,6 @@ const meta: Meta<typeof ProgressIndicator> = {
     design: {
       type: "figma",
       url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=1322-31566",
-      /*
       props: {
         size: figma.enum("Size", {
           Small: "small",
@@ -16,7 +15,6 @@ const meta: Meta<typeof ProgressIndicator> = {
           Large: "large",
         }),
       },
-      */
       examples: [FigmaExample],
     },
   },
