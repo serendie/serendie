@@ -1,0 +1,38 @@
+name: Publish main branch to npm tag "dev"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build package
+        run: npm run build
+
+      - name: Bump version
+        run: |
+          set -euo pipefail
+          NEW_VERSION="$(npm pkg get version | tr -d '\"' | \
+            awk -F- '{print $1}')-dev.$(date +'%Y%m%d%H%M')"
+          npm version --no-git-tag-version "$NEW_VERSION"
+
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --tag dev --access public
