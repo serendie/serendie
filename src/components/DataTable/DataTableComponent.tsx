@@ -37,26 +37,15 @@ export function DataTableComponent<TData = Record<string, unknown>>({
     },
     onRowSelectionChange: (updater) => {
       setRowSelection(updater);
-      if (onRowSelectionChange) {
-        const newValue =
-          typeof updater === "function" ? updater(rowSelection) : updater;
-        onRowSelectionChange(newValue);
-      }
+      onRowSelectionChange?.(updater);
     },
     onSortingChange: (updater) => {
       setSorting(updater);
-      if (onSortingChange) {
-        const newValue =
-          typeof updater === "function" ? updater(sorting) : updater;
-        onSortingChange(newValue);
-      }
+      onSortingChange?.(updater);
     },
   });
 
-  const rowSelectionEnabled =
-    typeof enableRowSelection === "function"
-      ? true
-      : enableRowSelection === true;
+  const rowSelectionEnabled = enableRowSelection !== false;
 
   return (
     <DataTable.Root className={className}>
