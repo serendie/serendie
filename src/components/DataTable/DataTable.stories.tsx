@@ -1,5 +1,48 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { DataTable } from "./index";
+import { figma } from "@figma/code-connect";
+import { DataTable } from ".";
+
+export const FigmaExample = () => {
+  type DataRowType = {
+    name: string;
+    age: number;
+    email: string;
+  };
+
+  const columnHelper = DataTable.createColumnHelper<DataRowType>();
+
+  const columns = [
+    columnHelper.accessor("name", {
+      header: "Name",
+    }),
+    columnHelper.accessor("age", {
+      header: "Age",
+    }),
+    columnHelper.accessor("email", {
+      header: "Email",
+    }),
+  ];
+
+  const data: DataRowType[] = [
+    {
+      name: "John Doe",
+      age: 30,
+      email: "john.doe@example.com",
+    },
+    {
+      name: "Jane Smith",
+      age: 25,
+      email: "jane.smith@example.com",
+    },
+    {
+      name: "Alice Johnson",
+      age: 28,
+      email: "alice.johnson@example.com",
+    },
+  ];
+
+  return <DataTable columns={columns} data={data} />;
+};
 
 const meta: Meta<typeof DataTable> = {
   component: DataTable,
@@ -9,7 +52,53 @@ const meta: Meta<typeof DataTable> = {
   args: {},
 };
 
+figma.connect(
+  DataTable,
+  "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/%F0%9F%9B%A0%EF%B8%8F-Serendie-UI-Kit?node-id=17879-8713&m=dev",
+  {
+    props: {},
+    example: FigmaExample,
+  }
+);
+
+figma.connect(
+  DataTable,
+  "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/%F0%9F%9B%A0%EF%B8%8F-Serendie-UI-Kit?node-id=17879-8658&m=dev",
+  {
+    props: {},
+    example: FigmaExample,
+  }
+);
+
+figma.connect(
+  DataTable,
+  "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/%F0%9F%9B%A0%EF%B8%8F-Serendie-UI-Kit?node-id=17879-8659&m=dev",
+  {
+    props: {},
+    example: FigmaExample,
+  }
+);
+
+figma.connect(
+  DataTable,
+  "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/%F0%9F%9B%A0%EF%B8%8F-Serendie-UI-Kit?node-id=17879-8712&m=dev",
+  {
+    props: {},
+    example: FigmaExample,
+  }
+);
+
+figma.connect(
+  DataTable,
+  "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/%F0%9F%9B%A0%EF%B8%8F-Serendie-UI-Kit?node-id=17879-8686&m=dev",
+  {
+    props: {},
+    example: FigmaExample,
+  }
+);
+
 export default meta;
+
 type Story = StoryObj<typeof DataTable>;
 
 export type DataRow = {
@@ -160,7 +249,9 @@ export const WithCustomSorting: Story = {
     <DataTable<DataRow>
       data={Data}
       columns={columns}
-      initialSorting={[{ id: "area", desc: false }]}
+      initialState={{
+        sorting: [{ id: "area", desc: false }],
+      }}
       onSortingChange={(sorting) => console.log("Sorting changed:", sorting)}
     />
   ),

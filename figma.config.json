@@ -1,6 +1,9 @@
 {
   "codeConnect": {
     "include": ["src/components/**/*.tsx"],
-    "parser": "react"
+    "parser": "react",
+    "importPaths": {
+      "src/components/*": "@serendie/ui"
+    }
   }
 }
