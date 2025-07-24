@@ -29,4 +29,5 @@ export * from "./components/Tabs/index.ts";
 export * from "./components/TextArea/index.ts";
 export * from "./components/TextField/index.ts";
 export * from "./components/Toast/index.ts";
+export * from "./components/Tooltip/index.ts";
 export * from "./components/TopAppBar/index.ts";
