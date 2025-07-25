@@ -7,7 +7,13 @@ export const HeaderCheckbox: React.FC<Omit<ChoiceBoxProps, "type">> = ({
   ...props
 }) => {
   return (
-    <DataTable.HeaderCell>
+    <DataTable.HeaderCell
+      className={cx(
+        css({
+          width: "sd.system.dimension.spacing.twoExtraLarge",
+        })
+      )}
+    >
       <ChoiceBox
         {...props}
         type="checkbox"
