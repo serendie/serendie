@@ -156,53 +156,75 @@ export const datePickerStyles = sva({
       border: "none",
       background: "transparent",
       textStyle: "sd.system.typography.body.small_compact",
+      zIndex: "2",
       _hover: {
-        bg: "sd.system.color.interaction.hoveredVariant",
+        _before: {
+          bg: "sd.system.color.interaction.hoveredVariant",
+        },
+      },
+      _before: {
+        content: "''",
+        position: "absolute",
+        inset: "0",
+        zIndex: "-1",
+        borderRadius: "9999px",
       },
       _today: {
-        borderWidth: "sd.system.dimension.border.medium",
-        borderColor: "sd.system.color.component.outline",
-        borderStyle: "solid",
-      },
-      _selected: {
-        background: "sd.system.color.impression.primaryContainer",
-        color: "sd.system.color.impression.onPrimaryContainer",
-        _hover: {
-          background: "sd.system.color.impression.primaryContainer",
+        _before: {
+          borderWidth: "sd.system.dimension.border.medium",
+          borderColor: "sd.system.color.component.outline",
+          borderStyle: "solid",
         },
+        "&[data-in-range]": {
+          _before: {
+            borderColor: "sd.reference.color.scale.white.1000",
+          },
+        },
+      },
+      "&[data-in-hover-range]": {
+        bg: "sd.system.color.interaction.hoveredVariant",
       },
       "&[data-in-range]": {
-        background: "sd.system.color.interaction.selectedSurface",
-        borderRadius: "0",
-        _before: {
-          content: "''",
-          position: "absolute",
-          inset: "0",
-          bg: "sd.system.color.interaction.selectedSurface",
-          zIndex: "-1",
-        },
+        bg: "sd.system.color.interaction.selectedSurface",
+        borderRadius: "0px",
+      },
+      "&[data-hover-range-start]": {
+        bg: "sd.system.color.interaction.hoveredVariant",
+        borderTopLeftRadius: "9999px",
+        borderBottomLeftRadius: "9999px",
+      },
+      "&[data-hover-range-end]": {
+        bg: "sd.system.color.interaction.hoveredVariant",
+        borderTopRightRadius: "9999px",
+        borderBottomRightRadius: "9999px",
       },
       "&[data-range-start]": {
         borderTopLeftRadius: "9999px",
         borderBottomLeftRadius: "9999px",
-        _before: {
-          borderTopLeftRadius: "9999px",
-          borderBottomLeftRadius: "9999px",
-        },
       },
       "&[data-range-end]": {
         borderTopRightRadius: "9999px",
         borderBottomRightRadius: "9999px",
-        _before: {
-          borderTopRightRadius: "9999px",
-          borderBottomRightRadius: "9999px",
+      },
+      _selected: {
+        color: "sd.system.color.impression.onPrimaryContainer",
+        _hover: {
+          _before: {
+            background: "sd.system.color.impression.primaryContainer",
+          },
         },
+        _before: {
+          background: "sd.system.color.impression.primaryContainer",
+        },
+        zIndex: "100",
       },
       _disabled: {
         color: "sd.system.color.interaction.disabledOnSurface",
         cursor: "not-allowed",
         _hover: {
-          background: "transparent",
+          _before: {
+            background: "transparent",
+          },
         },
       },
       _unavailable: {
@@ -210,7 +232,9 @@ export const datePickerStyles = sva({
         cursor: "not-allowed",
         textDecoration: "line-through",
         _hover: {
-          background: "transparent",
+          _before: {
+            background: "transparent",
+          },
         },
       },
     },
