@@ -92,6 +92,7 @@ export const Range: Story = {
   args: {
     label: "期間",
     selectionMode: "range",
+    closeOnSelect: false,
     value: [parseDate("2025-01-01"), parseDate("2025-01-07")],
   },
 };
@@ -133,6 +134,7 @@ export const ControlledRange: Story = {
         {...args}
         label="期間選択"
         selectionMode="range"
+        closeOnSelect={false}
         value={value}
         onValueChange={handleChange}
       />

@@ -29,16 +29,17 @@ export const datePickerStyles = sva({
       background: "sd.system.color.component.surface",
       borderRadius: "sd.system.dimension.radius.medium",
       boxShadow: "sd.system.elevation.shadow.level1",
-      display: "flex",
       flexDirection: "column",
       gap: "sd.system.dimension.spacing.small",
       p: "sd.system.dimension.spacing.small",
       width: "fit-content",
       zIndex: "sd.system.elevation.zIndex.dropdown",
       _open: {
+        display: "flex",
         animation: "fadeIn 0.25s ease-out",
       },
       _closed: {
+        display: "none",
         animation: "fadeOut 0.2s ease-out",
       },
     },

@@ -40,117 +40,118 @@ export const DatePickerComponent = forwardRef<HTMLDivElement, DatePickerProps>(
     const textFieldStyles = textFieldRecipe();
 
     return (
-      <div ref={ref} className={textFieldStyles.root}>
-        <ArkDatePicker.Root locale={locale} {...props}>
-          {label && (
-            <ArkDatePicker.Label className={textFieldStyles.label}>
-              {label}
-              {required && (
-                <span className={textFieldStyles.labelRequired}>必須</span>
-              )}
-            </ArkDatePicker.Label>
-          )}
-          <ArkDatePicker.Control className={textFieldStyles.inputWrapper}>
-            <div></div>
-            {selectionMode === "range" ? (
-              <>
-                <ArkDatePicker.Input
-                  index={0}
-                  placeholder={startPlaceholder}
-                  className={textFieldStyles.input}
-                />
-                <ArkDatePicker.Input
-                  index={1}
-                  placeholder={endPlaceholder}
-                  className={textFieldStyles.input}
-                />
-              </>
-            ) : (
+      <ArkDatePicker.Root
+        locale={locale}
+        {...props}
+        ref={ref}
+        className={textFieldStyles.root}
+      >
+        {label && (
+          <ArkDatePicker.Label className={textFieldStyles.label}>
+            {label}
+            {required && (
+              <span className={textFieldStyles.labelRequired}>必須</span>
+            )}
+          </ArkDatePicker.Label>
+        )}
+        <ArkDatePicker.Control className={textFieldStyles.inputWrapper}>
+          <div></div>
+          {selectionMode === "range" ? (
+            <>
               <ArkDatePicker.Input
-                placeholder={placeholder}
+                index={0}
+                placeholder={startPlaceholder}
                 className={textFieldStyles.input}
               />
-            )}
-            <div className={textFieldStyles.rightContent}>
-              <ArkDatePicker.Trigger className={css({ display: "flex" })}>
-                <SerendieSymbolCalendar />
-              </ArkDatePicker.Trigger>
-            </div>
-          </ArkDatePicker.Control>
-          {invalid && invalidMessage && (
-            <div className={textFieldStyles.messageField}>
-              <p className={textFieldStyles.invalidMessage}>{invalidMessage}</p>
-            </div>
+              <ArkDatePicker.Input
+                index={1}
+                placeholder={endPlaceholder}
+                className={textFieldStyles.input}
+              />
+            </>
+          ) : (
+            <ArkDatePicker.Input
+              placeholder={placeholder}
+              className={textFieldStyles.input}
+            />
           )}
-          <Portal>
-            <ArkDatePicker.Positioner className={styles.positioner}>
-              <ArkDatePicker.Content className={styles.content}>
-                <ArkDatePicker.View view="day" className={styles.view}>
-                  <ArkDatePicker.Context>
-                    {(api) => (
-                      <>
-                        <ArkDatePicker.ViewControl
-                          className={styles.viewControl}
+          <div className={textFieldStyles.rightContent}>
+            <ArkDatePicker.Trigger className={css({ display: "flex" })}>
+              <SerendieSymbolCalendar />
+            </ArkDatePicker.Trigger>
+          </div>
+        </ArkDatePicker.Control>
+        {invalid && invalidMessage && (
+          <div className={textFieldStyles.messageField}>
+            <p className={textFieldStyles.invalidMessage}>{invalidMessage}</p>
+          </div>
+        )}
+        <Portal>
+          <ArkDatePicker.Positioner className={styles.positioner}>
+            <ArkDatePicker.Content className={styles.content}>
+              <ArkDatePicker.View view="day" className={styles.view}>
+                <ArkDatePicker.Context>
+                  {(api) => (
+                    <>
+                      <ArkDatePicker.ViewControl className={styles.viewControl}>
+                        <ArkDatePicker.PrevTrigger
+                          className={styles.prevTrigger}
                         >
-                          <ArkDatePicker.PrevTrigger
-                            className={styles.prevTrigger}
-                          >
-                            <SerendieSymbolChevronLeft />
-                          </ArkDatePicker.PrevTrigger>
-                          <ArkDatePicker.YearSelect />
-                          <ArkDatePicker.MonthSelect />
-                          <ArkDatePicker.NextTrigger
-                            className={styles.nextTrigger}
-                          >
-                            <SerendieSymbolChevronRight />
-                          </ArkDatePicker.NextTrigger>
-                        </ArkDatePicker.ViewControl>
+                          <SerendieSymbolChevronLeft />
+                        </ArkDatePicker.PrevTrigger>
+                        <ArkDatePicker.YearSelect />
+                        <ArkDatePicker.MonthSelect />
+                        <ArkDatePicker.NextTrigger
+                          className={styles.nextTrigger}
+                        >
+                          <SerendieSymbolChevronRight />
+                        </ArkDatePicker.NextTrigger>
+                      </ArkDatePicker.ViewControl>
 
-                        <ArkDatePicker.Table className={styles.table}>
-                          <ArkDatePicker.TableHead className={styles.tableHead}>
-                            <ArkDatePicker.TableRow className={styles.tableRow}>
-                              {api.weekDays.map((weekDay, id) => (
-                                <ArkDatePicker.TableHeader
+                      <ArkDatePicker.Table className={styles.table}>
+                        <ArkDatePicker.TableHead className={styles.tableHead}>
+                          <ArkDatePicker.TableRow className={styles.tableRow}>
+                            {api.weekDays.map((weekDay, id) => (
+                              <ArkDatePicker.TableHeader
+                                key={id}
+                                className={styles.tableHeader}
+                              >
+                                {weekDay.narrow}
+                              </ArkDatePicker.TableHeader>
+                            ))}
+                          </ArkDatePicker.TableRow>
+                        </ArkDatePicker.TableHead>
+                        <ArkDatePicker.TableBody className={styles.tableBody}>
+                          {api.weeks.map((week, id) => (
+                            <ArkDatePicker.TableRow
+                              key={id}
+                              className={styles.tableRow}
+                            >
+                              {week.map((day, id) => (
+                                <ArkDatePicker.TableCell
                                   key={id}
-                                  className={styles.tableHeader}
+                                  value={day}
+                                  className={styles.tableCell}
                                 >
-                                  {weekDay.narrow}
-                                </ArkDatePicker.TableHeader>
+                                  <ArkDatePicker.TableCellTrigger
+                                    className={styles.tableCellTrigger}
+                                  >
+                                    {day.day}
+                                  </ArkDatePicker.TableCellTrigger>
+                                </ArkDatePicker.TableCell>
                               ))}
                             </ArkDatePicker.TableRow>
-                          </ArkDatePicker.TableHead>
-                          <ArkDatePicker.TableBody className={styles.tableBody}>
-                            {api.weeks.map((week, id) => (
-                              <ArkDatePicker.TableRow
-                                key={id}
-                                className={styles.tableRow}
-                              >
-                                {week.map((day, id) => (
-                                  <ArkDatePicker.TableCell
-                                    key={id}
-                                    value={day}
-                                    className={styles.tableCell}
-                                  >
-                                    <ArkDatePicker.TableCellTrigger
-                                      className={styles.tableCellTrigger}
-                                    >
-                                      {day.day}
-                                    </ArkDatePicker.TableCellTrigger>
-                                  </ArkDatePicker.TableCell>
-                                ))}
-                              </ArkDatePicker.TableRow>
-                            ))}
-                          </ArkDatePicker.TableBody>
-                        </ArkDatePicker.Table>
-                      </>
-                    )}
-                  </ArkDatePicker.Context>
-                </ArkDatePicker.View>
-              </ArkDatePicker.Content>
-            </ArkDatePicker.Positioner>
-          </Portal>
-        </ArkDatePicker.Root>
-      </div>
+                          ))}
+                        </ArkDatePicker.TableBody>
+                      </ArkDatePicker.Table>
+                    </>
+                  )}
+                </ArkDatePicker.Context>
+              </ArkDatePicker.View>
+            </ArkDatePicker.Content>
+          </ArkDatePicker.Positioner>
+        </Portal>
+      </ArkDatePicker.Root>
     );
   }
 );
