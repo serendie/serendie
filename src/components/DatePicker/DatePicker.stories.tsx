@@ -11,7 +11,7 @@ export default {
 };
 
 export const Default = () => {
-  const [value, setValue] = useState<DateValue[]>([parseDate(new Date())]);
+  const [value, setValue] = useState<DateValue[]>([parseDate("2025-01-01")]);
 
   const handleChange = (details: DatePickerValueChangeDetails) => {
     console.log(details);
