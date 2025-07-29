@@ -14,7 +14,6 @@ export default {
 
 export const Default = () => {
   const [value, setValue] = useState<DateValue[]>([parseDate("2022-01-01")]);
-  const [open, setOpen] = useState(false);
 
   const handleChange = (details: DatePickerValueChangeDetails) => {
     console.log(details);
@@ -25,17 +24,14 @@ export const Default = () => {
     <>
       <TextField
         placeholder="Date"
+        type="date"
         value={value[0]?.toString()}
         readOnly
         rightContent={<SerendieSymbolCalendar />}
-        onFocus={() => setOpen(true)}
       />
-      <DatePicker
-        value={value}
-        onValueChange={handleChange}
-        open={open}
-        onOpenChange={(details) => setOpen(details.open)}
-      />
+      <br />
+      <br />
+      <DatePicker value={value} onValueChange={handleChange} />
     </>
   );
 };

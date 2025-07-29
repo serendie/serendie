@@ -2,12 +2,6 @@ import { sva } from "../../../styled-system/css";
 
 export const datePickerStyles = sva({
   slots: [
-    "root",
-    "label",
-    "labelRequired",
-    "control",
-    "input",
-    "trigger",
     "positioner",
     "content",
     "view",
@@ -25,68 +19,8 @@ export const datePickerStyles = sva({
     "tableRow",
     "tableCell",
     "tableCellTrigger",
-    "invalidMessage",
   ],
   base: {
-    root: {
-      display: "flex",
-      flexDirection: "column",
-      gap: "sd.system.dimension.spacing.extraSmall",
-    },
-    label: {
-      color: "sd.system.color.component.onSurface",
-      fontWeight: "medium",
-      textStyle: "sd.system.typography.label.medium_compact",
-    },
-    labelRequired: {
-      pl: "sd.system.dimension.spacing.extraSmall",
-      color: "sd.system.color.impression.negative",
-    },
-    control: {
-      display: "flex",
-      gap: "sd.system.dimension.spacing.extraSmall",
-    },
-    input: {
-      borderWidth: "sd.system.dimension.border.medium",
-      borderRadius: "sd.system.dimension.radius.medium",
-      borderColor: "sd.system.color.component.outline",
-      px: "sd.system.dimension.spacing.medium",
-      h: "48px",
-      minW: "0",
-      outline: "none",
-      background: "sd.system.color.component.surface",
-      color: "sd.system.color.component.onSurface",
-      textStyle: "sd.system.typography.body.medium_compact",
-      _focus: {
-        borderColor: "sd.system.color.impression.primary",
-        borderWidth: "sd.system.dimension.border.thick",
-      },
-      _placeholder: {
-        color: "sd.system.color.component.onSurfaceVariant",
-      },
-      _disabled: {
-        bg: "sd.system.color.interaction.disabled",
-        color: "sd.system.color.interaction.disabledOnSurface",
-        cursor: "not-allowed",
-      },
-    },
-    trigger: {
-      alignItems: "center",
-      borderRadius: "sd.system.dimension.radius.medium",
-      cursor: "pointer",
-      display: "inline-flex",
-      justifyContent: "center",
-      px: "sd.system.dimension.spacing.small",
-      h: "48px",
-      minW: "48px",
-      borderWidth: "sd.system.dimension.border.medium",
-      borderColor: "sd.system.color.component.outline",
-      color: "sd.system.color.component.onSurface",
-      bg: "sd.system.color.component.surface",
-      _hover: {
-        bg: "sd.system.color.interaction.hoveredVariant",
-      },
-    },
     positioner: {
       position: "relative",
       zIndex: "sd.system.elevation.zIndex.dropdown",
@@ -278,13 +212,6 @@ export const datePickerStyles = sva({
           background: "transparent",
         },
       },
-    },
-    invalidMessage: {
-      textStyle: {
-        base: "sd.system.typography.body.extraSmall_compact",
-        expanded: "sd.system.typography.body.extraSmall_expanded",
-      },
-      color: "sd.system.color.impression.negative",
     },
   },
   defaultVariants: {},
