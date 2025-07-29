@@ -8,7 +8,7 @@ import {
 import { forwardRef } from "react";
 import { textFieldRecipe } from "../../../styled-system/recipes";
 import { datePickerStyles } from "./styles";
-import { css } from "../../../styled-system/css";
+import { css, cx } from "../../../styled-system/css";
 
 interface DatePickerProps extends DatePickerRootProps {
   placeholder?: string;
@@ -44,6 +44,7 @@ export const DatePickerComponent = forwardRef<HTMLDivElement, DatePickerProps>(
         locale={locale}
         {...props}
         ref={ref}
+        selectionMode={selectionMode}
         className={textFieldStyles.root}
       >
         {label && (
@@ -57,18 +58,23 @@ export const DatePickerComponent = forwardRef<HTMLDivElement, DatePickerProps>(
         <ArkDatePicker.Control className={textFieldStyles.inputWrapper}>
           <div></div>
           {selectionMode === "range" ? (
-            <>
+            <div
+              className={css({
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+              })}
+            >
               <ArkDatePicker.Input
                 index={0}
                 placeholder={startPlaceholder}
-                className={textFieldStyles.input}
+                className={cx(textFieldStyles.input, css({ minWidth: "100%" }))}
               />
               <ArkDatePicker.Input
                 index={1}
                 placeholder={endPlaceholder}
-                className={textFieldStyles.input}
+                className={cx(textFieldStyles.input, css({ minWidth: "100%" }))}
               />
-            </>
+            </div>
           ) : (
             <ArkDatePicker.Input
               placeholder={placeholder}

@@ -93,7 +93,6 @@ export const Range: Story = {
     label: "期間",
     selectionMode: "range",
     closeOnSelect: false,
-    value: [parseDate("2025-01-01"), parseDate("2025-01-07")],
   },
 };
 
