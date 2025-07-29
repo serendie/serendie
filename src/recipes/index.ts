@@ -1,3 +1,5 @@
-import { RecipeVariantRecord } from "@pandacss/dev";
+import { textFieldRecipe } from "./textFieldRecipe";
 
-export const SerendieRecipes: RecipeVariantRecord = {};
+export const SerendieRecipes = {
+  textFieldRecipe: textFieldRecipe,
+};

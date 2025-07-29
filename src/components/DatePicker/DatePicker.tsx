@@ -6,7 +6,9 @@ import {
   SerendieSymbolChevronRight,
 } from "@serendie/symbols";
 import { forwardRef } from "react";
+import { textFieldRecipe } from "../../../styled-system/recipes";
 import { datePickerStyles } from "./styles";
+import { css } from "../../../styled-system/css";
 
 interface DatePickerProps extends DatePickerRootProps {
   placeholder?: string;
@@ -35,45 +37,50 @@ export const DatePickerComponent = forwardRef<HTMLDivElement, DatePickerProps>(
     ref
   ) => {
     const styles = datePickerStyles();
+    const textFieldStyles = textFieldRecipe();
 
     return (
-      <div ref={ref} className={styles.root}>
+      <div ref={ref} className={textFieldStyles.root}>
         <ArkDatePicker.Root locale={locale} {...props}>
           {label && (
-            <ArkDatePicker.Label className={styles.label}>
+            <ArkDatePicker.Label className={textFieldStyles.label}>
               {label}
-              {required && <span className={styles.labelRequired}>必須</span>}
+              {required && (
+                <span className={textFieldStyles.labelRequired}>必須</span>
+              )}
             </ArkDatePicker.Label>
           )}
-          <ArkDatePicker.Control className={styles.control}>
+          <ArkDatePicker.Control className={textFieldStyles.inputWrapper}>
+            <div></div>
             {selectionMode === "range" ? (
               <>
                 <ArkDatePicker.Input
                   index={0}
                   placeholder={startPlaceholder}
-                  className={styles.input}
-                  data-invalid={invalid || undefined}
+                  className={textFieldStyles.input}
                 />
                 <ArkDatePicker.Input
                   index={1}
                   placeholder={endPlaceholder}
-                  className={styles.input}
-                  data-invalid={invalid || undefined}
+                  className={textFieldStyles.input}
                 />
               </>
             ) : (
               <ArkDatePicker.Input
                 placeholder={placeholder}
-                className={styles.input}
-                data-invalid={invalid || undefined}
+                className={textFieldStyles.input}
               />
             )}
-            <ArkDatePicker.Trigger className={styles.trigger}>
-              <SerendieSymbolCalendar />
-            </ArkDatePicker.Trigger>
+            <div className={textFieldStyles.rightContent}>
+              <ArkDatePicker.Trigger className={css({ display: "flex" })}>
+                <SerendieSymbolCalendar />
+              </ArkDatePicker.Trigger>
+            </div>
           </ArkDatePicker.Control>
           {invalid && invalidMessage && (
-            <div className={styles.invalidMessage}>{invalidMessage}</div>
+            <div className={textFieldStyles.messageField}>
+              <p className={textFieldStyles.invalidMessage}>{invalidMessage}</p>
+            </div>
           )}
           <Portal>
             <ArkDatePicker.Positioner className={styles.positioner}>
