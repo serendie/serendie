@@ -134,12 +134,12 @@ export const datePickerStyles = sva({
           },
         },
       },
-      "&[data-in-hover-range]": {
-        bg: "sd.system.color.interaction.hoveredVariant",
-      },
       "&[data-in-range]": {
         bg: "sd.system.color.interaction.selectedSurface",
         borderRadius: "0px",
+      },
+      "&[data-in-range]&[data-in-hover-range]": {
+        bg: "sd.system.color.interaction.hoveredVariant",
       },
       "&[data-hover-range-start]": {
         bg: "sd.system.color.interaction.hoveredVariant",
