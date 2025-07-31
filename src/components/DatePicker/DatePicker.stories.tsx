@@ -140,3 +140,9 @@ export const ControlledRange: Story = {
     );
   },
 };
+
+export const CalendarOnly: Story = {
+  args: {
+    isCalendarOnly: true,
+  },
+};
