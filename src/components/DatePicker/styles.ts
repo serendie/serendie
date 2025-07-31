@@ -97,7 +97,7 @@ export const datePickerStyles = sva({
     },
     tableCellTrigger: {
       alignItems: "center",
-      borderRadius: "9999px",
+      borderRadius: "sd.system.dimension.radius.full",
       cursor: "pointer",
       display: "inline-flex",
       fontVariantNumeric: "tabular-nums",
@@ -120,7 +120,7 @@ export const datePickerStyles = sva({
         position: "absolute",
         inset: "0",
         zIndex: "-1",
-        borderRadius: "9999px",
+        borderRadius: "sd.system.dimension.radius.full",
       },
       _today: {
         _before: {
@@ -143,21 +143,21 @@ export const datePickerStyles = sva({
       },
       "&[data-hover-range-start]": {
         bg: "sd.system.color.interaction.hoveredVariant",
-        borderTopLeftRadius: "9999px",
-        borderBottomLeftRadius: "9999px",
+        borderTopLeftRadius: "sd.system.dimension.radius.full",
+        borderBottomLeftRadius: "sd.system.dimension.radius.full",
       },
       "&[data-hover-range-end]": {
         bg: "sd.system.color.interaction.hoveredVariant",
-        borderTopRightRadius: "9999px",
-        borderBottomRightRadius: "9999px",
+        borderTopRightRadius: "sd.system.dimension.radius.full",
+        borderBottomRightRadius: "sd.system.dimension.radius.full",
       },
       "&[data-range-start]": {
-        borderTopLeftRadius: "9999px",
-        borderBottomLeftRadius: "9999px",
+        borderTopLeftRadius: "sd.system.dimension.radius.full",
+        borderBottomLeftRadius: "sd.system.dimension.radius.full",
       },
       "&[data-range-end]": {
-        borderTopRightRadius: "9999px",
-        borderBottomRightRadius: "9999px",
+        borderTopRightRadius: "sd.system.dimension.radius.full",
+        borderBottomRightRadius: "sd.system.dimension.radius.full",
       },
       _selected: {
         color: "sd.system.color.impression.onPrimaryContainer",
