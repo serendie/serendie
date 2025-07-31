@@ -32,7 +32,7 @@
     "react-dom": ">=18.3.1"
   },
   "dependencies": {
-    "@ark-ui/react": "^5.18.2",
+    "@ark-ui/react": "^5.13.0",
     "@nivo/bar": "^0.99.0",
     "@nivo/core": "^0.99.0",
     "@nivo/line": "^0.99.0",
