@@ -13,8 +13,7 @@ const meta: Meta<typeof DatePicker> = {
   parameters: {
     design: {
       type: "figma",
-      // TODO: FigmaのDatePickerコンポーネントのURLに置き換えてください
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=XXXX-XXXXX",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=17871-5058",
       props: {
         label: figma.string("Label"),
         disabled: figma.enum("State", { Disabled: true }),
