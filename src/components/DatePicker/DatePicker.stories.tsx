@@ -11,23 +11,6 @@ import {
 const meta: Meta<typeof DatePicker> = {
   component: DatePicker,
   parameters: {
-    design: {
-      type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=17871-5058",
-      props: {
-        label: figma.string("Label"),
-        disabled: figma.enum("State", { Disabled: true }),
-        invalid: figma.enum("State", { Error: true }),
-        invalidMessage: figma.string("InvalidMessage"),
-        placeholder: figma.string("Placeholder"),
-        required: figma.boolean("Required"),
-        selectionMode: figma.enum("SelectionMode", {
-          Single: "single",
-          Range: "range",
-        }),
-      },
-      examples: [FigmaExample],
-    },
     controls: {
       expanded: true,
     },
@@ -43,9 +26,17 @@ const meta: Meta<typeof DatePicker> = {
   },
 };
 
-function FigmaExample(props: React.ComponentProps<typeof DatePicker>) {
-  return <DatePicker {...props} />;
-}
+export const FigmaExample = () => {
+  return <DatePicker label="日付を選択" />;
+};
+
+figma.connect(
+  DatePicker,
+  "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=17871-5058",
+  {
+    example: FigmaExample,
+  }
+);
 
 export default meta;
 type Story = StoryObj<typeof DatePicker>;
