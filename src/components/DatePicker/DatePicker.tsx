@@ -2,6 +2,7 @@ import { DatePicker as ArkDatePicker, Portal } from "@ark-ui/react";
 import type { DatePickerRootProps } from "@ark-ui/react";
 import {
   SerendieSymbolCalendar,
+  SerendieSymbolChevronDown,
   SerendieSymbolChevronLeft,
   SerendieSymbolChevronRight,
 } from "@serendie/symbols";
@@ -136,14 +137,24 @@ const Calendar = () => {
           {(api) => (
             <>
               <ArkDatePicker.ViewControl className={styles.viewControl}>
-                <ArkDatePicker.PrevTrigger className={styles.prevTrigger}>
-                  <SerendieSymbolChevronLeft />
-                </ArkDatePicker.PrevTrigger>
-                <ArkDatePicker.YearSelect />
-                <ArkDatePicker.MonthSelect />
-                <ArkDatePicker.NextTrigger className={styles.nextTrigger}>
-                  <SerendieSymbolChevronRight />
-                </ArkDatePicker.NextTrigger>
+                <div className={styles.selectWrapper}>
+                  <ArkDatePicker.YearSelect className={styles.select} />
+                  <SerendieSymbolChevronDown className={styles.selectIcon} />
+                </div>
+                <div className={css({ display: "flex", alignItems: "center" })}>
+                  <ArkDatePicker.PrevTrigger className={styles.prevTrigger}>
+                    <SerendieSymbolChevronLeft />
+                  </ArkDatePicker.PrevTrigger>
+                  <ArkDatePicker.MonthSelect
+                    className={css({
+                      appearance: "none",
+                      textAlign: "center",
+                    })}
+                  />
+                  <ArkDatePicker.NextTrigger className={styles.nextTrigger}>
+                    <SerendieSymbolChevronRight />
+                  </ArkDatePicker.NextTrigger>
+                </div>
               </ArkDatePicker.ViewControl>
 
               <ArkDatePicker.Table className={styles.table}>

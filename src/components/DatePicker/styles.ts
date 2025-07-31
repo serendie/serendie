@@ -12,6 +12,9 @@ export const datePickerStyles = sva({
     "tableHeader",
     "tableCell",
     "tableCellTrigger",
+    "select",
+    "selectWrapper",
+    "selectIcon",
   ],
   base: {
     positioner: {
@@ -52,14 +55,29 @@ export const datePickerStyles = sva({
       h: "40px",
       px: "sd.system.dimension.spacing.twoExtraSmall",
     },
+    select: {
+      appearance: "none",
+      paddingRight: "30px",
+    },
+    selectWrapper: {
+      position: "relative",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+    },
+    selectIcon: {
+      position: "absolute",
+      right: "0",
+      top: "50%",
+      transform: "translateY(-50%)",
+      pointerEvents: "none",
+    },
     prevTrigger: {
       alignItems: "center",
       cursor: "pointer",
       display: "inline-flex",
       justifyContent: "center",
       borderRadius: "sd.system.dimension.radius.medium",
-      h: "32px",
-      minW: "32px",
       color: "sd.system.color.component.onSurface",
       _hover: {
         bg: "sd.system.color.interaction.hoveredVariant",
@@ -71,8 +89,6 @@ export const datePickerStyles = sva({
       display: "inline-flex",
       justifyContent: "center",
       borderRadius: "sd.system.dimension.radius.medium",
-      h: "32px",
-      minW: "32px",
       color: "sd.system.color.component.onSurface",
       _hover: {
         bg: "sd.system.color.interaction.hoveredVariant",
