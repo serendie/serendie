@@ -55,7 +55,10 @@ export const DatePickerComponent = forwardRef<HTMLDivElement, DatePickerProps>(
             )}
           </ArkDatePicker.Label>
         )}
-        <ArkDatePicker.Control className={textFieldStyles.inputWrapper}>
+        <ArkDatePicker.Control
+          className={textFieldStyles.inputWrapper}
+          data-Invalid={invalid}
+        >
           <div></div>
           {selectionMode === "range" ? (
             <div
