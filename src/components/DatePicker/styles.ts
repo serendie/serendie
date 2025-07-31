@@ -8,15 +8,8 @@ export const datePickerStyles = sva({
     "viewControl",
     "prevTrigger",
     "nextTrigger",
-    "viewTrigger",
-    "viewTriggerWrapper",
-    "rangeText",
-    "monthSelect",
     "table",
-    "tableHead",
     "tableHeader",
-    "tableBody",
-    "tableRow",
     "tableCell",
     "tableCellTrigger",
   ],
@@ -85,44 +78,10 @@ export const datePickerStyles = sva({
         bg: "sd.system.color.interaction.hoveredVariant",
       },
     },
-    viewTrigger: {
-      alignItems: "center",
-      cursor: "pointer",
-      display: "inline-flex",
-      justifyContent: "center",
-      borderRadius: "sd.system.dimension.radius.small",
-      h: "32px",
-      fontWeight: "normal",
-      px: "sd.system.dimension.spacing.extraSmall",
-      gap: "sd.system.dimension.spacing.extraSmall",
-      color: "sd.system.color.component.onSurface",
-      background: "transparent",
-      border: "none",
-      _hover: {
-        bg: "sd.system.color.interaction.hoveredVariant",
-      },
-    },
-    viewTriggerWrapper: {
-      display: "flex",
-      gap: "sd.system.dimension.spacing.extraSmall",
-      alignItems: "center",
-    },
-    rangeText: {
-      textStyle: "sd.system.typography.body.medium_compact",
-    },
-    monthSelect: {
-      flex: "1",
-      textStyle: "sd.system.typography.body.medium_compact",
-      color: "sd.system.color.component.onSurface",
-      textAlign: "center",
-    },
     table: {
       width: "full",
       borderCollapse: "separate",
       borderSpacing: "0",
-    },
-    tableHead: {
-      // tableHeadスタイルは必要に応じて追加
     },
     tableHeader: {
       color: "sd.system.color.component.onSurfaceVariant",
@@ -130,12 +89,6 @@ export const datePickerStyles = sva({
       h: "40px",
       textStyle: "sd.system.typography.body.small_compact",
       textAlign: "center",
-    },
-    tableBody: {
-      // tableBodyスタイルは必要に応じて追加
-    },
-    tableRow: {
-      // tableRowスタイルは必要に応じて追加
     },
     tableCell: {
       textAlign: "center",

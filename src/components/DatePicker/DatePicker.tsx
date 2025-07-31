@@ -115,8 +115,8 @@ export const DatePickerComponent = forwardRef<HTMLDivElement, DatePickerProps>(
                       </ArkDatePicker.ViewControl>
 
                       <ArkDatePicker.Table className={styles.table}>
-                        <ArkDatePicker.TableHead className={styles.tableHead}>
-                          <ArkDatePicker.TableRow className={styles.tableRow}>
+                        <ArkDatePicker.TableHead>
+                          <ArkDatePicker.TableRow>
                             {api.weekDays.map((weekDay, id) => (
                               <ArkDatePicker.TableHeader
                                 key={id}
@@ -127,12 +127,9 @@ export const DatePickerComponent = forwardRef<HTMLDivElement, DatePickerProps>(
                             ))}
                           </ArkDatePicker.TableRow>
                         </ArkDatePicker.TableHead>
-                        <ArkDatePicker.TableBody className={styles.tableBody}>
+                        <ArkDatePicker.TableBody>
                           {api.weeks.map((week, id) => (
-                            <ArkDatePicker.TableRow
-                              key={id}
-                              className={styles.tableRow}
-                            >
+                            <ArkDatePicker.TableRow key={id}>
                               {week.map((day, id) => (
                                 <ArkDatePicker.TableCell
                                   key={id}
