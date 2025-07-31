@@ -22,7 +22,7 @@ interface DatePickerProps extends DatePickerRootProps {
   isCalendarOnly?: boolean;
 }
 
-export const DatePickerComponent = forwardRef<HTMLDivElement, DatePickerProps>(
+export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
   (
     {
       placeholder = "日付を選択",
@@ -197,7 +197,3 @@ const Calendar = () => {
     </ArkDatePicker.Content>
   );
 };
-
-DatePickerComponent.displayName = "DatePicker";
-
-export { DatePickerComponent as DatePicker };
