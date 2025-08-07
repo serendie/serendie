@@ -14,7 +14,7 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      entry: globbySync(["src/styles.css", "src/**/index.ts"]),
+      entry: globbySync(["src/styles.css", "src/client.ts", "src/**/index.ts"]),
       name: "Serendie",
       formats: ["es"],
     },
@@ -28,6 +28,12 @@ export default defineConfig({
       output: {
         preserveModules: true,
         preserveModulesRoot: "src",
+        banner(chunk) {
+          if (chunk.facadeModuleId?.endsWith("/client.ts")) {
+            return "'use client';\n";
+          }
+          return "";
+        },
       },
     },
     cssCodeSplit: true,
