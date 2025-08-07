@@ -2,9 +2,12 @@
   "name": "@serendie/ui",
   "description": "Adaptive UI component library as part of Serendie Design System by Mitsubishi Electric",
   "license": "MIT",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "type": "module",
   "types": "./dist/index.d.ts",
+  "sideEffects": [
+    "./dist/styles.css"
+  ],
   "scripts": {
     "prepare": "husky",
     "dev": "npm run storybook",
@@ -121,6 +124,11 @@
       "types": "./styled-system/jsx/index.d.ts",
       "require": "./styled-system/jsx/index.js",
       "import": "./styled-system/jsx/index.js"
+    },
+    "./client": {
+      "import": "./dist/client.js",
+      "require": "./dist/client.cjs",
+      "types": "./dist/client.d.ts"
     },
     "./styles.css": "./dist/styles.css"
   },

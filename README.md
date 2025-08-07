@@ -51,6 +51,32 @@ import { Button } from "@serendie/ui";
 <Button size="medium">Login</Button>;
 ```
 
+#### Next.js App Routerでの使用
+
+Next.js App RouterのServer Componentから使用する場合は、`@serendie/ui/client`からインポートすることで、`use client`ディレクティブを記述する必要がなくなります。
+
+```js
+// app/page.tsx - Server Component
+import { Button } from "@serendie/ui/client";
+
+export default function Page() {
+  return <Button size="medium">Login</Button>;
+}
+```
+
+Client Componentでも同様に使用できます：
+
+```js
+// app/client-component.tsx - Client Component
+"use client";
+import { Tabs, TabItem, ModalDialog } from "@serendie/ui/client";
+
+export default function ClientComponent() {
+  // インタラクティブなコンポーネントも問題なく動作します
+  return <Tabs defaultValue="tab1">...</Tabs>;
+}
+```
+
 ### テーマ切り替え
 
 Serendie Design Systemには5つのカラーテーマがあり、デザイントークンもそれに対応します。htmlタグなどに、`data-panda-theme`属性 (`konjo`, `asagi`, `sumire`, `tsutusji`, `kurikawa`)を付与することでカラーテーマを切り替えることができます。
