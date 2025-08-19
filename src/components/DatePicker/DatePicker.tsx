@@ -6,7 +6,7 @@ import {
   SerendieSymbolChevronLeft,
   SerendieSymbolChevronRight,
 } from "@serendie/symbols";
-import { forwardRef } from "react";
+import { forwardRef, useState } from "react";
 import { textFieldRecipe } from "../../../styled-system/recipes";
 import { datePickerStyles } from "./styles";
 import { css, cx } from "../../../styled-system/css";
@@ -41,6 +41,7 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
   ) => {
     const styles = datePickerStyles();
     const textFieldStyles = textFieldRecipe();
+    const [isOpen, setIsOpen] = useState(false);
 
     return isCalendarOnly ? (
       <ArkDatePicker.Root
@@ -60,6 +61,11 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
         ref={ref}
         selectionMode={selectionMode}
         className={textFieldStyles.root}
+        open={isOpen}
+        onOpenChange={(details) => {
+          setIsOpen(details.open);
+          props.onOpenChange?.(details);
+        }}
       >
         <>
           {label && (
@@ -93,6 +99,7 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
                     textFieldStyles.input,
                     css({ minWidth: "100%" })
                   )}
+                  onFocus={() => setIsOpen(true)}
                 />
                 <ArkDatePicker.Input
                   index={1}
@@ -101,12 +108,14 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
                     textFieldStyles.input,
                     css({ minWidth: "100%" })
                   )}
+                  onFocus={() => setIsOpen(true)}
                 />
               </div>
             ) : (
               <ArkDatePicker.Input
                 placeholder={placeholder}
                 className={textFieldStyles.input}
+                onFocus={() => setIsOpen(true)}
               />
             )}
             <div></div>
