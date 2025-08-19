@@ -74,7 +74,11 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
             className={textFieldStyles.inputWrapper}
             data-Invalid={invalid}
           >
-            <div></div>
+            <div className={textFieldStyles.leftContent}>
+              <ArkDatePicker.Trigger className={css({ display: "flex" })}>
+                <SerendieSymbolCalendar />
+              </ArkDatePicker.Trigger>
+            </div>
             {selectionMode === "range" ? (
               <div
                 className={css({
@@ -105,11 +109,7 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
                 className={textFieldStyles.input}
               />
             )}
-            <div className={textFieldStyles.rightContent}>
-              <ArkDatePicker.Trigger className={css({ display: "flex" })}>
-                <SerendieSymbolCalendar />
-              </ArkDatePicker.Trigger>
-            </div>
+            <div></div>
           </ArkDatePicker.Control>
           {invalid && invalidMessage && (
             <div className={textFieldStyles.messageField}>
