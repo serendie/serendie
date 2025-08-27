@@ -1,6 +1,7 @@
 import { DatePicker as ArkDatePicker, Portal } from "@ark-ui/react";
 import type { DatePickerRootProps } from "@ark-ui/react";
 import {
+  SerendieSymbolArrowRight,
   SerendieSymbolCalendar,
   SerendieSymbolChevronDown,
   SerendieSymbolChevronLeft,
@@ -42,6 +43,7 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
     const styles = datePickerStyles();
     const textFieldStyles = textFieldRecipe();
     const [isOpen, setIsOpen] = useState(false);
+    const isRange = selectionMode === "range";
 
     return isCalendarOnly ? (
       <ArkDatePicker.Root
@@ -76,8 +78,19 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
               )}
             </ArkDatePicker.Label>
           )}
+
           <ArkDatePicker.Control
-            className={textFieldStyles.inputWrapper}
+            className={cx(
+              textFieldStyles.inputWrapper,
+              css(
+                isRange && {
+                  _focusWithin: {
+                    outlineWidth: "sd.system.dimension.border.medium",
+                    outlineColor: "sd.system.color.component.outline",
+                  },
+                }
+              )
+            )}
             data-Invalid={invalid}
           >
             <div className={textFieldStyles.leftContent}>
@@ -85,11 +98,12 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
                 <SerendieSymbolCalendar />
               </ArkDatePicker.Trigger>
             </div>
-            {selectionMode === "range" ? (
+            {isRange ? (
               <div
                 className={css({
                   display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
+                  gridTemplateColumns: "1fr auto 1fr",
+                  alignItems: "center",
                 })}
               >
                 <ArkDatePicker.Input
@@ -97,16 +111,31 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
                   placeholder={startPlaceholder}
                   className={cx(
                     textFieldStyles.input,
-                    css({ minWidth: "100%" })
+                    css({
+                      minWidth: "100%",
+                      borderRadius: "sd.system.dimension.radius.medium",
+                      _focusWithin: {
+                        outlineWidth: "sd.system.dimension.border.thick",
+                        outlineColor: "sd.system.color.impression.primary",
+                      },
+                    })
                   )}
                   onFocus={() => setIsOpen(true)}
                 />
+                <SerendieSymbolArrowRight />
                 <ArkDatePicker.Input
                   index={1}
                   placeholder={endPlaceholder}
                   className={cx(
                     textFieldStyles.input,
-                    css({ minWidth: "100%" })
+                    css({
+                      minWidth: "100%",
+                      borderRadius: "sd.system.dimension.radius.medium",
+                      _focusWithin: {
+                        outlineWidth: "sd.system.dimension.border.thick",
+                        outlineColor: "sd.system.color.impression.primary",
+                      },
+                    })
                   )}
                   onFocus={() => setIsOpen(true)}
                 />
@@ -120,6 +149,7 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
             )}
             <div></div>
           </ArkDatePicker.Control>
+
           {invalid && invalidMessage && (
             <div className={textFieldStyles.messageField}>
               <p className={textFieldStyles.invalidMessage}>{invalidMessage}</p>
