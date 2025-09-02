@@ -82,15 +82,14 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
           <ArkDatePicker.Control
             className={cx(
               textFieldStyles.inputWrapper,
-              css(
-                isRange && {
-                  _focusWithin: {
-                    outlineWidth: "sd.system.dimension.border.medium",
-                    outlineColor: "sd.system.color.component.outline",
-                  },
-                }
-              )
+              css({
+                _expanded: {
+                  outlineWidth: "sd.system.dimension.border.thick",
+                  outlineColor: "sd.system.color.impression.primary",
+                },
+              })
             )}
+            data-expanded={isOpen ? true : undefined}
             data-Invalid={invalid}
           >
             <div className={textFieldStyles.leftContent}>
@@ -114,10 +113,6 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
                     css({
                       minWidth: "100%",
                       borderRadius: "sd.system.dimension.radius.medium",
-                      _focusWithin: {
-                        outlineWidth: "sd.system.dimension.border.thick",
-                        outlineColor: "sd.system.color.impression.primary",
-                      },
                     })
                   )}
                   onFocus={() => setIsOpen(true)}
@@ -131,10 +126,6 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
                     css({
                       minWidth: "100%",
                       borderRadius: "sd.system.dimension.radius.medium",
-                      _focusWithin: {
-                        outlineWidth: "sd.system.dimension.border.thick",
-                        outlineColor: "sd.system.color.impression.primary",
-                      },
                     })
                   )}
                   onFocus={() => setIsOpen(true)}
