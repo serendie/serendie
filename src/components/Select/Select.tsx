@@ -153,6 +153,7 @@ type Props = {
   required?: boolean;
   invalidMessage?: string;
   items?: selectItem[];
+  collection?: SelectRootProps<selectItem>["collection"];
 };
 
 type selectItem = {
@@ -161,7 +162,7 @@ type selectItem = {
 };
 
 type SelectStyleProps = Props &
-  SelectRootProps<selectItem> &
+  Omit<SelectRootProps<selectItem>, "collection"> &
   RecipeVariantProps<typeof SelectStyle>;
 
 export const Select: React.FC<SelectStyleProps> = ({
