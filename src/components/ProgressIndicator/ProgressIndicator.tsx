@@ -84,6 +84,7 @@ const trackStyles = cva({
     type: {
       linear: {
         width: "calc(100% - 4px)",
+        height: "100%",
         borderRadius: "sd.system.dimension.radius.full",
       },
       circular: {
@@ -99,29 +100,7 @@ const trackStyles = cva({
       large: {},
     },
   },
-  compoundVariants: [
-    {
-      type: "linear",
-      size: "small",
-      css: {
-        height: "2px",
-      },
-    },
-    {
-      type: "linear",
-      size: "medium",
-      css: {
-        height: "4px",
-      },
-    },
-    {
-      type: "linear",
-      size: "large",
-      css: {
-        height: "8px",
-      },
-    },
-  ],
+  compoundVariants: [],
 });
 
 const filledStyles = cva({
@@ -133,6 +112,7 @@ const filledStyles = cva({
     type: {
       linear: {
         left: "2px",
+        height: "100%",
         borderRadius: "sd.system.dimension.radius.full",
         transition: "width 0.3s ease-in-out",
       },
@@ -153,50 +133,7 @@ const filledStyles = cva({
       large: {},
     },
   },
-  compoundVariants: [
-    {
-      type: "linear",
-      size: "small",
-      css: {
-        height: "2px",
-      },
-    },
-    {
-      type: "linear",
-      size: "medium",
-      css: {
-        height: "4px",
-      },
-    },
-    {
-      type: "linear",
-      size: "large",
-      css: {
-        height: "8px",
-      },
-    },
-    {
-      type: "circular",
-      size: "small",
-      css: {
-        strokeWidth: "1",
-      },
-    },
-    {
-      type: "circular",
-      size: "medium",
-      css: {
-        strokeWidth: "2",
-      },
-    },
-    {
-      type: "circular",
-      size: "large",
-      css: {
-        strokeWidth: "4",
-      },
-    },
-  ],
+  compoundVariants: [],
 });
 
 export interface ProgressIndicatorProps extends React.ComponentProps<"div"> {
@@ -208,9 +145,9 @@ export interface ProgressIndicatorProps extends React.ComponentProps<"div"> {
 
 const getCircleProps = (size: "small" | "medium" | "large") => {
   const sizeMap = {
-    small: { radius: 5.5, circumference: 34.56 },
-    medium: { radius: 7, circumference: 43.98 },
-    large: { radius: 18, circumference: 113.1 },
+    small: { radius: 5.5, circumference: 34.56, strokeWidth: 1 },
+    medium: { radius: 7, circumference: 43.98, strokeWidth: 2 },
+    large: { radius: 18, circumference: 113.1, strokeWidth: 4 },
   };
   return sizeMap[size];
 };
@@ -227,7 +164,7 @@ export const ProgressIndicator = ({
   const percentage = Math.min(Math.max((value / max) * 100, 0), 100);
 
   if (type === "circular") {
-    const { radius, circumference } = getCircleProps(size);
+    const { radius, circumference, strokeWidth } = getCircleProps(size);
 
     return (
       <div
@@ -236,26 +173,28 @@ export const ProgressIndicator = ({
         aria-valuenow={value}
         aria-valuemin={0}
         aria-valuemax={max}
+        style={style}
         {...props}
       >
         <svg
-          viewBox={`0 0 ${radius * 2 + 4} ${radius * 2 + 4}`}
+          viewBox={`0 0 ${radius * 2 + strokeWidth * 2} ${radius * 2 + strokeWidth * 2}`}
           style={{ width: "100%", height: "100%" }}
         >
           <circle
-            cx={radius + 2}
-            cy={radius + 2}
+            cx={radius + strokeWidth}
+            cy={radius + strokeWidth}
             r={radius}
             className={trackStyles({ type, size })}
             stroke="var(--colors-sd-reference-color-scale-gray-100)"
-            strokeWidth={size === "small" ? 1 : size === "medium" ? 2 : 4}
+            strokeWidth={strokeWidth}
           />
           <circle
-            cx={radius + 2}
-            cy={radius + 2}
+            cx={radius + strokeWidth}
+            cy={radius + strokeWidth}
             r={radius}
             className={filledStyles({ type, size })}
             strokeDasharray={`${(percentage / 100) * circumference} ${circumference}`}
+            strokeWidth={strokeWidth}
           />
         </svg>
       </div>

@@ -28,9 +28,6 @@ const meta: Meta<typeof ProgressIndicator> = {
     max: {
       control: { type: "number" },
     },
-    indeterminate: {
-      control: { type: "boolean" },
-    },
   },
 };
 
@@ -55,27 +52,6 @@ export const Circular: Story = {
     type: "circular",
     size: "medium",
     value: 0.6,
-  },
-};
-
-export const LinearIndeterminate: Story = {
-  args: {
-    type: "linear",
-    size: "medium",
-    indeterminate: true,
-  },
-  render: (args) => (
-    <div style={{ width: "400px" }}>
-      <ProgressIndicator {...args} />
-    </div>
-  ),
-};
-
-export const CircularIndeterminate: Story = {
-  args: {
-    type: "circular",
-    size: "medium",
-    indeterminate: true,
   },
 };
 

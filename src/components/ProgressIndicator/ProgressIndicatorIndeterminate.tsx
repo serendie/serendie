@@ -91,6 +91,7 @@ const trackStyles = cva({
     type: {
       linear: {
         width: "calc(100% - 4px)",
+        height: "100%",
         borderRadius: "sd.system.dimension.radius.full",
       },
       circular: {
@@ -106,29 +107,7 @@ const trackStyles = cva({
       large: {},
     },
   },
-  compoundVariants: [
-    {
-      type: "linear",
-      size: "small",
-      css: {
-        height: "2px",
-      },
-    },
-    {
-      type: "linear",
-      size: "medium",
-      css: {
-        height: "4px",
-      },
-    },
-    {
-      type: "linear",
-      size: "large",
-      css: {
-        height: "8px",
-      },
-    },
-  ],
+  compoundVariants: [],
 });
 
 const filledStyles = cva({
@@ -139,6 +118,7 @@ const filledStyles = cva({
     type: {
       linear: {
         width: "50%",
+        height: "100%",
         animation: "progress-indicator-slide 2s ease-in-out infinite",
       },
       circular: {
@@ -162,50 +142,7 @@ const filledStyles = cva({
       },
     },
   },
-  compoundVariants: [
-    {
-      type: "linear",
-      size: "small",
-      css: {
-        height: "2px",
-      },
-    },
-    {
-      type: "linear",
-      size: "medium",
-      css: {
-        height: "4px",
-      },
-    },
-    {
-      type: "linear",
-      size: "large",
-      css: {
-        height: "8px",
-      },
-    },
-    {
-      type: "circular",
-      size: "small",
-      css: {
-        strokeWidth: "2",
-      },
-    },
-    {
-      type: "circular",
-      size: "medium",
-      css: {
-        strokeWidth: "6",
-      },
-    },
-    {
-      type: "circular",
-      size: "large",
-      css: {
-        strokeWidth: "8",
-      },
-    },
-  ],
+  compoundVariants: [],
 });
 
 export interface ProgressIndicatorIndeterminateProps
@@ -252,6 +189,7 @@ export const ProgressIndicatorIndeterminate = ({
         )}
         role="progressbar"
         aria-valuetext="Loading"
+        style={style}
         {...props}
       >
         <svg
