@@ -5,8 +5,8 @@ import { useState } from "react";
 import {
   DatePickerValueChangeDetails,
   DateValue,
-  parseDate,
 } from "@ark-ui/react/date-picker";
+import { parseDate } from "./index";
 
 const meta: Meta<typeof DatePicker> = {
   component: DatePicker,
