@@ -1,17 +1,20 @@
 import React from "react";
 import { cva, cx } from "../../../styled-system/css";
+import { AnimatedArc } from "./AnimatedArc";
 
-const progressIndicatorStyles = cva({
+const progressIndicatorIndeterminateStyles = cva({
   base: {
     position: "relative",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    overflow: "hidden",
   },
   variants: {
     type: {
       linear: {
         width: "100%",
+        borderRadius: "sd.system.dimension.radius.full",
       },
       circular: {},
     },
@@ -19,6 +22,10 @@ const progressIndicatorStyles = cva({
       small: {},
       medium: {},
       large: {},
+    },
+    color: {
+      primary: {},
+      subtle: {},
     },
   },
   compoundVariants: [
@@ -71,6 +78,7 @@ const progressIndicatorStyles = cva({
   defaultVariants: {
     type: "linear",
     size: "medium",
+    color: "primary",
   },
 });
 
@@ -78,7 +86,6 @@ const trackStyles = cva({
   base: {
     position: "absolute",
     backgroundColor: "sd.reference.color.scale.gray.100",
-    overflow: "hidden",
   },
   variants: {
     type: {
@@ -106,25 +113,17 @@ const trackStyles = cva({
 const filledStyles = cva({
   base: {
     position: "absolute",
-    backgroundColor: "sd.system.color.impression.primary",
   },
   variants: {
     type: {
       linear: {
-        left: "2px",
+        width: "50%",
         height: "100%",
-        borderRadius: "sd.system.dimension.radius.full",
-        transition: "width 0.3s ease-in-out",
+        animation: "progress-indicator-slide 2s ease-in-out infinite",
       },
       circular: {
-        width: "100%",
-        height: "100%",
         fill: "none",
-        stroke: "sd.system.color.impression.primary",
-        strokeLinecap: "round",
-        transition: "stroke-dasharray 0.3s ease-in-out",
-        transform: "rotate(-90deg)",
-        transformOrigin: "center",
+        strokeLinecap: "butt",
       },
     },
     size: {
@@ -132,69 +131,74 @@ const filledStyles = cva({
       medium: {},
       large: {},
     },
+    color: {
+      primary: {
+        backgroundColor: "sd.system.color.impression.primary",
+        stroke: "sd.system.color.impression.primary",
+      },
+      subtle: {
+        backgroundColor: "sd.reference.color.scale.gray.300",
+        stroke: "sd.reference.color.scale.gray.300",
+      },
+    },
   },
   compoundVariants: [],
 });
 
-export interface ProgressIndicatorProps extends React.ComponentProps<"div"> {
+export interface ProgressIndicatorIndeterminateProps
+  extends React.ComponentProps<"div"> {
   type?: "linear" | "circular";
   size?: "small" | "medium" | "large";
-  value?: number;
-  max?: number;
+  color?: "primary" | "subtle";
 }
 
 const getCircleProps = (size: "small" | "medium" | "large") => {
   const sizeMap = {
-    small: { radius: 5.5, circumference: 34.56, strokeWidth: 1 },
-    medium: { radius: 7, circumference: 43.98, strokeWidth: 2 },
-    large: { radius: 18, circumference: 113.1, strokeWidth: 4 },
+    small: {
+      radius: 6,
+      strokeWidth: 2,
+    },
+    medium: {
+      radius: 8,
+      strokeWidth: 6,
+    },
+    large: {
+      radius: 20,
+      strokeWidth: 8,
+    },
   };
   return sizeMap[size];
 };
 
-export const ProgressIndicator = ({
-  value = 0,
-  max = 1,
+export const ProgressIndicatorIndeterminate = ({
   type = "linear",
   size = "medium",
+  color = "primary",
   className,
   style,
   ...props
-}: ProgressIndicatorProps) => {
-  const percentage = Math.min(Math.max((value / max) * 100, 0), 100);
-
+}: ProgressIndicatorIndeterminateProps) => {
   if (type === "circular") {
-    const { radius, circumference, strokeWidth } = getCircleProps(size);
+    const { radius, strokeWidth } = getCircleProps(size);
 
     return (
       <div
-        className={cx(progressIndicatorStyles({ type, size }), className)}
+        className={cx(
+          progressIndicatorIndeterminateStyles({ type, size, color }),
+          className
+        )}
         role="progressbar"
-        aria-valuenow={value}
-        aria-valuemin={0}
-        aria-valuemax={max}
+        aria-valuetext="Loading"
         style={style}
         {...props}
       >
         <svg
           viewBox={`0 0 ${radius * 2 + strokeWidth * 2} ${radius * 2 + strokeWidth * 2}`}
-          style={{ width: "100%", height: "100%" }}
         >
-          <circle
-            cx={radius + strokeWidth}
-            cy={radius + strokeWidth}
-            r={radius}
-            className={trackStyles({ type, size })}
-            stroke="var(--colors-sd-reference-color-scale-gray-100)"
-            strokeWidth={strokeWidth}
-          />
-          <circle
-            cx={radius + strokeWidth}
-            cy={radius + strokeWidth}
-            r={radius}
-            className={filledStyles({ type, size })}
-            strokeDasharray={`${(percentage / 100) * circumference} ${circumference}`}
-            strokeWidth={strokeWidth}
+          <AnimatedArc
+            className={filledStyles({ type, size, color })}
+            radius={radius}
+            width={strokeWidth}
           />
         </svg>
       </div>
@@ -203,23 +207,19 @@ export const ProgressIndicator = ({
 
   return (
     <div
-      className={cx(progressIndicatorStyles({ type, size }), className)}
+      className={cx(
+        progressIndicatorIndeterminateStyles({ type, size, color }),
+        className
+      )}
       role="progressbar"
-      aria-valuenow={value}
-      aria-valuemin={0}
-      aria-valuemax={max}
+      aria-valuetext="Loading"
       style={style}
       {...props}
     >
       <div className={trackStyles({ type, size })} />
-      <div
-        className={filledStyles({ type, size })}
-        style={{
-          width: `${percentage}%`,
-        }}
-      />
+      <div className={filledStyles({ type, size, color })} />
     </div>
   );
 };
 
-ProgressIndicator.displayName = "ProgressIndicator";
+ProgressIndicatorIndeterminate.displayName = "ProgressIndicatorIndeterminate";
