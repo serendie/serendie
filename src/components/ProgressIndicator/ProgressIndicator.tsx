@@ -204,7 +204,6 @@ export interface ProgressIndicatorProps extends React.ComponentProps<"div"> {
   size?: "small" | "medium" | "large";
   value?: number;
   max?: number;
-  indeterminate?: boolean;
 }
 
 const getCircleProps = (size: "small" | "medium" | "large") => {
@@ -221,7 +220,6 @@ export const ProgressIndicator = ({
   max = 1,
   type = "linear",
   size = "medium",
-  indeterminate = false,
   className,
   style,
   ...props
@@ -230,15 +228,12 @@ export const ProgressIndicator = ({
 
   if (type === "circular") {
     const { radius, circumference } = getCircleProps(size);
-    const strokeDasharray = indeterminate
-      ? `${circumference * 0.25} ${circumference * 0.75}`
-      : `${(percentage / 100) * circumference} ${circumference}`;
 
     return (
       <div
         className={cx(progressIndicatorStyles({ type, size }), className)}
         role="progressbar"
-        aria-valuenow={indeterminate ? undefined : value}
+        aria-valuenow={value}
         aria-valuemin={0}
         aria-valuemax={max}
         {...props}
@@ -260,12 +255,7 @@ export const ProgressIndicator = ({
             cy={radius + 2}
             r={radius}
             className={filledStyles({ type, size })}
-            strokeDasharray={strokeDasharray}
-            style={{
-              ...(indeterminate && {
-                animation: "spin 1.4s linear infinite",
-              }),
-            }}
+            strokeDasharray={`${(percentage / 100) * circumference} ${circumference}`}
           />
         </svg>
       </div>
@@ -276,7 +266,7 @@ export const ProgressIndicator = ({
     <div
       className={cx(progressIndicatorStyles({ type, size }), className)}
       role="progressbar"
-      aria-valuenow={indeterminate ? undefined : value}
+      aria-valuenow={value}
       aria-valuemin={0}
       aria-valuemax={max}
       style={style}
@@ -286,7 +276,7 @@ export const ProgressIndicator = ({
       <div
         className={filledStyles({ type, size })}
         style={{
-          width: indeterminate ? "50%" : `${percentage}%`,
+          width: `${percentage}%`,
         }}
       />
     </div>

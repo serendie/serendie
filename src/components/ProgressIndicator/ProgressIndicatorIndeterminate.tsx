@@ -8,11 +8,13 @@ const progressIndicatorIndeterminateStyles = cva({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    overflow: "hidden",
   },
   variants: {
     type: {
       linear: {
         width: "100%",
+        borderRadius: "sd.system.dimension.radius.full",
       },
       circular: {},
     },
@@ -137,8 +139,7 @@ const filledStyles = cva({
     type: {
       linear: {
         width: "50%",
-        borderRadius: "sd.system.dimension.radius.full",
-        animation: "slide 1.5s ease-in-out infinite",
+        animation: "progress-indicator-slide 2s ease-in-out infinite",
       },
       circular: {
         fill: "none",
@@ -255,11 +256,6 @@ export const ProgressIndicatorIndeterminate = ({
       >
         <svg
           viewBox={`0 0 ${radius * 2 + strokeWidth * 2} ${radius * 2 + strokeWidth * 2}`}
-          style={{
-            width: "100%",
-            height: "100%",
-            animation: "rotate 2s linear infinite",
-          }}
         >
           <AnimatedArc
             className={filledStyles({ type, size, color })}
