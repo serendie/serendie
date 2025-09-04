@@ -2,11 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { DatePicker } from "./DatePicker";
 import figma from "@figma/code-connect";
 import { useState } from "react";
-import {
-  DatePickerValueChangeDetails,
-  DateValue,
-  parseDate,
-} from "@ark-ui/react/date-picker";
+import { DatePickerValueChangeDetails, DateValue } from "@ark-ui/react/date-picker";
+import { parseDate } from "./index";
 
 const meta: Meta<typeof DatePicker> = {
   component: DatePicker,
