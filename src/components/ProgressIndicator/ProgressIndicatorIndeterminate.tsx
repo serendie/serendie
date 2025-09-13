@@ -119,7 +119,7 @@ const filledStyles = cva({
       linear: {
         width: "50%",
         height: "100%",
-        animation: "progress-indicator-slide 2s ease-in-out infinite",
+        animation: "progressIndicatorSlide 2s ease-in-out infinite",
       },
       circular: {
         fill: "none",
