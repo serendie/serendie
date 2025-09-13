@@ -10,13 +10,4 @@
     font-feature-settings: "palt";
     letter-spacing: 0.03em;
   }
-
-  @keyframes progress-indicator-slide {
-    from {
-      transform: translateX(-200%);
-    }
-    to {
-      transform: translateX(200%);
-    }
-  }
 }
