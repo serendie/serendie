@@ -68,7 +68,6 @@ export const Sizes: Story = {
       <div>
         <h3 style={{ marginBottom: "8px" }}>Linear</h3>
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-          <ProgressIndicator type="linear" size="small" value={0.6} />
           <ProgressIndicator type="linear" size="medium" value={0.6} />
           <ProgressIndicator type="linear" size="large" value={0.6} />
         </div>
@@ -134,7 +133,6 @@ export const IndeterminateExamples: Story = {
       <div>
         <h3 style={{ marginBottom: "8px" }}>Linear Indeterminate</h3>
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-          <ProgressIndicatorIndeterminate type="linear" size="small" />
           <ProgressIndicatorIndeterminate type="linear" size="medium" />
           <ProgressIndicatorIndeterminate type="linear" size="large" />
         </div>

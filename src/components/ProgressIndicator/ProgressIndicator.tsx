@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { cva, cx } from "../../../styled-system/css";
+import { describeArc } from "./util";
 
 const progressIndicatorStyles = cva({
   base: {
@@ -26,7 +27,7 @@ const progressIndicatorStyles = cva({
       type: "linear",
       size: "small",
       css: {
-        height: "2px",
+        height: "4px",
       },
     },
     {
@@ -111,19 +112,16 @@ const filledStyles = cva({
   variants: {
     type: {
       linear: {
-        left: "2px",
+        left: "0px",
         height: "100%",
-        borderRadius: "sd.system.dimension.radius.full",
-        transition: "width 0.3s ease-in-out",
+        borderRadius: "0",
       },
       circular: {
         width: "100%",
         height: "100%",
         fill: "none",
         stroke: "sd.system.color.impression.primary",
-        strokeLinecap: "round",
-        transition: "stroke-dasharray 0.3s ease-in-out",
-        transform: "rotate(-90deg)",
+        strokeLinecap: "butt",
         transformOrigin: "center",
       },
     },
@@ -145,9 +143,9 @@ export interface ProgressIndicatorProps extends React.ComponentProps<"div"> {
 
 const getCircleProps = (size: "small" | "medium" | "large") => {
   const sizeMap = {
-    small: { radius: 5.5, circumference: 34.56, strokeWidth: 1 },
-    medium: { radius: 7, circumference: 43.98, strokeWidth: 2 },
-    large: { radius: 18, circumference: 113.1, strokeWidth: 4 },
+    small: { radius: 8, strokeWidth: 2 },
+    medium: { radius: 12, strokeWidth: 4 },
+    large: { radius: 24, strokeWidth: 4 },
   };
   return sizeMap[size];
 };
@@ -164,7 +162,21 @@ export const ProgressIndicator = ({
   const percentage = Math.min(Math.max((value / max) * 100, 0), 100);
 
   if (type === "circular") {
-    const { radius, circumference, strokeWidth } = getCircleProps(size);
+    const { radius, strokeWidth } = getCircleProps(size);
+    const d = useMemo(() => {
+      // パーセンテージから円弧のパスを計算
+      const start = 0;
+      const end = (percentage / 100) * 360 - 0.00001;
+
+      const dPath = describeArc(
+        radius + strokeWidth,
+        radius + strokeWidth,
+        radius,
+        start,
+        end
+      );
+      return dPath;
+    }, [percentage, radius, strokeWidth]);
 
     return (
       <div
@@ -188,14 +200,14 @@ export const ProgressIndicator = ({
             stroke="var(--colors-sd-reference-color-scale-gray-100)"
             strokeWidth={strokeWidth}
           />
-          <circle
-            cx={radius + strokeWidth}
-            cy={radius + strokeWidth}
-            r={radius}
-            className={filledStyles({ type, size })}
-            strokeDasharray={`${(percentage / 100) * circumference} ${circumference}`}
-            strokeWidth={strokeWidth}
-          />
+
+          {percentage > 0 && (
+            <path
+              d={d}
+              className={filledStyles({ type, size })}
+              strokeWidth={strokeWidth * 2}
+            />
+          )}
         </svg>
       </div>
     );
@@ -211,13 +223,14 @@ export const ProgressIndicator = ({
       style={style}
       {...props}
     >
-      <div className={trackStyles({ type, size })} />
-      <div
-        className={filledStyles({ type, size })}
-        style={{
-          width: `${percentage}%`,
-        }}
-      />
+      <div className={trackStyles({ type, size })}>
+        <div
+          className={filledStyles({ type, size })}
+          style={{
+            width: `${percentage}%`,
+          }}
+        />
+      </div>
     </div>
   );
 };

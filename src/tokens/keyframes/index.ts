@@ -4,7 +4,7 @@ export const SerendieKeyframes = {
     "100%": { transform: "rotate(360deg)" },
   },
   progressIndicatorSlide: {
-    from: { transform: "translateX(-200%)" },
-    to: { transform: "translateX(200%)" },
+    from: { transform: "translateX(-150%)" },
+    to: { transform: "translateX(150%)" },
   },
 };
