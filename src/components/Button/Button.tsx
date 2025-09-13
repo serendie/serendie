@@ -1,5 +1,5 @@
 import React, { ComponentProps } from "react";
-import { ProgressIndicator } from "../ProgressIndicator";
+import { ProgressIndicatorIndeterminate } from "../ProgressIndicator";
 import { css, cva, cx } from "../../../styled-system/css";
 import { styled } from "../../../styled-system/jsx";
 import { RecipeVariantProps } from "../../../styled-system/types";
@@ -184,13 +184,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...restProps}
       >
         {isLoading && (
-          <ProgressIndicator
-            size={variantProps.size}
-            color={
-              props.styleType === undefined || props.styleType === "filled"
-                ? "white"
-                : "gray"
-            }
+          <ProgressIndicatorIndeterminate
+            type="circular"
+            size={variantProps.size || "medium"}
+            color="subtle"
           />
         )}
         {!isLoading && leftIcon && <Span p={"2px"}>{leftIcon}</Span>}
