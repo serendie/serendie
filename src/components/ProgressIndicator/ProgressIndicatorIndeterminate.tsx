@@ -125,6 +125,7 @@ const filledStyles = cva({
       circular: {
         fill: "none",
         strokeLinecap: "butt",
+        transformOrigin: "center",
       },
     },
     size: {

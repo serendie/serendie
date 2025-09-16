@@ -48,7 +48,6 @@ export const AnimatedArc: React.FC<{
   return (
     <path
       d={d}
-      transformOrigin="center"
       transform={`rotate(${rotationDeg})`}
       strokeLinecap="butt"
       stroke="currentColor"
