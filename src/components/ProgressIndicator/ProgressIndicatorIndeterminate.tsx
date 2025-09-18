@@ -1,18 +1,20 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { cva, cx } from "../../../styled-system/css";
-import { describeArc } from "./util";
+import { AnimatedArc } from "./AnimatedArc";
 
-const progressIndicatorStyles = cva({
+const progressIndicatorIndeterminateStyles = cva({
   base: {
     position: "relative",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    overflow: "hidden",
   },
   variants: {
     type: {
       linear: {
         width: "100%",
+        borderRadius: "sd.system.dimension.radius.full",
       },
       circular: {},
     },
@@ -21,13 +23,17 @@ const progressIndicatorStyles = cva({
       medium: {},
       large: {},
     },
+    color: {
+      primary: {},
+      subtle: {},
+    },
   },
   compoundVariants: [
     {
       type: "linear",
       size: "small",
       css: {
-        height: "4px",
+        height: "2px",
       },
     },
     {
@@ -72,6 +78,7 @@ const progressIndicatorStyles = cva({
   defaultVariants: {
     type: "linear",
     size: "medium",
+    color: "primary",
   },
 });
 
@@ -79,7 +86,6 @@ const trackStyles = cva({
   base: {
     position: "absolute",
     backgroundColor: "sd.reference.color.scale.gray.100",
-    overflow: "hidden",
   },
   variants: {
     type: {
@@ -107,20 +113,17 @@ const trackStyles = cva({
 const filledStyles = cva({
   base: {
     position: "absolute",
-    backgroundColor: "sd.system.color.impression.primary",
   },
   variants: {
     type: {
       linear: {
-        left: "0px",
+        width: "50%",
         height: "100%",
-        borderRadius: "0",
+        animation:
+          "progressIndicatorSlide 1.7s cubic-bezier(0.65, 0.05, 0.36, 1) infinite",
       },
       circular: {
-        width: "100%",
-        height: "100%",
         fill: "none",
-        stroke: "sd.system.color.impression.primary",
         strokeLinecap: "butt",
         transformOrigin: "center",
       },
@@ -130,84 +133,75 @@ const filledStyles = cva({
       medium: {},
       large: {},
     },
+    color: {
+      primary: {
+        backgroundColor: "sd.system.color.impression.primary",
+        stroke: "sd.system.color.impression.primary",
+      },
+      subtle: {
+        backgroundColor: "sd.reference.color.scale.gray.300",
+        stroke: "sd.reference.color.scale.gray.300",
+      },
+    },
   },
   compoundVariants: [],
 });
 
-export interface ProgressIndicatorProps extends React.ComponentProps<"div"> {
+export interface ProgressIndicatorIndeterminateProps
+  extends React.ComponentProps<"div"> {
   type?: "linear" | "circular";
   size?: "small" | "medium" | "large";
-  value?: number;
-  max?: number;
+  color?: "primary" | "subtle";
 }
 
 const getCircleProps = (size: "small" | "medium" | "large") => {
   const sizeMap = {
-    small: { radius: 8, strokeWidth: 2 },
-    medium: { radius: 12, strokeWidth: 4 },
-    large: { radius: 24, strokeWidth: 4 },
+    small: {
+      radius: 6,
+      strokeWidth: 2,
+    },
+    medium: {
+      radius: 8,
+      strokeWidth: 6,
+    },
+    large: {
+      radius: 20,
+      strokeWidth: 8,
+    },
   };
   return sizeMap[size];
 };
 
-export const ProgressIndicator = ({
-  value = 0,
-  max = 1,
+export const ProgressIndicatorIndeterminate = ({
   type = "linear",
   size = "medium",
+  color = "primary",
   className,
   style,
   ...props
-}: ProgressIndicatorProps) => {
-  const percentage = Math.min(Math.max((value / max) * 100, 0), 100);
-
+}: ProgressIndicatorIndeterminateProps) => {
   if (type === "circular") {
     const { radius, strokeWidth } = getCircleProps(size);
-    const d = useMemo(() => {
-      // パーセンテージから円弧のパスを計算
-      const start = 0;
-      const end = (percentage / 100) * 360 - 0.00001;
-
-      const dPath = describeArc(
-        radius + strokeWidth,
-        radius + strokeWidth,
-        radius,
-        start,
-        end
-      );
-      return dPath;
-    }, [percentage, radius, strokeWidth]);
 
     return (
       <div
-        className={cx(progressIndicatorStyles({ type, size }), className)}
+        className={cx(
+          progressIndicatorIndeterminateStyles({ type, size, color }),
+          className
+        )}
         role="progressbar"
-        aria-valuenow={value}
-        aria-valuemin={0}
-        aria-valuemax={max}
+        aria-valuetext="Loading"
         style={style}
         {...props}
       >
         <svg
           viewBox={`0 0 ${radius * 2 + strokeWidth * 2} ${radius * 2 + strokeWidth * 2}`}
-          style={{ width: "100%", height: "100%" }}
         >
-          <circle
-            cx={radius + strokeWidth}
-            cy={radius + strokeWidth}
-            r={radius}
-            className={trackStyles({ type, size })}
-            stroke="var(--colors-sd-reference-color-scale-gray-100)"
-            strokeWidth={strokeWidth}
+          <AnimatedArc
+            className={filledStyles({ type, size, color })}
+            radius={radius}
+            width={strokeWidth}
           />
-
-          {percentage > 0 && (
-            <path
-              d={d}
-              className={filledStyles({ type, size })}
-              strokeWidth={strokeWidth * 2}
-            />
-          )}
         </svg>
       </div>
     );
@@ -215,24 +209,19 @@ export const ProgressIndicator = ({
 
   return (
     <div
-      className={cx(progressIndicatorStyles({ type, size }), className)}
+      className={cx(
+        progressIndicatorIndeterminateStyles({ type, size, color }),
+        className
+      )}
       role="progressbar"
-      aria-valuenow={value}
-      aria-valuemin={0}
-      aria-valuemax={max}
+      aria-valuetext="Loading"
       style={style}
       {...props}
     >
-      <div className={trackStyles({ type, size })}>
-        <div
-          className={filledStyles({ type, size })}
-          style={{
-            width: `${percentage}%`,
-          }}
-        />
-      </div>
+      <div className={trackStyles({ type, size })} />
+      <div className={filledStyles({ type, size, color })} />
     </div>
   );
 };
 
-ProgressIndicator.displayName = "ProgressIndicator";
+ProgressIndicatorIndeterminate.displayName = "ProgressIndicatorIndeterminate";
