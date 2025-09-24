@@ -19,14 +19,11 @@ export const PaginationStyle = sva({
       height: 32,
       minWidth: 32,
       margin: 0,
-      "& button": {
-        color: "sd.system.color.impression.primary",
-      },
+      color: "sd.system.color.impression.primary",
+
       "&[data-selected]": {
-        "& button": {
-          color: "sd.system.color.interaction.disabledOnSurface",
-          fontWeight: "bold",
-        },
+        color: "sd.system.color.interaction.disabledOnSurface",
+        fontWeight: "bold",
       },
     },
     ellipsis: {
@@ -143,6 +140,7 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
                 <ArkPagination.PrevTrigger
                   className={styles.prevTrigger}
                   disabled={isFirstPage}
+                  asChild
                 >
                   <IconButton
                     icon={<SerendieSymbolChevronLeft />}
@@ -163,6 +161,7 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
                       key={index}
                       {...page}
                       className={styles.item}
+                      asChild
                     >
                       <IconButton
                         icon={<>{page.value}</>}
@@ -187,6 +186,7 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
                 <ArkPagination.NextTrigger
                   className={styles.nextTrigger}
                   disabled={isLastPage}
+                  asChild
                 >
                   <IconButton
                     icon={<SerendieSymbolChevronRight />}
