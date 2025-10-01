@@ -108,3 +108,87 @@ export const PlayClickedButton: Story = {
     });
   },
 };
+
+export const PreventCloseOnEscape: Story = {
+  render: (args) => {
+    const [isOpen, setIsOpen] = useState(false);
+    return (
+      <>
+        <Button onClick={() => setIsOpen(true)}>Open Dialog</Button>
+        <ModalDialog
+          {...args}
+          isOpen={isOpen}
+          onOpenChange={(e) => setIsOpen(e.open)}
+          onButtonClick={() => {
+            alert("Button clicked");
+            setIsOpen(false);
+          }}
+          closeOnEscape={false}
+        />
+      </>
+    );
+  },
+  args: {
+    title: "Dialog (closeOnEscape=false)",
+    cancelButtonLabel: "Close",
+    submitButtonLabel: "Submit",
+    children: "Escキーではモーダルを閉じることができません。",
+  },
+};
+
+export const PreventCloseOnInteractOutside: Story = {
+  render: (args) => {
+    const [isOpen, setIsOpen] = useState(false);
+    return (
+      <>
+        <Button onClick={() => setIsOpen(true)}>Open Dialog</Button>
+        <ModalDialog
+          {...args}
+          isOpen={isOpen}
+          onOpenChange={(e) => setIsOpen(e.open)}
+          onButtonClick={() => {
+            alert("Button clicked");
+            setIsOpen(false);
+          }}
+          closeOnInteractOutside={false}
+          hideCancelButton
+        />
+      </>
+    );
+  },
+  args: {
+    title: "Dialog (closeOnInteractOutside=false)",
+    submitButtonLabel: "Submit",
+    children:
+      "バックドロップをクリックしてもモーダルを閉じることができません。",
+  },
+};
+
+export const PreventAllAutoClose: Story = {
+  render: (args) => {
+    const [isOpen, setIsOpen] = useState(false);
+    return (
+      <>
+        <Button onClick={() => setIsOpen(true)}>Open Dialog</Button>
+        <ModalDialog
+          {...args}
+          isOpen={isOpen}
+          onOpenChange={(e) => setIsOpen(e.open)}
+          onButtonClick={() => {
+            alert("Button clicked");
+            setIsOpen(false);
+          }}
+          closeOnEscape={false}
+          closeOnInteractOutside={false}
+        />
+      </>
+    );
+  },
+  args: {
+    title: "Dialog (both disabled)",
+    cancelButtonLabel: "Close",
+    submitButtonLabel: "Submit",
+    children:
+      "Escキーとバックドロップクリックの両方が無効化されています。ボタンでのみ閉じることができます。",
+  },
+};
