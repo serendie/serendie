@@ -16,6 +16,7 @@ interface DatePickerProps extends DatePickerRootProps {
   placeholder?: string;
   label?: string;
   required?: boolean;
+  requiredLabel?: string;
   invalid?: boolean;
   invalidMessage?: string;
   startPlaceholder?: string;
@@ -29,6 +30,7 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
       placeholder = "日付を選択",
       label,
       required,
+      requiredLabel,
       invalid,
       invalidMessage,
       selectionMode = "single",
@@ -74,7 +76,9 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
             <ArkDatePicker.Label className={textFieldStyles.label}>
               {label}
               {required && (
-                <span className={textFieldStyles.labelRequired}>必須</span>
+                <span className={textFieldStyles.labelRequired}>
+                  {requiredLabel ?? "必須"}
+                </span>
               )}
             </ArkDatePicker.Label>
           )}

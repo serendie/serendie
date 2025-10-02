@@ -102,6 +102,7 @@ type Props = {
   invalid?: boolean;
   invalidMessage?: string;
   autoAdjustHeight?: boolean;
+  requiredLabel?: string;
 } & ComponentPropsWithoutRef<"textarea">;
 
 export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
@@ -111,6 +112,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
       label,
       description,
       required,
+      requiredLabel,
       invalidMessage,
       invalid,
       disabled,
@@ -131,7 +133,9 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
         {label ? (
           <label className={styles.label} htmlFor={inputId}>
             {label}
-            {required && <span className={styles.required}>必須</span>}
+            {required && (
+              <span className={styles.required}>{requiredLabel ?? "必須"}</span>
+            )}
           </label>
         ) : null}
         <div
