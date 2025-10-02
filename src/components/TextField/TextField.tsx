@@ -14,6 +14,7 @@ type Props = {
   invalidMessage?: string;
   leftContent?: React.ReactNode;
   rightContent?: React.ReactNode;
+  requiredLabel?: string;
 } & React.ComponentPropsWithoutRef<"input">;
 
 export const TextField = forwardRef<HTMLInputElement, Props>(
@@ -23,6 +24,7 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
       label,
       description,
       required,
+      requiredLabel,
       invalidMessage,
       invalid,
       type = "text",
@@ -69,7 +71,11 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
         {label ? (
           <label className={styles.label} htmlFor={inputId}>
             {label}
-            {required && <span className={styles.labelRequired}>必須</span>}
+            {required && (
+              <span className={styles.labelRequired}>
+                {requiredLabel ?? "必須"}
+              </span>
+            )}
           </label>
         ) : null}
         <div

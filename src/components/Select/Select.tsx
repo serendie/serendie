@@ -151,6 +151,7 @@ type Props = {
   placeholder?: string;
   label?: string;
   required?: boolean;
+  requiredLabel?: string;
   invalidMessage?: string;
   items?: selectItem[];
   collection?: SelectRootProps<selectItem>["collection"];
@@ -169,6 +170,7 @@ export const Select: React.FC<SelectStyleProps> = ({
   placeholder = "",
   label,
   required,
+  requiredLabel,
   invalid,
   invalidMessage,
   className,
@@ -211,14 +213,13 @@ export const Select: React.FC<SelectStyleProps> = ({
         >
           {label}
           {required && (
-            // とりあえず必須メッセージはハードコード
             <span
               className={css({
                 pl: "sd.system.dimension.spacing.extraSmall",
                 color: "sd.system.color.impression.negative",
               })}
             >
-              必須
+              {requiredLabel ?? "必須"}
             </span>
           )}
         </ArkSelect.Label>
