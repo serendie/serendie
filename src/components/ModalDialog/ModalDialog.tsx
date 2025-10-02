@@ -76,8 +76,9 @@ type Props = {
   children: React.ReactNode;
   className?: string;
   cancelButtonLabel?: string;
-  submitButtonLabel: string;
-  onButtonClick: () => void;
+  submitButtonLabel?: string;
+  onButtonClick?: () => void;
+  hideCancelButton?: boolean;
 };
 
 export type ModalDialogProps = Props &
@@ -92,9 +93,12 @@ export const ModalDialog: React.FC<ModalDialogProps> = ({
   onButtonClick,
   children,
   className,
+  hideCancelButton = false,
   ...rest
 }) => {
   const styles = ModalDialogStyle(rest);
+  const showButtons = submitButtonLabel || !hideCancelButton;
+
   return (
     <Dialog.Root open={isOpen} {...rest}>
       <Portal>
@@ -107,14 +111,20 @@ export const ModalDialog: React.FC<ModalDialogProps> = ({
                 {children}
               </Dialog.Description>
             </div>
-            <div className={styles.buttonWrapper}>
-              <Button onClick={onButtonClick}>{submitButtonLabel}</Button>
-              <Dialog.CloseTrigger asChild>
-                <Button styleType="ghost">
-                  {cancelButtonLabel || "閉じる"}
-                </Button>
-              </Dialog.CloseTrigger>
-            </div>
+            {showButtons && (
+              <div className={styles.buttonWrapper}>
+                {submitButtonLabel && (
+                  <Button onClick={onButtonClick}>{submitButtonLabel}</Button>
+                )}
+                {!hideCancelButton && (
+                  <Dialog.CloseTrigger asChild>
+                    <Button styleType="ghost">
+                      {cancelButtonLabel || "閉じる"}
+                    </Button>
+                  </Dialog.CloseTrigger>
+                )}
+              </div>
+            )}
           </Dialog.Content>
         </Dialog.Positioner>
       </Portal>
