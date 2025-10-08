@@ -93,6 +93,13 @@ const TextAreaStyle = sva({
         },
       },
     },
+    fullWidth: {
+      true: {
+        root: {
+          width: "100%",
+        },
+      },
+    },
   },
 });
 
@@ -103,6 +110,7 @@ type Props = {
   invalidMessage?: string;
   autoAdjustHeight?: boolean;
   requiredLabel?: string;
+  fullWidth?: boolean;
 } & ComponentPropsWithoutRef<"textarea">;
 
 export const TextArea = forwardRef<HTMLTextAreaElement, Props>(

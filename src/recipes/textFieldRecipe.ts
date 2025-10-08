@@ -107,4 +107,13 @@ export const textFieldRecipe: SlotRecipeConfig = {
       color: "sd.system.color.impression.negative",
     },
   },
+  variants: {
+    fullWidth: {
+      true: {
+        root: {
+          width: "100%",
+        },
+      },
+    },
+  },
 };

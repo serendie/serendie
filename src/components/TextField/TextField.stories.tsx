@@ -100,3 +100,9 @@ export const WithText: Story = {
     label: "URL",
   },
 };
+
+export const FullWidth: Story = {
+  args: {
+    fullWidth: true,
+  },
+};

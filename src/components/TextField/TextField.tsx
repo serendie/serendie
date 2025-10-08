@@ -5,7 +5,10 @@ import {
 import mergeRefs from "merge-refs";
 import React, { forwardRef } from "react";
 import { css, cx } from "../../../styled-system/css";
-import { textFieldRecipe } from "../../../styled-system/recipes";
+import {
+  textFieldRecipe,
+  type TextFieldRecipeVariantProps,
+} from "../../../styled-system/recipes";
 
 type Props = {
   label?: string;
@@ -15,7 +18,8 @@ type Props = {
   leftContent?: React.ReactNode;
   rightContent?: React.ReactNode;
   requiredLabel?: string;
-} & React.ComponentPropsWithoutRef<"input">;
+} & TextFieldRecipeVariantProps &
+  React.ComponentPropsWithoutRef<"input">;
 
 export const TextField = forwardRef<HTMLInputElement, Props>(
   (
@@ -40,8 +44,9 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
   ) => {
     const inputRef = React.useRef<HTMLInputElement>(null);
     const mergedRef = mergeRefs(inputRef, ref);
-    const [variantProps, elementProps] =
-      textFieldRecipe.splitVariantProps(props);
+    const [variantProps, elementProps] = textFieldRecipe.splitVariantProps({
+      ...props,
+    });
     const styles = textFieldRecipe(variantProps);
     const showMessageField = description || (invalid && invalidMessage);
     const [_value, setValue] = React.useState(props.defaultValue || value);
