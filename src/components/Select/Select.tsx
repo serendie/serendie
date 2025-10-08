@@ -87,8 +87,12 @@ export const SelectStyle = sva({
       w: "40px",
       display: "flex",
       justifyContent: "center",
+      transition: "transform 0.2s",
       "[data-disabled] &": {
         color: "sd.system.color.interaction.disabledOnSurface",
+      },
+      "[data-state='open'] &": {
+        transform: "rotate(180deg)",
       },
     },
   },
