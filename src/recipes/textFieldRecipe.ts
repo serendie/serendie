@@ -1,10 +1,10 @@
-import { SlotRecipeConfig } from "../../styled-system/types";
+import { sva } from "../../styled-system/css";
 
 /**
  * 共通フォームスタイルレシピ
  * TextField、DatePicker、Select、TextAreaなどのフォームコンポーネントで共通のスタイルを定義
  */
-export const textFieldRecipe: SlotRecipeConfig = {
+export const textFieldRecipe = sva({
   className: "input",
   slots: [
     "root",
@@ -112,8 +112,9 @@ export const textFieldRecipe: SlotRecipeConfig = {
       true: {
         root: {
           width: "100%",
+          pointerEvents: "var(--test-fullWidth)",
         },
       },
     },
   },
-};
+});

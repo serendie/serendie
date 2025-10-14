@@ -4,11 +4,8 @@ import {
 } from "@serendie/symbols";
 import mergeRefs from "merge-refs";
 import React, { forwardRef } from "react";
-import { css, cx } from "../../../styled-system/css";
-import {
-  textFieldRecipe,
-  type TextFieldRecipeVariantProps,
-} from "../../../styled-system/recipes";
+import { css, cx, RecipeVariantProps } from "../../../styled-system/css";
+import { textFieldRecipe } from "../../recipes/textFieldRecipe";
 
 type Props = {
   label?: string;
@@ -18,7 +15,7 @@ type Props = {
   leftContent?: React.ReactNode;
   rightContent?: React.ReactNode;
   requiredLabel?: string;
-} & TextFieldRecipeVariantProps &
+} & RecipeVariantProps<typeof textFieldRecipe> &
   React.ComponentPropsWithoutRef<"input">;
 
 export const TextField = forwardRef<HTMLInputElement, Props>(
