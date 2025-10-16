@@ -8,21 +8,22 @@ import {
   SerendieSymbolChevronRight,
 } from "@serendie/symbols";
 import { forwardRef, useState } from "react";
-import { textFieldRecipe } from "../../../styled-system/recipes";
 import { datePickerStyles } from "./styles";
-import { css, cx } from "../../../styled-system/css";
+import { css, cx, RecipeVariantProps } from "../../../styled-system/css";
+import { textFieldRecipe } from "../../recipes/textFieldRecipe";
 
-interface DatePickerProps extends DatePickerRootProps {
-  placeholder?: string;
-  label?: string;
-  required?: boolean;
-  requiredLabel?: string;
-  invalid?: boolean;
-  invalidMessage?: string;
-  startPlaceholder?: string;
-  endPlaceholder?: string;
-  isCalendarOnly?: boolean;
-}
+type DatePickerProps = DatePickerRootProps &
+  RecipeVariantProps<typeof textFieldRecipe> & {
+    placeholder?: string;
+    label?: string;
+    required?: boolean;
+    requiredLabel?: string;
+    invalid?: boolean;
+    invalidMessage?: string;
+    startPlaceholder?: string;
+    endPlaceholder?: string;
+    isCalendarOnly?: boolean;
+  };
 
 export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
   (
@@ -43,14 +44,17 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
     ref
   ) => {
     const styles = datePickerStyles();
-    const textFieldStyles = textFieldRecipe();
+    const [variantProps, elementProps] = textFieldRecipe.splitVariantProps({
+      ...props,
+    });
+    const textFieldStyles = textFieldRecipe(variantProps);
     const [isOpen, setIsOpen] = useState(false);
     const isRange = selectionMode === "range";
 
     return isCalendarOnly ? (
       <ArkDatePicker.Root
         locale={locale}
-        {...props}
+        {...elementProps}
         ref={ref}
         selectionMode={selectionMode}
         open={true}

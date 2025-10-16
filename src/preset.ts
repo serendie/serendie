@@ -1,4 +1,3 @@
-import { SerendieRecipes } from "./recipes";
 import { SerendieTokens, SerendieTypography } from "./tokens";
 import { getToken } from "./tokens/getToken";
 import { SerendieKeyframes } from "./tokens/keyframes";
@@ -18,7 +17,6 @@ export const SerendiePreset = {
       breakpoints: {
         expanded: sd.system.dimension.breakpoint.expanded,
       },
-      recipes: SerendieRecipes,
       tokens: {
         ...defaultTokens,
       },

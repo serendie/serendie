@@ -59,3 +59,9 @@ export const AutoAdjustHeight: Story = {
     autoAdjustHeight: true,
   },
 };
+
+export const FullWidth: Story = {
+  args: {
+    fullWidth: true,
+  },
+};
