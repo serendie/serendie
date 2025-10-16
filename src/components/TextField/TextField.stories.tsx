@@ -37,6 +37,7 @@ const meta: Meta<typeof TextField> = {
     invalidMessage: "入力の誤りに関するテキスト",
     description: "入力方法などに関するヘルプテキスト",
     placeholder: "プレースホルダー",
+    fullWidth: false,
     onChange: (e) => {
       console.log(e);
     },
@@ -98,5 +99,11 @@ export const WithText: Story = {
     ),
     placeholder: "URLを入力",
     label: "URL",
+  },
+};
+
+export const FullWidth: Story = {
+  args: {
+    fullWidth: true,
   },
 };
