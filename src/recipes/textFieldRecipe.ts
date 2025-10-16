@@ -112,7 +112,6 @@ export const textFieldRecipe = sva({
       true: {
         root: {
           width: "100%",
-          pointerEvents: "var(--test-fullWidth)",
         },
       },
     },
