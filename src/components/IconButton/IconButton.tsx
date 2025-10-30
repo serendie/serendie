@@ -60,7 +60,7 @@ export const IconButtonStyle = cva({
             bgColor: "sd.system.color.interaction.hoveredVariant",
           },
           _focusVisible: {
-            outlineColor: "sd.system.color.component.outlineVariant",
+            outlineColor: "sd.system.color.component.outlineDim",
             bgColor: "sd.system.color.interaction.hoveredVariant",
           },
         },
@@ -73,7 +73,7 @@ export const IconButtonStyle = cva({
           },
           _focusVisible: {
             bgColor: "sd.system.color.interaction.hoveredVariant",
-            outlineColor: "sd.system.color.component.outlineVariant",
+            outlineColor: "sd.system.color.component.outlineDim",
           },
         },
         _disabled: {

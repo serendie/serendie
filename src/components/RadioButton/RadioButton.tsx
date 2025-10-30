@@ -21,10 +21,10 @@ export const radioCheckedIconCss = {
 };
 
 export const radioUncheckedIconCss = {
-  color: "sd.system.color.component.outlineVariant",
+  color: "sd.system.color.component.outlineDim",
   _disabled: {
     color:
-      "color-mix(in srgb, {colors.sd.system.color.component.outlineVariant}, {colors.sd.system.color.interaction.hoveredOnPrimary});",
+      "color-mix(in srgb, {colors.sd.system.color.component.outlineDim}, {colors.sd.system.color.interaction.hoveredOnPrimary});",
   },
 };
 

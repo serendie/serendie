@@ -19,7 +19,7 @@ const outlineCss = {
       bgColor: "sd.system.color.interaction.hoveredVariant",
     },
     _focusVisible: {
-      outlineColor: "sd.system.color.component.outlineVariant",
+      outlineColor: "sd.system.color.component.outlineDim",
       bgColor: "sd.system.color.interaction.hoveredVariant",
     },
   },
@@ -85,7 +85,7 @@ export const ButtonStyle = cva({
             bgColor: "sd.system.color.interaction.hoveredVariant",
             outlineWidth: "sd.system.dimension.border.medium",
             outlineStyle: "solid",
-            outlineColor: "sd.system.color.component.outlineVariant",
+            outlineColor: "sd.system.color.component.outlineDim",
           },
         },
         _disabled: {

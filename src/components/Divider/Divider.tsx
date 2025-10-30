@@ -14,7 +14,7 @@ export const DividerStyle = cva({
         borderColor: "sd.reference.color.scale.gray.300",
       },
       dark: {
-        borderColor: "sd.system.color.component.outlineVariant",
+        borderColor: "sd.system.color.component.outlineDim",
       },
     },
     type: {
