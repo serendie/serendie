@@ -5,13 +5,13 @@ import { SerendieSymbolCheck } from "@serendie/symbols";
 const stepsStyles = sva({
   slots: [
     "root",
-    "track",
     "item",
     "itemContent",
     "icon",
     "iconInner",
     "checkIcon",
     "number",
+    "connector",
     "textContent",
     "title",
     "description",
@@ -20,13 +20,10 @@ const stepsStyles = sva({
     root: {
       display: "flex",
       gap: "0",
-      position: "relative",
     },
-    track: {
+    connector: {
       position: "absolute",
       backgroundColor: "sd.reference.color.scale.gray.200",
-      pointerEvents: "none",
-      zIndex: 0,
     },
     item: {
       display: "flex",
@@ -83,11 +80,7 @@ const stepsStyles = sva({
         root: {
           flexDirection: "row",
         },
-        track: {
-          top: "50%",
-          transform: "translateY(-50%)",
-          left: "0",
-          right: "0",
+        connector: {
           height: "2px",
         },
         item: {
@@ -101,11 +94,9 @@ const stepsStyles = sva({
         root: {
           flexDirection: "column",
         },
-        track: {
+        connector: {
           left: "50%",
           transform: "translateX(-50%)",
-          top: "0",
-          bottom: "0",
           width: "2px",
         },
         item: {
@@ -229,9 +220,10 @@ const stepsStyles = sva({
       direction: "horizontal",
       size: "large",
       css: {
-        track: {
-          left: "20px",
-          right: "20px",
+        connector: {
+          top: "20px",
+          left: "calc(50% + 20px)",
+          right: "calc(-50% + 20px)",
         },
       },
     },
@@ -239,9 +231,10 @@ const stepsStyles = sva({
       direction: "horizontal",
       size: "small",
       css: {
-        track: {
-          left: "12px",
-          right: "12px",
+        connector: {
+          top: "12px",
+          left: "calc(50% + 12px)",
+          right: "calc(-50% + 12px)",
         },
       },
     },
@@ -249,9 +242,9 @@ const stepsStyles = sva({
       direction: "vertical",
       size: "large",
       css: {
-        track: {
-          top: "20px",
-          bottom: "20px",
+        connector: {
+          top: "calc(50% + 20px)",
+          bottom: "calc(-50% + 20px)",
         },
       },
     },
@@ -259,9 +252,9 @@ const stepsStyles = sva({
       direction: "vertical",
       size: "small",
       css: {
-        track: {
-          top: "12px",
-          bottom: "12px",
+        connector: {
+          top: "calc(50% + 12px)",
+          bottom: "calc(-50% + 12px)",
         },
       },
     },
@@ -304,7 +297,6 @@ export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
 
     return (
       <div ref={ref} className={cx(styles.root, className)} {...props}>
-        <div className={styles.track} />
         {items.map((item, idx) => {
           const itemStyles = stepsStyles({
             direction,
@@ -312,6 +304,8 @@ export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
             status: item.status,
             type,
           });
+          const isLast = idx === items.length - 1;
+          const showConnector = !isLast;
 
           return (
             <div key={idx} className={itemStyles.item}>
@@ -334,6 +328,7 @@ export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
                   )}
                 </div>
               </div>
+              {showConnector && <div className={itemStyles.connector} />}
             </div>
           );
         })}
