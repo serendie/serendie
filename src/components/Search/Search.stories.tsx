@@ -3,6 +3,7 @@ import { Search } from "./Search";
 import figma from "@figma/code-connect";
 import { userEvent, within, waitFor, expect } from "@storybook/test";
 import { FullscreenLayout } from "../../../.storybook/FullscreenLayout";
+import { useState } from "react";
 
 const items = [
   "React",
@@ -107,6 +108,35 @@ export const PlayDisplayMenu: Story = {
         expect(option).toBeInTheDocument();
       },
       { timeout: 3000 }
+    );
+  },
+};
+
+export const Filtered: Story = {
+  args: {
+    disabled: false,
+    placeholder: "フレームワークを検索",
+  },
+  render: (args) => {
+    const [filteredItems, setFilteredItems] = useState(items);
+
+    const handleInputValueChange = (details: { inputValue: string }) => {
+      const value = details.inputValue.toLowerCase();
+      if (value === "") {
+        setFilteredItems(items);
+      } else {
+        setFilteredItems(
+          items.filter((item) => item.toLowerCase().includes(value))
+        );
+      }
+    };
+
+    return (
+      <Search
+        {...args}
+        items={filteredItems}
+        onInputValueChange={handleInputValueChange}
+      />
     );
   },
 };
