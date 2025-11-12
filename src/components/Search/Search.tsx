@@ -191,29 +191,27 @@ export const Search: React.FC<SearchStyleProps> = ({
           </Combobox.Trigger>
         )}
       </Combobox.Control>
-      {items.length > 0 && (
-        <Portal>
-          <Combobox.Positioner>
-            <Combobox.Content className={styles.combobox}>
-              <Combobox.ItemGroup id="framework">
-                {collection.items.map((item, i) => (
-                  <Combobox.Item
-                    key={i}
-                    item={item}
-                    className={styles.comboboxItem}
-                  >
-                    <Box
-                      w="sd.system.dimension.spacing.large"
-                      h="sd.system.dimension.spacing.large"
-                    />
-                    <Combobox.ItemText>{item}</Combobox.ItemText>
-                  </Combobox.Item>
-                ))}
-              </Combobox.ItemGroup>
-            </Combobox.Content>
-          </Combobox.Positioner>
-        </Portal>
-      )}
+      <Portal>
+        <Combobox.Positioner>
+          <Combobox.Content className={styles.combobox}>
+            <Combobox.ItemGroup id="framework">
+              {collection.items.map((item, i) => (
+                <Combobox.Item
+                  key={i}
+                  item={item}
+                  className={styles.comboboxItem}
+                >
+                  <Box
+                    w="sd.system.dimension.spacing.large"
+                    h="sd.system.dimension.spacing.large"
+                  />
+                  <Combobox.ItemText>{item}</Combobox.ItemText>
+                </Combobox.Item>
+              ))}
+            </Combobox.ItemGroup>
+          </Combobox.Content>
+        </Combobox.Positioner>
+      </Portal>
     </Combobox.Root>
   );
 };
