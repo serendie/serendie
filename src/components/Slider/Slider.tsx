@@ -1,6 +1,7 @@
 import { Slider as ArkSlider, SliderRootProps } from "@ark-ui/react";
 import { forwardRef } from "react";
 import { RecipeVariantProps, cx, sva } from "../../../styled-system/css";
+import { Tooltip } from "../Tooltip/Tooltip";
 
 export const SliderStyle = sva({
   slots: [
@@ -10,7 +11,6 @@ export const SliderStyle = sva({
     "track",
     "range",
     "thumb",
-    "valueText",
     "markerGroup",
     "marker",
   ],
@@ -78,25 +78,6 @@ export const SliderStyle = sva({
         backgroundColor: "sd.system.color.component.surface",
         borderColor: "sd.system.color.component.outline",
         cursor: "default",
-      },
-    },
-    valueText: {
-      position: "absolute",
-      bottom: "calc(100% + 8px)",
-      left: "50%",
-      transform: "translateX(-50%)",
-      padding: "4px 8px",
-      backgroundColor: "sd.reference.color.scale.gray.900",
-      color: "sd.system.color.component.surface",
-      borderRadius: "sd.system.dimension.radius.small",
-      textStyle: "sd.system.typography.body.small_compact",
-      whiteSpace: "nowrap",
-      pointerEvents: "none",
-      opacity: 0,
-      transitionDuration: ".2s",
-      transitionProperty: "opacity",
-      _hover: {
-        opacity: 1,
       },
     },
     markerGroup: {
@@ -187,7 +168,6 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
         {label && (
           <ArkSlider.Label className={styles.label}>{label}</ArkSlider.Label>
         )}
-        {showValue && <ArkSlider.ValueText className={styles.valueText} />}
         <ArkSlider.Control className={styles.control}>
           <ArkSlider.Track className={styles.track}>
             <ArkSlider.Range className={styles.range} />
@@ -203,9 +183,21 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
               ))}
             </ArkSlider.MarkerGroup>
           )}
-          <ArkSlider.Thumb index={0} className={styles.thumb}>
-            <ArkSlider.HiddenInput />
-          </ArkSlider.Thumb>
+          <ArkSlider.Context>
+            {(api) => (
+              <Tooltip
+                content={showValue ? String(api.value[0]) : ""}
+                placement="top"
+                openDelay={0}
+                closeDelay={0}
+                disabled={!showValue || props.disabled}
+              >
+                <ArkSlider.Thumb index={0} className={styles.thumb}>
+                  <ArkSlider.HiddenInput />
+                </ArkSlider.Thumb>
+              </Tooltip>
+            )}
+          </ArkSlider.Context>
         </ArkSlider.Control>
       </ArkSlider.Root>
     );
