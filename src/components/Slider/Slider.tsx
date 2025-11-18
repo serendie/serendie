@@ -1,5 +1,5 @@
 import { Slider as ArkSlider, SliderRootProps } from "@ark-ui/react";
-import { forwardRef } from "react";
+import { forwardRef, useState } from "react";
 import { RecipeVariantProps, cx, sva } from "../../../styled-system/css";
 import { Tooltip } from "../Tooltip/Tooltip";
 
@@ -67,16 +67,13 @@ export const SliderStyle = sva({
       transitionDuration: ".2s",
       transitionProperty: "transform, borderColor, backgroundColor, boxShadow",
       transitionTimingFunction: "cubic-bezier(.2, 0, 0, 1)",
-      _hover: {
+      "&:hover:not([data-dragging='true'])": {
         boxShadow: "0 0 0 8px rgba(0, 0, 0, 0.08)",
       },
-      _focus: {
+      "&[data-dragging='true']": {
         backgroundColor: "sd.system.color.component.surface",
         borderWidth: 2,
         borderColor: "sd.system.color.impression.primary",
-        outline: "2px solid",
-        outlineColor: "sd.system.color.impression.primary",
-        outlineOffset: 2,
       },
       _disabled: {
         backgroundColor: "sd.system.color.interaction.disabledOnSurface",
@@ -154,17 +151,63 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
       min = 0,
       max = 100,
       step,
+      value: controlledValue,
+      defaultValue,
+      onValueChange: onValueChangeProp,
+      onValueChangeStart: onValueChangeStartProp,
+      onValueChangeEnd: onValueChangeEndProp,
       ...props
     },
     ref
   ) => {
     const [variantProps, elementProps] = SliderStyle.splitVariantProps(props);
     const styles = SliderStyle(variantProps);
+    const [isDragging, setIsDragging] = useState(false);
 
-    const calculatedStep =
-      showMarkers && markerValues.length > 1
-        ? (max - min) / (markerValues.length - 1)
-        : step;
+    const sortedMarkerValues = showMarkers
+      ? [...markerValues].sort((a, b) => a - b)
+      : [];
+
+    const snapToNearestMarker = (value: number) => {
+      if (!showMarkers || sortedMarkerValues.length === 0) {
+        return value;
+      }
+
+      let nearest = sortedMarkerValues[0];
+      let minDiff = Math.abs(value - nearest);
+
+      for (const markerValue of sortedMarkerValues) {
+        const diff = Math.abs(value - markerValue);
+        if (diff < minDiff) {
+          minDiff = diff;
+          nearest = markerValue;
+        }
+      }
+
+      return nearest;
+    };
+
+    const handleValueChange = (details: { value: number[] }) => {
+      const snappedValue = snapToNearestMarker(details.value[0]);
+      if (onValueChangeProp) {
+        onValueChangeProp({ ...details, value: [snappedValue] });
+      }
+    };
+
+    const handleValueChangeStart = (details: { value: number[] }) => {
+      setIsDragging(true);
+      if (onValueChangeStartProp) {
+        onValueChangeStartProp(details);
+      }
+    };
+
+    const handleValueChangeEnd = (details: { value: number[] }) => {
+      setIsDragging(false);
+      const snappedValue = snapToNearestMarker(details.value[0]);
+      if (onValueChangeEndProp) {
+        onValueChangeEndProp({ ...details, value: [snappedValue] });
+      }
+    };
 
     return (
       <ArkSlider.Root
@@ -172,7 +215,12 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
         className={cx(styles.root, className)}
         min={min}
         max={max}
-        step={calculatedStep}
+        step={step}
+        value={controlledValue}
+        defaultValue={defaultValue}
+        onValueChange={handleValueChange}
+        onValueChangeStart={handleValueChangeStart}
+        onValueChangeEnd={handleValueChangeEnd}
         {...elementProps}
       >
         {label && (
@@ -184,7 +232,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
           </ArkSlider.Track>
           {showMarkers && (
             <ArkSlider.MarkerGroup className={styles.markerGroup}>
-              {markerValues.map((value) => (
+              {sortedMarkerValues.map((value) => (
                 <ArkSlider.Marker
                   key={value}
                   value={value}
@@ -202,7 +250,11 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
                 closeDelay={0}
                 disabled={!showValue || props.disabled}
               >
-                <ArkSlider.Thumb index={0} className={styles.thumb}>
+                <ArkSlider.Thumb
+                  index={0}
+                  className={styles.thumb}
+                  data-dragging={isDragging ? "true" : "false"}
+                >
                   <ArkSlider.HiddenInput />
                 </ArkSlider.Thumb>
               </Tooltip>
@@ -213,3 +265,5 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
     );
   }
 );
+
+Slider.displayName = "Slider";
