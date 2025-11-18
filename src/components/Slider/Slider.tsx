@@ -187,6 +187,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
         {label && (
           <ArkSlider.Label className={styles.label}>{label}</ArkSlider.Label>
         )}
+        {showValue && <ArkSlider.ValueText className={styles.valueText} />}
         <ArkSlider.Control className={styles.control}>
           <ArkSlider.Track className={styles.track}>
             <ArkSlider.Range className={styles.range} />
@@ -203,10 +204,9 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
             </ArkSlider.MarkerGroup>
           )}
           <ArkSlider.Thumb index={0} className={styles.thumb}>
-            {showValue && <ArkSlider.ValueText className={styles.valueText} />}
+            <ArkSlider.HiddenInput />
           </ArkSlider.Thumb>
         </ArkSlider.Control>
-        <ArkSlider.HiddenInput index={0} />
       </ArkSlider.Root>
     );
   }
