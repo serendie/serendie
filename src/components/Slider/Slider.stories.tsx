@@ -74,7 +74,6 @@ export const Large: Story = {
     max: 100,
     showValue: true,
     showMarkers: true,
-    markerValues: [0, 25, 50, 75, 100],
   },
 };
 

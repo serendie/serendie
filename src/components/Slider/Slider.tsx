@@ -72,7 +72,7 @@ export const SliderStyle = sva({
       },
       "&[data-dragging='true']": {
         backgroundColor: "sd.system.color.component.surface",
-        borderWidth: 2,
+        borderWidth: 1,
         borderColor: "sd.system.color.impression.primary",
       },
       _disabled: {
@@ -146,7 +146,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
       label,
       showValue = true,
       showMarkers = false,
-      markerValues = [0, 25, 50, 75, 100],
+      markerValues,
       className,
       min = 0,
       max = 100,
@@ -164,8 +164,22 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
     const styles = SliderStyle(variantProps);
     const [isDragging, setIsDragging] = useState(false);
 
+    const generateDefaultMarkers = (min: number, max: number): number[] => {
+      const markers: number[] = [];
+      const segments = 10;
+      for (let i = 0; i <= segments; i++) {
+        markers.push(min + ((max - min) * i) / segments);
+      }
+      return markers;
+    };
+
+    const effectiveMarkerValues =
+      showMarkers && !markerValues
+        ? generateDefaultMarkers(min, max)
+        : markerValues || [];
+
     const sortedMarkerValues = showMarkers
-      ? [...markerValues].sort((a, b) => a - b)
+      ? [...effectiveMarkerValues].sort((a, b) => a - b)
       : [];
 
     const snapToNearestMarker = (value: number) => {
@@ -187,10 +201,23 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
       return nearest;
     };
 
+    const isControlled = controlledValue !== undefined;
+    const [internalValue, setInternalValue] = useState<number[]>(
+      defaultValue || [min]
+    );
+
+    const currentValue = isControlled ? controlledValue : internalValue;
+
     const handleValueChange = (details: { value: number[] }) => {
       const snappedValue = snapToNearestMarker(details.value[0]);
+      const snappedArray = [snappedValue];
+
+      if (!isControlled && snappedValue !== internalValue[0]) {
+        setInternalValue(snappedArray);
+      }
+
       if (onValueChangeProp) {
-        onValueChangeProp({ ...details, value: [snappedValue] });
+        onValueChangeProp({ ...details, value: snappedArray });
       }
     };
 
@@ -209,15 +236,17 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
       }
     };
 
+    const effectiveStep = showMarkers ? 1 : step;
+
     return (
       <ArkSlider.Root
         ref={ref}
         className={cx(styles.root, className)}
         min={min}
         max={max}
-        step={step}
-        value={controlledValue}
-        defaultValue={defaultValue}
+        step={effectiveStep}
+        value={showMarkers ? currentValue : controlledValue}
+        defaultValue={showMarkers ? undefined : defaultValue}
         onValueChange={handleValueChange}
         onValueChangeStart={handleValueChangeStart}
         onValueChangeEnd={handleValueChangeEnd}
