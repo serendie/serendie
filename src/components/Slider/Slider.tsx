@@ -40,6 +40,7 @@ export const SliderStyle = sva({
       backgroundColor: "sd.reference.color.scale.gray.200",
       borderRadius: "sd.system.dimension.radius.full",
       cursor: "pointer",
+      zIndex: 0,
       _disabled: {
         backgroundColor: "sd.system.color.interaction.disabled",
         cursor: "default",
@@ -47,9 +48,12 @@ export const SliderStyle = sva({
     },
     range: {
       position: "absolute",
+      top: 0,
+      left: 0,
       backgroundColor: "sd.system.color.impression.primary",
       borderRadius: "sd.system.dimension.radius.full",
       height: "100%",
+      zIndex: 1,
       _disabled: {
         backgroundColor:
           "color-mix(in srgb, {colors.sd.system.color.impression.primary}, {colors.sd.system.color.interaction.hoveredOnPrimary})",
@@ -64,16 +68,26 @@ export const SliderStyle = sva({
       borderRadius: "sd.system.dimension.radius.full",
       borderWidth: 0,
       cursor: "pointer",
+      outline: "none",
+      zIndex: 2,
       transitionDuration: ".2s",
       transitionProperty: "transform, borderColor, backgroundColor, boxShadow",
       transitionTimingFunction: "cubic-bezier(.2, 0, 0, 1)",
       "&:hover:not([data-dragging='true'])": {
         boxShadow: "0 0 0 8px rgba(0, 0, 0, 0.08)",
       },
+      "&:focus": {
+        outline: "none",
+      },
+      "&:focus-visible": {
+        outline: "none",
+      },
       "&[data-dragging='true']": {
         backgroundColor: "sd.system.color.component.surface",
         borderWidth: 1,
         borderColor: "sd.system.color.impression.primary",
+        boxShadow: "none",
+        outline: "none",
       },
       _disabled: {
         backgroundColor: "sd.system.color.interaction.disabledOnSurface",
@@ -82,6 +96,8 @@ export const SliderStyle = sva({
     },
     markerGroup: {
       position: "absolute",
+      top: 0,
+      left: 0,
       width: "100%",
       height: "100%",
       pointerEvents: "none",
@@ -223,8 +239,15 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
 
     const handleValueChangeStart = (details: { value: number[] }) => {
       setIsDragging(true);
+      const snappedValue = snapToNearestMarker(details.value[0]);
+      const snappedArray = [snappedValue];
+
+      if (!isControlled && snappedValue !== internalValue[0]) {
+        setInternalValue(snappedArray);
+      }
+
       if (onValueChangeStartProp) {
-        onValueChangeStartProp(details);
+        onValueChangeStartProp({ ...details, value: snappedArray });
       }
     };
 
