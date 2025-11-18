@@ -176,6 +176,14 @@ const stepsStyles = sva({
         },
       },
     },
+    connectorState: {
+      default: {},
+      progress: {
+        connector: {
+          backgroundColor: "sd.system.color.impression.primary",
+        },
+      },
+    },
   },
   compoundVariants: [
     {
@@ -283,28 +291,13 @@ const stepsStyles = sva({
         },
       },
     },
-    {
-      status: "checked",
-      css: {
-        connector: {
-          backgroundColor: "sd.system.color.impression.primary",
-        },
-      },
-    },
-    {
-      status: "active",
-      css: {
-        connector: {
-          backgroundColor: "sd.system.color.impression.primary",
-        },
-      },
-    },
   ],
   defaultVariants: {
     direction: "horizontal",
     size: "large",
     status: "disabled",
     type: "default",
+    connectorState: "default",
   },
 });
 
@@ -339,11 +332,17 @@ export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
     return (
       <div ref={ref} className={cx(styles.root, className)} {...props}>
         {items.map((item, idx) => {
+          const nextItem = items[idx + 1];
+          const connectorState =
+            nextItem?.status === "active" || nextItem?.status === "checked"
+              ? "progress"
+              : "default";
           const itemStyles = stepsStyles({
             direction,
             size,
             status: item.status,
             type,
+            connectorState,
           });
           const isLast = idx === items.length - 1;
           const showConnector = !isLast;
