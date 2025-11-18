@@ -1,5 +1,5 @@
 import { Slider as ArkSlider, SliderRootProps } from "@ark-ui/react";
-import { forwardRef, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import { RecipeVariantProps, cx, sva } from "../../../styled-system/css";
 import { Tooltip } from "../Tooltip/Tooltip";
 
@@ -30,8 +30,6 @@ export const SliderStyle = sva({
     },
     control: {
       position: "relative",
-      display: "flex",
-      alignItems: "center",
       width: "100%",
     },
     track: {
@@ -73,7 +71,7 @@ export const SliderStyle = sva({
       transitionDuration: ".2s",
       transitionProperty: "transform, borderColor, backgroundColor, boxShadow",
       transitionTimingFunction: "cubic-bezier(.2, 0, 0, 1)",
-      "&:hover:not([data-dragging='true'])": {
+      "&:hover:not([data-dragging='true']):not([data-grabbed='true'])": {
         boxShadow: "0 0 0 8px rgba(0, 0, 0, 0.08)",
       },
       "&:focus": {
@@ -82,7 +80,7 @@ export const SliderStyle = sva({
       "&:focus-visible": {
         outline: "none",
       },
-      "&[data-dragging='true']": {
+      "&[data-dragging='true'], &[data-grabbed='true']": {
         backgroundColor: "sd.system.color.component.surface",
         borderWidth: 1,
         borderColor: "sd.system.color.impression.primary",
@@ -170,7 +168,6 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
       value: controlledValue,
       defaultValue,
       onValueChange: onValueChangeProp,
-      onValueChangeStart: onValueChangeStartProp,
       onValueChangeEnd: onValueChangeEndProp,
       ...props
     },
@@ -179,6 +176,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
     const [variantProps, elementProps] = SliderStyle.splitVariantProps(props);
     const styles = SliderStyle(variantProps);
     const [isDragging, setIsDragging] = useState(false);
+    const [isGrabbed, setIsGrabbed] = useState(false);
 
     const generateDefaultMarkers = (min: number, max: number): number[] => {
       const markers: number[] = [];
@@ -237,20 +235,6 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
       }
     };
 
-    const handleValueChangeStart = (details: { value: number[] }) => {
-      setIsDragging(true);
-      const snappedValue = snapToNearestMarker(details.value[0]);
-      const snappedArray = [snappedValue];
-
-      if (!isControlled && snappedValue !== internalValue[0]) {
-        setInternalValue(snappedArray);
-      }
-
-      if (onValueChangeStartProp) {
-        onValueChangeStartProp({ ...details, value: snappedArray });
-      }
-    };
-
     const handleValueChangeEnd = (details: { value: number[] }) => {
       setIsDragging(false);
       const snappedValue = snapToNearestMarker(details.value[0]);
@@ -258,6 +242,29 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
         onValueChangeEndProp({ ...details, value: [snappedValue] });
       }
     };
+
+    const handlePointerDown = () => {
+      setIsGrabbed(true);
+      setIsDragging(true);
+    };
+
+    useEffect(() => {
+      const handlePointerUp = () => {
+        setIsGrabbed(false);
+      };
+
+      const handlePointerCancel = () => {
+        setIsGrabbed(false);
+      };
+
+      window.addEventListener("pointerup", handlePointerUp);
+      window.addEventListener("pointercancel", handlePointerCancel);
+
+      return () => {
+        window.removeEventListener("pointerup", handlePointerUp);
+        window.removeEventListener("pointercancel", handlePointerCancel);
+      };
+    }, []);
 
     const effectiveStep = showMarkers ? 1 : step;
 
@@ -271,7 +278,6 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
         value={showMarkers ? currentValue : controlledValue}
         defaultValue={showMarkers ? undefined : defaultValue}
         onValueChange={handleValueChange}
-        onValueChangeStart={handleValueChangeStart}
         onValueChangeEnd={handleValueChangeEnd}
         {...elementProps}
       >
@@ -306,6 +312,8 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
                   index={0}
                   className={styles.thumb}
                   data-dragging={isDragging ? "true" : "false"}
+                  data-grabbed={isGrabbed ? "true" : "false"}
+                  onPointerDown={handlePointerDown}
                 >
                   <ArkSlider.HiddenInput />
                 </ArkSlider.Thumb>
