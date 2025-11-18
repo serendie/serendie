@@ -60,23 +60,26 @@ export const SliderStyle = sva({
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      backgroundColor: "sd.system.color.component.surface",
+      backgroundColor: "sd.system.color.impression.primary",
       borderRadius: "sd.system.dimension.radius.full",
-      borderWidth: 1,
-      borderColor: "sd.system.color.component.outline",
+      borderWidth: 0,
       cursor: "pointer",
       transitionDuration: ".2s",
-      transitionProperty: "transform, borderColor",
+      transitionProperty: "transform, borderColor, backgroundColor, boxShadow",
       transitionTimingFunction: "cubic-bezier(.2, 0, 0, 1)",
+      _hover: {
+        boxShadow: "0 0 0 8px rgba(0, 0, 0, 0.08)",
+      },
       _focus: {
+        backgroundColor: "sd.system.color.component.surface",
+        borderWidth: 2,
         borderColor: "sd.system.color.impression.primary",
         outline: "2px solid",
         outlineColor: "sd.system.color.impression.primary",
         outlineOffset: 2,
       },
       _disabled: {
-        backgroundColor: "sd.system.color.component.surface",
-        borderColor: "sd.system.color.component.outline",
+        backgroundColor: "sd.system.color.interaction.disabledOnSurface",
         cursor: "default",
       },
     },
@@ -150,6 +153,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
       className,
       min = 0,
       max = 100,
+      step,
       ...props
     },
     ref
@@ -157,12 +161,18 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
     const [variantProps, elementProps] = SliderStyle.splitVariantProps(props);
     const styles = SliderStyle(variantProps);
 
+    const calculatedStep =
+      showMarkers && markerValues.length > 1
+        ? (max - min) / (markerValues.length - 1)
+        : step;
+
     return (
       <ArkSlider.Root
         ref={ref}
         className={cx(styles.root, className)}
         min={min}
         max={max}
+        step={calculatedStep}
         {...elementProps}
       >
         {label && (
