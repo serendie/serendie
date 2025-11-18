@@ -271,6 +271,18 @@ const stepsStyles = sva({
         },
       },
     },
+    {
+      size: "small",
+      status: "active",
+      type: "default",
+      css: {
+        icon: {
+          border: "2px solid",
+          borderColor: "sd.system.color.impression.primary",
+          backgroundColor: "sd.system.color.component.surface",
+        },
+      },
+    },
   ],
   defaultVariants: {
     direction: "horizontal",
@@ -325,9 +337,9 @@ export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
               <div className={itemStyles.itemContent}>
                 <div className={itemStyles.icon}>
                   <div className={itemStyles.iconInner}>
-                    {item.status === "checked" ? (
+                    {size === "small" ? null : item.status === "checked" ? (
                       <SerendieSymbolCheck className={itemStyles.checkIcon} />
-                    ) : size === "small" ? null : (
+                    ) : (
                       <span className={itemStyles.number}>{item.index}</span>
                     )}
                   </div>
