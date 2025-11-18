@@ -95,8 +95,6 @@ const stepsStyles = sva({
           flexDirection: "column",
         },
         connector: {
-          left: "50%",
-          transform: "translateX(-50%)",
           width: "2px",
         },
         item: {
@@ -243,6 +241,7 @@ const stepsStyles = sva({
       size: "large",
       css: {
         connector: {
+          left: "20px",
           top: "calc(50% + 20px)",
           bottom: "calc(-50% + 20px)",
         },
@@ -253,6 +252,7 @@ const stepsStyles = sva({
       size: "small",
       css: {
         connector: {
+          left: "12px",
           top: "calc(50% + 12px)",
           bottom: "calc(-50% + 12px)",
         },
