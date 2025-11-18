@@ -283,6 +283,22 @@ const stepsStyles = sva({
         },
       },
     },
+    {
+      status: "checked",
+      css: {
+        connector: {
+          backgroundColor: "sd.system.color.impression.primary",
+        },
+      },
+    },
+    {
+      status: "active",
+      css: {
+        connector: {
+          backgroundColor: "sd.system.color.impression.primary",
+        },
+      },
+    },
   ],
   defaultVariants: {
     direction: "horizontal",
