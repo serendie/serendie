@@ -6,7 +6,9 @@ import { Tooltip } from "../Tooltip/Tooltip";
 export const SliderStyle = sva({
   slots: [
     "root",
+    "labels",
     "label",
+    "labelEnd",
     "control",
     "track",
     "range",
@@ -21,7 +23,19 @@ export const SliderStyle = sva({
       gap: "sd.system.dimension.spacing.small",
       width: "100%",
     },
+    labels: {
+      display: "flex",
+      justifyContent: "space-between",
+      width: "100%",
+    },
     label: {
+      color: "sd.system.color.component.onSurface",
+      textStyle: "sd.system.typography.body.medium_compact",
+      _disabled: {
+        color: "sd.system.color.interaction.disabledOnSurface",
+      },
+    },
+    labelEnd: {
       color: "sd.system.color.component.onSurface",
       textStyle: "sd.system.typography.body.medium_compact",
       _disabled: {
@@ -96,20 +110,21 @@ export const SliderStyle = sva({
     },
     markerGroup: {
       position: "absolute",
-      top: 0,
+      top: "0 !important",
       left: 0,
       width: "100%",
       height: "100%",
       pointerEvents: "none",
+      zIndex: 2,
     },
     marker: {
       position: "absolute",
-      width: 4,
-      height: 4,
+      width: 2,
+      height: 2,
       backgroundColor: "sd.reference.color.scale.gray.400",
       borderRadius: "sd.system.dimension.radius.full",
-      transform: "translate(-50%, -50%)",
-      top: "50%",
+      transform: "translate(-50%, -50%) !important",
+      top: "50% !important",
     },
   },
   variants: {
@@ -123,7 +138,8 @@ export const SliderStyle = sva({
           height: 16,
         },
         marker: {
-          display: "none",
+          width: 2,
+          height: 2,
         },
       },
       large: {
@@ -135,7 +151,8 @@ export const SliderStyle = sva({
           height: 24,
         },
         marker: {
-          display: "block",
+          width: 2,
+          height: 2,
         },
       },
     },
@@ -146,7 +163,8 @@ export const SliderStyle = sva({
 });
 
 type SliderItemProps = {
-  label?: string;
+  startLabel?: string;
+  endLabel?: string;
   showValue?: boolean;
   showMarkers?: boolean;
   markerValues?: number[];
@@ -159,7 +177,8 @@ export type SliderProps = SliderRootProps &
 export const Slider = forwardRef<HTMLDivElement, SliderProps>(
   (
     {
-      label,
+      startLabel,
+      endLabel,
       showValue = true,
       showMarkers = false,
       markerValues,
@@ -271,7 +290,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
       };
     }, []);
 
-    const effectiveStep = showMarkers ? 1 : step;
+    const effectiveStep = showMarkers ? (max - min) / 1000 : step;
 
     return (
       <ArkSlider.Root
@@ -286,24 +305,31 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
         onValueChangeEnd={handleValueChangeEnd}
         {...elementProps}
       >
-        {label && (
-          <ArkSlider.Label className={styles.label}>{label}</ArkSlider.Label>
+        {(startLabel || endLabel) && (
+          <div className={styles.labels}>
+            {startLabel && (
+              <ArkSlider.Label className={styles.label}>
+                {startLabel}
+              </ArkSlider.Label>
+            )}
+            {endLabel && <div className={styles.labelEnd}>{endLabel}</div>}
+          </div>
         )}
         <ArkSlider.Control className={styles.control}>
           <ArkSlider.Track className={styles.track}>
             <ArkSlider.Range className={styles.range} />
+            {showMarkers && (
+              <ArkSlider.MarkerGroup className={styles.markerGroup}>
+                {displayMarkers.map((value) => (
+                  <ArkSlider.Marker
+                    key={value}
+                    value={value}
+                    className={styles.marker}
+                  />
+                ))}
+              </ArkSlider.MarkerGroup>
+            )}
           </ArkSlider.Track>
-          {showMarkers && (
-            <ArkSlider.MarkerGroup className={styles.markerGroup}>
-              {displayMarkers.map((value) => (
-                <ArkSlider.Marker
-                  key={value}
-                  value={value}
-                  className={styles.marker}
-                />
-              ))}
-            </ArkSlider.MarkerGroup>
-          )}
           <ArkSlider.Context>
             {(api) => (
               <Tooltip

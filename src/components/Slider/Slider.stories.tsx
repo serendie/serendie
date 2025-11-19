@@ -55,7 +55,7 @@ type Story = StoryObj<typeof Slider>;
 
 export const Medium: Story = {
   args: {
-    label: "Value",
+    startLabel: "Value",
     size: "medium",
     defaultValue: [50],
     min: 0,
@@ -67,7 +67,7 @@ export const Medium: Story = {
 
 export const Large: Story = {
   args: {
-    label: "Value",
+    startLabel: "Value",
     size: "large",
     defaultValue: [50],
     min: 0,
@@ -79,7 +79,7 @@ export const Large: Story = {
 
 export const Disabled: Story = {
   args: {
-    label: "Value",
+    startLabel: "Value",
     size: "medium",
     defaultValue: [50],
     min: 0,
@@ -91,7 +91,7 @@ export const Disabled: Story = {
 
 export const WithoutValue: Story = {
   args: {
-    label: "Value",
+    startLabel: "Value",
     size: "medium",
     defaultValue: [50],
     min: 0,
@@ -102,7 +102,7 @@ export const WithoutValue: Story = {
 
 export const Progress0: Story = {
   args: {
-    label: "Value",
+    startLabel: "Value",
     size: "medium",
     defaultValue: [0],
     min: 0,
@@ -113,7 +113,7 @@ export const Progress0: Story = {
 
 export const Progress25: Story = {
   args: {
-    label: "Value",
+    startLabel: "Value",
     size: "medium",
     defaultValue: [25],
     min: 0,
@@ -124,7 +124,7 @@ export const Progress25: Story = {
 
 export const Progress50: Story = {
   args: {
-    label: "Value",
+    startLabel: "Value",
     size: "medium",
     defaultValue: [50],
     min: 0,
@@ -135,7 +135,7 @@ export const Progress50: Story = {
 
 export const Progress100: Story = {
   args: {
-    label: "Value",
+    startLabel: "Value",
     size: "medium",
     defaultValue: [100],
     min: 0,
