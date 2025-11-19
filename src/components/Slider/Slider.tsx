@@ -59,6 +59,7 @@ export const SliderStyle = sva({
     },
     thumb: {
       position: "absolute",
+      top: "50% !important",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -68,6 +69,7 @@ export const SliderStyle = sva({
       cursor: "pointer",
       outline: "none",
       zIndex: 2,
+      transform: "translate(-50%, -50%) !important",
       transitionDuration: ".2s",
       transitionProperty: "transform, borderColor, backgroundColor, boxShadow",
       transitionTimingFunction: "cubic-bezier(.2, 0, 0, 1)",
@@ -178,33 +180,36 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
     const [isDragging, setIsDragging] = useState(false);
     const [isGrabbed, setIsGrabbed] = useState(false);
 
-    const generateDefaultMarkers = (min: number, max: number): number[] => {
-      const markers: number[] = [];
-      const segments = 10;
-      for (let i = 0; i <= segments; i++) {
-        markers.push(min + ((max - min) * i) / segments);
-      }
-      return markers;
-    };
-
-    const effectiveMarkerValues =
-      showMarkers && !markerValues
-        ? generateDefaultMarkers(min, max)
-        : markerValues || [];
-
-    const sortedMarkerValues = showMarkers
-      ? [...effectiveMarkerValues].sort((a, b) => a - b)
+    const snapPoints = showMarkers
+      ? markerValues?.length
+        ? Array.from(
+            new Set([
+              min,
+              ...markerValues.filter((v) => v >= min && v <= max),
+              max,
+            ])
+          ).sort((a, b) => a - b)
+        : [
+            min,
+            ...Array.from(
+              { length: 9 },
+              (_, i) => min + ((max - min) * (i + 1)) / 10
+            ),
+            max,
+          ]
       : [];
 
+    const displayMarkers = snapPoints.filter((v) => v !== min && v !== max);
+
     const snapToNearestMarker = (value: number) => {
-      if (!showMarkers || sortedMarkerValues.length === 0) {
+      if (!showMarkers || snapPoints.length === 0) {
         return value;
       }
 
-      let nearest = sortedMarkerValues[0];
+      let nearest = snapPoints[0];
       let minDiff = Math.abs(value - nearest);
 
-      for (const markerValue of sortedMarkerValues) {
+      for (const markerValue of snapPoints) {
         const diff = Math.abs(value - markerValue);
         if (diff < minDiff) {
           minDiff = diff;
@@ -290,7 +295,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
           </ArkSlider.Track>
           {showMarkers && (
             <ArkSlider.MarkerGroup className={styles.markerGroup}>
-              {sortedMarkerValues.map((value) => (
+              {displayMarkers.map((value) => (
                 <ArkSlider.Marker
                   key={value}
                   value={value}
