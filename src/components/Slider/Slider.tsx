@@ -15,6 +15,8 @@ export const SliderStyle = sva({
     "thumb",
     "markerGroup",
     "marker",
+    "markerInRange",
+    "markerAfterRange",
   ],
   base: {
     root: {
@@ -62,13 +64,13 @@ export const SliderStyle = sva({
       position: "absolute",
       top: 0,
       left: 0,
-      backgroundColor: "sd.system.color.impression.primary",
+      backgroundColor: "sd.system.color.impression.secondary",
       borderRadius: "sd.system.dimension.radius.full",
       height: "100%",
       zIndex: 1,
       _disabled: {
         backgroundColor:
-          "color-mix(in srgb, {colors.sd.system.color.impression.primary}, {colors.sd.system.color.interaction.hoveredOnPrimary})",
+          "color-mix(in srgb, {colors.sd.system.color.impression.secondary}, {colors.sd.system.color.interaction.hoveredOnPrimary})",
       },
     },
     thumb: {
@@ -121,10 +123,15 @@ export const SliderStyle = sva({
       position: "absolute",
       width: 2,
       height: 2,
-      backgroundColor: "sd.reference.color.scale.gray.400",
       borderRadius: "sd.system.dimension.radius.full",
       transform: "translate(-50%, -50%) !important",
       top: "50% !important",
+    },
+    markerInRange: {
+      backgroundColor: "sd.system.color.impression.primary",
+    },
+    markerAfterRange: {
+      backgroundColor: "sd.reference.color.scale.gray.400",
     },
   },
   variants: {
@@ -151,8 +158,8 @@ export const SliderStyle = sva({
           height: 24,
         },
         marker: {
-          width: 2,
-          height: 2,
+          width: 4,
+          height: 4,
         },
       },
     },
@@ -319,15 +326,27 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
           <ArkSlider.Track className={styles.track}>
             <ArkSlider.Range className={styles.range} />
             {showMarkers && (
-              <ArkSlider.MarkerGroup className={styles.markerGroup}>
-                {displayMarkers.map((value) => (
-                  <ArkSlider.Marker
-                    key={value}
-                    value={value}
-                    className={styles.marker}
-                  />
-                ))}
-              </ArkSlider.MarkerGroup>
+              <ArkSlider.Context>
+                {(api) => (
+                  <ArkSlider.MarkerGroup className={styles.markerGroup}>
+                    {displayMarkers.map((value) => {
+                      const inRange = value <= api.value[0];
+                      return (
+                        <ArkSlider.Marker
+                          key={value}
+                          value={value}
+                          className={cx(
+                            styles.marker,
+                            inRange
+                              ? styles.markerInRange
+                              : styles.markerAfterRange
+                          )}
+                        />
+                      );
+                    })}
+                  </ArkSlider.MarkerGroup>
+                )}
+              </ArkSlider.Context>
             )}
           </ArkSlider.Track>
           <ArkSlider.Context>
