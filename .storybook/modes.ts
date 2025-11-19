@@ -15,7 +15,7 @@ type AllModes = Record<string, ViewportMode>;
 export const viewports = Object.entries(breakpoints).reduce<AllModes>(
   (acc, [key, value]) => {
     acc[key] = {
-      name: key,
+      name: `breakpoint/${key}`,
       styles: { width: value, height: "900px" },
     };
     return acc;
