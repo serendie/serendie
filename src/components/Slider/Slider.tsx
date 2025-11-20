@@ -1,6 +1,7 @@
 import { Slider as ArkSlider, SliderRootProps } from "@ark-ui/react";
 import { forwardRef, useEffect, useState } from "react";
 import { RecipeVariantProps, cx, sva } from "../../../styled-system/css";
+import { Tooltip } from "../Tooltip/Tooltip";
 
 export const SliderStyle = sva({
   slots: [
@@ -336,15 +337,17 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
               )}
             </ArkSlider.Context>
           </ArkSlider.Track>
-          <ArkSlider.Thumb
-            index={0}
-            className={styles.thumb}
-            data-dragging={isDragging ? "true" : "false"}
-            data-grabbed={isGrabbed ? "true" : "false"}
-            onPointerDown={handlePointerDown}
-          >
-            <ArkSlider.HiddenInput />
-          </ArkSlider.Thumb>
+          <Tooltip content={String(currentValue[0])}>
+            <ArkSlider.Thumb
+              index={0}
+              className={styles.thumb}
+              data-dragging={isDragging ? "true" : "false"}
+              data-grabbed={isGrabbed ? "true" : "false"}
+              onPointerDown={handlePointerDown}
+            >
+              <ArkSlider.HiddenInput />
+            </ArkSlider.Thumb>
+          </Tooltip>
         </ArkSlider.Control>
       </ArkSlider.Root>
     );
