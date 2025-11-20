@@ -1,7 +1,6 @@
 import { Slider as ArkSlider, SliderRootProps } from "@ark-ui/react";
 import { forwardRef, useEffect, useState } from "react";
 import { RecipeVariantProps, cx, sva } from "../../../styled-system/css";
-import { Tooltip } from "../Tooltip/Tooltip";
 
 export const SliderStyle = sva({
   slots: [
@@ -96,9 +95,6 @@ export const SliderStyle = sva({
         outline: "none",
       },
       "&:focus-visible": {
-        outline: "none",
-      },
-      "&[data-dragging='true'], &[data-grabbed='true']": {
         backgroundColor: "sd.system.color.component.surface",
         borderWidth: 1,
         borderColor: "sd.system.color.impression.primary",
@@ -172,8 +168,6 @@ export const SliderStyle = sva({
 type SliderItemProps = {
   startLabel?: string;
   endLabel?: string;
-  showValue?: boolean;
-  showMarkers?: boolean;
   markerValues?: number[];
 };
 
@@ -186,13 +180,10 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
     {
       startLabel,
       endLabel,
-      showValue = true,
-      showMarkers = false,
       markerValues,
       className,
       min = 0,
       max = 100,
-      step,
       value: controlledValue,
       defaultValue,
       onValueChange: onValueChangeProp,
@@ -206,29 +197,27 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
     const [isDragging, setIsDragging] = useState(false);
     const [isGrabbed, setIsGrabbed] = useState(false);
 
-    const snapPoints = showMarkers
-      ? markerValues?.length
-        ? Array.from(
-            new Set([
-              min,
-              ...markerValues.filter((v) => v >= min && v <= max),
-              max,
-            ])
-          ).sort((a, b) => a - b)
-        : [
+    const snapPoints = markerValues?.length
+      ? Array.from(
+          new Set([
             min,
-            ...Array.from(
-              { length: 9 },
-              (_, i) => min + ((max - min) * (i + 1)) / 10
-            ),
+            ...markerValues.filter((v) => v >= min && v <= max),
             max,
-          ]
-      : [];
+          ])
+        ).sort((a, b) => a - b)
+      : [
+          min,
+          ...Array.from(
+            { length: 9 },
+            (_, i) => min + ((max - min) * (i + 1)) / 10
+          ),
+          max,
+        ];
 
     const displayMarkers = snapPoints.filter((v) => v !== min && v !== max);
 
     const snapToNearestMarker = (value: number) => {
-      if (!showMarkers || snapPoints.length === 0) {
+      if (snapPoints.length === 0) {
         return value;
       }
 
@@ -297,7 +286,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
       };
     }, []);
 
-    const effectiveStep = showMarkers ? (max - min) / 1000 : step;
+    const effectiveStep = (max - min) / 1000;
 
     return (
       <ArkSlider.Root
@@ -306,8 +295,8 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
         min={min}
         max={max}
         step={effectiveStep}
-        value={showMarkers ? currentValue : controlledValue}
-        defaultValue={showMarkers ? undefined : defaultValue}
+        value={currentValue}
+        defaultValue={undefined}
         onValueChange={handleValueChange}
         onValueChangeEnd={handleValueChangeEnd}
         {...elementProps}
@@ -325,51 +314,37 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
         <ArkSlider.Control className={styles.control}>
           <ArkSlider.Track className={styles.track}>
             <ArkSlider.Range className={styles.range} />
-            {showMarkers && (
-              <ArkSlider.Context>
-                {(api) => (
-                  <ArkSlider.MarkerGroup className={styles.markerGroup}>
-                    {displayMarkers.map((value) => {
-                      const inRange = value <= api.value[0];
-                      return (
-                        <ArkSlider.Marker
-                          key={value}
-                          value={value}
-                          className={cx(
-                            styles.marker,
-                            inRange
-                              ? styles.markerInRange
-                              : styles.markerAfterRange
-                          )}
-                        />
-                      );
-                    })}
-                  </ArkSlider.MarkerGroup>
-                )}
-              </ArkSlider.Context>
-            )}
+            <ArkSlider.Context>
+              {(api) => (
+                <ArkSlider.MarkerGroup className={styles.markerGroup}>
+                  {displayMarkers.map((value) => {
+                    const inRange = value <= api.value[0];
+                    return (
+                      <ArkSlider.Marker
+                        key={value}
+                        value={value}
+                        className={cx(
+                          styles.marker,
+                          inRange
+                            ? styles.markerInRange
+                            : styles.markerAfterRange
+                        )}
+                      />
+                    );
+                  })}
+                </ArkSlider.MarkerGroup>
+              )}
+            </ArkSlider.Context>
           </ArkSlider.Track>
-          <ArkSlider.Context>
-            {(api) => (
-              <Tooltip
-                content={showValue ? String(api.value[0]) : ""}
-                placement="top"
-                openDelay={0}
-                closeDelay={0}
-                disabled={!showValue || props.disabled}
-              >
-                <ArkSlider.Thumb
-                  index={0}
-                  className={styles.thumb}
-                  data-dragging={isDragging ? "true" : "false"}
-                  data-grabbed={isGrabbed ? "true" : "false"}
-                  onPointerDown={handlePointerDown}
-                >
-                  <ArkSlider.HiddenInput />
-                </ArkSlider.Thumb>
-              </Tooltip>
-            )}
-          </ArkSlider.Context>
+          <ArkSlider.Thumb
+            index={0}
+            className={styles.thumb}
+            data-dragging={isDragging ? "true" : "false"}
+            data-grabbed={isGrabbed ? "true" : "false"}
+            onPointerDown={handlePointerDown}
+          >
+            <ArkSlider.HiddenInput />
+          </ArkSlider.Thumb>
         </ArkSlider.Control>
       </ArkSlider.Root>
     );

@@ -35,14 +35,6 @@ const meta: Meta<typeof Slider> = {
       control: { type: "boolean" },
       defaultValue: false,
     },
-    showValue: {
-      control: { type: "boolean" },
-      defaultValue: true,
-    },
-    showMarkers: {
-      control: { type: "boolean" },
-      defaultValue: false,
-    },
   },
 };
 
@@ -60,8 +52,6 @@ export const Medium: Story = {
     defaultValue: [50],
     min: 0,
     max: 100,
-    showValue: true,
-    showMarkers: false,
   },
 };
 
@@ -72,8 +62,6 @@ export const Large: Story = {
     defaultValue: [50],
     min: 0,
     max: 100,
-    showValue: true,
-    showMarkers: true,
   },
 };
 
@@ -85,18 +73,6 @@ export const Disabled: Story = {
     min: 0,
     max: 100,
     disabled: true,
-    showValue: true,
-  },
-};
-
-export const WithoutValue: Story = {
-  args: {
-    startLabel: "Value",
-    size: "medium",
-    defaultValue: [50],
-    min: 0,
-    max: 100,
-    showValue: false,
   },
 };
 
@@ -107,7 +83,6 @@ export const Progress0: Story = {
     defaultValue: [0],
     min: 0,
     max: 100,
-    showValue: true,
   },
 };
 
@@ -118,7 +93,6 @@ export const Progress25: Story = {
     defaultValue: [25],
     min: 0,
     max: 100,
-    showValue: true,
   },
 };
 
@@ -129,7 +103,6 @@ export const Progress50: Story = {
     defaultValue: [50],
     min: 0,
     max: 100,
-    showValue: true,
   },
 };
 
@@ -140,6 +113,5 @@ export const Progress100: Story = {
     defaultValue: [100],
     min: 0,
     max: 100,
-    showValue: true,
   },
 };
