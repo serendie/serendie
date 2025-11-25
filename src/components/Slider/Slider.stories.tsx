@@ -76,42 +76,13 @@ export const Disabled: Story = {
   },
 };
 
-export const Progress0: Story = {
+export const WithMarkerValues: Story = {
   args: {
     startLabel: "Value",
-    size: "medium",
-    defaultValue: [0],
-    min: 0,
-    max: 100,
-  },
-};
-
-export const Progress25: Story = {
-  args: {
-    startLabel: "Value",
-    size: "medium",
-    defaultValue: [25],
-    min: 0,
-    max: 100,
-  },
-};
-
-export const Progress50: Story = {
-  args: {
-    startLabel: "Value",
-    size: "medium",
+    size: "large",
     defaultValue: [50],
     min: 0,
     max: 100,
-  },
-};
-
-export const Progress100: Story = {
-  args: {
-    startLabel: "Value",
-    size: "medium",
-    defaultValue: [100],
-    min: 0,
-    max: 100,
+    markerValues: [0, 25, 50, 75, 100],
   },
 };
