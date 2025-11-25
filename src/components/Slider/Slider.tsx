@@ -277,10 +277,12 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
     useEffect(() => {
       const handlePointerUp = () => {
         setIsGrabbed(false);
+        setIsDragging(false);
       };
 
       const handlePointerCancel = () => {
         setIsGrabbed(false);
+        setIsDragging(false);
       };
 
       window.addEventListener("pointerup", handlePointerUp);
@@ -342,7 +344,12 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
               )}
             </ArkSlider.Context>
           </ArkSlider.Track>
-          <Tooltip content={String(currentValue[0])}>
+          <Tooltip
+            content={String(currentValue[0])}
+            openDelay={250}
+            closeDelay={150}
+            disabled={Boolean(elementProps.disabled) || isDragging}
+          >
             <ArkSlider.Thumb
               index={0}
               className={styles.thumb}
