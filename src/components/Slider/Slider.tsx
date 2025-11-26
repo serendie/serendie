@@ -274,6 +274,32 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
       setIsDragging(true);
     };
 
+    const handleKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (e) => {
+      if (elementProps.disabled) return;
+      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+      e.preventDefault();
+
+      const curr = currentValue[0];
+      let idx = 0;
+      let minDiff = Math.abs(curr - snapPoints[0]);
+      for (let i = 1; i < snapPoints.length; i++) {
+        const d = Math.abs(curr - snapPoints[i]);
+        if (d < minDiff) {
+          minDiff = d;
+          idx = i;
+        }
+      }
+
+      if (e.key === "ArrowLeft") idx = Math.max(0, idx - 1);
+      else idx = Math.min(snapPoints.length - 1, idx + 1);
+
+      const next = snapPoints[idx];
+      if (!isControlled) setInternalValue([next]);
+      if (onValueChangeProp) {
+        onValueChangeProp({ value: [next] });
+      }
+    };
+
     useEffect(() => {
       const handlePointerUp = () => {
         setIsGrabbed(false);
@@ -356,6 +382,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
               data-dragging={isDragging ? "true" : "false"}
               data-grabbed={isGrabbed ? "true" : "false"}
               onPointerDown={handlePointerDown}
+              onKeyDown={handleKeyDown}
             >
               <ArkSlider.HiddenInput />
             </ArkSlider.Thumb>
