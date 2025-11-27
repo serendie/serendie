@@ -35,6 +35,10 @@ const meta: Meta<typeof Slider> = {
       control: { type: "boolean" },
       defaultValue: false,
     },
+    showMarkers: {
+      control: { type: "boolean" },
+      defaultValue: true,
+    },
   },
 };
 
