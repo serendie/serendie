@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { dictionary } from "./dictionary";
 import { LanguageContext, type Language } from "./provider";
 
-export { LanguageProvider, type Language } from "./provider";
+export { SerendieProvider, LanguageProvider, type Language } from "./provider";
 
 export type TranslationKey = keyof (typeof dictionary)[Language];
 
@@ -33,7 +33,7 @@ export function getTranslations(lang: Language) {
 
 /**
  * 翻訳関数を取得するReact Hook
- * LanguageProviderがない場合はデフォルト言語（ja）を使用します
+ * SerendieProviderがない場合はデフォルト言語（ja）を使用します
  */
 export function useTranslations() {
   const lang = useContext(LanguageContext);

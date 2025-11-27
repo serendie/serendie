@@ -88,18 +88,18 @@ Serendie Design Systemには5つのカラーテーマがあり、デザイント
 
 ### 多言語対応
 
-Serendie UIは日本語・英語の多言語対応をサポートしています。`LanguageProvider`を使用して、アプリケーション全体の言語を設定できます。
+Serendie UIは日本語・英語の多言語対応をサポートしています。`SerendieProvider`を使用して、アプリケーション全体の言語を設定できます。
 
-**注意**: `LanguageProvider`を使用しない場合、デフォルトで日本語が使用されます。
+**注意**: `SerendieProvider`を使用しない場合、デフォルトで日本語が使用されます。
 
 ```tsx
-import { LanguageProvider } from "@serendie/ui";
+import { SerendieProvider } from "@serendie/ui";
 
 function App() {
   return (
-    <LanguageProvider lang="ja">
+    <SerendieProvider lang="ja">
       {/* アプリケーション全体 */}
-    </LanguageProvider>
+    </SerendieProvider>
   );
 }
 ```
@@ -108,7 +108,7 @@ function App() {
 
 ```tsx
 // app/layout.tsx
-import { LanguageProvider } from "@serendie/ui";
+import { SerendieProvider } from "@serendie/ui";
 
 export default function RootLayout({
   children,
@@ -120,9 +120,9 @@ export default function RootLayout({
   return (
     <html lang={params.lang}>
       <body>
-        <LanguageProvider lang={params.lang}>
+        <SerendieProvider lang={params.lang}>
           {children}
-        </LanguageProvider>
+        </SerendieProvider>
       </body>
     </html>
   );

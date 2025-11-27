@@ -5,10 +5,10 @@ export type Language = "ja" | "en";
 export const LanguageContext = createContext<Language | undefined>(undefined);
 
 /**
- * 言語を提供するProvider
+ * Serendie UIの設定を提供するProvider
  * アプリケーションのルートで使用してください
  */
-export function LanguageProvider({
+export function SerendieProvider({
   lang,
   children,
 }: {
@@ -19,3 +19,8 @@ export function LanguageProvider({
     <LanguageContext.Provider value={lang}>{children}</LanguageContext.Provider>
   );
 }
+
+/**
+ * @deprecated LanguageProvider は SerendieProvider にリネームされました
+ */
+export const LanguageProvider = SerendieProvider;
