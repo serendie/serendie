@@ -175,6 +175,7 @@ type SliderItemProps = {
   startLabel?: string;
   endLabel?: string;
   markerValues?: number[];
+  showMarkers?: boolean;
 };
 
 export type SliderProps = SliderRootProps &
@@ -187,6 +188,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
       startLabel,
       endLabel,
       markerValues,
+      showMarkers = true,
       className,
       min = 0,
       max = 100,
@@ -249,23 +251,27 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
     const currentValue = isControlled ? controlledValue : internalValue;
 
     const handleValueChange = (details: { value: number[] }) => {
-      const snappedValue = snapToNearestMarker(details.value[0]);
-      const snappedArray = [snappedValue];
+      const newValue = showMarkers
+        ? snapToNearestMarker(details.value[0])
+        : details.value[0];
+      const newArray = [newValue];
 
-      if (!isControlled && snappedValue !== internalValue[0]) {
-        setInternalValue(snappedArray);
+      if (!isControlled && newValue !== internalValue[0]) {
+        setInternalValue(newArray);
       }
 
       if (onValueChangeProp) {
-        onValueChangeProp({ ...details, value: snappedArray });
+        onValueChangeProp({ ...details, value: newArray });
       }
     };
 
     const handleValueChangeEnd = (details: { value: number[] }) => {
       setIsDragging(false);
-      const snappedValue = snapToNearestMarker(details.value[0]);
+      const newValue = showMarkers
+        ? snapToNearestMarker(details.value[0])
+        : details.value[0];
       if (onValueChangeEndProp) {
-        onValueChangeEndProp({ ...details, value: [snappedValue] });
+        onValueChangeEndProp({ ...details, value: [newValue] });
       }
     };
 
@@ -277,26 +283,29 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
     const handleKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (e) => {
       if (elementProps.disabled) return;
       if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
-      e.preventDefault();
 
-      const curr = currentValue[0];
-      let idx = 0;
-      let minDiff = Math.abs(curr - snapPoints[0]);
-      for (let i = 1; i < snapPoints.length; i++) {
-        const d = Math.abs(curr - snapPoints[i]);
-        if (d < minDiff) {
-          minDiff = d;
-          idx = i;
+      if (showMarkers) {
+        e.preventDefault();
+
+        const curr = currentValue[0];
+        let idx = 0;
+        let minDiff = Math.abs(curr - snapPoints[0]);
+        for (let i = 1; i < snapPoints.length; i++) {
+          const d = Math.abs(curr - snapPoints[i]);
+          if (d < minDiff) {
+            minDiff = d;
+            idx = i;
+          }
         }
-      }
 
-      if (e.key === "ArrowLeft") idx = Math.max(0, idx - 1);
-      else idx = Math.min(snapPoints.length - 1, idx + 1);
+        if (e.key === "ArrowLeft") idx = Math.max(0, idx - 1);
+        else idx = Math.min(snapPoints.length - 1, idx + 1);
 
-      const next = snapPoints[idx];
-      if (!isControlled) setInternalValue([next]);
-      if (onValueChangeProp) {
-        onValueChangeProp({ value: [next] });
+        const next = snapPoints[idx];
+        if (!isControlled) setInternalValue([next]);
+        if (onValueChangeProp) {
+          onValueChangeProp({ value: [next] });
+        }
       }
     };
 
@@ -348,30 +357,33 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
         <ArkSlider.Control className={styles.control}>
           <ArkSlider.Track className={styles.track}>
             <ArkSlider.Range className={styles.range} />
-            <ArkSlider.Context>
-              {(api) => (
-                <ArkSlider.MarkerGroup className={styles.markerGroup}>
-                  {displayMarkers.map((value) => {
-                    const inRange = value <= api.value[0];
-                    return (
-                      <ArkSlider.Marker
-                        key={value}
-                        value={value}
-                        className={cx(
-                          styles.marker,
-                          inRange
-                            ? styles.markerInRange
-                            : styles.markerAfterRange
-                        )}
-                      />
-                    );
-                  })}
-                </ArkSlider.MarkerGroup>
-              )}
-            </ArkSlider.Context>
+            {showMarkers && (
+              <ArkSlider.Context>
+                {(api) => (
+                  <ArkSlider.MarkerGroup className={styles.markerGroup}>
+                    {displayMarkers.map((value) => {
+                      const inRange = value <= api.value[0];
+                      return (
+                        <ArkSlider.Marker
+                          key={value}
+                          value={value}
+                          className={cx(
+                            styles.marker,
+                            inRange
+                              ? styles.markerInRange
+                              : styles.markerAfterRange
+                          )}
+                        />
+                      );
+                    })}
+                  </ArkSlider.MarkerGroup>
+                )}
+              </ArkSlider.Context>
+            )}
           </ArkSlider.Track>
           <Tooltip
             content={String(currentValue[0])}
+            placement="bottom"
             openDelay={250}
             closeDelay={150}
             disabled={Boolean(elementProps.disabled) || isDragging}

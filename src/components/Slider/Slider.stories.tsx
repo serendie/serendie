@@ -86,3 +86,14 @@ export const WithMarkerValues: Story = {
     markerValues: [0, 25, 50, 75, 100],
   },
 };
+
+export const WithoutMarkers: Story = {
+  args: {
+    startLabel: "Value",
+    size: "medium",
+    defaultValue: [50],
+    min: 0,
+    max: 100,
+    showMarkers: false,
+  },
+};
