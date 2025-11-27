@@ -86,49 +86,6 @@ Serendie Design Systemには5つのカラーテーマがあり、デザイント
 <html data-panda-theme="asagi"></html>
 ```
 
-### 多言語対応
-
-Serendie UIは日本語・英語の多言語対応をサポートしています。`SerendieProvider`を使用して、アプリケーション全体の言語を設定できます。
-
-**注意**: `SerendieProvider`を使用しない場合、デフォルトで日本語が使用されます。
-
-```tsx
-import { SerendieProvider } from "@serendie/ui";
-
-function App() {
-  return (
-    <SerendieProvider lang="ja">
-      {/* アプリケーション全体 */}
-    </SerendieProvider>
-  );
-}
-```
-
-#### Next.js App Routerでの多言語対応
-
-```tsx
-// app/layout.tsx
-import { SerendieProvider } from "@serendie/ui";
-
-export default function RootLayout({
-  children,
-  params
-}: {
-  children: React.ReactNode;
-  params: { lang: "ja" | "en" };
-}) {
-  return (
-    <html lang={params.lang}>
-      <body>
-        <SerendieProvider lang={params.lang}>
-          {children}
-        </SerendieProvider>
-      </body>
-    </html>
-  );
-}
-```
-
 ## スタイリングライブラリと併用する
 
 マージンを微修正したいなど、Serendie UIのスタイルをカスタムしたいシーンでは、プロジェクト側にスタイリングライブラリ(CSS-in-JSなど)を導入してください。どのスタイリングライブラリでも併用は可能ですが、ここではSerendie UIの内部でも使用している[Panda CSS](https://panda-css.com/)の例を紹介します。
@@ -148,11 +105,48 @@ export default defineConfig({
 
 より実践的な例は、こちらの[サンプルプロジェクト](https://github.com/serendie/bootcamp?tab=readme-ov-file#%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AA%E3%83%B3%E3%82%B0%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%A8%E4%BD%B5%E7%94%A8%E3%81%99%E3%82%8B)を参考にしてください。
 
+## 多言語対応
+
+Serendie UIは日本語・英語の多言語対応をサポートしています。`SerendieProvider`を使用して、アプリケーション全体の言語を設定できます。なお、 SerendieProvider の利用は必須ではありません。利用しない場合は、デフォルトで日本語が適用されます。
+
+```tsx
+import { SerendieProvider } from "@serendie/ui";
+
+function App() {
+  return (
+    <SerendieProvider lang="ja">{/* アプリケーション全体 */}</SerendieProvider>
+  );
+}
+```
+
+#### Next.js App Routerでの多言語対応
+
+```tsx
+// app/layout.tsx
+import { SerendieProvider } from "@serendie/ui";
+
+export default function RootLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: { lang: "ja" | "en" };
+}) {
+  return (
+    <html lang={params.lang}>
+      <body>
+        <SerendieProvider lang={params.lang}>{children}</SerendieProvider>
+      </body>
+    </html>
+  );
+}
+```
+
 ## APIを詳しく知る
 
 Serendie UIはヘッドレスUIとして、[Ark UI](https://ark-ui.com/)を内部的に利用しており、各コンポーネントのAPIはArk UIを継承します。Selectコンポーネントなどインタラクションが複雑なコンポーネントは、Ark UIの[APIリファレンス](https://ark-ui.com/react/docs/components/select#api-reference)を合わせて参照してください。
 
-## Serendie UIの開発
+## Serendie UI開発者向け
 
 Serendie UIに新しくコンポーネントを追加する場合は、Ark UIをベースにしてください。
 
