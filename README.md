@@ -86,6 +86,49 @@ Serendie Design Systemには5つのカラーテーマがあり、デザイント
 <html data-panda-theme="asagi"></html>
 ```
 
+### 多言語対応
+
+Serendie UIは日本語・英語の多言語対応をサポートしています。`LanguageProvider`を使用して、アプリケーション全体の言語を設定できます。
+
+**注意**: `LanguageProvider`を使用しない場合、デフォルトで日本語が使用されます。
+
+```tsx
+import { LanguageProvider } from "@serendie/ui";
+
+function App() {
+  return (
+    <LanguageProvider lang="ja">
+      {/* アプリケーション全体 */}
+    </LanguageProvider>
+  );
+}
+```
+
+#### Next.js App Routerでの多言語対応
+
+```tsx
+// app/layout.tsx
+import { LanguageProvider } from "@serendie/ui";
+
+export default function RootLayout({
+  children,
+  params
+}: {
+  children: React.ReactNode;
+  params: { lang: "ja" | "en" };
+}) {
+  return (
+    <html lang={params.lang}>
+      <body>
+        <LanguageProvider lang={params.lang}>
+          {children}
+        </LanguageProvider>
+      </body>
+    </html>
+  );
+}
+```
+
 ## スタイリングライブラリと併用する
 
 マージンを微修正したいなど、Serendie UIのスタイルをカスタムしたいシーンでは、プロジェクト側にスタイリングライブラリ(CSS-in-JSなど)を導入してください。どのスタイリングライブラリでも併用は可能ですが、ここではSerendie UIの内部でも使用している[Panda CSS](https://panda-css.com/)の例を紹介します。
@@ -127,6 +170,73 @@ npm run connect:publish
 ```
 
 storiesファイルに変更が入ると上記が[GitHub Actions](https://github.com/serendie/serendie/blob/main/.github/workflows/publish-code-connect.yml)によって実行されます。
+
+### 翻訳データの管理
+
+Serendie UIの翻訳データは`src/i18n/dictionary.ts`で管理されており、Figma Variablesと同期できます。
+
+#### コンポーネント内での翻訳の使用
+
+`useTranslations`フックを使用して、コンポーネント内で翻訳テキストを取得できます：
+
+```tsx
+import { useTranslations } from "@serendie/ui";
+
+function MyComponent() {
+  const t = useTranslations();
+
+  return (
+    <div>
+      {/* 変数なし */}
+      <label>{t("common.required")}</label>
+
+      {/* 変数あり - {{key}} プレースホルダーを使用 */}
+      <span>{t("pagination.page", { page: 5 })}</span>
+    </div>
+  );
+}
+```
+
+翻訳辞書では`{{key}}`形式のプレースホルダーを使用します：
+
+```typescript
+// src/i18n/dictionary.ts
+export const dictionary = {
+  ja: {
+    "common.required": "必須",
+    "pagination.page": "{{page}}ページ目",
+  },
+  en: {
+    "common.required": "Required",
+    "pagination.page": "Page {{page}}",
+  },
+} as const;
+```
+
+#### 環境設定
+
+`.env`ファイルに以下を設定してください：
+
+```env
+FIGMA_ACCESS_TOKEN="YOUR_TOKEN"
+FIGMA_FILE_KEY="YOUR_FILE_KEY"
+# FIGMA_TRANSLATION_COLLECTION="locales"  # オプション（デフォルト: locales）
+```
+
+#### 翻訳管理コマンド
+
+```bash
+# Figmaから翻訳データを取得して src/i18n/dictionary.ts を更新
+npm run locales:pull
+
+# ローカルの翻訳データをFigma Variablesに反映
+npm run locales:push
+
+# 翻訳データの整合性チェック（キーの不足や空文字のチェック）
+npm run locales:lint
+```
+
+翻訳データの詳細については[scripts/locales/README.md](scripts/locales/README.md)を参照してください。
 
 ## Resources
 
