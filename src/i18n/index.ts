@@ -11,8 +11,23 @@ export type TranslationKey = keyof (typeof dictionary)[Language];
  * Context不要な場合や、サーバーサイドで直接使う場合に使用
  */
 export function getTranslations(lang: Language) {
-  return function t(key: TranslationKey): string {
-    return dictionary[lang][key] || dictionary["ja"][key];
+  return function t(
+    key: TranslationKey,
+    params?: Record<string, string | number>
+  ): string {
+    let text: string = dictionary[lang][key] || dictionary["ja"][key];
+
+    // プレースホルダー {{key}} を置換
+    if (params) {
+      Object.entries(params).forEach(([key, value]) => {
+        text = text.replace(
+          new RegExp(`\\{\\{${key}\\}\\}`, "g"),
+          String(value)
+        );
+      });
+    }
+
+    return text;
   };
 }
 
