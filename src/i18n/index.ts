@@ -4,7 +4,7 @@ import { LanguageContext, type Language } from "./provider";
 
 export { SerendieProvider, LanguageProvider, type Language } from "./provider";
 
-export type TranslationKey = keyof (typeof dictionary)[Language];
+export type TranslationKey = keyof typeof dictionary.ja;
 
 /**
  * 翻訳関数を生成するヘルパー
@@ -15,11 +15,24 @@ export function getTranslations(lang: Language) {
     key: TranslationKey,
     params?: Record<string, string | number>
   ): string {
-    let text: string = dictionary[lang][key] || dictionary["ja"][key];
+    let text: string = dictionary[lang][key];
+    if (!text && lang !== "ja") {
+      text = dictionary["ja"][key];
+    }
+    if (!text) {
+      console.warn(`Translation key "${key}" not found`);
+      return key;
+    }
 
     // プレースホルダー {{key}} を置換
     if (params) {
       Object.entries(params).forEach(([key, value]) => {
+        const placeholder = `{{${key}}}`;
+        if (!text.includes(placeholder)) {
+          console.warn(
+            `Placeholder "${placeholder}" not found in translation "${text}"`
+          );
+        }
         text = text.replace(
           new RegExp(`\\{\\{${key}\\}\\}`, "g"),
           String(value)
@@ -37,6 +50,13 @@ export function getTranslations(lang: Language) {
  */
 export function useTranslations() {
   const lang = useContext(LanguageContext);
+
+  if (!lang && process.env.NODE_ENV === "development") {
+    console.warn(
+      "SerendieProvider is not found. Using default language 'ja'. " +
+        "Consider wrapping your app with <SerendieProvider lang='ja'>"
+    );
+  }
 
   // Contextが取れない場合はデフォルト言語を使用（後方互換性）
   return getTranslations(lang || "ja");

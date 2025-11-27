@@ -3,16 +3,43 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 import prettier from "prettier";
 
-export type UiDictionary = Record<string, Record<string, string>>;
+export type Language = string;
+export type TranslationKey = string;
+export type UiDictionary = Record<Language, Record<TranslationKey, string>>;
 
 const UI_FILE_PATH = path.resolve(process.cwd(), "src/i18n/dictionary.ts");
 
+function isValidUiDictionary(value: unknown): value is UiDictionary {
+  if (typeof value !== "object" || value === null) {
+    return false;
+  }
+
+  for (const langValue of Object.values(value)) {
+    if (typeof langValue !== "object" || langValue === null) {
+      return false;
+    }
+    for (const translation of Object.values(langValue)) {
+      if (typeof translation !== "string") {
+        return false;
+      }
+    }
+  }
+
+  return true;
+}
+
 export async function loadUi(): Promise<UiDictionary> {
   const moduleUrl = `${pathToFileURL(UI_FILE_PATH).href}?update=${Date.now()}`;
-  const mod = (await import(moduleUrl)) as { dictionary?: UiDictionary };
+  const mod = (await import(moduleUrl)) as { dictionary?: unknown };
 
   if (!mod.dictionary) {
     throw new Error(`dictionary export was not found in ${UI_FILE_PATH}`);
+  }
+
+  if (!isValidUiDictionary(mod.dictionary)) {
+    throw new Error(
+      `dictionary export in ${UI_FILE_PATH} has invalid structure. Expected Record<Language, Record<TranslationKey, string>>`
+    );
   }
 
   return mod.dictionary;

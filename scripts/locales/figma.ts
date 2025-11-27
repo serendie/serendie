@@ -87,7 +87,13 @@ async function figmaRequest<T>(
     );
   }
 
-  return (await res.json()) as T;
+  try {
+    return (await res.json()) as T;
+  } catch (error) {
+    throw new Error(
+      `Failed to parse Figma API response: ${error instanceof Error ? error.message : "Unknown error"}`
+    );
+  }
 }
 
 export function resolveFigmaEnv() {
@@ -97,9 +103,14 @@ export function resolveFigmaEnv() {
     process.env.FIGMA_PERSONAL_ACCESS_TOKEN;
   const fileKey = process.env.FIGMA_FILE_KEY || process.env.FILE_KEY;
 
-  if (!token || !fileKey) {
+  if (!token) {
     throw new Error(
-      "FIGMA_ACCESS_TOKEN (or PERSONAL_ACCESS_TOKEN) and FIGMA_FILE_KEY (or FILE_KEY) are required."
+      "FIGMA_ACCESS_TOKEN is required. Please set it in your .env file."
+    );
+  }
+  if (!fileKey) {
+    throw new Error(
+      "FIGMA_FILE_KEY is required. Please set it in your .env file."
     );
   }
 

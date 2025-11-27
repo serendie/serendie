@@ -1,6 +1,19 @@
 import { loadUi } from "./uiStore";
 import { isEmptyTranslationValue } from "./translationHelpers";
 
+function extractPlaceholders(text: string): Set<string> {
+  const matches = text.matchAll(/\{\{(\w+)\}\}/g);
+  return new Set(Array.from(matches, (m) => m[1]));
+}
+
+function areSetsEqual<T>(a: Set<T>, b: Set<T>): boolean {
+  if (a.size !== b.size) return false;
+  for (const item of a) {
+    if (!b.has(item)) return false;
+  }
+  return true;
+}
+
 async function main() {
   const ui = await loadUi();
   const languages = Object.keys(ui);
@@ -27,6 +40,18 @@ async function main() {
         errors.push(`"${key}" in ${lang} must be a string.`);
       } else if (isEmptyTranslationValue(value)) {
         errors.push(`"${key}" in ${lang} is empty or placeholder "#".`);
+      } else {
+        // プレースホルダーの整合性チェック
+        const baseValue = ui[baseLanguage][key];
+        if (baseValue && typeof baseValue === "string") {
+          const basePlaceholders = extractPlaceholders(baseValue);
+          const langPlaceholders = extractPlaceholders(value);
+          if (!areSetsEqual(basePlaceholders, langPlaceholders)) {
+            errors.push(
+              `"${key}": Placeholder mismatch. ${baseLanguage} has [${Array.from(basePlaceholders).join(", ")}] but ${lang} has [${Array.from(langPlaceholders).join(", ")}]`
+            );
+          }
+        }
       }
     }
 

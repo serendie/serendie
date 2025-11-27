@@ -5,7 +5,6 @@ import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { themeNames } from "../src/preset";
 import { viewports } from "./modes";
-import React from "react";
 import { SerendieProvider, type Language } from "../src/i18n";
 
 const deviceViewports = {
@@ -63,11 +62,10 @@ const preview: Preview = {
     }),
     (Story, context) => {
       const locale = (context.globals.locale || "ja") as Language;
-      return React.createElement(
-        SerendieProvider,
-        { lang: locale },
-        React.createElement(Story)
-      );
+      return SerendieProvider({
+        lang: locale,
+        children: Story(),
+      });
     },
   ],
   tags: ["autodocs"],
