@@ -6,6 +6,7 @@ import mergeRefs from "merge-refs";
 import React, { forwardRef } from "react";
 import { css, cx, RecipeVariantProps } from "../../../styled-system/css";
 import { textFieldRecipe } from "../../recipes/textFieldRecipe";
+import { useTranslations } from "../../i18n";
 
 type Props = {
   label?: string;
@@ -39,6 +40,7 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
     },
     ref
   ) => {
+    const t = useTranslations();
     const inputRef = React.useRef<HTMLInputElement>(null);
     const mergedRef = mergeRefs(inputRef, ref);
     const [variantProps, elementProps] = textFieldRecipe.splitVariantProps({
@@ -75,7 +77,7 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
             {label}
             {required && (
               <span className={styles.labelRequired}>
-                {requiredLabel ?? "必須"}
+                {requiredLabel ?? t("common.required")}
               </span>
             )}
           </label>

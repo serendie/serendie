@@ -5,6 +5,8 @@ import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 import { themeNames } from "../src/preset";
 import { viewports } from "./modes";
+import React from "react";
+import { SerendieProvider, type Language } from "../src/i18n";
 
 const deviceViewports = {
   iphone14: INITIAL_VIEWPORTS.iphone14,
@@ -31,6 +33,23 @@ const preview: Preview = {
       },
     },
   },
+  globalTypes: {
+    locale: {
+      name: "Locale",
+      description: "Internationalization locale",
+      toolbar: {
+        icon: "globe",
+        items: [
+          { value: "ja", title: "日本語" },
+          { value: "en", title: "English" },
+        ],
+        dynamicTitle: true,
+      },
+    },
+  },
+  initialGlobals: {
+    locale: "ja",
+  },
   decorators: [
     withThemeByDataAttribute<ReactRenderer>({
       themes: {
@@ -42,6 +61,14 @@ const preview: Preview = {
       defaultTheme: "konjo",
       attributeName: "data-panda-theme",
     }),
+    (Story, context) => {
+      const locale = (context.globals.locale || "ja") as Language;
+      return React.createElement(
+        SerendieProvider,
+        { lang: locale },
+        React.createElement(Story)
+      );
+    },
   ],
   tags: ["autodocs"],
 };
