@@ -5,17 +5,17 @@ import prettier from "prettier";
 
 export type UiDictionary = Record<string, Record<string, string>>;
 
-const UI_FILE_PATH = path.resolve(process.cwd(), "src/i18n/ui.ts");
+const UI_FILE_PATH = path.resolve(process.cwd(), "src/i18n/dictionary.ts");
 
 export async function loadUi(): Promise<UiDictionary> {
   const moduleUrl = `${pathToFileURL(UI_FILE_PATH).href}?update=${Date.now()}`;
-  const mod = (await import(moduleUrl)) as { ui?: UiDictionary };
+  const mod = (await import(moduleUrl)) as { dictionary?: UiDictionary };
 
-  if (!mod.ui) {
-    throw new Error(`ui export was not found in ${UI_FILE_PATH}`);
+  if (!mod.dictionary) {
+    throw new Error(`dictionary export was not found in ${UI_FILE_PATH}`);
   }
 
-  return mod.ui;
+  return mod.dictionary;
 }
 
 function sortRecord<T extends Record<string, string>>(record: T) {
@@ -31,7 +31,7 @@ export async function writeUi(ui: UiDictionary) {
     Object.keys(ui).map((lang) => [lang, sortRecord(ui[lang])])
   );
 
-  const source = `export const ui = ${JSON.stringify(
+  const source = `export const dictionary = ${JSON.stringify(
     normalized,
     null,
     2
