@@ -252,8 +252,8 @@ const stepsStyles = sva({
       css: {
         connector: {
           left: "19px",
-          top: "4px",
-          bottom: "calc(-36px)",
+          top: "40px",
+          bottom: "calc(-40px)",
         },
         title: {
           textStyle: "sd.system.typography.label.extraLarge",
@@ -266,8 +266,8 @@ const stepsStyles = sva({
       css: {
         connector: {
           left: "11px",
-          top: "5px",
-          bottom: "calc(-19px)",
+          top: "24px",
+          bottom: "calc(-24px)",
         },
         title: {
           textStyle: "sd.system.typography.label.extraLarge",
