@@ -24,6 +24,7 @@ const stepsStyles = sva({
     connector: {
       position: "absolute",
       backgroundColor: "sd.reference.color.scale.gray.200",
+      zIndex: 0,
     },
     item: {
       display: "flex",
@@ -64,6 +65,7 @@ const stepsStyles = sva({
       display: "flex",
       flexDirection: "column",
       gap: "sd.system.dimension.spacing.twoExtraSmall",
+      zIndex: 1,
     },
     title: {
       textStyle: "sd.system.typography.label.large",
@@ -250,8 +252,8 @@ const stepsStyles = sva({
       css: {
         connector: {
           left: "19px",
-          top: "50%",
-          bottom: "calc(-50%)",
+          top: "20px",
+          bottom: "calc(-20px)",
         },
         title: {
           textStyle: "sd.system.typography.label.extraLarge",
@@ -264,8 +266,8 @@ const stepsStyles = sva({
       css: {
         connector: {
           left: "11px",
-          top: "50%",
-          bottom: "calc(-50%)",
+          top: "12px",
+          bottom: "calc(-12px)",
         },
         title: {
           textStyle: "sd.system.typography.label.extraLarge",
