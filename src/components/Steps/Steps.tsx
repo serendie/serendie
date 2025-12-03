@@ -207,7 +207,7 @@ const stepsStyles = sva({
       css: {
         icon: {
           borderColor: "sd.system.color.impression.primary",
-          backgroundColor: "transparent",
+          backgroundColor: "sd.system.color.component.surface",
         },
         iconInner: {
           color: "sd.system.color.impression.primary",
@@ -302,7 +302,6 @@ const stepsStyles = sva({
   ],
   defaultVariants: {
     direction: "horizontal",
-    size: "large",
     status: "disabled",
     type: "default",
     connectorState: "default",
@@ -319,23 +318,16 @@ export interface StepsItemProps {
 export interface StepsProps extends React.ComponentProps<"div"> {
   items: StepsItemProps[];
   direction?: "horizontal" | "vertical";
-  size?: "large" | "small";
   type?: "default" | "subtle";
 }
 
 export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
   (
-    {
-      items,
-      direction = "horizontal",
-      size = "large",
-      type = "default",
-      className,
-      ...props
-    },
+    { items, direction = "horizontal", type = "default", className, ...props },
     ref
   ) => {
-    const styles = stepsStyles({ direction, size, type });
+    const computedSize = type === "subtle" ? "small" : "large";
+    const styles = stepsStyles({ direction, size: computedSize, type });
 
     return (
       <div ref={ref} className={cx(styles.root, className)} {...props}>
@@ -347,7 +339,7 @@ export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
               : "default";
           const itemStyles = stepsStyles({
             direction,
-            size,
+            size: computedSize,
             status: item.status,
             type,
             connectorState,
@@ -360,7 +352,7 @@ export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
               <div className={itemStyles.itemContent}>
                 <div className={itemStyles.icon}>
                   <div className={itemStyles.iconInner}>
-                    {size === "small" ? null : item.status === "checked" ? (
+                    {type === "subtle" ? null : item.status === "checked" ? (
                       <SerendieSymbolCheck className={itemStyles.checkIcon} />
                     ) : (
                       <span className={itemStyles.number}>{item.index}</span>

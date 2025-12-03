@@ -13,10 +13,6 @@ const meta: Meta<typeof Steps> = {
           Horizontal: "horizontal",
           Vertical: "vertical",
         }),
-        size: figma.enum("Size", {
-          Large: "large",
-          Small: "small",
-        }),
         type: figma.enum("Type", {
           Default: "default",
           Subtle: "subtle",
@@ -33,11 +29,6 @@ const meta: Meta<typeof Steps> = {
       options: ["horizontal", "vertical"],
       control: { type: "radio" },
       defaultValue: "horizontal",
-    },
-    size: {
-      options: ["large", "small"],
-      control: { type: "radio" },
-      defaultValue: "large",
     },
     type: {
       options: ["default", "subtle"],
@@ -135,74 +126,34 @@ const fiveStepsItems = [
   },
 ];
 
-export const HorizontalLargeDefault: Story = {
+export const HorizontalDefault: Story = {
   args: {
     items: threeStepsItems,
     direction: "horizontal",
-    size: "large",
     type: "default",
   },
 };
 
-export const HorizontalSmallDefault: Story = {
+export const HorizontalSubtle: Story = {
   args: {
     items: threeStepsItems,
     direction: "horizontal",
-    size: "small",
-    type: "default",
-  },
-};
-
-export const HorizontalLargeSubtle: Story = {
-  args: {
-    items: threeStepsItems,
-    direction: "horizontal",
-    size: "large",
     type: "subtle",
   },
 };
 
-export const HorizontalSmallSubtle: Story = {
-  args: {
-    items: threeStepsItems,
-    direction: "horizontal",
-    size: "small",
-    type: "subtle",
-  },
-};
-
-export const VerticalLargeDefault: Story = {
+export const VerticalDefault: Story = {
   args: {
     items: threeStepsItems,
     direction: "vertical",
-    size: "large",
     type: "default",
   },
 };
 
-export const VerticalSmallDefault: Story = {
+export const VerticalSubtle: Story = {
   args: {
     items: threeStepsItems,
     direction: "vertical",
-    size: "small",
-    type: "default",
-  },
-};
-
-export const VerticalLargeSubtle: Story = {
-  args: {
-    items: threeStepsItems,
-    direction: "vertical",
-    size: "large",
-    type: "subtle",
-  },
-};
-
-export const VerticalSmallSubtle: Story = {
-  args: {
-    items: threeStepsItems,
-    direction: "vertical",
-    size: "small",
     type: "subtle",
   },
 };
@@ -211,7 +162,6 @@ export const FourStepsHorizontal: Story = {
   args: {
     items: fourStepsItems,
     direction: "horizontal",
-    size: "large",
     type: "default",
   },
 };
@@ -220,7 +170,6 @@ export const FiveStepsHorizontal: Story = {
   args: {
     items: fiveStepsItems,
     direction: "horizontal",
-    size: "large",
     type: "default",
   },
 };
@@ -229,7 +178,6 @@ export const FourStepsVertical: Story = {
   args: {
     items: fourStepsItems,
     direction: "vertical",
-    size: "large",
     type: "default",
   },
 };
@@ -238,7 +186,6 @@ export const FiveStepsVertical: Story = {
   args: {
     items: fiveStepsItems,
     direction: "vertical",
-    size: "large",
     type: "default",
   },
 };
