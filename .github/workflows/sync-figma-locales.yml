@@ -1,4 +1,4 @@
-name: Sync Figma locales
+name: Pull Figma locales
 
 on:
   workflow_dispatch:
