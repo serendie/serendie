@@ -176,6 +176,9 @@ const stepsStyles = sva({
           borderColor: "sd.reference.color.scale.gray.200",
           backgroundColor: "transparent",
         },
+        iconInner: {
+          backgroundColor: "sd.system.color.component.surface",
+        },
       },
     },
     connectorState: {
@@ -250,6 +253,9 @@ const stepsStyles = sva({
       direction: "vertical",
       size: "large",
       css: {
+        item: {
+          paddingBottom: "24px",
+        },
         connector: {
           left: "19px",
           top: "40px",
@@ -264,6 +270,9 @@ const stepsStyles = sva({
       direction: "vertical",
       size: "small",
       css: {
+        item: {
+          paddingBottom: "16px",
+        },
         connector: {
           left: "11px",
           top: "24px",
