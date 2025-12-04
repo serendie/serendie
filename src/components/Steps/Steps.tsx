@@ -236,6 +236,14 @@ const stepsStyles = sva({
           left: "calc(50% + 20px)",
           right: "calc(-50% + 20px)",
         },
+        title: {
+          textAlign: "center",
+        },
+        description: {
+          fontSize: "10px",
+          lineHeight: "10px",
+          textAlign: "center",
+        },
       },
     },
     {
@@ -246,6 +254,14 @@ const stepsStyles = sva({
           top: "12px",
           left: "calc(50% + 12px)",
           right: "calc(-50% + 12px)",
+        },
+        title: {
+          textAlign: "center",
+        },
+        description: {
+          fontSize: "10px",
+          lineHeight: "10px",
+          textAlign: "center",
         },
       },
     },
