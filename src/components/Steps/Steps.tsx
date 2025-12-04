@@ -264,6 +264,10 @@ const stepsStyles = sva({
         title: {
           textStyle: "sd.system.typography.label.extraLarge",
         },
+        description: {
+          fontSize: "9px",
+          lineHeight: "9px",
+        },
       },
     },
     {
@@ -280,6 +284,10 @@ const stepsStyles = sva({
         },
         title: {
           textStyle: "sd.system.typography.label.extraLarge",
+        },
+        description: {
+          fontSize: "9px",
+          lineHeight: "9px",
         },
       },
     },
