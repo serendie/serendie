@@ -298,7 +298,7 @@ const stepsStyles = sva({
       type: "subtle",
       css: {
         connector: {
-          top: "14px",
+          top: "16px",
           bottom: "calc(-10px)",
         },
       },
