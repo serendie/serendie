@@ -377,6 +377,12 @@ export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
           const isLast = idx === items.length - 1;
           const showConnector = !isLast;
 
+          const isVerticalSubtle =
+            direction === "vertical" && type === "subtle";
+          const connectorStyle = isVerticalSubtle
+            ? { top: "18px", bottom: "calc(-10px)" }
+            : undefined;
+
           return (
             <div key={idx} className={itemStyles.item}>
               <div className={itemStyles.itemContent}>
@@ -398,7 +404,9 @@ export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
                   )}
                 </div>
               </div>
-              {showConnector && <div className={itemStyles.connector} />}
+              {showConnector && (
+                <div className={itemStyles.connector} style={connectorStyle} />
+              )}
             </div>
           );
         })}
