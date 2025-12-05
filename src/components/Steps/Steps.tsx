@@ -294,6 +294,16 @@ const stepsStyles = sva({
       },
     },
     {
+      direction: "vertical",
+      type: "subtle",
+      css: {
+        connector: {
+          top: "14px",
+          bottom: "calc(-10px)",
+        },
+      },
+    },
+    {
       size: "large",
       status: "checked",
       type: "default",
