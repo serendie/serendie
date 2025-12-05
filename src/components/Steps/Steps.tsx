@@ -386,9 +386,8 @@ export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
               }
             : undefined;
 
-          const isProgress = connectorState === "progress";
           const itemInlineStyle =
-            isVerticalSubtle && isProgress
+            isVerticalSubtle && showConnector
               ? { paddingBottom: "31.5px" }
               : undefined;
 
