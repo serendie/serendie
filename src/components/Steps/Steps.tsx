@@ -119,8 +119,8 @@ const stepsStyles = sva({
       },
       small: {
         icon: {
-          width: "24px",
-          height: "24px",
+          width: "12px",
+          height: "12px",
         },
         number: {
           textStyle: "sd.system.typography.label.small",
@@ -170,13 +170,7 @@ const stepsStyles = sva({
     },
     type: {
       default: {},
-      subtle: {
-        icon: {
-          border: "2px solid",
-          borderColor: "sd.reference.color.scale.gray.200",
-          backgroundColor: "transparent",
-        },
-      },
+      subtle: {},
     },
     connectorState: {
       default: {},
@@ -193,10 +187,7 @@ const stepsStyles = sva({
       type: "subtle",
       css: {
         icon: {
-          borderColor: "sd.system.color.impression.primary",
-          backgroundColor: "transparent",
-        },
-        iconInner: {
+          border: "none",
           backgroundColor: "sd.system.color.impression.primary",
         },
       },
@@ -206,11 +197,9 @@ const stepsStyles = sva({
       type: "subtle",
       css: {
         icon: {
+          border: "2px solid",
           borderColor: "sd.system.color.impression.primary",
-          backgroundColor: "transparent",
-        },
-        iconInner: {
-          backgroundColor: "sd.system.color.impression.primary",
+          backgroundColor: "sd.system.color.component.surface",
         },
       },
     },
@@ -219,10 +208,7 @@ const stepsStyles = sva({
       type: "subtle",
       css: {
         icon: {
-          borderColor: "sd.reference.color.scale.gray.200",
-          backgroundColor: "transparent",
-        },
-        iconInner: {
+          border: "none",
           backgroundColor: "sd.reference.color.scale.gray.400",
         },
       },
@@ -251,9 +237,9 @@ const stepsStyles = sva({
       size: "small",
       css: {
         connector: {
-          top: "12px",
-          left: "calc(50% + 12px)",
-          right: "calc(-50% + 12px)",
+          top: "6px",
+          left: "calc(50% + 6px)",
+          right: "calc(-50% + 6px)",
         },
         title: {
           textAlign: "center",
@@ -294,9 +280,9 @@ const stepsStyles = sva({
           paddingBottom: "16px",
         },
         connector: {
-          left: "11px",
-          top: "24px",
-          bottom: "calc(-24px)",
+          left: "5px",
+          top: "12px",
+          bottom: "calc(-12px)",
         },
         title: {
           textStyle: "sd.system.typography.label.extraLarge",
