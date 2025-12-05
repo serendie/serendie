@@ -294,16 +294,6 @@ const stepsStyles = sva({
       },
     },
     {
-      direction: "vertical",
-      type: "subtle",
-      css: {
-        connector: {
-          top: "16px",
-          bottom: "calc(-10px)",
-        },
-      },
-    },
-    {
       size: "large",
       status: "checked",
       type: "default",
@@ -325,6 +315,17 @@ const stepsStyles = sva({
           border: "2px solid",
           borderColor: "sd.system.color.impression.primary",
           backgroundColor: "sd.system.color.component.surface",
+        },
+      },
+    },
+    {
+      direction: "vertical",
+      size: "small",
+      type: "subtle",
+      css: {
+        connector: {
+          top: "16px",
+          bottom: "calc(-10px)",
         },
       },
     },
