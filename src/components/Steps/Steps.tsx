@@ -386,8 +386,14 @@ export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
               }
             : undefined;
 
+          const isProgress = connectorState === "progress";
+          const itemInlineStyle =
+            isVerticalSubtle && isProgress
+              ? { paddingBottom: "31.5px" }
+              : undefined;
+
           return (
-            <div key={idx} className={itemStyles.item}>
+            <div key={idx} className={itemStyles.item} style={itemInlineStyle}>
               <div className={itemStyles.itemContent}>
                 <div className={itemStyles.icon}>
                   <div className={itemStyles.iconInner}>
