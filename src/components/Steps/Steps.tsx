@@ -383,6 +383,7 @@ export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
             ? {
                 top: "30px",
                 bottom: "calc(-10px)",
+                backgroundColor: "red",
               }
             : undefined;
 
