@@ -176,9 +176,6 @@ const stepsStyles = sva({
           borderColor: "sd.reference.color.scale.gray.200",
           backgroundColor: "transparent",
         },
-        iconInner: {
-          backgroundColor: "sd.system.color.component.surface",
-        },
       },
     },
     connectorState: {
@@ -200,7 +197,7 @@ const stepsStyles = sva({
           backgroundColor: "transparent",
         },
         iconInner: {
-          color: "sd.system.color.impression.primary",
+          backgroundColor: "sd.system.color.impression.primary",
         },
       },
     },
@@ -210,10 +207,10 @@ const stepsStyles = sva({
       css: {
         icon: {
           borderColor: "sd.system.color.impression.primary",
-          backgroundColor: "sd.system.color.component.surface",
+          backgroundColor: "transparent",
         },
         iconInner: {
-          color: "sd.system.color.impression.primary",
+          backgroundColor: "sd.system.color.impression.primary",
         },
       },
     },
@@ -224,6 +221,9 @@ const stepsStyles = sva({
         icon: {
           borderColor: "sd.reference.color.scale.gray.200",
           backgroundColor: "transparent",
+        },
+        iconInner: {
+          backgroundColor: "sd.reference.color.scale.gray.400",
         },
       },
     },
