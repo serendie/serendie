@@ -2,7 +2,7 @@ name: Comment for ui checking
 
 on:
   pull_request:
-    types:
+    types: 
       - opened
     branches:
       - main
