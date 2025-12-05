@@ -380,7 +380,10 @@ export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
           const isVerticalSubtle =
             direction === "vertical" && type === "subtle";
           const connectorStyle = isVerticalSubtle
-            ? { top: "18px", bottom: "calc(-10px)" }
+            ? {
+                top: item.status === "active" ? "24px" : "20px",
+                bottom: "calc(-10px)",
+              }
             : undefined;
 
           return (
