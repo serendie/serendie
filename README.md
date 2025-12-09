@@ -214,7 +214,7 @@ export const dictionary = {
 ```env
 FIGMA_ACCESS_TOKEN="YOUR_TOKEN"
 FIGMA_FILE_KEY="YOUR_FILE_KEY"
-# FIGMA_TRANSLATION_COLLECTION="locales"  # オプション（デフォルト: locales）
+# FIGMA_TRANSLATION_COLLECTION="_i18n"  # オプション（デフォルト: _i18n）
 ```
 
 #### 翻訳管理コマンド
