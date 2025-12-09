@@ -29,7 +29,7 @@ jobs:
 
       - name: Push locales to Figma
         env:
-          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_ACCESS_TOKEN }}
+          FIGMA_ACCESS_TOKEN: ${{ secrets.SYNC_FIGMA_PERSONAL_ACCESS_TOKEN }}
           FIGMA_FILE_KEY: ${{ secrets.FIGMA_FILE_KEY }}
           FIGMA_TRANSLATION_COLLECTION: ${{ secrets.FIGMA_TRANSLATION_COLLECTION }}
         run: npm run locales:push

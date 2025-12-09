@@ -51,7 +51,7 @@ function collectVariables(
 }
 
 async function main() {
-  const collectionName = process.env.FIGMA_TRANSLATION_COLLECTION ?? "locales";
+  const collectionName = process.env.FIGMA_TRANSLATION_COLLECTION ?? "_i18n";
 
   const ui = await loadUi();
   const languages = Object.keys(ui);
