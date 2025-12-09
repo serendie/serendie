@@ -4,7 +4,7 @@
 
 - `FIGMA_ACCESS_TOKEN`: Figma Personal Access Token
 - `FIGMA_FILE_KEY`: 対象ファイルのキー
-- `FIGMA_TRANSLATION_COLLECTION` (任意): 文字列変数コレクション名。省略時は `locales`
+- `FIGMA_TRANSLATION_COLLECTION` (任意): 文字列変数コレクション名。省略時は `_i18n`
 
 ## コマンド
 
