@@ -1,0 +1,53 @@
+name: Sync Figma locales
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Pull locales from Figma
+        env:
+          FIGMA_ACCESS_TOKEN: ${{ secrets.FIGMA_ACCESS_TOKEN }}
+          FIGMA_FILE_KEY: ${{ secrets.FIGMA_FILE_KEY }}
+          FIGMA_TRANSLATION_COLLECTION: ${{ secrets.FIGMA_TRANSLATION_COLLECTION }}
+        run: npm run locales:pull
+
+      - name: Lint translations
+        run: npm run locales:lint
+
+      - name: Build package
+        run: npm run build
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: Figma ロケールの同期"
+          title: "Figma ロケールの同期"
+          body: |
+            Figma の翻訳用変数を `src/i18n/dictionary.ts` に同期し、lint と build を実行しました。この PR はワークフローにより自動で作成されています。
+          branch: chore/sync-figma-locales
+          delete-branch: true
+          add-paths: |
+            src/i18n/dictionary.ts
+            package-lock.json
