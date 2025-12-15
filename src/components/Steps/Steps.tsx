@@ -1,17 +1,19 @@
 import React from "react";
+import { Steps as ArkSteps } from "@ark-ui/react/steps";
 import { sva, cx } from "../../../styled-system/css";
 import { SerendieSymbolCheck } from "@serendie/symbols";
 
 const stepsStyles = sva({
   slots: [
     "root",
+    "list",
     "item",
-    "itemContent",
-    "icon",
-    "iconInner",
+    "trigger",
+    "indicator",
+    "indicatorInner",
     "checkIcon",
     "number",
-    "connector",
+    "separator",
     "textContent",
     "title",
     "description",
@@ -19,40 +21,50 @@ const stepsStyles = sva({
   base: {
     root: {
       display: "flex",
-      gap: "0",
+      gap: "sd.system.dimension.spacing.none",
     },
-    connector: {
+    list: {
+      display: "flex",
+      gap: "sd.system.dimension.spacing.none",
+    },
+    separator: {
       position: "absolute",
       backgroundColor: "sd.reference.color.scale.gray.200",
-      zIndex: 0,
+      "&[data-complete]": {
+        backgroundColor: "sd.system.color.impression.primary",
+      },
     },
     item: {
       display: "flex",
       position: "relative",
       flex: "1",
     },
-    itemContent: {
+    trigger: {
       display: "flex",
       alignItems: "center",
       gap: "sd.system.dimension.spacing.small",
+      background: "none",
+      border: "none",
+      cursor: "default",
+      padding: "sd.system.dimension.spacing.none",
     },
-    icon: {
+    indicator: {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      borderRadius: "50%",
+      borderRadius: "sd.system.dimension.radius.full",
       flexShrink: 0,
       position: "relative",
       zIndex: 1,
       backgroundColor: "sd.system.color.component.surface",
     },
-    iconInner: {
+    indicatorInner: {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
       width: "100%",
       height: "100%",
-      borderRadius: "50%",
+      borderRadius: "sd.system.dimension.radius.full",
     },
     checkIcon: {
       width: "100%",
@@ -77,50 +89,76 @@ const stepsStyles = sva({
     },
   },
   variants: {
-    direction: {
+    orientation: {
       horizontal: {
         root: {
           flexDirection: "row",
         },
-        connector: {
+        list: {
+          flexDirection: "row",
+          width: "100%",
+        },
+        separator: {
           height: "2px",
         },
         item: {
           flexDirection: "column",
+          alignItems: "center",
         },
-        itemContent: {
+        trigger: {
           flexDirection: "column",
+        },
+        title: {
+          textAlign: "center",
+        },
+        description: {
+          textStyle: "sd.system.typography.body.extraSmall_compact",
+          textAlign: "center",
         },
       },
       vertical: {
         root: {
           flexDirection: "column",
         },
-        connector: {
+        list: {
+          flexDirection: "column",
+        },
+        separator: {
           width: "2px",
         },
         item: {
+          flexDirection: "column",
+        },
+        trigger: {
           flexDirection: "row",
         },
-        itemContent: {
-          flexDirection: "row",
+        title: {
+          textStyle: "sd.system.typography.label.extraLarge",
+        },
+        description: {
+          textStyle: "sd.system.typography.body.extraSmall_compact",
         },
       },
     },
     size: {
       large: {
-        icon: {
-          width: "40px",
-          height: "40px",
+        indicator: {
+          width: "sd.system.dimension.spacing.threeExtraLarge",
+          height: "sd.system.dimension.spacing.threeExtraLarge",
         },
         number: {
           textStyle: "sd.system.typography.label.large",
         },
+        separator: {
+          "&[data-orientation='vertical']": {
+            marginLeft: "sd.system.dimension.spacing.large",
+          },
+        },
       },
       small: {
-        icon: {
-          width: "12px",
-          height: "12px",
+        indicator: {
+          width: "sd.system.dimension.spacing.small",
+          height: "sd.system.dimension.spacing.small",
         },
         number: {
           textStyle: "sd.system.typography.label.small",
@@ -131,40 +169,10 @@ const stepsStyles = sva({
         description: {
           textStyle: "sd.system.typography.label.small",
         },
-      },
-    },
-    status: {
-      checked: {
-        icon: {
-          backgroundColor: "sd.system.color.impression.primary",
-        },
-        iconInner: {
-          color: "sd.system.color.impression.onPrimary",
-        },
-      },
-      active: {
-        icon: {
-          backgroundColor: "sd.system.color.impression.primary",
-        },
-        iconInner: {
-          color: "sd.system.color.impression.onPrimary",
-        },
-      },
-      disabled: {
-        icon: {
-          backgroundColor: "sd.reference.color.scale.gray.100",
-        },
-        iconInner: {
-          color: "sd.reference.color.scale.gray.400",
-        },
-        number: {
-          color: "sd.reference.color.scale.gray.400",
-        },
-        title: {
-          color: "sd.reference.color.scale.gray.400",
-        },
-        description: {
-          color: "sd.reference.color.scale.gray.400",
+        separator: {
+          "&[data-orientation='vertical']": {
+            marginLeft: "5px",
+          },
         },
       },
     },
@@ -172,169 +180,69 @@ const stepsStyles = sva({
       default: {},
       subtle: {},
     },
-    connectorState: {
-      default: {},
-      progress: {
-        connector: {
-          backgroundColor: "sd.system.color.impression.primary",
-        },
-      },
-    },
   },
   compoundVariants: [
     {
-      status: "checked",
-      type: "subtle",
-      css: {
-        icon: {
-          border: "none",
-          backgroundColor: "sd.system.color.impression.primary",
-        },
-      },
-    },
-    {
-      status: "active",
-      type: "subtle",
-      css: {
-        icon: {
-          border: "2px solid",
-          borderColor: "sd.system.color.impression.primary",
-          backgroundColor: "sd.system.color.component.surface",
-        },
-      },
-    },
-    {
-      status: "disabled",
-      type: "subtle",
-      css: {
-        icon: {
-          border: "none",
-          backgroundColor: "sd.reference.color.scale.gray.400",
-        },
-      },
-    },
-    {
-      direction: "horizontal",
+      orientation: "horizontal",
       size: "large",
       css: {
-        connector: {
-          top: "20px",
+        separator: {
+          top: "sd.system.dimension.spacing.large",
           left: "calc(50% + 20px)",
           right: "calc(-50% + 20px)",
         },
-        title: {
-          textAlign: "center",
-        },
-        description: {
-          fontSize: "10px",
-          lineHeight: "10px",
-          textAlign: "center",
-        },
       },
     },
     {
-      direction: "horizontal",
+      orientation: "horizontal",
       size: "small",
       css: {
-        connector: {
-          top: "6px",
+        separator: {
+          top: "5px",
           left: "calc(50% + 6px)",
           right: "calc(-50% + 6px)",
         },
-        title: {
-          textAlign: "center",
-        },
-        description: {
-          fontSize: "10px",
-          lineHeight: "10px",
-          textAlign: "center",
-        },
       },
     },
     {
-      direction: "vertical",
+      orientation: "vertical",
       size: "large",
       css: {
         item: {
-          paddingBottom: "24px",
+          paddingBottom: "sd.system.dimension.spacing.extraLarge",
         },
-        connector: {
+        separator: {
           left: "19px",
-          top: "40px",
-          bottom: "calc(-40px)",
+          top: "sd.system.dimension.spacing.threeExtraLarge",
+          bottom: "-40px",
         },
         title: {
           textStyle: "sd.system.typography.label.extraLarge",
         },
-        description: {
-          fontSize: "9px",
-          lineHeight: "9px",
-        },
       },
     },
     {
-      direction: "vertical",
+      orientation: "vertical",
       size: "small",
       css: {
         item: {
-          paddingBottom: "16px",
+          paddingBottom: "sd.system.dimension.spacing.medium",
         },
-        connector: {
+        separator: {
           left: "5px",
-          top: "12px",
-          bottom: "calc(-12px)",
+          top: "sd.system.dimension.spacing.small",
+          bottom: "-12px",
         },
         title: {
           textStyle: "sd.system.typography.label.extraLarge",
-        },
-        description: {
-          fontSize: "9px",
-          lineHeight: "9px",
-        },
-      },
-    },
-    {
-      size: "large",
-      status: "checked",
-      type: "default",
-      css: {
-        icon: {
-          backgroundColor: "sd.system.color.component.inversePrimary",
-        },
-        iconInner: {
-          color: "sd.system.color.impression.primary",
-        },
-      },
-    },
-    {
-      size: "small",
-      status: "active",
-      type: "default",
-      css: {
-        icon: {
-          border: "2px solid",
-          borderColor: "sd.system.color.impression.primary",
-          backgroundColor: "sd.system.color.component.surface",
-        },
-      },
-    },
-    {
-      direction: "vertical",
-      size: "small",
-      type: "subtle",
-      css: {
-        connector: {
-          top: "16px",
-          bottom: "calc(-10px)",
         },
       },
     },
   ],
   defaultVariants: {
-    direction: "horizontal",
-    status: "disabled",
+    orientation: "horizontal",
     type: "default",
-    connectorState: "default",
+    size: "large",
   },
 });
 
@@ -351,74 +259,171 @@ export interface StepsProps extends React.ComponentProps<"div"> {
   type?: "default" | "subtle";
 }
 
+const getStepFromItems = (items: StepsItemProps[]): number => {
+  const activeIndex = items.findIndex((item) => item.status === "active");
+  if (activeIndex !== -1) return activeIndex;
+
+  const lastCheckedIndex = items.reduce((lastIdx, item, idx) => {
+    return item.status === "checked" ? idx : lastIdx;
+  }, -1);
+
+  if (lastCheckedIndex !== -1) return lastCheckedIndex + 1;
+
+  return 0;
+};
+
+const getIndicatorStyles = (
+  status: "checked" | "active" | "disabled" | undefined,
+  type: "default" | "subtle",
+  size: "large" | "small"
+): React.CSSProperties => {
+  if (status === "checked") {
+    if (type === "subtle") {
+      return {
+        backgroundColor: "var(--colors-sd-system-color-impression-primary)",
+      };
+    } else if (size === "large") {
+      return {
+        backgroundColor:
+          "var(--colors-sd-system-color-component-inverse-primary)",
+      };
+    } else {
+      return {
+        backgroundColor: "var(--colors-sd-system-color-impression-primary)",
+      };
+    }
+  } else if (status === "active") {
+    if (type === "subtle" || size === "small") {
+      return {
+        border: "2px solid var(--colors-sd-system-color-impression-primary)",
+        backgroundColor: "var(--colors-sd-system-color-component-surface)",
+      };
+    } else {
+      return {
+        backgroundColor: "var(--colors-sd-system-color-impression-primary)",
+      };
+    }
+  } else {
+    if (type === "subtle") {
+      return {
+        backgroundColor: "var(--colors-sd-reference-color-scale-gray-400)",
+      };
+    } else {
+      return {
+        backgroundColor: "var(--colors-sd-reference-color-scale-gray-100)",
+      };
+    }
+  }
+};
+
+const getIndicatorInnerStyles = (
+  status: "checked" | "active" | "disabled" | undefined,
+  type: "default" | "subtle",
+  size: "large" | "small"
+): React.CSSProperties => {
+  if (status === "checked") {
+    if (type === "subtle") {
+      return { color: "var(--colors-sd-system-color-impression-on-primary)" };
+    } else if (size === "large") {
+      return { color: "var(--colors-sd-system-color-impression-primary)" };
+    } else {
+      return { color: "var(--colors-sd-system-color-impression-on-primary)" };
+    }
+  } else if (status === "active") {
+    if (type === "subtle" || size === "small") {
+      return { color: "var(--colors-sd-system-color-impression-primary)" };
+    } else {
+      return { color: "var(--colors-sd-system-color-impression-on-primary)" };
+    }
+  } else {
+    return { color: "var(--colors-sd-reference-color-scale-gray-400)" };
+  }
+};
+
+const getTextStyles = (
+  status: "checked" | "active" | "disabled" | undefined
+): { title: React.CSSProperties; description: React.CSSProperties } => {
+  if (status === "disabled") {
+    return {
+      title: { color: "var(--colors-sd-reference-color-scale-gray-400)" },
+      description: { color: "var(--colors-sd-reference-color-scale-gray-400)" },
+    };
+  }
+  return { title: {}, description: {} };
+};
+
 export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
   (
     { items, direction = "horizontal", type = "default", className, ...props },
     ref
   ) => {
     const computedSize = type === "subtle" ? "small" : "large";
-    const styles = stepsStyles({ direction, size: computedSize, type });
+    const orientation = direction;
+    const styles = stepsStyles({ orientation, size: computedSize, type });
+    const currentStep = getStepFromItems(items);
 
     return (
-      <div ref={ref} className={cx(styles.root, className)} {...props}>
-        {items.map((item, idx) => {
-          const nextItem = items[idx + 1];
-          const connectorState =
-            nextItem?.status === "active" || nextItem?.status === "checked"
-              ? "progress"
-              : "default";
-          const itemStyles = stepsStyles({
-            direction,
-            size: computedSize,
-            status: item.status,
-            type,
-            connectorState,
-          });
-          const isLast = idx === items.length - 1;
-          const showConnector = !isLast;
+      <ArkSteps.Root
+        ref={ref}
+        count={items.length}
+        step={currentStep}
+        orientation={orientation}
+        className={cx(styles.root, className)}
+        {...props}
+      >
+        <ArkSteps.List className={styles.list}>
+          {items.map((item, idx) => {
+            const isLast = idx === items.length - 1;
+            const indicatorStyles = getIndicatorStyles(
+              item.status,
+              type,
+              computedSize
+            );
+            const indicatorInnerStyles = getIndicatorInnerStyles(
+              item.status,
+              type,
+              computedSize
+            );
+            const textStyles = getTextStyles(item.status);
 
-          const isVerticalSubtle =
-            direction === "vertical" && type === "subtle";
-          const connectorStyle = isVerticalSubtle
-            ? {
-                top: "30px",
-                bottom: "-8px",
-              }
-            : undefined;
-
-          const itemInlineStyle =
-            isVerticalSubtle && showConnector
-              ? { paddingBottom: "31.5px" }
-              : undefined;
-
-          return (
-            <div key={idx} className={itemStyles.item} style={itemInlineStyle}>
-              <div className={itemStyles.itemContent}>
-                <div className={itemStyles.icon}>
-                  <div className={itemStyles.iconInner}>
-                    {type === "subtle" ? null : item.status === "checked" ? (
-                      <SerendieSymbolCheck className={itemStyles.checkIcon} />
-                    ) : (
-                      <span className={itemStyles.number}>{item.index}</span>
+            return (
+              <ArkSteps.Item key={idx} index={idx} className={styles.item}>
+                <ArkSteps.Trigger className={styles.trigger}>
+                  <ArkSteps.Indicator
+                    className={styles.indicator}
+                    style={indicatorStyles}
+                  >
+                    <div
+                      className={styles.indicatorInner}
+                      style={indicatorInnerStyles}
+                    >
+                      {type === "subtle" ? null : item.status === "checked" ? (
+                        <SerendieSymbolCheck className={styles.checkIcon} />
+                      ) : (
+                        <span className={styles.number}>{item.index}</span>
+                      )}
+                    </div>
+                  </ArkSteps.Indicator>
+                  <div className={styles.textContent}>
+                    <div className={styles.title} style={textStyles.title}>
+                      {item.title}
+                    </div>
+                    {item.description && (
+                      <div
+                        className={styles.description}
+                        style={textStyles.description}
+                      >
+                        {item.description}
+                      </div>
                     )}
                   </div>
-                </div>
-                <div className={itemStyles.textContent}>
-                  <div className={itemStyles.title}>{item.title}</div>
-                  {item.description && (
-                    <div className={itemStyles.description}>
-                      {item.description}
-                    </div>
-                  )}
-                </div>
-              </div>
-              {showConnector && (
-                <div className={itemStyles.connector} style={connectorStyle} />
-              )}
-            </div>
-          );
-        })}
-      </div>
+                </ArkSteps.Trigger>
+                {!isLast && <ArkSteps.Separator className={styles.separator} />}
+              </ArkSteps.Item>
+            );
+          })}
+        </ArkSteps.List>
+      </ArkSteps.Root>
     );
   }
 );
