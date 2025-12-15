@@ -383,7 +383,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
           </ArkSlider.Track>
           <Tooltip
             content={String(currentValue[0])}
-            placement="bottom"
+            placement="top"
             openDelay={250}
             closeDelay={150}
             disabled={Boolean(elementProps.disabled) || isDragging}
