@@ -149,11 +149,6 @@ const stepsStyles = sva({
         number: {
           textStyle: "sd.system.typography.label.large",
         },
-        separator: {
-          "&[data-orientation='vertical']": {
-            marginLeft: "sd.system.dimension.spacing.large",
-          },
-        },
       },
       small: {
         indicator: {
@@ -168,11 +163,6 @@ const stepsStyles = sva({
         },
         description: {
           textStyle: "sd.system.typography.label.small",
-        },
-        separator: {
-          "&[data-orientation='vertical']": {
-            marginLeft: "5px",
-          },
         },
       },
     },
