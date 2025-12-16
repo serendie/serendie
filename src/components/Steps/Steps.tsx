@@ -30,6 +30,7 @@ const stepsStyles = sva({
     separator: {
       position: "absolute",
       backgroundColor: "sd.reference.color.scale.gray.200",
+      zIndex: 0,
       "&[data-complete]": {
         backgroundColor: "sd.system.color.impression.primary",
       },
@@ -47,6 +48,8 @@ const stepsStyles = sva({
       border: "none",
       cursor: "default",
       padding: "sd.system.dimension.spacing.none",
+      position: "relative",
+      zIndex: 1,
     },
     indicator: {
       display: "flex",
