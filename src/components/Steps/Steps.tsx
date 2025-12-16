@@ -220,8 +220,8 @@ const stepsStyles = sva({
         },
         separator: {
           left: "5px",
-          top: "sd.system.dimension.spacing.small",
-          bottom: "-12px",
+          top: "sd.system.dimension.spacing.medium",
+          bottom: "-16px",
         },
         title: {
           textStyle: "sd.system.typography.label.extraLarge",
