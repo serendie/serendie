@@ -220,11 +220,22 @@ const stepsStyles = sva({
       css: {
         item: {
           paddingBottom: "sd.system.dimension.spacing.medium",
+          "--steps-indicator-size":
+            "var(--spacing-sd-system-dimension-spacing-small)",
+          "--steps-indicator-offset":
+            "var(--spacing-sd-system-dimension-spacing-large)",
+        },
+        trigger: {
+          alignItems: "flex-start",
+        },
+        indicator: {
+          marginTop: "var(--steps-indicator-offset)",
         },
         separator: {
-          left: "5px",
-          top: "26px",
-          bottom: "-26px",
+          left: "calc(var(--steps-indicator-size) / 2 - 1px)",
+          top: "calc(var(--steps-indicator-offset) + var(--steps-indicator-size) / 2)",
+          bottom:
+            "calc(-1 * (var(--steps-indicator-offset) + var(--steps-indicator-size) / 2))",
         },
         title: {
           textStyle: "sd.system.typography.label.extraLarge",
