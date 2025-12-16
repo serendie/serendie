@@ -39,6 +39,10 @@ const meta: Meta<typeof Slider> = {
       control: { type: "boolean" },
       defaultValue: true,
     },
+    step: {
+      control: { type: "number" },
+      description: "Step value for continuous mode (showMarkers=false)",
+    },
   },
 };
 

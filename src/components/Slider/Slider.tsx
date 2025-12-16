@@ -176,6 +176,7 @@ type SliderItemProps = {
   endLabel?: string;
   markerValues?: number[];
   showMarkers?: boolean;
+  step?: number;
 };
 
 export type SliderProps = SliderRootProps &
@@ -189,6 +190,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
       endLabel,
       markerValues,
       showMarkers = true,
+      step,
       className,
       min = 0,
       max = 100,
@@ -329,7 +331,9 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
       };
     }, []);
 
-    const effectiveStep = (max - min) / 1000;
+    const effectiveStep = showMarkers
+      ? (max - min) / 1000 // markerあり: 細かいstep
+      : (step ?? 1); // markerなし: ユーザー指定（デフォルト: 1）
 
     return (
       <ArkSlider.Root
