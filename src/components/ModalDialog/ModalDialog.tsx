@@ -2,7 +2,7 @@
 
 import { Dialog, DialogRootProps, Portal } from "@ark-ui/react";
 import { cx, RecipeVariantProps, sva } from "../../../styled-system/css";
-import { Button } from "../Button";
+import { Button, ButtonProps } from "../Button";
 
 const ModalDialogStyle = sva({
   slots: [
@@ -78,6 +78,7 @@ type Props = {
   cancelButtonLabel?: string;
   submitButtonLabel: string;
   onButtonClick: () => void;
+  submitButtonProps?: ButtonProps;
 };
 
 export type ModalDialogProps = Props &
@@ -90,6 +91,7 @@ export const ModalDialog: React.FC<ModalDialogProps> = ({
   cancelButtonLabel,
   submitButtonLabel,
   onButtonClick,
+  submitButtonProps,
   children,
   className,
   ...rest
@@ -108,7 +110,9 @@ export const ModalDialog: React.FC<ModalDialogProps> = ({
               </Dialog.Description>
             </div>
             <div className={styles.buttonWrapper}>
-              <Button onClick={onButtonClick}>{submitButtonLabel}</Button>
+              <Button {...submitButtonProps} onClick={onButtonClick}>
+                {submitButtonLabel}
+              </Button>
               <Dialog.CloseTrigger asChild>
                 <Button styleType="ghost">
                   {cancelButtonLabel || "閉じる"}
