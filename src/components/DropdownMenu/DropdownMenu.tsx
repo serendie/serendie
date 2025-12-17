@@ -16,6 +16,7 @@ export const DropdownMenuStyle = sva({
       bg: "sd.system.color.component.surface",
       boxShadow: "sd.system.elevation.shadow.level1",
       outline: "none",
+      zIndex: "sd.system.elevation.zIndex.toast",
     },
     itemGroup: {
       width: 240,
