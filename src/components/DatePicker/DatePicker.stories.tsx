@@ -2,7 +2,10 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { DatePicker } from "./DatePicker";
 import figma from "@figma/code-connect";
 import { useState } from "react";
-import { DatePickerValueChangeDetails, DateValue } from "@ark-ui/react/date-picker";
+import {
+  DatePickerValueChangeDetails,
+  DateValue,
+} from "@ark-ui/react/date-picker";
 import { parseDate } from "./index";
 
 const meta: Meta<typeof DatePicker> = {
@@ -13,9 +16,6 @@ const meta: Meta<typeof DatePicker> = {
     },
   },
   args: {
-    placeholder: "日付を選択",
-    startPlaceholder: "開始日",
-    endPlaceholder: "終了日",
     locale: "ja-JP",
     onValueChange: (details) => {
       console.log("Date changed:", details);
