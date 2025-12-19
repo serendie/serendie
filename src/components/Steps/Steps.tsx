@@ -83,11 +83,11 @@ const stepsStyles = sva({
       zIndex: 1,
     },
     title: {
-      textStyle: "sd.system.typography.label.large",
+      textStyle: "sd.system.typography.label.large_compact",
       color: "sd.system.color.component.onSurface",
     },
     description: {
-      textStyle: "sd.system.typography.label.small",
+      textStyle: "sd.system.typography.label.small_compact",
       color: "sd.system.color.component.onSurfaceVariant",
     },
   },
@@ -115,7 +115,7 @@ const stepsStyles = sva({
           textAlign: "center",
         },
         description: {
-          textStyle: "sd.system.typography.body.extraSmall_compact",
+          textStyle: "sd.system.typography.label.small_compact",
           textAlign: "center",
         },
       },
@@ -139,11 +139,11 @@ const stepsStyles = sva({
           alignItems: "flex-start",
         },
         title: {
-          textStyle: "sd.system.typography.label.extraLarge",
+          textStyle: "sd.system.typography.label.extraLarge_compact",
           textAlign: "left",
         },
         description: {
-          textStyle: "sd.system.typography.label.small",
+          textStyle: "sd.system.typography.label.small_compact",
           textAlign: "left",
         },
       },
@@ -155,7 +155,7 @@ const stepsStyles = sva({
           height: "sd.system.dimension.spacing.threeExtraLarge",
         },
         number: {
-          textStyle: "sd.system.typography.label.large",
+          textStyle: "sd.system.typography.label.large_compact",
         },
       },
       small: {
@@ -164,13 +164,13 @@ const stepsStyles = sva({
           height: "sd.system.dimension.spacing.small",
         },
         number: {
-          textStyle: "sd.system.typography.label.small",
+          textStyle: "sd.system.typography.label.small_compact",
         },
         title: {
-          textStyle: "sd.system.typography.label.medium",
+          textStyle: "sd.system.typography.label.medium_compact",
         },
         description: {
-          textStyle: "sd.system.typography.label.small",
+          textStyle: "sd.system.typography.label.small_compact",
         },
       },
     },
@@ -210,9 +210,7 @@ const stepsStyles = sva({
           paddingBottom: "sd.system.dimension.spacing.extraLarge",
         },
         textContent: {
-          // TitleをIndicatorの中心に揃えるためのpadding-top
-          // 計算: (gap + descriptionLineHeight) / 2 ≒ (4px + 11px) / 2 ≒ 8px
-          paddingTop: "sd.system.dimension.spacing.extraSmall",
+          paddingTop: "sd.system.dimension.spacing.small",
         },
         separator: {
           left: "19px",
@@ -220,7 +218,7 @@ const stepsStyles = sva({
           bottom: "-40px",
         },
         title: {
-          textStyle: "sd.system.typography.label.extraLarge",
+          textStyle: "sd.system.typography.label.extraLarge_compact",
         },
       },
     },
@@ -251,7 +249,7 @@ const stepsStyles = sva({
             "calc(-1 * (var(--steps-indicator-offset) + var(--steps-indicator-size) / 2))",
         },
         title: {
-          textStyle: "sd.system.typography.label.extraLarge",
+          textStyle: "sd.system.typography.label.extraLarge_compact",
         },
       },
     },
@@ -295,12 +293,16 @@ const getIndicatorStyles = (
   size: "large" | "small"
 ): React.CSSProperties => {
   if (status === "checked") {
-    // Checked状態はsecondaryを使用
-    return {
-      backgroundColor: "var(--colors-sd-system-color-impression-secondary)",
-    };
+    if (type === "subtle") {
+      return {
+        backgroundColor: "var(--colors-sd-system-color-impression-primary)",
+      };
+    } else {
+      return {
+        backgroundColor: "var(--colors-sd-system-color-impression-secondary)",
+      };
+    }
   } else if (status === "active") {
-    // Active状態はprimaryを使用
     if (type === "subtle" || size === "small") {
       return {
         border: "2px solid var(--colors-sd-system-color-impression-primary)",
@@ -330,10 +332,12 @@ const getIndicatorInnerStyles = (
   size: "large" | "small"
 ): React.CSSProperties => {
   if (status === "checked") {
-    // Checked状態はonSecondaryを使用（secondary背景に対するコントラスト色）
-    return { color: "var(--colors-sd-system-color-impression-on-secondary)" };
+    if (type === "subtle") {
+      return { color: "var(--colors-sd-system-color-impression-on-primary)" };
+    } else {
+      return { color: "var(--colors-sd-system-color-impression-on-secondary)" };
+    }
   } else if (status === "active") {
-    // Active状態はprimaryを使用
     if (type === "subtle" || size === "small") {
       return { color: "var(--colors-sd-system-color-impression-primary)" };
     } else {
