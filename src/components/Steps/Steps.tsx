@@ -209,6 +209,11 @@ const stepsStyles = sva({
         item: {
           paddingBottom: "sd.system.dimension.spacing.extraLarge",
         },
+        textContent: {
+          // TitleをIndicatorの中心に揃えるためのpadding-top
+          // 計算: (gap + descriptionLineHeight) / 2 ≒ (4px + 11px) / 2 ≒ 8px
+          paddingTop: "sd.system.dimension.spacing.extraSmall",
+        },
         separator: {
           left: "19px",
           top: "sd.system.dimension.spacing.threeExtraLarge",
@@ -290,29 +295,20 @@ const getIndicatorStyles = (
   size: "large" | "small"
 ): React.CSSProperties => {
   if (status === "checked") {
-    if (type === "subtle") {
-      return {
-        backgroundColor: "var(--colors-sd-system-color-impression-primary)",
-      };
-    } else if (size === "large") {
-      return {
-        backgroundColor:
-          "var(--colors-sd-system-color-component-inverse-primary)",
-      };
-    } else {
-      return {
-        backgroundColor: "var(--colors-sd-system-color-impression-primary)",
-      };
-    }
+    // Checked状態はsecondaryを使用
+    return {
+      backgroundColor: "var(--colors-sd-system-color-impression-secondary)",
+    };
   } else if (status === "active") {
+    // Active状態はprimaryを使用
     if (type === "subtle" || size === "small") {
       return {
-        border: "2px solid var(--colors-sd-system-color-impression-secondary)",
+        border: "2px solid var(--colors-sd-system-color-impression-primary)",
         backgroundColor: "var(--colors-sd-system-color-component-surface)",
       };
     } else {
       return {
-        backgroundColor: "var(--colors-sd-system-color-impression-secondary)",
+        backgroundColor: "var(--colors-sd-system-color-impression-primary)",
       };
     }
   } else {
@@ -334,18 +330,14 @@ const getIndicatorInnerStyles = (
   size: "large" | "small"
 ): React.CSSProperties => {
   if (status === "checked") {
-    if (type === "subtle") {
-      return { color: "var(--colors-sd-system-color-impression-on-primary)" };
-    } else if (size === "large") {
+    // Checked状態はonSecondaryを使用（secondary背景に対するコントラスト色）
+    return { color: "var(--colors-sd-system-color-impression-on-secondary)" };
+  } else if (status === "active") {
+    // Active状態はprimaryを使用
+    if (type === "subtle" || size === "small") {
       return { color: "var(--colors-sd-system-color-impression-primary)" };
     } else {
       return { color: "var(--colors-sd-system-color-impression-on-primary)" };
-    }
-  } else if (status === "active") {
-    if (type === "subtle" || size === "small") {
-      return { color: "var(--colors-sd-system-color-impression-secondary)" };
-    } else {
-      return { color: "var(--colors-sd-system-color-impression-on-secondary)" };
     }
   } else {
     return { color: "var(--colors-sd-reference-color-scale-gray-400)" };
