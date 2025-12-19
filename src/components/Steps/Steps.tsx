@@ -135,11 +135,16 @@ const stepsStyles = sva({
         trigger: {
           flexDirection: "row",
         },
+        textContent: {
+          alignItems: "flex-start",
+        },
         title: {
           textStyle: "sd.system.typography.label.extraLarge",
+          textAlign: "left",
         },
         description: {
-          textStyle: "sd.system.typography.body.extraSmall_compact",
+          textStyle: "sd.system.typography.label.small",
+          textAlign: "left",
         },
       },
     },
@@ -231,6 +236,9 @@ const stepsStyles = sva({
         indicator: {
           marginTop: "var(--steps-indicator-offset)",
         },
+        textContent: {
+          marginTop: "sd.system.dimension.spacing.medium",
+        },
         separator: {
           left: "calc(var(--steps-indicator-size) / 2 - 1px)",
           top: "calc(var(--steps-indicator-offset) + var(--steps-indicator-size) / 2)",
@@ -299,12 +307,12 @@ const getIndicatorStyles = (
   } else if (status === "active") {
     if (type === "subtle" || size === "small") {
       return {
-        border: "2px solid var(--colors-sd-system-color-impression-primary)",
+        border: "2px solid var(--colors-sd-system-color-impression-secondary)",
         backgroundColor: "var(--colors-sd-system-color-component-surface)",
       };
     } else {
       return {
-        backgroundColor: "var(--colors-sd-system-color-impression-primary)",
+        backgroundColor: "var(--colors-sd-system-color-impression-secondary)",
       };
     }
   } else {
@@ -335,9 +343,9 @@ const getIndicatorInnerStyles = (
     }
   } else if (status === "active") {
     if (type === "subtle" || size === "small") {
-      return { color: "var(--colors-sd-system-color-impression-primary)" };
+      return { color: "var(--colors-sd-system-color-impression-secondary)" };
     } else {
-      return { color: "var(--colors-sd-system-color-impression-on-primary)" };
+      return { color: "var(--colors-sd-system-color-impression-on-secondary)" };
     }
   } else {
     return { color: "var(--colors-sd-reference-color-scale-gray-400)" };
