@@ -216,7 +216,7 @@ const stepsStyles = sva({
           paddingTop: "sd.system.dimension.spacing.small",
         },
         separator: {
-          left: "calc(16px - 0.5px)",
+          left: "calc(20px - 0.5px)",
           top: "sd.system.dimension.spacing.threeExtraLarge",
           bottom: "-32px",
         },
