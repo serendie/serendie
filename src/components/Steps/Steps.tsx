@@ -102,7 +102,7 @@ const stepsStyles = sva({
           width: "100%",
         },
         separator: {
-          height: "2px",
+          height: "1px",
         },
         item: {
           flexDirection: "column",
@@ -127,7 +127,7 @@ const stepsStyles = sva({
           flexDirection: "column",
         },
         separator: {
-          width: "2px",
+          width: "1px",
         },
         item: {
           flexDirection: "column",
@@ -207,15 +207,18 @@ const stepsStyles = sva({
       size: "large",
       css: {
         item: {
-          paddingBottom: "sd.system.dimension.spacing.extraLarge",
+          paddingBottom: "sd.system.dimension.spacing.twoExtraLarge",
+        },
+        trigger: {
+          gap: "sd.system.dimension.spacing.extraSmall",
         },
         textContent: {
           paddingTop: "sd.system.dimension.spacing.small",
         },
         separator: {
-          left: "19px",
+          left: "calc(16px - 0.5px)",
           top: "sd.system.dimension.spacing.threeExtraLarge",
-          bottom: "-40px",
+          bottom: "-32px",
         },
         title: {
           textStyle: "sd.system.typography.label.extraLarge_compact",
@@ -227,7 +230,7 @@ const stepsStyles = sva({
       size: "small",
       css: {
         item: {
-          paddingBottom: "sd.system.dimension.spacing.medium",
+          paddingBottom: "sd.system.dimension.spacing.extraLarge",
           "--steps-indicator-size":
             "var(--spacing-sd-system-dimension-spacing-small)",
           "--steps-indicator-offset":
@@ -235,15 +238,17 @@ const stepsStyles = sva({
         },
         trigger: {
           alignItems: "flex-start",
+          gap: "sd.system.dimension.spacing.large",
         },
         indicator: {
           marginTop: "var(--steps-indicator-offset)",
         },
         textContent: {
           marginTop: "sd.system.dimension.spacing.large",
+          paddingTop: "sd.system.dimension.spacing.extraSmall",
         },
         separator: {
-          left: "calc(var(--steps-indicator-size) / 2 - 1px)",
+          left: "calc(var(--steps-indicator-size) / 2 - 0.5px)",
           top: "calc(var(--steps-indicator-offset) + var(--steps-indicator-size) / 2)",
           bottom:
             "calc(-1 * (var(--steps-indicator-offset) + var(--steps-indicator-size) / 2))",
