@@ -26,6 +26,14 @@ const meta: Meta<typeof Slider> = {
     },
   },
   argTypes: {
+    startLabel: {
+      control: { type: "text" },
+      description: "Label displayed at the start of the slider",
+    },
+    endLabel: {
+      control: { type: "text" },
+      description: "Label displayed at the end of the slider",
+    },
     size: {
       control: { type: "radio" },
       options: ["medium", "large"],
@@ -56,6 +64,7 @@ type Story = StoryObj<typeof Slider>;
 export const Medium: Story = {
   args: {
     startLabel: "Value",
+    endLabel: "100",
     size: "medium",
     defaultValue: [50],
     min: 0,
@@ -66,6 +75,7 @@ export const Medium: Story = {
 export const Large: Story = {
   args: {
     startLabel: "Value",
+    endLabel: "100",
     size: "large",
     defaultValue: [50],
     min: 0,
@@ -76,6 +86,7 @@ export const Large: Story = {
 export const Disabled: Story = {
   args: {
     startLabel: "Value",
+    endLabel: "100",
     size: "medium",
     defaultValue: [50],
     min: 0,
@@ -87,6 +98,7 @@ export const Disabled: Story = {
 export const WithMarkerValues: Story = {
   args: {
     startLabel: "Value",
+    endLabel: "100",
     size: "large",
     defaultValue: [50],
     min: 0,
@@ -98,6 +110,7 @@ export const WithMarkerValues: Story = {
 export const WithoutMarkers: Story = {
   args: {
     startLabel: "Value",
+    endLabel: "100",
     size: "medium",
     defaultValue: [50],
     min: 0,
