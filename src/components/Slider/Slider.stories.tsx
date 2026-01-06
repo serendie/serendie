@@ -41,7 +41,7 @@ const meta: Meta<typeof Slider> = {
     },
     step: {
       control: { type: "number" },
-      description: "Step value for continuous mode (showMarkers=false)",
+      description: "Step value for the slider (default: 1)",
     },
   },
 };
