@@ -64,7 +64,7 @@ type Story = StoryObj<typeof Slider>;
 export const Medium: Story = {
   args: {
     startLabel: "Value",
-    endLabel: "100",
+    endLabel: "Value",
     size: "medium",
     defaultValue: [50],
     min: 0,
@@ -75,7 +75,7 @@ export const Medium: Story = {
 export const Large: Story = {
   args: {
     startLabel: "Value",
-    endLabel: "100",
+    endLabel: "Value",
     size: "large",
     defaultValue: [50],
     min: 0,
@@ -86,7 +86,7 @@ export const Large: Story = {
 export const Disabled: Story = {
   args: {
     startLabel: "Value",
-    endLabel: "100",
+    endLabel: "Value",
     size: "medium",
     defaultValue: [50],
     min: 0,
@@ -98,7 +98,7 @@ export const Disabled: Story = {
 export const WithMarkerValues: Story = {
   args: {
     startLabel: "Value",
-    endLabel: "100",
+    endLabel: "Value",
     size: "large",
     defaultValue: [50],
     min: 0,
@@ -110,7 +110,7 @@ export const WithMarkerValues: Story = {
 export const WithoutMarkers: Story = {
   args: {
     startLabel: "Value",
-    endLabel: "100",
+    endLabel: "Value",
     size: "medium",
     defaultValue: [50],
     min: 0,
