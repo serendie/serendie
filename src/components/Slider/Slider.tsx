@@ -88,9 +88,6 @@ export const SliderStyle = sva({
       transitionDuration: ".2s",
       transitionProperty: "transform, borderColor, backgroundColor, boxShadow",
       transitionTimingFunction: "cubic-bezier(.2, 0, 0, 1)",
-      "&:hover:not([data-dragging='true']):not([data-grabbed='true'])": {
-        boxShadow: "0 0 0 8px rgba(0, 0, 0, 0.08)",
-      },
       "&:focus": {
         outline: "none",
       },
