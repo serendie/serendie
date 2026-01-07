@@ -3,6 +3,7 @@
 import { Dialog, DialogRootProps, Portal } from "@ark-ui/react";
 import { cx, RecipeVariantProps, sva } from "../../../styled-system/css";
 import { Button, ButtonProps } from "../Button";
+import { useTranslations } from "../../i18n";
 
 const ModalDialogStyle = sva({
   slots: [
@@ -96,6 +97,7 @@ export const ModalDialog: React.FC<ModalDialogProps> = ({
   className,
   ...rest
 }) => {
+  const t = useTranslations();
   const styles = ModalDialogStyle(rest);
   return (
     <Dialog.Root open={isOpen} {...rest}>
@@ -115,7 +117,7 @@ export const ModalDialog: React.FC<ModalDialogProps> = ({
               </Button>
               <Dialog.CloseTrigger asChild>
                 <Button styleType="ghost">
-                  {cancelButtonLabel || "閉じる"}
+                  {cancelButtonLabel || t("modalDialog.close")}
                 </Button>
               </Dialog.CloseTrigger>
             </div>

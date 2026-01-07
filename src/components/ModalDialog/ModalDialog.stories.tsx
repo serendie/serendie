@@ -31,7 +31,6 @@ const meta: Meta<typeof ModalDialog> = {
   },
   args: {
     title: "Dialog Title",
-    cancelButtonLabel: "Close",
     submitButtonLabel: "Button",
     children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam",
   },
