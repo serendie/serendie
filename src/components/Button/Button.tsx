@@ -133,7 +133,7 @@ type ExclusiveIconProps =
 type ButtonLoadingProps = {
   isLoading?: boolean;
 };
-type ButtonProps = ComponentProps<"button"> &
+export type ButtonProps = ComponentProps<"button"> &
   RecipeVariantProps<typeof ButtonStyle> &
   ExclusiveIconProps &
   ButtonLoadingProps;

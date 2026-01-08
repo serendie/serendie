@@ -12,6 +12,7 @@ import { datePickerStyles } from "./styles";
 import { css, cx, RecipeVariantProps } from "../../../styled-system/css";
 import { textFieldRecipe } from "../../recipes/textFieldRecipe";
 import { useAutoPortalContainer } from "../../hooks/useAutoPortalContainer";
+import { useTranslations } from "../../i18n";
 
 type DatePickerProps = DatePickerRootProps &
   RecipeVariantProps<typeof textFieldRecipe> & {
@@ -36,15 +37,15 @@ type DatePickerProps = DatePickerRootProps &
 export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
   (
     {
-      placeholder = "日付を選択",
+      placeholder: placeholderProp,
       label,
       required,
       requiredLabel,
       invalid,
       invalidMessage,
       selectionMode = "single",
-      startPlaceholder = "開始日",
-      endPlaceholder = "終了日",
+      startPlaceholder: startPlaceholderProp,
+      endPlaceholder: endPlaceholderProp,
       locale = "ja-JP",
       isCalendarOnly = false,
       portalled = true,
@@ -52,6 +53,10 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
     },
     ref
   ) => {
+    const t = useTranslations();
+    const placeholder = placeholderProp ?? t("datePicker.selectDate");
+    const startPlaceholder = startPlaceholderProp ?? t("datePicker.startDate");
+    const endPlaceholder = endPlaceholderProp ?? t("datePicker.endDate");
     const styles = datePickerStyles();
     const [variantProps, elementProps] = textFieldRecipe.splitVariantProps({
       ...props,
@@ -92,7 +97,7 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
               {label}
               {required && (
                 <span className={textFieldStyles.labelRequired}>
-                  {requiredLabel ?? "必須"}
+                  {requiredLabel ?? t("common.required")}
                 </span>
               )}
             </ArkDatePicker.Label>

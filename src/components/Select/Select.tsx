@@ -8,6 +8,7 @@ import { SerendieSymbolChevronDown } from "@serendie/symbols";
 import { RecipeVariantProps, css, cx, sva } from "../../../styled-system/css";
 import { List, ListItem } from "../List";
 import { useAutoPortalContainer } from "../../hooks/useAutoPortalContainer";
+import { useTranslations } from "../../i18n";
 
 export const SelectStyle = sva({
   slots: ["root", "valueText", "trigger", "content", "item", "iconBox"],
@@ -190,6 +191,7 @@ export const Select: React.FC<SelectStyleProps> = ({
   portalled = true,
   ...props
 }) => {
+  const t = useTranslations();
   const [variantProps, selectProps] = SelectStyle.splitVariantProps(props);
   const styles = SelectStyle(variantProps);
   const { collection: _, ...elementProps } = selectProps;
@@ -233,7 +235,7 @@ export const Select: React.FC<SelectStyleProps> = ({
                 color: "sd.system.color.impression.negative",
               })}
             >
-              {requiredLabel ?? "必須"}
+              {requiredLabel ?? t("common.required")}
             </span>
           )}
         </ArkSelect.Label>
