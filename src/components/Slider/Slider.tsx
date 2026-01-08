@@ -217,7 +217,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
       setIsDragging(true);
     };
 
-    const handlePointerUp = () => {
+    const handleValueChangeEnd = () => {
       setIsGrabbed(false);
       setIsDragging(false);
     };
@@ -229,7 +229,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
         min={min}
         max={max}
         step={step}
-        onPointerUp={handlePointerUp}
+        onValueChangeEnd={handleValueChangeEnd}
         {...elementProps}
       >
         {(startLabel || endLabel) && (
