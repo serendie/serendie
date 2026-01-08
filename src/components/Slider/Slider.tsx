@@ -88,10 +88,11 @@ export const SliderStyle = sva({
       transitionDuration: ".2s",
       transitionProperty: "transform, borderColor, backgroundColor, boxShadow",
       transitionTimingFunction: "cubic-bezier(.2, 0, 0, 1)",
-      "&:hover:not(:focus-visible):not([data-disabled])": {
-        backgroundImage:
-          "linear-gradient(0deg, {colors.sd.system.color.interaction.hovered} 0%, {colors.sd.system.color.interaction.hovered} 100%)",
-      },
+      "&:hover:not(:focus-visible):not([data-disabled]), &[data-dragging='true']:not([data-disabled])":
+        {
+          backgroundImage:
+            "linear-gradient(0deg, {colors.sd.system.color.interaction.hovered} 0%, {colors.sd.system.color.interaction.hovered} 100%)",
+        },
       "&:focus": {
         outline: "none",
       },
