@@ -114,7 +114,7 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
               })
             )}
             data-expanded={isOpen ? true : undefined}
-            data-Invalid={invalid}
+            data-invalid={invalid ? true : undefined}
           >
             <div className={textFieldStyles.leftContent}>
               <ArkDatePicker.Trigger
