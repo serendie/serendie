@@ -244,14 +244,12 @@ const stepsStyles = sva({
           marginTop: "var(--steps-indicator-offset)",
         },
         textContent: {
-          marginTop: "sd.system.dimension.spacing.large",
-          paddingTop: "sd.system.dimension.spacing.extraSmall",
+          marginTop: "sd.system.dimension.spacing.extraSmall",
         },
         separator: {
           left: "calc(var(--steps-indicator-size) / 2 - 0.5px)",
-          top: "calc(var(--steps-indicator-offset) + var(--steps-indicator-size) / 2)",
-          bottom:
-            "calc(-1 * (var(--steps-indicator-offset) + var(--steps-indicator-size) / 2))",
+          top: "calc(var(--steps-indicator-offset) + var(--steps-indicator-size) + 4px)",
+          bottom: "calc(-1 * var(--steps-indicator-offset) + 4px)",
         },
         title: {
           textStyle: "sd.system.typography.label.extraLarge_compact",
@@ -300,7 +298,8 @@ const getIndicatorStyles = (
   if (status === "checked") {
     if (type === "subtle") {
       return {
-        backgroundColor: "var(--colors-sd-system-color-impression-primary)",
+        backgroundColor: "var(--colors-sd-system-color-component-surface)",
+        border: "2px solid var(--colors-sd-system-color-impression-primary)",
       };
     } else {
       return {
@@ -338,7 +337,7 @@ const getIndicatorInnerStyles = (
 ): React.CSSProperties => {
   if (status === "checked") {
     if (type === "subtle") {
-      return { color: "var(--colors-sd-system-color-impression-on-primary)" };
+      return { color: "var(--colors-sd-system-color-impression-primary)" };
     } else {
       return { color: "var(--colors-sd-system-color-impression-on-secondary)" };
     }
@@ -410,9 +409,9 @@ export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
                       className={styles.indicatorInner}
                       style={indicatorInnerStyles}
                     >
-                      {type === "subtle" ? null : item.status === "checked" ? (
+                      {item.status === "checked" ? (
                         <SerendieSymbolCheck className={styles.checkIcon} />
-                      ) : (
+                      ) : type === "subtle" ? null : (
                         <span className={styles.number}>{item.index}</span>
                       )}
                     </div>
