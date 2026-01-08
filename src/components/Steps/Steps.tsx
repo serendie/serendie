@@ -298,8 +298,7 @@ const getIndicatorStyles = (
   if (status === "checked") {
     if (type === "subtle") {
       return {
-        backgroundColor: "var(--colors-sd-system-color-component-surface)",
-        border: "2px solid var(--colors-sd-system-color-impression-primary)",
+        backgroundColor: "var(--colors-sd-system-color-impression-primary)",
       };
     } else {
       return {
@@ -409,9 +408,9 @@ export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
                       className={styles.indicatorInner}
                       style={indicatorInnerStyles}
                     >
-                      {item.status === "checked" ? (
+                      {type === "subtle" ? null : item.status === "checked" ? (
                         <SerendieSymbolCheck className={styles.checkIcon} />
-                      ) : type === "subtle" ? null : (
+                      ) : (
                         <span className={styles.number}>{item.index}</span>
                       )}
                     </div>
