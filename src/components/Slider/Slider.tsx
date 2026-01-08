@@ -1,5 +1,5 @@
 import { Slider as ArkSlider, SliderRootProps } from "@ark-ui/react";
-import { forwardRef, useState } from "react";
+import { forwardRef, useRef, useState } from "react";
 import { RecipeVariantProps, cx, sva } from "../../../styled-system/css";
 import { Tooltip } from "../Tooltip/Tooltip";
 
@@ -207,6 +207,8 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
     const styles = SliderStyle(variantProps);
     const [isDragging, setIsDragging] = useState(false);
     const [isGrabbed, setIsGrabbed] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
+    const thumbRef = useRef<HTMLSpanElement>(null);
 
     const displayMarkers = markerValues?.length
       ? markerValues.filter((v) => v > min && v < max)
@@ -220,6 +222,24 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
     const handleValueChangeEnd = () => {
       setIsGrabbed(false);
       setIsDragging(false);
+      // Re-evaluate hover state after dragging ends
+      requestAnimationFrame(() => {
+        if (thumbRef.current?.matches(":hover")) {
+          setIsHovered(true);
+        }
+      });
+    };
+
+    const handlePointerEnter = () => {
+      if (!isDragging) {
+        setIsHovered(true);
+      }
+    };
+
+    const handlePointerLeave = () => {
+      if (!isDragging) {
+        setIsHovered(false);
+      }
     };
 
     return (
@@ -276,14 +296,17 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
                 placement="top"
                 openDelay={0}
                 closeDelay={0}
-                disabled={Boolean(elementProps.disabled) || isDragging}
+                open={!elementProps.disabled && !isDragging && isHovered}
               >
                 <ArkSlider.Thumb
+                  ref={thumbRef}
                   index={0}
                   className={styles.thumb}
                   data-dragging={isDragging ? "true" : "false"}
                   data-grabbed={isGrabbed ? "true" : "false"}
                   onPointerDown={handlePointerDown}
+                  onPointerEnter={handlePointerEnter}
+                  onPointerLeave={handlePointerLeave}
                 >
                   <ArkSlider.HiddenInput />
                 </ArkSlider.Thumb>
