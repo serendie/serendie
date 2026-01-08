@@ -6,6 +6,7 @@ import {
 import { sva } from "../../../styled-system/css";
 import { Button } from "../Button";
 import { IconButton } from "../IconButton";
+import { useAutoPortalContainer } from "../../hooks/useAutoPortalContainer";
 
 export const DropdownMenuStyle = sva({
   slots: ["content", "itemGroup", "item", "itemIcon", "button", "buttonIcon"],
@@ -16,6 +17,7 @@ export const DropdownMenuStyle = sva({
       bg: "sd.system.color.component.surface",
       boxShadow: "sd.system.elevation.shadow.level1",
       outline: "none",
+      zIndex: "sd.system.elevation.zIndex.dropdown",
     },
     itemGroup: {
       width: 240,
@@ -92,6 +94,13 @@ export type DropdownMenuProps = {
   items: MenuItemProps[];
   disabled?: boolean;
   icon?: React.ReactElement;
+  /**
+   * Portalを使用するかどうか
+   * - `true` (デフォルト): body直下にポータルする。ModalDialog/Drawer内にある場合は自動的にそのコンテンツ内にポータルされる
+   * - `false`: ポータルを使用せず、その場にレンダリングする
+   * @default true
+   */
+  portalled?: boolean;
 };
 
 export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
@@ -100,10 +109,12 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
   items,
   disabled,
   icon,
+  portalled = true,
   ...restProps
 }) => {
   /* variant なし */
   const styles = DropdownMenuStyle();
+  const { triggerRef, portalContainerRef } = useAutoPortalContainer(portalled);
 
   return (
     <ArkMenu.Root
@@ -118,6 +129,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
       <ArkMenu.Trigger asChild>
         {styleType === "iconButton" ? (
           <IconButton
+            ref={triggerRef}
             icon={icon || <SerendieSymbolMenu className={styles.buttonIcon} />}
             shape="rectangle"
             disabled={disabled}
@@ -126,6 +138,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
           />
         ) : (
           <Button
+            ref={triggerRef}
             styleType="rectangle"
             size="medium"
             disabled={disabled}
@@ -138,7 +151,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
           </Button>
         )}
       </ArkMenu.Trigger>
-      <Portal>
+      <Portal disabled={!portalled} container={portalContainerRef}>
         <ArkMenu.Positioner>
           <ArkMenu.Content className={styles.content}>
             <ArkMenu.ItemGroup className={styles.itemGroup}>

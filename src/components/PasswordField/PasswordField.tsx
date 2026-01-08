@@ -2,6 +2,7 @@ import React, { forwardRef, useState } from "react";
 import { TextField } from "../TextField";
 import { SerendieSymbolEye, SerendieSymbolEyeHidden } from "@serendie/symbols";
 import { IconButton } from "../IconButton";
+import { useTranslations } from "../../i18n";
 
 type PasswordFieldProps = Omit<
   React.ComponentProps<typeof TextField>,
@@ -15,6 +16,7 @@ type PasswordFieldProps = Omit<
 
 export const PasswordField = forwardRef<HTMLInputElement, PasswordFieldProps>(
   ({ disableToggle = false, disabled, ...props }, ref) => {
+    const t = useTranslations();
     const [showPassword, setShowPassword] = useState(false);
 
     const togglePasswordVisibility = () => {
@@ -28,7 +30,11 @@ export const PasswordField = forwardRef<HTMLInputElement, PasswordFieldProps>(
         styleType="ghost"
         size="small"
         shape="circle"
-        aria-label={showPassword ? "パスワードを隠す" : "パスワードを表示"}
+        aria-label={
+          showPassword
+            ? t("passwordField.hidePassword")
+            : t("passwordField.showPassword")
+        }
         disabled={disabled}
         icon={
           showPassword ? <SerendieSymbolEyeHidden /> : <SerendieSymbolEye />

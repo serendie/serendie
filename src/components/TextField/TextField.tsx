@@ -122,7 +122,7 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
                   <button
                     className={css({ cursor: "pointer" })}
                     onClick={resetValue}
-                    aria-label="値をクリア"
+                    aria-label={t("textField.clearValue")}
                   >
                     <SerendieSymbolClose width={20} height={20} />
                   </button>

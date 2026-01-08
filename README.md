@@ -79,7 +79,7 @@ export default function ClientComponent() {
 
 ### テーマ切り替え
 
-Serendie Design Systemには5つのカラーテーマがあり、デザイントークンもそれに対応します。htmlタグなどに、`data-panda-theme`属性 (`konjo`, `asagi`, `sumire`, `tsutusji`, `kurikawa`)を付与することでカラーテーマを切り替えることができます。
+Serendie Design Systemには5つのカラーテーマがあり、デザイントークンもそれに対応します。htmlタグなどに、`data-panda-theme`属性 (`konjo`, `asagi`, `sumire`, `tsutsuji`, `kurikawa`)を付与することでカラーテーマを切り替えることができます。
 各テーマについては[こちら](https://serendie.design/foundations/theming/)を参照してください。
 
 ```html
@@ -214,7 +214,7 @@ export const dictionary = {
 ```env
 FIGMA_ACCESS_TOKEN="YOUR_TOKEN"
 FIGMA_FILE_KEY="YOUR_FILE_KEY"
-# FIGMA_TRANSLATION_COLLECTION="locales"  # オプション（デフォルト: locales）
+# FIGMA_TRANSLATION_COLLECTION="_i18n"  # オプション（デフォルト: _i18n）
 ```
 
 #### 翻訳管理コマンド

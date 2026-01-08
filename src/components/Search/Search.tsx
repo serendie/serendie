@@ -10,6 +10,7 @@ import {
 } from "@serendie/symbols";
 import { cx, RecipeVariantProps, sva } from "../../../styled-system/css";
 import { Box } from "../../../styled-system/jsx";
+import { useAutoPortalContainer } from "../../hooks/useAutoPortalContainer";
 
 /*
  * 検索候補を出すことができるサーチコンボボックス
@@ -152,15 +153,24 @@ export const SearchStyle = sva({
 type SearchStyleProps = ComboboxRootProps<string> &
   RecipeVariantProps<typeof SearchStyle> & {
     items?: string[];
+    /**
+     * Portalを使用するかどうか
+     * - `true` (デフォルト): body直下にポータルする。ModalDialog/Drawer内にある場合は自動的にそのコンテンツ内にポータルされる
+     * - `false`: ポータルを使用せず、その場にレンダリングする
+     * @default true
+     */
+    portalled?: boolean;
   };
 
 export const Search: React.FC<SearchStyleProps> = ({
   items = [],
+  portalled = true,
   ...props
 }) => {
   const [variantProps, comboboxProps] = SearchStyle.splitVariantProps(props);
   const styles = SearchStyle(variantProps);
   const { collection: _, ...elementProps } = comboboxProps;
+  const { triggerRef, portalContainerRef } = useAutoPortalContainer(portalled);
 
   const collection = createListCollection({ items });
 
@@ -177,7 +187,10 @@ export const Search: React.FC<SearchStyleProps> = ({
         },
       }}
     >
-      <Combobox.Control className={cx(styles.control, elementProps.className)}>
+      <Combobox.Control
+        className={cx(styles.control, elementProps.className)}
+        ref={triggerRef}
+      >
         <div className={styles.iconBox}>
           <SerendieSymbolMagnifyingGlass className={styles.icon} />
         </div>
@@ -191,7 +204,7 @@ export const Search: React.FC<SearchStyleProps> = ({
           </Combobox.Trigger>
         )}
       </Combobox.Control>
-      <Portal>
+      <Portal disabled={!portalled} container={portalContainerRef}>
         <Combobox.Positioner>
           <Combobox.Content className={styles.combobox}>
             <Combobox.ItemGroup id="framework">
