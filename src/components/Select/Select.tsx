@@ -7,6 +7,7 @@ import {
 import { SerendieSymbolChevronDown } from "@serendie/symbols";
 import { RecipeVariantProps, css, cx, sva } from "../../../styled-system/css";
 import { List, ListItem } from "../List";
+import { useAutoPortalContainer } from "../../hooks/useAutoPortalContainer";
 
 export const SelectStyle = sva({
   slots: ["root", "valueText", "trigger", "content", "item", "iconBox"],
@@ -159,6 +160,13 @@ type Props = {
   invalidMessage?: string;
   items?: selectItem[];
   collection?: SelectRootProps<selectItem>["collection"];
+  /**
+   * Portalを使用するかどうか
+   * - `true` (デフォルト): body直下にポータルする。ModalDialog/Drawer内にある場合は自動的にそのコンテンツ内にポータルされる
+   * - `false`: ポータルを使用せず、その場にレンダリングする
+   * @default true
+   */
+  portalled?: boolean;
 };
 
 type selectItem = {
@@ -179,11 +187,13 @@ export const Select: React.FC<SelectStyleProps> = ({
   invalidMessage,
   className,
   items = [],
+  portalled = true,
   ...props
 }) => {
   const [variantProps, selectProps] = SelectStyle.splitVariantProps(props);
   const styles = SelectStyle(variantProps);
   const { collection: _, ...elementProps } = selectProps;
+  const { triggerRef, portalContainerRef } = useAutoPortalContainer(portalled);
 
   const collection = createListCollection({
     items,
@@ -229,7 +239,7 @@ export const Select: React.FC<SelectStyleProps> = ({
         </ArkSelect.Label>
       )}
       <ArkSelect.Control>
-        <ArkSelect.Trigger className={styles.trigger}>
+        <ArkSelect.Trigger className={styles.trigger} ref={triggerRef}>
           <ArkSelect.ValueText
             placeholder={placeholder}
             className={styles.valueText}
@@ -250,7 +260,7 @@ export const Select: React.FC<SelectStyleProps> = ({
           {invalidMessage}
         </div>
       )}
-      <Portal>
+      <Portal disabled={!portalled} container={portalContainerRef}>
         <ArkSelect.Positioner>
           <ArkSelect.Content className={styles.content}>
             <List>

@@ -11,6 +11,7 @@ import { forwardRef, useState } from "react";
 import { datePickerStyles } from "./styles";
 import { css, cx, RecipeVariantProps } from "../../../styled-system/css";
 import { textFieldRecipe } from "../../recipes/textFieldRecipe";
+import { useAutoPortalContainer } from "../../hooks/useAutoPortalContainer";
 
 type DatePickerProps = DatePickerRootProps &
   RecipeVariantProps<typeof textFieldRecipe> & {
@@ -23,6 +24,13 @@ type DatePickerProps = DatePickerRootProps &
     startPlaceholder?: string;
     endPlaceholder?: string;
     isCalendarOnly?: boolean;
+    /**
+     * Portalを使用するかどうか
+     * - `true` (デフォルト): body直下にポータルする。ModalDialog/Drawer内にある場合は自動的にそのコンテンツ内にポータルされる
+     * - `false`: ポータルを使用せず、その場にレンダリングする
+     * @default true
+     */
+    portalled?: boolean;
   };
 
 export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
@@ -39,6 +47,7 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
       endPlaceholder = "終了日",
       locale = "ja-JP",
       isCalendarOnly = false,
+      portalled = true,
       ...props
     },
     ref
@@ -50,6 +59,8 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
     const textFieldStyles = textFieldRecipe(variantProps);
     const [isOpen, setIsOpen] = useState(false);
     const isRange = selectionMode === "range";
+    const { triggerRef, portalContainerRef } =
+      useAutoPortalContainer(portalled);
 
     return isCalendarOnly ? (
       <ArkDatePicker.Root
@@ -101,7 +112,10 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
             data-Invalid={invalid}
           >
             <div className={textFieldStyles.leftContent}>
-              <ArkDatePicker.Trigger className={css({ display: "flex" })}>
+              <ArkDatePicker.Trigger
+                className={css({ display: "flex" })}
+                ref={triggerRef}
+              >
                 <SerendieSymbolCalendar />
               </ArkDatePicker.Trigger>
             </div>
@@ -155,7 +169,7 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
             </div>
           )}
         </>
-        <Portal>
+        <Portal disabled={!portalled} container={portalContainerRef}>
           <ArkDatePicker.Positioner className={styles.positioner}>
             <Calendar />
           </ArkDatePicker.Positioner>
