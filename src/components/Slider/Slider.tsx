@@ -274,8 +274,8 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
               <Tooltip
                 content={String(api.value[0])}
                 placement="top"
-                openDelay={250}
-                closeDelay={150}
+                openDelay={0}
+                closeDelay={0}
                 disabled={Boolean(elementProps.disabled) || isDragging}
               >
                 <ArkSlider.Thumb
