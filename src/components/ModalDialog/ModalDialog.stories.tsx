@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ModalDialog, ModalDialogProps } from "./ModalDialog";
 import { useState } from "react";
 import { Button } from "../Button";
+import { DropdownMenu } from "../DropdownMenu";
+import { SerendieSymbolPlaceholder } from "@serendie/symbols";
 import figma from "@figma/code-connect";
 import { expect, userEvent, waitFor, within } from "@storybook/test";
 import { allModes } from "../../../.storybook/modes";
@@ -105,5 +107,56 @@ export const PlayClickedButton: Story = {
       const modalHeading = await root.findByText("Dialog Title");
       expect(modalHeading).toBeInTheDocument();
     });
+  },
+};
+
+const dropdownItems = [
+  {
+    label: "React",
+    value: "React",
+    icon: <SerendieSymbolPlaceholder />,
+  },
+  {
+    label: "Vue",
+    value: "Vue",
+    icon: <SerendieSymbolPlaceholder />,
+  },
+  {
+    label: "Angular",
+    value: "Angular",
+    icon: <SerendieSymbolPlaceholder />,
+  },
+];
+
+const DialogWithDropdownTemplate = (args: ModalDialogProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <>
+      <Button onClick={() => setIsOpen(true)}>Open Dialog</Button>
+      <ModalDialog
+        {...args}
+        isOpen={isOpen}
+        onOpenChange={(e) => setIsOpen(e.open)}
+        onButtonClick={() => {
+          setIsOpen(false);
+        }}
+      >
+        <div>
+          <p style={{ marginBottom: "16px" }}>
+            DropdownMenuがダイアログの上に正しく表示されることを確認してください。
+          </p>
+          <DropdownMenu items={dropdownItems} title="フレームワークを選択" />
+        </div>
+      </ModalDialog>
+    </>
+  );
+};
+
+export const WithDropdownMenu: Story = {
+  render: DialogWithDropdownTemplate,
+  args: {
+    title: "DropdownMenu in Dialog",
+    submitButtonLabel: "OK",
+    cancelButtonLabel: "キャンセル",
   },
 };
