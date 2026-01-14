@@ -11,6 +11,7 @@ export const SwitchStyle = sva({
       gap: "sd.system.dimension.spacing.medium",
       paddingY: "sd.system.dimension.spacing.small",
       paddingX: "sd.system.dimension.spacing.medium",
+      position: "relative",
       '&[data-focus="true"] .control': {
         borderColor: "sd.system.color.impression.primary",
       },
