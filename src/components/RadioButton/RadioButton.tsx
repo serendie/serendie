@@ -46,6 +46,7 @@ export const RadioButtonStyle = sva({
       paddingY: "sd.system.dimension.spacing.small",
       paddingX: "sd.system.dimension.spacing.medium",
       cursor: "pointer",
+      position: "relative",
     },
     itemControl: radioIconCss,
     checkedIcon: radioCheckedIconCss,
