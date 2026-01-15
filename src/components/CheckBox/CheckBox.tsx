@@ -65,6 +65,7 @@ export const CheckBoxStyle = sva({
       paddingY: "sd.system.dimension.spacing.small",
       paddingX: "sd.system.dimension.spacing.medium",
       cursor: "pointer",
+      position: "relative",
     },
     itemControl: checkboxIconCss,
     checkedIcon: checkboxCheckedIconCss,
