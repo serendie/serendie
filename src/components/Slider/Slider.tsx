@@ -1,5 +1,5 @@
 import { Slider as ArkSlider, SliderRootProps } from "@ark-ui/react";
-import { forwardRef, useRef, useState } from "react";
+import { forwardRef } from "react";
 import { RecipeVariantProps, cx, sva } from "../../../styled-system/css";
 import { Tooltip } from "../Tooltip/Tooltip";
 
@@ -88,7 +88,7 @@ export const SliderStyle = sva({
       transitionDuration: ".2s",
       transitionProperty: "transform, borderColor, backgroundColor, boxShadow",
       transitionTimingFunction: "cubic-bezier(.2, 0, 0, 1)",
-      "&:hover:not(:focus-visible):not([data-disabled]), &[data-dragging='true']:not([data-disabled])":
+      "&:hover:not(:focus-visible):not([data-disabled]), &[data-dragging]:not([data-disabled])":
         {
           backgroundImage:
             "linear-gradient(0deg, {colors.sd.system.color.interaction.hovered} 0%, {colors.sd.system.color.interaction.hovered} 100%)",
@@ -205,42 +205,15 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
   ) => {
     const [variantProps, elementProps] = SliderStyle.splitVariantProps(props);
     const styles = SliderStyle(variantProps);
-    const [isDragging, setIsDragging] = useState(false);
-    const [isGrabbed, setIsGrabbed] = useState(false);
-    const [isHovered, setIsHovered] = useState(false);
-    const thumbRef = useRef<HTMLSpanElement>(null);
 
+    /**
+     * Calculate marker positions.
+     * Custom markerValues are filtered to exclude min/max boundaries.
+     * Default: 9 markers at 10% increments (10%, 20%, ..., 90%).
+     */
     const displayMarkers = markerValues?.length
       ? markerValues.filter((v) => v > min && v < max)
       : Array.from({ length: 9 }, (_, i) => min + ((max - min) * (i + 1)) / 10);
-
-    const handlePointerDown = () => {
-      setIsGrabbed(true);
-      setIsDragging(true);
-    };
-
-    const handleValueChangeEnd = () => {
-      setIsGrabbed(false);
-      setIsDragging(false);
-      // Re-evaluate hover state after dragging ends
-      requestAnimationFrame(() => {
-        if (thumbRef.current?.matches(":hover")) {
-          setIsHovered(true);
-        }
-      });
-    };
-
-    const handlePointerEnter = () => {
-      if (!isDragging) {
-        setIsHovered(true);
-      }
-    };
-
-    const handlePointerLeave = () => {
-      if (!isDragging) {
-        setIsHovered(false);
-      }
-    };
 
     return (
       <ArkSlider.Root
@@ -249,7 +222,6 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
         min={min}
         max={max}
         step={step}
-        onValueChangeEnd={handleValueChangeEnd}
         {...elementProps}
       >
         {(startLabel || endLabel) && (
@@ -259,7 +231,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
                 {startLabel}
               </ArkSlider.Label>
             )}
-            {endLabel && <div className={styles.labelEnd}>{endLabel}</div>}
+            {endLabel && <span className={styles.labelEnd}>{endLabel}</span>}
           </div>
         )}
         <ArkSlider.Control className={styles.control}>
@@ -296,18 +268,9 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>(
                 placement="top"
                 openDelay={0}
                 closeDelay={0}
-                open={!elementProps.disabled && !isDragging && isHovered}
+                disabled={elementProps.disabled || api.dragging}
               >
-                <ArkSlider.Thumb
-                  ref={thumbRef}
-                  index={0}
-                  className={styles.thumb}
-                  data-dragging={isDragging ? "true" : "false"}
-                  data-grabbed={isGrabbed ? "true" : "false"}
-                  onPointerDown={handlePointerDown}
-                  onPointerEnter={handlePointerEnter}
-                  onPointerLeave={handlePointerLeave}
-                >
+                <ArkSlider.Thumb index={0} className={styles.thumb}>
                   <ArkSlider.HiddenInput />
                 </ArkSlider.Thumb>
               </Tooltip>

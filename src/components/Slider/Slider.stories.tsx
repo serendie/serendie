@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Slider } from "./Slider";
+import { expect, userEvent, within } from "@storybook/test";
 import figma from "@figma/code-connect";
+import { allModes } from "../../../.storybook/modes";
+import { Slider } from "./Slider";
 
 const meta: Meta<typeof Slider> = {
   component: Slider,
@@ -15,6 +17,7 @@ const meta: Meta<typeof Slider> = {
         }),
         disabled: figma.enum("State", {
           Disabled: true,
+          Default: false,
         }),
         value: figma.enum("Progress", {
           "0": [0],
@@ -23,6 +26,12 @@ const meta: Meta<typeof Slider> = {
         }),
       },
       examples: [FigmaExample],
+    },
+    chromatic: {
+      modes: {
+        small: allModes["small"],
+        large: allModes["large"],
+      },
     },
   },
   argTypes: {
@@ -50,6 +59,11 @@ const meta: Meta<typeof Slider> = {
     step: {
       control: { type: "number" },
       description: "Step value for the slider (default: 1)",
+    },
+    markerValues: {
+      control: { type: "object" },
+      description:
+        "Custom marker positions (values between min and max, excluding boundaries)",
     },
   },
 };
@@ -116,5 +130,31 @@ export const WithoutMarkers: Story = {
     min: 0,
     max: 100,
     showMarkers: false,
+  },
+};
+
+export const KeyboardInteraction: Story = {
+  args: {
+    startLabel: "Value",
+    endLabel: "Value",
+    size: "medium",
+    defaultValue: [50],
+    min: 0,
+    max: 100,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const thumb = canvas.getByRole("slider");
+
+    // Focus the slider
+    await userEvent.click(thumb);
+    expect(thumb).toHaveFocus();
+
+    // Test keyboard navigation
+    await userEvent.keyboard("{ArrowRight}");
+    expect(thumb).toHaveAttribute("aria-valuenow", "51");
+
+    await userEvent.keyboard("{ArrowLeft}");
+    expect(thumb).toHaveAttribute("aria-valuenow", "50");
   },
 };
