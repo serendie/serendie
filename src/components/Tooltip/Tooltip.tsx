@@ -42,10 +42,6 @@ export type TooltipProps = {
   openDelay?: number;
   closeDelay?: number;
   disabled?: boolean;
-  /** Controlled open state of the tooltip */
-  open?: boolean;
-  /** Callback when the tooltip open state changes */
-  onOpenChange?: (details: { open: boolean }) => void;
 } & ComponentProps<"div"> &
   TooltipVariantProps;
 
@@ -56,8 +52,6 @@ export const Tooltip: React.FC<TooltipProps> = ({
   openDelay = 700,
   closeDelay = 300,
   disabled = false,
-  open,
-  onOpenChange,
   className,
   ...props
 }) => {
@@ -70,8 +64,6 @@ export const Tooltip: React.FC<TooltipProps> = ({
       closeDelay={closeDelay}
       positioning={{ placement, arrowPadding: 8 }}
       disabled={disabled}
-      open={open}
-      onOpenChange={onOpenChange}
     >
       <ArkTooltip.Trigger asChild>{children}</ArkTooltip.Trigger>
       <ArkTooltip.Positioner>
