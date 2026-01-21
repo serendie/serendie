@@ -4,6 +4,9 @@
     "commitMessage": "release v${version}",
     "tagName": "${npm.name}@${version}"
   },
+  "npm": {
+    "publishArgs": ["--provenance"]
+  },
   "github": {
     "release": true,
     "releaseName": "${npm.name}@${version}",
