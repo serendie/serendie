@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Combobox,
   ComboboxRootProps,
@@ -27,7 +28,7 @@ export const SearchStyle = sva({
     "comboboxItem",
     "iconBox",
     "icon",
-    "closeIcon",
+    "clearTrigger",
   ],
   base: {
     control: {
@@ -92,11 +93,11 @@ export const SearchStyle = sva({
     icon: {
       width: "sd.system.dimension.spacing.large",
     },
-    closeIcon: {
-      opacity: 0,
-      "[data-state=open] &": {
-        opacity: 1,
-      },
+    clearTrigger: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      cursor: "pointer",
     },
   },
   variants: {
@@ -160,11 +161,22 @@ type SearchStyleProps = ComboboxRootProps<string> &
      * @default true
      */
     portalled?: boolean;
+    /**
+     * 候補リストにない値（フリーテキスト）での検索を許可するかどうか
+     * @default true
+     */
+    allowCustomValue?: boolean;
+    /**
+     * 検索実行時のコールバック（Enterキー押下時・候補選択時）
+     */
+    onSearch?: (value: string) => void;
   };
 
 export const Search: React.FC<SearchStyleProps> = ({
   items = [],
   portalled = true,
+  allowCustomValue = true,
+  onSearch,
   ...props
 }) => {
   const [variantProps, comboboxProps] = SearchStyle.splitVariantProps(props);
@@ -172,12 +184,48 @@ export const Search: React.FC<SearchStyleProps> = ({
   const { collection: _, ...elementProps } = comboboxProps;
   const { triggerRef, portalContainerRef } = useAutoPortalContainer(portalled);
 
-  const collection = createListCollection({ items });
+  // 入力値の状態管理
+  const [inputValue, setInputValue] = React.useState(
+    elementProps.defaultInputValue || ""
+  );
+
+  const filteredItems = React.useMemo(() => {
+    if (!inputValue) return items;
+    return items.filter((item) =>
+      item.toLowerCase().includes(inputValue.toLowerCase())
+    );
+  }, [items, inputValue]);
+
+  const collection = createListCollection({ items: filteredItems });
+
+  const handleInputValueChange = (details: { inputValue: string }) => {
+    setInputValue(details.inputValue);
+    elementProps.onInputValueChange?.(details);
+  };
+
+  // 候補選択時も検索を実行
+  const handleValueChange = (details: { value: string[] }) => {
+    if (details.value.length > 0) {
+      onSearch?.(details.value[0]);
+    }
+    elementProps.onValueChange?.(details);
+  };
+
+  // Enterキーでフリーテキスト検索を実行
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" && inputValue) {
+      onSearch?.(inputValue);
+    }
+  };
 
   return (
     <Combobox.Root
       {...elementProps}
       collection={collection}
+      openOnClick
+      allowCustomValue={allowCustomValue}
+      onInputValueChange={handleInputValueChange}
+      onValueChange={handleValueChange}
       lazyMount
       unmountOnExit
       positioning={{
@@ -194,14 +242,11 @@ export const Search: React.FC<SearchStyleProps> = ({
         <div className={styles.iconBox}>
           <SerendieSymbolMagnifyingGlass className={styles.icon} />
         </div>
-        <Combobox.Input className={styles.input} />
-        {/* ARK UIではOpenのトリガーも用意されているがデザインではナシ */}
-        {items.length > 0 && (
-          <Combobox.Trigger>
-            <div className={styles.closeIcon}>
-              <SerendieSymbolClose className={styles.icon} />
-            </div>
-          </Combobox.Trigger>
+        <Combobox.Input className={styles.input} onKeyDown={handleKeyDown} />
+        {inputValue && (
+          <Combobox.ClearTrigger className={styles.clearTrigger}>
+            <SerendieSymbolClose className={styles.icon} />
+          </Combobox.ClearTrigger>
         )}
       </Combobox.Control>
       <Portal disabled={!portalled} container={portalContainerRef}>

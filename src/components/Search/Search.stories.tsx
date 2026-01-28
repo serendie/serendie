@@ -3,7 +3,6 @@ import { Search } from "./Search";
 import figma from "@figma/code-connect";
 import { userEvent, within, waitFor, expect } from "@storybook/test";
 import { FullscreenLayout } from "../../../.storybook/FullscreenLayout";
-import { useState } from "react";
 
 const items = [
   "React",
@@ -116,27 +115,40 @@ export const Filtered: Story = {
   args: {
     disabled: false,
     placeholder: "フレームワークを検索",
+    items,
   },
-  render: (args) => {
-    const [filteredItems, setFilteredItems] = useState(items);
+};
 
-    const handleInputValueChange = (details: { inputValue: string }) => {
-      const value = details.inputValue.toLowerCase();
-      if (value === "") {
-        setFilteredItems(items);
-      } else {
-        setFilteredItems(
-          items.filter((item) => item.toLowerCase().includes(value))
-        );
-      }
-    };
+export const WithFreeTextSearch: Story = {
+  args: {
+    disabled: false,
+    placeholder: "検索キーワードを入力",
+    items,
+    onSearch: (value: string) => console.log("検索実行:", value),
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "候補リストにない値でもEnterキーで検索を実行できます。onSearchコールバックで検索値を取得できます。",
+      },
+    },
+  },
+};
 
-    return (
-      <Search
-        {...args}
-        items={filteredItems}
-        onInputValueChange={handleInputValueChange}
-      />
-    );
+export const WithoutSuggestions: Story = {
+  args: {
+    disabled: false,
+    placeholder: "フリーテキストで検索",
+    items: [],
+    onSearch: (value: string) => console.log("検索実行:", value),
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "候補なしの検索窓として使用できます。Enterキーで検索を実行します。",
+      },
+    },
   },
 };
