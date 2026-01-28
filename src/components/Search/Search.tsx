@@ -184,10 +184,19 @@ export const Search: React.FC<SearchStyleProps> = ({
   const { collection: _, ...elementProps } = comboboxProps;
   const { triggerRef, portalContainerRef } = useAutoPortalContainer(portalled);
 
-  // 入力値の状態管理
-  const [inputValue, setInputValue] = React.useState(
+  // controlled / uncontrolled の判定
+  const isControlled = elementProps.inputValue !== undefined;
+
+  const [uncontrolledValue, setUncontrolledValue] = React.useState(
     elementProps.defaultInputValue || ""
   );
+
+  const inputValue = isControlled
+    ? elementProps.inputValue!
+    : uncontrolledValue;
+
+  // ハイライト中の候補を追跡（再レンダリング不要なのでrefを使用）
+  const highlightedValueRef = React.useRef<string | null>(null);
 
   const filteredItems = React.useMemo(() => {
     if (!inputValue) return items;
@@ -199,7 +208,9 @@ export const Search: React.FC<SearchStyleProps> = ({
   const collection = createListCollection({ items: filteredItems });
 
   const handleInputValueChange = (details: { inputValue: string }) => {
-    setInputValue(details.inputValue);
+    if (!isControlled) {
+      setUncontrolledValue(details.inputValue);
+    }
     elementProps.onInputValueChange?.(details);
   };
 
@@ -211,9 +222,16 @@ export const Search: React.FC<SearchStyleProps> = ({
     elementProps.onValueChange?.(details);
   };
 
-  // Enterキーでフリーテキスト検索を実行
+  // ハイライト変更を追跡
+  const handleHighlightChange = (details: {
+    highlightedValue: string | null;
+  }) => {
+    highlightedValueRef.current = details.highlightedValue;
+  };
+
+  // Enterキーでフリーテキスト検索を実行（ハイライト中はArk UIの選択フローに任せる）
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter" && inputValue) {
+    if (e.key === "Enter" && inputValue && !highlightedValueRef.current) {
       onSearch?.(inputValue);
     }
   };
@@ -226,6 +244,7 @@ export const Search: React.FC<SearchStyleProps> = ({
       allowCustomValue={allowCustomValue}
       onInputValueChange={handleInputValueChange}
       onValueChange={handleValueChange}
+      onHighlightChange={handleHighlightChange}
       lazyMount
       unmountOnExit
       positioning={{
