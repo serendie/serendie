@@ -198,6 +198,11 @@ export const Search: React.FC<SearchStyleProps> = ({
   // ハイライト中の候補を追跡（再レンダリング不要なのでrefを使用）
   const highlightedValueRef = React.useRef<string | null>(null);
 
+  const [hasValue, setHasValue] = React.useState(
+    () => !!(elementProps.inputValue || elementProps.defaultInputValue)
+  );
+  const inputRef = React.useRef<HTMLInputElement>(null);
+
   const filteredItems = React.useMemo(() => {
     if (!inputValue) return items;
     return items.filter((item) =>
@@ -211,6 +216,8 @@ export const Search: React.FC<SearchStyleProps> = ({
     if (!isControlled) {
       setUncontrolledValue(details.inputValue);
     }
+    // ClearTriggerでクリアされた時などにも同期
+    setHasValue(details.inputValue.length > 0);
     elementProps.onInputValueChange?.(details);
   };
 
@@ -234,6 +241,24 @@ export const Search: React.FC<SearchStyleProps> = ({
     if (e.key === "Enter" && inputValue && !highlightedValueRef.current) {
       onSearch?.(inputValue);
     }
+  };
+
+  // onChangeでhasValueを即時更新（onInputValueChangeより先に発火するため）
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setHasValue(e.target.value.length > 0);
+  };
+
+  // クリアボタンの処理
+  const handleClear = () => {
+    if (inputRef.current) {
+      inputRef.current.value = "";
+      inputRef.current.focus();
+    }
+    setHasValue(false);
+    if (!isControlled) {
+      setUncontrolledValue("");
+    }
+    elementProps.onInputValueChange?.({ inputValue: "" });
   };
 
   return (
@@ -261,11 +286,20 @@ export const Search: React.FC<SearchStyleProps> = ({
         <div className={styles.iconBox}>
           <SerendieSymbolMagnifyingGlass className={styles.icon} />
         </div>
-        <Combobox.Input className={styles.input} onKeyDown={handleKeyDown} />
-        {inputValue && (
-          <Combobox.ClearTrigger className={styles.clearTrigger}>
+        <Combobox.Input
+          ref={inputRef}
+          className={styles.input}
+          onKeyDown={handleKeyDown}
+          onChange={handleInputChange}
+        />
+        {hasValue && (
+          <button
+            type="button"
+            className={styles.clearTrigger}
+            onClick={handleClear}
+          >
             <SerendieSymbolClose className={styles.icon} />
-          </Combobox.ClearTrigger>
+          </button>
         )}
       </Combobox.Control>
       <Portal disabled={!portalled} container={portalContainerRef}>
