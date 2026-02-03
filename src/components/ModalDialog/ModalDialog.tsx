@@ -38,7 +38,7 @@ const ModalDialogStyle = sva({
       paddingRight: "sd.system.dimension.spacing.extraLarge",
       paddingBottom: "sd.system.dimension.spacing.large",
       paddingLeft: "sd.system.dimension.spacing.extraLarge",
-      backgroundColor: "sd.system.color.component.surface",
+      backgroundColor: "sd.system.color.component.surfaceContainerBright",
       boxShadow: "sd.system.elevation.shadow.level5",
       borderRadius: "sd.system.dimension.radius.medium",
       zIndex: "sd.system.elevation.zIndex.modal",
