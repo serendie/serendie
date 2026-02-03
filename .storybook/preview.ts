@@ -52,6 +52,7 @@ const preview: Preview = {
   decorators: [
     withThemeByDataAttribute<ReactRenderer>({
       themes: {
+        konjo: "", // デフォルト（テーマなし）
         ...themeNames.reduce((acc, name) => {
           acc[name] = name;
           return acc;

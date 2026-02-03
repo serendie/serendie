@@ -10,4 +10,15 @@
     font-feature-settings: "palt";
     letter-spacing: 0.03em;
   }
+
+  :root,
+  [data-panda-theme] {
+    background-color: var(--colors-sd-system-color-component-surface);
+    color: var(--colors-sd-system-color-component-on-surface);
+  }
+
+  /* Storybook Docs 内のストーリー表示領域 */
+  .docs-story {
+    background-color: var(--colors-sd-system-color-component-surface);
+  }
 }

@@ -40,10 +40,10 @@ export const checkboxCheckedIconCss = {
 export const checkboxUncheckedIconCss = {
   width: 24,
   height: 24,
-  color: "sd.system.color.component.outline",
+  color: "sd.system.color.component.outlineDim",
   _disabled: {
     color:
-      "color-mix(in srgb, {colors.sd.system.color.component.outline}, {colors.sd.system.color.interaction.hoveredOnPrimary});",
+      "color-mix(in srgb, {colors.sd.system.color.component.outlineDim}, {colors.sd.system.color.interaction.hoveredOnPrimary});",
   },
 };
 

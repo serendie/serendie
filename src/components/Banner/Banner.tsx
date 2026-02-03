@@ -34,7 +34,7 @@ const BannerStyle = sva({
     type: {
       information: {
         container: {
-          bg: "sd.system.color.component.surface",
+          bg: "sd.system.color.component.surfaceContainer",
           color: "sd.system.color.component.onSurface",
           borderWidth: "sd.system.dimension.border.medium",
           borderStyle: "solid",
