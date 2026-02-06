@@ -71,8 +71,9 @@ const stepsStyles = sva({
       color: "inherit",
     },
     checkIcon: {
-      width: "16px",
-      height: "16px",
+      width: "24px",
+      height: "24px",
+      padding: "4px",
     },
     number: {
       fontWeight: "500",
@@ -242,10 +243,11 @@ const stepsStyles = sva({
           paddingBottom: "sd.system.dimension.spacing.twoExtraLarge",
         },
         trigger: {
+          alignItems: "flex-start",
           gap: "sd.system.dimension.spacing.extraSmall",
         },
         textContent: {
-          paddingTop: "sd.system.dimension.spacing.small",
+          paddingTop: "10px",
         },
         separator: {
           left: "calc(20px - 0.5px)",
