@@ -58,7 +58,7 @@ const stepsStyles = sva({
       borderRadius: "sd.system.dimension.radius.full",
       flexShrink: 0,
       position: "relative",
-      zIndex: 2,
+      zIndex: 3,
       backgroundColor: "sd.system.color.component.surface",
     },
     indicatorInner: {
@@ -246,12 +246,12 @@ const stepsStyles = sva({
           gap: "sd.system.dimension.spacing.extraSmall",
         },
         textContent: {
-          paddingTop: "2px",
+          paddingTop: "4px",
         },
         separator: {
           left: "calc(12px - 0.5px)",
-          top: "24px",
-          bottom: "-32px",
+          top: "12px",
+          bottom: "-20px",
         },
         title: {
           textStyle: "sd.system.typography.label.large_compact",
