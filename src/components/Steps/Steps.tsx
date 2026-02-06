@@ -1,6 +1,6 @@
 import React from "react";
-import { Steps as ArkSteps } from "@ark-ui/react/steps";
-import { sva, cx } from "../../../styled-system/css";
+import { Steps as ArkSteps, type StepsRootProps } from "@ark-ui/react/steps";
+import { sva, cx, type RecipeVariantProps } from "../../../styled-system/css";
 import { SerendieSymbolCheck } from "@serendie/symbols";
 
 const stepsStyles = sva({
@@ -68,10 +68,11 @@ const stepsStyles = sva({
       width: "100%",
       height: "100%",
       borderRadius: "sd.system.dimension.radius.full",
+      color: "inherit",
     },
     checkIcon: {
-      width: "100%",
-      height: "100%",
+      width: "16px",
+      height: "16px",
     },
     number: {
       fontWeight: "500",
@@ -79,16 +80,22 @@ const stepsStyles = sva({
     textContent: {
       display: "flex",
       flexDirection: "column",
-      gap: "sd.system.dimension.spacing.twoExtraSmall",
+      gap: "sd.system.dimension.spacing.extraSmall",
       zIndex: 1,
     },
     title: {
       textStyle: "sd.system.typography.label.large_compact",
       color: "sd.system.color.component.onSurface",
+      "&[data-incomplete]": {
+        color: "sd.reference.color.scale.gray.400",
+      },
     },
     description: {
       textStyle: "sd.system.typography.label.small_compact",
       color: "sd.system.color.component.onSurfaceVariant",
+      "&[data-incomplete]": {
+        color: "sd.reference.color.scale.gray.400",
+      },
     },
   },
   variants: {
@@ -139,7 +146,7 @@ const stepsStyles = sva({
           alignItems: "flex-start",
         },
         title: {
-          textStyle: "sd.system.typography.label.extraLarge_compact",
+          textStyle: "sd.system.typography.label.large_compact",
           textAlign: "left",
         },
         description: {
@@ -175,8 +182,33 @@ const stepsStyles = sva({
       },
     },
     type: {
-      default: {},
-      subtle: {},
+      default: {
+        indicator: {
+          backgroundColor: "sd.reference.color.scale.gray.100",
+          color: "sd.reference.color.scale.gray.400",
+          "&[data-complete]": {
+            backgroundColor: "sd.system.color.impression.secondary",
+            color: "sd.system.color.impression.onSecondary",
+          },
+          "&[data-current]": {
+            backgroundColor: "sd.system.color.impression.primary",
+            color: "sd.system.color.impression.onPrimary",
+          },
+        },
+      },
+      subtle: {
+        indicator: {
+          backgroundColor: "sd.reference.color.scale.gray.400",
+          "&[data-complete]": {
+            backgroundColor: "sd.system.color.impression.primary",
+          },
+          "&[data-current]": {
+            backgroundColor: "sd.system.color.component.surface",
+            border: "2px solid",
+            borderColor: "sd.system.color.impression.primary",
+          },
+        },
+      },
     },
   },
   compoundVariants: [
@@ -221,7 +253,7 @@ const stepsStyles = sva({
           bottom: "-32px",
         },
         title: {
-          textStyle: "sd.system.typography.label.extraLarge_compact",
+          textStyle: "sd.system.typography.label.large_compact",
         },
       },
     },
@@ -252,7 +284,7 @@ const stepsStyles = sva({
           bottom: "calc(-1 * var(--steps-indicator-offset) + 4px)",
         },
         title: {
-          textStyle: "sd.system.typography.label.extraLarge_compact",
+          textStyle: "sd.system.typography.label.large_compact",
         },
       },
     },
@@ -271,10 +303,13 @@ export interface StepsItemProps {
   index: number;
 }
 
-export interface StepsProps extends React.ComponentProps<"div"> {
+type StepsStyleProps = RecipeVariantProps<typeof stepsStyles>;
+
+export interface StepsProps
+  extends Omit<StepsRootProps, "orientation">,
+    Omit<NonNullable<StepsStyleProps>, "orientation" | "size"> {
   items: StepsItemProps[];
   direction?: "horizontal" | "vertical";
-  type?: "default" | "subtle";
 }
 
 const getStepFromItems = (items: StepsItemProps[]): number => {
@@ -290,88 +325,22 @@ const getStepFromItems = (items: StepsItemProps[]): number => {
   return 0;
 };
 
-const getIndicatorStyles = (
-  status: "checked" | "active" | "disabled" | undefined,
-  type: "default" | "subtle",
-  size: "large" | "small"
-): React.CSSProperties => {
-  if (status === "checked") {
-    if (type === "subtle") {
-      return {
-        backgroundColor: "var(--colors-sd-system-color-impression-primary)",
-      };
-    } else {
-      return {
-        backgroundColor: "var(--colors-sd-system-color-impression-secondary)",
-      };
-    }
-  } else if (status === "active") {
-    if (type === "subtle" || size === "small") {
-      return {
-        border: "2px solid var(--colors-sd-system-color-impression-primary)",
-        backgroundColor: "var(--colors-sd-system-color-component-surface)",
-      };
-    } else {
-      return {
-        backgroundColor: "var(--colors-sd-system-color-impression-primary)",
-      };
-    }
-  } else {
-    if (type === "subtle") {
-      return {
-        backgroundColor: "var(--colors-sd-reference-color-scale-gray-400)",
-      };
-    } else {
-      return {
-        backgroundColor: "var(--colors-sd-reference-color-scale-gray-100)",
-      };
-    }
-  }
-};
-
-const getIndicatorInnerStyles = (
-  status: "checked" | "active" | "disabled" | undefined,
-  type: "default" | "subtle",
-  size: "large" | "small"
-): React.CSSProperties => {
-  if (status === "checked") {
-    if (type === "subtle") {
-      return { color: "var(--colors-sd-system-color-impression-primary)" };
-    } else {
-      return { color: "var(--colors-sd-system-color-impression-on-secondary)" };
-    }
-  } else if (status === "active") {
-    if (type === "subtle" || size === "small") {
-      return { color: "var(--colors-sd-system-color-impression-primary)" };
-    } else {
-      return { color: "var(--colors-sd-system-color-impression-on-primary)" };
-    }
-  } else {
-    return { color: "var(--colors-sd-reference-color-scale-gray-400)" };
-  }
-};
-
-const getTextStyles = (
-  status: "checked" | "active" | "disabled" | undefined
-): { title: React.CSSProperties; description: React.CSSProperties } => {
-  if (status === "disabled") {
-    return {
-      title: { color: "var(--colors-sd-reference-color-scale-gray-400)" },
-      description: { color: "var(--colors-sd-reference-color-scale-gray-400)" },
-    };
-  }
-  return { title: {}, description: {} };
-};
-
 export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
   (
-    { items, direction = "horizontal", type = "default", className, ...props },
+    {
+      items,
+      direction = "horizontal",
+      type = "default",
+      step,
+      className,
+      ...props
+    },
     ref
   ) => {
     const computedSize = type === "subtle" ? "small" : "large";
     const orientation = direction;
     const styles = stepsStyles({ orientation, size: computedSize, type });
-    const currentStep = getStepFromItems(items);
+    const currentStep = step !== undefined ? step : getStepFromItems(items);
 
     return (
       <ArkSteps.Root
@@ -385,51 +354,54 @@ export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
         <ArkSteps.List className={styles.list}>
           {items.map((item, idx) => {
             const isLast = idx === items.length - 1;
-            const indicatorStyles = getIndicatorStyles(
-              item.status,
-              type,
-              computedSize
-            );
-            const indicatorInnerStyles = getIndicatorInnerStyles(
-              item.status,
-              type,
-              computedSize
-            );
-            const textStyles = getTextStyles(item.status);
 
             return (
               <ArkSteps.Item key={idx} index={idx} className={styles.item}>
-                <ArkSteps.Trigger className={styles.trigger}>
-                  <ArkSteps.Indicator
-                    className={styles.indicator}
-                    style={indicatorStyles}
-                  >
-                    <div
-                      className={styles.indicatorInner}
-                      style={indicatorInnerStyles}
-                    >
-                      {type === "subtle" ? null : item.status === "checked" ? (
-                        <SerendieSymbolCheck className={styles.checkIcon} />
-                      ) : (
-                        <span className={styles.number}>{item.index}</span>
+                <ArkSteps.ItemContext>
+                  {(itemState) => (
+                    <>
+                      <ArkSteps.Trigger className={styles.trigger}>
+                        <ArkSteps.Indicator className={styles.indicator}>
+                          <div className={styles.indicatorInner}>
+                            {type !== "subtle" && itemState.completed && (
+                              <SerendieSymbolCheck
+                                className={styles.checkIcon}
+                              />
+                            )}
+                            {type !== "subtle" && !itemState.completed && (
+                              <span className={styles.number}>
+                                {item.index}
+                              </span>
+                            )}
+                          </div>
+                        </ArkSteps.Indicator>
+                        <div className={styles.textContent}>
+                          <div
+                            className={styles.title}
+                            {...(itemState.incomplete
+                              ? { "data-incomplete": "" }
+                              : {})}
+                          >
+                            {item.title}
+                          </div>
+                          {item.description && (
+                            <div
+                              className={styles.description}
+                              {...(itemState.incomplete
+                                ? { "data-incomplete": "" }
+                                : {})}
+                            >
+                              {item.description}
+                            </div>
+                          )}
+                        </div>
+                      </ArkSteps.Trigger>
+                      {!isLast && (
+                        <ArkSteps.Separator className={styles.separator} />
                       )}
-                    </div>
-                  </ArkSteps.Indicator>
-                  <div className={styles.textContent}>
-                    <div className={styles.title} style={textStyles.title}>
-                      {item.title}
-                    </div>
-                    {item.description && (
-                      <div
-                        className={styles.description}
-                        style={textStyles.description}
-                      >
-                        {item.description}
-                      </div>
-                    )}
-                  </div>
-                </ArkSteps.Trigger>
-                {!isLast && <ArkSteps.Separator className={styles.separator} />}
+                    </>
+                  )}
+                </ArkSteps.ItemContext>
               </ArkSteps.Item>
             );
           })}
