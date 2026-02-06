@@ -190,6 +190,9 @@ const stepsStyles = sva({
           "&[data-complete]": {
             backgroundColor: "sd.system.color.impression.secondary",
             color: "sd.system.color.impression.onSecondary",
+            width: "24px",
+            height: "24px",
+            padding: "4px",
           },
           "&[data-current]": {
             backgroundColor: "sd.system.color.impression.primary",
@@ -247,7 +250,7 @@ const stepsStyles = sva({
           gap: "sd.system.dimension.spacing.extraSmall",
         },
         textContent: {
-          paddingTop: "10px",
+          paddingTop: "14px",
         },
         separator: {
           left: "calc(20px - 0.5px)",
