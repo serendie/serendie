@@ -71,9 +71,8 @@ const stepsStyles = sva({
       color: "inherit",
     },
     checkIcon: {
-      width: "24px",
-      height: "24px",
-      padding: "4px",
+      width: "16px",
+      height: "16px",
     },
     number: {
       fontWeight: "500",
@@ -159,11 +158,11 @@ const stepsStyles = sva({
     size: {
       large: {
         indicator: {
-          width: "sd.system.dimension.spacing.threeExtraLarge",
-          height: "sd.system.dimension.spacing.threeExtraLarge",
+          width: "24px",
+          height: "24px",
         },
         number: {
-          textStyle: "sd.system.typography.label.large_compact",
+          textStyle: "sd.system.typography.label.medium_compact",
         },
       },
       small: {
@@ -190,9 +189,6 @@ const stepsStyles = sva({
           "&[data-complete]": {
             backgroundColor: "sd.system.color.impression.secondary",
             color: "sd.system.color.impression.onSecondary",
-            width: "24px",
-            height: "24px",
-            padding: "4px",
           },
           "&[data-current]": {
             backgroundColor: "sd.system.color.impression.primary",
@@ -221,9 +217,9 @@ const stepsStyles = sva({
       size: "large",
       css: {
         separator: {
-          top: "sd.system.dimension.spacing.large",
-          left: "calc(50% + 20px)",
-          right: "calc(-50% + 20px)",
+          top: "12px",
+          left: "calc(50% + 12px)",
+          right: "calc(-50% + 12px)",
         },
       },
     },
@@ -250,11 +246,11 @@ const stepsStyles = sva({
           gap: "sd.system.dimension.spacing.extraSmall",
         },
         textContent: {
-          paddingTop: "14px",
+          paddingTop: "2px",
         },
         separator: {
-          left: "calc(20px - 0.5px)",
-          top: "sd.system.dimension.spacing.threeExtraLarge",
+          left: "calc(12px - 0.5px)",
+          top: "24px",
           bottom: "-32px",
         },
         title: {
