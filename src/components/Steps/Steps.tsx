@@ -277,7 +277,7 @@ const stepsStyles = sva({
           marginTop: "var(--steps-indicator-offset)",
         },
         textContent: {
-          marginTop: "sd.system.dimension.spacing.extraSmall",
+          marginTop: "22px",
         },
         separator: {
           left: "calc(var(--steps-indicator-size) / 2 - 0.5px)",
