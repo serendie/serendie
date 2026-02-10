@@ -78,7 +78,7 @@ const progressIndicatorStyles = cva({
 const trackStyles = cva({
   base: {
     position: "absolute",
-    backgroundColor: "sd.reference.color.scale.gray.100",
+    backgroundColor: "sd.system.color.component.surfaceContainerDim",
     overflow: "hidden",
   },
   variants: {
@@ -197,7 +197,7 @@ export const ProgressIndicator = ({
             cy={radius + strokeWidth}
             r={radius}
             className={trackStyles({ type, size })}
-            stroke="var(--colors-sd-reference-color-scale-gray-100)"
+            stroke="var(--colors-sd-system-color-component-surface-container-dim)"
             strokeWidth={strokeWidth}
           />
 

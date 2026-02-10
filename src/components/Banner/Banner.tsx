@@ -36,9 +36,6 @@ const BannerStyle = sva({
         container: {
           bg: "sd.system.color.component.surfaceContainer",
           color: "sd.system.color.component.onSurface",
-          borderWidth: "sd.system.dimension.border.medium",
-          borderStyle: "solid",
-          borderColor: "sd.system.color.component.outline",
         },
       },
       error: {

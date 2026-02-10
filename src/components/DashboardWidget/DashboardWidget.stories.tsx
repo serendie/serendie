@@ -78,7 +78,7 @@ const DashboardPlaceholder: React.FC = () => (
       width: "100%",
       height: "100%",
       minHeight: "160px",
-      bgColor: "sd.reference.color.scale.gray.200",
+      bgColor: "sd.system.color.component.surfaceContainerDim",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
