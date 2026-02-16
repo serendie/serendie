@@ -60,7 +60,15 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
       props.onReset?.(e);
       if (inputRef.current) {
         inputRef.current.value = "";
+        inputRef.current.focus();
       }
+    };
+
+    const handleClearPointerDown = (
+      event: React.PointerEvent<HTMLButtonElement>
+    ) => {
+      if (event.button !== 0) return;
+      event.preventDefault();
     };
 
     const onValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -120,7 +128,9 @@ export const TextField = forwardRef<HTMLInputElement, Props>(
                   </span>
                 ) : _value ? (
                   <button
+                    type="button"
                     className={css({ cursor: "pointer" })}
+                    onPointerDown={handleClearPointerDown}
                     onClick={resetValue}
                     aria-label={t("textField.clearValue")}
                   >

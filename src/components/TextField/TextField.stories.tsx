@@ -7,6 +7,7 @@ import {
   SerendieSymbolMagnifyingGlass,
 } from "@serendie/symbols";
 import { Box } from "../../../styled-system/jsx";
+import { expect, fn, userEvent, waitFor, within } from "@storybook/test";
 
 const meta: Meta<typeof TextField> = {
   component: TextField,
@@ -51,7 +52,33 @@ function FigmaExample(props: React.ComponentProps<typeof TextField>) {
 export default meta;
 type Story = StoryObj<typeof TextField>;
 
-export const Basic: Story = {};
+const onBlurSpy = fn();
+
+export const Basic: Story = {
+  args: {
+    onBlur: onBlurSpy,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByRole("textbox");
+    onBlurSpy.mockClear();
+
+    await userEvent.click(input);
+    await userEvent.type(input, "abc");
+
+    const clearButton = canvas.getByRole("button", { name: /クリア|clear/i });
+    await userEvent.click(clearButton);
+    await waitFor(() => {
+      expect(input).toHaveFocus();
+    });
+    expect(onBlurSpy).not.toHaveBeenCalled();
+
+    await userEvent.click(canvasElement.ownerDocument.body);
+    await waitFor(() => {
+      expect(onBlurSpy).toHaveBeenCalledTimes(1);
+    });
+  },
+};
 
 export const Disabled: Story = {
   args: {
