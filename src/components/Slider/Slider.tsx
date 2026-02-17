@@ -82,7 +82,7 @@ export const SliderStyle = sva({
       cursor: "pointer",
       outline: "none",
       zIndex: 2,
-      "&:hover:not(:focus-visible):not([data-disabled]), &[data-dragging='true']:not([data-disabled])":
+      "&:hover:not(:focus-visible):not([data-disabled]), &[data-dragging]:not([data-disabled])":
         {
           backgroundImage:
             "linear-gradient(0deg, {colors.sd.system.color.interaction.hovered} 0%, {colors.sd.system.color.interaction.hovered} 100%)",
