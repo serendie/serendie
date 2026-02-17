@@ -79,8 +79,60 @@ export default function ClientComponent() {
 
 ### テーマ切り替え
 
-Serendie Design Systemには5つのカラーテーマがあり、デザイントークンもそれに対応します。htmlタグなどに、`data-panda-theme`属性 (`konjo`, `asagi`, `sumire`, `tsutsuji`, `kurikawa`)を付与することでカラーテーマを切り替えることができます。
-各テーマについては[こちら](https://serendie.design/foundations/theming/)を参照してください。
+Serendie Design Systemには5つのカラーテーマ (`konjo`, `asagi`, `sumire`, `tsutsuji`, `kurikawa`) とダークモードがあります。各テーマについては[こちら](https://serendie.design/foundations/theming/)を参照してください。
+
+`SerendieProvider`の`colorTheme`と`colorMode`を使って、テーマとカラーモードを設定できます。
+
+```tsx
+import { SerendieProvider } from "@serendie/ui";
+
+function App() {
+  return (
+    <SerendieProvider lang="ja" colorTheme="konjo" colorMode="system">
+      {/* アプリケーション全体 */}
+    </SerendieProvider>
+  );
+}
+```
+
+- `colorTheme`: カラーテーマ（`konjo` | `asagi` | `sumire` | `tsutsuji` | `kurikawa`、デフォルト: `konjo`）
+- `colorMode`: カラーモード（`system` | `light` | `dark`、デフォルト: `light`）
+
+`colorMode="system"`を指定すると、OSの設定に応じてライト/ダークモードが自動的に切り替わります。
+
+#### FOUC（フラッシュ）の防止
+
+SSR環境（Next.jsなど）では、ページ読み込み時にテーマが一瞬ちらつく（FOUC）ことがあります。`ColorSchemeScript`を`<head>`内に配置することで、HTMLの描画前にテーマを適用しFOUCを防止できます。
+
+```tsx
+// Next.js App Router: app/layout.tsx
+import { SerendieProvider, ColorSchemeScript } from "@serendie/ui";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <SerendieProvider lang="ja" colorTheme="konjo" colorMode="system">
+      <html suppressHydrationWarning>
+        <head>
+          <ColorSchemeScript />
+        </head>
+        <body>{children}</body>
+      </html>
+    </SerendieProvider>
+  );
+}
+```
+
+`SerendieProvider`を`<html>`の外側に配置することで、`ColorSchemeScript`はContextからテーマ設定を自動取得します。テーマの設定を1箇所にまとめられるため、値の不整合を防ぐことができます。
+
+`SerendieProvider`を使わない場合や、`ColorSchemeScript`をProvider外で使う場合は、propsで直接指定することもできます。
+
+```tsx
+<ColorSchemeScript colorTheme="konjo" colorMode="system" />
+```
+
+#### `data-panda-theme`属性による直接制御
+
+`SerendieProvider`を使用せずに、`data-panda-theme`属性を直接設定してテーマを切り替えることもできます。
 
 ```html
 <html data-panda-theme="asagi"></html>
@@ -123,7 +175,7 @@ function App() {
 
 ```tsx
 // app/layout.tsx
-import { SerendieProvider } from "@serendie/ui";
+import { SerendieProvider, ColorSchemeScript } from "@serendie/ui";
 
 export default function RootLayout({
   children,
@@ -133,11 +185,14 @@ export default function RootLayout({
   params: { lang: "ja" | "en" };
 }) {
   return (
-    <html lang={params.lang}>
-      <body>
-        <SerendieProvider lang={params.lang}>{children}</SerendieProvider>
-      </body>
-    </html>
+    <SerendieProvider lang={params.lang} colorTheme="konjo" colorMode="system">
+      <html lang={params.lang} suppressHydrationWarning>
+        <head>
+          <ColorSchemeScript />
+        </head>
+        <body>{children}</body>
+      </html>
+    </SerendieProvider>
   );
 }
 ```

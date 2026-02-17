@@ -1,5 +1,30 @@
 export { SerendiePreset } from "./preset";
 
+// Theme exports
+export {
+  ThemeContext,
+  useThemeContext,
+  useSystemColorScheme,
+  resolveTheme,
+  getColorSchemeScript,
+  ColorSchemeScript,
+  type ColorMode,
+  type ColorTheme,
+  type ThemeContextValue,
+  type ColorSchemeScriptOptions,
+} from "./theme/index";
+
+// Provider exports
+export {
+  SerendieProvider,
+  LanguageProvider,
+  useTranslations,
+  getTranslations,
+  formatDateByLang,
+  type Language,
+  type SerendieProviderProps,
+} from "./i18n/index";
+
 export * from "./components/Accordion/index.ts";
 export * from "./components/Avatar/index.ts";
 export * from "./components/Badge/index.ts";

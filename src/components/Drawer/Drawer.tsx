@@ -19,7 +19,7 @@ const DrawerStyle = sva({
       maxWidth: "375px",
       height: "100vh",
       gap: "sd.system.dimension.spacing.twoExtraLarge",
-      backgroundColor: "sd.system.color.component.surface",
+      backgroundColor: "sd.system.color.component.surfaceContainerBright",
       boxShadow: "sd.system.elevation.shadow.level5",
       zIndex: "sd.system.elevation.zIndex.modal",
     },
