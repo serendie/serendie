@@ -54,7 +54,6 @@ export const IconButtonStyle = cva({
       },
       outlined: {
         outlineColor: "sd.system.color.component.outline",
-        bgColor: "sd.system.color.component.surface",
         _enabled: {
           _hover: {
             bgColor: "sd.system.color.interaction.hoveredVariant",

@@ -12,9 +12,9 @@ export const DropdownMenuStyle = sva({
   slots: ["content", "itemGroup", "item", "itemIcon", "button", "buttonIcon"],
   base: {
     content: {
-      bgColor: "sd.system.color.component.surface",
+      bgColor: "sd.system.color.component.surfaceContainerBright",
       borderRadius: "sd.system.dimension.radius.medium",
-      bg: "sd.system.color.component.surface",
+      bg: "sd.system.color.component.surfaceContainerBright",
       boxShadow: "sd.system.elevation.shadow.level1",
       outline: "none",
       zIndex: "sd.system.elevation.zIndex.dropdown",

@@ -8,10 +8,10 @@ export const DividerStyle = cva({
   variants: {
     color: {
       light: {
-        borderColor: "sd.reference.color.scale.gray.200",
+        borderColor: "sd.system.color.component.outlineBright",
       },
       normal: {
-        borderColor: "sd.reference.color.scale.gray.300",
+        borderColor: "sd.system.color.component.outline",
       },
       dark: {
         borderColor: "sd.system.color.component.outlineDim",
