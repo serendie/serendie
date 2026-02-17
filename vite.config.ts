@@ -10,7 +10,6 @@ export default defineConfig({
     svgr(),
     dts({
       exclude: ["**/*.stories.tsx"],
-      skipDiagnostics: true,
     }),
   ],
   build: {
