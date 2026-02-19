@@ -12,18 +12,19 @@ export interface HeaderRowProps<TData> {
     getToggleAllRowsSelectedHandler: () => (event: unknown) => void;
   };
   children?: React.ReactNode;
-  ref?: React.Ref<HTMLTableRowElement>;
   className?: string;
 }
 
-export function HeaderRow<TData>({
-  headerGroup,
-  enableRowSelection,
-  table,
-  children,
-  ref,
-  className,
-}: HeaderRowProps<TData>) {
+const HeaderRowComponent = <TData,>(
+  {
+    headerGroup,
+    enableRowSelection,
+    table,
+    children,
+    className,
+  }: HeaderRowProps<TData>,
+  ref: React.ForwardedRef<HTMLTableRowElement>
+) => {
   if (children) {
     return (
       <DataTable.Tr ref={ref} className={className}>
@@ -68,4 +69,11 @@ export function HeaderRow<TData>({
       })}
     </DataTable.Tr>
   );
-}
+};
+
+const ForwardedHeaderRow = React.forwardRef(HeaderRowComponent);
+ForwardedHeaderRow.displayName = "HeaderRow";
+
+export const HeaderRow = ForwardedHeaderRow as <TData>(
+  props: HeaderRowProps<TData> & React.RefAttributes<HTMLTableRowElement>
+) => JSX.Element | null;

@@ -56,21 +56,18 @@ const rowStyle = cva({
   },
 });
 
-export function Row<TData>({
-  row,
-  enableRowSelection,
-  children,
-  selected,
-  ref,
-  className,
-}: {
+export interface RowProps<TData> {
   row?: TanstackRow<TData>;
   enableRowSelection?: boolean;
   children?: React.ReactNode;
   selected?: boolean;
-  ref?: React.Ref<HTMLTableRowElement>;
   className?: string;
-}) {
+}
+
+const RowComponent = <TData,>(
+  { row, enableRowSelection, children, selected, className }: RowProps<TData>,
+  ref: React.ForwardedRef<HTMLTableRowElement>
+) => {
   if (children) {
     return (
       <DataTable.Tr
@@ -114,7 +111,14 @@ export function Row<TData>({
       })}
     </DataTable.Tr>
   );
-}
+};
+
+const ForwardedRow = React.forwardRef(RowComponent);
+ForwardedRow.displayName = "Row";
+
+export const Row = ForwardedRow as <TData>(
+  props: RowProps<TData> & React.RefAttributes<HTMLTableRowElement>
+) => JSX.Element | null;
 
 function getCellType<TData>(cell: Cell<TData, unknown>): CellType | string {
   if (
