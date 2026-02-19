@@ -1,7 +1,7 @@
 import React from "react";
 import { Row as TanstackRow, flexRender, Cell } from "@tanstack/react-table";
 import { DataTable } from "..";
-import { cva } from "../../../../styled-system/css";
+import { cva, cx } from "../../../../styled-system/css";
 import { CellType } from "./BodyCell";
 
 const rowStyle = cva({
@@ -59,18 +59,43 @@ const rowStyle = cva({
 export function Row<TData>({
   row,
   enableRowSelection,
+  children,
+  selected,
   ref,
+  className,
 }: {
-  row: TanstackRow<TData>;
+  row?: TanstackRow<TData>;
   enableRowSelection?: boolean;
+  children?: React.ReactNode;
+  selected?: boolean;
   ref?: React.Ref<HTMLTableRowElement>;
+  className?: string;
 }) {
+  if (children) {
+    return (
+      <DataTable.Tr
+        ref={ref}
+        className={cx(
+          rowStyle({ state: selected ? "selected" : undefined }),
+          className
+        )}
+      >
+        {children}
+      </DataTable.Tr>
+    );
+  }
+
+  if (!row) return null;
+
   return (
     <DataTable.Tr
       ref={ref}
-      className={rowStyle({
-        state: row.getIsSelected() ? "selected" : undefined,
-      })}
+      className={cx(
+        rowStyle({
+          state: row.getIsSelected() ? "selected" : undefined,
+        }),
+        className
+      )}
     >
       {enableRowSelection && (
         <DataTable.BodyCheckbox

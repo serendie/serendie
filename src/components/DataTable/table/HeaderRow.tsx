@@ -4,24 +4,38 @@ import { DataTable } from "..";
 import { css } from "../../../../styled-system/css";
 
 export interface HeaderRowProps<TData> {
-  headerGroup: HeaderGroup<TData>;
+  headerGroup?: HeaderGroup<TData>;
   enableRowSelection?: boolean;
-  table: {
+  table?: {
     getIsAllRowsSelected: () => boolean;
     getIsSomeRowsSelected: () => boolean;
     getToggleAllRowsSelectedHandler: () => (event: unknown) => void;
   };
+  children?: React.ReactNode;
   ref?: React.Ref<HTMLTableRowElement>;
+  className?: string;
 }
 
 export function HeaderRow<TData>({
   headerGroup,
   enableRowSelection,
   table,
+  children,
   ref,
+  className,
 }: HeaderRowProps<TData>) {
+  if (children) {
+    return (
+      <DataTable.Tr ref={ref} className={className}>
+        {children}
+      </DataTable.Tr>
+    );
+  }
+
+  if (!headerGroup || !table) return null;
+
   return (
-    <DataTable.Tr ref={ref} key={headerGroup.id}>
+    <DataTable.Tr ref={ref} className={className} key={headerGroup.id}>
       {enableRowSelection && (
         <DataTable.HeaderCheckbox
           checked={
