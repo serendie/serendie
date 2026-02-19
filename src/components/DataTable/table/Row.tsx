@@ -1,3 +1,4 @@
+import React from "react";
 import { Row as TanstackRow, flexRender, Cell } from "@tanstack/react-table";
 import { DataTable } from "..";
 import { cva } from "../../../../styled-system/css";
@@ -58,12 +59,15 @@ const rowStyle = cva({
 export function Row<TData>({
   row,
   enableRowSelection,
+  ref,
 }: {
   row: TanstackRow<TData>;
   enableRowSelection?: boolean;
+  ref?: React.Ref<HTMLTableRowElement>;
 }) {
   return (
     <DataTable.Tr
+      ref={ref}
       className={rowStyle({
         state: row.getIsSelected() ? "selected" : undefined,
       })}

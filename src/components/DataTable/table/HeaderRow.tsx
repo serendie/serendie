@@ -1,3 +1,4 @@
+import React from "react";
 import { HeaderGroup, Header, flexRender } from "@tanstack/react-table";
 import { DataTable } from "..";
 import { css } from "../../../../styled-system/css";
@@ -10,15 +11,17 @@ export interface HeaderRowProps<TData> {
     getIsSomeRowsSelected: () => boolean;
     getToggleAllRowsSelectedHandler: () => (event: unknown) => void;
   };
+  ref?: React.Ref<HTMLTableRowElement>;
 }
 
 export function HeaderRow<TData>({
   headerGroup,
   enableRowSelection,
   table,
+  ref,
 }: HeaderRowProps<TData>) {
   return (
-    <DataTable.Tr key={headerGroup.id}>
+    <DataTable.Tr ref={ref} key={headerGroup.id}>
       {enableRowSelection && (
         <DataTable.HeaderCheckbox
           checked={
