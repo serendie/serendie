@@ -1,5 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { figma } from "@figma/code-connect";
+import {
+  useReactTable,
+  getCoreRowModel,
+  createColumnHelper as tanstackCreateColumnHelper,
+  flexRender,
+} from "@tanstack/react-table";
+import { css } from "../../../styled-system/css";
 import { DataTable } from ".";
 
 export const FigmaExample = () => {
@@ -358,4 +365,75 @@ export const DifferentDataType: Story = {
       enableSorting={true}
     />
   ),
+};
+
+// カラムリサイズの例（children パターンで実現）
+const resizeColumnHelper = tanstackCreateColumnHelper<DataRow>();
+const resizeColumns = [
+  resizeColumnHelper.accessor("area", { header: "エリア", size: 100 }),
+  resizeColumnHelper.accessor("status", { header: "ステータス", size: 100 }),
+  resizeColumnHelper.accessor("connections", { header: "接続数", size: 100 }),
+  resizeColumnHelper.accessor("coverage", { header: "カバー率", size: 100 }),
+  resizeColumnHelper.accessor("process", { header: "プロセス状況", size: 120 }),
+];
+
+export const WithColumnResize: Story = {
+  render: () => {
+    const table = useReactTable({
+      data: Data,
+      columns: resizeColumns,
+      getCoreRowModel: getCoreRowModel(),
+      columnResizeMode: "onChange",
+    });
+
+    return (
+      <DataTable.Root style={{ width: table.getTotalSize() }}>
+        <DataTable.Thead>
+          <DataTable.HeaderRow>
+            {table.getFlatHeaders().map((header) => (
+              <DataTable.HeaderCell
+                key={header.id}
+                style={{ width: header.getSize(), position: "relative" }}
+              >
+                {flexRender(
+                  header.column.columnDef.header,
+                  header.getContext()
+                )}
+                <div
+                  onMouseDown={header.getResizeHandler()}
+                  onTouchStart={header.getResizeHandler()}
+                  className={css({
+                    position: "absolute",
+                    right: 0,
+                    top: "10%",
+                    height: "80%",
+                    width: "3px",
+                    cursor: "col-resize",
+                    userSelect: "none",
+                    touchAction: "none",
+                    borderRight: "1px solid",
+                    borderColor: "sd.system.color.component.outline",
+                  })}
+                />
+              </DataTable.HeaderCell>
+            ))}
+          </DataTable.HeaderRow>
+        </DataTable.Thead>
+        <DataTable.Tbody>
+          {table.getRowModel().rows.map((row) => (
+            <DataTable.Row key={row.id}>
+              {row.getVisibleCells().map((cell) => (
+                <DataTable.BodyCell
+                  key={cell.id}
+                  style={{ width: cell.column.getSize() }}
+                >
+                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                </DataTable.BodyCell>
+              ))}
+            </DataTable.Row>
+          ))}
+        </DataTable.Tbody>
+      </DataTable.Root>
+    );
+  },
 };
