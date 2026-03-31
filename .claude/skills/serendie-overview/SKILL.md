@@ -123,11 +123,13 @@ import { SerendiePreset } from "@serendie/ui";
 
 export default defineConfig({
   presets: [SerendiePreset],
-  // jsxFramework, include, exclude 等はPandaCSSのドキュメントに従って設定
+  jsxFramework: "react",
+  include: ["./src/**/*.{js,jsx,ts,tsx}"],
+  // その他はPandaCSSのドキュメントに従って設定
 });
 ```
 
-その他のPandaCSS設定（`include`, `exclude`, `jsxFramework` 等）は公式ドキュメント (https://panda-css.com/llms.txt) を参照のこと。
+その他のPandaCSS設定は公式ドキュメント (https://panda-css.com/llms.txt) を参照のこと。
 
 この設定により、下記のようにデザイントークン名をコード内で扱うことができる。なお、このデザイントークン名は、Figmaのデザインライブラリ (Serendie UI Kit) のデザイントークン名 (Figma Variables) と一致する。
 
