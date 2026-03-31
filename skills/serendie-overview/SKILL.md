@@ -106,6 +106,7 @@ import {
 ## PandaCSS の導入（推奨）
 
 ユーザープロジェクトに、PandaCSS を導入すると、デザイントークンを JSX 内で直接利用できるなど、よりシームレスにSerendie UIを利用できる。
+`panda init` は親ディレクトリに既存の panda.config.ts がある場合、生成をスキップすることがある。その場合は手動で panda.config.ts を作成すること。
 
 インストール:
 
@@ -114,9 +115,8 @@ npm install -D @pandacss/dev
 npx panda init --postcss
 ```
 
-> `panda init` は親ディレクトリに既存の panda.config.ts がある場合、生成をスキップすることがある。その場合は手動で panda.config.ts を作成すること。
-
 package.json に `"prepare": "panda codegen"` を追加し、panda.config.ts で **`SerendiePreset` を presets に指定する**。これによりデザイントークンやレシピがPandaCSSから利用可能になる。
+その他のPandaCSS設定は公式ドキュメント (https://panda-css.com/llms.txt) を参照のこと。
 
 ```ts
 import { SerendiePreset } from "@serendie/ui";
@@ -128,8 +128,6 @@ export default defineConfig({
   // その他はPandaCSSのドキュメントに従って設定
 });
 ```
-
-その他のPandaCSS設定は公式ドキュメント (https://panda-css.com/llms.txt) を参照のこと。
 
 この設定により、下記のようにデザイントークン名をコード内で扱うことができる。なお、このデザイントークン名は、Figmaのデザインライブラリ (Serendie UI Kit) のデザイントークン名 (Figma Variables) と一致する。
 
