@@ -20,8 +20,12 @@
 
 # Serendie UI
 
-[Serendie UI Kit (Figma)](https://www.figma.com/community/file/1433690846108785966)と対となるReactベースのUIコンポーネント集です。Figma Code Connectにも対応しており、Storybookと同等の内容が[Figma Devモードでも確認](https://serendie.design/get-started/dev/#section-1)できます。
-[MCPサーバー](https://serendie.desgin/ai/mcp-server)や[Agent Skills](https://serendie.desgin/ai/agent-skills)も提供しています。詳しくはドキュメントを参照してください。
+- [Serendie UI Kit (Figma)](https://www.figma.com/community/file/1433690846108785966)と対となるReactベースのUIコンポーネント集
+- デザインと実装が[Figma Code Connect](https://serendie.design/get-started/dev/#section-1)で対応付け
+- 5つの組み込み[カラーテーマ](https://github.com/serendie/serendie?tab=readme-ov-file#%E3%83%86%E3%83%BC%E3%83%9E%E5%88%87%E3%82%8A%E6%9B%BF%E3%81%88)や[カスタムテーミング](https://github.com/serendie/serendie?tab=readme-ov-file#%E3%82%B5%E3%83%96%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89%E5%AF%BE%E5%BF%9C)に対応
+- ダークモード対応
+- 多言語対応 (日英)
+- [MCPサーバー](https://serendie.desgin/ai/mcp-server)や[Agent Skills](https://serendie.desgin/ai/agent-skills)を提供
 
 ## 使い方
 
