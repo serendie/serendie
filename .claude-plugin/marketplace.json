@@ -6,7 +6,7 @@
   "plugins": [
     {
       "name": "serendie",
-      "source": "."
+      "source": "./"
     }
   ]
 }
