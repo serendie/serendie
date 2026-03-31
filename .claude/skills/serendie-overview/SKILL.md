@@ -245,7 +245,7 @@ import { SerendieProvider } from "@serendie/ui";
 </SerendieProvider>;
 ```
 
-詳細は Serendie UIの[README](./README.md) の「テーマ切り替え」「多言語対応」セクションを参照。
+詳細は`@serendie/ui`のREADME の「テーマ切り替え」「多言語対応」セクションを参照。
 
 ### CSS Variablesを利用する
 
