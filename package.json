@@ -150,6 +150,8 @@
     "@rollup/rollup-linux-x64-gnu": "^4.14.3"
   },
   "overrides": {
-    "axios": "1.13.2"
+    "axios": "1.14.0",
+    "minimatch": "10.2.5",
+    "picomatch": "4.0.4"
   }
 }
