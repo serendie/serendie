@@ -114,6 +114,8 @@ npm install -D @pandacss/dev
 npx panda init --postcss
 ```
 
+> `panda init` は親ディレクトリに既存の panda.config.ts がある場合、生成をスキップすることがある。その場合は手動で panda.config.ts を作成すること。
+
 package.json に `"prepare": "panda codegen"` を追加し、panda.config.ts で **`SerendiePreset` を presets に指定する**。これによりデザイントークンやレシピがPandaCSSから利用可能になる。
 
 ```ts
