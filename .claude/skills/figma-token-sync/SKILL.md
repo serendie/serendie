@@ -3,6 +3,8 @@ name: figma-token-sync
 description: Figma デザインとコンポーネント実装のトークン差分を検証・同期する。コンポーネントのトークン更新、Figma との整合性確認時に使用。
 argument-hint: [component-name または all]
 allowed-tools: Read, Grep, Glob, Edit, Bash, mcp__figma-desktop__get_variable_defs, mcp__figma-desktop__get_design_context, mcp__figma-desktop__get_screenshot
+metadata:
+  internal: "true"
 ---
 
 # Figma トークン同期スキル
