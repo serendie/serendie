@@ -90,7 +90,7 @@ import { Box, Center, Flex, Stack, VStack } from "@serendie/ui/jsx";
 
 ## Serendie Symbols (アイコン) を使う
 
-`@serendie/ui` の依存パッケージとして自動的にインストールされるため、追加インストールは不要。`@serendie/ui` を使わずアイコンのみ利用する場合は `npm install @serendie/symbols` で個別導入する。
+`@serendie/ui` の依存パッケージとしてインストールされるため、追加インストールは不要。`@serendie/ui` を使わずアイコンのみ利用する場合は `npm install @serendie/symbols` で個別導入する。
 
 使用例:
 
@@ -172,8 +172,7 @@ import { css } from "@serendie/ui/css";
     - `sd.system.dimension.spacing`のように4階層目で表現される
     - Colorロール: impression（ブランドカラー）, component（UI構造色）, interaction（状態変化色: hovered, disabled等。装飾目的で流用しないこと）など
     - Typographyロール: title, headlineなど
-    - Dimensionロール: spacingなど
-  - [重要] タイプおよびロールは、セマンティクスに従って適切に使うこと。用途が不明なときは、Serendie MCPを活用するか、**Serendie UIコンポーネントの既存実装での使い方を調べること。**
+    - Dimensionロール: spacing, radiusなど
 - デザイントークンの末尾につくsuffix (`expanded`, `compact`) は、デバイス環境を示す。`expanded`はPC/Laptop環境、`compact`はスマートフォン環境に対応している。レスポンシブデザインの場合は、breakpointごとに使い分けるなど、ユーザーのプロジェクトに合わせて使い分けること。
 
 ### よくある誤りと正しい例
@@ -198,13 +197,13 @@ css({
   p: "sd.system.dimension.spacing.medium",
   m: "sd.system.dimension.spacing.small",
   color: "sd.system.color.component.onSurface",
-  textStyle: "sd.system.typography.headline.small_expanded",
-  borderRadius: "sd.system.dimension.radius.medium",       // 8px相当
-  boxShadow: "sd.system.elevation.shadow.level2",           // カード等の浮遊感
+  textStyle: "sd.system.typography.headline.small_expanded", // Panda CSSのText Styleを利用 (後述)
+  borderRadius: "sd.system.dimension.radius.medium",
+  boxShadow: "sd.system.elevation.shadow.level2",
 });
 ```
 
-なお `textStyle` は PandaCSS の [Text Styles](https://panda-css.com/docs/theming/text-styles) 機能を利用しており、fontSize / fontWeight / lineHeight 等を個別に指定するのではなく `textStyle` で一括指定する。
+`textStyle` は PandaCSS の [Text Styles](https://panda-css.com/docs/theming/text-styles) 機能であり、fontSize / fontWeight / lineHeight 等を個別に指定するのではなく `textStyle` で一括指定する。必須ではないが、記述が簡潔になるため、PandaCSSを利用する場合は利用が推奨される。
 
 **NG: リファレンストークンやセマンティクスの合わないトークンを使っている**
 
@@ -222,8 +221,15 @@ css({
 css({
   color: "sd.system.color.component.onSurface", // テキスト色にはonSurface
   borderColor: "sd.system.color.component.outline", // ボーダーにはoutline
+  bg: "sd.system.color.component.surface", // 背景にはsurface
 });
 ```
+
+### [重要] 適切なデザイントークンが見つからない場合
+
+- タイプおよびロールは、セマンティクスに従って適切に使うことが最も重要であり、**見た目を重視したデザイントークンの誤用は禁止**
+- デザイントークンの用途やセマンティクスが不明なときは、Serendie MCPを活用するか、**Serendie UIコンポーネントの既存実装での使い方を調べること。**
+- 適切なトークンが見つからない場合は、無理に誤用するのではなく、**デザイントークンをユーザープロジェクト内で新規定義することを検討する。** 例えば、PandaCSSの[Theming機能](https://panda-css.com/llms.txt/theming)を利用して、ユーザープロジェクト内の独自トークンを定義することができる。誤用よりも分離して定義する方が、将来的にSerendie UI側で適切なトークンが追加された際の移行も容易になる。
 
 ## 発展
 
