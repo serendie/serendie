@@ -1,10 +1,6 @@
 ---
 name: serendie-overview
 description: Serendie Design System（@serendie/ui, @serendie/symbols, @serendie/design-token）の概要・セットアップ手順・デザイントークンの使い方を提供し、詳細情報を Serendie MCP から得られるように案内する。Serendieを使った実装、コンポーネントやアイコンの使い方、デザイントークンの選び方、PandaCSS連携、テーマ切り替え、SerendieProviderの設定など、Serendieに少しでも関連する質問でトリガーすること。@serendie/ui のインポートがコード内に存在する場合も必ずトリガーすること。
-type: core
-library: "@serendie/ui"
-library_version: "3.1.1"
-user-invocable: false
 ---
 
 # Serendieユーザーガイド
