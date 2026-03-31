@@ -90,7 +90,11 @@ import { Box, Center, Flex, Stack, VStack } from "@serendie/ui/jsx";
 
 ## Serendie Symbols (アイコン) を使う
 
-`@serendie/ui` に同梱されている。
+`@serendie/symbols` パッケージをインストール。
+
+```bash
+npm install @serendie/symbols
+```
 
 使用例:
 
