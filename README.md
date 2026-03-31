@@ -21,6 +21,7 @@
 # Serendie UI
 
 [Serendie UI Kit (Figma)](https://www.figma.com/community/file/1433690846108785966)と対となるReactベースのUIコンポーネント集です。Figma Code Connectにも対応しており、Storybookと同等の内容が[Figma Devモードでも確認](https://serendie.design/get-started/dev/#section-1)できます。
+[MCPサーバー](https://serendie.desgin/ai/mcp-server)や[Agent Skills](https://serendie.desgin/ai/agent-skills)も提供しています。詳しくはドキュメントを参照してください。
 
 ## 使い方
 
