@@ -1,6 +1,6 @@
 ---
 name: serendie-overview
-description: Serendie Design System（@serendie/ui, @serendie/symbols, @serendie/design-token）の概要やセットアップ手順を提供し、詳細情報を Serendie MCP から得られるように案内する。Serendieを使った実装、コンポーネント・アイコン・デザイントークンの質問など、Serendie への言及でトリガーされる。
+description: Serendie Design System（@serendie/ui, @serendie/symbols, @serendie/design-token）の概要・セットアップ手順・デザイントークンの使い方を提供し、詳細情報を Serendie MCP から得られるように案内する。Serendieを使った実装、コンポーネントやアイコンの使い方、デザイントークンの選び方、PandaCSS連携、テーマ切り替え、SerendieProviderの設定など、Serendieに少しでも関連する質問でトリガーすること。@serendie/ui のインポートがコード内に存在する場合も必ずトリガーすること。
 ---
 
 # Serendieユーザーガイド
@@ -61,7 +61,7 @@ npm install @serendie/ui
 
 ### 2.[重要] CSSの設定
 
-CSSのルートに以下を追加すること。**この設定が抜けると正しくCSSが適用されない。**
+CSSのルートに以下を追加すること。**この設定が抜けると正しくCSSが適用されない。`@layer` の宣言順序がスタイルの優先度を決定するため、順序を変えるとスタイルが壊れたり意図しない上書きが発生する。**
 
 ```css
 @layer reset, base, tokens, recipes, utilities;
@@ -259,6 +259,8 @@ import { SerendieProvider } from "@serendie/ui";
   {/* アプリケーション全体 */}
 </SerendieProvider>;
 ```
+
+コンポーネント内で現在のテーマ情報を取得したい場合は `useThemeContext()` フックが利用可能。また、現時点ではダークモードは `konjo-dark` テーマのみ実装されており、他のカラーテーマではダークモード指定時に `konjo-dark` へフォールバックする。
 
 詳細は`@serendie/ui`のREADME の「テーマ切り替え」「多言語対応」セクションを参照。
 
