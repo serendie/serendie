@@ -1,0 +1,12 @@
+{
+  "name": "serendie",
+  "owner": {
+    "name": "serendie.design"
+  },
+  "plugins": [
+    {
+      "name": "serendie",
+      "source": "./"
+    }
+  ]
+}
