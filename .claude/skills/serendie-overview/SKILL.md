@@ -114,16 +114,18 @@ npm install -D @pandacss/dev
 npx panda init --postcss
 ```
 
-package.json に `"prepare": "panda codegen"` を追加し、panda.config.ts で `SerendiePreset` を設定:
+package.json に `"prepare": "panda codegen"` を追加し、panda.config.ts で **`SerendiePreset` を presets に指定する**。これによりデザイントークンやレシピがPandaCSSから利用可能になる。
 
 ```ts
 import { SerendiePreset } from "@serendie/ui";
 
 export default defineConfig({
-  jsxFramework: "react",
   presets: [SerendiePreset],
+  // jsxFramework, include, exclude 等はPandaCSSのドキュメントに従って設定
 });
 ```
+
+その他のPandaCSS設定（`include`, `exclude`, `jsxFramework` 等）は公式ドキュメント (https://panda-css.com/llms.txt) を参照のこと。
 
 この設定により、下記のようにデザイントークン名をコード内で扱うことができる。なお、このデザイントークン名は、Figmaのデザインライブラリ (Serendie UI Kit) のデザイントークン名 (Figma Variables) と一致する。
 
@@ -168,7 +170,7 @@ import { css } from "@serendie/ui/css";
     - Color, Typography, Dimension, Elevationなど。`sd.system.dimension` のように3階層目で表現される。
   - ロール: タイプをさらに細分化したもの。システムトークンのみ持つ情報であり、デザイントークンの適用箇所を表す。
     - `sd.system.dimension.spacing`のように4階層目で表現される
-    - Colorロール: impression, componentなど
+    - Colorロール: impression（ブランドカラー）, component（UI構造色）, interaction（状態変化色: hovered, disabled等。装飾目的で流用しないこと）など
     - Typographyロール: title, headlineなど
     - Dimensionロール: spacingなど
   - [重要] タイプおよびロールは、セマンティクスに従って適切に使うこと。用途が不明なときは、Serendie MCPを活用するか、**Serendie UIコンポーネントの既存実装での使い方を調べること。**
@@ -184,6 +186,8 @@ css({
   margin: 8,
   color: "#333",
   fontSize: "16px",
+  borderRadius: "8px",
+  boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
 });
 ```
 
@@ -193,10 +197,14 @@ css({
 css({
   p: "sd.system.dimension.spacing.medium",
   m: "sd.system.dimension.spacing.small",
-  color: "sd.system.color.component.onSurface", // セマンティクスに合わせる
-  textStyle: "sd.system.typography.headline.small_expanded", // セマンティクスに合わせる
+  color: "sd.system.color.component.onSurface",
+  textStyle: "sd.system.typography.headline.small_expanded",
+  borderRadius: "sd.system.dimension.radius.medium",       // 8px相当
+  boxShadow: "sd.system.elevation.shadow.level2",           // カード等の浮遊感
 });
 ```
+
+なお `textStyle` は PandaCSS の [Text Styles](https://panda-css.com/docs/theming/text-styles) 機能を利用しており、fontSize / fontWeight / lineHeight 等を個別に指定するのではなく `textStyle` で一括指定する。
 
 **NG: リファレンストークンやセマンティクスの合わないトークンを使っている**
 
@@ -204,6 +212,7 @@ css({
 css({
   color: "sd.reference.color.scale.gray.500", // リファレンストークンを直接使用
   borderColor: "sd.system.color.component.onSurface", // テキスト用トークンをボーダーに (セマンティクスの不一致)
+  bg: "sd.system.color.interaction.disabled", // interactionロールは状態変化専用。「グレーの背景が欲しいから」と装飾目的で流用してはいけない
 });
 ```
 
