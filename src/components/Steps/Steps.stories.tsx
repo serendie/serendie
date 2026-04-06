@@ -47,82 +47,58 @@ type Story = StoryObj<typeof Steps>;
 
 const threeStepsItems = [
   {
-    status: "checked" as const,
     title: "タイトル",
     description: "ヘルプテキスト",
-    index: 1,
   },
   {
-    status: "active" as const,
     title: "タイトル",
     description: "ヘルプテキスト",
-    index: 2,
   },
   {
-    status: "disabled" as const,
     title: "タイトル",
     description: "ヘルプテキスト",
-    index: 3,
   },
 ];
 
 const fourStepsItems = [
   {
-    status: "checked" as const,
     title: "タイトル",
     description: "ヘルプテキスト",
-    index: 1,
   },
   {
-    status: "checked" as const,
     title: "タイトル",
     description: "ヘルプテキスト",
-    index: 2,
   },
   {
-    status: "active" as const,
     title: "タイトル",
     description: "ヘルプテキスト",
-    index: 3,
   },
   {
-    status: "disabled" as const,
     title: "タイトル",
     description: "ヘルプテキスト",
-    index: 4,
   },
 ];
 
 const fiveStepsItems = [
   {
-    status: "checked" as const,
     title: "タイトル",
     description: "ヘルプテキスト",
-    index: 1,
   },
   {
-    status: "checked" as const,
     title: "タイトル",
     description: "ヘルプテキスト",
-    index: 2,
   },
   {
-    status: "checked" as const,
     title: "タイトル",
     description: "ヘルプテキスト",
-    index: 3,
   },
   {
-    status: "active" as const,
     title: "タイトル",
     description: "ヘルプテキスト",
-    index: 4,
   },
   {
-    status: "disabled" as const,
     title: "タイトル",
     description: "ヘルプテキスト",
-    index: 5,
   },
 ];
 
@@ -131,6 +107,7 @@ export const HorizontalDefault: Story = {
     items: threeStepsItems,
     direction: "horizontal",
     type: "default",
+    step: 1,
   },
 };
 
@@ -139,6 +116,7 @@ export const HorizontalSubtle: Story = {
     items: threeStepsItems,
     direction: "horizontal",
     type: "subtle",
+    step: 1,
   },
 };
 
@@ -147,6 +125,7 @@ export const VerticalDefault: Story = {
     items: threeStepsItems,
     direction: "vertical",
     type: "default",
+    step: 1,
   },
 };
 
@@ -155,6 +134,7 @@ export const VerticalSubtle: Story = {
     items: threeStepsItems,
     direction: "vertical",
     type: "subtle",
+    step: 1,
   },
 };
 
@@ -163,6 +143,7 @@ export const FourStepsHorizontal: Story = {
     items: fourStepsItems,
     direction: "horizontal",
     type: "default",
+    step: 2,
   },
 };
 
@@ -171,6 +152,7 @@ export const FiveStepsHorizontal: Story = {
     items: fiveStepsItems,
     direction: "horizontal",
     type: "default",
+    step: 3,
   },
 };
 
@@ -179,6 +161,7 @@ export const FourStepsVertical: Story = {
     items: fourStepsItems,
     direction: "vertical",
     type: "default",
+    step: 2,
   },
 };
 
@@ -187,5 +170,6 @@ export const FiveStepsVertical: Story = {
     items: fiveStepsItems,
     direction: "vertical",
     type: "default",
+    step: 3,
   },
 };

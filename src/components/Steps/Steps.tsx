@@ -29,7 +29,7 @@ const stepsStyles = sva({
     },
     separator: {
       position: "absolute",
-      backgroundColor: "sd.reference.color.scale.gray.200",
+      backgroundColor: "sd.system.color.component.outlineDim",
       zIndex: 1,
       "&[data-complete]": {
         backgroundColor: "sd.system.color.impression.primary",
@@ -86,15 +86,15 @@ const stepsStyles = sva({
     title: {
       textStyle: "sd.system.typography.label.large_compact",
       color: "sd.system.color.component.onSurface",
-      "&[data-incomplete]": {
-        color: "sd.reference.color.scale.gray.400",
+      "[data-incomplete] &": {
+        color: "sd.system.color.interaction.disabledOnSurface",
       },
     },
     description: {
       textStyle: "sd.system.typography.label.small_compact",
       color: "sd.system.color.component.onSurfaceVariant",
-      "&[data-incomplete]": {
-        color: "sd.reference.color.scale.gray.400",
+      "[data-incomplete] &": {
+        color: "sd.system.color.interaction.disabledOnSurface",
       },
     },
   },
@@ -184,8 +184,8 @@ const stepsStyles = sva({
     type: {
       default: {
         indicator: {
-          backgroundColor: "sd.reference.color.scale.gray.100",
-          color: "sd.reference.color.scale.gray.400",
+          backgroundColor: "sd.system.color.interaction.disabled",
+          color: "sd.system.color.interaction.disabledOnSurface",
           "&[data-complete]": {
             backgroundColor: "sd.system.color.impression.secondary",
             color: "sd.system.color.impression.onSecondary",
@@ -198,7 +198,7 @@ const stepsStyles = sva({
       },
       subtle: {
         indicator: {
-          backgroundColor: "sd.reference.color.scale.gray.400",
+          backgroundColor: "sd.system.color.interaction.disabledOnSurface",
           "&[data-complete]": {
             backgroundColor: "sd.system.color.impression.primary",
           },
@@ -298,10 +298,8 @@ const stepsStyles = sva({
 });
 
 export interface StepsItemProps {
-  status?: "checked" | "active" | "disabled";
   title: string;
   description?: string;
-  index: number;
 }
 
 type StepsStyleProps = RecipeVariantProps<typeof stepsStyles>;
@@ -313,44 +311,22 @@ export interface StepsProps
   direction?: "horizontal" | "vertical";
 }
 
-const getStepFromItems = (items: StepsItemProps[]): number => {
-  const activeIndex = items.findIndex((item) => item.status === "active");
-  if (activeIndex !== -1) return activeIndex;
-
-  const lastCheckedIndex = items.reduce((lastIdx, item, idx) => {
-    return item.status === "checked" ? idx : lastIdx;
-  }, -1);
-
-  if (lastCheckedIndex !== -1) return lastCheckedIndex + 1;
-
-  return 0;
-};
-
 export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
   (
-    {
-      items,
-      direction = "horizontal",
-      type = "default",
-      step,
-      className,
-      ...props
-    },
+    { items, direction = "horizontal", type = "default", className, ...props },
     ref
   ) => {
     const computedSize = type === "subtle" ? "small" : "large";
     const orientation = direction;
     const styles = stepsStyles({ orientation, size: computedSize, type });
-    const currentStep = step !== undefined ? step : getStepFromItems(items);
 
     return (
       <ArkSteps.Root
         ref={ref}
+        {...props}
         count={items.length}
-        step={currentStep}
         orientation={orientation}
         className={cx(styles.root, className)}
-        {...props}
       >
         <ArkSteps.List className={styles.list}>
           {items.map((item, idx) => {
@@ -358,51 +334,34 @@ export const Steps = React.forwardRef<HTMLDivElement, StepsProps>(
 
             return (
               <ArkSteps.Item key={idx} index={idx} className={styles.item}>
-                <ArkSteps.ItemContext>
-                  {(itemState) => (
-                    <>
-                      <ArkSteps.Trigger className={styles.trigger}>
-                        <ArkSteps.Indicator className={styles.indicator}>
-                          <div className={styles.indicatorInner}>
-                            {type !== "subtle" && itemState.completed && (
+                <ArkSteps.Trigger className={styles.trigger}>
+                  <ArkSteps.Indicator className={styles.indicator}>
+                    <div className={styles.indicatorInner}>
+                      {type !== "subtle" && (
+                        <ArkSteps.ItemContext>
+                          {(itemState) =>
+                            itemState.completed ? (
                               <SerendieSymbolCheck
                                 className={styles.checkIcon}
                               />
-                            )}
-                            {type !== "subtle" && !itemState.completed && (
-                              <span className={styles.number}>
-                                {item.index}
-                              </span>
-                            )}
-                          </div>
-                        </ArkSteps.Indicator>
-                        <div className={styles.textContent}>
-                          <div
-                            className={styles.title}
-                            {...(itemState.incomplete
-                              ? { "data-incomplete": "" }
-                              : {})}
-                          >
-                            {item.title}
-                          </div>
-                          {item.description && (
-                            <div
-                              className={styles.description}
-                              {...(itemState.incomplete
-                                ? { "data-incomplete": "" }
-                                : {})}
-                            >
-                              {item.description}
-                            </div>
-                          )}
-                        </div>
-                      </ArkSteps.Trigger>
-                      {!isLast && (
-                        <ArkSteps.Separator className={styles.separator} />
+                            ) : (
+                              <span className={styles.number}>{idx + 1}</span>
+                            )
+                          }
+                        </ArkSteps.ItemContext>
                       )}
-                    </>
-                  )}
-                </ArkSteps.ItemContext>
+                    </div>
+                  </ArkSteps.Indicator>
+                  <div className={styles.textContent}>
+                    <div className={styles.title}>{item.title}</div>
+                    {item.description && (
+                      <div className={styles.description}>
+                        {item.description}
+                      </div>
+                    )}
+                  </div>
+                </ArkSteps.Trigger>
+                {!isLast && <ArkSteps.Separator className={styles.separator} />}
               </ArkSteps.Item>
             );
           })}
