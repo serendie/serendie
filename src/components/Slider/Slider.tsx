@@ -69,7 +69,7 @@ export const SliderStyle = sva({
       height: "100%",
       zIndex: 1,
       _disabled: {
-        backgroundColor: "sd.reference.color.scale.gray.400",
+        backgroundColor: "sd.system.color.interaction.disabledOnSurface",
       },
     },
     thumb: {
@@ -98,7 +98,7 @@ export const SliderStyle = sva({
         outline: "none",
       },
       _disabled: {
-        backgroundColor: "sd.reference.color.scale.gray.400",
+        backgroundColor: "sd.system.color.interaction.disabledOnSurface",
         cursor: "default",
       },
     },
@@ -122,13 +122,13 @@ export const SliderStyle = sva({
     markerInRange: {
       backgroundColor: "sd.system.color.impression.primary",
       _disabled: {
-        backgroundColor: "sd.reference.color.scale.gray.400",
+        backgroundColor: "sd.system.color.interaction.disabledOnSurface",
       },
     },
     markerAfterRange: {
-      backgroundColor: "sd.reference.color.scale.gray.400",
+      backgroundColor: "sd.system.color.interaction.disabledOnSurface",
       _disabled: {
-        backgroundColor: "sd.reference.color.scale.gray.400",
+        backgroundColor: "sd.system.color.interaction.disabledOnSurface",
       },
     },
   },
