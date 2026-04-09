@@ -40,7 +40,7 @@ export const SliderStyle = sva({
     labelEnd: {
       color: "sd.system.color.component.onSurface",
       textStyle: "sd.system.typography.body.medium_compact",
-      _disabled: {
+      "[data-disabled] &": {
         color: "sd.system.color.interaction.disabledOnSurface",
       },
     },
