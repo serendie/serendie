@@ -127,9 +127,6 @@ export const SliderStyle = sva({
     },
     markerAfterRange: {
       backgroundColor: "sd.system.color.interaction.disabledOnSurface",
-      _disabled: {
-        backgroundColor: "sd.system.color.interaction.disabledOnSurface",
-      },
     },
   },
   variants: {
