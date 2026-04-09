@@ -76,6 +76,8 @@ export const SliderStyle = sva({
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
+      top: "50%",
+      "--slider-thumb-transform": "translate(-50%, -50%)",
       backgroundColor: "sd.system.color.impression.primary",
       borderRadius: "sd.system.dimension.radius.full",
       borderWidth: 0,
