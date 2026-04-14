@@ -55,7 +55,7 @@
     "@pandacss/dev": "^0.53.0",
     "@pandacss/eslint-plugin": "^0.1.1",
     "@serendie/design-token": "^1.4.2",
-    "@tanstack/intent": "^0.0.27",
+    "@tanstack/intent": "^0.0.29",
     "@storybook/addon-designs": "^8.0.3",
     "@storybook/addon-essentials": "^8.2.4",
     "@storybook/addon-interactions": "^8.2.4",
