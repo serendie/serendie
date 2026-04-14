@@ -81,7 +81,7 @@
     "eslint-plugin-storybook": "^0.8.0",
     "globby": "14.1.0",
     "husky": "^9.1.4",
-    "lint-staged": "^15.2.8",
+    "lint-staged": "^16.4.0",
     "prettier": "^3.3.3",
     "release-it": "^17.11.0",
     "storybook": "^8.2.4",
