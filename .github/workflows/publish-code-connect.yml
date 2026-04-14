@@ -30,7 +30,7 @@ jobs:
         run: npm install -g npm@latest
 
       - name: Clone repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Cache Dependency
         uses: actions/cache@v5
