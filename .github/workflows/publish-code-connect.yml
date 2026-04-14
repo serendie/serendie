@@ -22,7 +22,7 @@ jobs:
     if: (github.event.review.state == 'approved') || (github.event.pull_request.merged == true)
     steps:
       - name: Install Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: "20"
 
