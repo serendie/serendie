@@ -54,7 +54,7 @@
     "@figma/code-connect": "^1.3.4",
     "@pandacss/dev": "^0.54.0",
     "@pandacss/eslint-plugin": "^0.3.2",
-    "@serendie/design-token": "^1.4.2",
+    "@serendie/design-token": "^1.4.5",
     "@tanstack/intent": "^0.0.29",
     "@storybook/addon-designs": "^11.1.3",
     "@storybook/addon-links": "10.3.5",
