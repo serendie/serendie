@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Tabs } from "./Tabs";
 import { TabItem, TabItemProps } from "./TabItem";
 import figma from "@figma/code-connect";
