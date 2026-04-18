@@ -1,10 +1,10 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { Drawer, DrawerProps } from "./Drawer";
 import { useState } from "react";
 import { IconButton } from "../IconButton";
 import figma from "@figma/code-connect";
 import { SerendieSymbolMenu } from "@serendie/symbols";
-import { userEvent, within, waitFor, expect } from "@storybook/test";
+import { userEvent, within, waitFor, expect } from "storybook/test";
 import { FullscreenLayout } from "../../../.storybook/FullscreenLayout";
 
 const meta: Meta<typeof Drawer> = {

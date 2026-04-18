@@ -1,5 +1,5 @@
 import figma from "@figma/code-connect";
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { AccordionGroup } from "./AccordionGroup";
 import { Accordion, AccordionProps } from "./Accordion";
 

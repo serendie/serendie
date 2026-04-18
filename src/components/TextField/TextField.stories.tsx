@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { TextField } from "./TextField";
 import figma from "@figma/code-connect";
 import {
@@ -7,7 +7,7 @@ import {
   SerendieSymbolMagnifyingGlass,
 } from "@serendie/symbols";
 import { Box } from "../../../styled-system/jsx";
-import { expect, fn, userEvent, waitFor, within } from "@storybook/test";
+import { expect, fn, userEvent, waitFor, within } from "storybook/test";
 
 const meta: Meta<typeof TextField> = {
   component: TextField,

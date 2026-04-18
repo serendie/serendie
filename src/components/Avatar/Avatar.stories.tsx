@@ -1,5 +1,5 @@
 import figma from "@figma/code-connect";
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { Avatar } from "./Avatar";
 
 const meta: Meta<typeof Avatar> = {
