@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { IconButton, IconButtonStyle } from "./IconButton";
 import figma from "@figma/code-connect";
 import { SerendieSymbolPlus } from "@serendie/symbols";

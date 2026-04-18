@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Search } from "./Search";
 import figma from "@figma/code-connect";
-import { userEvent, within, waitFor, expect } from "@storybook/test";
+import { userEvent, within, waitFor, expect } from "storybook/test";
 import { FullscreenLayout } from "../../../.storybook/FullscreenLayout";
 
 const items = [

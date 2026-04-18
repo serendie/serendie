@@ -1,5 +1,5 @@
 import figma from "@figma/code-connect";
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { css } from "../../../styled-system/css";
 import { DashboardWidget } from "./DashboardWidget";
 
