@@ -1,11 +1,11 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ModalDialog, ModalDialogProps } from "./ModalDialog";
 import { useState } from "react";
 import { Button } from "../Button";
 import { DropdownMenu } from "../DropdownMenu";
 import { SerendieSymbolPlaceholder } from "@serendie/symbols";
 import figma from "@figma/code-connect";
-import { expect, userEvent, waitFor, within } from "@storybook/test";
+import { expect, userEvent, waitFor, within } from "storybook/test";
 import { allModes } from "../../../.storybook/modes";
 import { FullscreenLayout } from "../../../.storybook/FullscreenLayout";
 

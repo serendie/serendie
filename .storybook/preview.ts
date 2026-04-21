@@ -1,7 +1,7 @@
 import "../src/styles.css";
 
-import type { Preview } from "@storybook/react";
-import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import type { Preview } from "@storybook/react-vite";
+import { INITIAL_VIEWPORTS } from "storybook/viewport";
 import { themeNames } from "../src/preset";
 import { viewports } from "./modes";
 import { SerendieProvider, type Language } from "../src/i18n";
@@ -20,7 +20,7 @@ const deviceViewports = {
 const preview: Preview = {
   parameters: {
     viewport: {
-      viewports: {
+      options: {
         ...viewports,
         ...deviceViewports,
       },
