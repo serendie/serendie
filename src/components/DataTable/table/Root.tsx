@@ -6,7 +6,8 @@ const tableRootStyles = sva({
   slots: ["container", "table"],
   base: {
     container: {
-      border: "1px solid",
+      borderWidth: "1px",
+      borderStyle: "solid",
       borderColor: "sd.system.color.component.outline",
       borderRadius: "4px",
       overflow: "hidden",

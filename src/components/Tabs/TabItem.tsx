@@ -17,7 +17,8 @@ export const TabItemStyle = sva({
       transitionDuration: ".2s",
       transitionProperty: "color, border-color",
       transitionTimingFunction: "cubic-bezier(.2, 0, 0, 1)",
-      borderBottom: "2px solid",
+      borderBottomWidth: "2px",
+      borderBottomStyle: "solid",
       borderBottomColor: "transparent",
       textStyle: "sd.system.typography.label.large_compact",
       _expanded: {
