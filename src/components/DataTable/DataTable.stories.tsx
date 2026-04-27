@@ -411,8 +411,9 @@ export const WithColumnResize: Story = {
                     cursor: "col-resize",
                     userSelect: "none",
                     touchAction: "none",
-                    borderRight: "1px solid",
-                    borderColor: "sd.system.color.component.outline",
+                    borderRightWidth: "1px",
+                    borderRightStyle: "solid",
+                    borderRightColor: "sd.system.color.component.outline",
                   })}
                 />
               </DataTable.HeaderCell>
