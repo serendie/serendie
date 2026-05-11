@@ -3,8 +3,9 @@ import { cva, cx, RecipeVariantProps } from "../../../../styled-system/css";
 
 const cellStyle = cva({
   base: {
-    borderBottom: "1px solid",
-    borderColor: "sd.system.color.component.outline",
+    borderBottomWidth: "1px",
+    borderBottomStyle: "solid",
+    borderBottomColor: "sd.system.color.component.outline",
     fontFamily: "Roboto, sans-serif",
     color: "sd.system.color.component.onSurface",
     textAlign: "left",

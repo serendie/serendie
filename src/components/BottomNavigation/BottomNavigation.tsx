@@ -15,7 +15,8 @@ export const BottomNavigation = ({
           justifyContent: "space-around",
           height: 64,
           paddingX: "sd.system.dimension.spacing.medium",
-          borderTop: "1px solid",
+          borderTopWidth: "1px",
+          borderTopStyle: "solid",
           borderTopColor: "sd.system.color.component.outline",
         }),
         className
