@@ -1,0 +1,16 @@
+{
+  "name": "serendie",
+  "version": "1.0.0",
+  "description": "Adaptive UI component library as part of Serendie Design System by Mitsubishi Electric",
+  "author": { "name": "SerendieDesign" },
+  "homepage": "https://serendie.design",
+  "repository": "https://github.com/serendie/serendie",
+  "license": "MIT",
+  "keywords": ["design-system", "ui-components", "ui-kit", "design-tokens"],
+  "mcpServers": {
+    "serendie": {
+      "type": "http",
+      "url": "https://serendie.design/mcp"
+    }
+  }
+}

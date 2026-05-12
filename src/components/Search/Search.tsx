@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Combobox,
   ComboboxRootProps,
@@ -10,6 +11,7 @@ import {
 } from "@serendie/symbols";
 import { cx, RecipeVariantProps, sva } from "../../../styled-system/css";
 import { Box } from "../../../styled-system/jsx";
+import { useAutoPortalContainer } from "../../hooks/useAutoPortalContainer";
 
 /*
  * 検索候補を出すことができるサーチコンボボックス
@@ -26,7 +28,7 @@ export const SearchStyle = sva({
     "comboboxItem",
     "iconBox",
     "icon",
-    "closeIcon",
+    "clearTrigger",
   ],
   base: {
     control: {
@@ -67,7 +69,7 @@ export const SearchStyle = sva({
       },
     },
     combobox: {
-      bgColor: "sd.system.color.component.surface",
+      bgColor: "sd.system.color.component.surfaceContainerBright",
       borderRadius: "sd.system.dimension.radius.medium",
       boxShadow: "sd.system.elevation.shadow.level1",
       zIndex: "sd.system.elevation.zIndex.dropdown",
@@ -91,11 +93,11 @@ export const SearchStyle = sva({
     icon: {
       width: "sd.system.dimension.spacing.large",
     },
-    closeIcon: {
-      opacity: 0,
-      "[data-state=open] &": {
-        opacity: 1,
-      },
+    clearTrigger: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      cursor: "pointer",
     },
   },
   variants: {
@@ -152,22 +154,122 @@ export const SearchStyle = sva({
 type SearchStyleProps = ComboboxRootProps<string> &
   RecipeVariantProps<typeof SearchStyle> & {
     items?: string[];
+    /**
+     * Portalを使用するかどうか
+     * - `true` (デフォルト): body直下にポータルする。ModalDialog/Drawer内にある場合は自動的にそのコンテンツ内にポータルされる
+     * - `false`: ポータルを使用せず、その場にレンダリングする
+     * @default true
+     */
+    portalled?: boolean;
+    /**
+     * 候補リストにない値（フリーテキスト）での検索を許可するかどうか
+     * @default true
+     */
+    allowCustomValue?: boolean;
+    /**
+     * 検索実行時のコールバック（Enterキー押下時・候補選択時）
+     */
+    onSearch?: (value: string) => void;
   };
 
 export const Search: React.FC<SearchStyleProps> = ({
   items = [],
+  portalled = true,
+  allowCustomValue = true,
+  onSearch,
   ...props
 }) => {
   const [variantProps, comboboxProps] = SearchStyle.splitVariantProps(props);
   const styles = SearchStyle(variantProps);
   const { collection: _, ...elementProps } = comboboxProps;
+  const { triggerRef, portalContainerRef } = useAutoPortalContainer(portalled);
 
-  const collection = createListCollection({ items });
+  // controlled / uncontrolled の判定
+  const isControlled = elementProps.inputValue !== undefined;
+
+  const [uncontrolledValue, setUncontrolledValue] = React.useState(
+    elementProps.defaultInputValue || ""
+  );
+
+  const inputValue = isControlled
+    ? elementProps.inputValue!
+    : uncontrolledValue;
+
+  // ハイライト中の候補を追跡（再レンダリング不要なのでrefを使用）
+  const highlightedValueRef = React.useRef<string | null>(null);
+
+  const [hasValue, setHasValue] = React.useState(
+    () => !!(elementProps.inputValue || elementProps.defaultInputValue)
+  );
+  const inputRef = React.useRef<HTMLInputElement>(null);
+
+  const filteredItems = React.useMemo(() => {
+    if (!inputValue) return items;
+    return items.filter((item) =>
+      item.toLowerCase().includes(inputValue.toLowerCase())
+    );
+  }, [items, inputValue]);
+
+  const collection = createListCollection({ items: filteredItems });
+
+  const handleInputValueChange = (details: { inputValue: string }) => {
+    if (!isControlled) {
+      setUncontrolledValue(details.inputValue);
+    }
+    // ClearTriggerでクリアされた時などにも同期
+    setHasValue(details.inputValue.length > 0);
+    elementProps.onInputValueChange?.(details);
+  };
+
+  // 候補選択時も検索を実行
+  const handleValueChange = (details: { value: string[] }) => {
+    if (details.value.length > 0) {
+      onSearch?.(details.value[0]);
+    }
+    elementProps.onValueChange?.(details);
+  };
+
+  // ハイライト変更を追跡
+  const handleHighlightChange = (details: {
+    highlightedValue: string | null;
+  }) => {
+    highlightedValueRef.current = details.highlightedValue;
+  };
+
+  // Enterキーでフリーテキスト検索を実行（ハイライト中はArk UIの選択フローに任せる）
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" && inputValue && !highlightedValueRef.current) {
+      onSearch?.(inputValue);
+    }
+  };
+
+  // onChangeでhasValueを即時更新（onInputValueChangeより先に発火するため）
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setHasValue(e.target.value.length > 0);
+  };
+
+  // クリアボタンの処理
+  const handleClear = () => {
+    if (inputRef.current) {
+      inputRef.current.value = "";
+      inputRef.current.focus();
+    }
+    setHasValue(false);
+    if (!isControlled) {
+      setUncontrolledValue("");
+    }
+    elementProps.onInputValueChange?.({ inputValue: "" });
+  };
 
   return (
     <Combobox.Root
       {...elementProps}
       collection={collection}
+      openOnClick
+      allowCustomValue={allowCustomValue}
+      onInputValueChange={handleInputValueChange}
+      onValueChange={handleValueChange}
+      onHighlightChange={handleHighlightChange}
       lazyMount
       unmountOnExit
       positioning={{
@@ -177,21 +279,30 @@ export const Search: React.FC<SearchStyleProps> = ({
         },
       }}
     >
-      <Combobox.Control className={cx(styles.control, elementProps.className)}>
+      <Combobox.Control
+        className={cx(styles.control, elementProps.className)}
+        ref={triggerRef}
+      >
         <div className={styles.iconBox}>
           <SerendieSymbolMagnifyingGlass className={styles.icon} />
         </div>
-        <Combobox.Input className={styles.input} />
-        {/* ARK UIではOpenのトリガーも用意されているがデザインではナシ */}
-        {items.length > 0 && (
-          <Combobox.Trigger>
-            <div className={styles.closeIcon}>
-              <SerendieSymbolClose className={styles.icon} />
-            </div>
-          </Combobox.Trigger>
+        <Combobox.Input
+          ref={inputRef}
+          className={styles.input}
+          onKeyDown={handleKeyDown}
+          onChange={handleInputChange}
+        />
+        {hasValue && (
+          <button
+            type="button"
+            className={styles.clearTrigger}
+            onClick={handleClear}
+          >
+            <SerendieSymbolClose className={styles.icon} />
+          </button>
         )}
       </Combobox.Control>
-      <Portal>
+      <Portal disabled={!portalled} container={portalContainerRef}>
         <Combobox.Positioner>
           <Combobox.Content className={styles.combobox}>
             <Combobox.ItemGroup id="framework">

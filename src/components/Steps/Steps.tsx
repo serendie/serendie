@@ -3,7 +3,7 @@ import { Steps as ArkSteps, type StepsRootProps } from "@ark-ui/react/steps";
 import { sva, cx, type RecipeVariantProps } from "../../../styled-system/css";
 import { SerendieSymbolCheck } from "@serendie/symbols";
 
-const stepsStyles = sva({
+export const stepsStyles = sva({
   slots: [
     "root",
     "list",
@@ -71,8 +71,8 @@ const stepsStyles = sva({
       color: "inherit",
     },
     checkIcon: {
-      width: "16px",
-      height: "16px",
+      width: "sd.system.dimension.spacing.medium",
+      height: "sd.system.dimension.spacing.medium",
     },
     number: {
       fontWeight: "500",
@@ -109,7 +109,7 @@ const stepsStyles = sva({
           width: "100%",
         },
         separator: {
-          height: "1px",
+          height: "sd.reference.dimension.scale.1",
         },
         item: {
           flexDirection: "column",
@@ -134,7 +134,7 @@ const stepsStyles = sva({
           flexDirection: "column",
         },
         separator: {
-          width: "1px",
+          width: "sd.reference.dimension.scale.1",
         },
         item: {
           flexDirection: "column",
@@ -158,8 +158,8 @@ const stepsStyles = sva({
     size: {
       large: {
         indicator: {
-          width: "24px",
-          height: "24px",
+          width: "sd.system.dimension.spacing.extraLarge",
+          height: "sd.system.dimension.spacing.extraLarge",
         },
         number: {
           textStyle: "sd.system.typography.label.medium_compact",
@@ -204,7 +204,8 @@ const stepsStyles = sva({
           },
           "&[data-current]": {
             backgroundColor: "sd.system.color.component.surface",
-            border: "2px solid",
+            borderWidth: "sd.system.dimension.border.thick",
+            borderStyle: "solid",
             borderColor: "sd.system.color.impression.primary",
           },
         },
@@ -217,9 +218,10 @@ const stepsStyles = sva({
       size: "large",
       css: {
         separator: {
-          top: "12px",
-          left: "calc(50% + 12px)",
-          right: "calc(-50% + 12px)",
+          top: "sd.system.dimension.spacing.small",
+          left: "calc(50% + var(--spacing-sd-system-dimension-spacing-small))",
+          right:
+            "calc(-50% + var(--spacing-sd-system-dimension-spacing-small))",
         },
       },
     },
@@ -228,9 +230,10 @@ const stepsStyles = sva({
       size: "small",
       css: {
         separator: {
-          top: "5px",
-          left: "calc(50% + 6px)",
-          right: "calc(-50% + 6px)",
+          top: "calc(var(--spacing-sd-system-dimension-spacing-small) / 2 - var(--spacing-sd-reference-dimension-scale-1))",
+          left: "calc(50% + var(--spacing-sd-system-dimension-spacing-small) / 2)",
+          right:
+            "calc(-50% + var(--spacing-sd-system-dimension-spacing-small) / 2)",
         },
       },
     },
@@ -246,12 +249,12 @@ const stepsStyles = sva({
           gap: "sd.system.dimension.spacing.extraSmall",
         },
         textContent: {
-          paddingTop: "4px",
+          paddingTop: "sd.system.dimension.spacing.twoExtraSmall",
         },
         separator: {
-          left: "calc(12px - 0.5px)",
-          top: "12px",
-          bottom: "-20px",
+          left: "calc(var(--spacing-sd-system-dimension-spacing-small) - 0.5px)",
+          top: "sd.system.dimension.spacing.small",
+          bottom: "-sd.system.dimension.spacing.large",
         },
         title: {
           textStyle: "sd.system.typography.label.large_compact",
@@ -277,12 +280,14 @@ const stepsStyles = sva({
           marginTop: "var(--steps-indicator-offset)",
         },
         textContent: {
-          marginTop: "22px",
+          marginTop:
+            "calc(var(--spacing-sd-system-dimension-spacing-large) + var(--spacing-sd-reference-dimension-scale-2))",
         },
         separator: {
           left: "calc(var(--steps-indicator-size) / 2 - 0.5px)",
-          top: "calc(var(--steps-indicator-offset) + var(--steps-indicator-size) + 4px)",
-          bottom: "calc(-1 * var(--steps-indicator-offset) + 4px)",
+          top: "calc(var(--steps-indicator-offset) + var(--steps-indicator-size) + var(--spacing-sd-system-dimension-spacing-twoExtraSmall))",
+          bottom:
+            "calc(-1 * var(--steps-indicator-offset) + var(--spacing-sd-system-dimension-spacing-twoExtraSmall))",
         },
         title: {
           textStyle: "sd.system.typography.label.large_compact",
@@ -305,7 +310,8 @@ export interface StepsItemProps {
 type StepsStyleProps = RecipeVariantProps<typeof stepsStyles>;
 
 export interface StepsProps
-  extends Omit<StepsRootProps, "orientation">,
+  extends
+    Omit<StepsRootProps, "orientation">,
     Omit<NonNullable<StepsStyleProps>, "orientation" | "size"> {
   items: StepsItemProps[];
   direction?: "horizontal" | "vertical";

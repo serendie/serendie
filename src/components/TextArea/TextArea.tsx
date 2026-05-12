@@ -1,6 +1,7 @@
 import mergeRefs from "merge-refs";
 import React, { ComponentPropsWithoutRef, forwardRef } from "react";
 import { cx, sva } from "../../../styled-system/css";
+import { useTranslations } from "../../i18n";
 
 const TextAreaStyle = sva({
   slots: [
@@ -129,6 +130,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
     },
     ref
   ) => {
+    const t = useTranslations();
     const inputRef = React.useRef<HTMLTextAreaElement>(null);
     const mergedRef = mergeRefs(inputRef, ref);
     const [variantProps, elementProps] = TextAreaStyle.splitVariantProps(props);
@@ -142,7 +144,9 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
           <label className={styles.label} htmlFor={inputId}>
             {label}
             {required && (
-              <span className={styles.required}>{requiredLabel ?? "必須"}</span>
+              <span className={styles.required}>
+                {requiredLabel ?? t("common.required")}
+              </span>
             )}
           </label>
         ) : null}

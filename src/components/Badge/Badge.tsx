@@ -44,27 +44,27 @@ export const BadgeStyle = cva({
     styleColor: {
       gray: {
         bg: "sd.reference.color.scale.gray.600",
-        color: "sd.system.color.component.inverseOnSurface",
+        color: "sd.reference.color.scale.white.1000",
       },
       blue: {
         bg: "sd.reference.color.scale.blue.600",
-        color: "sd.system.color.component.inverseOnSurface",
+        color: "sd.reference.color.scale.white.1000",
       },
       green: {
         bg: "sd.reference.color.scale.green.600",
-        color: "sd.system.color.component.inverseOnSurface",
+        color: "sd.reference.color.scale.white.1000",
       },
       yellow: {
         bg: "sd.reference.color.scale.yellow.600",
-        color: "sd.system.color.component.inverseOnSurface",
+        color: "sd.reference.color.scale.white.1000",
       },
       chestnut: {
         bg: "sd.reference.color.scale.chestnut.600",
-        color: "sd.system.color.component.inverseOnSurface",
+        color: "sd.reference.color.scale.white.1000",
       },
       red: {
         bg: "sd.reference.color.scale.red.600",
-        color: "sd.system.color.component.inverseOnSurface",
+        color: "sd.reference.color.scale.white.1000",
       },
       "gray-subtle": {
         bg: "sd.reference.color.scale.gray.100",

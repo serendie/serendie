@@ -11,6 +11,7 @@ export const SwitchStyle = sva({
       gap: "sd.system.dimension.spacing.medium",
       paddingY: "sd.system.dimension.spacing.small",
       paddingX: "sd.system.dimension.spacing.medium",
+      position: "relative",
       '&[data-focus="true"] .control': {
         borderColor: "sd.system.color.impression.primary",
       },
@@ -28,8 +29,8 @@ export const SwitchStyle = sva({
       transitionProperty: "background, borderColor",
       transitionTimingFunction: "cubic-bezier(.2, 0, 0, 1)",
       _checked: {
-        backgroundColor: "sd.system.color.impression.primary",
-        borderColor: "sd.system.color.impression.primary",
+        backgroundColor: "sd.system.color.impression.primaryContainer",
+        borderColor: "sd.system.color.impression.primaryContainer",
         _disabled: {
           backgroundColor:
             "color-mix(in srgb, {colors.sd.system.color.impression.primary}, {colors.sd.system.color.interaction.hoveredOnPrimary});",

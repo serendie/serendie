@@ -1,3 +1,12 @@
-export function Tbody({ children, ...props }: React.ComponentProps<"tbody">) {
-  return <tbody {...props}>{children}</tbody>;
-}
+import React from "react";
+
+export const Tbody = React.forwardRef<
+  HTMLTableSectionElement,
+  React.ComponentProps<"tbody">
+>(({ children, ...props }, ref) => {
+  return (
+    <tbody ref={ref} {...props}>
+      {children}
+    </tbody>
+  );
+});

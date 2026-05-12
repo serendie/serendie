@@ -1,9 +1,11 @@
-import { cva, RecipeVariantProps } from "../../../../styled-system/css";
+import React from "react";
+import { cva, cx, RecipeVariantProps } from "../../../../styled-system/css";
 
 const cellStyle = cva({
   base: {
-    borderBottom: "1px solid",
-    borderColor: "sd.system.color.component.outline",
+    borderBottomWidth: "1px",
+    borderBottomStyle: "solid",
+    borderBottomColor: "sd.system.color.component.outline",
     fontFamily: "Roboto, sans-serif",
     color: "sd.system.color.component.onSurface",
     textAlign: "left",
@@ -121,29 +123,40 @@ const normalizeCellType = (type: string): CellType => {
   return CELL_TYPES.includes(type as CellType) ? (type as CellType) : "default";
 };
 
-export const BodyCell: React.FC<{
-  children: React.ReactNode;
-  size?: CellSize;
-  type?: CellType | string;
-  state?: CellState;
-}> = ({
-  children,
-  size = "medium",
-  type = "default",
-  state = "enabled",
-  ...props
-}) => {
-  const cellType = normalizeCellType(type);
+export const BodyCell = React.forwardRef<
+  HTMLTableCellElement,
+  {
+    children: React.ReactNode;
+    size?: CellSize;
+    type?: CellType | string;
+    state?: CellState;
+    className?: string;
+  } & React.ComponentProps<"td">
+>(
+  (
+    {
+      children,
+      size = "medium",
+      type = "default",
+      state = "enabled",
+      className,
+      ...props
+    },
+    ref
+  ) => {
+    const cellType = normalizeCellType(type);
 
-  return (
-    <td
-      role="cell"
-      data-type={cellType}
-      data-state={state}
-      className={cellStyle({ size, type: cellType, state })}
-      {...props}
-    >
-      {children}
-    </td>
-  );
-};
+    return (
+      <td
+        ref={ref}
+        role="cell"
+        data-type={cellType}
+        data-state={state}
+        className={cx(cellStyle({ size, type: cellType, state }), className)}
+        {...props}
+      >
+        {children}
+      </td>
+    );
+  }
+);

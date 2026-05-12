@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { DatePicker } from "./DatePicker";
 import figma from "@figma/code-connect";
 import { useState } from "react";
@@ -16,9 +16,6 @@ const meta: Meta<typeof DatePicker> = {
     },
   },
   args: {
-    placeholder: "日付を選択",
-    startPlaceholder: "開始日",
-    endPlaceholder: "終了日",
     locale: "ja-JP",
     onValueChange: (details) => {
       console.log("Date changed:", details);

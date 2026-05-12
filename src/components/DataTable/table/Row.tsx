@@ -1,6 +1,7 @@
+import React from "react";
 import { Row as TanstackRow, flexRender, Cell } from "@tanstack/react-table";
 import { DataTable } from "..";
-import { cva } from "../../../../styled-system/css";
+import { cva, cx } from "../../../../styled-system/css";
 import { CellType } from "./BodyCell";
 
 const rowStyle = cva({
@@ -55,18 +56,43 @@ const rowStyle = cva({
   },
 });
 
-export function Row<TData>({
-  row,
-  enableRowSelection,
-}: {
-  row: TanstackRow<TData>;
+export interface RowProps<TData> {
+  row?: TanstackRow<TData>;
   enableRowSelection?: boolean;
-}) {
+  children?: React.ReactNode;
+  selected?: boolean;
+  className?: string;
+}
+
+const RowComponent = <TData,>(
+  { row, enableRowSelection, children, selected, className }: RowProps<TData>,
+  ref: React.ForwardedRef<HTMLTableRowElement>
+) => {
+  if (children) {
+    return (
+      <DataTable.Tr
+        ref={ref}
+        className={cx(
+          rowStyle({ state: selected ? "selected" : undefined }),
+          className
+        )}
+      >
+        {children}
+      </DataTable.Tr>
+    );
+  }
+
+  if (!row) return null;
+
   return (
     <DataTable.Tr
-      className={rowStyle({
-        state: row.getIsSelected() ? "selected" : undefined,
-      })}
+      ref={ref}
+      className={cx(
+        rowStyle({
+          state: row.getIsSelected() ? "selected" : undefined,
+        }),
+        className
+      )}
     >
       {enableRowSelection && (
         <DataTable.BodyCheckbox
@@ -85,7 +111,14 @@ export function Row<TData>({
       })}
     </DataTable.Tr>
   );
-}
+};
+
+const ForwardedRow = React.forwardRef(RowComponent);
+ForwardedRow.displayName = "Row";
+
+export const Row = ForwardedRow as <TData>(
+  props: RowProps<TData> & React.RefAttributes<HTMLTableRowElement>
+) => JSX.Element | null;
 
 function getCellType<TData>(cell: Cell<TData, unknown>): CellType | string {
   if (

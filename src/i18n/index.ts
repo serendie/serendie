@@ -2,7 +2,12 @@ import { useContext } from "react";
 import { dictionary } from "./dictionary";
 import { LanguageContext, type Language } from "./provider";
 
-export { SerendieProvider, LanguageProvider, type Language } from "./provider";
+export {
+  SerendieProvider,
+  LanguageProvider,
+  type Language,
+  type SerendieProviderProps,
+} from "./provider";
 
 export type TranslationKey = keyof typeof dictionary.ja;
 

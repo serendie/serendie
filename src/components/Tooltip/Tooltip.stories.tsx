@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from "../Button/Button.tsx";
 import { Tooltip } from "./Tooltip.tsx";
 import { figma } from "@figma/code-connect";

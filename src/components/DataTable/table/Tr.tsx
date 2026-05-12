@@ -1,12 +1,13 @@
+import React from "react";
 import { css, cx } from "../../../../styled-system/css";
 
-export function Tr({
-  children,
-  className,
-  ...props
-}: React.ComponentProps<"tr">) {
+export const Tr = React.forwardRef<
+  HTMLTableRowElement,
+  React.ComponentProps<"tr">
+>(({ children, className, ...props }, ref) => {
   return (
     <tr
+      ref={ref}
       role="row"
       className={cx(
         css({
@@ -19,4 +20,4 @@ export function Tr({
       {children}
     </tr>
   );
-}
+});

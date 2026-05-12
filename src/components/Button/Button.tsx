@@ -13,7 +13,6 @@ const outlineCss = {
   outlineWidth: "sd.system.dimension.border.medium",
   outlineStyle: "solid",
   outlineColor: "sd.system.color.component.outline",
-  bgColor: "sd.system.color.component.surface",
   _enabled: {
     _hover: {
       bgColor: "sd.system.color.interaction.hoveredVariant",
@@ -133,7 +132,7 @@ type ExclusiveIconProps =
 type ButtonLoadingProps = {
   isLoading?: boolean;
 };
-type ButtonProps = ComponentProps<"button"> &
+export type ButtonProps = ComponentProps<"button"> &
   RecipeVariantProps<typeof ButtonStyle> &
   ExclusiveIconProps &
   ButtonLoadingProps;

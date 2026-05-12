@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { TopAppBar } from "./TopAppBar";
 import { IconButton } from "../IconButton";
 import figma from "@figma/code-connect";

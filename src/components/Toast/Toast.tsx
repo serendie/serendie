@@ -39,20 +39,18 @@ export const ToastStyle = sva({
     variant: {
       default: {
         root: {
-          background: "sd.system.color.component.inverseSurface",
+          background: "sd.system.color.impression.positiveContainer",
         },
         text: {
-          color: "sd.system.color.component.inverseOnSurface",
+          color: "sd.system.color.impression.onPositiveContainer",
         },
         icon: {
-          color: "sd.system.color.impression.positive",
+          color: "sd.system.color.impression.onPositiveContainer",
         },
       },
       error: {
         root: {
           background: "sd.system.color.impression.negativeContainer",
-          borderColor: "sd.system.color.impression.negative",
-          borderWidth: 1,
         },
         text: {
           color: "sd.system.color.impression.negative",

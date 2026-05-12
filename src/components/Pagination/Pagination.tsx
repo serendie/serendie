@@ -6,6 +6,7 @@ import {
 import React, { ComponentProps, useState } from "react";
 import { IconButton } from "../IconButton";
 import { cx, RecipeVariantProps, sva } from "../../../styled-system/css";
+import { useTranslations } from "../../i18n";
 
 export const PaginationStyle = sva({
   slots: ["root", "item", "ellipsis", "prevTrigger", "nextTrigger"],
@@ -114,6 +115,8 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
       onPageChange?.(details);
     };
 
+    const t = useTranslations();
+
     const paginationProps = {
       count,
       pageSize,
@@ -148,10 +151,16 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
                     styleType="ghost"
                     size="small"
                     aria-label={
-                      isFirstPage ? "最初のページです" : "前のページへ"
+                      isFirstPage
+                        ? t("pagination.firstPage")
+                        : t("pagination.previousPage")
                     }
                     disabled={isFirstPage}
-                    title={isFirstPage ? "最初のページです" : "前のページへ"}
+                    title={
+                      isFirstPage
+                        ? t("pagination.firstPage")
+                        : t("pagination.previousPage")
+                    }
                   />
                 </ArkPagination.PrevTrigger>
 
@@ -168,8 +177,10 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
                         shape="rectangle"
                         styleType="ghost"
                         size="small"
-                        aria-label={`ページ${page.value}へ移動`}
-                        title={`ページ${page.value}へ移動`}
+                        aria-label={t("pagination.goToPage", {
+                          page: page.value,
+                        })}
+                        title={t("pagination.goToPage", { page: page.value })}
                       />
                     </ArkPagination.Item>
                   ) : (
@@ -194,10 +205,16 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
                     styleType="ghost"
                     size="small"
                     aria-label={
-                      isLastPage ? "最後のページです" : "次のページへ"
+                      isLastPage
+                        ? t("pagination.lastPage")
+                        : t("pagination.nextPage")
                     }
                     disabled={isLastPage}
-                    title={isLastPage ? "最後のページです" : "次のページへ"}
+                    title={
+                      isLastPage
+                        ? t("pagination.lastPage")
+                        : t("pagination.nextPage")
+                    }
                   />
                 </ArkPagination.NextTrigger>
               </>

@@ -2,7 +2,8 @@
 
 import { Dialog, DialogRootProps, Portal } from "@ark-ui/react";
 import { cx, RecipeVariantProps, sva } from "../../../styled-system/css";
-import { Button } from "../Button";
+import { Button, ButtonProps } from "../Button";
+import { useTranslations } from "../../i18n";
 
 const ModalDialogStyle = sva({
   slots: [
@@ -37,7 +38,7 @@ const ModalDialogStyle = sva({
       paddingRight: "sd.system.dimension.spacing.extraLarge",
       paddingBottom: "sd.system.dimension.spacing.large",
       paddingLeft: "sd.system.dimension.spacing.extraLarge",
-      backgroundColor: "sd.system.color.component.surface",
+      backgroundColor: "sd.system.color.component.surfaceContainerBright",
       boxShadow: "sd.system.elevation.shadow.level5",
       borderRadius: "sd.system.dimension.radius.medium",
       zIndex: "sd.system.elevation.zIndex.modal",
@@ -78,6 +79,7 @@ type Props = {
   cancelButtonLabel?: string;
   submitButtonLabel: string;
   onButtonClick: () => void;
+  submitButtonProps?: ButtonProps;
 };
 
 export type ModalDialogProps = Props &
@@ -90,10 +92,12 @@ export const ModalDialog: React.FC<ModalDialogProps> = ({
   cancelButtonLabel,
   submitButtonLabel,
   onButtonClick,
+  submitButtonProps,
   children,
   className,
   ...rest
 }) => {
+  const t = useTranslations();
   const styles = ModalDialogStyle(rest);
   return (
     <Dialog.Root open={isOpen} {...rest}>
@@ -108,10 +112,12 @@ export const ModalDialog: React.FC<ModalDialogProps> = ({
               </Dialog.Description>
             </div>
             <div className={styles.buttonWrapper}>
-              <Button onClick={onButtonClick}>{submitButtonLabel}</Button>
+              <Button {...submitButtonProps} onClick={onButtonClick}>
+                {submitButtonLabel}
+              </Button>
               <Dialog.CloseTrigger asChild>
                 <Button styleType="ghost">
-                  {cancelButtonLabel || "閉じる"}
+                  {cancelButtonLabel || t("modalDialog.close")}
                 </Button>
               </Dialog.CloseTrigger>
             </div>

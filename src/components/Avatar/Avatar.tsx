@@ -15,7 +15,7 @@ export const AvatarStyle = sva({
       width: "100%",
       height: "100%",
       borderRadius: "50%",
-      color: "sd.system.color.component.onSurface",
+      color: "sd.reference.color.scale.black.1000",
       backgroundColor: "sd.reference.color.scale.blue.200",
       textStyle: "sd.system.typography.label.extraLarge_compact",
     },

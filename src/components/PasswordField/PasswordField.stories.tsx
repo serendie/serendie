@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { PasswordField } from "./PasswordField";
 import figma from "@figma/code-connect";
 import { TextField } from "../TextField";

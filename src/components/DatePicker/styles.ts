@@ -22,7 +22,7 @@ export const datePickerStyles = sva({
       zIndex: "sd.system.elevation.zIndex.dropdown",
     },
     content: {
-      background: "sd.system.color.component.surface",
+      background: "sd.system.color.component.surfaceContainerBright",
       borderRadius: "sd.system.dimension.radius.medium",
       boxShadow: "sd.system.elevation.shadow.level1",
       flexDirection: "column",

@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { Badge, BadgeCloseButton, BadgeStyle } from "./Badge";
 import figma from "@figma/code-connect";
 

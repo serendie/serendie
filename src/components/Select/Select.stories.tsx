@@ -1,6 +1,6 @@
 import figma from "@figma/code-connect";
-import type { Meta, StoryObj } from "@storybook/react";
-import { userEvent, within, waitFor, expect } from "@storybook/test";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+import { userEvent, within, waitFor, expect } from "storybook/test";
 import { FullscreenLayout } from "../../../.storybook/FullscreenLayout";
 import { allModes } from "../../../.storybook/modes";
 import { Select } from "./Select";
@@ -82,15 +82,14 @@ export const HasError: Story = {
 export const PlayClickedSelect: Story = {
   parameters: {
     layout: "fullscreen",
-    viewport: {
-      defaultViewport: "large",
-    },
+
     chromatic: {
       modes: {
         small: allModes["small"],
       },
     },
   },
+
   render: (args) => {
     return (
       <FullscreenLayout>
@@ -98,6 +97,7 @@ export const PlayClickedSelect: Story = {
       </FullscreenLayout>
     );
   },
+
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const parentElement = canvasElement.parentElement;
@@ -115,5 +115,12 @@ export const PlayClickedSelect: Story = {
       },
       { timeout: 3000 }
     );
+  },
+
+  globals: {
+    viewport: {
+      value: "large",
+      isRotated: false,
+    },
   },
 };
