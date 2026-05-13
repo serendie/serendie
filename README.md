@@ -15,17 +15,18 @@
 </div>
 <br/>
 
-[Serendie Design System](https://serendie.design/)は、多様な事業と人々をつなぎ、新たな価値を生み出すための三菱電機によるオープンなデザインシステムです。<br/>
-[デザイントークン](https://github.com/serendie/design-token)や[Serendie Symbols](https://github.com/serendie/serendie-symbols)など複数のリポジトリから構成され、本リポジトリはSerendie UIを扱います。
+[Serendie Design System](https://serendie.design/)は三菱電機によるオープンなデザインシステムです。<br/>
+[デザイントークン](https://github.com/serendie/design-token)や[Serendie Symbols](https://github.com/serendie/serendie-symbols)など複数のリポジトリから構成されています。本リポジトリはSerendie UIを扱います。
 
 # Serendie UI
 
-- [Serendie UI Kit (Figma)](https://www.figma.com/community/file/1433690846108785966)と対となるReactベースのUIコンポーネント集
-- デザインと実装が[Figma Code Connect](https://serendie.design/get-started/dev/#section-1)で対応付け
-- 5つの組み込み[カラーテーマ](https://github.com/serendie/serendie?tab=readme-ov-file#%E3%83%86%E3%83%BC%E3%83%9E%E5%88%87%E3%82%8A%E6%9B%BF%E3%81%88)や[カスタムテーミング](https://github.com/serendie/serendie?tab=readme-ov-file#%E3%82%B5%E3%83%96%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89%E5%AF%BE%E5%BF%9C)に対応
-- ダークモード対応
-- 多言語対応 (日英)
-- [MCPサーバー](https://serendie.desgin/ai/mcp-server)や[Agent Skills](https://serendie.desgin/ai/agent-skills)を提供
+次のような特徴を持つ、ReactベースのUIコンポーネントライブラリです。
+
+- 🎨デザイントークンやUIコンポーネントは[Serendie UI Kit (Figma)](https://www.figma.com/community/file/1433690846108785966)に対応し、デザインと開発でSingle Source of Truth (SSoT) を実現
+- 🌈5つの組み込み[カラーテーマ](https://github.com/serendie/serendie?tab=readme-ov-file#%E3%83%86%E3%83%BC%E3%83%9E%E5%88%87%E3%82%8A%E6%9B%BF%E3%81%88)や[カスタムテーミング](https://github.com/serendie/serendie?tab=readme-ov-file#%E3%82%B5%E3%83%96%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89%E5%AF%BE%E5%BF%9C)に対応
+- 🌙ダークモード対応
+- 🌐多言語対応 (日英)
+- 🤖[MCPサーバー](https://serendie.desgin/ai/mcp-server)や[Agent Skills](https://serendie.desgin/ai/agent-skills)を提供
 
 ## 使い方
 
