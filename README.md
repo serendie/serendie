@@ -26,7 +26,7 @@
 - 🌈5つの組み込み[カラーテーマ](https://github.com/serendie/serendie?tab=readme-ov-file#%E3%83%86%E3%83%BC%E3%83%9E%E5%88%87%E3%82%8A%E6%9B%BF%E3%81%88)や[カスタムテーミング](https://github.com/serendie/serendie?tab=readme-ov-file#%E3%82%B5%E3%83%96%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89%E5%AF%BE%E5%BF%9C)に対応
 - 🌙ダークモード対応
 - 🌐多言語対応(日英)
-- 🤖[MCPサーバー](https://serendie.desgin/ai/mcp-server)や[Agent Skills](https://serendie.desgin/ai/agent-skills)を提供
+- 🤖[MCPサーバー](https://serendie.design/ai/mcp-server)や[Agent Skills](https://serendie.design/ai/agent-skills)を提供
 
 ## 使い方
 
