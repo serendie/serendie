@@ -9,7 +9,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "3.5.0",
+  "version": "3.5.1",
   "type": "module",
   "types": "./dist/index.d.ts",
   "sideEffects": [
@@ -85,7 +85,7 @@
     "husky": "^9.1.4",
     "lint-staged": "^15.2.8",
     "prettier": "^3.3.3",
-    "release-it": "^17.11.0",
+    "release-it": "^20.0.1",
     "storybook": "10.3.6",
     "tsx": "^4.20.6",
     "typescript": "^5.5.3",
