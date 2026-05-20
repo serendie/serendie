@@ -47,29 +47,28 @@ clientFrameworks: "react"
 ### Step 4: 差分の修正
 
 **重要なルール：**
-
 - **色トークンのみ変更** - dimension, typography などは変更しない
 - **システムトークン優先** - `sd.reference.*` より `sd.system.*` を使用
 - **推測禁止** - 必ず Figma で確認してから変更
 
 ## 主なトークンパターン
 
-| 用途               | トークン例                                         |
-| ------------------ | -------------------------------------------------- |
-| 背景（通常）       | `sd.system.color.component.surface`                |
-| 背景（浮遊要素）   | `sd.system.color.component.surfaceContainerBright` |
-| 背景（コンテナ）   | `sd.system.color.component.surfaceContainer`       |
-| テキスト           | `sd.system.color.component.onSurface`              |
-| テキスト（補助）   | `sd.system.color.component.onSurfaceVariant`       |
-| ボーダー           | `sd.system.color.component.outline`                |
-| ボーダー（暗め）   | `sd.system.color.component.outlineDim`             |
-| ボーダー（明るめ） | `sd.system.color.component.outlineBright`          |
-| プライマリ         | `sd.system.color.impression.primary`               |
-| プライマリ背景     | `sd.system.color.impression.primaryContainer`      |
-| 無効状態           | `sd.system.color.interaction.disabled`             |
-| 無効テキスト       | `sd.system.color.interaction.disabledOnSurface`    |
-| ホバー             | `sd.system.color.interaction.hoveredVariant`       |
-| 選択状態           | `sd.system.color.interaction.selectedSurface`      |
+| 用途 | トークン例 |
+|------|----------|
+| 背景（通常） | `sd.system.color.component.surface` |
+| 背景（浮遊要素） | `sd.system.color.component.surfaceContainerBright` |
+| 背景（コンテナ） | `sd.system.color.component.surfaceContainer` |
+| テキスト | `sd.system.color.component.onSurface` |
+| テキスト（補助） | `sd.system.color.component.onSurfaceVariant` |
+| ボーダー | `sd.system.color.component.outline` |
+| ボーダー（暗め） | `sd.system.color.component.outlineDim` |
+| ボーダー（明るめ） | `sd.system.color.component.outlineBright` |
+| プライマリ | `sd.system.color.impression.primary` |
+| プライマリ背景 | `sd.system.color.impression.primaryContainer` |
+| 無効状態 | `sd.system.color.interaction.disabled` |
+| 無効テキスト | `sd.system.color.interaction.disabledOnSurface` |
+| ホバー | `sd.system.color.interaction.hoveredVariant` |
+| 選択状態 | `sd.system.color.interaction.selectedSurface` |
 
 ## 引数
 
@@ -87,10 +86,8 @@ clientFrameworks: "react"
 ## 出力
 
 変更があった場合：
-
 1. 変更内容のサマリー（ファイル名、変更前→変更後）
 2. git diff --stat の出力
 
 変更がなかった場合：
-
 - Figma と一致していることを報告
