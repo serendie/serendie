@@ -9,8 +9,9 @@ import {
 import { useState } from "react";
 import { DataTable } from ".";
 
-export interface DataTableComponentProps<TData = Record<string, unknown>>
-  extends Omit<TableOptions<TData>, "getCoreRowModel" | "getSortedRowModel"> {
+export interface DataTableComponentProps<
+  TData = Record<string, unknown>,
+> extends Omit<TableOptions<TData>, "getCoreRowModel" | "getSortedRowModel"> {
   className?: string;
 }
 

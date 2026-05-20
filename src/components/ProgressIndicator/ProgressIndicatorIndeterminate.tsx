@@ -147,8 +147,7 @@ const filledStyles = cva({
   compoundVariants: [],
 });
 
-export interface ProgressIndicatorIndeterminateProps
-  extends React.ComponentProps<"div"> {
+export interface ProgressIndicatorIndeterminateProps extends React.ComponentProps<"div"> {
   type?: "linear" | "circular";
   size?: "small" | "medium" | "large";
   color?: "primary" | "subtle";

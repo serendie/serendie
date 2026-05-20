@@ -51,6 +51,7 @@ export * from "./components/RadioButton/index.ts";
 export * from "./components/Search/index.ts";
 export * from "./components/Select/index.ts";
 export * from "./components/Slider/index.ts";
+export * from "./components/Steps/index.ts";
 export * from "./components/Switch/index.ts";
 export * from "./components/Tabs/index.ts";
 export * from "./components/TextArea/index.ts";
