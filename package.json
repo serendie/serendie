@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/serendie/serendie.git"
   },
-  "version": "3.3.0",
+  "version": "3.4.0",
   "type": "module",
   "types": "./dist/index.d.ts",
   "sideEffects": [
