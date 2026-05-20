@@ -6,6 +6,9 @@
     "type": "git",
     "url": "git+https://github.com/serendie/serendie.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "3.4.0",
   "type": "module",
   "types": "./dist/index.d.ts",
