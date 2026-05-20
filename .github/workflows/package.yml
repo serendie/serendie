@@ -1,16 +1,52 @@
 name: Package
 
 on:
+  workflow_dispatch:
+  push:
+    branches: [main]
   pull_request:
     types:
       - labeled
 
 permissions:
   contents: write
+  id-token: write
   packages: write
   pull-requests: write
 
 jobs:
+  publish-dev:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          registry-url: "https://registry.npmjs.org"
+          package-manager-cache: false
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build package
+        run: npm run build
+
+      - name: Bump version
+        run: |
+          set -euo pipefail
+          NEW_VERSION="$(npm pkg get version | tr -d '\"' | \
+            awk -F- '{print $1}')-dev.$(date +'%Y%m%d%H%M')"
+          npm version --no-git-tag-version "$NEW_VERSION"
+
+      - name: Publish to npm
+        run: npm publish --tag dev --access public
+
   release-by-labeled:
+    if: github.event_name == 'pull_request'
     uses: serendie/.github/.github/workflows/package.yml@main
     secrets: inherit

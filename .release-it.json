@@ -9,6 +9,9 @@
     "releaseName": "${npm.name}@${version}",
     "autoGenerate": true
   },
+  "npm": {
+    "skipChecks": true
+  },
   "hooks": {
     "after:bump": "npm run build"
   }
