@@ -30,7 +30,11 @@ const meta: Meta<typeof ListItem> = {
         }),
         isLargeLeftIcon: figma.enum("Heading Elements", { IconLarge: true }),
         rightIcon: figma.enum("Trailing Elements", {
-          Icon: figma.instance("RightIconInstance"),
+          IconMedium: figma.instance("RightIconInstance"),
+          IconLarge: figma.instance("RightIconInstance"),
+        }),
+        isLargeRightIcon: figma.enum("Trailing Elements", {
+          IconLarge: true,
         }),
         badge: figma.enum("Trailing Elements", {
           Badge: 5,
@@ -49,6 +53,8 @@ const meta: Meta<typeof ListItem> = {
         "disabled",
         "selected",
         "isLargeLeftIcon",
+        "isLargeRightIcon",
+        "href",
       ],
     },
   },
@@ -84,6 +90,9 @@ const meta: Meta<typeof ListItem> = {
       control: { type: "text" },
     },
     description: {
+      control: { type: "text" },
+    },
+    href: {
       control: { type: "text" },
     },
   },
@@ -128,5 +137,62 @@ export const Badge: Story = {
     title: "リストスタイル1",
     description: "補足テキスト補足テキスト10分前",
     badge: 100,
+  },
+};
+
+export const LargeLeftIcon: Story = {
+  args: {
+    leftIcon: <SerendieSymbolPlaceholder />,
+    isLargeLeftIcon: true,
+    title: "リストスタイル",
+    description: "補足テキスト補足テキスト",
+  },
+};
+
+export const LargeRightIcon: Story = {
+  args: {
+    leftIcon: <SerendieSymbolPlaceholder />,
+    isLargeLeftIcon: true,
+    rightIcon: <SerendieSymbolChevronRight />,
+    isLargeRightIcon: true,
+    title: "リストスタイル",
+  },
+};
+
+export const WithBadgeAndLargeIcon: Story = {
+  args: {
+    leftIcon: <SerendieSymbolPlaceholder />,
+    isLargeLeftIcon: true,
+    title: "リストスタイル",
+    description: "補足テキスト補足テキスト",
+    badge: 5,
+  },
+};
+
+export const AsLink: Story = {
+  args: {
+    leftIcon: <SerendieSymbolPlaceholder />,
+    rightIcon: <SerendieSymbolChevronRight />,
+    title: "リンクアイテム",
+    description: "hrefを指定するとリンクとして表示",
+    href: "#example",
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    leftIcon: <SerendieSymbolPlaceholder />,
+    rightIcon: <SerendieSymbolChevronRight />,
+    title: "無効なアイテム",
+    disabled: true,
+  },
+};
+
+export const Selected: Story = {
+  args: {
+    leftIcon: <SerendieSymbolPlaceholder />,
+    rightIcon: <SerendieSymbolChevronRight />,
+    title: "選択されたアイテム",
+    selected: true,
   },
 };
