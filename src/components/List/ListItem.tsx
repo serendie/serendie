@@ -199,7 +199,7 @@ export const ListItem: React.FC<ListItemProps> = ({
   const [variantProps, elementProps] = ListItemStyle.splitVariantProps(props);
   const styles = ListItemStyle(variantProps);
 
-  const isMultiLine = !!description || !!subDescription || !!children;
+  const isMultiLine = !!description || !!subDescription;
 
   const wrapperClassName = cx(
     styles.wrapper,
