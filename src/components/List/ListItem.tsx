@@ -9,8 +9,9 @@ export const ListItemStyle = sva({
     "textGroup",
     "title",
     "description",
-    "rightIcon",
-    "leftIcon",
+    "subDescription",
+    "trailingElement",
+    "headingElement",
     "badge",
   ],
   base: {
@@ -70,8 +71,6 @@ export const ListItemStyle = sva({
       },
     },
     description: {
-      display: "flex",
-      flexDirection: "column",
       textStyle: "sd.system.typography.body.extraSmall_compact",
       color: "sd.system.color.component.onSurfaceVariant",
       _expanded: {
@@ -81,7 +80,17 @@ export const ListItemStyle = sva({
         opacity: 0.3,
       },
     },
-    leftIcon: {
+    subDescription: {
+      textStyle: "sd.system.typography.body.extraSmall_compact",
+      color: "sd.system.color.component.onSurfaceVariant",
+      _expanded: {
+        textStyle: "sd.system.typography.body.extraSmall_expanded",
+      },
+      _disabled: {
+        opacity: 0.3,
+      },
+    },
+    headingElement: {
       flexShrink: 0,
       "& svg": {
         display: "block",
@@ -94,7 +103,7 @@ export const ListItemStyle = sva({
         opacity: 0.3,
       },
     },
-    rightIcon: {
+    trailingElement: {
       flexShrink: 0,
       "& svg": {
         width: "24px",
@@ -109,9 +118,9 @@ export const ListItemStyle = sva({
     },
   },
   variants: {
-    isLargeLeftIcon: {
+    isLargeHeadingElement: {
       true: {
-        leftIcon: {
+        headingElement: {
           "& svg": {
             width: "40px",
             height: "40px",
@@ -120,9 +129,9 @@ export const ListItemStyle = sva({
       },
       false: {},
     },
-    isLargeRightIcon: {
+    isLargeTrailingElement: {
       true: {
-        rightIcon: {
+        trailingElement: {
           "& svg": {
             width: "40px",
             height: "40px",
@@ -144,10 +153,11 @@ export const ListItemStyle = sva({
 type ListItemBaseProps = {
   title: string;
   description?: string;
-  rightIcon?: React.ReactElement;
-  leftIcon?: React.ReactElement;
-  isLargeLeftIcon?: boolean;
-  isLargeRightIcon?: boolean;
+  subDescription?: string;
+  trailingElement?: React.ReactElement;
+  headingElement?: React.ReactElement;
+  isLargeHeadingElement?: boolean;
+  isLargeTrailingElement?: boolean;
   badge?: number;
   children?: React.ReactNode;
   disabled?: boolean;
@@ -157,23 +167,26 @@ type ListItemBaseProps = {
   href?: string;
 };
 
-type ExclusiveRightItemProps =
-  | ({ badge?: number } & { rightIcon?: never; isLargeRightIcon?: never })
+type ExclusiveTrailingItemProps =
+  | ({
+      badge?: number;
+    } & { trailingElement?: never; isLargeTrailingElement?: never })
   | {
       badge?: never;
-      rightIcon?: React.ReactElement;
-      isLargeRightIcon?: boolean;
+      trailingElement?: React.ReactElement;
+      isLargeTrailingElement?: boolean;
     };
 
 type ListItemProps = ComponentProps<"li"> &
   ListItemBaseProps &
-  ExclusiveRightItemProps;
+  ExclusiveTrailingItemProps;
 
 export const ListItem: React.FC<ListItemProps> = ({
-  leftIcon,
-  rightIcon,
+  headingElement,
+  trailingElement,
   title,
   description,
+  subDescription,
   badge,
   children,
   disabled,
@@ -186,9 +199,11 @@ export const ListItem: React.FC<ListItemProps> = ({
   const [variantProps, elementProps] = ListItemStyle.splitVariantProps(props);
   const styles = ListItemStyle(variantProps);
 
+  const isMultiLine = !!description || !!subDescription || !!children;
+
   const wrapperClassName = cx(
     styles.wrapper,
-    (!!description || !!children) && css({ alignItems: "flex-start" })
+    isMultiLine && css({ alignItems: "flex-start" })
   );
 
   const wrapperDataAttrs = {
@@ -199,42 +214,38 @@ export const ListItem: React.FC<ListItemProps> = ({
 
   const wrapperContent = (
     <>
-      {leftIcon && (
+      {headingElement && (
         <div
-          className={styles.leftIcon}
+          className={styles.headingElement}
           style={
-            props.isLargeLeftIcon
+            props.isLargeHeadingElement
               ? { padding: "0", width: "40px", height: "40px" }
               : { padding: "0", width: "24px", height: "24px" }
           }
         >
-          {leftIcon}
+          {headingElement}
         </div>
       )}
-      <div
-        className={cx(
-          styles.textGroup,
-          (!!description || !!children) && css({ alignItems: "flex-start" })
-        )}
-      >
+      <div className={styles.textGroup}>
         <span className={styles.title}>{title}</span>
-        {(description || children) && (
-          <div className={styles.description}>
-            {description}
-            {children}
-          </div>
+        {description && (
+          <span className={styles.description}>{description}</span>
         )}
+        {subDescription && (
+          <span className={styles.subDescription}>{subDescription}</span>
+        )}
+        {children}
       </div>
-      {rightIcon && (
+      {trailingElement && (
         <div
-          className={styles.rightIcon}
+          className={styles.trailingElement}
           style={
-            props.isLargeRightIcon
+            props.isLargeTrailingElement
               ? { width: "40px", height: "40px" }
               : { width: "24px", height: "24px" }
           }
         >
-          {rightIcon}
+          {trailingElement}
         </div>
       )}
       {badge != null && badge > 0 && (
