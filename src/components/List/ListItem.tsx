@@ -199,11 +199,14 @@ export const ListItem: React.FC<ListItemProps> = ({
   const [variantProps, elementProps] = ListItemStyle.splitVariantProps(props);
   const styles = ListItemStyle(variantProps);
 
-  const isMultiLine = !!description || !!subDescription;
+  const isLargeWithDescOnly =
+    !!props.isLargeHeadingElement && !!description && !subDescription;
+  const isTopAlign =
+    (!!description || !!subDescription) && !isLargeWithDescOnly;
 
   const wrapperClassName = cx(
     styles.wrapper,
-    isMultiLine && css({ alignItems: "flex-start" })
+    isTopAlign && css({ alignItems: "flex-start" })
   );
 
   const wrapperDataAttrs = {
@@ -214,13 +217,13 @@ export const ListItem: React.FC<ListItemProps> = ({
 
   const headingElementClassName = cx(
     styles.headingElement,
-    isMultiLine &&
+    isTopAlign &&
       css({ marginTop: "sd.system.dimension.spacing.twoExtraSmall" })
   );
 
   const trailingElementClassName = cx(
     styles.trailingElement,
-    isMultiLine &&
+    isTopAlign &&
       css({ marginTop: "sd.system.dimension.spacing.twoExtraSmall" })
   );
 
