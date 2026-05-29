@@ -212,11 +212,23 @@ export const ListItem: React.FC<ListItemProps> = ({
     "data-focus-visible": focusVisible ? true : undefined,
   };
 
+  const headingElementClassName = cx(
+    styles.headingElement,
+    isMultiLine &&
+      css({ marginTop: "sd.system.dimension.spacing.twoExtraSmall" })
+  );
+
+  const trailingElementClassName = cx(
+    styles.trailingElement,
+    isMultiLine &&
+      css({ marginTop: "sd.system.dimension.spacing.twoExtraSmall" })
+  );
+
   const wrapperContent = (
     <>
       {headingElement && (
         <div
-          className={styles.headingElement}
+          className={headingElementClassName}
           style={
             props.isLargeHeadingElement
               ? { padding: "0", width: "40px", height: "40px" }
@@ -238,7 +250,7 @@ export const ListItem: React.FC<ListItemProps> = ({
       </div>
       {trailingElement && (
         <div
-          className={styles.trailingElement}
+          className={trailingElementClassName}
           style={
             props.isLargeTrailingElement
               ? { width: "40px", height: "40px" }
