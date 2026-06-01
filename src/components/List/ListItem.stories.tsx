@@ -8,6 +8,7 @@ import {
 } from "@serendie/symbols";
 
 const meta: Meta<typeof ListItem> = {
+  title: "Components/ListItem",
   component: ListItem,
   parameters: {
     design: {
