@@ -100,11 +100,11 @@ export const breadcrumbsStyle = sva({
           },
         },
         icon: {
-          width: "20px",
-          height: "20px",
+          width: "sd.reference.dimension.scale.7",
+          height: "sd.reference.dimension.scale.7",
           "& svg": {
-            width: "20px",
-            height: "20px",
+            width: "sd.reference.dimension.scale.7",
+            height: "sd.reference.dimension.scale.7",
           },
         },
       },
@@ -136,11 +136,11 @@ export const breadcrumbsStyle = sva({
           },
         },
         icon: {
-          width: "16px",
-          height: "16px",
+          width: "sd.reference.dimension.scale.6",
+          height: "sd.reference.dimension.scale.6",
           "& svg": {
-            width: "16px",
-            height: "16px",
+            width: "sd.reference.dimension.scale.6",
+            height: "sd.reference.dimension.scale.6",
           },
         },
       },
