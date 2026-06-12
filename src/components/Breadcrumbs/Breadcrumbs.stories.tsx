@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Breadcrumbs, BreadcrumbItem, BreadcrumbEllipsis } from "./Breadcrumbs";
+import { Breadcrumbs, BreadcrumbItem } from "./Breadcrumbs";
 import { SerendieSymbolArticle, SerendieSymbolHome } from "@serendie/symbols";
 
 const meta: Meta<typeof Breadcrumbs> = {
@@ -22,6 +22,15 @@ const meta: Meta<typeof Breadcrumbs> = {
     separator: {
       control: { type: "radio" },
       options: ["chevron", "slash"],
+    },
+    maxItems: {
+      control: { type: "number" },
+    },
+    itemsBeforeCollapse: {
+      control: { type: "number" },
+    },
+    itemsAfterCollapse: {
+      control: { type: "number" },
     },
   },
 };
@@ -117,9 +126,14 @@ export const WithEllipsis: Story = {
       <BreadcrumbItem href="/" icon={<SerendieSymbolHome />}>
         Home
       </BreadcrumbItem>
-      <BreadcrumbEllipsis />
+      <BreadcrumbItem href="/category" icon={<SerendieSymbolArticle />}>
+        Category
+      </BreadcrumbItem>
       <BreadcrumbItem href="/subcategory" icon={<SerendieSymbolArticle />}>
         Subcategory
+      </BreadcrumbItem>
+      <BreadcrumbItem href="/detail" icon={<SerendieSymbolArticle />}>
+        Detail
       </BreadcrumbItem>
       <BreadcrumbItem current icon={<SerendieSymbolArticle />}>
         Current Page
@@ -129,6 +143,7 @@ export const WithEllipsis: Story = {
   args: {
     size: "medium",
     separator: "chevron",
+    maxItems: 3,
   },
 };
 
