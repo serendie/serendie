@@ -60,7 +60,7 @@ export const breadcrumbsStyle = sva({
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
-      color: "sd.system.color.component.onSurfaceVariant",
+      color: "sd.system.color.impression.primary",
       cursor: "pointer",
       borderRadius: "sd.system.dimension.radius.small",
       transition: "background-color 0.2s",
