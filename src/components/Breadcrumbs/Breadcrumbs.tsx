@@ -27,7 +27,7 @@ export const breadcrumbsStyle = sva({
     link: {
       display: "inline-flex",
       alignItems: "center",
-      gap: "sd.system.dimension.spacing.twoExtraSmall",
+      gap: "sd.system.dimension.spacing.extraSmall",
       color: "sd.system.color.impression.primary",
       textDecoration: "none",
       cursor: "pointer",
@@ -97,26 +97,26 @@ export const breadcrumbsStyle = sva({
           gap: "sd.system.dimension.spacing.twoExtraSmall",
         },
         link: {
-          textStyle: "sd.system.typography.body.medium_compact",
-          paddingInline: "sd.system.dimension.spacing.twoExtraSmall",
+          textStyle: "sd.system.typography.body.small_compact",
+          paddingInline: "sd.system.dimension.spacing.extraSmall",
           paddingBlock: "sd.system.dimension.spacing.twoExtraSmall",
           _expanded: {
-            textStyle: "sd.system.typography.body.medium_expanded",
+            textStyle: "sd.system.typography.body.small_expanded",
           },
         },
         separator: {
-          textStyle: "sd.system.typography.body.medium_compact",
-          paddingInline: "sd.system.dimension.spacing.twoExtraSmall",
+          textStyle: "sd.system.typography.body.small_compact",
+          paddingInline: "sd.system.dimension.spacing.extraSmall",
           _expanded: {
-            textStyle: "sd.system.typography.body.medium_expanded",
+            textStyle: "sd.system.typography.body.small_expanded",
           },
         },
         ellipsis: {
-          textStyle: "sd.system.typography.body.medium_compact",
-          paddingInline: "sd.system.dimension.spacing.twoExtraSmall",
+          textStyle: "sd.system.typography.body.small_compact",
+          paddingInline: "sd.system.dimension.spacing.extraSmall",
           paddingBlock: "sd.system.dimension.spacing.twoExtraSmall",
           _expanded: {
-            textStyle: "sd.system.typography.body.medium_expanded",
+            textStyle: "sd.system.typography.body.small_expanded",
           },
         },
         icon: {
