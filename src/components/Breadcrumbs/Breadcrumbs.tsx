@@ -62,8 +62,6 @@ export const breadcrumbsStyle = sva({
       justifyContent: "center",
       color: "sd.system.color.impression.primary",
       cursor: "pointer",
-      borderRadius: "sd.system.dimension.radius.small",
-      transition: "background-color 0.2s",
       "& button": {
         display: "inline-flex",
         alignItems: "center",
@@ -72,8 +70,8 @@ export const breadcrumbsStyle = sva({
         border: "none",
         color: "inherit",
         cursor: "pointer",
-        padding: 0,
         borderRadius: "sd.system.dimension.radius.small",
+        transition: "background-color 0.2s",
         _hover: {
           backgroundColor: "sd.system.color.interaction.hoveredVariant",
         },
@@ -112,11 +110,9 @@ export const breadcrumbsStyle = sva({
           },
         },
         ellipsis: {
-          textStyle: "sd.system.typography.body.small_compact",
-          paddingInline: "sd.system.dimension.spacing.extraSmall",
-          paddingBlock: "sd.system.dimension.spacing.twoExtraSmall",
-          _expanded: {
-            textStyle: "sd.system.typography.body.small_expanded",
+          "& button": {
+            paddingInline: "sd.system.dimension.spacing.extraSmall",
+            paddingBlock: "sd.system.dimension.spacing.twoExtraSmall",
           },
         },
         icon: {
@@ -148,11 +144,9 @@ export const breadcrumbsStyle = sva({
           },
         },
         ellipsis: {
-          textStyle: "sd.system.typography.body.small_compact",
-          paddingInline: "sd.system.dimension.spacing.twoExtraSmall",
-          paddingBlock: "sd.system.dimension.spacing.twoExtraSmall",
-          _expanded: {
-            textStyle: "sd.system.typography.body.small_expanded",
+          "& button": {
+            paddingInline: "sd.system.dimension.spacing.twoExtraSmall",
+            paddingBlock: "sd.system.dimension.spacing.twoExtraSmall",
           },
         },
         icon: {
