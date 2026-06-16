@@ -1,6 +1,7 @@
 import React from "react";
 import { cva, cx } from "../../../styled-system/css";
 import { AnimatedArc } from "./AnimatedArc";
+import { normalizeProgress } from "./animatedArcProps";
 
 const progressIndicatorIndeterminateStyles = cva({
   base: {
@@ -151,6 +152,7 @@ export interface ProgressIndicatorIndeterminateProps extends React.ComponentProp
   type?: "linear" | "circular";
   size?: "small" | "medium" | "large";
   color?: "primary" | "subtle";
+  animationProgress?: number;
 }
 
 const getCircleProps = (size: "small" | "medium" | "large") => {
@@ -175,10 +177,16 @@ export const ProgressIndicatorIndeterminate = ({
   type = "linear",
   size = "medium",
   color = "primary",
+  animationProgress,
   className,
   style,
   ...props
 }: ProgressIndicatorIndeterminateProps) => {
+  const normalizedAnimationProgress =
+    animationProgress == null
+      ? undefined
+      : normalizeProgress(animationProgress);
+
   if (type === "circular") {
     const { radius, strokeWidth } = getCircleProps(size);
 
@@ -200,6 +208,7 @@ export const ProgressIndicatorIndeterminate = ({
             className={filledStyles({ type, size, color })}
             radius={radius}
             width={strokeWidth}
+            progress={normalizedAnimationProgress}
           />
         </svg>
       </div>
@@ -218,7 +227,19 @@ export const ProgressIndicatorIndeterminate = ({
       {...props}
     >
       <div className={trackStyles({ type, size })} />
-      <div className={filledStyles({ type, size, color })} />
+      <div
+        className={filledStyles({ type, size, color })}
+        style={
+          normalizedAnimationProgress == null
+            ? undefined
+            : {
+                animation: "none",
+                transform: `translateX(${
+                  normalizedAnimationProgress * 300 - 150
+                }%)`,
+              }
+        }
+      />
     </div>
   );
 };
