@@ -131,5 +131,6 @@ export const ControlledRange: Story = {
 export const CalendarOnly: Story = {
   args: {
     isCalendarOnly: true,
+    value: [parseDate("2025-01-01")],
   },
 };
