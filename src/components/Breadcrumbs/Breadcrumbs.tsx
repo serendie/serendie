@@ -2,6 +2,7 @@ import React, {
   ComponentProps,
   createContext,
   useContext,
+  useEffect,
   useState,
 } from "react";
 import {
@@ -9,6 +10,7 @@ import {
   SerendieSymbolMoreHorizontal,
 } from "@serendie/symbols";
 import { cx, sva, RecipeVariantProps } from "../../../styled-system/css";
+import { useTranslations } from "../../i18n";
 
 export const breadcrumbsStyle = sva({
   slots: ["root", "list", "item", "link", "separator", "ellipsis", "icon"],
@@ -215,18 +217,31 @@ export const Breadcrumbs = React.forwardRef<HTMLElement, BreadcrumbsProps>(
   ) => {
     const styles = breadcrumbsStyle({ size });
     const [expanded, setExpanded] = useState(false);
+    const t = useTranslations();
 
     const allItems = React.Children.toArray(children).filter(
       React.isValidElement
     );
 
+    // children変更時にexpandedをリセット
+    const childCount = allItems.length;
+    useEffect(() => {
+      setExpanded(false);
+    }, [childCount]);
+
     const shouldCollapse =
-      maxItems !== undefined && allItems.length > maxItems && !expanded;
+      maxItems !== undefined &&
+      allItems.length > maxItems &&
+      allItems.length > itemsBeforeCollapse + itemsAfterCollapse &&
+      !expanded;
+
+    const safeBeforeCollapse = Math.max(0, itemsBeforeCollapse);
+    const safeAfterCollapse = Math.max(0, itemsAfterCollapse);
 
     const visibleItems = shouldCollapse
       ? [
-          ...allItems.slice(0, itemsBeforeCollapse),
-          ...allItems.slice(allItems.length - itemsAfterCollapse),
+          ...allItems.slice(0, safeBeforeCollapse),
+          ...allItems.slice(allItems.length - safeAfterCollapse),
         ]
       : allItems;
 
@@ -258,26 +273,25 @@ export const Breadcrumbs = React.forwardRef<HTMLElement, BreadcrumbsProps>(
       <BreadcrumbsContext.Provider value={{ styles, size }}>
         <nav
           ref={ref}
-          aria-label="Breadcrumb"
+          aria-label={t("breadcrumbs.label")}
           className={cx(styles.root, className)}
           {...props}
         >
           <ol className={styles.list}>
             {visibleItems.map((child, index) => {
               const isLast = index === visibleItems.length - 1;
-              const showEllipsis =
-                shouldCollapse && index === itemsBeforeCollapse - 1;
+              const showEllipsisBefore =
+                shouldCollapse && index === safeBeforeCollapse;
 
               return (
                 <React.Fragment key={index}>
-                  {child}
-                  {showEllipsis && (
+                  {showEllipsisBefore && (
                     <>
-                      {renderSeparator()}
+                      {safeBeforeCollapse > 0 && renderSeparator()}
                       <li className={styles.ellipsis}>
                         <button
                           type="button"
-                          aria-label="Show more breadcrumbs"
+                          aria-label={t("breadcrumbs.showMore")}
                           onClick={() => setExpanded(true)}
                         >
                           <SerendieSymbolMoreHorizontal
@@ -286,8 +300,10 @@ export const Breadcrumbs = React.forwardRef<HTMLElement, BreadcrumbsProps>(
                           />
                         </button>
                       </li>
+                      {renderSeparator()}
                     </>
                   )}
+                  {child}
                   {!isLast && renderSeparator()}
                 </React.Fragment>
               );
