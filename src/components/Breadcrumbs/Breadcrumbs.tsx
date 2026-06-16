@@ -91,9 +91,6 @@ export const breadcrumbsStyle = sva({
   variants: {
     size: {
       medium: {
-        list: {
-          gap: "sd.system.dimension.spacing.twoExtraSmall",
-        },
         link: {
           textStyle: "sd.system.typography.body.small_compact",
           paddingInline: "sd.system.dimension.spacing.extraSmall",
@@ -125,9 +122,6 @@ export const breadcrumbsStyle = sva({
         },
       },
       small: {
-        list: {
-          gap: "sd.system.dimension.spacing.twoExtraSmall",
-        },
         link: {
           textStyle: "sd.system.typography.body.small_compact",
           paddingInline: "sd.system.dimension.spacing.twoExtraSmall",
