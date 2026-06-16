@@ -1,4 +1,4 @@
-import React, { ComponentProps } from "react";
+import React, { ComponentProps, useEffect } from "react";
 import { css, cx, sva } from "../../../styled-system/css";
 import { NotificationBadge } from "../NotificationBadge";
 
@@ -165,16 +165,37 @@ type ListItemBaseProps = {
   focusVisible?: boolean;
   size?: "small";
   href?: string;
+  /** `false` にすると内部の wrapper を `<div>` でレンダリングする（Ark UI の interactive item 内で使用する場合向け） */
+  interactive?: boolean;
+  /** @deprecated `leftIcon` は廃止予定です。`headingElement` を使ってください */
+  leftIcon?: React.ReactElement;
+  /** @deprecated `rightIcon` は廃止予定です。`trailingElement` を使ってください */
+  rightIcon?: React.ReactElement;
+  /** @deprecated `isLargeLeftIcon` は廃止予定です。`isLargeHeadingElement` を使ってください */
+  isLargeLeftIcon?: boolean;
+  /** @deprecated `isLargeRightIcon` は廃止予定です。`isLargeTrailingElement` を使ってください */
+  isLargeRightIcon?: boolean;
 };
 
 type ExclusiveTrailingItemProps =
   | ({
       badge?: number;
-    } & { trailingElement?: never; isLargeTrailingElement?: never })
+    } & {
+      trailingElement?: never;
+      isLargeTrailingElement?: never;
+      /** @deprecated `rightIcon` は廃止予定です。`trailingElement` を使ってください */
+      rightIcon?: never;
+      /** @deprecated `isLargeRightIcon` は廃止予定です。`isLargeTrailingElement` を使ってください */
+      isLargeRightIcon?: never;
+    })
   | {
       badge?: never;
       trailingElement?: React.ReactElement;
       isLargeTrailingElement?: boolean;
+      /** @deprecated `rightIcon` は廃止予定です。`trailingElement` を使ってください */
+      rightIcon?: React.ReactElement;
+      /** @deprecated `isLargeRightIcon` は廃止予定です。`isLargeTrailingElement` を使ってください */
+      isLargeRightIcon?: boolean;
     };
 
 type ListItemProps = ComponentProps<"li"> &
@@ -193,14 +214,55 @@ export const ListItem: React.FC<ListItemProps> = ({
   selected,
   focusVisible,
   href,
+  interactive = true,
   className,
+  leftIcon,
+  rightIcon,
+  isLargeLeftIcon,
+  isLargeRightIcon,
   ...props
 }) => {
+  // deprecated props の警告と解決
+  useEffect(() => {
+    if (leftIcon) {
+      console.warn(
+        "[ListItem] `leftIcon` は廃止予定です。`headingElement` を使ってください。"
+      );
+    }
+    if (rightIcon) {
+      console.warn(
+        "[ListItem] `rightIcon` は廃止予定です。`trailingElement` を使ってください。"
+      );
+    }
+    if (isLargeLeftIcon) {
+      console.warn(
+        "[ListItem] `isLargeLeftIcon` は廃止予定です。`isLargeHeadingElement` を使ってください。"
+      );
+    }
+    if (isLargeRightIcon) {
+      console.warn(
+        "[ListItem] `isLargeRightIcon` は廃止予定です。`isLargeTrailingElement` を使ってください。"
+      );
+    }
+  }, [leftIcon, rightIcon, isLargeLeftIcon, isLargeRightIcon]);
+
+  // deprecated props を新名称にマッピング
+  const resolvedHeadingElement = headingElement ?? leftIcon;
+  const resolvedTrailingElement = trailingElement ?? rightIcon;
+  const resolvedIsLargeHeadingElement =
+    props.isLargeHeadingElement ?? isLargeLeftIcon;
+  const resolvedIsLargeTrailingElement =
+    props.isLargeTrailingElement ?? isLargeRightIcon;
+
   const [variantProps, elementProps] = ListItemStyle.splitVariantProps(props);
-  const styles = ListItemStyle(variantProps);
+  const styles = ListItemStyle({
+    ...variantProps,
+    isLargeHeadingElement: resolvedIsLargeHeadingElement,
+    isLargeTrailingElement: resolvedIsLargeTrailingElement,
+  });
 
   const isLargeWithDescOnly =
-    !!props.isLargeHeadingElement && !!description && !subDescription;
+    !!resolvedIsLargeHeadingElement && !!description && !subDescription;
   const isTopAlign =
     (!!description || !!subDescription) && !isLargeWithDescOnly;
 
@@ -229,16 +291,16 @@ export const ListItem: React.FC<ListItemProps> = ({
 
   const wrapperContent = (
     <>
-      {headingElement && (
+      {resolvedHeadingElement && (
         <div
           className={headingElementClassName}
           style={
-            props.isLargeHeadingElement
+            resolvedIsLargeHeadingElement
               ? { padding: "0", width: "40px", height: "40px" }
               : { padding: "0", width: "24px", height: "24px" }
           }
         >
-          {headingElement}
+          {resolvedHeadingElement}
         </div>
       )}
       <div className={styles.textGroup}>
@@ -251,16 +313,16 @@ export const ListItem: React.FC<ListItemProps> = ({
         )}
         {children}
       </div>
-      {trailingElement && (
+      {resolvedTrailingElement && (
         <div
           className={trailingElementClassName}
           style={
-            props.isLargeTrailingElement
+            resolvedIsLargeTrailingElement
               ? { width: "40px", height: "40px" }
               : { width: "24px", height: "24px" }
           }
         >
-          {trailingElement}
+          {resolvedTrailingElement}
         </div>
       )}
       {badge != null && badge > 0 && (
@@ -276,27 +338,45 @@ export const ListItem: React.FC<ListItemProps> = ({
     </>
   );
 
-  return (
-    <li className={cx(styles.root, className)} {...elementProps}>
-      {href ? (
+  const renderWrapper = () => {
+    if (!interactive) {
+      return (
+        <div className={wrapperClassName} {...wrapperDataAttrs}>
+          {wrapperContent}
+        </div>
+      );
+    }
+
+    if (href) {
+      return (
         <a
-          href={href}
+          href={disabled ? undefined : href}
           className={wrapperClassName}
           aria-disabled={disabled || undefined}
+          tabIndex={disabled ? -1 : undefined}
+          onClick={disabled ? (e) => e.preventDefault() : undefined}
           {...wrapperDataAttrs}
         >
           {wrapperContent}
         </a>
-      ) : (
-        <button
-          type="button"
-          className={wrapperClassName}
-          disabled={disabled}
-          {...wrapperDataAttrs}
-        >
-          {wrapperContent}
-        </button>
-      )}
+      );
+    }
+
+    return (
+      <button
+        type="button"
+        className={wrapperClassName}
+        disabled={disabled}
+        {...wrapperDataAttrs}
+      >
+        {wrapperContent}
+      </button>
+    );
+  };
+
+  return (
+    <li className={cx(styles.root, className)} {...elementProps}>
+      {renderWrapper()}
     </li>
   );
 };
