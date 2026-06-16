@@ -95,6 +95,7 @@ export const breadcrumbsStyle = sva({
           textStyle: "sd.system.typography.body.small_compact",
           paddingInline: "sd.system.dimension.spacing.extraSmall",
           paddingBlock: "sd.system.dimension.spacing.twoExtraSmall",
+          minHeight: "sd.reference.dimension.scale.10",
           _expanded: {
             textStyle: "sd.system.typography.body.small_expanded",
           },
