@@ -101,8 +101,6 @@ export const breadcrumbsStyle = sva({
           },
         },
         separator: {
-          textStyle: "sd.system.typography.body.small_compact",
-          paddingInline: "sd.system.dimension.spacing.extraSmall",
           _expanded: {
             textStyle: "sd.system.typography.body.small_expanded",
           },
@@ -135,8 +133,6 @@ export const breadcrumbsStyle = sva({
           },
         },
         separator: {
-          textStyle: "sd.system.typography.label.medium_compact",
-          paddingInline: "sd.system.dimension.spacing.twoExtraSmall",
           _expanded: {
             textStyle: "sd.system.typography.label.medium_expanded",
           },
@@ -271,8 +267,8 @@ export const Breadcrumbs = React.forwardRef<HTMLElement, BreadcrumbsProps>(
                         onClick={() => setExpanded(true)}
                       >
                         <SerendieSymbolMoreHorizontal
-                          width={size === "small" ? 16 : 20}
-                          height={size === "small" ? 16 : 20}
+                          width={size === "small" ? 14 : 20}
+                          height={size === "small" ? 17 : 20}
                         />
                       </button>
                     </li>
@@ -334,8 +330,8 @@ export const BreadcrumbEllipsis = React.forwardRef<
         onClick={_onExpand}
       >
         <SerendieSymbolMoreHorizontal
-          width={_size === "small" ? 16 : 20}
-          height={_size === "small" ? 16 : 20}
+          width={_size === "small" ? 14 : 20}
+          height={_size === "small" ? 17 : 20}
         />
       </button>
     </li>
