@@ -125,32 +125,35 @@ export const breadcrumbsStyle = sva({
       },
       small: {
         link: {
-          textStyle: "sd.system.typography.body.small_compact",
+          textStyle: "sd.system.typography.label.medium_compact",
           paddingInline: "sd.system.dimension.spacing.twoExtraSmall",
           paddingBlock: "sd.system.dimension.spacing.twoExtraSmall",
+          gap: "sd.system.dimension.spacing.twoExtraSmall",
+          minHeight: "sd.reference.dimension.scale.10",
           _expanded: {
-            textStyle: "sd.system.typography.body.small_expanded",
+            textStyle: "sd.system.typography.label.medium_expanded",
           },
         },
         separator: {
-          textStyle: "sd.system.typography.body.small_compact",
+          textStyle: "sd.system.typography.label.medium_compact",
           paddingInline: "sd.system.dimension.spacing.twoExtraSmall",
           _expanded: {
-            textStyle: "sd.system.typography.body.small_expanded",
+            textStyle: "sd.system.typography.label.medium_expanded",
           },
         },
         ellipsis: {
           "& button": {
             paddingInline: "sd.system.dimension.spacing.twoExtraSmall",
             paddingBlock: "sd.system.dimension.spacing.twoExtraSmall",
+            minHeight: "sd.reference.dimension.scale.10",
           },
         },
         icon: {
-          width: "sd.reference.dimension.scale.6",
-          height: "sd.reference.dimension.scale.6",
+          width: "14px",
+          height: "14px",
           "& svg": {
-            width: "sd.reference.dimension.scale.6",
-            height: "sd.reference.dimension.scale.6",
+            width: "14px",
+            height: "14px",
           },
         },
       },
