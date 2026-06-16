@@ -220,15 +220,26 @@ export const Breadcrumbs = React.forwardRef<HTMLElement, BreadcrumbsProps>(
         ]
       : allItems;
 
+    const separatorWidth = size === "small" ? 16 : 32;
+    const separatorHeight = 32;
+
     const renderSeparator = () => (
       <li className={styles.separator} role="presentation" aria-hidden="true">
         {separator === "chevron" ? (
           <SerendieSymbolChevronRight
-            width={size === "small" ? 16 : 20}
-            height={size === "small" ? 16 : 20}
+            width={separatorWidth}
+            height={separatorHeight}
           />
         ) : (
-          "/"
+          <svg
+            width={separatorWidth}
+            height={separatorHeight}
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M18.5 10L13 21" stroke="currentColor" strokeWidth="1.2" />
+          </svg>
         )}
       </li>
     );
