@@ -77,6 +77,52 @@ export const Basic: Story = {
   },
 };
 
+export const Chevron: Story = {
+  render: (args) => (
+    <Breadcrumbs {...args}>
+      <BreadcrumbItem href="/" icon={<SerendieSymbolHome />}>
+        Home
+      </BreadcrumbItem>
+      <BreadcrumbItem href="/category" icon={<SerendieSymbolArticle />}>
+        Category
+      </BreadcrumbItem>
+      <BreadcrumbItem href="/subcategory" icon={<SerendieSymbolArticle />}>
+        Subcategory
+      </BreadcrumbItem>
+      <BreadcrumbItem current icon={<SerendieSymbolArticle />}>
+        Current Page
+      </BreadcrumbItem>
+    </Breadcrumbs>
+  ),
+  args: {
+    size: "medium",
+    separator: "chevron",
+  },
+};
+
+export const Medium: Story = {
+  render: (args) => (
+    <Breadcrumbs {...args}>
+      <BreadcrumbItem href="/" icon={<SerendieSymbolHome />}>
+        Home
+      </BreadcrumbItem>
+      <BreadcrumbItem href="/category" icon={<SerendieSymbolArticle />}>
+        Category
+      </BreadcrumbItem>
+      <BreadcrumbItem href="/subcategory" icon={<SerendieSymbolArticle />}>
+        Subcategory
+      </BreadcrumbItem>
+      <BreadcrumbItem current icon={<SerendieSymbolArticle />}>
+        Current Page
+      </BreadcrumbItem>
+    </Breadcrumbs>
+  ),
+  args: {
+    size: "medium",
+    separator: "chevron",
+  },
+};
+
 export const SlashSeparator: Story = {
   render: (args) => (
     <Breadcrumbs {...args}>
