@@ -1,4 +1,9 @@
-import React, { ComponentProps, useState } from "react";
+import React, {
+  ComponentProps,
+  createContext,
+  useContext,
+  useState,
+} from "react";
 import {
   SerendieSymbolChevronRight,
   SerendieSymbolMoreHorizontal,
@@ -176,7 +181,23 @@ export type BreadcrumbItemProps = ComponentProps<"li"> & {
   icon?: React.ReactElement;
 };
 
-export type BreadcrumbEllipsisProps = ComponentProps<"li">;
+type BreadcrumbsContextValue = {
+  styles: ReturnType<typeof breadcrumbsStyle>;
+  size: "medium" | "small";
+};
+
+const BreadcrumbsContext = createContext<BreadcrumbsContextValue | null>(null);
+
+const useBreadcrumbsContext = () => {
+  const context = useContext(BreadcrumbsContext);
+  if (!context) {
+    return {
+      styles: breadcrumbsStyle(),
+      size: "medium" as const,
+    };
+  }
+  return context;
+};
 
 export const Breadcrumbs = React.forwardRef<HTMLElement, BreadcrumbsProps>(
   (
@@ -184,7 +205,7 @@ export const Breadcrumbs = React.forwardRef<HTMLElement, BreadcrumbsProps>(
       children,
       separator = "chevron",
       className,
-      size,
+      size = "medium",
       maxItems,
       itemsBeforeCollapse = 1,
       itemsAfterCollapse = 1,
@@ -233,53 +254,47 @@ export const Breadcrumbs = React.forwardRef<HTMLElement, BreadcrumbsProps>(
       </li>
     );
 
-    const renderItem = (child: React.ReactElement) =>
-      React.cloneElement(
-        child as React.ReactElement<{
-          _styles?: ReturnType<typeof breadcrumbsStyle>;
-        }>,
-        { _styles: styles }
-      );
-
     return (
-      <nav
-        ref={ref}
-        aria-label="Breadcrumb"
-        className={cx(styles.root, className)}
-        {...props}
-      >
-        <ol className={styles.list}>
-          {visibleItems.map((child, index) => {
-            const isLast = index === visibleItems.length - 1;
-            const showEllipsis =
-              shouldCollapse && index === itemsBeforeCollapse - 1;
+      <BreadcrumbsContext.Provider value={{ styles, size }}>
+        <nav
+          ref={ref}
+          aria-label="Breadcrumb"
+          className={cx(styles.root, className)}
+          {...props}
+        >
+          <ol className={styles.list}>
+            {visibleItems.map((child, index) => {
+              const isLast = index === visibleItems.length - 1;
+              const showEllipsis =
+                shouldCollapse && index === itemsBeforeCollapse - 1;
 
-            return (
-              <React.Fragment key={index}>
-                {React.isValidElement(child) && renderItem(child)}
-                {showEllipsis && (
-                  <>
-                    {renderSeparator()}
-                    <li className={styles.ellipsis}>
-                      <button
-                        type="button"
-                        aria-label="Show more breadcrumbs"
-                        onClick={() => setExpanded(true)}
-                      >
-                        <SerendieSymbolMoreHorizontal
-                          width={size === "small" ? 14 : 20}
-                          height={size === "small" ? 17 : 20}
-                        />
-                      </button>
-                    </li>
-                  </>
-                )}
-                {!isLast && renderSeparator()}
-              </React.Fragment>
-            );
-          })}
-        </ol>
-      </nav>
+              return (
+                <React.Fragment key={index}>
+                  {child}
+                  {showEllipsis && (
+                    <>
+                      {renderSeparator()}
+                      <li className={styles.ellipsis}>
+                        <button
+                          type="button"
+                          aria-label="Show more breadcrumbs"
+                          onClick={() => setExpanded(true)}
+                        >
+                          <SerendieSymbolMoreHorizontal
+                            width={size === "small" ? 14 : 20}
+                            height={size === "small" ? 17 : 20}
+                          />
+                        </button>
+                      </li>
+                    </>
+                  )}
+                  {!isLast && renderSeparator()}
+                </React.Fragment>
+              );
+            })}
+          </ol>
+        </nav>
+      </BreadcrumbsContext.Provider>
     );
   }
 );
@@ -288,17 +303,16 @@ Breadcrumbs.displayName = "Breadcrumbs";
 
 export const BreadcrumbItem = React.forwardRef<
   HTMLLIElement,
-  BreadcrumbItemProps & {
-    _styles?: ReturnType<typeof breadcrumbsStyle>;
-  }
->(({ children, href, current, icon, className, _styles, ...props }, ref) => {
-  const styles = _styles || breadcrumbsStyle();
+  BreadcrumbItemProps
+>(({ children, href, current, icon, className, ...props }, ref) => {
+  const { styles } = useBreadcrumbsContext();
 
+  const Tag = current ? "span" : href ? "a" : "span";
   const linkProps = current
     ? { "aria-current": "page" as const }
-    : { href: href };
-
-  const Tag = current ? "span" : "a";
+    : href
+      ? { href }
+      : {};
 
   return (
     <li ref={ref} className={cx(styles.item, className)} {...props}>
@@ -311,31 +325,3 @@ export const BreadcrumbItem = React.forwardRef<
 });
 
 BreadcrumbItem.displayName = "BreadcrumbItem";
-
-export const BreadcrumbEllipsis = React.forwardRef<
-  HTMLLIElement,
-  BreadcrumbEllipsisProps & {
-    _styles?: ReturnType<typeof breadcrumbsStyle>;
-    _onExpand?: () => void;
-    _size?: "medium" | "small";
-  }
->(({ className, _styles, _onExpand, _size, ...props }, ref) => {
-  const styles = _styles || breadcrumbsStyle();
-
-  return (
-    <li ref={ref} className={cx(styles.ellipsis, className)} {...props}>
-      <button
-        type="button"
-        aria-label="Show more breadcrumbs"
-        onClick={_onExpand}
-      >
-        <SerendieSymbolMoreHorizontal
-          width={_size === "small" ? 14 : 20}
-          height={_size === "small" ? 17 : 20}
-        />
-      </button>
-    </li>
-  );
-});
-
-BreadcrumbEllipsis.displayName = "BreadcrumbEllipsis";
