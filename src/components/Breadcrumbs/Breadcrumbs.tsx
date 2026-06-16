@@ -111,6 +111,7 @@ export const breadcrumbsStyle = sva({
           "& button": {
             paddingInline: "sd.system.dimension.spacing.extraSmall",
             paddingBlock: "sd.system.dimension.spacing.twoExtraSmall",
+            minHeight: "sd.reference.dimension.scale.10",
           },
         },
         icon: {
