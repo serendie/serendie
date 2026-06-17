@@ -287,7 +287,6 @@ export const Breadcrumbs = React.forwardRef<HTMLElement, BreadcrumbsProps>(
                 <React.Fragment key={index}>
                   {showEllipsisBefore && (
                     <>
-                      {safeBeforeCollapse > 0 && renderSeparator()}
                       <li className={styles.ellipsis}>
                         <button
                           type="button"
