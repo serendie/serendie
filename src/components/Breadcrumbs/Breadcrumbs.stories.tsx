@@ -77,29 +77,6 @@ export const Basic: Story = {
   },
 };
 
-export const Chevron: Story = {
-  render: (args) => (
-    <Breadcrumbs {...args}>
-      <BreadcrumbItem href="/" icon={<SerendieSymbolHome />}>
-        Home
-      </BreadcrumbItem>
-      <BreadcrumbItem href="/category" icon={<SerendieSymbolArticle />}>
-        Category
-      </BreadcrumbItem>
-      <BreadcrumbItem href="/subcategory" icon={<SerendieSymbolArticle />}>
-        Subcategory
-      </BreadcrumbItem>
-      <BreadcrumbItem current icon={<SerendieSymbolArticle />}>
-        Current Page
-      </BreadcrumbItem>
-    </Breadcrumbs>
-  ),
-  args: {
-    size: "medium",
-    separator: "chevron",
-  },
-};
-
 export const Medium: Story = {
   render: (args) => (
     <Breadcrumbs {...args}>
@@ -123,7 +100,50 @@ export const Medium: Story = {
   },
 };
 
-export const SlashSeparator: Story = {
+export const Small: Story = {
+  render: (args) => (
+    <Breadcrumbs {...args}>
+      <BreadcrumbItem href="/" icon={<SerendieSymbolHome />}>
+        Home
+      </BreadcrumbItem>
+      <BreadcrumbItem href="/category" icon={<SerendieSymbolArticle />}>
+        Category
+      </BreadcrumbItem>
+      <BreadcrumbItem current icon={<SerendieSymbolArticle />}>
+        Current Page
+      </BreadcrumbItem>
+    </Breadcrumbs>
+  ),
+  args: {
+    size: "small",
+    separator: "chevron",
+  },
+};
+
+export const Chevron: Story = {
+  render: (args) => (
+    <Breadcrumbs {...args}>
+      <BreadcrumbItem href="/" icon={<SerendieSymbolHome />}>
+        Home
+      </BreadcrumbItem>
+      <BreadcrumbItem href="/category" icon={<SerendieSymbolArticle />}>
+        Category
+      </BreadcrumbItem>
+      <BreadcrumbItem href="/subcategory" icon={<SerendieSymbolArticle />}>
+        Subcategory
+      </BreadcrumbItem>
+      <BreadcrumbItem current icon={<SerendieSymbolArticle />}>
+        Current Page
+      </BreadcrumbItem>
+    </Breadcrumbs>
+  ),
+  args: {
+    size: "medium",
+    separator: "chevron",
+  },
+};
+
+export const Slash: Story = {
   render: (args) => (
     <Breadcrumbs {...args}>
       <BreadcrumbItem href="/" icon={<SerendieSymbolHome />}>
@@ -143,26 +163,6 @@ export const SlashSeparator: Story = {
   args: {
     size: "medium",
     separator: "slash",
-  },
-};
-
-export const Small: Story = {
-  render: (args) => (
-    <Breadcrumbs {...args}>
-      <BreadcrumbItem href="/" icon={<SerendieSymbolHome />}>
-        Home
-      </BreadcrumbItem>
-      <BreadcrumbItem href="/category" icon={<SerendieSymbolArticle />}>
-        Category
-      </BreadcrumbItem>
-      <BreadcrumbItem current icon={<SerendieSymbolArticle />}>
-        Current Page
-      </BreadcrumbItem>
-    </Breadcrumbs>
-  ),
-  args: {
-    size: "small",
-    separator: "chevron",
   },
 };
 
