@@ -9,7 +9,7 @@ import {
   SerendieSymbolChevronRight,
   SerendieSymbolMoreHorizontal,
 } from "@serendie/symbols";
-import { cx, sva, RecipeVariantProps } from "../../../styled-system/css";
+import { css, cx, sva, RecipeVariantProps } from "../../../styled-system/css";
 import { useTranslations } from "../../i18n";
 
 export const breadcrumbsStyle = sva({
@@ -245,20 +245,37 @@ export const Breadcrumbs = React.forwardRef<HTMLElement, BreadcrumbsProps>(
         ]
       : allItems;
 
-    const separatorWidth = size === "small" ? 16 : 32;
-    const separatorHeight = 32;
+    const chevronIconSize = size === "small" ? 16 : 24;
+    const slashWidth = size === "small" ? 16 : 32;
+    const slashHeight = 32;
+
+    const chevronPaddingClass =
+      size === "medium"
+        ? css({
+            padding: "sd.system.dimension.spacing.twoExtraSmall",
+          })
+        : css({
+            paddingBlock: "sd.system.dimension.spacing.twoExtraSmall",
+          });
 
     const renderSeparator = () => (
-      <li className={styles.separator} role="presentation" aria-hidden="true">
+      <li
+        className={cx(
+          styles.separator,
+          separator === "chevron" ? chevronPaddingClass : undefined
+        )}
+        role="presentation"
+        aria-hidden="true"
+      >
         {separator === "chevron" ? (
           <SerendieSymbolChevronRight
-            width={separatorWidth}
-            height={separatorHeight}
+            width={chevronIconSize}
+            height={chevronIconSize}
           />
         ) : (
           <svg
-            width={separatorWidth}
-            height={separatorHeight}
+            width={slashWidth}
+            height={slashHeight}
             viewBox="0 0 32 32"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
