@@ -309,6 +309,41 @@ export const DifferentDataType: Story = {
   ),
 };
 
+// カラムサイズ指定の例（DataTableComponent経由）
+const sizedColumnHelper = DataTable.createColumnHelper<DataRow>();
+const sizedColumns = [
+  sizedColumnHelper.accessor("area", {
+    header: "エリア",
+    size: 200,
+  }),
+  sizedColumnHelper.accessor("time", {
+    header: "時間",
+    size: 100,
+  }),
+  sizedColumnHelper.accessor("status", {
+    header: "ステータス",
+    size: 120,
+  }),
+  sizedColumnHelper.accessor("connections", {
+    header: "接続数",
+    size: 80,
+  }),
+  sizedColumnHelper.accessor("process", {
+    header: "プロセス状況",
+    size: 250,
+  }),
+];
+
+export const WithColumnSize: Story = {
+  render: () => (
+    <DataTable<DataRow>
+      data={Data}
+      columns={sizedColumns}
+      enableRowSelection={false}
+    />
+  ),
+};
+
 // カラムリサイズの例（children パターンで実現）
 const resizeColumnHelper = tanstackCreateColumnHelper<DataRow>();
 const resizeColumns = [

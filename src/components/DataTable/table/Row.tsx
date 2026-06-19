@@ -104,7 +104,11 @@ const RowComponent = <TData,>(
       {row.getVisibleCells().map((cell) => {
         const type = getCellType(cell);
         return (
-          <DataTable.BodyCell key={cell.id} type={type}>
+          <DataTable.BodyCell
+            key={cell.id}
+            type={type}
+            style={{ width: cell.column.getSize() }}
+          >
             {flexRender(cell.column.columnDef.cell, cell.getContext())}
           </DataTable.BodyCell>
         );

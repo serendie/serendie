@@ -62,6 +62,7 @@ const HeaderRowComponent = <TData,>(
             sortable={canSort}
             sortDirection={sortDirection}
             onSort={() => header.column.toggleSorting()}
+            style={{ width: header.getSize() }}
           >
             {flexRender(header.column.columnDef.header, header.getContext())}
           </DataTable.HeaderCell>
