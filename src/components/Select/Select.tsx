@@ -273,7 +273,6 @@ export const Select: React.FC<SelectStyleProps> = ({
                     value={item.value}
                     className={styles.item}
                     size={variantProps.size == "small" ? "small" : undefined}
-                    interactive={false}
                   />
                 </ArkSelect.Item>
               ))}

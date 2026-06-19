@@ -19,7 +19,6 @@ export const ListItemStyle = sva({
       position: "relative",
     },
     wrapper: {
-      width: "100%",
       minH: 48,
       display: "flex",
       alignItems: "center",
@@ -27,11 +26,6 @@ export const ListItemStyle = sva({
       paddingY: "sd.system.dimension.spacing.extraSmall",
       gap: "sd.system.dimension.spacing.small",
       cursor: "pointer",
-      background: "transparent",
-      border: "none",
-      textAlign: "left",
-      textDecoration: "none",
-      color: "inherit",
       _hover: {
         background:
           "color-mix(in srgb, {colors.sd.system.color.interaction.hoveredVariant}, {colors.sd.system.color.component.surface});",
@@ -164,9 +158,6 @@ type ListItemBaseProps = {
   selected?: boolean;
   focusVisible?: boolean;
   size?: "small";
-  href?: string;
-  /** `false` にすると内部の wrapper を `<div>` でレンダリングする（Ark UI の interactive item 内で使用する場合向け） */
-  interactive?: boolean;
   /** @deprecated `leftIcon` は廃止予定です。`headingElement` を使ってください */
   leftIcon?: React.ReactElement;
   /** @deprecated `rightIcon` は廃止予定です。`trailingElement` を使ってください */
@@ -213,8 +204,6 @@ export const ListItem: React.FC<ListItemProps> = ({
   disabled,
   selected,
   focusVisible,
-  href,
-  interactive = true,
   className,
   leftIcon,
   rightIcon,
@@ -222,7 +211,6 @@ export const ListItem: React.FC<ListItemProps> = ({
   isLargeRightIcon,
   ...props
 }) => {
-  // deprecated props の警告と解決
   useEffect(() => {
     if (leftIcon) {
       console.warn(
@@ -246,7 +234,6 @@ export const ListItem: React.FC<ListItemProps> = ({
     }
   }, [leftIcon, rightIcon, isLargeLeftIcon, isLargeRightIcon]);
 
-  // deprecated props を新名称にマッピング
   const resolvedHeadingElement = headingElement ?? leftIcon;
   const resolvedTrailingElement = trailingElement ?? rightIcon;
   const resolvedIsLargeHeadingElement =
@@ -271,12 +258,6 @@ export const ListItem: React.FC<ListItemProps> = ({
     isTopAlign && css({ alignItems: "flex-start" })
   );
 
-  const wrapperDataAttrs = {
-    "data-disabled": disabled ? true : undefined,
-    "data-selected": selected ? true : undefined,
-    "data-focus-visible": focusVisible ? true : undefined,
-  };
-
   const headingElementClassName = cx(
     styles.headingElement,
     isTopAlign &&
@@ -289,94 +270,60 @@ export const ListItem: React.FC<ListItemProps> = ({
       css({ marginTop: "sd.system.dimension.spacing.twoExtraSmall" })
   );
 
-  const wrapperContent = (
-    <>
-      {resolvedHeadingElement && (
-        <div
-          className={headingElementClassName}
-          style={
-            resolvedIsLargeHeadingElement
-              ? { padding: "0", width: "40px", height: "40px" }
-              : { padding: "0", width: "24px", height: "24px" }
-          }
-        >
-          {resolvedHeadingElement}
-        </div>
-      )}
-      <div className={styles.textGroup}>
-        <span className={styles.title}>{title}</span>
-        {description && (
-          <span className={styles.description}>{description}</span>
-        )}
-        {subDescription && (
-          <span className={styles.subDescription}>{subDescription}</span>
-        )}
-        {children}
-      </div>
-      {resolvedTrailingElement && (
-        <div
-          className={trailingElementClassName}
-          style={
-            resolvedIsLargeTrailingElement
-              ? { width: "40px", height: "40px" }
-              : { width: "24px", height: "24px" }
-          }
-        >
-          {resolvedTrailingElement}
-        </div>
-      )}
-      {badge != null && badge > 0 && (
-        <div className={styles.badge}>
-          <NotificationBadge
-            count={badge}
-            variant="secondary"
-            size="small"
-            position="relative"
-          />
-        </div>
-      )}
-    </>
-  );
-
-  const renderWrapper = () => {
-    if (!interactive) {
-      return (
-        <div className={wrapperClassName} {...wrapperDataAttrs}>
-          {wrapperContent}
-        </div>
-      );
-    }
-
-    if (href) {
-      return (
-        <a
-          href={disabled ? undefined : href}
-          className={wrapperClassName}
-          aria-disabled={disabled || undefined}
-          tabIndex={disabled ? -1 : undefined}
-          onClick={disabled ? (e) => e.preventDefault() : undefined}
-          {...wrapperDataAttrs}
-        >
-          {wrapperContent}
-        </a>
-      );
-    }
-
-    return (
-      <button
-        type="button"
-        className={wrapperClassName}
-        disabled={disabled}
-        {...wrapperDataAttrs}
-      >
-        {wrapperContent}
-      </button>
-    );
-  };
-
   return (
     <li className={cx(styles.root, className)} {...elementProps}>
-      {renderWrapper()}
+      <div
+        tabIndex={1}
+        className={wrapperClassName}
+        data-disabled={disabled ? true : undefined}
+        data-selected={selected ? true : undefined}
+        data-focus-visible={focusVisible ? true : undefined}
+      >
+        {resolvedHeadingElement && (
+          <div
+            className={headingElementClassName}
+            style={
+              resolvedIsLargeHeadingElement
+                ? { padding: "0", width: "40px", height: "40px" }
+                : { padding: "0", width: "24px", height: "24px" }
+            }
+          >
+            {resolvedHeadingElement}
+          </div>
+        )}
+        <div className={styles.textGroup}>
+          <span className={styles.title}>{title}</span>
+          {description && (
+            <span className={styles.description}>{description}</span>
+          )}
+          {subDescription && (
+            <span className={styles.subDescription}>{subDescription}</span>
+          )}
+          {children}
+        </div>
+        {resolvedTrailingElement && (
+          <div
+            className={trailingElementClassName}
+            style={
+              resolvedIsLargeTrailingElement
+                ? { width: "40px", height: "40px" }
+                : { width: "24px", height: "24px" }
+            }
+          >
+            {resolvedTrailingElement}
+          </div>
+        )}
+        {badge != null && badge > 0 && (
+          <div className={styles.badge}>
+            <NotificationBadge
+              count={badge}
+              variant="secondary"
+              size="small"
+              position="relative"
+            />
+          </div>
+        )}
+      </div>
     </li>
   );
 };

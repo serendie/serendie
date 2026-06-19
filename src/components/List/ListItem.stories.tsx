@@ -54,7 +54,6 @@ const meta: Meta<typeof ListItem> = {
         "selected",
         "isLargeHeadingElement",
         "isLargeTrailingElement",
-        "href",
       ],
     },
   },
@@ -93,9 +92,6 @@ const meta: Meta<typeof ListItem> = {
       control: { type: "text" },
     },
     subDescription: {
-      control: { type: "text" },
-    },
-    href: {
       control: { type: "text" },
     },
   },
@@ -179,16 +175,6 @@ export const WithBadgeAndLargeIcon: Story = {
     title: "リストスタイル",
     description: "補足テキスト補足テキスト",
     badge: 5,
-  },
-};
-
-export const AsLink: Story = {
-  args: {
-    headingElement: <SerendieSymbolPlaceholder />,
-    trailingElement: <SerendieSymbolChevronRight />,
-    title: "リンクアイテム",
-    description: "hrefを指定するとリンクとして表示",
-    href: "#example",
   },
 };
 
