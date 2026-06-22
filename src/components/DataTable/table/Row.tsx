@@ -107,7 +107,11 @@ const RowComponent = <TData,>(
           <DataTable.BodyCell
             key={cell.id}
             type={type}
-            style={{ width: cell.column.getSize() }}
+            style={
+              cell.column.columnDef.size != null
+                ? { width: cell.column.getSize() }
+                : undefined
+            }
           >
             {flexRender(cell.column.columnDef.cell, cell.getContext())}
           </DataTable.BodyCell>
