@@ -14,6 +14,8 @@ export const dictionary = {
     "pagination.nextPage": "次のページへ",
     "pagination.goToPage": "ページ{{page}}へ移動",
     "modalDialog.close": "閉じる",
+    "breadcrumbs.label": "パンくずリスト",
+    "breadcrumbs.showMore": "折りたたまれた項目を表示",
   },
   en: {
     "common.required": "Required",
@@ -30,5 +32,7 @@ export const dictionary = {
     "pagination.nextPage": "Go to next page",
     "pagination.goToPage": "Go to page {{page}}",
     "modalDialog.close": "Close",
+    "breadcrumbs.label": "Breadcrumb",
+    "breadcrumbs.showMore": "Show more breadcrumbs",
   },
 } as const;
