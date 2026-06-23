@@ -1,4 +1,4 @@
-import React, { ComponentProps, useEffect } from "react";
+import React, { ComponentProps, useEffect, useRef } from "react";
 import { css, cx, sva } from "../../../styled-system/css";
 import { NotificationBadge } from "../NotificationBadge";
 
@@ -211,28 +211,34 @@ export const ListItem: React.FC<ListItemProps> = ({
   isLargeRightIcon,
   ...props
 }) => {
+  const warnedRef = useRef(false);
   useEffect(() => {
-    if (leftIcon) {
-      console.warn(
-        "[ListItem] `leftIcon` は廃止予定です。`headingElement` を使ってください。"
-      );
+    if (warnedRef.current) return;
+    if (process.env.NODE_ENV === "production") return;
+    if (leftIcon || rightIcon || isLargeLeftIcon || isLargeRightIcon) {
+      warnedRef.current = true;
+      if (leftIcon) {
+        console.warn(
+          "[ListItem] `leftIcon` は廃止予定です。`headingElement` を使ってください。"
+        );
+      }
+      if (rightIcon) {
+        console.warn(
+          "[ListItem] `rightIcon` は廃止予定です。`trailingElement` を使ってください。"
+        );
+      }
+      if (isLargeLeftIcon) {
+        console.warn(
+          "[ListItem] `isLargeLeftIcon` は廃止予定です。`isLargeHeadingElement` を使ってください。"
+        );
+      }
+      if (isLargeRightIcon) {
+        console.warn(
+          "[ListItem] `isLargeRightIcon` は廃止予定です。`isLargeTrailingElement` を使ってください。"
+        );
+      }
     }
-    if (rightIcon) {
-      console.warn(
-        "[ListItem] `rightIcon` は廃止予定です。`trailingElement` を使ってください。"
-      );
-    }
-    if (isLargeLeftIcon) {
-      console.warn(
-        "[ListItem] `isLargeLeftIcon` は廃止予定です。`isLargeHeadingElement` を使ってください。"
-      );
-    }
-    if (isLargeRightIcon) {
-      console.warn(
-        "[ListItem] `isLargeRightIcon` は廃止予定です。`isLargeTrailingElement` を使ってください。"
-      );
-    }
-  }, [leftIcon, rightIcon, isLargeLeftIcon, isLargeRightIcon]);
+  }, []);
 
   const resolvedHeadingElement = headingElement ?? leftIcon;
   const resolvedTrailingElement = trailingElement ?? rightIcon;
