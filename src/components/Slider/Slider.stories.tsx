@@ -7,7 +7,7 @@ const meta: Meta<typeof Slider> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/Serendie-UI-Kit?node-id=26255-202",
+      url: "https://www.figma.com/design/8oZpZ2xolRhCUPDGSlWXr0/%F0%9F%9B%A0%EF%B8%8F-Serendie-UI-Kit?node-id=27512-45",
       props: {
         size: figma.enum("Size", {
           Medium: "medium",
