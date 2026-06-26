@@ -7,7 +7,7 @@ const meta: Meta<typeof Steps> = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/design/lSVFj134YofggF05HeVDh5/Steps?node-id=25102-555",
+      url: "https://www.figma.com/design/lSVFj134YofggF05HeVDh5/Steps?node-id=25102-557",
       props: {
         direction: figma.enum("Direction", {
           Horizontal: "horizontal",

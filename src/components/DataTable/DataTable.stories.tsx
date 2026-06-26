@@ -8,6 +8,7 @@ import {
 } from "@tanstack/react-table";
 import { css } from "../../../styled-system/css";
 import { DataTable } from ".";
+import { createDataTableRows, type DataRow } from "./DataTable.sampleData";
 
 export const FigmaExample = () => {
   type DataRowType = {
@@ -108,66 +109,7 @@ export default meta;
 
 type Story = StoryObj<typeof DataTable>;
 
-export type DataRow = {
-  id: number;
-  area: string;
-  time: string;
-  status: string;
-  connections: number;
-  households: number;
-  coverage: string;
-  errorRate: string;
-  process: string;
-};
-
-const areaList = [
-  "東京",
-  "大阪",
-  "名古屋",
-  "札幌",
-  "福岡",
-  "仙台",
-  "広島",
-  "神戸",
-  "京都",
-  "横浜",
-];
-const statusList = ["正常", "警告", "障害", "調査中"];
-const processList = ["完了", "進行中", "未着手", "一時停止"];
-
-function randomInt(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function randomPick<T>(arr: T[]): T {
-  return arr[randomInt(0, arr.length - 1)];
-}
-
-const Data: DataRow[] = Array.from({ length: 10 }, (_, i) => {
-  const area = randomPick(areaList);
-  const status = randomPick(statusList);
-  const process = randomPick(processList);
-  const connections = randomInt(50, 5000);
-  const households = randomInt(30, 4000);
-  const coverage = `${randomInt(60, 100)}%`;
-  const errorRate = `${(Math.random() * 5).toFixed(2)}%`;
-  const hour = randomInt(0, 23).toString().padStart(2, "0");
-  const minute = randomInt(0, 59).toString().padStart(2, "0");
-  const time = `2025-04-${randomInt(1, 30)
-    .toString()
-    .padStart(2, "0")} ${hour}:${minute}`;
-  return {
-    id: i + 1,
-    area,
-    time,
-    status,
-    connections,
-    households,
-    coverage,
-    errorRate,
-    process,
-  };
-});
+const Data: DataRow[] = createDataTableRows();
 
 const columnHelper = DataTable.createColumnHelper<DataRow>();
 

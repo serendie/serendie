@@ -34,6 +34,10 @@ const meta: Meta<typeof ProgressIndicator> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const fixedIndeterminateFrame = {
+  animationProgress: 0.5,
+} as const;
+
 export const Linear: Story = {
   args: {
     type: "linear",
@@ -133,8 +137,16 @@ export const IndeterminateExamples: Story = {
       <div>
         <h3 style={{ marginBottom: "8px" }}>Linear Indeterminate</h3>
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-          <ProgressIndicatorIndeterminate type="linear" size="medium" />
-          <ProgressIndicatorIndeterminate type="linear" size="large" />
+          <ProgressIndicatorIndeterminate
+            type="linear"
+            size="medium"
+            {...fixedIndeterminateFrame}
+          />
+          <ProgressIndicatorIndeterminate
+            type="linear"
+            size="large"
+            {...fixedIndeterminateFrame}
+          />
         </div>
       </div>
       <div>
@@ -144,16 +156,19 @@ export const IndeterminateExamples: Story = {
             type="circular"
             size="small"
             color="primary"
+            {...fixedIndeterminateFrame}
           />
           <ProgressIndicatorIndeterminate
             type="circular"
             size="medium"
             color="primary"
+            {...fixedIndeterminateFrame}
           />
           <ProgressIndicatorIndeterminate
             type="circular"
             size="large"
             color="primary"
+            {...fixedIndeterminateFrame}
           />
         </div>
       </div>
@@ -164,16 +179,19 @@ export const IndeterminateExamples: Story = {
             type="circular"
             size="small"
             color="subtle"
+            {...fixedIndeterminateFrame}
           />
           <ProgressIndicatorIndeterminate
             type="circular"
             size="medium"
             color="subtle"
+            {...fixedIndeterminateFrame}
           />
           <ProgressIndicatorIndeterminate
             type="circular"
             size="large"
             color="subtle"
+            {...fixedIndeterminateFrame}
           />
         </div>
       </div>

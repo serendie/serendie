@@ -8,6 +8,7 @@ import {
 } from "@serendie/symbols";
 
 const meta: Meta<typeof ListItem> = {
+  title: "Components/ListItem",
   component: ListItem,
   parameters: {
     design: {
@@ -21,15 +22,17 @@ const meta: Meta<typeof ListItem> = {
         description: figma.enum("Lines", {
           "Multiple Lines": figma.string("Description"),
         }),
-        children: figma.enum("Lines", {
+        subDescription: figma.enum("Lines", {
           "Multiple Lines": figma.string("SubDescription"),
         }),
-        leftIcon: figma.enum("Heading Elements", {
+        headingElement: figma.enum("Heading Elements", {
           IconMedium: figma.instance("LeftIconInstance"),
           IconLarge: figma.instance("LeftLargeIconInstance"),
         }),
-        isLargeLeftIcon: figma.enum("Heading Elements", { IconLarge: true }),
-        rightIcon: figma.enum("Trailing Elements", {
+        isLargeHeadingElement: figma.enum("Heading Elements", {
+          IconLarge: true,
+        }),
+        trailingElement: figma.enum("Trailing Elements", {
           Icon: figma.instance("RightIconInstance"),
         }),
         badge: figma.enum("Trailing Elements", {
@@ -43,12 +46,14 @@ const meta: Meta<typeof ListItem> = {
       include: [
         "title",
         "description",
-        "rightIcon",
-        "leftIcon",
+        "subDescription",
+        "trailingElement",
+        "headingElement",
         "badge",
         "disabled",
         "selected",
-        "isLargeLeftIcon",
+        "isLargeHeadingElement",
+        "isLargeTrailingElement",
       ],
     },
   },
@@ -74,16 +79,19 @@ const meta: Meta<typeof ListItem> = {
       control: { type: "boolean" },
       defaultValue: false,
     },
-    leftIcon: {
+    headingElement: {
       control: { type: "text" },
     },
-    rightIcon: {
+    trailingElement: {
       control: { type: "text" },
     },
     title: {
       control: { type: "text" },
     },
     description: {
+      control: { type: "text" },
+    },
+    subDescription: {
       control: { type: "text" },
     },
   },
@@ -102,31 +110,88 @@ type Story = StoryObj<typeof ListItem>;
 
 export const Basic: Story = {
   args: {
-    leftIcon: <SerendieSymbolPlaceholder />,
+    headingElement: <SerendieSymbolPlaceholder />,
     title: "リストスタイル",
   },
 };
 
 export const Description: Story = {
   args: {
-    leftIcon: <SerendieSymbolPlaceholder />,
+    headingElement: <SerendieSymbolPlaceholder />,
     title: "リストスタイル",
     description: "補足テキスト補足テキスト",
   },
 };
 
-export const RightIcon: Story = {
+export const SubDescription: Story = {
   args: {
-    rightIcon: <SerendieSymbolChevronRight />,
+    headingElement: <SerendieSymbolPlaceholder />,
+    title: "リストスタイル",
+    description: "補足テキスト補足テキスト",
+    subDescription: "10分前",
+  },
+};
+
+export const TrailingIcon: Story = {
+  args: {
+    trailingElement: <SerendieSymbolChevronRight />,
     title: "リストスタイル",
   },
 };
 
 export const Badge: Story = {
   args: {
-    leftIcon: <SerendieSymbolPlaceholder />,
+    headingElement: <SerendieSymbolPlaceholder />,
     title: "リストスタイル1",
-    description: "補足テキスト補足テキスト10分前",
+    description: "補足テキスト補足テキスト",
+    subDescription: "10分前",
     badge: 100,
+  },
+};
+
+export const LargeHeadingElement: Story = {
+  args: {
+    headingElement: <SerendieSymbolPlaceholder />,
+    isLargeHeadingElement: true,
+    title: "リストスタイル",
+    description: "補足テキスト補足テキスト",
+  },
+};
+
+export const LargeTrailingElement: Story = {
+  args: {
+    headingElement: <SerendieSymbolPlaceholder />,
+    isLargeHeadingElement: true,
+    trailingElement: <SerendieSymbolChevronRight />,
+    isLargeTrailingElement: true,
+    title: "リストスタイル",
+  },
+};
+
+export const WithBadgeAndLargeIcon: Story = {
+  args: {
+    headingElement: <SerendieSymbolPlaceholder />,
+    isLargeHeadingElement: true,
+    title: "リストスタイル",
+    description: "補足テキスト補足テキスト",
+    badge: 5,
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    headingElement: <SerendieSymbolPlaceholder />,
+    trailingElement: <SerendieSymbolChevronRight />,
+    title: "無効なアイテム",
+    disabled: true,
+  },
+};
+
+export const Selected: Story = {
+  args: {
+    headingElement: <SerendieSymbolPlaceholder />,
+    trailingElement: <SerendieSymbolChevronRight />,
+    title: "選択されたアイテム",
+    selected: true,
   },
 };
