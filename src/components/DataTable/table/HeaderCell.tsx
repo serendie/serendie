@@ -43,6 +43,7 @@ export const HeaderCell = React.forwardRef<
       sortDirection,
       onSort,
       className,
+      style,
       ...props
     },
     ref
@@ -74,6 +75,7 @@ export const HeaderCell = React.forwardRef<
         style={{
           cursor: sortable ? "pointer" : "default",
           userSelect: "none",
+          ...style,
         }}
         {...props}
       >
