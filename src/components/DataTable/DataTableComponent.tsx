@@ -31,6 +31,10 @@ export function DataTableComponent<TData = Record<string, unknown>>({
     getSortedRowModel: getSortedRowModel(),
     enableRowSelection,
     ...tableOptions,
+    defaultColumn: {
+      size: undefined,
+      ...tableOptions.defaultColumn,
+    },
     state: {
       rowSelection: state?.rowSelection ?? rowSelection,
       sorting: state?.sorting ?? sorting,
