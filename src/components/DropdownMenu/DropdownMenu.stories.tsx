@@ -45,7 +45,7 @@ function FigmaExample(props: DropdownMenuProps) {
         {
           label: "list title",
           value: "value1",
-          icon: <SerendieSymbolPlaceholder />,
+          headingElement: <SerendieSymbolPlaceholder />,
         },
       ]}
     />
@@ -59,27 +59,48 @@ const sampleItems: MenuItemProps[] = [
   {
     label: "リストタイトル",
     value: "value1",
-    icon: <SerendieSymbolPlaceholder />,
+    headingElement: <SerendieSymbolPlaceholder />,
   },
   {
     label: "リストタイトル",
     value: "value2",
-    icon: <SerendieSymbolPlaceholder />,
+    headingElement: <SerendieSymbolPlaceholder />,
   },
   {
     label: "リストタイトル",
     value: "value3",
-    icon: <SerendieSymbolPlaceholder />,
+    headingElement: <SerendieSymbolPlaceholder />,
   },
   {
     label: "リストタイトル",
     value: "value4",
-    icon: <SerendieSymbolPlaceholder />,
+    headingElement: <SerendieSymbolPlaceholder />,
   },
   {
     label: "リストタイトル",
     value: "value5",
-    icon: <SerendieSymbolPlaceholder />,
+    headingElement: <SerendieSymbolPlaceholder />,
+  },
+];
+
+const trailingItems: MenuItemProps[] = [
+  {
+    label: "リストタイトル",
+    value: "value1",
+    headingElement: <SerendieSymbolPlaceholder />,
+    trailingElement: <SerendieSymbolPlaceholder />,
+  },
+  {
+    label: "リストタイトル",
+    value: "value2",
+    headingElement: <SerendieSymbolPlaceholder />,
+    trailingElement: <SerendieSymbolPlaceholder />,
+  },
+  {
+    label: "リストタイトル",
+    value: "value3",
+    headingElement: <SerendieSymbolPlaceholder />,
+    trailingElement: <SerendieSymbolPlaceholder />,
   },
 ];
 
@@ -100,5 +121,14 @@ export const Icon: Story = {
     title: "メニュータイトル",
     styleType: "iconButton",
     icon: <SerendieSymbolMenu />,
+  },
+};
+
+export const TrailingElement: Story = {
+  render: (args: DropdownMenuProps) => (
+    <DropdownMenu {...args} items={trailingItems} />
+  ),
+  args: {
+    title: "メニュータイトル",
   },
 };
