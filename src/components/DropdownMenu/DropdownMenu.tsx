@@ -30,6 +30,10 @@ export const DropdownMenuStyle = sva({
         background:
           "color-mix(in srgb, {colors.sd.system.color.interaction.hoveredVariant}, {colors.sd.system.color.component.surface});",
       },
+      // メニュー内ではハイライト背景で状態を示すため、ListItem内部のフォーカスoutlineは抑制する
+      "& li > div": {
+        outline: "none",
+      },
     },
     button: {
       paddingY: "sd.system.dimension.spacing.small",
