@@ -41,9 +41,21 @@ export const DropdownMenuStyle = sva({
       paddingRight: "sd.system.dimension.spacing.small",
       color: "sd.system.color.component.onSurfaceVariant",
       gap: "sd.system.dimension.spacing.extraSmall",
-      textStyle: "sd.system.typography.body.medium_compact",
-      expanded: {
-        textStyle: "sd.system.typography.body.medium_expanded",
+      // NOTE: breakpoint の `expanded` が状態condition `_expanded`（aria-expanded）と
+      // 名前衝突しているため、`expanded:` / `_expanded` を使うとメニューを開いた時に
+      // もレスポンシブタイポグラフィが適用され文字サイズが変わってしまう。衝突を避け
+      // るため生の media query と属性セレクタで指定し、開閉状態に依らずサイズを一定に
+      // 保つ。
+      textStyle: "sd.system.typography.label.large_compact",
+      "@media screen and (min-width: 48rem)": {
+        textStyle: "sd.system.typography.label.large_expanded",
+      },
+      // メニューを開いた（aria-expanded）状態でも閉じた状態と同じサイズにする
+      "&[data-part='trigger'][aria-expanded='true']": {
+        textStyle: "sd.system.typography.label.large_compact",
+        "@media screen and (min-width: 48rem)": {
+          textStyle: "sd.system.typography.label.large_expanded",
+        },
       },
       _disabled: {
         outline: "solid",
