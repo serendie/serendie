@@ -52,10 +52,6 @@ export const DropdownMenuStyle = sva({
         outlineWidth: "sd.system.dimension.border.medium",
       },
       _expanded: {
-        textStyle: "sd.system.typography.body.medium_compact",
-        expanded: {
-          textStyle: "sd.system.typography.body.medium_expanded",
-        },
         // Note: leftIcon が _open を受け取れないため button 側で制御
         "& svg": {
           transform: "rotate(180deg)",
