@@ -30,10 +30,6 @@ export const DropdownMenuStyle = sva({
         background:
           "color-mix(in srgb, {colors.sd.system.color.interaction.hoveredVariant}, {colors.sd.system.color.component.surface});",
       },
-      // メニュー内ではハイライト背景で状態を示すため、ListItem内部のフォーカスoutlineは抑制する
-      "& li > div:focus-visible": {
-        outline: "none",
-      },
     },
     button: {
       paddingY: "sd.system.dimension.spacing.small",
@@ -176,6 +172,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
                     title={item.label}
                     headingElement={item.headingElement ?? item.icon}
                     trailingElement={item.trailingElement}
+                    focusable={false}
                     className={css({ width: "100%", listStyle: "none" })}
                   />
                 </ArkMenu.Item>
