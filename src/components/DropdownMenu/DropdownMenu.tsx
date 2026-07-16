@@ -1,15 +1,17 @@
 import { Menu as ArkMenu, MenuRootProps, Portal } from "@ark-ui/react";
+import { useEffect, useRef } from "react";
 import {
   SerendieSymbolChevronDown,
   SerendieSymbolMenu,
 } from "@serendie/symbols";
-import { sva } from "../../../styled-system/css";
+import { css, sva } from "../../../styled-system/css";
 import { Button } from "../Button";
 import { IconButton } from "../IconButton";
+import { ListItem } from "../List";
 import { useAutoPortalContainer } from "../../hooks/useAutoPortalContainer";
 
 export const DropdownMenuStyle = sva({
-  slots: ["content", "itemGroup", "item", "itemIcon", "button", "buttonIcon"],
+  slots: ["content", "itemGroup", "item", "button", "buttonIcon"],
   base: {
     content: {
       bgColor: "sd.system.color.component.surfaceContainerBright",
@@ -23,28 +25,10 @@ export const DropdownMenuStyle = sva({
       width: 240,
     },
     item: {
-      display: "flex",
-      height: "48px",
-      alignItems: "center",
-      gap: "sd.system.dimension.spacing.small",
-      paddingX: "sd.system.dimension.spacing.medium",
-      paddingY: "sd.system.dimension.spacing.extraSmall",
       cursor: "pointer",
-      textStyle: "sd.system.typography.body.medium_compact",
-      expanded: {
-        textStyle: "sd.system.typography.body.medium_expanded",
-      },
-      _hover: {
-        bgColor: "sd.system.color.interaction.hoveredVariant",
-      },
       _highlighted: {
-        bgColor: "sd.system.color.interaction.hoveredVariant",
-      },
-    },
-    itemIcon: {
-      "& svg": {
-        width: "sd.reference.dimension.scale.8",
-        height: "sd.reference.dimension.scale.8",
+        background:
+          "color-mix(in srgb, {colors.sd.system.color.interaction.hoveredVariant}, {colors.sd.system.color.component.surface});",
       },
     },
     button: {
@@ -53,9 +37,21 @@ export const DropdownMenuStyle = sva({
       paddingRight: "sd.system.dimension.spacing.small",
       color: "sd.system.color.component.onSurfaceVariant",
       gap: "sd.system.dimension.spacing.extraSmall",
-      textStyle: "sd.system.typography.body.medium_compact",
-      expanded: {
-        textStyle: "sd.system.typography.body.medium_expanded",
+      // NOTE: breakpoint の `expanded` が状態condition `_expanded`（aria-expanded）と
+      // 名前衝突しているため、`expanded:` / `_expanded` を使うとメニューを開いた時に
+      // もレスポンシブタイポグラフィが適用され文字サイズが変わってしまう。衝突を避け
+      // るため生の media query と属性セレクタで指定し、開閉状態に依らずサイズを一定に
+      // 保つ。
+      textStyle: "sd.system.typography.label.large_compact",
+      "@media screen and (min-width: 48rem)": {
+        textStyle: "sd.system.typography.label.large_expanded",
+      },
+      // メニューを開いた（aria-expanded）状態でも閉じた状態と同じサイズにする
+      "&[data-part='trigger'][aria-expanded='true']": {
+        textStyle: "sd.system.typography.label.large_compact",
+        "@media screen and (min-width: 48rem)": {
+          textStyle: "sd.system.typography.label.large_expanded",
+        },
       },
       _disabled: {
         outline: "solid",
@@ -64,10 +60,6 @@ export const DropdownMenuStyle = sva({
         outlineWidth: "sd.system.dimension.border.medium",
       },
       _expanded: {
-        textStyle: "sd.system.typography.body.medium_compact",
-        expanded: {
-          textStyle: "sd.system.typography.body.medium_expanded",
-        },
         // Note: leftIcon が _open を受け取れないため button 側で制御
         "& svg": {
           transform: "rotate(180deg)",
@@ -85,6 +77,9 @@ export const DropdownMenuStyle = sva({
 export type MenuItemProps = {
   value: string;
   label: string;
+  headingElement?: React.ReactElement;
+  trailingElement?: React.ReactElement;
+  /** @deprecated `icon` は廃止予定です。`headingElement` を使ってください */
   icon?: React.ReactElement;
 };
 
@@ -115,6 +110,18 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
   /* variant なし */
   const styles = DropdownMenuStyle();
   const { triggerRef, portalContainerRef } = useAutoPortalContainer(portalled);
+
+  const warnedRef = useRef(false);
+  useEffect(() => {
+    if (warnedRef.current) return;
+    if (process.env.NODE_ENV === "production") return;
+    if (items.some((item) => item.icon)) {
+      warnedRef.current = true;
+      console.warn(
+        "[DropdownMenu] `icon` は廃止予定です。`headingElement` を使ってください。"
+      );
+    }
+  }, []);
 
   return (
     <ArkMenu.Root
@@ -161,10 +168,13 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
                   value={item.value}
                   className={styles.item}
                 >
-                  {item.icon && (
-                    <div className={styles.itemIcon}>{item.icon}</div>
-                  )}
-                  {item.label}
+                  <ListItem
+                    title={item.label}
+                    headingElement={item.headingElement ?? item.icon}
+                    trailingElement={item.trailingElement}
+                    focusable={false}
+                    className={css({ width: "100%", listStyle: "none" })}
+                  />
                 </ArkMenu.Item>
               ))}
             </ArkMenu.ItemGroup>
