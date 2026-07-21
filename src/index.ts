@@ -41,6 +41,7 @@ export * from "./components/DatePicker/index.ts";
 export * from "./components/Divider/index.ts";
 export * from "./components/Drawer/index.ts";
 export * from "./components/DropdownMenu/index.ts";
+export * from "./components/Footer/index.ts";
 export * from "./components/IconButton/index.ts";
 export * from "./components/List/index.ts";
 export * from "./components/ModalDialog/index.ts";
