@@ -12,6 +12,13 @@ export const themeNames = Object.keys(themes);
 
 export const SerendiePreset = {
   name: "serendie",
+  conditions: {
+    extend: {
+      expanded: `@media screen and (min-width: ${sd.system.dimension.breakpoint.expanded})`,
+      ariaExpanded:
+        "&:is([aria-expanded=true], [data-expanded], [data-state=expanded])",
+    },
+  },
   theme: {
     extend: {
       breakpoints: {

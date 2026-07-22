@@ -107,7 +107,7 @@ export const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
             className={cx(
               textFieldStyles.inputWrapper,
               css({
-                _expanded: {
+                _ariaExpanded: {
                   outlineWidth: "sd.system.dimension.border.thick",
                   outlineColor: "sd.system.color.impression.primary",
                 },
