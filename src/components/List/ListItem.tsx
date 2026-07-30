@@ -157,6 +157,12 @@ type ListItemBaseProps = {
   disabled?: boolean;
   selected?: boolean;
   focusVisible?: boolean;
+  /**
+   * wrapper要素をキーボードフォーカス可能にするか
+   * Menu/Selectなど親がフォーカス（roving focus）を管理する場合は `false` にする
+   * @default true
+   */
+  focusable?: boolean;
   size?: "small";
   /** @deprecated `leftIcon` は廃止予定です。`headingElement` を使ってください */
   leftIcon?: React.ReactElement;
@@ -204,6 +210,7 @@ export const ListItem: React.FC<ListItemProps> = ({
   disabled,
   selected,
   focusVisible,
+  focusable = true,
   className,
   leftIcon,
   rightIcon,
@@ -279,7 +286,7 @@ export const ListItem: React.FC<ListItemProps> = ({
   return (
     <li className={cx(styles.root, className)} {...elementProps}>
       <div
-        tabIndex={1}
+        tabIndex={focusable ? 1 : -1}
         className={wrapperClassName}
         data-disabled={disabled ? true : undefined}
         data-selected={selected ? true : undefined}
