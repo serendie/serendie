@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Search } from "./Search";
 import figma from "@figma/code-connect";
-import { userEvent, within, waitFor, expect } from "storybook/test";
+import { fn, userEvent, within, waitFor, expect } from "storybook/test";
 import { FullscreenLayout } from "../../../.storybook/FullscreenLayout";
 
 const items = [
@@ -80,6 +80,7 @@ export const PlayDisplayMenu: Story = {
   },
   args: {
     onInputValueChange: (v) => console.log(v),
+    onSearch: fn(),
     disabled: false,
     placeholder: "デバイスIDなどを検索",
     items,
@@ -91,7 +92,7 @@ export const PlayDisplayMenu: Story = {
       </FullscreenLayout>
     );
   },
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement);
     const parentElement = canvasElement.parentElement;
     if (!parentElement) return;
@@ -108,6 +109,17 @@ export const PlayDisplayMenu: Story = {
       },
       { timeout: 3000 }
     );
+
+    await userEvent.click(root.getByRole("option", { name: "Angular" }));
+    expect(args.onSearch).toHaveBeenCalledTimes(1);
+
+    await userEvent.click(canvas.getByRole("button", { name: /clear/i }));
+    await expect(input).toHaveValue("");
+
+    await userEvent.type(input, "Angular");
+    const option = await root.findByRole("option", { name: "Angular" });
+    await userEvent.click(option);
+    expect(args.onSearch).toHaveBeenCalledTimes(2);
   },
 };
 

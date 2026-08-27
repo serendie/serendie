@@ -2,6 +2,7 @@ import React from "react";
 import {
   Combobox,
   ComboboxRootProps,
+  ComboboxValueChangeDetails,
   Portal,
   createListCollection,
 } from "@ark-ui/react";
@@ -201,7 +202,6 @@ export const Search: React.FC<SearchStyleProps> = ({
   const [hasValue, setHasValue] = React.useState(
     () => !!(elementProps.inputValue || elementProps.defaultInputValue)
   );
-  const inputRef = React.useRef<HTMLInputElement>(null);
 
   const filteredItems = React.useMemo(() => {
     if (!inputValue) return items;
@@ -222,7 +222,7 @@ export const Search: React.FC<SearchStyleProps> = ({
   };
 
   // 候補選択時も検索を実行
-  const handleValueChange = (details: { value: string[] }) => {
+  const handleValueChange = (details: ComboboxValueChangeDetails<string>) => {
     if (details.value.length > 0) {
       onSearch?.(details.value[0]);
     }
@@ -246,19 +246,6 @@ export const Search: React.FC<SearchStyleProps> = ({
   // onChangeでhasValueを即時更新（onInputValueChangeより先に発火するため）
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setHasValue(e.target.value.length > 0);
-  };
-
-  // クリアボタンの処理
-  const handleClear = () => {
-    if (inputRef.current) {
-      inputRef.current.value = "";
-      inputRef.current.focus();
-    }
-    setHasValue(false);
-    if (!isControlled) {
-      setUncontrolledValue("");
-    }
-    elementProps.onInputValueChange?.({ inputValue: "" });
   };
 
   return (
@@ -287,19 +274,14 @@ export const Search: React.FC<SearchStyleProps> = ({
           <SerendieSymbolMagnifyingGlass className={styles.icon} />
         </div>
         <Combobox.Input
-          ref={inputRef}
           className={styles.input}
           onKeyDown={handleKeyDown}
           onChange={handleInputChange}
         />
         {hasValue && (
-          <button
-            type="button"
-            className={styles.clearTrigger}
-            onClick={handleClear}
-          >
+          <Combobox.ClearTrigger className={styles.clearTrigger}>
             <SerendieSymbolClose className={styles.icon} />
-          </button>
+          </Combobox.ClearTrigger>
         )}
       </Combobox.Control>
       <Portal disabled={!portalled} container={portalContainerRef}>
