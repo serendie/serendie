@@ -65,6 +65,26 @@ export const Small: Story = {
   },
 };
 
+export const WithLabel: Story = {
+  args: {
+    disabled: false,
+    label: "フレームワーク",
+    placeholder: "フレームワークを検索",
+    required: true,
+    items,
+  },
+};
+
+export const Invalid: Story = {
+  args: {
+    disabled: false,
+    invalid: true,
+    invalidMessage: "フレームワークを選択してください",
+    placeholder: "フレームワークを検索",
+    items,
+  },
+};
+
 export const Disabled: Story = {
   args: {
     onInputValueChange: (v) => console.log(v),
