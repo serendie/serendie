@@ -43,6 +43,7 @@ export const SearchStyle = sva({
       rowGap: "sd.system.dimension.spacing.extraSmall",
     },
     control: {
+      display: "grid",
       width: "100%",
       lineHeight: "1",
       gridTemplateColumns: "auto 1fr auto",
