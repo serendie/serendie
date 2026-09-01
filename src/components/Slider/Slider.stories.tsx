@@ -95,7 +95,7 @@ export const Disabled: Story = {
   },
 };
 
-export const WithMarkerValues: Story = {
+export const WithMarkers: Story = {
   args: {
     startLabel: "Value",
     endLabel: "Value",
