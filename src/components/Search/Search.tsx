@@ -2,6 +2,7 @@ import React from "react";
 import {
   Combobox,
   ComboboxRootProps,
+  ComboboxValueChangeDetails,
   Portal,
   createListCollection,
 } from "@ark-ui/react";
@@ -9,9 +10,10 @@ import {
   SerendieSymbolMagnifyingGlass,
   SerendieSymbolClose,
 } from "@serendie/symbols";
-import { cx, RecipeVariantProps, sva } from "../../../styled-system/css";
+import { css, cx, RecipeVariantProps, sva } from "../../../styled-system/css";
 import { Box } from "../../../styled-system/jsx";
 import { useAutoPortalContainer } from "../../hooks/useAutoPortalContainer";
+import { useTranslations } from "../../i18n";
 
 /*
  * 検索候補を出すことができるサーチコンボボックス
@@ -22,6 +24,7 @@ import { useAutoPortalContainer } from "../../hooks/useAutoPortalContainer";
 
 export const SearchStyle = sva({
   slots: [
+    "root",
     "input",
     "control",
     "combobox",
@@ -31,12 +34,17 @@ export const SearchStyle = sva({
     "clearTrigger",
   ],
   base: {
-    control: {
+    root: {
       display: "inline-grid",
       // 後から指定したCSSからwidthが上書きできないため、@layer componentsを指定
       "@layer components": {
         width: "min(100%, 300px)",
       },
+      rowGap: "sd.system.dimension.spacing.extraSmall",
+    },
+    control: {
+      display: "grid",
+      width: "100%",
       lineHeight: "1",
       gridTemplateColumns: "auto 1fr auto",
       alignItems: "center",
@@ -48,6 +56,9 @@ export const SearchStyle = sva({
       _focus: {
         outlineWidth: "sd.system.dimension.border.thick",
         outlineColor: "sd.system.color.impression.primary",
+      },
+      _invalid: {
+        outlineColor: "sd.system.color.impression.negative",
       },
       _disabled: {
         bgColor: "sd.system.color.interaction.disabled",
@@ -154,6 +165,11 @@ export const SearchStyle = sva({
 type SearchStyleProps = ComboboxRootProps<string> &
   RecipeVariantProps<typeof SearchStyle> & {
     items?: string[];
+    label?: string;
+    required?: boolean;
+    requiredLabel?: string;
+    invalid?: boolean;
+    invalidMessage?: string;
     /**
      * Portalを使用するかどうか
      * - `true` (デフォルト): body直下にポータルする。ModalDialog/Drawer内にある場合は自動的にそのコンテンツ内にポータルされる
@@ -174,6 +190,12 @@ type SearchStyleProps = ComboboxRootProps<string> &
 
 export const Search: React.FC<SearchStyleProps> = ({
   items = [],
+  label,
+  required,
+  requiredLabel,
+  invalid,
+  invalidMessage,
+  className,
   portalled = true,
   allowCustomValue = true,
   onSearch,
@@ -183,6 +205,7 @@ export const Search: React.FC<SearchStyleProps> = ({
   const styles = SearchStyle(variantProps);
   const { collection: _, ...elementProps } = comboboxProps;
   const { triggerRef, portalContainerRef } = useAutoPortalContainer(portalled);
+  const t = useTranslations();
 
   // controlled / uncontrolled の判定
   const isControlled = elementProps.inputValue !== undefined;
@@ -201,7 +224,6 @@ export const Search: React.FC<SearchStyleProps> = ({
   const [hasValue, setHasValue] = React.useState(
     () => !!(elementProps.inputValue || elementProps.defaultInputValue)
   );
-  const inputRef = React.useRef<HTMLInputElement>(null);
 
   const filteredItems = React.useMemo(() => {
     if (!inputValue) return items;
@@ -222,7 +244,7 @@ export const Search: React.FC<SearchStyleProps> = ({
   };
 
   // 候補選択時も検索を実行
-  const handleValueChange = (details: { value: string[] }) => {
+  const handleValueChange = (details: ComboboxValueChangeDetails<string>) => {
     if (details.value.length > 0) {
       onSearch?.(details.value[0]);
     }
@@ -248,23 +270,13 @@ export const Search: React.FC<SearchStyleProps> = ({
     setHasValue(e.target.value.length > 0);
   };
 
-  // クリアボタンの処理
-  const handleClear = () => {
-    if (inputRef.current) {
-      inputRef.current.value = "";
-      inputRef.current.focus();
-    }
-    setHasValue(false);
-    if (!isControlled) {
-      setUncontrolledValue("");
-    }
-    elementProps.onInputValueChange?.({ inputValue: "" });
-  };
-
   return (
     <Combobox.Root
       {...elementProps}
       collection={collection}
+      required={required}
+      invalid={invalid}
+      className={cx(styles.root, className)}
       openOnClick
       allowCustomValue={allowCustomValue}
       onInputValueChange={handleInputValueChange}
@@ -279,29 +291,57 @@ export const Search: React.FC<SearchStyleProps> = ({
         },
       }}
     >
-      <Combobox.Control
-        className={cx(styles.control, elementProps.className)}
-        ref={triggerRef}
-      >
+      {label && variantProps.size != "small" && (
+        // smallの場合はラベルを表示しない
+        <Combobox.Label
+          className={css({
+            textStyle: {
+              base: "sd.system.typography.label.medium_compact",
+              expanded: "sd.system.typography.label.medium_expanded",
+            },
+          })}
+        >
+          {label}
+          {required && (
+            <span
+              className={css({
+                pl: "sd.system.dimension.spacing.extraSmall",
+                color: "sd.system.color.impression.negative",
+              })}
+            >
+              {requiredLabel ?? t("common.required")}
+            </span>
+          )}
+        </Combobox.Label>
+      )}
+      <Combobox.Control className={styles.control} ref={triggerRef}>
         <div className={styles.iconBox}>
           <SerendieSymbolMagnifyingGlass className={styles.icon} />
         </div>
         <Combobox.Input
-          ref={inputRef}
           className={styles.input}
           onKeyDown={handleKeyDown}
           onChange={handleInputChange}
         />
         {hasValue && (
-          <button
-            type="button"
-            className={styles.clearTrigger}
-            onClick={handleClear}
-          >
+          <Combobox.ClearTrigger className={styles.clearTrigger} hidden={false}>
             <SerendieSymbolClose className={styles.icon} />
-          </button>
+          </Combobox.ClearTrigger>
         )}
       </Combobox.Control>
+      {invalid && invalidMessage && (
+        <div
+          className={css({
+            textStyle: {
+              base: "sd.system.typography.body.extraSmall_compact",
+              expanded: "sd.system.typography.body.extraSmall_expanded",
+            },
+            color: "sd.system.color.impression.negative",
+          })}
+        >
+          {invalidMessage}
+        </div>
+      )}
       <Portal disabled={!portalled} container={portalContainerRef}>
         <Combobox.Positioner>
           <Combobox.Content className={styles.combobox}>
