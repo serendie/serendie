@@ -274,6 +274,7 @@ export const Search: React.FC<SearchStyleProps> = ({
     <Combobox.Root
       {...elementProps}
       collection={collection}
+      required={required}
       invalid={invalid}
       className={cx(styles.root, className)}
       openOnClick
@@ -323,7 +324,7 @@ export const Search: React.FC<SearchStyleProps> = ({
           onChange={handleInputChange}
         />
         {hasValue && (
-          <Combobox.ClearTrigger className={styles.clearTrigger}>
+          <Combobox.ClearTrigger className={styles.clearTrigger} hidden={false}>
             <SerendieSymbolClose className={styles.icon} />
           </Combobox.ClearTrigger>
         )}

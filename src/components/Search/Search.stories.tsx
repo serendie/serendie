@@ -130,6 +130,20 @@ export const PlayDisplayMenu: Story = {
       { timeout: 3000 }
     );
 
+    const clearButton = canvas.getByRole("button", { name: /clear/i });
+    await expect(clearButton).toBeVisible();
+    await userEvent.click(clearButton);
+    await expect(input).toHaveValue("");
+
+    await userEvent.type(input, "a");
+    await waitFor(
+      async () => {
+        const option = await root.findByText("Angular");
+        expect(option).toBeInTheDocument();
+      },
+      { timeout: 3000 }
+    );
+
     await userEvent.click(root.getByRole("option", { name: "Angular" }));
     expect(args.onSearch).toHaveBeenCalledTimes(1);
 
