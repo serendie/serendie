@@ -132,3 +132,18 @@ export const TrailingElement: Story = {
     title: "メニュータイトル",
   },
 };
+
+const shortLabelItems: MenuItemProps[] = [
+  { label: "大", value: "large" },
+  { label: "中", value: "medium" },
+  { label: "小", value: "small" },
+];
+
+export const ShortLabel: Story = {
+  render: (args: DropdownMenuProps) => (
+    <DropdownMenu {...args} items={shortLabelItems} />
+  ),
+  args: {
+    title: "サイズ",
+  },
+};
