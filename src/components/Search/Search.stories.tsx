@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Search } from "./Search";
 import figma from "@figma/code-connect";
-import { userEvent, within, waitFor, expect } from "storybook/test";
+import { fn, userEvent, within, waitFor, expect } from "storybook/test";
 import { FullscreenLayout } from "../../../.storybook/FullscreenLayout";
 
 const items = [
@@ -65,6 +65,26 @@ export const Small: Story = {
   },
 };
 
+export const WithLabel: Story = {
+  args: {
+    disabled: false,
+    label: "フレームワーク",
+    placeholder: "フレームワークを検索",
+    required: true,
+    items,
+  },
+};
+
+export const Invalid: Story = {
+  args: {
+    disabled: false,
+    invalid: true,
+    invalidMessage: "フレームワークを選択してください",
+    placeholder: "フレームワークを検索",
+    items,
+  },
+};
+
 export const Disabled: Story = {
   args: {
     onInputValueChange: (v) => console.log(v),
@@ -80,6 +100,7 @@ export const PlayDisplayMenu: Story = {
   },
   args: {
     onInputValueChange: (v) => console.log(v),
+    onSearch: fn(),
     disabled: false,
     placeholder: "デバイスIDなどを検索",
     items,
@@ -91,7 +112,7 @@ export const PlayDisplayMenu: Story = {
       </FullscreenLayout>
     );
   },
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement);
     const parentElement = canvasElement.parentElement;
     if (!parentElement) return;
@@ -108,6 +129,31 @@ export const PlayDisplayMenu: Story = {
       },
       { timeout: 3000 }
     );
+
+    const clearButton = canvas.getByRole("button", { name: /clear/i });
+    await expect(clearButton).toBeVisible();
+    await userEvent.click(clearButton);
+    await expect(input).toHaveValue("");
+
+    await userEvent.type(input, "a");
+    await waitFor(
+      async () => {
+        const option = await root.findByText("Angular");
+        expect(option).toBeInTheDocument();
+      },
+      { timeout: 3000 }
+    );
+
+    await userEvent.click(root.getByRole("option", { name: "Angular" }));
+    expect(args.onSearch).toHaveBeenCalledTimes(1);
+
+    await userEvent.click(canvas.getByRole("button", { name: /clear/i }));
+    await expect(input).toHaveValue("");
+
+    await userEvent.type(input, "Angular");
+    const option = await root.findByRole("option", { name: "Angular" });
+    await userEvent.click(option);
+    expect(args.onSearch).toHaveBeenCalledTimes(2);
   },
 };
 

@@ -22,7 +22,8 @@ export const DropdownMenuStyle = sva({
       zIndex: "sd.system.elevation.zIndex.dropdown",
     },
     itemGroup: {
-      width: 240,
+      width: "fit-content",
+      minWidth: "112px",
     },
     item: {
       cursor: "pointer",
@@ -67,6 +68,8 @@ export type MenuItemProps = {
   label: string;
   headingElement?: React.ReactElement;
   trailingElement?: React.ReactElement;
+  /** アイテムが選択されたときに呼び出される関数 */
+  onSelect?: (value: string) => void;
   /** @deprecated `icon` は廃止予定です。`headingElement` を使ってください */
   icon?: React.ReactElement;
 };
@@ -155,6 +158,11 @@ export const DropdownMenu: React.FC<DropdownMenuProps & MenuRootProps> = ({
                   key={item.value}
                   value={item.value}
                   className={styles.item}
+                  onSelect={
+                    item.onSelect
+                      ? () => item.onSelect?.(item.value)
+                      : undefined
+                  }
                 >
                   <ListItem
                     title={item.label}

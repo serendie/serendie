@@ -4,6 +4,7 @@ import {
   SerendieSymbolPlaceholder,
 } from "@serendie/symbols";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { useState } from "react";
 import { DropdownMenu, DropdownMenuProps, MenuItemProps } from "./DropdownMenu";
 
 const meta: Meta<typeof DropdownMenu> = {
@@ -130,5 +131,58 @@ export const TrailingElement: Story = {
   ),
   args: {
     title: "メニュータイトル",
+  },
+};
+
+const ItemOnSelectTemplate = (args: DropdownMenuProps) => {
+  const [selected, setSelected] = useState<string>();
+  const items: MenuItemProps[] = [
+    {
+      label: "コピー",
+      value: "copy",
+      headingElement: <SerendieSymbolPlaceholder />,
+      onSelect: (value) => setSelected(value),
+    },
+    {
+      label: "編集",
+      value: "edit",
+      headingElement: <SerendieSymbolPlaceholder />,
+      onSelect: (value) => setSelected(value),
+    },
+    {
+      label: "削除",
+      value: "delete",
+      headingElement: <SerendieSymbolPlaceholder />,
+      onSelect: (value) => setSelected(value),
+    },
+  ];
+
+  return (
+    <div>
+      <DropdownMenu {...args} items={items} />
+      <p>選択されたアイテム: {selected ?? "なし"}</p>
+    </div>
+  );
+};
+
+export const ItemOnSelect: Story = {
+  render: ItemOnSelectTemplate,
+  args: {
+    title: "メニュータイトル",
+  },
+};
+
+const shortLabelItems: MenuItemProps[] = [
+  { label: "大", value: "large" },
+  { label: "中", value: "medium" },
+  { label: "小", value: "small" },
+];
+
+export const ShortLabel: Story = {
+  render: (args: DropdownMenuProps) => (
+    <DropdownMenu {...args} items={shortLabelItems} />
+  ),
+  args: {
+    title: "サイズ",
   },
 };
