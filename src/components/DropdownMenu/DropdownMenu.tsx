@@ -22,7 +22,8 @@ export const DropdownMenuStyle = sva({
       zIndex: "sd.system.elevation.zIndex.dropdown",
     },
     itemGroup: {
-      width: 240,
+      width: "fit-content",
+      minWidth: "112px",
     },
     item: {
       cursor: "pointer",

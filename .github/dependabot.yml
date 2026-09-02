@@ -4,35 +4,20 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    cooldown:
-      default-days: 7
-    open-pull-requests-limit: 10
+    # バージョン更新を停止する（セキュリティ更新はこの上限の対象外）
+    open-pull-requests-limit: 0
     groups:
-      npm-minor-and-patch:
+      npm-security:
+        applies-to: "security-updates"
         patterns:
           - "*"
-        update-types:
-          - "minor"
-          - "patch"
-    ignore:
-      - dependency-name: "*"
-        update-types:
-          - "version-update:semver-major"
-      - dependency-name: "eslint-plugin-react-refresh"
-        update-types:
-          - "version-update:semver-minor"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 0
     groups:
-      actions-minor-and-patch:
+      actions-security:
+        applies-to: "security-updates"
         patterns:
           - "*"
-        update-types:
-          - "minor"
-          - "patch"
-    ignore:
-      - dependency-name: "*"
-        update-types:
-          - "version-update:semver-major"
