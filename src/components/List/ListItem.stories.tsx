@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ListItem } from "./ListItem";
 import { List } from "./List";
-import figma from "@figma/code-connect";
+import { figma } from "@figma/code-connect";
 import {
   SerendieSymbolChevronRight,
   SerendieSymbolPlaceholder,

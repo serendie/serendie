@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "../Button";
 import { DropdownMenu } from "../DropdownMenu";
 import { SerendieSymbolPlaceholder } from "@serendie/symbols";
-import figma from "@figma/code-connect";
+import { figma } from "@figma/code-connect";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 import { allModes } from "../../../.storybook/modes";
 import { FullscreenLayout } from "../../../.storybook/FullscreenLayout";

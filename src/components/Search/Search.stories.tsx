@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Search } from "./Search";
-import figma from "@figma/code-connect";
+import { figma } from "@figma/code-connect";
 import { fn, userEvent, within, waitFor, expect } from "storybook/test";
 import { FullscreenLayout } from "../../../.storybook/FullscreenLayout";
 
