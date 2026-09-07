@@ -11,6 +11,21 @@ updates:
         applies-to: "security-updates"
         patterns:
           - "*"
+  # @serendie/* のバージョン更新用。
+  # target-branch を指定したエントリの設定はセキュリティ更新に使われないため、
+  # allow で絞ってもセキュリティ更新が止まらない
+  - package-ecosystem: "npm"
+    directory: "/"
+    target-branch: "main"
+    schedule:
+      interval: "weekly"
+    allow:
+      - dependency-name: "@serendie/*"
+    groups:
+      serendie:
+        patterns:
+          - "@serendie/*"
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
