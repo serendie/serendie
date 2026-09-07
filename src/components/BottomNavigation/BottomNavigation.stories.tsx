@@ -4,7 +4,7 @@ import {
   BottomNavigationItem,
   BottomNavigationItemProps,
 } from "./BottomNavigationItem";
-import figma from "@figma/code-connect";
+import { figma } from "@figma/code-connect";
 import { SerendieSymbolMagnifyingGlass } from "@serendie/symbols";
 
 const meta: Meta<typeof BottomNavigationItem> = {

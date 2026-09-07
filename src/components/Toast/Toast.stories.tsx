@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Toast, toaster } from "./Toast";
 import { Button } from "../Button";
 import { Stack } from "../../../styled-system/jsx";
-import figma from "@figma/code-connect";
+import { figma } from "@figma/code-connect";
 import { userEvent, within, waitFor, expect } from "storybook/test";
 import { FullscreenLayout } from "../../../.storybook/FullscreenLayout";
 

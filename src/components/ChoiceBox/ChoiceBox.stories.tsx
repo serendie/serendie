@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ChoiceBox } from "./ChoiceBox";
 import { RadioGroup } from "../RadioButton";
-import figma from "@figma/code-connect";
+import { figma } from "@figma/code-connect";
 
 const meta: Meta<typeof ChoiceBox> = {
   component: ChoiceBox,

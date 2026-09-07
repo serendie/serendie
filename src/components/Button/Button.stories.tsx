@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button, ButtonStyle } from "./Button";
-import figma from "@figma/code-connect";
+import { figma } from "@figma/code-connect";
 import {
   SerendieSymbolChevronLeft,
   SerendieSymbolChevronRight,

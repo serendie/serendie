@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { TextField } from "./TextField";
-import figma from "@figma/code-connect";
+import { figma } from "@figma/code-connect";
 import {
   SerendieSymbolInformation,
   SerendieSymbolMail,

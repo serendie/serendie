@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { TopAppBar } from "./TopAppBar";
 import { IconButton } from "../IconButton";
-import figma from "@figma/code-connect";
+import { figma } from "@figma/code-connect";
 import React from "react";
 import {
   SerendieSymbolMagnifyingGlass,
