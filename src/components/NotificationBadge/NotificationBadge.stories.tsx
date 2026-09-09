@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { NotificationBadge } from "./NotificationBadge";
-import figma from "@figma/code-connect";
+import { figma } from "@figma/code-connect";
 
 const meta: Meta<typeof NotificationBadge> = {
   component: NotificationBadge,

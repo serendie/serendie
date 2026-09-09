@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Tabs } from "./Tabs";
 import { TabItem, TabItemProps } from "./TabItem";
-import figma from "@figma/code-connect";
+import { figma } from "@figma/code-connect";
 
 const meta: Meta<typeof TabItem> = {
   component: TabItem,

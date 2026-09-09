@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { IconButton, IconButtonStyle } from "./IconButton";
-import figma from "@figma/code-connect";
+import { figma } from "@figma/code-connect";
 import { SerendieSymbolPlus } from "@serendie/symbols";
 
 const meta: Meta<typeof IconButton> = {

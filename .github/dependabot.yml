@@ -4,35 +4,35 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    cooldown:
-      default-days: 7
-    open-pull-requests-limit: 10
+    # バージョン更新を停止する（セキュリティ更新はこの上限の対象外）
+    open-pull-requests-limit: 0
     groups:
-      npm-minor-and-patch:
+      npm-security:
+        applies-to: "security-updates"
         patterns:
           - "*"
-        update-types:
-          - "minor"
-          - "patch"
-    ignore:
-      - dependency-name: "*"
-        update-types:
-          - "version-update:semver-major"
-      - dependency-name: "eslint-plugin-react-refresh"
-        update-types:
-          - "version-update:semver-minor"
+  # @serendie/* のバージョン更新用。
+  # target-branch を指定したエントリの設定はセキュリティ更新に使われないため、
+  # allow で絞ってもセキュリティ更新が止まらない
+  - package-ecosystem: "npm"
+    directory: "/"
+    target-branch: "main"
+    schedule:
+      interval: "weekly"
+    allow:
+      - dependency-name: "@serendie/*"
+    groups:
+      serendie:
+        patterns:
+          - "@serendie/*"
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 0
     groups:
-      actions-minor-and-patch:
+      actions-security:
+        applies-to: "security-updates"
         patterns:
           - "*"
-        update-types:
-          - "minor"
-          - "patch"
-    ignore:
-      - dependency-name: "*"
-        update-types:
-          - "version-update:semver-major"

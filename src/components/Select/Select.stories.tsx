@@ -1,4 +1,4 @@
-import figma from "@figma/code-connect";
+import { figma } from "@figma/code-connect";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { userEvent, within, waitFor, expect } from "storybook/test";
 import { FullscreenLayout } from "../../../.storybook/FullscreenLayout";

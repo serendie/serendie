@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { Divider, DividerStyle } from "./Divider";
-import figma from "@figma/code-connect";
+import { figma } from "@figma/code-connect";
 
 const meta: Meta<typeof Divider> = {
   component: Divider,
