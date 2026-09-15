@@ -1,3 +1,12 @@
+import {
+  existsSync,
+  readdirSync,
+  readFileSync,
+  renameSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
+import { join } from "node:path";
 import react from "@vitejs/plugin-react";
 import { globbySync } from "globby";
 import { defineConfig } from "vite";
@@ -8,6 +17,34 @@ export default defineConfig({
   plugins: [
     react(),
     svgr(),
+    {
+      name: "strip-query-from-chunk-filenames",
+      closeBundle() {
+        const walk = (dir: string): string[] =>
+          readdirSync(dir, { withFileTypes: true }).flatMap((entry) =>
+            entry.isDirectory()
+              ? walk(join(dir, entry.name))
+              : [join(dir, entry.name)]
+          );
+        const dist = join(__dirname, "dist");
+        if (!existsSync(dist)) return;
+        const files = walk(dist);
+        for (const file of files) {
+          if (file.endsWith(".js")) {
+            const code = readFileSync(file, "utf8");
+            const clean = code.replace(/\?react/g, "");
+            if (clean !== code) writeFileSync(file, clean);
+          }
+        }
+        for (const file of files) {
+          const clean = file.replace(/\?react(?=\.js$)/, "");
+          if (clean !== file) {
+            renameSync(file, clean);
+            rmSync(file, { force: true });
+          }
+        }
+      },
+    },
     dts({
       exclude: ["**/*.stories.tsx"],
     }),
