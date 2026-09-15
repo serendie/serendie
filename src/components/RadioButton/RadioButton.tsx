@@ -1,7 +1,7 @@
 import { RadioGroup, RadioGroupItemProps } from "@ark-ui/react";
 import { RecipeVariantProps, css, cx, sva } from "../../../styled-system/css";
-import RadioChecked from "../../assets/radioChecked.svg?react";
-import RadioUnChecked from "../../assets/radioUnchecked.svg?react";
+import RadioChecked from "../../assets/radioChecked.svg";
+import RadioUnChecked from "../../assets/radioUnchecked.svg";
 
 export const radioIconCss = {
   flexShrink: 0,

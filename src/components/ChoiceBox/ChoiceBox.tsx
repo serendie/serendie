@@ -5,11 +5,11 @@ import {
   RadioGroupItemProps,
 } from "@ark-ui/react";
 import { cx, sva } from "../../../styled-system/css";
-import CheckboxCheckedIcon from "../../assets/checkboxChecked.svg?react";
-import CheckboxUncheckedIcon from "../../assets/checkboxUnchecked.svg?react";
-import CheckboxIndeterminateIcon from "../../assets/checkboxIndeterminate.svg?react";
-import RadioChecked from "../../assets/radioChecked.svg?react";
-import RadioUnChecked from "../../assets/radioUnchecked.svg?react";
+import CheckboxCheckedIcon from "../../assets/checkboxChecked.svg";
+import CheckboxUncheckedIcon from "../../assets/checkboxUnchecked.svg";
+import CheckboxIndeterminateIcon from "../../assets/checkboxIndeterminate.svg";
+import RadioChecked from "../../assets/radioChecked.svg";
+import RadioUnChecked from "../../assets/radioUnchecked.svg";
 import {
   checkboxCheckedIconCss,
   checkboxIconCss,
