@@ -1,8 +1,8 @@
 import { Checkbox as ArkCheckbox, CheckboxRootProps } from "@ark-ui/react";
 import { RecipeVariantProps, css, cx, sva } from "../../../styled-system/css";
-import CheckboxCheckedIcon from "../../assets/checkboxChecked.svg?react";
-import CheckboxUncheckedIcon from "../../assets/checkboxUnchecked.svg?react";
-import CheckboxIndeterminateIcon from "../../assets/checkboxIndeterminate.svg?react";
+import CheckboxCheckedIcon from "../../assets/checkboxChecked.svg";
+import CheckboxUncheckedIcon from "../../assets/checkboxUnchecked.svg";
+import CheckboxIndeterminateIcon from "../../assets/checkboxIndeterminate.svg";
 
 export const checkboxIconCss = {
   flexShrink: 0,
