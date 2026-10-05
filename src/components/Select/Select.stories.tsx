@@ -1,8 +1,12 @@
 import { figma } from "@figma/code-connect";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { userEvent, within, waitFor, expect } from "storybook/test";
+import { userEvent, within, waitFor, expect, fn } from "storybook/test";
+import { useState } from "react";
 import { FullscreenLayout } from "../../../.storybook/FullscreenLayout";
 import { allModes } from "../../../.storybook/modes";
+import { Button } from "../Button";
+import { Drawer } from "../Drawer";
+import { ModalDialog } from "../ModalDialog";
 import { Select } from "./Select";
 
 const items = [
@@ -122,5 +126,244 @@ export const PlayClickedSelect: Story = {
       value: "large",
       isRotated: false,
     },
+  },
+};
+
+const SelectInModalDialogTemplate = (
+  args: React.ComponentProps<typeof Select>
+) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <>
+      <Button onClick={() => setIsOpen(true)}>Open Dialog</Button>
+      <ModalDialog
+        isOpen={isOpen}
+        onOpenChange={(e) => setIsOpen(e.open)}
+        title="Select in Dialog"
+        submitButtonLabel="OK"
+        onButtonClick={() => setIsOpen(false)}
+      >
+        <Select {...args} />
+      </ModalDialog>
+    </>
+  );
+};
+
+export const InModalDialog: Story = {
+  parameters: {
+    layout: "fullscreen",
+
+    chromatic: {
+      modes: {
+        small: allModes["small"],
+        large: allModes["large"],
+      },
+    },
+  },
+
+  render: (args) => {
+    return (
+      <FullscreenLayout>
+        <SelectInModalDialogTemplate {...args} />
+      </FullscreenLayout>
+    );
+  },
+
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const parentElement = canvasElement.parentElement;
+    if (!parentElement) return;
+    const root = within(parentElement);
+
+    await userEvent.click(canvas.getByRole("button"));
+
+    const dialog = await root.findByRole("dialog");
+    expect(dialog).toBeInTheDocument();
+
+    const combobox = await within(dialog).findByRole("combobox");
+    await userEvent.click(combobox);
+
+    const option = await root.findByText("React");
+    await waitFor(() => {
+      expect(option).toBeVisible();
+      // SelectのオプションがDialogコンテンツ内にポータルされること
+      expect(
+        document
+          .querySelector('[data-scope="dialog"][data-part="content"]')!
+          .contains(option)
+      ).toBe(true);
+    });
+
+    await userEvent.click(option);
+
+    await waitFor(() => {
+      expect(combobox).toHaveTextContent("React");
+      expect(dialog).toBeInTheDocument();
+    });
+  },
+};
+
+const SelectInDrawerTemplate = (args: React.ComponentProps<typeof Select>) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <>
+      <Button onClick={() => setIsOpen(true)}>Open Drawer</Button>
+      <Drawer
+        isOpen={isOpen}
+        onOpenChange={(e) => setIsOpen(e.open)}
+        type="right"
+      >
+        <Select {...args} />
+      </Drawer>
+    </>
+  );
+};
+
+export const InDrawer: Story = {
+  parameters: {
+    layout: "fullscreen",
+
+    chromatic: {
+      modes: {
+        small: allModes["small"],
+        large: allModes["large"],
+      },
+    },
+  },
+
+  render: (args) => {
+    return (
+      <FullscreenLayout>
+        <SelectInDrawerTemplate {...args} />
+      </FullscreenLayout>
+    );
+  },
+
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const parentElement = canvasElement.parentElement;
+    if (!parentElement) return;
+    const root = within(parentElement);
+
+    await userEvent.click(canvas.getByRole("button"));
+
+    const drawer = await root.findByRole("dialog");
+    expect(drawer).toBeInTheDocument();
+
+    const combobox = await within(drawer).findByRole("combobox");
+    await userEvent.click(combobox);
+
+    const option = await root.findByText("React");
+    await waitFor(() => {
+      expect(option).toBeVisible();
+      // SelectのオプションがDrawerコンテンツ内にポータルされること
+      expect(drawer.contains(option)).toBe(true);
+    });
+
+    await userEvent.click(option);
+
+    await waitFor(() => {
+      expect(combobox).toHaveTextContent("React");
+      expect(drawer).toBeInTheDocument();
+    });
+  },
+};
+
+export const NotPortalled: Story = {
+  parameters: {
+    layout: "fullscreen",
+
+    chromatic: {
+      modes: {
+        small: allModes["small"],
+      },
+    },
+  },
+
+  args: {
+    portalled: false,
+  },
+
+  render: (args) => {
+    return (
+      <FullscreenLayout>
+        <Select {...args} portalled={false} />
+      </FullscreenLayout>
+    );
+  },
+
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const parentElement = canvasElement.parentElement;
+    if (!parentElement) return;
+    const root = within(parentElement);
+
+    await userEvent.click(canvas.getByRole("combobox"));
+
+    const option = await root.findByText("React");
+    await waitFor(() => {
+      expect(option).toBeVisible();
+      // portalled=falseではポータルせずその場にレンダリングされること
+      expect(canvasElement.contains(option)).toBe(true);
+    });
+  },
+};
+
+export const PlayReselectSelectedItem: Story = {
+  parameters: {
+    layout: "fullscreen",
+
+    chromatic: {
+      modes: {
+        small: allModes["small"],
+      },
+    },
+  },
+
+  args: {
+    onValueChange: fn(),
+  },
+
+  render: (args) => {
+    return (
+      <FullscreenLayout>
+        <Select {...args} />
+      </FullscreenLayout>
+    );
+  },
+
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const parentElement = canvasElement.parentElement;
+    if (!parentElement) return;
+    const root = within(parentElement);
+
+    const combobox = canvas.getByRole("combobox");
+
+    // 1回目の選択
+    await userEvent.click(combobox);
+    const option = await root.findByRole("option", { name: "React" });
+    await userEvent.click(option);
+
+    await waitFor(() => {
+      expect(combobox).toHaveTextContent("React");
+    });
+
+    // 選択済みの項目を再度クリックできること
+    await userEvent.click(combobox);
+    const optionAgain = await root.findByRole("option", { name: "React" });
+    await userEvent.click(optionAgain);
+
+    await waitFor(() => {
+      expect(combobox).toHaveAttribute("aria-expanded", "false");
+      // 再クリックしても選択が解除されないこと
+      expect(combobox).toHaveTextContent("React");
+    });
+
+    // 同じ値の再選択ではonValueChangeは再発火しない（1回のみ）
+    expect(args.onValueChange).toHaveBeenCalledTimes(1);
+    expect(args.onValueChange).toHaveBeenCalledWith(
+      expect.objectContaining({ value: ["React"] })
+    );
   },
 };
