@@ -44,7 +44,9 @@ jobs:
       - name: ESLint
         id: lint
         run: |
-          npm run lint -- --quiet
+          # --quiet = errors only. Do NOT use `npm run lint` here: its
+          # --max-warnings 0 still counts warnings suppressed by --quiet.
+          npx eslint . --report-unused-disable-directives --quiet
           files=$(git diff --name-only --diff-filter=d HEAD^1 HEAD -- '*.ts' '*.tsx')
           if [ -n "$files" ]; then
             echo "$files" | xargs npx eslint --no-warn-ignored --report-unused-disable-directives --max-warnings 0
