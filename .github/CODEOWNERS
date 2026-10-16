@@ -1,0 +1,10 @@
+# SDS Family component intake: DIC review is requested only when
+# component / design-token related files change (not for Dependabot etc.).
+# IDC (デザイン研究所) has no GitHub accounts and reviews via the Storybook
+# preview comment, so they are not listed here.
+/src/components/ @NakataniYuta @ShimodaAyana @shibata-hiroyoshi
+/src/tokens/ @NakataniYuta @ShimodaAyana @shibata-hiroyoshi
+/src/recipes/ @NakataniYuta @ShimodaAyana @shibata-hiroyoshi
+/src/theme/ @NakataniYuta @ShimodaAyana @shibata-hiroyoshi
+/src/preset.ts @NakataniYuta @ShimodaAyana @shibata-hiroyoshi
+/panda.config.ts @NakataniYuta @ShimodaAyana @shibata-hiroyoshi

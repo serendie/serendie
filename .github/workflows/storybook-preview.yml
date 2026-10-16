@@ -1,0 +1,121 @@
+name: Storybook Preview
+
+# Untrusted job: runs PR code, so it must not have any credentials/secrets.
+# Results (build status, tsc/axe logs, storybook-static) are passed to the
+# trusted Storybook Preview Deploy workflow via artifacts.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: storybook-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          # HEAD is the PR merge commit; depth 2 also fetches the base tip (HEAD^1)
+          fetch-depth: 2
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build:panda
+
+      # Blocking checks
+      # Repo-wide lint blocks on errors only (warnings are preexisting on main);
+      # files changed in the PR are linted with --max-warnings 0 so new warnings
+      # (e.g. hardcoded colors) are blocking too.
+      - name: ESLint
+        id: lint
+        run: |
+          # --quiet = errors only. Do NOT use `npm run lint` here: its
+          # --max-warnings 0 still counts warnings suppressed by --quiet.
+          npx eslint . --report-unused-disable-directives --quiet
+          files=$(git diff --name-only --diff-filter=d HEAD^1 HEAD -- '*.ts' '*.tsx')
+          if [ -n "$files" ]; then
+            echo "$files" | xargs npx eslint --no-warn-ignored --report-unused-disable-directives --max-warnings 0
+          fi
+
+      # Non-blocking: main already has triggerRef type errors in
+      # Select / DatePicker / DropdownMenu / Search
+      - name: TypeScript (non-blocking)
+        id: tsc
+        continue-on-error: true
+        run: npx tsc --noEmit -p tsconfig.json 2>&1 | tee "$RUNNER_TEMP/tsc.log"
+
+      - name: Build Storybook
+        id: build
+        run: npm run build:storybook
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Serve Storybook
+        run: |
+          python3 -m http.server 6006 -d storybook-static > /dev/null 2>&1 &
+          for i in $(seq 1 30); do
+            curl -sf http://127.0.0.1:6006 > /dev/null && exit 0
+            sleep 1
+          done
+          echo "storybook-static did not come up" >&2
+          exit 1
+
+      # Non-blocking: existing components may have a11y violations
+      - name: axe-core via test-runner (non-blocking)
+        id: a11y
+        continue-on-error: true
+        run: npx test-storybook --url http://127.0.0.1:6006 --browsers chromium 2>&1 | tee "$RUNNER_TEMP/a11y.log"
+
+      # Always upload results so the deploy workflow can report them
+      - name: Prepare preview metadata
+        if: always()
+        run: |
+          mkdir -p preview-meta
+          strip_ansi() { sed 's/\x1b\[[0-9;]*m//g'; }
+          jq -n \
+            --argjson pr_number '${{ github.event.pull_request.number }}' \
+            --arg head_sha '${{ github.event.pull_request.head.sha }}' \
+            --arg lint '${{ steps.lint.outcome }}' \
+            --arg build '${{ steps.build.outcome }}' \
+            --arg tsc '${{ steps.tsc.outcome }}' \
+            --arg a11y '${{ steps.a11y.outcome }}' \
+            '{pr_number: $pr_number, head_sha: $head_sha, lint: $lint, build: $build, tsc: $tsc, a11y: $a11y}' \
+            > preview-meta/meta.json
+          if [ -f "$RUNNER_TEMP/tsc.log" ]; then
+            strip_ansi < "$RUNNER_TEMP/tsc.log" | tail -n 150 | tail -c 20480 > preview-meta/tsc.txt
+          fi
+          if [ -f "$RUNNER_TEMP/a11y.log" ]; then
+            strip_ansi < "$RUNNER_TEMP/a11y.log" | tail -n 150 | tail -c 20480 > preview-meta/a11y.txt
+          fi
+
+      - name: Upload preview metadata
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: preview-meta
+          path: preview-meta/
+          retention-days: 7
+
+      - name: Upload storybook-static
+        if: steps.build.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: storybook-static
+          path: storybook-static/
+          retention-days: 7

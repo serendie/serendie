@@ -1,0 +1,272 @@
+name: Storybook Preview Deploy
+
+# Trusted workflow: runs from the default branch.
+# - workflow_run: deploys the storybook-static artifact produced by the
+#   untrusted "Storybook Preview" workflow and posts/updates a PR comment.
+# - pull_request_target closed: deletes the preview from S3.
+# It NEVER checks out or executes code from the PR.
+
+on:
+  workflow_run:
+    workflows: ["Storybook Preview"]
+    types: [completed]
+  pull_request_target:
+    types: [closed]
+    branches: [main]
+
+permissions: {}
+
+concurrency:
+  group: storybook-preview-deploy-${{ github.event.workflow_run.head_repository.full_name || github.repository }}-${{ github.event.workflow_run.head_branch || 'cleanup' }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.event_name == 'workflow_run' && github.event.workflow_run.event == 'pull_request'
+    runs-on: ubuntu-latest
+    environment: storybook-preview
+    permissions:
+      actions: read
+      contents: read
+      pull-requests: write
+      id-token: write
+    steps:
+      - name: Download preview metadata
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        id: meta_dl
+        with:
+          name: preview-meta
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/meta
+
+      - name: Stop if metadata is missing
+        if: steps.meta_dl.outcome == 'failure'
+        run: echo "::notice::preview-meta artifact not found for run ${{ github.event.workflow_run.id }}; skipping"
+
+      - name: Validate PR and extract metadata
+        id: meta
+        if: steps.meta_dl.outcome == 'success'
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const fs = require("fs");
+            const meta = JSON.parse(fs.readFileSync(`${process.env.RUNNER_TEMP}/meta/meta.json`, "utf8"));
+
+            // meta.json comes from an untrusted workflow run: validate strictly
+            const prNumber = Number(meta.pr_number);
+            if (!Number.isInteger(prNumber) || prNumber <= 0) {
+              core.setFailed("preview-meta: invalid pr_number");
+              return;
+            }
+            const run = context.payload.workflow_run;
+            const pr = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: prNumber,
+            });
+            const ok =
+              pr.data.head.sha === run.head_sha &&
+              meta.head_sha === run.head_sha &&
+              pr.data.state === "open";
+            if (!ok) {
+              core.info(`Skipping: stale or forged metadata (pr open=${pr.data.state === "open"})`);
+              core.setOutput("valid", "false");
+              return;
+            }
+            core.setOutput("valid", "true");
+            core.setOutput("pr_number", String(prNumber));
+            core.setOutput("head_sha", run.head_sha);
+            core.setOutput("lint", String(meta.lint || ""));
+            core.setOutput("build", String(meta.build || ""));
+            core.setOutput("tsc", String(meta.tsc || ""));
+            core.setOutput("a11y", String(meta.a11y || ""));
+            const readTrim = (name) => {
+              try {
+                return fs.readFileSync(`${process.env.RUNNER_TEMP}/meta/${name}`, "utf8");
+              } catch {
+                return "";
+              }
+            };
+            core.setOutput("tsc_log", readTrim("tsc.txt"));
+            core.setOutput("a11y_log", readTrim("a11y.txt"));
+
+      - name: Download storybook-static
+        if: steps.meta.outputs.valid == 'true' && vars.AWS_ROLE_ARN != '' && github.event.workflow_run.conclusion == 'success' && steps.meta.outputs.build == 'success'
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        id: sb_dl
+        with:
+          name: storybook-static
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: ${{ runner.temp }}/storybook-static
+
+      - name: Configure AWS credentials
+        if: steps.meta.outputs.valid == 'true' && vars.AWS_ROLE_ARN != '' && github.event.workflow_run.conclusion == 'success' && steps.meta.outputs.build == 'success' && steps.sb_dl.outcome == 'success'
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Deploy preview to S3
+        if: steps.meta.outputs.valid == 'true' && vars.AWS_ROLE_ARN != '' && github.event.workflow_run.conclusion == 'success' && steps.meta.outputs.build == 'success' && steps.sb_dl.outcome == 'success'
+        id: deploy
+        env:
+          PREVIEW_BUCKET: ${{ vars.PREVIEW_BUCKET }}
+          CLOUDFRONT_DISTRIBUTION_ID: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}
+          PR: ${{ steps.meta.outputs.pr_number }}
+        run: |
+          aws s3 sync "$RUNNER_TEMP/storybook-static" "s3://$PREVIEW_BUCKET/pr-$PR/" --delete
+          aws cloudfront create-invalidation \
+            --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" \
+            --paths "/pr-$PR/*"
+
+      - name: Upsert preview comment
+        if: steps.meta.outputs.valid == 'true'
+        uses: actions/github-script@v9
+        env:
+          PR: ${{ steps.meta.outputs.pr_number }}
+          HEAD_SHA: ${{ steps.meta.outputs.head_sha }}
+          LINT: ${{ steps.meta.outputs.lint }}
+          BUILD: ${{ steps.meta.outputs.build }}
+          TSC: ${{ steps.meta.outputs.tsc }}
+          A11Y: ${{ steps.meta.outputs.a11y }}
+          TSC_LOG: ${{ steps.meta.outputs.tsc_log }}
+          A11Y_LOG: ${{ steps.meta.outputs.a11y_log }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+          CLOUDFRONT_DOMAIN: ${{ vars.CLOUDFRONT_DOMAIN }}
+          CONFIGURED: ${{ vars.AWS_ROLE_ARN != '' }}
+          DEPLOYED: ${{ steps.deploy.outcome == 'success' }}
+          WORKFLOW_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+        with:
+          script: |
+            const pr = Number(process.env.PR);
+            const marker = "<!-- sds-storybook-preview -->";
+            const esc = (s) => String(s || "").replace(/```/g, "` ` `").slice(0, 6000);
+            const mark = (v) => (v === "success" ? "✅" : "❌");
+            const warn = (v) => (v === "success" ? "✅" : "⚠️");
+
+            const url = `https://${process.env.CLOUDFRONT_DOMAIN}/pr-${pr}/index.html`;
+            const configured = process.env.CONFIGURED === "true";
+            const deployed = process.env.DEPLOYED === "true";
+
+            let previewLine;
+            if (deployed) {
+              previewLine = `**Storybook プレビュー / Preview**: ${url}\n\n> ⚠️ 社内VPN/拠点ネットワークからのみ閲覧可能です / Accessible from the company VPN only.`;
+            } else if (!configured) {
+              previewLine = "ℹ️ プレビュー環境はまだ構成されていません (AWS 変数未設定) / Preview hosting is not configured yet.";
+            } else {
+              previewLine = "❌ ビルド失敗のためプレビューはデプロイされませんでした / No preview was deployed because the build failed.";
+            }
+
+            const details = [];
+            if (process.env.TSC !== "success" && process.env.TSC_LOG) {
+              details.push(`<details><summary>tsc エラー抜粋 / tsc errors (non-blocking)</summary>\n\n\`\`\`\n${esc(process.env.TSC_LOG)}\n\`\`\`\n</details>`);
+            }
+            if (process.env.A11Y !== "success" && process.env.A11Y_LOG) {
+              details.push(`<details><summary>axe-core 結果抜粋 / axe-core output (non-blocking)</summary>\n\n\`\`\`\n${esc(process.env.A11Y_LOG)}\n\`\`\`\n</details>`);
+            }
+
+            const body = [
+              marker,
+              `## Storybook Preview (commit \`${process.env.HEAD_SHA.slice(0, 7)}\`)`,
+              "",
+              previewLine,
+              "",
+              `Workflow run: ${process.env.RUN_URL} (conclusion: ${process.env.WORKFLOW_CONCLUSION})`,
+              "",
+              "| Check | Result | Blocking |",
+              "|---|---|---|",
+              `| ESLint | ${mark(process.env.LINT)} | ✅ Yes |`,
+              `| Storybook build | ${mark(process.env.BUILD)} | ✅ Yes |`,
+              `| tsc | ${warn(process.env.TSC)} | ⚠️ No |`,
+              `| axe-core | ${warn(process.env.A11Y)} | ⚠️ No |`,
+              "",
+              ...details,
+            ].join("\n");
+
+            // Find an existing comment by this bot containing the marker (paginated)
+            let existing;
+            for await (const { data: comments } of github.paginate.iterator(
+              github.rest.issues.listComments,
+              { owner: context.repo.owner, repo: context.repo.repo, issue_number: pr, per_page: 100 }
+            )) {
+              existing = comments.find(
+                (c) => c.user?.login === "github-actions[bot]" && c.body?.includes(marker)
+              );
+              if (existing) break;
+            }
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr,
+                body,
+              });
+            }
+
+  cleanup:
+    if: github.event_name == 'pull_request_target'
+    runs-on: ubuntu-latest
+    environment: storybook-preview
+    permissions:
+      pull-requests: write
+      id-token: write
+    steps:
+      - name: Configure AWS credentials
+        if: vars.AWS_ROLE_ARN != ''
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Delete preview from S3
+        if: vars.AWS_ROLE_ARN != ''
+        env:
+          PREVIEW_BUCKET: ${{ vars.PREVIEW_BUCKET }}
+          CLOUDFRONT_DISTRIBUTION_ID: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          aws s3 rm "s3://$PREVIEW_BUCKET/pr-$PR/" --recursive || true
+          aws cloudfront create-invalidation \
+            --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" \
+            --paths "/pr-$PR/*" || true
+
+      - name: Update preview comment
+        uses: actions/github-script@v9
+        env:
+          PR: ${{ github.event.pull_request.number }}
+        with:
+          script: |
+            const pr = Number(process.env.PR);
+            const marker = "<!-- sds-storybook-preview -->";
+            const note =
+              "\n\n---\n🗑️ プレビューは PR クローズに伴い削除されました / Preview was deleted when the PR was closed.";
+            for await (const { data: comments } of github.paginate.iterator(
+              github.rest.issues.listComments,
+              { owner: context.repo.owner, repo: context.repo.repo, issue_number: pr, per_page: 100 }
+            )) {
+              const existing = comments.find(
+                (c) => c.user?.login === "github-actions[bot]" && c.body?.includes(marker)
+              );
+              if (existing) {
+                // Strip any previously appended deleted-note so close→reopen→close is idempotent
+                const cleaned = (existing.body || "").split(note)[0];
+                await github.rest.issues.updateComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  comment_id: existing.id,
+                  body: cleaned + note,
+                });
+                break;
+              }
+            }

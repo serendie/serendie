@@ -1,0 +1,29 @@
+# Example variables file.
+# Copy to terraform.tfvars (gitignored) and fill in REAL values.
+# The CIDRs below are documentation ranges only — replace them with the
+# company VPN / office egress IP ranges. Never commit real IPs.
+
+aws_region         = "ap-northeast-1"
+bucket_name_prefix = "sds-storybook-preview"
+
+github_repository  = "serendie/serendie"
+github_environment = "storybook-preview"
+
+allowed_ipv4_cidrs = [
+  "203.0.113.0/24",   # example: office egress
+  "198.51.100.10/32", # example: VPN egress
+]
+
+allowed_ipv6_cidrs = []
+
+# Set to false if the GitHub Actions OIDC provider already exists in the account
+create_oidc_provider = true
+iam_role_name        = "sds-storybook-preview-github-actions"
+
+cloudfront_price_class = "PriceClass_200"
+preview_retention_days = 90
+
+tags = {
+  Project = "serendie-design-system"
+  Purpose = "storybook-preview"
+}
