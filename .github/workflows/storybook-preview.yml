@@ -24,6 +24,9 @@ jobs:
         shell: bash
     steps:
       - uses: actions/checkout@v6
+        with:
+          # HEAD is the PR merge commit; depth 2 also fetches the base tip (HEAD^1)
+          fetch-depth: 2
 
       - uses: actions/setup-node@v6
         with:
@@ -42,8 +45,7 @@ jobs:
         id: lint
         run: |
           npm run lint -- --quiet
-          git fetch --depth=1 origin "${{ github.base_ref }}"
-          files=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD" -- '*.ts' '*.tsx')
+          files=$(git diff --name-only --diff-filter=d HEAD^1 HEAD -- '*.ts' '*.tsx')
           if [ -n "$files" ]; then
             echo "$files" | xargs npx eslint --no-warn-ignored --report-unused-disable-directives --max-warnings 0
           fi

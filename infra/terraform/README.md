@@ -38,8 +38,12 @@ terraform apply
 
 1. リポジトリの **Settings → Environments** で Environment
    `storybook-preview` を作成します。
-2. `terraform output github_actions_variables` の値を、リポジトリまたは
-   Environment の **Variables** として設定します:
+2. `terraform output github_actions_variables` の値を、Environment
+   `storybook-preview` の **Environment variables** として設定します
+   (**Settings → Environments → `storybook-preview` → Environment variables**)。
+   リポジトリレベルの Actions variables ではなく、必ず Environment 側に
+   設定してください(IAM ロールの信頼条件が Environment 経由のジョブに
+   限定されているため)。Secrets は不要で、値はすべて平文の Variables です:
 
    | Variable                     | 内容                                            |
    | ---------------------------- | ----------------------------------------------- |
