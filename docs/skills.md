@@ -107,7 +107,7 @@ function MyChart() {
 - 以下の形式に従う / Follow this pattern:
 
 ```tsx
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta = {
   component: MyComponent,

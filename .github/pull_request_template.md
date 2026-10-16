@@ -46,7 +46,7 @@ See docs/skills.md for the contribution guide.
 Do not fill this in — checked by maintainers during review.
 -->
 
-- [ ] CI通過(ESLint / Storybook build)/ tsc・axe-core 結果確認済み
-- [ ] Devin レビューコメント確認済み
-- [ ] DIC 技術審査 承認
-- [ ] IDC デザイン審査 承認(Storybook プレビュー確認)
+- [ ] CI通過（ESLint / Storybook build）・tsc / axe-core 結果確認済み / CI passed (ESLint / Storybook build); tsc / axe-core results reviewed
+- [ ] Devin レビューコメント確認済み / Devin review comment checked
+- [ ] DIC 技術審査 承認 / DIC technical review approved
+- [ ] IDC デザイン審査 承認（Storybook プレビュー確認）/ IDC design review approved (via Storybook preview)
