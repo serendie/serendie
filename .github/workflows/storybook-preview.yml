@@ -35,9 +35,18 @@ jobs:
       - run: npm run build:panda
 
       # Blocking checks
+      # Repo-wide lint blocks on errors only (warnings are preexisting on main);
+      # files changed in the PR are linted with --max-warnings 0 so new warnings
+      # (e.g. hardcoded colors) are blocking too.
       - name: ESLint
         id: lint
-        run: npm run lint
+        run: |
+          npm run lint -- --quiet
+          git fetch --depth=1 origin "${{ github.base_ref }}"
+          files=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD" -- '*.ts' '*.tsx')
+          if [ -n "$files" ]; then
+            echo "$files" | xargs npx eslint --no-warn-ignored --report-unused-disable-directives --max-warnings 0
+          fi
 
       # Non-blocking: main already has triggerRef type errors in
       # Select / DatePicker / DropdownMenu / Search
