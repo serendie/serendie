@@ -172,7 +172,10 @@ export const InModalDialog: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const parentElement = canvasElement.parentElement;
-    if (!parentElement) return;
+    expect(parentElement).not.toBeNull();
+    if (!parentElement) {
+      throw new Error("Expected the canvas to have a parent element");
+    }
     const root = within(parentElement);
 
     await userEvent.click(canvas.getByRole("button"));
@@ -242,7 +245,10 @@ export const InDrawer: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const parentElement = canvasElement.parentElement;
-    if (!parentElement) return;
+    expect(parentElement).not.toBeNull();
+    if (!parentElement) {
+      throw new Error("Expected the canvas to have a parent element");
+    }
     const root = within(parentElement);
 
     await userEvent.click(canvas.getByRole("button"));
@@ -295,7 +301,10 @@ export const NotPortalled: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const parentElement = canvasElement.parentElement;
-    if (!parentElement) return;
+    expect(parentElement).not.toBeNull();
+    if (!parentElement) {
+      throw new Error("Expected the canvas to have a parent element");
+    }
     const root = within(parentElement);
 
     await userEvent.click(canvas.getByRole("combobox"));
@@ -335,7 +344,10 @@ export const PlayReselectSelectedItem: Story = {
   play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement);
     const parentElement = canvasElement.parentElement;
-    if (!parentElement) return;
+    expect(parentElement).not.toBeNull();
+    if (!parentElement) {
+      throw new Error("Expected the canvas to have a parent element");
+    }
     const root = within(parentElement);
 
     const combobox = canvas.getByRole("combobox");
