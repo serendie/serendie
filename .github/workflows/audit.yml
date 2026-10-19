@@ -8,6 +8,8 @@ on:
       - .github/workflows/audit.yml
   push:
     branches: [main]
+  schedule:
+    - cron: "0 0 * * 1" # 毎週月曜 9:00 JST
   workflow_dispatch:
 
 permissions:
