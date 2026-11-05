@@ -51,7 +51,7 @@ Please report vulnerabilities privately through [GitHub Private vulnerability re
 - 判断とリリースは運営（DIC）で決定します。リリースは通常どおりリリースラベルを使って行います。
 - 非公開の報告については、確認や対応の記録も非公開の報告内で行います。公開 Issue に未公開の脆弱性の詳細を転記しないでください。
 
-## 通知の流れ（案A：Issue に集約）
+## 通知の流れ（Issue に集約）
 
 1. 毎週の定期実行で Audit ジョブが失敗したときだけ、通知ジョブが動きます。
 2. 「Audit 定期実行の失敗」というタイトルのオープン Issue がなければ自動作成し、すでにあればその Issue にコメントを追加します。
