@@ -31,3 +31,39 @@ jobs:
 
       - name: Audit production dependencies
         run: npm audit --omit=dev --audit-level=high
+
+  notify:
+    needs: audit
+    if: failure() && github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    concurrency:
+      group: audit-failure-notification
+      cancel-in-progress: false
+    steps:
+      - name: Create or comment on failure issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          SECURITY_URL: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.event.repository.default_branch }}/SECURITY.md
+        run: |
+          set -euo pipefail
+          title='Audit 定期実行の失敗'
+          body=$(printf '%s\n' \
+            '定期実行の Audit ジョブが失敗しました。' \
+            '' \
+            '@shibata-hiroyoshi @NakataniYuta 確認をお願いします。担当する人は「確認します」とコメントしてください。' \
+            "実行ログ: $RUN_URL" \
+            "対応方針: $SECURITY_URL" \
+            '' \
+            'npm ci 失敗など脆弱性以外の原因もあり得るのでログを確認してください。')
+          issue_number=$(gh issue list --state open --search "in:title \"$title\"" \
+            --limit 100 --json number,title \
+            --jq '[.[] | select(.title == "Audit 定期実行の失敗")] | .[0].number // empty')
+          if [ -n "$issue_number" ]; then
+            gh issue comment "$issue_number" --body "$body"
+          else
+            gh issue create --title "$title" --body "$body"
+          fi
